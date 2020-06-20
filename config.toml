@@ -3,15 +3,15 @@ languageCode = "en"
 title = "Andy Lu's Blog"
 theme = "kiss"
 copyright = "&copy; Andy Lu 2020"
-disqusShortname = "shortname"
+disqusShortname = ""
 googleAnalytics = ""
-Paginate = 5 # Number of posts per page
+Paginate = 50 # Number of posts per page
 enableRobotsTXT = true
 
 [params.rss] # Adding this tag enables RSS feed
 includeContent = true # Includes whole content in rss
-authorName = "Emir Ribic" # Author full name
-authorEmail = "ribice@gmail.com" # Author email
+authorName = "Andy Lu" # Author full name
+authorEmail = "andy@andyrlu.com" # Author email
 
 [params.assets]
 customCSS = ["css/custom.css"]
@@ -39,25 +39,26 @@ page = "" # Twitter Page username. If not set, params.social.twitter will be use
 [params.social]
 twitter = "_andy_lu_"
 github = "luandy64"
-# email = "ribice@gmail.com"
+#email = "andy@andyrlu.com"
 linkedin = "andyrlu"
-# facebook = "ribice"
+# facebook = ""
 # instagram = ""
 # codepen = ""
 # rss = "index.xml" # Add this to show RSS button in social.
 
 [params.social.config]
-platforms = ["github","facebook","twitter","instagram","email","codepen","linkedin"]
+#platforms = ["github","facebook","twitter","instagram","email","codepen","linkedin"]
+platforms = ["twitter","github","linkedin"]
 
 # [params.matomoAnalytics]
 # siteID = 1
 # rootURL = "//matomo.example.com/"
 
-[params.fathomAnalytics]
-rootURL = "//fathom.example.com/"
+#[params.fathomAnalytics]
+#rootURL = "//fathom.example.com/"
 
 [taxonomies]
 tag ="tags"
 
-[blackfriday]
-hrefTargetBlank = true
+#[blackfriday]
+#hrefTargetBlank = true
