@@ -62,3 +62,6 @@ tag ="tags"
 
 #[blackfriday]
 #hrefTargetBlank = true
+
+[params.sections_left]
+"/sundial" = "Sundial"
