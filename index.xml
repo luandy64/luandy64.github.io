@@ -11,5 +11,17 @@
         <atom:link href="https://andyrlu.com/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Blogs</title>
+      <link>https://andyrlu.com/blog/</link>
+      <pubDate>Mon, 06 Jul 2020 07:52:15 -0500</pubDate>
+      <author>Andy Lu</author>
+      <guid>https://andyrlu.com/blog/</guid>
+      <description></description>
+      
+      <content></content>
+      
+    </item>
+    
   </channel>
 </rss>

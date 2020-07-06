@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"  lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Clojurescript Project Setup | Andy Lu&#39;s Blog</title>
+
+<meta property='og:title' content='Clojurescript Project Setup - Andy Lu&#39;s Blog'>
+<meta property='og:description' content='Outcomes By the end of this post, you will be able to setup a new clojurescript project, setup emacs to be your development environment, and deploy your app to Github Pages
+Background I&rsquo;ve written two clojurescript projects now, Sundial and DataBooze, and I want to document the set up process. The first time was a massive undertaking because it was my first time. But frustrating enough, so was the second time, even though I thought I nailed down the process and took notes on it.'>
+<meta property='og:url' content='https://andyrlu.com/blog/clojurescript-project-setup/'>
+<meta property='og:site_name' content='Andy Lu&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Blog'><meta property='article:published_time' content='2020-07-06T07:52:15-05:00'/><meta property='article:modified_time' content='2020-07-06T07:52:15-05:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@_andy_lu_'><meta name='twitter:creator' content='@_andy_lu_'>
+
+
+<link href="https://andyrlu.com/index.xml" rel="alternate" type="application/rss+xml" title="Andy Lu&#39;s Blog" />
+
+<link rel="stylesheet" href="/css/style.css"/><link rel='stylesheet' href='https://andyrlu.com/css/custom.css'><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://andyrlu.com/blog/clojurescript-project-setup/">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<section class="section">
+  <div class="container">
+    <nav id="nav-main" class="nav">
+      <div id="nav-name" class="nav-left">
+        <a id="nav-anchor" class="nav-item" href="https://andyrlu.com/">
+          <h1 id="nav-heading" class="title is-4">Andy Lu&#39;s Blog</h1>
+        </a>
+      </div>
+      <div class="nav-right">
+        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="twitter" href='https://twitter.com/_andy_lu_'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="github" href='https://github.com/luandy64'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    
+  </svg></i>
+            </span>
+          </a><a class="level-item" aria-label="linkedin" href='https://linkedin.com/in/andyrlu'
+            target='_blank' rel='noopener'>
+            <span class="icon">
+              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+    
+    <path stroke-width="1.8" d="m5.839218,4.101561c0,1.211972 -0.974141,2.194011 -2.176459,2.194011s-2.176459,-0.982039 -2.176459,-2.194011c0,-1.211094 0.974141,-2.194011 2.176459,-2.194011s2.176459,0.982917 2.176459,2.194011zm0.017552,3.94922l-4.388022,0l0,14.04167l4.388022,0l0,-14.04167zm7.005038,0l-4.359939,0l0,14.04167l4.360816,0l0,-7.370999c0,-4.098413 5.291077,-4.433657 5.291077,0l0,7.370999l4.377491,0l0,-8.89101c0,-6.915523 -7.829986,-6.66365 -9.669445,-3.259423l0,-1.891237z"/>
+    
+  </svg></i>
+            </span>
+          </a></nav>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      
+      <div class="nav-left"><a class="nav-item" href="/databooze">
+          <h2 class="title is-5">DataBooze</h2>
+        </a><a class="nav-item" href="/sundial">
+          <h2 class="title is-5">Sundial</h2>
+        </a></div>
+      
+
+      
+    </nav>
+
+  </div>
+  <script src="/js/navicon-shift.js"></script>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      
+    </div>
+    <h2 class="subtitle is-6">July 6, 2020</h2>
+    <h1 class="title">Clojurescript Project Setup</h1>
+    
+    <div class="content">
+      <h4 id="outcomes">Outcomes</h4>
+<p>By the end of this post, you will be able to setup a new <code>clojurescript</code>
+project, setup <code>emacs</code> to be your development environment, and deploy your
+app to Github Pages</p>
+<h4 id="background">Background</h4>
+<p>I&rsquo;ve written two clojurescript projects now, <a href="/sundial">Sundial</a> and
+<a href="/databooze">DataBooze</a>, and I want to document the set up process. The first time
+was a massive undertaking because it was my first time. But frustrating
+enough, so was the second time, even though I thought I nailed down the
+process and took notes on it. The process didn&rsquo;t work and the notes don&rsquo;t
+exist, so here we are today.</p>
+<h4 id="pre-requisites">Pre-requisites</h4>
+<p>There are only three things you need to start: an editor, a terminal, and
+<a href="https://github.com/technomancy/leiningen/wiki/Packaging">leiningen</a>. For me, this means <a href="https://www.gnu.org/software/emacs/">Emacs</a>, <a href="https://www.gnu.org/software/bash/">bash</a>, and <code>leiningen</code>
+installed through my package manager.</p>
+<h4 id="instructions">Instructions</h4>
+<p>In your terminal, navigate to where you want the project to live and run</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ lein new figwheel-main my-awesome-project -- --reagent
+</code></pre></div><p>You should see a new directory called <code>my-awesome-project</code>. There&rsquo;s a
+basic skeleton that is created for you, so we want to check that it works</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd my-awesome-project
+$ lein fig:build
+</code></pre></div><p>This will compile the clojurescript into javascript, serve the project on
+(by default) <code>http://localhost:9500</code>, and give you a clojurescript REPL.</p>
+<p>If you don&rsquo;t use emacs, I recommend you leave this REPL open and start
+editing the code in <code>src/my_awesome_project/core.cljs</code>. If you do use
+emacs, I recommend setting up <a href="https://github.com/clojure-emacs/cider">CIDER</a> and getting <a href="https://github.com/nrepl/nrepl">nREPL</a> to work.</p>
+<p>First we open emacs and install CIDER</p>
+<pre><code>M-x package-refresh-contents [RET]
+M-x package-install [RET] cider [RET]
+</code></pre><p>When I run <code>M-x cider-version</code>, I get <code>CIDER 0.26.0-snapshot</code>.</p>
+<p>If you haven&rsquo;t already, kill the REPL we opened from <code>lein fig:build</code>.
+We&rsquo;re going to start a new one in emacs.</p>
+<p>Open <code>src/my_awesome_project/core.cljs</code> in a buffer. Then run</p>
+<pre><code>M-x cider-jack-in-cljs [RET]
+</code></pre><p>A series of prompts will appear, answer with:</p>
+<ul>
+<li><code>lein</code>
+<ul>
+<li>This one most likely will not appear, but I saw it once and the other
+option was <code>shadow-cljs</code>. I didn&rsquo;t try to pick <code>shadow-cljs</code> because
+it just worked when I picked <code>lein</code></li>
+</ul>
+</li>
+<li><code>figwheel-main</code></li>
+<li><code>dev</code></li>
+</ul>
+<p>This will give you a buffer with output similar to what we got at the
+terminal. You can edit the code in <code>core.cljs</code> and see the UI reload when
+you save. More importantly, you can evaluate the clojurescript in your
+buffer.</p>
+<h5 id="deploying-to-github-pages">Deploying to Github Pages</h5>
+<p>I&rsquo;m assuming this would work for Gitlab Pages or Bitbucket Pages, but I
+use Github and didn&rsquo;t test those options.</p>
+<p>Create a branch called <code>gh-pages</code>. You&rsquo;ll just need 3 files at the root of
+your project: <code>index.html</code>, <code>style.css</code>, and <code>main.js</code>. Obviously, the
+names are up to you, but here&rsquo;s where I got the files.</p>
+<p><code>index.html</code> is just some boilerplate HTML. Here&rsquo;s one you can use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;My title&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;style.css&#34;</span>/&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>The important part here is that you have some element with <code>id=&quot;app&quot;</code>
+because that&rsquo;s how we hook up the javascript to the project. But again,
+even that is configurable.</p>
+<p>To get <code>style.css</code> and <code>main.js</code>, I run these commands at the root of the
+project</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ lein fig:min
+2020-07-06 09:13:50.378:INFO::main: Logging initialized @4805ms to org.eclipse.jetty.util.log.StdErrLog
+<span style="color:#f92672">[</span>Figwheel<span style="color:#f92672">]</span> Validating figwheel-main.edn
+<span style="color:#f92672">[</span>Figwheel<span style="color:#f92672">]</span> figwheel-main.edn is valid <span style="color:#ae81ff">\(</span>ツ<span style="color:#f92672">)</span>/
+<span style="color:#f92672">[</span>Figwheel<span style="color:#f92672">]</span> Compiling build dev to <span style="color:#e6db74">&#34;resources/public/cljs-out/dev-main.js&#34;</span>
+<span style="color:#f92672">[</span>Figwheel<span style="color:#f92672">]</span> Successfully compiled build dev to <span style="color:#e6db74">&#34;resources/public/cljs-out/dev-main.js&#34;</span> in 12.307 seconds.
+$ cp resources/public/cljs-out/dev-main.js main.js
+$ cp resources/public/css/style.css .
+</code></pre></div><p>So now you can commit the HTML, CSS, and JS to the <code>gh-pages</code> branch,
+push, turn on Github Pages deploys in the Settings tab of your repo, and
+see your live project.</p>
+
+      
+      <div class="related">
+</div>
+      
+    </div>
+    
+  </div>
+</section>
+
+    <script src="/js/copycode.js"></script>
+
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; Andy Lu 2020</p>
+    
+      <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a>.</p>
+    
+  </div>
+</section>
+
+
+
+</body>
+</html>
+
