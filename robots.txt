@@ -1,3 +1,3 @@
 User-agent: *
 
-Sitemap: https://andyrlu.com//sitemap.xml
+Sitemap: https://andylu.dev//sitemap.xml

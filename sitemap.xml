@@ -2,18 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://andyrlu.com/</loc>
+    <loc>https://andylu.dev/</loc>
     <lastmod>2021-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://andyrlu.com/blog/</loc>
+    <loc>https://andylu.dev/blog/</loc>
     <lastmod>2021-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://andyrlu.com/blog/docker-practice/</loc>
+    <loc>https://andylu.dev/blog/docker-practice/</loc>
     <lastmod>2021-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://andyrlu.com/blog/clojurescript-project-setup/</loc>
+    <loc>https://andylu.dev/blog/clojurescript-project-setup/</loc>
     <lastmod>2020-07-06T07:52:15-05:00</lastmod>
   </url><url>
-    <loc>https://andyrlu.com/tags/</loc>
+    <loc>https://andylu.dev/tags/</loc>
   </url>
 </urlset>
