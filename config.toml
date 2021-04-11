@@ -57,6 +57,9 @@ platforms = ["twitter","github","linkedin"]
 #[params.fathomAnalytics]
 #rootURL = "//fathom.example.com/"
 
+[params.panelbear]
+siteID = "1dDaNKWztfE"
+
 [taxonomies]
 tag ="tags"
 
