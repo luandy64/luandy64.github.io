@@ -6,10 +6,6 @@
     <description>Recent content in Tags on Andy Lu&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>&amp;copy; Andy Lu 2020</copyright>
-    
-	<atom:link href="https://andyrlu.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <copyright>&amp;copy; Andy Lu 2020</copyright><atom:link href="https://andyrlu.com/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
