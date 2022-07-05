@@ -30,7 +30,7 @@ Nothing special here.
 
 ### Install Go {#install-go}
 
-I just followed the instructions [here](https://golang.org/doc/install).
+I just [followed these instructions](https://golang.org/doc/install).
 
 
 ## Do the thing {#do-the-thing}
