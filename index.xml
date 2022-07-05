@@ -17,7 +17,7 @@
       <description>Setup Installing docker I always like the DigitalOcean tutorials, so that&amp;rsquo;s what I followed here. Installing Docker on Ubuntu 20.04
 One note: I had to restart my computer instead of just logging out in order to get the docker group update to take effect.
 Clone the repos git clone git@github.com:KAllan357/answering-machine.git git clone git@github.com:KAllan357/telephone.git Nothing special here.
-Install Go I just followed the instructions here.
+Install Go I just followed these instructions.
 Do the thing Start the answering machine outside of docker Running go run main.</description>
     </item>
     
