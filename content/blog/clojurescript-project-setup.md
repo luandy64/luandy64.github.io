@@ -1,6 +1,7 @@
 ---
 title: "Clojurescript Project Setup"
 date: 2020-07-06T07:52:15-05:00
+description: "Noting how I like to setup cljs projects"
 ---
 
 #### Outcomes
@@ -21,7 +22,7 @@ exist, so here we are today.
 #### Pre-requisites
 
 There are only three things you need to start: an editor, a terminal, and
-[leiningen][]. For me, this means [Emacs], [bash], and `leiningen`
+[leiningen][]. For me, this means [Emacs][], [bash][], and `leiningen`
 installed through my package manager.
 
 #### Instructions

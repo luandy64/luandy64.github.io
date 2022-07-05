@@ -3,6 +3,7 @@ title = "KAllan's Telephone and Answering Machine Notes"
 author = ["Andy"]
 draft = false
 date = 2021-04-11T00:00:00Z
+description = "Practicing working with Docker"
 +++
 
 ## Setup {#setup}
@@ -29,7 +30,7 @@ Nothing special here.
 
 ### Install Go {#install-go}
 
-I just followed the instructions [here](https://golang.org/doc/install).
+I just [followed these instructions](https://golang.org/doc/install).
 
 
 ## Do the thing {#do-the-thing}
