@@ -4,7 +4,7 @@ title = "Andy Lu's Blog"
 theme = "kiss"
 copyright = "&copy; Andy Lu 2020"
 disqusShortname = ""
-googleAnalytics = "UA-90403596-2"
+googleAnalytics = ""
 Paginate = 50 # Number of posts per page
 enableRobotsTXT = true
 
