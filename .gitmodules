@@ -2,6 +2,6 @@
 	path = public
 	url = git@github.com:luandy64/luandy64.github.io.git
 	branch = master
-[submodule "themes/kiss"]
-	path = themes/kiss
-	url = git@github.com:luandy64/kiss.git
+[submodule "themes/minimo"]
+	path = themes/minimo
+	url = https://github.com/MunifTanjim/minimo
