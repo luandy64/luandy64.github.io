@@ -1,101 +1,180 @@
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<title>KAllan&#39;s Telephone and Answering Machine Notes | Andy Lu&#39;s Blog</title>
-
-
-<meta property='og:title' content='KAllan&#39;s Telephone and Answering Machine Notes - Andy Lu&#39;s Blog'>
+<!DOCTYPE html>
+<html lang='en' dir='auto'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
 <meta name='description' content='Practicing working with Docker'>
+<meta name='theme-color' content='#0033ff'>
+
+<meta property='og:title' content='KAllan&#39;s Telephone and Answering Machine Notes • Andy&#39;s Garden'>
+<meta property='og:description' content='Practicing working with Docker'>
 <meta property='og:url' content='https://andylu.dev/blog/docker-practice/'>
-<meta property='og:site_name' content='Andy Lu&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Blog'><meta property='article:published_time' content='2021-04-11T00:00:00Z'><meta property='article:modified_time' content='2021-04-11T00:00:00Z'><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@_andy_lu_'><meta name='twitter:creator' content='@_andy_lu_'>
+<meta property='og:site_name' content='Andy&#39;s Garden'>
+<meta property='og:type' content='article'><meta property='article:section' content='blog'><meta property='article:tag' content='docker'><meta property='article:tag' content='golang'><meta property='article:published_time' content='2021-04-11T00:00:00Z'/><meta property='article:modified_time' content='2021-04-11T00:00:00Z'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.105.0">
+
+  <title>KAllan&#39;s Telephone and Answering Machine Notes • Andy&#39;s Garden</title>
+  <link rel='canonical' href='https://andylu.dev/blog/docker-practice/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#0033ff;}
+</style>
+
+  
+<script async src="https://cdn.panelbear.com/analytics.js?site=1dDaNKWztfE"></script>
+<script>
+ window.panelbear = window.panelbear || function() { (window.panelbear.q = window.panelbear.q || []).push(arguments); };
+ panelbear('config', { site: '1dDaNKWztfE' });
+</script>
 
 
-
-<link href="https://andylu.dev/index.xml" rel="alternate" type="application/rss+xml" title="Andy Lu&#39;s Blog">
-
-
-<link rel="stylesheet" href="/css/style.css"><link rel='stylesheet' href='https://andylu.dev/css/custom.css'>
-
-
-
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="canonical" href="https://andylu.dev/blog/docker-practice/">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
 </head>
+<body class='page type-blog has-sidebar'>
 
-<section class="section">
-  <div class="container">
-    <nav id="nav-main" class="nav">
-      <div id="nav-name" class="nav-left">
-        <a id="nav-anchor" class="nav-item" href="https://andylu.dev/">
-          <h1 id="nav-heading" class="title is-4">Andy Lu&#39;s Blog</h1>
-        </a>
-      </div>
-      <div class="nav-right">
-        <nav id="nav-items" class="nav-item level is-mobile"><a class="level-item" aria-label="twitter" href='https://twitter.com/_andy_lu_'
-            target='_blank' rel='noopener'>
-            <span class="icon">
-              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+    <header>
+        <h2 class='title site-title '>
+            <a href='/'>
+                Andy&#39;s Garden
+            </a>
+        </h2>
+    </header>
+
+</section>
+<section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+          <a href='/tags/clojurescript/' style='font-size:1em'>clojurescript</a>
+      </li><li>
+          <a href='/tags/docker/' style='font-size:1em'>docker</a>
+      </li><li>
+          <a href='/tags/emacs/' style='font-size:1em'>emacs</a>
+      </li><li>
+          <a href='/tags/golang/' style='font-size:1em'>golang</a>
+      </li><li>
+          <a href='/tags/projects/' style='font-size:1em'>projects</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><line x1="3" y1="12" x2="21" y2="12" />
+<line x1="3" y1="6" x2="21" y2="6" />
+<line x1="3" y1="18" x2="21" y2="18" />
+</svg>
+</span>
+  <span class='close'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><line x1="18" y1="6" x2="6" y2="18" />
+<line x1="6" y1="6" x2="18" y2="18" />
+</svg>
+</span>
+</button><div class='header-widgets'>
+        <div class='container'>
     
-    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
-    
-  </svg></i>
-            </span>
-          </a><a class="level-item" aria-label="github" href='https://github.com/luandy64'
-            target='_blank' rel='noopener'>
-            <span class="icon">
-              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-    
-  </svg></i>
-            </span>
-          </a><a class="level-item" aria-label="linkedin" href='https://linkedin.com/in/andyrlu'
-            target='_blank' rel='noopener'>
-            <span class="icon">
-              <i class><svg viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-    
-    <path stroke-width="1.8" d="m5.839218,4.101561c0,1.211972 -0.974141,2.194011 -2.176459,2.194011s-2.176459,-0.982039 -2.176459,-2.194011c0,-1.211094 0.974141,-2.194011 2.176459,-2.194011s2.176459,0.982917 2.176459,2.194011zm0.017552,3.94922l-4.388022,0l0,14.04167l4.388022,0l0,-14.04167zm7.005038,0l-4.359939,0l0,14.04167l4.360816,0l0,-7.370999c0,-4.098413 5.291077,-4.433657 5.291077,0l0,7.370999l4.377491,0l0,-8.89101c0,-6.915523 -7.829986,-6.66365 -9.669445,-3.259423l0,-1.891237z"/>
-    
-  </svg></i>
-            </span>
-          </a></nav>
-      </div>
+    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
+  <section class='widget widget-breadcrumbs sep-after'>
+    <nav id='breadcrumbs'>
+        <ol><li><a href='/'>Home</a></li><li><a href='/blog/'>Blogs</a></li><li><span>KAllan&#39;s Telephone and Answering Machine Notes</span></li></ol>
     </nav>
+  </section></div>
+      </div>
 
-    <nav class="nav">
-      
-      <div class="nav-left"><a class="nav-item" href="/databooze">
-          <h2 class="title is-5">DataBooze</h2>
-        </a><a class="nav-item" href="/sundial">
-          <h2 class="title is-5">Sundial</h2>
-        </a></div>
-      
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>Andy&#39;s Garden</p></div>
+        </div>
+      </header>
 
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>KAllan&#39;s Telephone and Answering Machine Notes</h1>
       
-    </nav>
+<p class='desc'>Practicing working with Docker</p>
+
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+<line x1="16" y1="2" x2="16" y2="6" />
+<line x1="8" y1="2" x2="8" y2="6" />
+<line x1="3" y1="10" x2="21" y2="10" />
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2021-04-11T00:00:00Z'>2021, Apr 11</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><circle cx="12" cy="12" r="10" />
+<polyline points="12 6 12 12 15 15" />
+</svg>
+8 mins read
+</span>
+
+
+</div>
+
 
   </div>
-  <script src="/js/navicon-shift.js"></script>
-</section>
-<section class="section">
-  <div class="container">
-    <div class="subtitle tags is-6 is-pulled-right">
-      
-    </div>
-    <h2 class="subtitle is-6">April 11, 2021</h2>
-    <h1 class="title">KAllan&#39;s Telephone and Answering Machine Notes</h1>
-    
-    <div class="content">
-      <h2 id="setup">Setup</h2>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <h2 id="setup">Setup</h2>
 <h3 id="installing-docker">Installing <code>docker</code></h3>
 <p>I always like the DigitalOcean tutorials, so that&rsquo;s what I followed here. <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04">Installing Docker on
 Ubuntu 20.04</a></p>
@@ -298,30 +377,67 @@ this exercise is to see what I know about docker, not ruby. And given that the <
 is so simple, I debated just translating it straight to python (or even <code>curl</code>). But actully,
 because it was so small and the idea of the program is so simple, I chose to stick it out.</p>
 
-      
-      <div class="related">
 </div>
-      
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z" />
+<line x1="7" y1="7" x2="7" y2="7" />
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/docker/'>docker</a>, <a class='tag' href='/tags/golang/'>golang</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/blog/clojurescript-project-setup/'>
+        <span aria-hidden='true'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><line x1="20" y1="12" x2="4" y2="12" />
+<polyline points="10 18 4 12 10 6" />
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>Clojurescript Project Setup</a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><div class='copyright'>
+  <p> &copy; 2020-2022 Andy Lu </p>
+</div>
+
+        </div>
+      </footer>
+
     </div>
-    
-  </div>
-</section>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
 
-    <script src="/js/copycode.js"></script>
+<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
 
+</body>
 
-
-<section class="section">
-  <div class="container has-text-centered">
-    <p>&copy; Andy Lu 2020</p>
-    
-      <p>Powered by <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/ribice/kiss">Kiss</a>.</p>
-    
-  </div>
-</section>
-<script async src="https://cdn.panelbear.com/analytics.js?site=1dDaNKWztfE"></script>
-<script>
-    window.panelbear = window.panelbear || function() { (window.panelbear.q = window.panelbear.q || []).push(arguments); };
-    panelbear('config', { site: '1dDaNKWztfE' });
-</script>
+</html>
 
