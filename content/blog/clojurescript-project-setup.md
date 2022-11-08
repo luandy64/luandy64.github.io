@@ -58,7 +58,7 @@ M-x package-install [RET] cider [RET]
 When I run `M-x cider-version`, I get `CIDER 0.26.0-snapshot`.
 
 If you haven't already, kill the REPL we opened from `lein fig:build`.
-We're going to start a new one in emacs. 
+We're going to start a new one in emacs.
 
 Open `src/my_awesome_project/core.cljs` in a buffer. Then run
 
