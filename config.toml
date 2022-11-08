@@ -1,33 +1,63 @@
 baseurl = "https://andylu.dev/"
-languageCode = "en"
-title = "Andy Lu's Blog"
-theme = "kiss"
-copyright = "&copy; Andy Lu 2020"
+title = "Andy's Garden"
+# for smart copyright line, leave this blank and check [params.copyright]
+copyright = ""
+
+theme = "minimo"
+
 disqusShortname = ""
 googleAnalytics = ""
-Paginate = 50 # Number of posts per page
-enableRobotsTXT = true
 
-[params.rss] # Adding this tag enables RSS feed
-includeContent = true # Includes whole content in rss
-authorName = "Andy Lu" # Author full name
-authorEmail = "andy@andyrlu.com" # Author email
+Paginate = 5
+preserveTaxonomyNames = true
 
-[params.assets]
-customCSS = ["css/custom.css"]
+enableRobotsTXT = true # generate robots.txt
+
+# Syntax Highlighting ( https://gohugo.io/content-management/syntax-highlighting/ )
+pygmentsCodefences = true
+
+enableEmoji = true
+
+# Missing translations will default to this content language
+defaultContentLanguage = "en"
 
 [params.info]
-adsense = "" # Adsense ID (ID only, without ca-pub-)
-enableSocial = true # Adds OpenGraph and Twitter cards
-homeTitle = "Andy's Blog" # Title for home page
-poweredby = true # Adds powered by hugo and kiss below Copyright
-related = true # Includes related articles at the bottom of the article
-codeCopy = true # Add copy button above code blocks
 description = "A page in Andy's blog"
+title404 = "Nothing's here!"
 
-[params.features]
-disqusOnDemand = true  # Load Disqus comments on click
+[params.assets]
+favicon = "/favicon.ico"
+customCSS = ["css/custom.css"]
+customJS = ["js/custom.js"]
+gopher = "" # used in 404 template ( Generator: https://gopherize.me )
 
+[params.copyright]
+prefix = ""
+holder = "Andy Lu"
+startYear = "2020"
+suffix = ""
+
+[params.settings]
+# date & time format: https://golang.org/pkg/time/
+dateFormat = "2006, Jan 02"
+listDateFormat = "2006, Jan 02"
+archiveDateFormat = "Jan 02"
+hideEntryNavigation = ["page"] # boolean / array of sections
+hideEntryMeta = ["page"] # boolean / array of sections
+showReadingTime = true
+showLastmod = true
+taxonomyCloudShuffle = true
+accentColor = "#0033ff"
+hideMainMenu = true
+
+[params.sidebar]
+enable = true
+
+[params.widgets]
+header = ["breadcrumbs"]
+homepage = ["recent_posts"]
+sidebar = ["about","taxonomy_cloud"]
+footer = []
 
 [params.opengraph.facebook]
 admins = [] # array of Facebook IDs
@@ -35,38 +65,81 @@ appID = ""
 pageID = ""
 
 [params.opengraph.twitter]
-page = "" # Twitter Page username. If not set, params.social.twitter will be used.
+page = "" # Twitter page username
+
+[params.seo]
+# Title Separator: - – — · • * ⋆ | ~ « » < >
+titleSeparator = "•"
 
 [params.social]
-twitter = "_andy_lu_"
-github = "luandy64"
-#email = "andy@andyrlu.com"
-linkedin = "andyrlu"
-# facebook = ""
-# instagram = ""
-# codepen = ""
-# rss = "index.xml" # Add this to show RSS button in social.
+codepen = ""
+email = ""
+facebook = ""
+github = ""
+gitlab = ""
+instagram = ""
+linkedin = ""
+twitter = ""
+telegram = ""
+google_scholar = ""
+youtube = ""
 
-[params.social.config]
-#platforms = ["github","facebook","twitter","instagram","email","codepen","linkedin"]
-platforms = ["twitter","github","linkedin"]
+[params.comments]
+enable = false
 
-# [params.matomoAnalytics]
-# siteID = 1
-# rootURL = "//matomo.example.com/"
+# Isso: https://posativ.org/isso/
+[params.comments.isso]
+enable = false
+scriptSrc = "" # "https://isso.example.com/js/embed.min.js"
+dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author='true'"
 
-#[params.fathomAnalytics]
-#rootURL = "//fathom.example.com/"
+[params.comments.staticman]
+enable = true
+apiEndpoint = "https://api.staticman.net/v2/entry"
+maxDepth = 2
+username = "MunifTanjim"
+repository = "minimo"
 
-[params.panelbear]
-siteID = "1dDaNKWztfE"
+# Utterances: https://utteranc.es
+[params.comments.utterances]
+enable = false
+issueTerm = "pathname" # pathname / url / title / og:title / <string>
+label = ""
+theme = "github-light"
+
+[params.comments.utterances.github]
+username = "MunifTanjim"
+repository = "minimo"
+
+[params.search]
+client = "fuse" # algolia / fuse / lunr
+
+[params.search.algolia]
+appId = ""
+indexName = ""
+searchApiKey = ""
 
 [taxonomies]
-tag ="tags"
+author = "authors"
+category = "categories"
+series = "series"
+tag = "tags"
 
-#[blackfriday]
-#hrefTargetBlank = true
+[permalinks]
+page = "/:slug/"
 
-[params.sections_left]
-"/sundial" = "Sundial"
-"/databooze" = "DataBooze"
+[[menu.main]]
+name = "Repo"
+weight = -10
+identifier = "repository"
+url = "https://github.com/MunifTanjim/minimo"
+
+[blackfriday]
+hrefTargetBlank = true
+
+[languages]
+# edit this block for your own language
+[languages.en]
+lang = "en"
+languageName = "English"
+weight = 1
