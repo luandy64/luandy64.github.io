@@ -13,4 +13,26 @@
     git worktree add ./public master
   #+end_src
 
-  
+* On Writing
+
+  I've added an archetype for the two types of posts I currently support on this
+  site.
+
+  #+begin_src sh
+    hugo new handwritten/restarting-my-corner-of-the-internet.md
+    Content "/Users/andylu/git/luandy64.github.io/content/handwritten/restarting-my-corner-of-the-internet.md" created
+  #+end_src
+
+  #+begin_src sh
+    hugo new blog/til-silica-gel.md
+    Content "/Users/andylu/git/luandy64.github.io/content/blog/til-silica-gel.md" created
+  #+end_src
+
+* Deploying
+
+  So you're writing on the dev branch. Then when you're ready to publish, run
+
+  - =hugo serve= to render only non-draft pages
+  - =hugo= on the dev branch
+  - =git add .= on the master branch
+  - commit and push the master and wait for the site to update
