@@ -1,6 +1,7 @@
 ---
 title: "Clojurescript Project Setup"
 date: 2020-07-06T07:52:15-05:00
+lastmod: 2020-07-06T07:52:15-05:00
 description: "Noting how I like to setup cljs projects"
 tags:
  - clojurescript

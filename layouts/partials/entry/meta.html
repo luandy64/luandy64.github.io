@@ -1,0 +1,27 @@
+{{- $dateFormat := ( .Site.Params.settings.dateFormat | default "2006, Jan 02" ) -}}
+<div class='entry-meta'>
+    <!-- Posted -->
+    <div class='posted-on'>
+        <strong>
+            Posted
+        </strong>
+        <span class='screen-reader-text'>{{ i18n "postedOn" }} </span>
+        <time class='entry-date' datetime='{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}'>
+            {{- .Date.Format $dateFormat -}}
+        </time>
+    </div>
+    <!-- Modified -->
+    <div class='last-modded'>
+        <strong>
+            Modified
+        </strong>
+        <span class='screen-reader-text'>{{ i18n "Last Modified" }} </span>
+        <time class='entry-date' datetime='{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}'>
+            {{- .Lastmod.Format $dateFormat -}}
+        </time>
+    </div>
+    <!-- Reading Time -->
+    <div class='reading-time'>
+        {{ i18n "readingTime" .ReadingTime }}
+    </div>
+</div>
