@@ -5,7 +5,30 @@
     <link>https://andylu.dev/blog/</link>
     <description>Recent content in Blogs on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 11 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Nov 2022 23:00:56 -0500</lastBuildDate><atom:link href="https://andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git Submodules</title>
+      <link>https://andylu.dev/blog/git-submodules/</link>
+      <pubDate>Tue, 08 Nov 2022 23:00:56 -0500</pubDate>
+      
+      <guid>https://andylu.dev/blog/git-submodules/</guid>
+      <description>The first time I learned about git submodules was actually from working with hugo.
+The documentation used to describe how you can have your main branch live in a directory that points to a diffent origin than your current branch.
+It&amp;rsquo;s a cool feature that I never remember how to use, so here are notes I took after rediscovering it recently.
+To add a submodule
+git submodule add https://github.com/some-other-repo To clone a submodule locally</description>
+    </item>
+    
+    <item>
+      <title>TIL: Silica Gel can make Dried Bouquet</title>
+      <link>https://andylu.dev/blog/til-silica-gel/</link>
+      <pubDate>Tue, 08 Nov 2022 16:41:06 -0500</pubDate>
+      
+      <guid>https://andylu.dev/blog/til-silica-gel/</guid>
+      <description>Was in a flower shop today and the cashier was trying to describe how a big carton of silica gel can be used to dry out flowers.
+I chuckled because I&amp;rsquo;m not entirely sure where to get a bunch of silica gel, but then thought it&amp;rsquo;s time to start hoarding &amp;ldquo;Do not eat&amp;rdquo; packets.</description>
+    </item>
+    
     <item>
       <title>KAllan&#39;s Telephone and Answering Machine Notes</title>
       <link>https://andylu.dev/blog/docker-practice/</link>

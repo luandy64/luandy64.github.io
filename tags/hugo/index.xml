@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on Andy&#39;s Garden</title>
+    <link>https://andylu.dev/tags/hugo/</link>
+    <description>Recent content in hugo on Andy&#39;s Garden</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 08 Nov 2022 23:00:56 -0500</lastBuildDate><atom:link href="https://andylu.dev/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git Submodules</title>
+      <link>https://andylu.dev/blog/git-submodules/</link>
+      <pubDate>Tue, 08 Nov 2022 23:00:56 -0500</pubDate>
+      
+      <guid>https://andylu.dev/blog/git-submodules/</guid>
+      <description>The first time I learned about git submodules was actually from working with hugo.
+The documentation used to describe how you can have your main branch live in a directory that points to a diffent origin than your current branch.
+It&amp;rsquo;s a cool feature that I never remember how to use, so here are notes I took after rediscovering it recently.
+To add a submodule
+git submodule add https://github.com/some-other-repo To clone a submodule locally</description>
+    </item>
+    
+  </channel>
+</rss>
