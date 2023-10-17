@@ -7,14 +7,14 @@
 
 <meta property='og:title' content='Clojurescript Project Setup • Andy&#39;s Garden'>
 <meta property='og:description' content='Noting how I like to setup cljs projects'>
-<meta property='og:url' content='https://andylu.dev/blog/clojurescript-project-setup/'>
+<meta property='og:url' content='https://blog.andylu.dev/blog/clojurescript-project-setup/'>
 <meta property='og:site_name' content='Andy&#39;s Garden'>
 <meta property='og:type' content='article'><meta property='article:section' content='blog'><meta property='article:tag' content='clojurescript'><meta property='article:tag' content='emacs'><meta property='article:tag' content='projects'><meta property='article:published_time' content='2020-07-06T07:52:15-05:00'/><meta property='article:modified_time' content='2020-07-06T07:52:15-05:00'/><meta name='twitter:card' content='summary'>
 
-<meta name="generator" content="Hugo 0.105.0">
+<meta name="generator" content="Hugo 0.83.0-DEV" />
 
   <title>Clojurescript Project Setup • Andy&#39;s Garden</title>
-  <link rel='canonical' href='https://andylu.dev/blog/clojurescript-project-setup/'>
+  <link rel='canonical' href='https://blog.andylu.dev/blog/clojurescript-project-setup/'>
   
   
   <link rel='icon' href='/favicon.ico'>
@@ -53,6 +53,10 @@
 
   <div class='container list-container'>
   <ul class='list taxonomy-cloud'><li>
+          <a href='/tags/babashka/' style='font-size:2em'>babashka</a>
+      </li><li>
+          <a href='/tags/clojure/' style='font-size:1em'>clojure</a>
+      </li><li>
           <a href='/tags/clojurescript/' style='font-size:1em'>clojurescript</a>
       </li><li>
           <a href='/tags/docker/' style='font-size:1em'>docker</a>
@@ -65,7 +69,9 @@
       </li><li>
           <a href='/tags/hugo/' style='font-size:1em'>hugo</a>
       </li><li>
-          <a href='/tags/projects/' style='font-size:1em'>projects</a>
+          <a href='/tags/projects/' style='font-size:2em'>projects</a>
+      </li><li>
+          <a href='/tags/story/' style='font-size:1em'>story</a>
       </li></ul>
 </div>
 
@@ -180,24 +186,24 @@ exist, so here we are today.</p>
 installed through my package manager.</p>
 <h4 id="instructions">Instructions</h4>
 <p>In your terminal, navigate to where you want the project to live and run</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ lein new figwheel-main my-awesome-project -- --reagent
-</span></span></code></pre></div><p>You should see a new directory called <code>my-awesome-project</code>. There&rsquo;s a
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ lein new figwheel-main my-awesome-project -- --reagent
+</code></pre></div><p>You should see a new directory called <code>my-awesome-project</code>. There&rsquo;s a
 basic skeleton that is created for you, so we want to check that it works</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ cd my-awesome-project
-</span></span><span style="display:flex;"><span>$ lein fig:build
-</span></span></code></pre></div><p>This will compile the clojurescript into javascript, serve the project on
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd my-awesome-project
+$ lein fig:build
+</code></pre></div><p>This will compile the clojurescript into javascript, serve the project on
 (by default) <code>http://localhost:9500</code>, and give you a clojurescript REPL.</p>
 <p>If you don&rsquo;t use emacs, I recommend you leave this REPL open and start
 editing the code in <code>src/my_awesome_project/core.cljs</code>. If you do use
 emacs, I recommend setting up <a href="https://github.com/clojure-emacs/cider">CIDER</a> and getting <a href="https://github.com/nrepl/nrepl">nREPL</a> to work.</p>
 <p>First we open emacs and install CIDER</p>
-<pre tabindex="0"><code>M-x package-refresh-contents [RET]
+<pre><code>M-x package-refresh-contents [RET]
 M-x package-install [RET] cider [RET]
 </code></pre><p>When I run <code>M-x cider-version</code>, I get <code>CIDER 0.26.0-snapshot</code>.</p>
 <p>If you haven&rsquo;t already, kill the REPL we opened from <code>lein fig:build</code>.
 We&rsquo;re going to start a new one in emacs.</p>
 <p>Open <code>src/my_awesome_project/core.cljs</code> in a buffer. Then run</p>
-<pre tabindex="0"><code>M-x cider-jack-in-cljs [RET]
+<pre><code>M-x cider-jack-in-cljs [RET]
 </code></pre><p>A series of prompts will appear, answer with:</p>
 <ul>
 <li><code>lein</code>
@@ -221,31 +227,31 @@ use Github and didn&rsquo;t test those options.</p>
 your project: <code>index.html</code>, <code>style.css</code>, and <code>main.js</code>. Obviously, the
 names are up to you, but here&rsquo;s where I got the files.</p>
 <p><code>index.html</code> is just some boilerplate HTML. Here&rsquo;s one you can use:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;My title&lt;/<span style="color:#f92672">title</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;style.css&#34;</span>/&gt;
-</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">head</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">body</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
-</span></span></code></pre></div><p>The important part here is that you have some element with <code>id=&quot;app&quot;</code>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;My title&lt;/<span style="color:#f92672">title</span>&gt;
+    &lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/css&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;style.css&#34;</span>/&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>The important part here is that you have some element with <code>id=&quot;app&quot;</code>
 because that&rsquo;s how we hook up the javascript to the project. But again,
 even that is configurable.</p>
 <p>To get <code>style.css</code> and <code>main.js</code>, I run these commands at the root of the
 project</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ lein fig:min
-</span></span><span style="display:flex;"><span>2020-07-06 09:13:50.378:INFO::main: Logging initialized @4805ms to org.eclipse.jetty.util.log.StdErrLog
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Figwheel<span style="color:#f92672">]</span> Validating figwheel-main.edn
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Figwheel<span style="color:#f92672">]</span> figwheel-main.edn is valid <span style="color:#ae81ff">\(</span>ツ<span style="color:#f92672">)</span>/
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Figwheel<span style="color:#f92672">]</span> Compiling build dev to <span style="color:#e6db74">&#34;resources/public/cljs-out/dev-main.js&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Figwheel<span style="color:#f92672">]</span> Successfully compiled build dev to <span style="color:#e6db74">&#34;resources/public/cljs-out/dev-main.js&#34;</span> in 12.307 seconds.
-</span></span><span style="display:flex;"><span>$ cp resources/public/cljs-out/dev-main.js main.js
-</span></span><span style="display:flex;"><span>$ cp resources/public/css/style.css .
-</span></span></code></pre></div><p>So now you can commit the HTML, CSS, and JS to the <code>gh-pages</code> branch,
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ lein fig:min
+2020-07-06 09:13:50.378:INFO::main: Logging initialized @4805ms to org.eclipse.jetty.util.log.StdErrLog
+<span style="color:#f92672">[</span>Figwheel<span style="color:#f92672">]</span> Validating figwheel-main.edn
+<span style="color:#f92672">[</span>Figwheel<span style="color:#f92672">]</span> figwheel-main.edn is valid <span style="color:#ae81ff">\(</span>ツ<span style="color:#f92672">)</span>/
+<span style="color:#f92672">[</span>Figwheel<span style="color:#f92672">]</span> Compiling build dev to <span style="color:#e6db74">&#34;resources/public/cljs-out/dev-main.js&#34;</span>
+<span style="color:#f92672">[</span>Figwheel<span style="color:#f92672">]</span> Successfully compiled build dev to <span style="color:#e6db74">&#34;resources/public/cljs-out/dev-main.js&#34;</span> in 12.307 seconds.
+$ cp resources/public/cljs-out/dev-main.js main.js
+$ cp resources/public/css/style.css .
+</code></pre></div><p>So now you can commit the HTML, CSS, and JS to the <code>gh-pages</code> branch,
 push, turn on Github Pages deploys in the Settings tab of your repo, and
 see your live project.</p>
 

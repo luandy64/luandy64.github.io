@@ -7,14 +7,14 @@
 
 <meta property='og:title' content='KAllan&#39;s Telephone and Answering Machine Notes • Andy&#39;s Garden'>
 <meta property='og:description' content='Practicing working with Docker'>
-<meta property='og:url' content='https://andylu.dev/blog/docker-practice/'>
+<meta property='og:url' content='https://blog.andylu.dev/blog/docker-practice/'>
 <meta property='og:site_name' content='Andy&#39;s Garden'>
 <meta property='og:type' content='article'><meta property='article:section' content='blog'><meta property='article:tag' content='docker'><meta property='article:tag' content='golang'><meta property='article:published_time' content='2021-04-11T00:00:00Z'/><meta property='article:modified_time' content='2021-04-11T00:00:00Z'/><meta name='twitter:card' content='summary'>
 
-<meta name="generator" content="Hugo 0.105.0">
+<meta name="generator" content="Hugo 0.83.0-DEV" />
 
   <title>KAllan&#39;s Telephone and Answering Machine Notes • Andy&#39;s Garden</title>
-  <link rel='canonical' href='https://andylu.dev/blog/docker-practice/'>
+  <link rel='canonical' href='https://blog.andylu.dev/blog/docker-practice/'>
   
   
   <link rel='icon' href='/favicon.ico'>
@@ -53,6 +53,10 @@
 
   <div class='container list-container'>
   <ul class='list taxonomy-cloud'><li>
+          <a href='/tags/babashka/' style='font-size:2em'>babashka</a>
+      </li><li>
+          <a href='/tags/clojure/' style='font-size:1em'>clojure</a>
+      </li><li>
           <a href='/tags/clojurescript/' style='font-size:1em'>clojurescript</a>
       </li><li>
           <a href='/tags/docker/' style='font-size:1em'>docker</a>
@@ -65,7 +69,9 @@
       </li><li>
           <a href='/tags/hugo/' style='font-size:1em'>hugo</a>
       </li><li>
-          <a href='/tags/projects/' style='font-size:1em'>projects</a>
+          <a href='/tags/projects/' style='font-size:2em'>projects</a>
+      </li><li>
+          <a href='/tags/story/' style='font-size:1em'>story</a>
       </li></ul>
 </div>
 
@@ -170,9 +176,9 @@ Ubuntu 20.04</a></p>
 <p>One note: I had to restart my computer instead of just logging out in order to get the docker group
 update to take effect.</p>
 <h3 id="clone-the-repos">Clone the repos</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone git@github.com:KAllan357/answering-machine.git
-</span></span><span style="display:flex;"><span>git clone git@github.com:KAllan357/telephone.git
-</span></span></code></pre></div><p>Nothing special here.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone git@github.com:KAllan357/answering-machine.git
+git clone git@github.com:KAllan357/telephone.git
+</code></pre></div><p>Nothing special here.</p>
 <h3 id="install-go">Install Go</h3>
 <p>I just <a href="https://golang.org/doc/install">followed these instructions</a>.</p>
 <h2 id="do-the-thing">Do the thing</h2>
@@ -183,61 +189,61 @@ log them when it handles them.</p>
 <h3 id="start-the-answering-machine-container">Start the answering machine container</h3>
 <p>I need to build the thing first.</p>
 <p>My <code>docker build .</code> hit this error</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker build .
-</span></span><span style="display:flex;"><span>Sending build context to Docker daemon  74.24kB
-</span></span><span style="display:flex;"><span>Step 1/10 : FROM debian:wheezy
-</span></span><span style="display:flex;"><span>wheezy: Pulling from library/debian
-</span></span><span style="display:flex;"><span>2b15b7abe8b3: Pull complete
-</span></span><span style="display:flex;"><span>Digest: sha256:2259b099d947443e44bbd1c94967c785361af8fd22df48a08a3942e2d5630849
-</span></span><span style="display:flex;"><span>Status: Downloaded newer image <span style="color:#66d9ef">for</span> debian:wheezy
-</span></span><span style="display:flex;"><span> ---&gt; 10fcec6d95c4
-</span></span><span style="display:flex;"><span>Step 2/10 : RUN apt-get update -y <span style="color:#f92672">&amp;&amp;</span> apt-get install --no-install-recommends -y -q curl build-essential ca-certificates
-</span></span><span style="display:flex;"><span> ---&gt; Running in 900695c2fa97
-</span></span><span style="display:flex;"><span>Ign http://deb.debian.org wheezy Release.gpg
-</span></span><span style="display:flex;"><span>Ign http://deb.debian.org wheezy-updates Release.gpg
-</span></span><span style="display:flex;"><span>Ign http://deb.debian.org wheezy Release
-</span></span><span style="display:flex;"><span>Ign http://security.debian.org wheezy/updates Release.gpg
-</span></span><span style="display:flex;"><span>Ign http://deb.debian.org wheezy-updates Release
-</span></span><span style="display:flex;"><span>Ign http://security.debian.org wheezy/updates Release
-</span></span><span style="display:flex;"><span>Err http://security.debian.org wheezy/updates/main amd64 Packages
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Err http://security.debian.org wheezy/updates/main amd64 Packages
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Err http://security.debian.org wheezy/updates/main amd64 Packages
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Err http://security.debian.org wheezy/updates/main amd64 Packages
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Err http://security.debian.org wheezy/updates/main amd64 Packages
-</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">404</span>  Not Found <span style="color:#f92672">[</span>IP: 151.101.66.132 80<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>Err http://deb.debian.org wheezy/main amd64 Packages
-</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">404</span>  Not Found
-</span></span><span style="display:flex;"><span>Err http://deb.debian.org wheezy-updates/main amd64 Packages
-</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">404</span>  Not Found
-</span></span><span style="display:flex;"><span>W: Failed to fetch http://deb.debian.org/debian/dists/wheezy/main/binary-amd64/Packages  <span style="color:#ae81ff">404</span>  Not Found
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>W: Failed to fetch http://deb.debian.org/debian/dists/wheezy-updates/main/binary-amd64/Packages  <span style="color:#ae81ff">404</span>  Not Found
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>W: Failed to fetch http://security.debian.org/debian-security/dists/wheezy/updates/main/binary-amd64/Packages  <span style="color:#ae81ff">404</span>  Not Found <span style="color:#f92672">[</span>IP: 151.101.66.132 80<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>E: Some index files failed to download. They have been ignored, or old ones used instead.
-</span></span><span style="display:flex;"><span>The command <span style="color:#e6db74">&#39;/bin/sh -c apt-get update -y &amp;&amp; apt-get install --no-install-recommends -y -q curl build-essential ca-certificates&#39;</span> returned a non-zero code: <span style="color:#ae81ff">100</span>
-</span></span></code></pre></div><p>My first thought is maybe it has to do with <code>wheezy</code>? So I dropped that tag and it seems to run
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build .
+Sending build context to Docker daemon  74.24kB
+Step 1/10 : FROM debian:wheezy
+wheezy: Pulling from library/debian
+2b15b7abe8b3: Pull complete
+Digest: sha256:2259b099d947443e44bbd1c94967c785361af8fd22df48a08a3942e2d5630849
+Status: Downloaded newer image <span style="color:#66d9ef">for</span> debian:wheezy
+ ---&gt; 10fcec6d95c4
+Step 2/10 : RUN apt-get update -y <span style="color:#f92672">&amp;&amp;</span> apt-get install --no-install-recommends -y -q curl build-essential ca-certificates
+ ---&gt; Running in 900695c2fa97
+Ign http://deb.debian.org wheezy Release.gpg
+Ign http://deb.debian.org wheezy-updates Release.gpg
+Ign http://deb.debian.org wheezy Release
+Ign http://security.debian.org wheezy/updates Release.gpg
+Ign http://deb.debian.org wheezy-updates Release
+Ign http://security.debian.org wheezy/updates Release
+Err http://security.debian.org wheezy/updates/main amd64 Packages
+
+Err http://security.debian.org wheezy/updates/main amd64 Packages
+
+Err http://security.debian.org wheezy/updates/main amd64 Packages
+
+Err http://security.debian.org wheezy/updates/main amd64 Packages
+
+Err http://security.debian.org wheezy/updates/main amd64 Packages
+  <span style="color:#ae81ff">404</span>  Not Found <span style="color:#f92672">[</span>IP: 151.101.66.132 80<span style="color:#f92672">]</span>
+Err http://deb.debian.org wheezy/main amd64 Packages
+  <span style="color:#ae81ff">404</span>  Not Found
+Err http://deb.debian.org wheezy-updates/main amd64 Packages
+  <span style="color:#ae81ff">404</span>  Not Found
+W: Failed to fetch http://deb.debian.org/debian/dists/wheezy/main/binary-amd64/Packages  <span style="color:#ae81ff">404</span>  Not Found
+
+W: Failed to fetch http://deb.debian.org/debian/dists/wheezy-updates/main/binary-amd64/Packages  <span style="color:#ae81ff">404</span>  Not Found
+
+W: Failed to fetch http://security.debian.org/debian-security/dists/wheezy/updates/main/binary-amd64/Packages  <span style="color:#ae81ff">404</span>  Not Found <span style="color:#f92672">[</span>IP: 151.101.66.132 80<span style="color:#f92672">]</span>
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+The command <span style="color:#e6db74">&#39;/bin/sh -c apt-get update -y &amp;&amp; apt-get install --no-install-recommends -y -q curl build-essential ca-certificates&#39;</span> returned a non-zero code: <span style="color:#ae81ff">100</span>
+</code></pre></div><p>My first thought is maybe it has to do with <code>wheezy</code>? So I dropped that tag and it seems to run
 fine. <code>docker images</code> showed me the successful build. Oh, I also bumped the <code>go</code> version because I
 noticed my install grabbed <code>v1.6</code> instead of <code>v1.3</code>. I sure that won&rsquo;t affect this exercise very
 much.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span>modified   Dockerfile
-</span></span><span style="display:flex;"><span><span style="color:#75715e">@@ -1,11 +1,12 @@
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">-FROM debian:wheezy
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+FROM debian
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
-</span></span><span style="display:flex;"><span> RUN apt-get update -y &amp;&amp; apt-get install --no-install-recommends -y -q curl build-essential ca-certificates
-</span></span><span style="display:flex;"><span><span style="color:#f92672">-RUN mkdir /usr/local/go &amp;&amp; curl https://storage.googleapis.com/golang/go1.3.linux-amd64.tar.gz | tar xvzf - -C /usr/local/go --strip-components=1
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN mkdir /usr/local/go &amp;&amp; curl https://storage.googleapis.com/golang/go1.6.linux-amd64.tar.gz | tar xvzf - -C /usr/local/go --strip-components=1
-</span></span></span></code></pre></div><p>Ah a simple <code>docker run -it &lt;image id&gt;</code> said it panicked because it&rsquo;s missing a config. So I&rsquo;ll add
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">modified   Dockerfile
+<span style="color:#75715e">@@ -1,11 +1,12 @@
+</span><span style="color:#75715e"></span><span style="color:#f92672">-FROM debian:wheezy
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+FROM debian
+</span><span style="color:#a6e22e"></span>
+ RUN apt-get update -y &amp;&amp; apt-get install --no-install-recommends -y -q curl build-essential ca-certificates
+<span style="color:#f92672">-RUN mkdir /usr/local/go &amp;&amp; curl https://storage.googleapis.com/golang/go1.3.linux-amd64.tar.gz | tar xvzf - -C /usr/local/go --strip-components=1
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN mkdir /usr/local/go &amp;&amp; curl https://storage.googleapis.com/golang/go1.6.linux-amd64.tar.gz | tar xvzf - -C /usr/local/go --strip-components=1
+</span></code></pre></div><p>Ah a simple <code>docker run -it &lt;image id&gt;</code> said it panicked because it&rsquo;s missing a config. So I&rsquo;ll add
 it like the other files.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span> ADD messages.html /app/
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">+ADD config.json /app/
-</span></span></span></code></pre></div><p>A rebuild and a run looks just like the it did when I ran the <code>main.go</code>, so
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"> ADD messages.html /app/
+<span style="color:#a6e22e">+ADD config.json /app/
+</span></code></pre></div><p>A rebuild and a run looks just like the it did when I ran the <code>main.go</code>, so
 let&rsquo;s try a curl.</p>
 <p>It failed. I need to expose a port.</p>
 <p>Adding a <code>-p 8080:8080</code> seemed to do the trick and I got &ldquo;Jimbo&rsquo;s answering machine&rdquo;. A quick <code>ag</code>
@@ -245,104 +251,104 @@ says that&rsquo;s from the config. Seems like the instructions are out of date, 
 and an environment variable, but 54 is a blank line. And a config file controls the name now.</p>
 <p>I don&rsquo;t want to think too hard about this, so I&rsquo;m moving on to the telephone. But first, I was able
 to get the container running in the background and tailing the logs.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run -dit -p 8080:8080 --name andy_am 94f348ecb597
-</span></span><span style="display:flex;"><span>docker logs -f andy_am
-</span></span></code></pre></div><h3 id="start-the-telephone-container">Start the telephone container</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -dit -p 8080:8080 --name andy_am 94f348ecb597
+docker logs -f andy_am
+</code></pre></div><h3 id="start-the-telephone-container">Start the telephone container</h3>
 <p>Nice, telephone&rsquo;s Dockerfile is super bare - literally empty. Since I pulled the <code>debian</code> image
 earlier, I thought I would use that as a base.</p>
 <p>So I started with an interactive debian container to figure out how to install ruby and gems and
 whatnot.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run -it debian bash
-</span></span><span style="display:flex;"><span>root@7c91165552bb:/#
-</span></span></code></pre></div><p>Installing ruby was easy, and I got rubygems for free. Then installing a gem was easy. So I
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -it debian bash
+root@7c91165552bb:/#
+</code></pre></div><p>Installing ruby was easy, and I got rubygems for free. Then installing a gem was easy. So I
 threw all of that into the Dockerfile.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span>modified   Dockerfile
-</span></span><span style="display:flex;"><span><span style="color:#75715e">@@ -1,12 +1,15 @@
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">-# See the reference doc - http://docs.docker.com/reference/builder/
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+FROM debian
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+MAINTAINER luandy64
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">-# FROM - what is the base image for this Dockerfile? http://docs.docker.com/reference/builder/#from
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-# MAINTAINER - who owns this Dockerfile? http://docs.docker.com/reference/builder/#maintainer
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN apt update
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">-# Install Ruby - perhaps from a package manager? http://docs.docker.com/reference/builder/#run
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN apt install -y ruby
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+RUN gem install httparty
-</span></span></span></code></pre></div><p>Now I just need to figure out how to run the ruby file in the container. So first we need to get the
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">modified   Dockerfile
+<span style="color:#75715e">@@ -1,12 +1,15 @@
+</span><span style="color:#75715e"></span><span style="color:#f92672">-# See the reference doc - http://docs.docker.com/reference/builder/
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+FROM debian
+</span><span style="color:#a6e22e">+MAINTAINER luandy64
+</span><span style="color:#a6e22e"></span>
+<span style="color:#f92672">-# FROM - what is the base image for this Dockerfile? http://docs.docker.com/reference/builder/#from
+</span><span style="color:#f92672">-# MAINTAINER - who owns this Dockerfile? http://docs.docker.com/reference/builder/#maintainer
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN apt update
+</span><span style="color:#a6e22e"></span>
+<span style="color:#f92672">-# Install Ruby - perhaps from a package manager? http://docs.docker.com/reference/builder/#run
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN apt install -y ruby
+</span><span style="color:#a6e22e">+RUN gem install httparty
+</span></code></pre></div><p>Now I just need to figure out how to run the ruby file in the container. So first we need to get the
 ruby file into the container. Taking inspiration from the <code>answering-machine/Dockerfile</code>, I made
 these changes to <code>telephone/Dockerfile</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span>modified   Dockerfile
-</span></span><span style="display:flex;"><span><span style="color:#75715e">@@ -1,12 +1,15 @@
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">-# See the reference doc - http://docs.docker.com/reference/builder/
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+FROM debian
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+MAINTAINER luandy64
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">-# FROM - what is the base image for this Dockerfile? http://docs.docker.com/reference/builder/#from
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-# MAINTAINER - who owns this Dockerfile? http://docs.docker.com/reference/builder/#maintainer
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN apt update
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">-# Install Ruby - perhaps from a package manager? http://docs.docker.com/reference/builder/#run
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN apt install -y ruby
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+RUN gem install httparty
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">-# Install the &#39;httparty&#39; gem - how do you install gems? http://docs.docker.com/reference/builder/#run
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN mkdir /app
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+ADD telephone.rb /app/
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">-# ADD the telephone(.rb) application - http://docs.docker.com/reference/builder/#add
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">-# Write a CMD - http://docs.docker.com/reference/builder/#cmd
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+WORKDIR /app
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+RUN ruby telephone.rb
-</span></span></span></code></pre></div><p>Attempting the build now results in a failure because the <code>telephone.rb</code> script is unhappy. So I
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff">modified   Dockerfile
+<span style="color:#75715e">@@ -1,12 +1,15 @@
+</span><span style="color:#75715e"></span><span style="color:#f92672">-# See the reference doc - http://docs.docker.com/reference/builder/
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+FROM debian
+</span><span style="color:#a6e22e">+MAINTAINER luandy64
+</span><span style="color:#a6e22e"></span>
+<span style="color:#f92672">-# FROM - what is the base image for this Dockerfile? http://docs.docker.com/reference/builder/#from
+</span><span style="color:#f92672">-# MAINTAINER - who owns this Dockerfile? http://docs.docker.com/reference/builder/#maintainer
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN apt update
+</span><span style="color:#a6e22e"></span>
+<span style="color:#f92672">-# Install Ruby - perhaps from a package manager? http://docs.docker.com/reference/builder/#run
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN apt install -y ruby
+</span><span style="color:#a6e22e">+RUN gem install httparty
+</span><span style="color:#a6e22e"></span>
+<span style="color:#f92672">-# Install the &#39;httparty&#39; gem - how do you install gems? http://docs.docker.com/reference/builder/#run
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN mkdir /app
+</span><span style="color:#a6e22e">+ADD telephone.rb /app/
+</span><span style="color:#a6e22e"></span>
+<span style="color:#f92672">-# ADD the telephone(.rb) application - http://docs.docker.com/reference/builder/#add
+</span><span style="color:#f92672"></span>
+<span style="color:#f92672">-# Write a CMD - http://docs.docker.com/reference/builder/#cmd
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+WORKDIR /app
+</span><span style="color:#a6e22e">+RUN ruby telephone.rb
+</span></code></pre></div><p>Attempting the build now results in a failure because the <code>telephone.rb</code> script is unhappy. So I
 comment it out and try to iterate on it. Here&rsquo;s the error I see</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>root@c59f07ad8b04:/app# ruby telephone.rb
-</span></span><span style="display:flex;"><span>Traceback <span style="color:#f92672">(</span>most recent call last<span style="color:#f92672">)</span>:
-</span></span><span style="display:flex;"><span>        12: from telephone.rb:11:in <span style="color:#e6db74">`</span>&lt;main&gt;<span style="color:#e6db74">&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        11: from /var/lib/gems/2.5.0/gems/httparty-0.18.1/lib/httparty.rb:631:in `post&#39;</span>
-</span></span><span style="display:flex;"><span>        10: from /var/lib/gems/2.5.0/gems/httparty-0.18.1/lib/httparty.rb:524:in <span style="color:#e6db74">`</span>post<span style="color:#e6db74">&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         9: from /var/lib/gems/2.5.0/gems/httparty-0.18.1/lib/httparty.rb:594:in `perform_request&#39;</span>
-</span></span><span style="display:flex;"><span>         8: from /var/lib/gems/2.5.0/gems/httparty-0.18.1/lib/httparty/request.rb:145:in <span style="color:#e6db74">`</span>perform<span style="color:#e6db74">&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         7: from /usr/lib/ruby/2.5.0/net/http.rb:1458:in `request&#39;</span>
-</span></span><span style="display:flex;"><span>         6: from /usr/lib/ruby/2.5.0/net/http.rb:909:in <span style="color:#e6db74">`</span>start<span style="color:#e6db74">&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         5: from /usr/lib/ruby/2.5.0/net/http.rb:920:in `do_start&#39;</span>
-</span></span><span style="display:flex;"><span>         4: from /usr/lib/ruby/2.5.0/net/http.rb:935:in <span style="color:#e6db74">`</span>connect<span style="color:#e6db74">&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         3: from /usr/lib/ruby/2.5.0/timeout.rb:103:in `timeout&#39;</span>
-</span></span><span style="display:flex;"><span>         2: from /usr/lib/ruby/2.5.0/timeout.rb:93:in <span style="color:#e6db74">`</span>block in timeout<span style="color:#e6db74">&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         1: from /usr/lib/ruby/2.5.0/net/http.rb:936:in `block in connect&#39;</span>
-</span></span><span style="display:flex;"><span>/usr/lib/ruby/2.5.0/net/http.rb:939:in <span style="color:#e6db74">`</span>rescue in block in connect<span style="color:#960050;background-color:#1e0010">&#39;</span>: Failed to open TCP connection to localhost:8080 <span style="color:#f92672">(</span>Cannot assign requested address - connect<span style="color:#f92672">(</span>2<span style="color:#f92672">)</span> <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#34;localhost&#34;</span> port 8080<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>Errno::EADDRNOTAVAIL<span style="color:#f92672">)</span>
-</span></span></code></pre></div><p>My first thought is maybe it doesn&rsquo;t want <code>localhost</code> but will take <code>127.0.0.1</code>. But that results in
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">root@c59f07ad8b04:/app# ruby telephone.rb
+Traceback <span style="color:#f92672">(</span>most recent call last<span style="color:#f92672">)</span>:
+        12: from telephone.rb:11:in <span style="color:#e6db74">`</span>&lt;main&gt;<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">        11: from /var/lib/gems/2.5.0/gems/httparty-0.18.1/lib/httparty.rb:631:in `post&#39;</span>
+        10: from /var/lib/gems/2.5.0/gems/httparty-0.18.1/lib/httparty.rb:524:in <span style="color:#e6db74">`</span>post<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">         9: from /var/lib/gems/2.5.0/gems/httparty-0.18.1/lib/httparty.rb:594:in `perform_request&#39;</span>
+         8: from /var/lib/gems/2.5.0/gems/httparty-0.18.1/lib/httparty/request.rb:145:in <span style="color:#e6db74">`</span>perform<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">         7: from /usr/lib/ruby/2.5.0/net/http.rb:1458:in `request&#39;</span>
+         6: from /usr/lib/ruby/2.5.0/net/http.rb:909:in <span style="color:#e6db74">`</span>start<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">         5: from /usr/lib/ruby/2.5.0/net/http.rb:920:in `do_start&#39;</span>
+         4: from /usr/lib/ruby/2.5.0/net/http.rb:935:in <span style="color:#e6db74">`</span>connect<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">         3: from /usr/lib/ruby/2.5.0/timeout.rb:103:in `timeout&#39;</span>
+         2: from /usr/lib/ruby/2.5.0/timeout.rb:93:in <span style="color:#e6db74">`</span>block in timeout<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">         1: from /usr/lib/ruby/2.5.0/net/http.rb:936:in `block in connect&#39;</span>
+/usr/lib/ruby/2.5.0/net/http.rb:939:in <span style="color:#e6db74">`</span>rescue in block in connect<span style="color:#960050;background-color:#1e0010">&#39;</span>: Failed to open TCP connection to localhost:8080 <span style="color:#f92672">(</span>Cannot assign requested address - connect<span style="color:#f92672">(</span>2<span style="color:#f92672">)</span> <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#34;localhost&#34;</span> port 8080<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>Errno::EADDRNOTAVAIL<span style="color:#f92672">)</span>
+</code></pre></div><p>My first thought is maybe it doesn&rsquo;t want <code>localhost</code> but will take <code>127.0.0.1</code>. But that results in
 a similar error. So I just tried the IP address of the <code>answering-machine</code> container. That worked, but I wanted
 to make it configurable annd based on an environment variable.</p>
 <p>After looking up how to grab env vars in ruby, I modified <code>telephone.rb</code> for real and rebuilt the
 image.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">-# FIXME
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-url = &#34;http://localhost:8080/messages&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+url = &#34;http://#{ENV[ANSWERING_MACHINE_HOST]}:8080/messages&#34;
-</span></span></span></code></pre></div><p>It kept erroring on me, but I realized that I was calling <code>RUN ruby telephone.rb</code> instead of
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-# FIXME
+</span><span style="color:#f92672">-url = &#34;http://localhost:8080/messages&#34;
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+url = &#34;http://#{ENV[ANSWERING_MACHINE_HOST]}:8080/messages&#34;
+</span></code></pre></div><p>It kept erroring on me, but I realized that I was calling <code>RUN ruby telephone.rb</code> instead of
 <code>CMD ruby telephone.rb</code>. So let&rsquo;s make that change now.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">-RUN ruby telephone.rb
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+CMD ruby telephone.rb
-</span></span></span></code></pre></div><p>It builds successfully now, but if I run the image I get an error about some constant <code>ANSWERING_MACHINE_HOST</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-RUN ruby telephone.rb
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+CMD ruby telephone.rb
+</span></code></pre></div><p>It builds successfully now, but if I run the image I get an error about some constant <code>ANSWERING_MACHINE_HOST</code>.</p>
 <p>Ha, you have to quote keys for maps. Duh.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">- url = &#34;http://#{ENV[ANSWERING_MACHINE_HOST]}:8080/messages&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+ url = &#34;http://#{ENV[&#34;ANSWERING_MACHINE_HOST&#34;]}:8080/messages&#34;
-</span></span></span></code></pre></div><p>I learned that ruby has a &ldquo;safe get&rdquo; from a map too. So I used that to set values for the sender and
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">- url = &#34;http://#{ENV[ANSWERING_MACHINE_HOST]}:8080/messages&#34;
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+ url = &#34;http://#{ENV[&#34;ANSWERING_MACHINE_HOST&#34;]}:8080/messages&#34;
+</span></code></pre></div><p>I learned that ruby has a &ldquo;safe get&rdquo; from a map too. So I used that to set values for the sender and
 message.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">-# FIXME
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-sender = &#34;Telemarketer Bob&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+sender = ENV.fetch(&#34;SENDER&#34;, &#34;Telemarketer Bob&#34;)
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">-# FIXME
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-message = &#34;I have a credit card offer you can&#39;t refuse.&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+message = ENV.fetch(&#34;MESSAGE&#34;, &#34;I have a credit card offer you can&#39;t refuse.&#34;)
-</span></span></span></code></pre></div><p>Finally, the exercise mentions linking two containers. Since I already named the answering machine
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="color:#f92672">-# FIXME
+</span><span style="color:#f92672">-sender = &#34;Telemarketer Bob&#34;
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+sender = ENV.fetch(&#34;SENDER&#34;, &#34;Telemarketer Bob&#34;)
+</span><span style="color:#a6e22e"></span>
+<span style="color:#f92672">-# FIXME
+</span><span style="color:#f92672">-message = &#34;I have a credit card offer you can&#39;t refuse.&#34;
+</span><span style="color:#f92672"></span><span style="color:#a6e22e">+message = ENV.fetch(&#34;MESSAGE&#34;, &#34;I have a credit card offer you can&#39;t refuse.&#34;)
+</span></code></pre></div><p>Finally, the exercise mentions linking two containers. Since I already named the answering machine
 <code>andy_am</code>, I start the telephone with</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run -it -e ANSWERING_MACHINE_HOST<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;andy_am&#39;</span> --link andy_am 80ad0c4699d8
-</span></span></code></pre></div><p>And we can check the logs of the answering machine with</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker logs -f andy_am
-</span></span></code></pre></div><p>And with that I&rsquo;m calling it done.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -it -e ANSWERING_MACHINE_HOST<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;andy_am&#39;</span> --link andy_am 80ad0c4699d8
+</code></pre></div><p>And we can check the logs of the answering machine with</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker logs -f andy_am
+</code></pre></div><p>And with that I&rsquo;m calling it done.</p>
 <h2 id="reflection">Reflection</h2>
 <p>I think this exercise showed me that I know more about Docker than I give myself credit for. Also,
 while I don&rsquo;t have the specifics of &ldquo;my docker workflow&rdquo; nailed down, my goal to always shrink the

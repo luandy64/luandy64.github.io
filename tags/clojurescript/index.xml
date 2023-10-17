@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>clojurescript on Andy&#39;s Garden</title>
-    <link>https://andylu.dev/tags/clojurescript/</link>
+    <link>https://blog.andylu.dev/tags/clojurescript/</link>
     <description>Recent content in clojurescript on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 06 Jul 2020 07:52:15 -0500</lastBuildDate><atom:link href="https://andylu.dev/tags/clojurescript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Jul 2020 07:52:15 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/tags/clojurescript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Clojurescript Project Setup</title>
-      <link>https://andylu.dev/blog/clojurescript-project-setup/</link>
+      <link>https://blog.andylu.dev/blog/clojurescript-project-setup/</link>
       <pubDate>Mon, 06 Jul 2020 07:52:15 -0500</pubDate>
       
-      <guid>https://andylu.dev/blog/clojurescript-project-setup/</guid>
+      <guid>https://blog.andylu.dev/blog/clojurescript-project-setup/</guid>
       <description>Outcomes By the end of this post, you will be able to setup a new clojurescript project, setup emacs to be your development environment, and deploy your app to Github Pages
 Background I&amp;rsquo;ve written two clojurescript projects now, Sundial and DataBooze, and I want to document the set up process. The first time was a massive undertaking because it was my first time. But frustrating enough, so was the second time, even though I thought I nailed down the process and took notes on it.</description>
     </item>

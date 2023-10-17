@@ -2,39 +2,72 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blogs on Andy&#39;s Garden</title>
-    <link>https://andylu.dev/blog/</link>
+    <link>https://blog.andylu.dev/blog/</link>
     <description>Recent content in Blogs on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 08 Nov 2022 23:00:56 -0500</lastBuildDate><atom:link href="https://andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Oct 2023 14:39:22 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Babashka Datetime</title>
+      <link>https://blog.andylu.dev/blog/babashka-datetime/</link>
+      <pubDate>Sun, 15 Oct 2023 14:39:22 -0400</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/babashka-datetime/</guid>
+      <description>If I need a datetime in Python, I reach for
+from datetime import datetime datetime.now() So I need something as quick for clojure.
+Apparently, it&amp;rsquo;s just
+(-&amp;gt; (java.time.LocalDate/now) str) ;; =&amp;gt; &amp;#34;2023-10-15&amp;#34; </description>
+    </item>
+    
+    <item>
+      <title>Future Blog Ideas</title>
+      <link>https://blog.andylu.dev/blog/future-blog-ideas/</link>
+      <pubDate>Sat, 14 Oct 2023 21:48:09 -0400</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/future-blog-ideas/</guid>
+      <description>Here&amp;rsquo;s just a running list of things I want to write down thoughts about.
+ babashka CLI design  </description>
+    </item>
+    
+    <item>
+      <title>Terminal Logging With Color</title>
+      <link>https://blog.andylu.dev/blog/terminal-logging-with-color/</link>
+      <pubDate>Sat, 14 Oct 2023 21:25:56 -0400</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/terminal-logging-with-color/</guid>
+      <description>These days I&amp;rsquo;ve been writing a lot of babashka instead of reaching for bash or python to do minor scripting tasks at work.
+I am also a big fan of the work done at charm and the relevant products in this case are gum and lipgloss.
+Using gum style I can log any text in basically any color I want. And while there&amp;rsquo;s not a ton of functional benefits to this, I think there&amp;rsquo;s something to be said about adding color into the logs we write.</description>
+    </item>
+    
     <item>
       <title>Git Submodules</title>
-      <link>https://andylu.dev/blog/git-submodules/</link>
+      <link>https://blog.andylu.dev/blog/git-submodules/</link>
       <pubDate>Tue, 08 Nov 2022 23:00:56 -0500</pubDate>
       
-      <guid>https://andylu.dev/blog/git-submodules/</guid>
+      <guid>https://blog.andylu.dev/blog/git-submodules/</guid>
       <description>The first time I learned about git submodules was actually from working with hugo.
 The documentation used to describe how you can have your main branch live in a directory that points to a diffent origin than your current branch.
 It&amp;rsquo;s a cool feature that I never remember how to use, so here are notes I took after rediscovering it recently.
-To add a submodule
+ To add a submodule
 git submodule add https://github.com/some-other-repo To clone a submodule locally</description>
     </item>
     
     <item>
       <title>TIL: Silica Gel can make Dried Bouquet</title>
-      <link>https://andylu.dev/blog/til-silica-gel/</link>
+      <link>https://blog.andylu.dev/blog/til-silica-gel/</link>
       <pubDate>Tue, 08 Nov 2022 16:41:06 -0500</pubDate>
       
-      <guid>https://andylu.dev/blog/til-silica-gel/</guid>
+      <guid>https://blog.andylu.dev/blog/til-silica-gel/</guid>
       <description>Was in a flower shop today and the cashier was trying to describe how a big carton of silica gel can be used to dry out flowers.
 I chuckled because I&amp;rsquo;m not entirely sure where to get a bunch of silica gel, but then thought it&amp;rsquo;s time to start hoarding &amp;ldquo;Do not eat&amp;rdquo; packets.</description>
     </item>
     
     <item>
       <title>KAllan&#39;s Telephone and Answering Machine Notes</title>
-      <link>https://andylu.dev/blog/docker-practice/</link>
+      <link>https://blog.andylu.dev/blog/docker-practice/</link>
       <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://andylu.dev/blog/docker-practice/</guid>
+      <guid>https://blog.andylu.dev/blog/docker-practice/</guid>
       <description>Setup Installing docker I always like the DigitalOcean tutorials, so that&amp;rsquo;s what I followed here. Installing Docker on Ubuntu 20.04
 One note: I had to restart my computer instead of just logging out in order to get the docker group update to take effect.
 Clone the repos git clone git@github.com:KAllan357/answering-machine.git git clone git@github.com:KAllan357/telephone.git Nothing special here.
@@ -44,10 +77,10 @@ Do the thing Start the answering machine outside of docker Running go run main.<
     
     <item>
       <title>Clojurescript Project Setup</title>
-      <link>https://andylu.dev/blog/clojurescript-project-setup/</link>
+      <link>https://blog.andylu.dev/blog/clojurescript-project-setup/</link>
       <pubDate>Mon, 06 Jul 2020 07:52:15 -0500</pubDate>
       
-      <guid>https://andylu.dev/blog/clojurescript-project-setup/</guid>
+      <guid>https://blog.andylu.dev/blog/clojurescript-project-setup/</guid>
       <description>Outcomes By the end of this post, you will be able to setup a new clojurescript project, setup emacs to be your development environment, and deploy your app to Github Pages
 Background I&amp;rsquo;ve written two clojurescript projects now, Sundial and DataBooze, and I want to document the set up process. The first time was a massive undertaking because it was my first time. But frustrating enough, so was the second time, even though I thought I nailed down the process and took notes on it.</description>
     </item>

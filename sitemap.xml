@@ -2,56 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://andylu.dev/</loc>
+    <loc>https://blog.andylu.dev/</loc>
+    <lastmod>2023-10-15T14:39:22-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/tags/babashka/</loc>
+    <lastmod>2023-10-15T14:39:22-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/babashka-datetime/</loc>
+    <lastmod>2023-10-15T14:39:22-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/</loc>
+    <lastmod>2023-10-15T14:39:22-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/tags/</loc>
+    <lastmod>2023-10-15T14:39:22-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/future-blog-ideas/</loc>
+    <lastmod>2023-10-14T21:48:09-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/tags/clojure/</loc>
+    <lastmod>2023-10-14T21:25:56-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/tags/projects/</loc>
+    <lastmod>2023-10-14T21:25:56-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/tags/story/</loc>
+    <lastmod>2023-10-14T21:25:56-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/terminal-logging-with-color/</loc>
+    <lastmod>2023-10-14T21:25:56-04:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/tags/git/</loc>
     <lastmod>2022-11-08T23:00:56-05:00</lastmod>
   </url><url>
-    <loc>https://andylu.dev/blog/</loc>
+    <loc>https://blog.andylu.dev/blog/git-submodules/</loc>
     <lastmod>2022-11-08T23:00:56-05:00</lastmod>
   </url><url>
-    <loc>https://andylu.dev/tags/git/</loc>
+    <loc>https://blog.andylu.dev/tags/golang/</loc>
     <lastmod>2022-11-08T23:00:56-05:00</lastmod>
   </url><url>
-    <loc>https://andylu.dev/blog/git-submodules/</loc>
+    <loc>https://blog.andylu.dev/tags/hugo/</loc>
     <lastmod>2022-11-08T23:00:56-05:00</lastmod>
   </url><url>
-    <loc>https://andylu.dev/tags/golang/</loc>
-    <lastmod>2022-11-08T23:00:56-05:00</lastmod>
-  </url><url>
-    <loc>https://andylu.dev/tags/hugo/</loc>
-    <lastmod>2022-11-08T23:00:56-05:00</lastmod>
-  </url><url>
-    <loc>https://andylu.dev/tags/</loc>
-    <lastmod>2022-11-08T23:00:56-05:00</lastmod>
-  </url><url>
-    <loc>https://andylu.dev/blog/til-silica-gel/</loc>
+    <loc>https://blog.andylu.dev/blog/til-silica-gel/</loc>
     <lastmod>2022-11-08T16:41:06-05:00</lastmod>
   </url><url>
-    <loc>https://andylu.dev/handwritten/introducing-handwritten-pages/</loc>
+    <loc>https://blog.andylu.dev/handwritten/introducing-handwritten-pages/</loc>
     <lastmod>2022-10-02T07:52:15-05:00</lastmod>
   </url><url>
-    <loc>https://andylu.dev/tags/docker/</loc>
+    <loc>https://blog.andylu.dev/tags/docker/</loc>
     <lastmod>2021-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://andylu.dev/handwritten/</loc>
+    <loc>https://blog.andylu.dev/handwritten/</loc>
     <lastmod>2021-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://andylu.dev/blog/docker-practice/</loc>
+    <loc>https://blog.andylu.dev/blog/docker-practice/</loc>
     <lastmod>2021-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://andylu.dev/tags/clojurescript/</loc>
+    <loc>https://blog.andylu.dev/tags/clojurescript/</loc>
     <lastmod>2020-07-06T07:52:15-05:00</lastmod>
   </url><url>
-    <loc>https://andylu.dev/blog/clojurescript-project-setup/</loc>
+    <loc>https://blog.andylu.dev/blog/clojurescript-project-setup/</loc>
     <lastmod>2020-07-06T07:52:15-05:00</lastmod>
   </url><url>
-    <loc>https://andylu.dev/tags/emacs/</loc>
+    <loc>https://blog.andylu.dev/tags/emacs/</loc>
     <lastmod>2020-07-06T07:52:15-05:00</lastmod>
   </url><url>
-    <loc>https://andylu.dev/tags/projects/</loc>
-    <lastmod>2020-07-06T07:52:15-05:00</lastmod>
+    <loc>https://blog.andylu.dev/archive/</loc>
   </url><url>
-    <loc>https://andylu.dev/archive/</loc>
-  </url><url>
-    <loc>https://andylu.dev/page/</loc>
+    <loc>https://blog.andylu.dev/page/</loc>
   </url>
 </urlset>
