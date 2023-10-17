@@ -1,4 +1,4 @@
-baseurl = "https://andylu.dev/"
+baseurl = "https://blog.andylu.dev/"
 title = "Andy's Garden"
 # for smart copyright line, leave this blank and check [params.copyright]
 copyright = ""
