@@ -20,5 +20,16 @@
     (shell ["hugo"
             "new"
             (str "handwritten/" file-name)]))
-  publish (println "Running publish command")
+
+  publish
+  (do (println "Creating files in `public`")
+      (shell "hugo")
+      (println "Commiting files")
+      (shell {:dir "./public"} "git add '.'")
+      (shell {:dir "./public"} "git commit -m 'New content'")
+      (println "Pushing dev")
+      (shell "git push")
+      (println "Pushing main")
+      (shell {:dir "./public"} "git push"))
+
   serve   (println "Running serve command")}}
