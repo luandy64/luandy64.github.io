@@ -1,0 +1,24 @@
+{:deps {}
+ :tasks
+ {get-file (let [file-stub (->>
+                            (-> (shell {:out :string}
+                                       "gum input --placeholder='Title...'")
+                                :out
+                                clojure.string/lower-case
+                                clojure.string/trim
+                                (clojure.string/split (re-pattern " ")))
+                            (clojure.string/join "-"))
+                 file-name (str file-stub ".md")]
+             file-name)
+  blog
+  (let [file-name (run 'get-file)]
+    (shell ["hugo"
+            "new"
+            (str "blog/" file-name)]))
+  hand
+  (let [file-name (run 'get-file)]
+    (shell ["hugo"
+            "new"
+            (str "handwritten/" file-name)]))
+  publish (println "Running publish command")
+  serve   (println "Running serve command")}}
