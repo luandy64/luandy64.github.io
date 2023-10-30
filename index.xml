@@ -12,7 +12,9 @@
       <pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate>
       
       <guid>https://blog.andylu.dev/blog/my-babashka-cookbook/</guid>
-      <description>This post is the one I want to reference when I do something in babashka and forget syntax or something.</description>
+      <description>This post is the one I want to reference when I do something in babashka and forget syntax or something.
+Capture a process&amp;rsquo;s STDOUT and process the string after
+(require &amp;#39;[babashka.process :as bp]) (-&amp;gt; (bp/shell {:out :string} &amp;#34;do-the-thing&amp;#34;) :out (clojure.string/split #&amp;#34;\n&amp;#34;)) </description>
     </item>
     
     <item>
