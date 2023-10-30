@@ -5,7 +5,28 @@
     <link>https://blog.andylu.dev/blog/</link>
     <description>Recent content in Blogs on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 15 Oct 2023 14:39:22 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Oct 2023 23:26:22 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Babashka Cookbook</title>
+      <link>https://blog.andylu.dev/blog/my-babashka-cookbook/</link>
+      <pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/my-babashka-cookbook/</guid>
+      <description>This post is the one I want to reference when I do something in babashka and forget syntax or something.</description>
+    </item>
+    
+    <item>
+      <title>Biff Tutorial</title>
+      <link>https://blog.andylu.dev/blog/biff-tutorial/</link>
+      <pubDate>Tue, 17 Oct 2023 19:48:08 -0400</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/biff-tutorial/</guid>
+      <description>Here are my notes as I go through the Biff tutorial.
+I&amp;rsquo;ve made a github repo here.
+I spotted something that didn&amp;rsquo;t work quite right. So I opened an issue and PR on the main repo. Here are those links: issue and PR.
+So I got to a point where the tutorial wanted me to hook up an email sending service to get login information sent out to users. I knew I already had a Resend account, so I opted to hook that up instead.</description>
+    </item>
+    
     <item>
       <title>Babashka Datetime</title>
       <link>https://blog.andylu.dev/blog/babashka-datetime/</link>
