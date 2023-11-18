@@ -56,7 +56,7 @@ enable = true
 [params.widgets]
 header = ["breadcrumbs"]
 homepage = ["recent_posts"]
-sidebar = ["about","taxonomy_cloud"]
+sidebar = ["about","sidebar_menu","taxonomy_cloud"]
 footer = []
 
 [params.opengraph.facebook]
