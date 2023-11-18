@@ -1,3 +1,9 @@
 [sidebar_menu]
 title = ""                            # default: ""
 mirror = ""                           # default: ""
+
+
+[recent_posts]
+title = ""                            # default: "Recent Posts"
+length = 5                            # default: 5
+excludeTypes = ["page"]               # default: ["page"]

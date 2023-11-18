@@ -2,7 +2,6 @@
 date: 2023-11-16T00:00:00-05:00
 lastmod: 2023-11-16T19:04:52-05:00
 title: Now
-type: single
 menu:
   sidebar:
     name: Now
