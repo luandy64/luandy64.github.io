@@ -4,7 +4,28 @@
     <title>Pages on Andy&#39;s Garden</title>
     <link>https://blog.andylu.dev/page/</link>
     <description>Recent content in Pages on Andy&#39;s Garden</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://blog.andylu.dev/page/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 17 Nov 2023 22:04:11 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://blog.andylu.dev/about/</link>
+      <pubDate>Fri, 17 Nov 2023 22:04:11 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/about/</guid>
+      <description>This is my digital garden.</description>
+    </item>
+    
+    <item>
+      <title>Now</title>
+      <link>https://blog.andylu.dev/now/</link>
+      <pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/now/</guid>
+      <description>This is a now page. For stuff that used to be here, check out the archive.
+Self Hosting stuff I&amp;rsquo;m working on my tech independence and putting my tech skills to the test.
+This also relates to things I&amp;rsquo;ve been reading about permacomputing. By keeping the services I depend on to things that I can host and maintain and on older hardware that I&amp;rsquo;m in charge of, maybe I&amp;rsquo;m taking a step towards making technology more sustainable for the planet.</description>
+    </item>
+    
     <item>
       <title>Archive</title>
       <link>https://blog.andylu.dev/archive/</link>

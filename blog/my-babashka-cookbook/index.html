@@ -3,14 +3,14 @@
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <meta name='description' content='This post is the one I want to reference when I do something in babashka and forget syntax or something.
-Capture a process&rsquo;s STDOUT and process the string after
-(require &#39;[babashka.process :as bp]) (-&gt; (bp/shell {:out :string} &#34;do-the-thing&#34;) :out (clojure.string/split #&#34;\n&#34;)) '>
+Capture a process&rsquo;s STDOUT and process the string after (require &#39;[babashka.process :as bp]) (-&gt; (bp/shell {:out :string} &#34;do-the-thing&#34;) :out (clojure.string/split #&#34;\n&#34;)) Import a local library Dynamically You can add deps as one of the first steps in your scripts.
+(require &#39;[babashka.deps :as deps]) (deps/add-deps &#39;{:deps {io.github.lispyclouds/bblgum {:git/sha &#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&#34;} dev.andylu/clj-lipgloss {:local/root &#34;/home/andy/git/clj-lipgloss&#34;}}}) (require &#39;[bblgum.'>
 <meta name='theme-color' content='#0033ff'>
 
 <meta property='og:title' content='My Babashka Cookbook • Andy&#39;s Garden'>
 <meta property='og:description' content='This post is the one I want to reference when I do something in babashka and forget syntax or something.
-Capture a process&rsquo;s STDOUT and process the string after
-(require &#39;[babashka.process :as bp]) (-&gt; (bp/shell {:out :string} &#34;do-the-thing&#34;) :out (clojure.string/split #&#34;\n&#34;)) '>
+Capture a process&rsquo;s STDOUT and process the string after (require &#39;[babashka.process :as bp]) (-&gt; (bp/shell {:out :string} &#34;do-the-thing&#34;) :out (clojure.string/split #&#34;\n&#34;)) Import a local library Dynamically You can add deps as one of the first steps in your scripts.
+(require &#39;[babashka.deps :as deps]) (deps/add-deps &#39;{:deps {io.github.lispyclouds/bblgum {:git/sha &#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&#34;} dev.andylu/clj-lipgloss {:local/root &#34;/home/andy/git/clj-lipgloss&#34;}}}) (require &#39;[bblgum.'>
 <meta property='og:url' content='https://blog.andylu.dev/blog/my-babashka-cookbook/'>
 <meta property='og:site_name' content='Andy&#39;s Garden'>
 <meta property='og:type' content='article'><meta property='article:section' content='blog'><meta property='article:published_time' content='2023-10-29T23:26:22-04:00'/><meta property='article:modified_time' content='2023-10-30T00:08:59-04:00'/><meta name='twitter:card' content='summary'>
@@ -50,7 +50,16 @@ Capture a process&rsquo;s STDOUT and process the string after
     </header>
 
 </section>
-<section class='widget widget-taxonomy_cloud sep-after'>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/'>Home</a></li><li class='item'>
+  <a href='/about/'>About</a></li><li class='item'>
+  <a href='/now/'>Now</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-taxonomy_cloud sep-after'>
   <header>
     <h4 class='title widget-title'>Tags</h4>
   </header>
@@ -58,6 +67,8 @@ Capture a process&rsquo;s STDOUT and process the string after
   <div class='container list-container'>
   <ul class='list taxonomy-cloud'><li>
           <a href='/tags/babashka/' style='font-size:2em'>babashka</a>
+      </li><li>
+          <a href='/tags/bash/' style='font-size:1em'>bash</a>
       </li><li>
           <a href='/tags/clojure/' style='font-size:1em'>clojure</a>
       </li><li>
@@ -71,7 +82,7 @@ Capture a process&rsquo;s STDOUT and process the string after
       </li><li>
           <a href='/tags/golang/' style='font-size:2em'>golang</a>
       </li><li>
-          <a href='/tags/hugo/' style='font-size:1em'>hugo</a>
+          <a href='/tags/hugo/' style='font-size:2em'>hugo</a>
       </li><li>
           <a href='/tags/projects/' style='font-size:2em'>projects</a>
       </li><li>
@@ -148,7 +159,7 @@ Capture a process&rsquo;s STDOUT and process the string after
             Posted
         </strong>
         <span class='screen-reader-text'>Posted on </span>
-        <time class='entry-date' datetime='2023-10-29T23:26:22-04:00'>2023, Oct 29</time>
+        <time class='entry-date' datetime='2023-10-29T23:26:22-04:00'>2023-10-29T23:26:22-04:00</time>
     </div>
     
     <div class='last-modded'>
@@ -156,7 +167,7 @@ Capture a process&rsquo;s STDOUT and process the string after
             Modified
         </strong>
         <span class='screen-reader-text'> </span>
-        <time class='entry-date' datetime='2023-10-30T00:08:59-04:00'>2023, Oct 30</time>
+        <time class='entry-date' datetime='2023-10-30T00:08:59-04:00'>2023-10-30T00:08:59-04:00</time>
     </div>
     
     <div class='reading-time'>
@@ -173,12 +184,29 @@ Capture a process&rsquo;s STDOUT and process the string after
   <div class='container entry-content'>
   <p>This post is the one I want to reference when I do something in <code>babashka</code> and forget syntax or
 something.</p>
-<p>Capture a process&rsquo;s <code>STDOUT</code> and process the string after</p>
+<h1 id="capture-a-processs-stdout-and-process-the-string-after">Capture a process&rsquo;s <code>STDOUT</code> and process the string after</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[babashka.process <span style="color:#e6db74">:as</span> bp])
 
 (-&gt; (<span style="color:#a6e22e">bp/shell</span> {<span style="color:#e6db74">:out</span> <span style="color:#e6db74">:string</span>} <span style="color:#e6db74">&#34;do-the-thing&#34;</span>)
     <span style="color:#e6db74">:out</span>
     (<span style="color:#a6e22e">clojure.string/split</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;\n&#34;</span>))
+</code></pre></div><h1 id="import-a-local-library">Import a local library</h1>
+<h2 id="dynamically">Dynamically</h2>
+<p>You can add deps as one of the first steps in your scripts.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[babashka.deps <span style="color:#e6db74">:as</span> deps])
+(<span style="color:#a6e22e">deps/add-deps</span>
+ <span style="color:#f92672">&#39;</span>{<span style="color:#e6db74">:deps</span> {io.github.lispyclouds/bblgum {<span style="color:#e6db74">:git/sha</span> <span style="color:#e6db74">&#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&#34;</span>}
+          dev.andylu/clj-lipgloss      {<span style="color:#e6db74">:local/root</span> <span style="color:#e6db74">&#34;/home/andy/git/clj-lipgloss&#34;</span>}}})
+
+(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[bblgum.core <span style="color:#e6db74">:as</span> b])
+(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[clj-lipgloss.core <span style="color:#e6db74">:as</span> lg <span style="color:#e6db74">:use</span> [log-info log-warn log-debug]])
+</code></pre></div><h2 id="statically">Statically</h2>
+<p>Put this in a <code>bb.edn</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="color:#e6db74">:deps</span> {io.github.lispyclouds/bblgum {<span style="color:#e6db74">:git/sha</span> <span style="color:#e6db74">&#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&#34;</span>}
+          dev.andylu/clj-lipgloss      {<span style="color:#e6db74">:local/root</span> <span style="color:#e6db74">&#34;/home/andy/git/clj-lipgloss&#34;</span>}}}
+</code></pre></div><p>And then in your code</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[bblgum.core <span style="color:#e6db74">:as</span> b])
+(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[clj-lipgloss.core <span style="color:#e6db74">:as</span> lg <span style="color:#e6db74">:use</span> [log-info log-warn log-debug]])
 </code></pre></div>
 </div>
 
@@ -220,6 +248,21 @@ something.</p>
 </svg>
  Previous</span>
         <span class='screen-reader-text'>Previous post: </span>Biff Tutorial</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/blog/learning-about-hugo/'>
+        <span class='screen-reader-text'>Next post: </span>Learning About Hugo<span aria-hidden='true'>Next <svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><line x1="4" y1="12" x2="20" y2="12" />
+<polyline points="14 6 20 12 14 18" />
+</svg>
+</span>
+      </a>
     </div></div>
 </nav>
 

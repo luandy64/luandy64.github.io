@@ -5,7 +5,25 @@
     <link>https://blog.andylu.dev/tags/</link>
     <description>Recent content in Tags on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 15 Oct 2023 14:39:22 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Nov 2023 15:54:59 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bash</title>
+      <link>https://blog.andylu.dev/tags/bash/</link>
+      <pubDate>Mon, 27 Nov 2023 15:54:59 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://blog.andylu.dev/tags/hugo/</link>
+      <pubDate>Fri, 17 Nov 2023 23:23:16 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>babashka</title>
       <link>https://blog.andylu.dev/tags/babashka/</link>
@@ -57,15 +75,6 @@
       <pubDate>Tue, 08 Nov 2022 23:00:56 -0500</pubDate>
       
       <guid>https://blog.andylu.dev/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://blog.andylu.dev/tags/hugo/</link>
-      <pubDate>Tue, 08 Nov 2022 23:00:56 -0500</pubDate>
-      
-      <guid>https://blog.andylu.dev/tags/hugo/</guid>
       <description></description>
     </item>
     

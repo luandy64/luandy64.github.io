@@ -5,7 +5,43 @@
     <link>https://blog.andylu.dev/blog/</link>
     <description>Recent content in Blogs on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 29 Oct 2023 23:26:22 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Nov 2023 17:03:01 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Self Hosting Email</title>
+      <link>https://blog.andylu.dev/blog/self-hosting-email/</link>
+      <pubDate>Thu, 30 Nov 2023 17:03:01 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/self-hosting-email/</guid>
+      <description>I&amp;rsquo;ve made a couple attempts at this so far.
+The software I&amp;rsquo;ve been looking at is:
+ https://stalw.art/ https://www.cyrusimap.org/  I didn&amp;rsquo;t really give Cyrus a good go because I got Stalwart in a spot where I could receive messages through IMAP.
+I didn&amp;rsquo;t get far at all with sending messages. Oracle is my currently cloud provider and port 25 is blocked on my account.
+The feature that drew me to both of these projects is JMAP support.</description>
+    </item>
+    
+    <item>
+      <title>Bash `while` loops</title>
+      <link>https://blog.andylu.dev/blog/bash-while-loops/</link>
+      <pubDate>Mon, 27 Nov 2023 15:54:59 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/bash-while-loops/</guid>
+      <description>Here&amp;rsquo;s a bash snippet I can see myself using one day
+while :; do ls -lh &amp;#34;$( ls -t1 /tmp/tmp* | head -n 1 )&amp;#34;; sleep 10; done  &amp;quot;$( ls -t1 /tmp/tmp* | head -n 1 )&amp;quot;: Get a file name  ls -t1 /tmp/tmp*: List the files in /tmp/tmp* ordered by most recently updated head -n 1: Get the first one   ls -lh &amp;lt;one-file&amp;gt;: Get the long listing of just one file The rest of it is just to do it over and over so that I can see changes in the file size  </description>
+    </item>
+    
+    <item>
+      <title>Learning About Hugo</title>
+      <link>https://blog.andylu.dev/blog/learning-about-hugo/</link>
+      <pubDate>Fri, 17 Nov 2023 23:23:16 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/learning-about-hugo/</guid>
+      <description>I think I&amp;rsquo;ve tried to keep a blog going for so long and on so many different stacks that I never sat down to learn about how hugo works.
+  Like wow, I can write some templating, shove it in a &amp;ldquo;shortcode&amp;rdquo;, and reuse it everywhere?
+  Testing it now: Docs
+  Here&amp;rsquo;s a center block
+   I&amp;rsquo;m not entirely sure when I would be using this center thing.</description>
+    </item>
+    
     <item>
       <title>My Babashka Cookbook</title>
       <link>https://blog.andylu.dev/blog/my-babashka-cookbook/</link>
@@ -13,8 +49,8 @@
       
       <guid>https://blog.andylu.dev/blog/my-babashka-cookbook/</guid>
       <description>This post is the one I want to reference when I do something in babashka and forget syntax or something.
-Capture a process&amp;rsquo;s STDOUT and process the string after
-(require &amp;#39;[babashka.process :as bp]) (-&amp;gt; (bp/shell {:out :string} &amp;#34;do-the-thing&amp;#34;) :out (clojure.string/split #&amp;#34;\n&amp;#34;)) </description>
+Capture a process&amp;rsquo;s STDOUT and process the string after (require &amp;#39;[babashka.process :as bp]) (-&amp;gt; (bp/shell {:out :string} &amp;#34;do-the-thing&amp;#34;) :out (clojure.string/split #&amp;#34;\n&amp;#34;)) Import a local library Dynamically You can add deps as one of the first steps in your scripts.
+(require &amp;#39;[babashka.deps :as deps]) (deps/add-deps &amp;#39;{:deps {io.github.lispyclouds/bblgum {:git/sha &amp;#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&amp;#34;} dev.andylu/clj-lipgloss {:local/root &amp;#34;/home/andy/git/clj-lipgloss&amp;#34;}}}) (require &amp;#39;[bblgum.</description>
     </item>
     
     <item>

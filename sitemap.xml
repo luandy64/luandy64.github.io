@@ -3,10 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.andylu.dev/</loc>
-    <lastmod>2023-10-30T00:14:23-04:00</lastmod>
+    <lastmod>2023-11-30T17:14:11-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/</loc>
-    <lastmod>2023-10-30T00:14:23-04:00</lastmod>
+    <lastmod>2023-11-30T17:14:11-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/self-hosting-email/</loc>
+    <lastmod>2023-11-30T17:14:11-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/tags/bash/</loc>
+    <lastmod>2023-11-27T15:54:59-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/bash-while-loops/</loc>
+    <lastmod>2023-11-27T15:54:59-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/tags/</loc>
+    <lastmod>2023-11-27T15:54:59-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/tags/hugo/</loc>
+    <lastmod>2023-11-17T23:23:16-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/learning-about-hugo/</loc>
+    <lastmod>2023-11-17T23:23:16-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/about/</loc>
+    <lastmod>2023-11-17T22:04:11-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/page/</loc>
+    <lastmod>2023-11-17T22:04:11-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/now/archive/</loc>
+    <lastmod>2023-11-16T19:19:12-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/now/</loc>
+    <lastmod>2023-11-16T19:19:12-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/now/</loc>
+    <lastmod>2023-11-16T19:04:52-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/my-babashka-cookbook/</loc>
     <lastmod>2023-10-30T00:08:59-04:00</lastmod>
@@ -18,9 +51,6 @@
     <lastmod>2023-10-15T14:39:22-04:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/babashka-datetime/</loc>
-    <lastmod>2023-10-15T14:39:22-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/tags/</loc>
     <lastmod>2023-10-15T14:39:22-04:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/future-blog-ideas/</loc>
@@ -45,9 +75,6 @@
     <lastmod>2022-11-08T23:00:56-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/tags/golang/</loc>
-    <lastmod>2022-11-08T23:00:56-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/tags/hugo/</loc>
     <lastmod>2022-11-08T23:00:56-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/til-silica-gel/</loc>
@@ -75,7 +102,5 @@
     <lastmod>2020-07-06T07:52:15-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/archive/</loc>
-  </url><url>
-    <loc>https://blog.andylu.dev/page/</loc>
   </url>
 </urlset>

@@ -2,25 +2,27 @@
 <html lang='en' dir='auto'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='If I need a datetime in Python, I reach for
-from datetime import datetime datetime.now() So I need something as quick for clojure.
-Apparently, it&rsquo;s just
-(-&gt; (java.time.LocalDate/now) str) ;; =&gt; &#34;2023-10-15&#34; '>
+<meta name='description' content='I think I&rsquo;ve tried to keep a blog going for so long and on so many different stacks that I never sat down to learn about how hugo works.
+  Like wow, I can write some templating, shove it in a &ldquo;shortcode&rdquo;, and reuse it everywhere?
+  Testing it now: Docs
+  Here&rsquo;s a center block
+   I&rsquo;m not entirely sure when I would be using this center thing.'>
 <meta name='theme-color' content='#0033ff'>
 
-<meta property='og:title' content='Babashka Datetime • Andy&#39;s Garden'>
-<meta property='og:description' content='If I need a datetime in Python, I reach for
-from datetime import datetime datetime.now() So I need something as quick for clojure.
-Apparently, it&rsquo;s just
-(-&gt; (java.time.LocalDate/now) str) ;; =&gt; &#34;2023-10-15&#34; '>
-<meta property='og:url' content='https://blog.andylu.dev/blog/babashka-datetime/'>
+<meta property='og:title' content='Learning About Hugo • Andy&#39;s Garden'>
+<meta property='og:description' content='I think I&rsquo;ve tried to keep a blog going for so long and on so many different stacks that I never sat down to learn about how hugo works.
+  Like wow, I can write some templating, shove it in a &ldquo;shortcode&rdquo;, and reuse it everywhere?
+  Testing it now: Docs
+  Here&rsquo;s a center block
+   I&rsquo;m not entirely sure when I would be using this center thing.'>
+<meta property='og:url' content='https://blog.andylu.dev/blog/learning-about-hugo/'>
 <meta property='og:site_name' content='Andy&#39;s Garden'>
-<meta property='og:type' content='article'><meta property='article:section' content='blog'><meta property='article:tag' content='babashka'><meta property='article:published_time' content='2023-10-15T14:39:22-04:00'/><meta property='article:modified_time' content='2023-10-15T14:39:22-04:00'/><meta name='twitter:card' content='summary'>
+<meta property='og:type' content='article'><meta property='article:section' content='blog'><meta property='article:tag' content='hugo'><meta property='article:published_time' content='2023-11-17T23:23:16-05:00'/><meta property='article:modified_time' content='2023-11-17T23:23:16-05:00'/><meta name='twitter:card' content='summary'>
 
 <meta name="generator" content="Hugo 0.83.0-DEV" />
 
-  <title>Babashka Datetime • Andy&#39;s Garden</title>
-  <link rel='canonical' href='https://blog.andylu.dev/blog/babashka-datetime/'>
+  <title>Learning About Hugo • Andy&#39;s Garden</title>
+  <link rel='canonical' href='https://blog.andylu.dev/blog/learning-about-hugo/'>
   
   
   <link rel='icon' href='/favicon.ico'>
@@ -132,7 +134,7 @@ Apparently, it&rsquo;s just
     <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
   <section class='widget widget-breadcrumbs sep-after'>
     <nav id='breadcrumbs'>
-        <ol><li><a href='/'>Home</a></li><li><a href='/blog/'>Blogs</a></li><li><span>Babashka Datetime</span></li></ol>
+        <ol><li><a href='/'>Home</a></li><li><a href='/blog/'>Blogs</a></li><li><span>Learning About Hugo</span></li></ol>
     </nav>
   </section></div>
       </div>
@@ -150,7 +152,7 @@ Apparently, it&rsquo;s just
   <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'>Babashka Datetime</h1>
+      <h1 class='title'>Learning About Hugo</h1>
       
 
     </div>
@@ -161,7 +163,7 @@ Apparently, it&rsquo;s just
             Posted
         </strong>
         <span class='screen-reader-text'>Posted on </span>
-        <time class='entry-date' datetime='2023-10-15T14:39:22-04:00'>2023-10-15T14:39:22-04:00</time>
+        <time class='entry-date' datetime='2023-11-17T23:23:16-05:00'>2023-11-17T23:23:16-05:00</time>
     </div>
     
     <div class='last-modded'>
@@ -169,7 +171,7 @@ Apparently, it&rsquo;s just
             Modified
         </strong>
         <span class='screen-reader-text'> </span>
-        <time class='entry-date' datetime='2023-10-15T14:39:22-04:00'>2023-10-15T14:39:22-04:00</time>
+        <time class='entry-date' datetime='2023-11-17T23:23:16-05:00'>2023-11-17T23:23:16-05:00</time>
     </div>
     
     <div class='reading-time'>
@@ -184,16 +186,44 @@ Apparently, it&rsquo;s just
   
 
   <div class='container entry-content'>
-  <p>If I need a datetime in Python, I reach for</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime
+  <ul>
+<li>
+<p>I think I&rsquo;ve tried to keep a blog going for so long and on so many different stacks that I never
+sat down to learn about how <code>hugo</code> works.</p>
+</li>
+<li>
+<p>Like wow, I can write some templating, shove it in a &ldquo;shortcode&rdquo;, and reuse it everywhere?</p>
+</li>
+<li>
+<p>Testing it now: <a href="https://minimo.netlify.app/docs/shortcodes/">Docs</a></p>
+</li>
+<li>
+<p>Here&rsquo;s a center block</p>
+</li>
+</ul>
+<div class='align-center'>
+    <hr>
+    I&rsquo;m not entirely sure when I would be using this center thing. It feels like one of those &ldquo;pull a
+quote out of the larger article things&rdquo;. <del>I kind of wish it had a border of some kind or a background
+difference</del> Just kidding, I easily updated the shortcode with what I wanted
+    <hr>
+</div>
 
-datetime<span style="color:#f92672">.</span>now()
-</code></pre></div><p>So I need something as quick for clojure.</p>
-<p>Apparently, it&rsquo;s just</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(-&gt; (<span style="color:#a6e22e">java.time.LocalDate/now</span>)
-     str)
-<span style="color:#75715e">;; =&gt; &#34;2023-10-15&#34;</span>
-</code></pre></div>
+<div class='align-center'>
+    <hr>
+    <p>Here is some centered text</p>
+<p>It&rsquo;s a ton of words</p>
+<p>hi</p>
+
+    <hr>
+</div>
+
+<ul>
+<li>End of center block</li>
+<li>I would try the conversation one, but I think it would look cooler as a text message bubble with
+the left and right justification.</li>
+</ul>
+
 </div>
 
   
@@ -210,7 +240,7 @@ datetime<span style="color:#f92672">.</span>now()
 ><path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z" />
 <line x1="7" y1="7" x2="7" y2="7" />
 </svg>
-<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/babashka/'>babashka</a></div>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/hugo/'>hugo</a></div>
 
     </div>
 </footer>
@@ -220,7 +250,7 @@ datetime<span style="color:#f92672">.</span>now()
 
 <nav class='entry-nav'>
   <div class='container'><div class='prev-entry sep-before'>
-      <a href='/blog/future-blog-ideas/'>
+      <a href='/blog/my-babashka-cookbook/'>
         <span aria-hidden='true'><svg
   class="icon"
   xmlns="http://www.w3.org/2000/svg"
@@ -233,10 +263,10 @@ datetime<span style="color:#f92672">.</span>now()
 <polyline points="10 18 4 12 10 6" />
 </svg>
  Previous</span>
-        <span class='screen-reader-text'>Previous post: </span>Future Blog Ideas</a>
+        <span class='screen-reader-text'>Previous post: </span>My Babashka Cookbook</a>
     </div><div class='next-entry sep-before'>
-      <a href='/blog/biff-tutorial/'>
-        <span class='screen-reader-text'>Next post: </span>Biff Tutorial<span aria-hidden='true'>Next <svg
+      <a href='/blog/bash-while-loops/'>
+        <span class='screen-reader-text'>Next post: </span>Bash `while` loops<span aria-hidden='true'>Next <svg
   class="icon"
   xmlns="http://www.w3.org/2000/svg"
   viewbox="0 0 24 24"

@@ -5,7 +5,20 @@
     <link>https://blog.andylu.dev/tags/hugo/</link>
     <description>Recent content in hugo on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 08 Nov 2022 23:00:56 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Nov 2023 23:23:16 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learning About Hugo</title>
+      <link>https://blog.andylu.dev/blog/learning-about-hugo/</link>
+      <pubDate>Fri, 17 Nov 2023 23:23:16 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/learning-about-hugo/</guid>
+      <description>I think I&amp;rsquo;ve tried to keep a blog going for so long and on so many different stacks that I never sat down to learn about how hugo works.
+  Like wow, I can write some templating, shove it in a &amp;ldquo;shortcode&amp;rdquo;, and reuse it everywhere?
+  Testing it now: Docs
+  Here&amp;rsquo;s a center block
+   I&amp;rsquo;m not entirely sure when I would be using this center thing.</description>
+    </item>
+    
     <item>
       <title>Git Submodules</title>
       <link>https://blog.andylu.dev/blog/git-submodules/</link>
