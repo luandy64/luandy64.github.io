@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Old-nows on Andy&#39;s Garden</title>
+    <link>https://blog.andylu.dev/old-now/</link>
+    <description>Recent content in Old-nows on Andy&#39;s Garden</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 16 Nov 2023 19:19:12 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/old-now/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Archive</title>
+      <link>https://blog.andylu.dev/old-now/archive/</link>
+      <pubDate>Thu, 16 Nov 2023 19:19:12 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/old-now/archive/</guid>
+      <description>See my now page for my latest updates.
+There&amp;rsquo;s nothing on this page yet.</description>
+    </item>
+    
+  </channel>
+</rss>

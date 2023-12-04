@@ -2,21 +2,25 @@
 <html lang='en' dir='auto'><head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='A page in Andy&#39;s blog'>
+<meta name='description' content='I didn&rsquo;t know what to use between poetry and hatch.
+I just followed the guide from the Packaging Guide.
+It ended with me having the following directory structure
+. ├── pyproject.toml ├── README.org ├── src │ └── andy_aoc_2023 │ ├── day1.py │ └── __init__.py └── tests Which isn&rsquo;t too crazy I guess.'>
 <meta name='theme-color' content='#0033ff'>
 
-<meta property='og:title' content='Tag: babashka • Andy&#39;s Garden'>
-<meta property='og:description' content='A page in Andy&#39;s blog'>
-<meta property='og:url' content='https://blog.andylu.dev/tags/babashka/'>
+<meta property='og:title' content='Python Packaging • Andy&#39;s Garden'>
+<meta property='og:description' content='I didn&rsquo;t know what to use between poetry and hatch.
+I just followed the guide from the Packaging Guide.
+It ended with me having the following directory structure
+. ├── pyproject.toml ├── README.org ├── src │ └── andy_aoc_2023 │ ├── day1.py │ └── __init__.py └── tests Which isn&rsquo;t too crazy I guess.'>
+<meta property='og:url' content='https://blog.andylu.dev/blog/python-packaging/'>
 <meta property='og:site_name' content='Andy&#39;s Garden'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content='2023-12-01T12:13:04-05:00'/><meta name='twitter:card' content='summary'>
+<meta property='og:type' content='article'><meta property='article:section' content='blog'><meta property='article:published_time' content='2023-12-01T12:13:04-05:00'/><meta property='article:modified_time' content='2023-12-01T12:13:04-05:00'/><meta name='twitter:card' content='summary'>
 
 <meta name="generator" content="Hugo 0.83.0-DEV" />
 
-  <title>Tag: babashka • Andy&#39;s Garden</title>
-  <link rel='canonical' href='https://blog.andylu.dev/tags/babashka/'>
-  
-    <link href="https://blog.andylu.dev/tags/babashka/index.xml" rel="alternate" type="application/rss+xml" title="Andy&#39;s Garden" />
+  <title>Python Packaging • Andy&#39;s Garden</title>
+  <link rel='canonical' href='https://blog.andylu.dev/blog/python-packaging/'>
   
   
   <link rel='icon' href='/favicon.ico'>
@@ -33,7 +37,7 @@
 
 
 </head>
-<body class='term type-tags taxonomy-tag has-sidebar'>
+<body class='page type-blog has-sidebar'>
 
   <div class='site'><div id='sidebar' class='sidebar'>
   <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
@@ -128,7 +132,7 @@
     <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
   <section class='widget widget-breadcrumbs sep-after'>
     <nav id='breadcrumbs'>
-        <ol><li><a href='/'>Home</a></li><li><a href='/tags/'>Tags</a></li><li><span>babashka</span></li></ol>
+        <ol><li><a href='/'>Home</a></li><li><a href='/blog/'>Blogs</a></li><li><span>Python Packaging</span></li></ol>
     </nav>
   </section></div>
       </div>
@@ -142,60 +146,102 @@
       <main id='content'>
 
 
-<header class='header'>
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'><span class='taxonomy-name'>Tag: </span>babashka</h1>
-
+      <h1 class='title'>Python Packaging</h1>
       
 
     </div>
+    <div class='entry-meta'>
+    
+    <div class='posted-on'>
+        <strong>
+            Posted
+        </strong>
+        <span class='screen-reader-text'>Posted on </span>
+        <time class='entry-date' datetime='2023-12-01T12:13:04-05:00'>2023-12-01T12:13:04-05:00</time>
+    </div>
+    
+    <div class='last-modded'>
+        <strong>
+            Modified
+        </strong>
+        <span class='screen-reader-text'> </span>
+        <time class='entry-date' datetime='2023-12-01T12:13:04-05:00'>2023-12-01T12:13:04-05:00</time>
+    </div>
+    
+    <div class='reading-time'>
+        One min read
+    </div>
+</div>
+
   </div>
 </header>
 
-
-
-
-<div class='container list-container'>
-  <ul class='list'>
-    
-      <li class='item'>
-  <div class='meta'>
-    <span>
-  <span class='screen-reader-text'>Posted on </span>
-  <time datetime='2023-10-15T14:39:22-04:00'>2023, Oct 15</time>
-</span>
-
-  </div>
-  <header class='item-header'>
-    <h3 class='item-title'>
-      <a href='/blog/babashka-datetime/'>Babashka Datetime</a>
-    </h3>
-  </header>
-</li>
-
-    
-      <li class='item'>
-  <div class='meta'>
-    <span>
-  <span class='screen-reader-text'>Posted on </span>
-  <time datetime='2023-10-14T21:25:56-04:00'>2023, Oct 14</time>
-</span>
-
-  </div>
-  <header class='item-header'>
-    <h3 class='item-title'>
-      <a href='/blog/terminal-logging-with-color/'>Terminal Logging With Color</a>
-    </h3>
-  </header>
-</li>
-
-    
-  </ul>
-
+  
   
 
+  <div class='container entry-content'>
+  <p>I didn&rsquo;t know what to use between <code>poetry</code> and <code>hatch</code>.</p>
+<p>I just followed the guide <a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#">from the Packaging Guide</a>.</p>
+<p>It ended with me having the following directory structure</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">.
+├── pyproject.toml
+├── README.org
+├── src
+│   └── andy_aoc_2023
+│       ├── day1.py
+│       └── __init__.py
+└── tests
+</code></pre></div><p>Which isn&rsquo;t too crazy I guess.</p>
+
 </div>
+
+  
+<footer class='entry-footer'>
+    <div class='container sep-before'>
+        <div class='tags'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z" />
+<line x1="7" y1="7" x2="7" y2="7" />
+</svg>
+<span class='screen-reader-text'>Tags: </span><span>None<span></div>
+
+    </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/blog/magit-multiple-push-remotes/'>
+        <span aria-hidden='true'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><line x1="20" y1="12" x2="4" y2="12" />
+<polyline points="10 18 4 12 10 6" />
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>Magit: Multiple Push Remotes</a>
+    </div></div>
+</nav>
+
+
+
 
       </main>
 

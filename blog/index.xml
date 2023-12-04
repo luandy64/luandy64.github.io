@@ -5,7 +5,29 @@
     <link>https://blog.andylu.dev/blog/</link>
     <description>Recent content in Blogs on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 30 Nov 2023 17:03:01 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Dec 2023 12:13:04 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Packaging</title>
+      <link>https://blog.andylu.dev/blog/python-packaging/</link>
+      <pubDate>Fri, 01 Dec 2023 12:13:04 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/python-packaging/</guid>
+      <description>I didn&amp;rsquo;t know what to use between poetry and hatch.
+I just followed the guide from the Packaging Guide.
+It ended with me having the following directory structure
+. ├── pyproject.toml ├── README.org ├── src │ └── andy_aoc_2023 │ ├── day1.py │ └── __init__.py └── tests Which isn&amp;rsquo;t too crazy I guess.</description>
+    </item>
+    
+    <item>
+      <title>Magit: Multiple Push Remotes</title>
+      <link>https://blog.andylu.dev/blog/magit-multiple-push-remotes/</link>
+      <pubDate>Fri, 01 Dec 2023 11:06:44 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/magit-multiple-push-remotes/</guid>
+      <description>I wanted to do the equivalent of this, but in magit
+git remote rename origin github git remote add codeberg https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote add origin https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote set-url --add --push origin https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote set-url --add --push origin https://github.com/jeffkreeftmeijer/ox-md-title.el git remote show origin * remote origin Fetch URL: https://codeberg.org/jkreeftmeijer/ox-md-title.el.git Push URL: https://codeberg.org/jkreeftmeijer/ox-md-title.el.git Push URL: https://github.com/jeffkreeftmeijer/ox-md-title.el HEAD branch: main Remote branch: main new (next fetch will store in remotes/origin) Local ref configured for &amp;#39;git push&amp;#39;: main pushes to main (up to date) Source</description>
+    </item>
+    
     <item>
       <title>Self Hosting Email</title>
       <link>https://blog.andylu.dev/blog/self-hosting-email/</link>
