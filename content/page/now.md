@@ -8,7 +8,7 @@ menu:
 ---
 
 This is [a now page](https://nownownow.com/about). For stuff that used to be here, check out the
-[archive](/now/archive).
+[archive](/old-now/archive).
 
 # Self Hosting stuff
 
