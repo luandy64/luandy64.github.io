@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang='en' dir='auto'><head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='TLDR This post is just to document a scenario I put myself in. But I wanted to write it down in case I need to use it again in the future.
+Problem   You have a CSV file from your bank with some expenses listed.
+  You want to generate an PDF invoice file to send to someone and collect some money.
+  Solution I think the solution is to'>
+<meta name='theme-color' content='#0033ff'>
+
+<meta property='og:title' content='Org Mode Is Better Glue Code Than Bash • Andy&#39;s Garden'>
+<meta property='og:description' content='TLDR This post is just to document a scenario I put myself in. But I wanted to write it down in case I need to use it again in the future.
+Problem   You have a CSV file from your bank with some expenses listed.
+  You want to generate an PDF invoice file to send to someone and collect some money.
+  Solution I think the solution is to'>
+<meta property='og:url' content='https://blog.andylu.dev/blog/org-mode-is-better-glue-code-than-bash/'>
+<meta property='og:site_name' content='Andy&#39;s Garden'>
+<meta property='og:type' content='article'><meta property='article:section' content='blog'><meta property='article:published_time' content='2023-12-04T21:47:32-05:00'/><meta property='article:modified_time' content='2023-12-04T22:44:17-05:00'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.83.0-DEV" />
+
+  <title>Org Mode Is Better Glue Code Than Bash • Andy&#39;s Garden</title>
+  <link rel='canonical' href='https://blog.andylu.dev/blog/org-mode-is-better-glue-code-than-bash/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css'><style>
+:root{--color-accent:#0033ff;}
+</style>
+
+  
+<script async src="https://rum.cronitor.io/script.js"></script>
+<script>
+ window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+ cronitor('config', { clientKey: '07d93ceb1f3aa8ab8fbc4825ceb7b841' });
+</script>
+
+
+</head>
+<body class='page type-blog has-sidebar'>
+
+  <div class='site'><div id='sidebar' class='sidebar'>
+  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+  <div class='container'><section class='widget widget-about sep-after'>
+    <header>
+        <h2 class='title site-title '>
+            <a href='/'>
+                Andy&#39;s Garden
+            </a>
+        </h2>
+    </header>
+
+</section>
+<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
+    <div class='container'>
+      <ul><li class='item'>
+  <a href='/'>Home</a></li><li class='item'>
+  <a href='/about/'>About</a></li><li class='item'>
+  <a href='/now/'>Now</a></li></ul>
+    </div>
+  </nav>
+
+</section><section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+          <a href='/tags/babashka/' style='font-size:2em'>babashka</a>
+      </li><li>
+          <a href='/tags/bash/' style='font-size:1em'>bash</a>
+      </li><li>
+          <a href='/tags/clojure/' style='font-size:1em'>clojure</a>
+      </li><li>
+          <a href='/tags/clojurescript/' style='font-size:1em'>clojurescript</a>
+      </li><li>
+          <a href='/tags/docker/' style='font-size:1em'>docker</a>
+      </li><li>
+          <a href='/tags/emacs/' style='font-size:1em'>emacs</a>
+      </li><li>
+          <a href='/tags/git/' style='font-size:1em'>git</a>
+      </li><li>
+          <a href='/tags/golang/' style='font-size:2em'>golang</a>
+      </li><li>
+          <a href='/tags/hugo/' style='font-size:2em'>hugo</a>
+      </li><li>
+          <a href='/tags/projects/' style='font-size:2em'>projects</a>
+      </li><li>
+          <a href='/tags/story/' style='font-size:1em'>story</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+
+  <div class='sidebar-overlay'></div>
+</div><div class='main'><a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class='open'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><line x1="3" y1="12" x2="21" y2="12" />
+<line x1="3" y1="6" x2="21" y2="6" />
+<line x1="3" y1="18" x2="21" y2="18" />
+</svg>
+</span>
+  <span class='close'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><line x1="18" y1="6" x2="6" y2="18" />
+<line x1="6" y1="6" x2="18" y2="18" />
+</svg>
+</span>
+</button><div class='header-widgets'>
+        <div class='container'>
+    
+    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
+  <section class='widget widget-breadcrumbs sep-after'>
+    <nav id='breadcrumbs'>
+        <ol><li><a href='/'>Home</a></li><li><a href='/blog/'>Blogs</a></li><li><span>Org Mode Is Better Glue Code Than Bash</span></li></ol>
+    </nav>
+  </section></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>Andy&#39;s Garden</p></div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Org Mode Is Better Glue Code Than Bash</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+    
+    <div class='posted-on'>
+        <strong>
+            Posted
+        </strong>
+        <span class='screen-reader-text'>Posted on </span>
+        <time class='entry-date' datetime='2023-12-04T21:47:32-05:00'>2023-12-04T21:47:32-05:00</time>
+    </div>
+    
+    <div class='last-modded'>
+        <strong>
+            Modified
+        </strong>
+        <span class='screen-reader-text'> </span>
+        <time class='entry-date' datetime='2023-12-04T22:44:17-05:00'>2023-12-04T22:44:17-05:00</time>
+    </div>
+    
+    <div class='reading-time'>
+        5 mins read
+    </div>
+</div>
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <h1 id="tldr">TLDR</h1>
+<p>This post is just to document a scenario I put myself in. But I wanted to write it down in case I
+need to use it again in the future.</p>
+<h1 id="problem">Problem</h1>
+<ul>
+<li>
+<p>You have a CSV file from your bank with some expenses listed.</p>
+</li>
+<li>
+<p>You want to generate an PDF invoice file to send to someone and collect some money.</p>
+</li>
+</ul>
+<h1 id="solution">Solution</h1>
+<p>I think the solution is to</p>
+<ol>
+<li>import the CSV into an org table</li>
+<li>use your favorite programming language to format the data</li>
+<li>use <a href="https://github.com/maaslalani/invoice/tree/0fb2e9d84385c6393ca6925bc6d25a89555b0b2d">maaslalani/invoice</a> to quickly make a PDF</li>
+</ol>
+<h2 id="deep-dive">Deep Dive</h2>
+<p>When I&rsquo;m dealing with CSV files, I often reach for <code>org-mode</code> in <code>emacs</code> just to make the file
+easier to read.</p>
+<p>For example, this is a mess</p>
+<pre><code class="language-csv" data-lang="csv">Transaction Date,Post Date,Description,Category,Type,Amount,Memo
+12/01/2023,12/02/2023,Big Expense Number 1,Shopping,Sale,-2414.73,
+12/02/2023,12/03/2023,Some Other Expense,Personal,Sale,-95.00,
+12/03/2023,12/04/2023,This Expense You Don't Recognize,Groceries,Sale,-20.82,
+</code></pre><p>But if you copy this file &ndash; honestly I just open the original &ndash;, open in <code>org-mode</code>, <code>C-x h</code> to
+select the entire buffer, <code>M-x org-mode</code>, and <code>M-x org-table-create-or-convert-from-region</code>, then
+you get this:</p>
+<pre><code class="language-org-mode" data-lang="org-mode">| Transaction Date | Post Date  | Description                      | Category  | Type |   Amount | Memo |
+| 12/01/2023       | 12/02/2023 | Big Expense Number 1             | Shopping  | Sale | -2414.73 |      |
+| 12/02/2023       | 12/03/2023 | Some Other Expense               | Personal  | Sale |   -95.00 |      |
+| 12/03/2023       | 12/04/2023 | This Expense You Don't Recognize | Groceries | Sale |   -20.82 |      |
+</code></pre><p>I always separate the header row from the body, so just add <code>|-|</code> as a new line 2 and hit tab. Which
+turns this</p>
+<pre><code class="language-org-mode" data-lang="org-mode">| Transaction Date | Post Date  | Description                      | Category  | Type |   Amount | Memo |
+|-|
+| 12/01/2023       | 12/02/2023 | Big Expense Number 1             | Shopping  | Sale | -2414.73 |      |
+| 12/02/2023       | 12/03/2023 | Some Other Expense               | Personal  | Sale |   -95.00 |      |
+| 12/03/2023       | 12/04/2023 | This Expense You Don't Recognize | Groceries | Sale |   -20.82 |      |
+</code></pre><p>into this</p>
+<pre><code class="language-org-mode" data-lang="org-mode">| Transaction Date | Post Date  | Description                      | Category  | Type |   Amount | Memo |
+|------------------+------------+----------------------------------+-----------+------+----------+------|
+| 12/01/2023       | 12/02/2023 | Big Expense Number 1             | Shopping  | Sale | -2414.73 |      |
+| 12/02/2023       | 12/03/2023 | Some Other Expense               | Personal  | Sale |   -95.00 |      |
+| 12/03/2023       | 12/04/2023 | This Expense You Don't Recognize | Groceries | Sale |   -20.82 |      |
+</code></pre><p>If you look through the <code>README</code> for <a href="https://github.com/maaslalani/invoice/tree/0fb2e9d84385c6393ca6925bc6d25a89555b0b2d">invoice</a>, you&rsquo;ll see that you can specify multiple <code>--item .. --quantity ...</code> lines in one <code>invoice generate call</code>. I took a guess that this applies to
+<code>--rate</code> as well. But this is perfect for the problem I have. I just need to turn my table into a
+big block of shell code.</p>
+<p><code>org-mode</code> lets you name the tables you create and pass them to various code blocks as input. I
+won&rsquo;t go through the following clojure at all, but the intent is &ldquo;given an org table as input,
+select the relevant columns, and format them into code we can hand to <code>invoice</code>&rdquo;.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">let </span>[[header <span style="color:#f92672">&amp;</span> data] input
+      rows            (<span style="color:#a6e22e">-&gt;&gt;</span> data
+                           (reduce (<span style="color:#66d9ef">fn </span>[state row]
+                                     (conj state
+                                           (zipmap header
+                                                   row)))
+                                   []))]
+  (doseq [{<span style="color:#e6db74">:strs</span> [Description Amount]} (butlast rows)]
+    (println (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;--item \&#34;%s\&#34; --quantity 1 --rate %.2f \\&#34;</span>
+                     Description Amount)))
+  (<span style="color:#66d9ef">let </span>[{<span style="color:#e6db74">:strs</span> [Description Amount]} (last rows)]
+    (print (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;--item \&#34;%s\&#34; --quantity 1 --rate %.2f \\&#34;</span>
+                   Description Amount))))
+</code></pre></div><p>Here&rsquo;s the org block I needed</p>
+<pre><code class="language-org-mode" data-lang="org-mode">#+NAME: table-to-lines
+#+begin_src clojure :colnames no :var input=table-of-data :exports results :results output
+  &lt;&lt;all of the clojure from above&gt;&gt;
+#+end_src
+</code></pre><ul>
+<li><code>#+NAME: table-to-lines</code> is the variable name for this code block
+<ul>
+<li>This will help me export the code to a particular spot later</li>
+</ul>
+</li>
+<li><code>:colnames no</code> tells <code>org-babel</code> to not strip the header row</li>
+<li><code>:var input=table-of-data</code> binds <code>input</code> to some thing I named <code>table-of-data</code>
+<ul>
+<li>I just slapped a <code>#+NAME: table-of-data</code> onto the org table from before</li>
+<li>Because this is a clojure source, I think it turned the table into seq of seqs
+<ul>
+<li><code>((header1 header2 header3) (r1c1 r1c2 r1c3) (r2c1 r2c2 r2c3) ...)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>:exports results</code> tells <code>org-babel</code> later to export this block as only the results, not the code
+itself</li>
+<li><code>:results output</code> says to collect everything printed as the result, not just the final return
+value</li>
+</ul>
+<p>The one thing I do want to say about the clojure is that I needed to separate the final row from the
+others because the final <code>println</code> and whatever <code>org-babel</code> is doing resulted in my output having a
+blank line at the end. This caused issues in my final script, and I couldn&rsquo;t find the answer on how
+to clean that up through <code>org-mode</code>. So the next best thing was to just modify my code a bit.
+Thankfully clojure has <code>butlast</code> and <code>last</code>.</p>
+<p>You can run this and should see the folowing output:</p>
+<pre><code class="language-org-mode" data-lang="org-mode">#+RESULTS: table-to-lines
+: --item &quot;Big Expense Number 1&quot; --quantity 1 --rate -2414.73 \
+: --item &quot;Some Other Expense&quot; --quantity 1 --rate -95.00 \
+: --item &quot;This Expense You Don't Recognize&quot; --quantity 1 --rate -20.82 \
+</code></pre><p>This is the meat of the script I want to generate. The next part is to write the two source blocks
+that are needed to round out the command. You can imagine it looks something like this</p>
+<pre><code class="language-org-mode" data-lang="org-mode">#+NAME: make-invoice-start
+#+begin_src shell
+  invoice generate \
+    --from &quot;Andy, Inc.&quot; \
+    --to &quot;Owes Me Money&quot; \
+#+end_src
+
+#+NAME: make-invoice-end
+#+begin_src shell
+    --tax 0 --discount 0.99 \
+    --note &quot;TEST Don't actually pay this&quot;
+#+end_src
+</code></pre><p>So now that I have 3 named source code blocks, I can create a script that is generated from this org
+file I&rsquo;ve been working in</p>
+<pre><code class="language-org-mode" data-lang="org-mode">#+begin_src shell :dir /tmp/ :tangle make-invoice :noweb yes
+  &lt;&lt;make-invoice-start&gt;&gt;
+    &lt;&lt;table-to-lines()&gt;&gt;
+    &lt;&lt;make-invoice-end&gt;&gt;
+#+end_src
+</code></pre><p>This says, on tangle, create a file called <code>make-invoice</code> and concatenates the contents of the
+following named blocks as the file. The parens in <code>table-to-lines()</code> say to evaluate that block
+before tangling. And remember that I set an option on that block to export the results instead of
+the code. So <code>make-invoice</code> has the command I want to call.</p>
+<p>To actually generate that file, run <code>M-x org-babel-tangle</code>.</p>
+<p>You can run it from inside <code>org-mode</code> too. Just add a block like this and <code>C-c C-c</code></p>
+<pre><code class="language-org-mode" data-lang="org-mode">#+begin_src shell :dir /tmp/
+  bash ./make-invoice
+#+end_src
+</code></pre><p>I&rsquo;m going to leave it as a challenge for the reader to tweak this solution so that I only need to
+combine two source blocks instead of my three.</p>
+
+</div>
+
+  
+<footer class='entry-footer'>
+    <div class='container sep-before'>
+        <div class='tags'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z" />
+<line x1="7" y1="7" x2="7" y2="7" />
+</svg>
+<span class='screen-reader-text'>Tags: </span><span>None<span></div>
+
+    </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/blog/python-packaging/'>
+        <span aria-hidden='true'><svg
+  class="icon"
+  xmlns="http://www.w3.org/2000/svg"
+  viewbox="0 0 24 24"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  stroke-width="2"
+  aria-hidden="true"
+><line x1="20" y1="12" x2="4" y2="12" />
+<polyline points="10 18 4 12 10 6" />
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>Python Packaging</a>
+    </div></div>
+</nav>
+
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><div class='copyright'>
+  <p> &copy; 2020-2023 Andy Lu </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
+
+</body>
+
+</html>
+

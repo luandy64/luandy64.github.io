@@ -5,7 +5,19 @@
     <link>https://blog.andylu.dev/blog/</link>
     <description>Recent content in Blogs on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 01 Dec 2023 12:13:04 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Dec 2023 21:47:32 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Org Mode Is Better Glue Code Than Bash</title>
+      <link>https://blog.andylu.dev/blog/org-mode-is-better-glue-code-than-bash/</link>
+      <pubDate>Mon, 04 Dec 2023 21:47:32 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/org-mode-is-better-glue-code-than-bash/</guid>
+      <description>TLDR This post is just to document a scenario I put myself in. But I wanted to write it down in case I need to use it again in the future.
+Problem   You have a CSV file from your bank with some expenses listed.
+  You want to generate an PDF invoice file to send to someone and collect some money.
+  Solution I think the solution is to</description>
+    </item>
+    
     <item>
       <title>Python Packaging</title>
       <link>https://blog.andylu.dev/blog/python-packaging/</link>
