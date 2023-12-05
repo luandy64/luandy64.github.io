@@ -24,9 +24,12 @@
   publish
   (do (println "Creating files in `public`")
       (shell "hugo")
-      (println "Commiting files")
+      (println "Commiting main")
       (shell {:dir "./public"} "git add '.'")
       (shell {:dir "./public"} "git commit -m 'New content'")
+      (println "Commiting dev")
+      (shell "git add '.'")
+      (shell "git commit -m 'New content'")
       (println "Pushing dev")
       (shell "git push")
       (println "Pushing main")
