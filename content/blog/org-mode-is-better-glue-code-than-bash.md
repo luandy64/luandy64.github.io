@@ -2,6 +2,9 @@
 title: "Org Mode Is Better Glue Code Than Bash"
 date: 2023-12-04T21:47:32-05:00
 lastmod: 2023-12-04T22:44:17-05:00
+tags:
+ - emacs
+ - clojure
 ---
 
 # TLDR

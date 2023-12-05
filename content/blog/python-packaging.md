@@ -2,6 +2,8 @@
 title: "Python Packaging"
 date: 2023-12-01T12:13:04-05:00
 lastmod: 2023-12-01T12:13:04-05:00
+tags:
+ - python
 ---
 
 I didn't know what to use between `poetry` and `hatch`.

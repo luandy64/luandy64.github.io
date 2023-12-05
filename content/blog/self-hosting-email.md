@@ -2,6 +2,8 @@
 title: "Self Hosting Email"
 date: 2023-11-30T17:03:01-05:00
 lastmod: 2023-11-30T17:14:11-05:00
+tags:
+ - homelab
 ---
 
 I've made a couple attempts at this so far.

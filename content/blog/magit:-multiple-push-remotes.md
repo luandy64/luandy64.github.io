@@ -2,6 +2,9 @@
 title: "Magit: Multiple Push Remotes"
 date: 2023-12-01T11:06:44-05:00
 lastmod: 2023-12-01T11:36:54-05:00
+tags:
+ - emacs
+ - magit
 ---
 
 I wanted to do the equivalent of this, but in magit
