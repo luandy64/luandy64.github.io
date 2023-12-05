@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>magit on Andy&#39;s Garden</title>
+    <link>https://blog.andylu.dev/tags/magit/</link>
+    <description>Recent content in magit on Andy&#39;s Garden</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 01 Dec 2023 11:06:44 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/tags/magit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magit: Multiple Push Remotes</title>
+      <link>https://blog.andylu.dev/blog/magit-multiple-push-remotes/</link>
+      <pubDate>Fri, 01 Dec 2023 11:06:44 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/magit-multiple-push-remotes/</guid>
+      <description>I wanted to do the equivalent of this, but in magit
+git remote rename origin github git remote add codeberg https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote add origin https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote set-url --add --push origin https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote set-url --add --push origin https://github.com/jeffkreeftmeijer/ox-md-title.el git remote show origin * remote origin Fetch URL: https://codeberg.org/jkreeftmeijer/ox-md-title.el.git Push URL: https://codeberg.org/jkreeftmeijer/ox-md-title.el.git Push URL: https://github.com/jeffkreeftmeijer/ox-md-title.el HEAD branch: main Remote branch: main new (next fetch will store in remotes/origin) Local ref configured for &amp;#39;git push&amp;#39;: main pushes to main (up to date) Source</description>
+    </item>
+    
+  </channel>
+</rss>

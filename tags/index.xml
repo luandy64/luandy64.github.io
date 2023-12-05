@@ -5,7 +5,52 @@
     <link>https://blog.andylu.dev/tags/</link>
     <description>Recent content in Tags on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 27 Nov 2023 15:54:59 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Dec 2023 21:47:32 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>clojure</title>
+      <link>https://blog.andylu.dev/tags/clojure/</link>
+      <pubDate>Mon, 04 Dec 2023 21:47:32 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emacs</title>
+      <link>https://blog.andylu.dev/tags/emacs/</link>
+      <pubDate>Mon, 04 Dec 2023 21:47:32 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/tags/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://blog.andylu.dev/tags/python/</link>
+      <pubDate>Fri, 01 Dec 2023 12:13:04 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>magit</title>
+      <link>https://blog.andylu.dev/tags/magit/</link>
+      <pubDate>Fri, 01 Dec 2023 11:06:44 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/tags/magit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>homelab</title>
+      <link>https://blog.andylu.dev/tags/homelab/</link>
+      <pubDate>Thu, 30 Nov 2023 17:03:01 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/tags/homelab/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>bash</title>
       <link>https://blog.andylu.dev/tags/bash/</link>
@@ -30,15 +75,6 @@
       <pubDate>Sun, 15 Oct 2023 14:39:22 -0400</pubDate>
       
       <guid>https://blog.andylu.dev/tags/babashka/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>clojure</title>
-      <link>https://blog.andylu.dev/tags/clojure/</link>
-      <pubDate>Sat, 14 Oct 2023 21:25:56 -0400</pubDate>
-      
-      <guid>https://blog.andylu.dev/tags/clojure/</guid>
       <description></description>
     </item>
     
@@ -93,15 +129,6 @@
       <pubDate>Mon, 06 Jul 2020 07:52:15 -0500</pubDate>
       
       <guid>https://blog.andylu.dev/tags/clojurescript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>emacs</title>
-      <link>https://blog.andylu.dev/tags/emacs/</link>
-      <pubDate>Mon, 06 Jul 2020 07:52:15 -0500</pubDate>
-      
-      <guid>https://blog.andylu.dev/tags/emacs/</guid>
       <description></description>
     </item>
     
