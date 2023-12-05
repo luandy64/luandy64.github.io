@@ -1,6 +1,6 @@
 ---
 date: 2023-11-16T00:00:00-05:00
-lastmod: 2023-11-16T19:04:52-05:00
+lastmod: 2023-12-04T22:53:14-05:00
 title: Now
 menu:
   sidebar:
@@ -21,3 +21,7 @@ taking a step towards making technology more sustainable for the planet.
 # Go
 
 In my spare time, I've been learning how to play [Go](https://en.wikipedia.org/wiki/Go_(game)).
+
+# BJJ
+
+I got my purple belt from Balance Studios on 2023-10-28.
