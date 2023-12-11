@@ -1,0 +1,20 @@
+<div class='copyright'>
+    <p>
+        {{- with .Site.Params.copyright -}}
+
+        {{ .prefix | markdownify }}
+
+        &copy;
+
+        {{ .startyear }} - {{ now.Year }}
+
+        <a href="https://andylu.dev/"
+           class="h-card"
+           rel="me">
+            {{ or .holder $.Site.Title | markdownify }}
+        </a>
+
+        {{ .suffix | markdownify }}
+    {{- end -}}
+  </p>
+</div>
