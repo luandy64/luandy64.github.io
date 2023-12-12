@@ -1,0 +1,9 @@
+{{ partial "header" . }}
+
+<article lang='{{ .Params.lang | default .Lang }}' class='post'>
+    {{ .Content }}
+</article>
+{{ partial "nav/entry_nav" . }}
+{{ partial "entry/comments" . }}
+{{ partial "entry/footer" . }}
+{{ partial "footer" . }}
