@@ -1,7 +1,9 @@
 #+TITLE: Webmention Test
+#+MARKUP: html
+#+TYPE: indieweb
 #+DATE: 2023-12-11T20:14:31-05:00
 #+LASTMOD: 2023-12-11T20:27:55-05:00
-#+MARKUP: html
+#+TAGS[]: indieweb
 
 <div class="h-entry">
     <p>

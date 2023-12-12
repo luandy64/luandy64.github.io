@@ -1,6 +1,6 @@
 #+TITLE: introducing Handwritten Pages
 #+MARKUP: org
-#+KIND: handwritten
+#+TYPE: handwritten
 #+DATE: 2022-10-02T07:52:15-05:00
 #+LASTMOD: 2023-12-11T15:59:17-05:00
 #+TAGS[]: handwritten
