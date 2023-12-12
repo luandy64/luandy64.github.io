@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>written-in-org-mode on Andy&#39;s Garden</title>
+    <link>https://blog.andylu.dev/tags/written-in-org-mode/</link>
+    <description>Recent content in written-in-org-mode on Andy&#39;s Garden</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 11 Dec 2023 15:52:40 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/tags/written-in-org-mode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>This is an Org Post</title>
+      <link>https://blog.andylu.dev/blog/this-is-an-org-post/</link>
+      <pubDate>Mon, 11 Dec 2023 15:52:40 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/this-is-an-org-post/</guid>
+      <description>Today I learned that hugo has support for org-mode files.
+ I knew that ox-hugo is a thing, but this is different. And I never thought to dig into the docs to figure out if I can author posts in org-mode and have it work.</description>
+    </item>
+    
+  </channel>
+</rss>

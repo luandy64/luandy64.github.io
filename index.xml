@@ -5,7 +5,44 @@
     <link>https://blog.andylu.dev/</link>
     <description>Recent content in Home on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 04 Dec 2023 21:47:32 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Dec 2023 20:14:31 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Webmention Test</title>
+      <link>https://blog.andylu.dev/handwritten/webmention-test/</link>
+      <pubDate>Mon, 11 Dec 2023 20:14:31 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/handwritten/webmention-test/</guid>
+      <description> in reply to: @aaronpk  Trying out this guide to sending webmentions  </description>
+    </item>
+    
+    <item>
+      <title>This is an Org Post</title>
+      <link>https://blog.andylu.dev/blog/this-is-an-org-post/</link>
+      <pubDate>Mon, 11 Dec 2023 15:52:40 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/this-is-an-org-post/</guid>
+      <description>Today I learned that hugo has support for org-mode files.
+ I knew that ox-hugo is a thing, but this is different. And I never thought to dig into the docs to figure out if I can author posts in org-mode and have it work.</description>
+    </item>
+    
+    <item>
+      <title>Hw Post Num 2</title>
+      <link>https://blog.andylu.dev/handwritten/hw-post-num-2/</link>
+      <pubDate>Mon, 11 Dec 2023 15:26:44 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/handwritten/hw-post-num-2/</guid>
+      <description>  hi  this is my post  this gets hidden </description>
+    </item>
+    
+    <item>
+      <title>Adding Search to This Site</title>
+      <link>https://blog.andylu.dev/blog/adding-search-to-this-site/</link>
+      <pubDate>Mon, 11 Dec 2023 15:22:32 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/adding-search-to-this-site/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Org Mode Is Better Glue Code Than Bash</title>
       <link>https://blog.andylu.dev/blog/org-mode-is-better-glue-code-than-bash/</link>
@@ -215,6 +252,16 @@ Do the thing Start the answering machine outside of docker Running go run main.<
       <guid>https://blog.andylu.dev/blog/clojurescript-project-setup/</guid>
       <description>Outcomes By the end of this post, you will be able to setup a new clojurescript project, setup emacs to be your development environment, and deploy your app to Github Pages
 Background I&amp;rsquo;ve written two clojurescript projects now, Sundial and DataBooze, and I want to document the set up process. The first time was a massive undertaking because it was my first time. But frustrating enough, so was the second time, even though I thought I nailed down the process and took notes on it.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://blog.andylu.dev/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.andylu.dev/</guid>
+      <description>type: page layout: search outputs:
+ html json  </description>
     </item>
     
     <item>
