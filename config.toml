@@ -56,7 +56,7 @@ enable = true
 [params.widgets]
 header = ["breadcrumbs"]
 homepage = ["recent_posts"]
-sidebar = ["about","sidebar_menu","taxonomy_cloud","search"]
+sidebar = ["about","sidebar_menu","taxonomy_cloud"]
 footer = []
 
 [params.opengraph.facebook]
@@ -112,7 +112,7 @@ username = "MunifTanjim"
 repository = "minimo"
 
 [params.search]
-client = "lunr" # algolia / fuse / lunr
+client = "fuse" # algolia / fuse / lunr
 
 [params.search.algolia]
 appId = ""
