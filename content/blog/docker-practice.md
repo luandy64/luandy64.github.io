@@ -2,8 +2,8 @@
 title = "KAllan's Telephone and Answering Machine Notes"
 author = ["Andy"]
 draft = false
-date = 2021-04-11T00:00:00Z
-lastmod = 2021-04-11T00:00:00Z
+date = 2021-04-11T00:00:00-05:00
+lastmod = 2021-04-11T00:00:00-05:00
 description = "Practicing working with Docker"
 tags = ['docker', 'golang']
 +++

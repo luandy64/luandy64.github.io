@@ -14,9 +14,9 @@
 </p>
 
 {{ end }} {{ end }}
-<article lang='{{ .Params.lang | default .Lang }}' class='post'>
+<content>
     {{ .Content }}
-</article>
+</content>
 
 <p>
     {{ range (.GetTerms "tags") }}

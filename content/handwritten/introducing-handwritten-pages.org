@@ -1,9 +1,9 @@
----
-kind: handwritten
-layout: handwritten
-title: "Introducing handwritten pages"
-date: 2022-10-02T07:52:15-05:00
----
+#+TITLE: introducing Handwritten Pages
+#+MARKUP: org
+#+KIND: handwritten
+#+DATE: 2022-10-02T07:52:15-05:00
+#+LASTMOD: 2023-12-11T15:59:17-05:00
+#+TAGS[]: handwritten
 
 {{<
     figure
@@ -14,7 +14,7 @@ date: 2022-10-02T07:52:15-05:00
     hand-link
     href="https://google.com"
     style=`
-    left: 9.412470023980815%;
+    left: 13.412470023980815%;
     top: 54.85507246376812%;
     width: 17.565947242206235%;
     height: 17.318840579710145%;

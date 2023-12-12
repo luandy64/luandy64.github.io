@@ -1,10 +1,8 @@
----
-layout: indieweb
-title: "Webmention Test"
-date: 2023-12-11T20:14:31-05:00
-lastmod: 2023-12-11T20:27:55-05:00
-markup: html
----
+#+TITLE: Webmention Test
+#+DATE: 2023-12-11T20:14:31-05:00
+#+LASTMOD: 2023-12-11T20:27:55-05:00
+#+MARKUP: html
+
 <div class="h-entry">
     <p>
         in reply to:

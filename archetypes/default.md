@@ -1,6 +1,5 @@
----
-title: "{{ replace .Name "-" " " | title }}"
-date: {{ .Date }}
-lastmod: {{ .Date }}
----
+#+TITLE: {{ replace .Name "-" " " | title }}
+#+MARKUP: org
+#+DATE: {{ .Date }}
+#+LASTMOD: {{ .Date }}
 

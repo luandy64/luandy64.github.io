@@ -1,142 +1,56 @@
+# Base URL used when generating links to your pages
+# Set to the URL for your site
 baseurl = "https://blog.andylu.dev/"
+
+
+# The name of this wonderful theme ;-).
+theme = 'hugo-bearblog'
+
+# Basic metadata configuration for your blog.
 title = "Andy's Garden"
-# for smart copyright line, leave this blank and check [params.copyright]
-copyright = ""
+author = "Andy Lu"
+copyright = "Copyright © 2020, Andy Lu."
+languageCode = "en-US"
 
-theme = "minimo"
-
-disqusShortname = ""
-googleAnalytics = ""
-
-Paginate = 5
-preserveTaxonomyNames = true
-
-enableRobotsTXT = true # generate robots.txt
-
-# Syntax Highlighting ( https://gohugo.io/content-management/syntax-highlighting/ )
-pygmentsCodefences = true
-
+# Generate a nice robots.txt for SEO
+enableRobotsTXT = true
 enableEmoji = true
 
-# Missing translations will default to this content language
-defaultContentLanguage = "en"
-
-[params.info]
-description = "A page in Andy's blog"
-title404 = "Nothing's here!"
-
-[params.assets]
-favicon = "/favicon.ico"
-customCSS = ["css/custom.css"]
-customJS = ["js/custom.js"]
-gopher = "" # used in 404 template ( Generator: https://gopherize.me )
-
-[params.copyright]
-prefix = ""
-holder = "Andy Lu"
-startYear = "2020"
-suffix = ""
-
-[params.settings]
-# date & time format: https://golang.org/pkg/time/
-dateFormat = "2006-01-02T15:04:05Z07:00"
-listDateFormat = "2006, Jan 02"
-archiveDateFormat = "Jan 02"
-hideEntryNavigation = ["page"] # boolean / array of sections
-hideEntryMeta = ["page"] # boolean / array of sections
-showReadingTime = true
-showLastmod = true
-taxonomyCloudShuffle = true
-accentColor = "#0033ff"
-hideMainMenu = true
-
-[params.sidebar]
-enable = true
-
-[params.widgets]
-header = ["breadcrumbs"]
-homepage = ["recent_posts"]
-sidebar = ["about","sidebar_menu","taxonomy_cloud"]
-footer = []
-
-[params.opengraph.facebook]
-admins = [] # array of Facebook IDs
-appID = ""
-pageID = ""
-
-[params.opengraph.twitter]
-page = "" # Twitter page username
-
-[params.seo]
-# Title Separator: - – — · • * ⋆ | ~ « » < >
-titleSeparator = "•"
-
-[params.social]
-codepen = ""
-email = ""
-facebook = ""
-github = ""
-gitlab = ""
-instagram = ""
-linkedin = ""
-twitter = ""
-telegram = ""
-google_scholar = ""
-youtube = ""
-
-[params.comments]
-enable = false
-
-# Isso: https://posativ.org/isso/
-[params.comments.isso]
-enable = false
-scriptSrc = "" # "https://isso.example.com/js/embed.min.js"
-dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author='true'"
-
-[params.comments.staticman]
-enable = true
-apiEndpoint = "https://api.staticman.net/v2/entry"
-maxDepth = 2
-username = "MunifTanjim"
-repository = "minimo"
-
-# Utterances: https://utteranc.es
-[params.comments.utterances]
-enable = false
-issueTerm = "pathname" # pathname / url / title / og:title / <string>
-label = ""
-theme = "github-light"
-
-[params.comments.utterances.github]
-username = "MunifTanjim"
-repository = "minimo"
-
-[params.search]
-client = "fuse" # algolia / fuse / lunr
-
-[params.search.algolia]
-appId = ""
-indexName = ""
-searchApiKey = ""
-
-[taxonomies]
-tag = "tags"
-
+# Generate "Bearblog"-like URLs !only!, see https://bearblog.dev/.
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
 [permalinks]
-page = "/:slug/"
+  # blog = "/:slug/"
+  tags = "/blog/filter/:slug"
 
-[[menu.main]]
-name = "Repo"
-weight = -10
-identifier = "repository"
-url = "https://github.com/MunifTanjim/minimo"
+[params]
+  # The "description" of your website. This is used in the meta data of your generated html.
+  description = "Andy's corner of the internet"
 
-[blackfriday]
-hrefTargetBlank = true
+  # The path to your "favicon". This should be a square (at least 32px x 32px) png-file.
+  # Hint: It's good practise to also put a "favicon.ico"-file into your "static"-folder.
+  favicon = "/favicon.ico"
 
-[languages]
-# edit this block for your own language
-[languages.en]
-lang = "en"
-languageName = "English"
-weight = 1
+  # These "images" are used for the structured data templates. This will show up, when
+  # services like Twitter or Slack want to generate a preview of a link to your site.
+  # See https://gohugo.io/templates/internal#twitter-cards and
+  # https://gohugo.io/templates/internal#open-graph.
+  images = ["images/share.png"]
+
+  # Another "title" :-). This one is used as the site_name on the Hugo's internal
+  # opengraph structured data template.
+  # See https://ogp.me/ and https://gohugo.io/templates/internal#open-graph.
+  title = "Andy's Garden"
+
+  # This theme will, by default, inject a made-with-line at the bottom of the page.
+  # You can turn it off, but we would really appreciate if you don’t :-).
+  hideMadeWithLine = true
+
+  # By default, this theme displays dates with a format like "02 Jan, 2006", but
+  # you can customize it by setting the `dateFormat` param in your site's config
+  # file. See [Hugo's Format function docs](https://gohugo.io/functions/format/)
+  # for details. An example TOML config that uses [ISO
+  # 8601](https://en.wikipedia.org/wiki/ISO_8601) format:
+  # dateFormat = "2006-01-02"
+  dateFormat = "2006-01-02T15:04:05Z07:00"
+
