@@ -4,7 +4,6 @@ layout: handwritten
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 lastmod: {{ .Date }}
-description: ""
 ---
 
 {{<

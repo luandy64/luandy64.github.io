@@ -3,7 +3,6 @@ kind: handwritten
 layout: handwritten
 title: "Introducing handwritten pages"
 date: 2022-10-02T07:52:15-05:00
-description: "Noting how I like to setup cljs projects"
 ---
 
 {{<
