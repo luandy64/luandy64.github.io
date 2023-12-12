@@ -1,0 +1,10 @@
+#+TITLE: This is an Org Post
+#+MARKUP: org
+#+DATE: 2023-12-11T15:52:40-05:00
+#+LASTMOD: 2023-12-11T15:59:17-05:00
+#+TAGS[]: written-in-org-mode
+
+Today I learned that =hugo= has support for org-mode files.
+
+I knew that [[https://ox-hugo.scripter.co/][ox-hugo]] is a thing, but this is different. And I never thought to dig into the docs to
+figure out if I can author posts in org-mode and have it work.
