@@ -2,77 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.andylu.dev/indieweb/</loc>
+    <lastmod>2023-12-11T20:27:55-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/indieweb/webmention-test/</loc>
+    <lastmod>2023-12-11T20:27:55-05:00</lastmod>
+  </url><url>
     <loc>https://blog.andylu.dev/</loc>
-    <lastmod>2023-12-11T20:27:55-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/handwritten/webmention-test/</loc>
-    <lastmod>2023-12-11T20:27:55-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/blog/</loc>
     <lastmod>2023-12-11T15:59:17-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/tags/</loc>
+    <loc>https://blog.andylu.dev/blog/</loc>
     <lastmod>2023-12-11T15:59:17-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/this-is-an-org-post/</loc>
     <lastmod>2023-12-11T15:59:17-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/tags/written-in-org-mode/</loc>
+    <loc>https://blog.andylu.dev/blog/filter/written-in-org-mode/</loc>
     <lastmod>2023-12-11T15:59:17-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/tags/clojure/</loc>
+    <loc>https://blog.andylu.dev/blog/filter/clojure/</loc>
     <lastmod>2023-12-04T22:44:17-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/tags/emacs/</loc>
+    <loc>https://blog.andylu.dev/blog/filter/emacs/</loc>
     <lastmod>2023-12-04T22:44:17-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/org-mode-is-better-glue-code-than-bash/</loc>
     <lastmod>2023-12-04T22:44:17-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/tags/python/</loc>
+    <loc>https://blog.andylu.dev/blog/filter/python/</loc>
     <lastmod>2023-12-01T12:13:04-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/python-packaging/</loc>
     <lastmod>2023-12-01T12:13:04-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/tags/magit/</loc>
+    <loc>https://blog.andylu.dev/blog/filter/magit/</loc>
     <lastmod>2023-12-01T11:36:54-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/magit-multiple-push-remotes/</loc>
     <lastmod>2023-12-01T11:36:54-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/tags/homelab/</loc>
+    <loc>https://blog.andylu.dev/blog/filter/homelab/</loc>
     <lastmod>2023-11-30T17:14:11-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/self-hosting-email/</loc>
     <lastmod>2023-11-30T17:14:11-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/tags/bash/</loc>
+    <loc>https://blog.andylu.dev/blog/filter/bash/</loc>
     <lastmod>2023-11-27T15:54:59-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/bash-while-loops/</loc>
     <lastmod>2023-11-27T15:54:59-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/tags/hugo/</loc>
-    <lastmod>2023-11-17T23:23:16-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/blog/learning-about-hugo/</loc>
-    <lastmod>2023-11-17T23:23:16-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/about/</loc>
-    <lastmod>2023-11-17T22:04:11-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/page/</loc>
-    <lastmod>2023-12-04T22:53:14-05:00</lastmod>
-  </url><url>
     <loc>https://blog.andylu.dev/old-now/archive/</loc>
-    <lastmod>2023-11-16T19:19:12-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/old-now/</loc>
-    <lastmod>2023-11-16T19:19:12-05:00</lastmod>
+    <lastmod>2023-12-11T23:17:32-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/now/</loc>
-    <lastmod>2023-12-04T22:53:14-05:00</lastmod>
+    <lastmod>2023-12-11T23:17:32-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/old-now/</loc>
+    <lastmod>2023-12-11T23:17:32-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/my-babashka-cookbook/</loc>
     <lastmod>2023-10-30T00:08:59-04:00</lastmod>
@@ -80,7 +68,7 @@
     <loc>https://blog.andylu.dev/blog/biff-tutorial/</loc>
     <lastmod>2023-10-17T19:48:08-04:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/tags/babashka/</loc>
+    <loc>https://blog.andylu.dev/blog/filter/babashka/</loc>
     <lastmod>2023-10-15T14:39:22-04:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/babashka-datetime/</loc>
@@ -89,45 +77,49 @@
     <loc>https://blog.andylu.dev/blog/future-blog-ideas/</loc>
     <lastmod>2023-10-30T00:14:23-04:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/tags/projects/</loc>
+    <loc>https://blog.andylu.dev/blog/filter/projects/</loc>
     <lastmod>2023-10-14T21:25:56-04:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/tags/story/</loc>
+    <loc>https://blog.andylu.dev/blog/filter/story/</loc>
     <lastmod>2023-10-14T21:25:56-04:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/terminal-logging-with-color/</loc>
     <lastmod>2023-10-14T21:25:56-04:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/tags/git/</loc>
+    <loc>https://blog.andylu.dev/blog/filter/git/</loc>
     <lastmod>2022-11-08T23:00:56-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/git-submodules/</loc>
     <lastmod>2022-11-08T23:00:56-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/tags/golang/</loc>
+    <loc>https://blog.andylu.dev/blog/filter/golang/</loc>
+    <lastmod>2022-11-08T23:00:56-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/filter/hugo/</loc>
     <lastmod>2022-11-08T23:00:56-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/til-silica-gel/</loc>
     <lastmod>2022-11-08T16:41:06-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/handwritten/introducing-handwritten-pages/</loc>
-    <lastmod>2022-10-02T07:52:15-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/tags/docker/</loc>
-    <lastmod>2021-04-11T00:00:00+00:00</lastmod>
+    <loc>https://blog.andylu.dev/blog/filter/handwritten/</loc>
+    <lastmod>2023-12-11T15:59:17-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/handwritten/</loc>
-    <lastmod>2021-04-11T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-11T15:59:17-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/handwritten/introducing-handwritten-pages/</loc>
+    <lastmod>2023-12-11T15:59:17-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/filter/docker/</loc>
+    <lastmod>2021-04-11T00:00:00-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/docker-practice/</loc>
-    <lastmod>2021-04-11T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-11T00:00:00-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/tags/clojurescript/</loc>
+    <loc>https://blog.andylu.dev/blog/filter/clojurescript/</loc>
     <lastmod>2020-07-06T07:52:15-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/clojurescript-project-setup/</loc>
     <lastmod>2020-07-06T07:52:15-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/archive/</loc>
   </url>
 </urlset>

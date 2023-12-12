@@ -1,292 +1,271 @@
 <!DOCTYPE html>
-<html lang='en' dir='auto'><head>
-  <meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='Here&rsquo;s just a running list of things I want to write down thoughts about.
- babashka CLI design traefik as a reverse proxy for tailscale services  '>
-<meta name='theme-color' content='#0033ff'>
+<html lang="en-US">
 
-<meta property='og:title' content='Future Blog Ideas • Andy&#39;s Garden'>
-<meta property='og:description' content='Here&rsquo;s just a running list of things I want to write down thoughts about.
- babashka CLI design traefik as a reverse proxy for tailscale services  '>
-<meta property='og:url' content='https://blog.andylu.dev/blog/future-blog-ideas/'>
-<meta property='og:site_name' content='Andy&#39;s Garden'>
-<meta property='og:type' content='article'><meta property='article:section' content='blog'><meta property='article:published_time' content='2023-10-14T21:48:09-04:00'/><meta property='article:modified_time' content='2023-10-30T00:14:23-04:00'/><meta name='twitter:card' content='summary'>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://blog.andylu.dev/favicon.ico" />
+<title>Future Blog Ideas | Andy&#39;s Garden</title>
+<meta name="title" content="Future Blog Ideas" />
+<meta name="description" content="Here&rsquo;s just a running list of things I want to write down thoughts about.
+ babashka CLI design traefik as a reverse proxy for tailscale services  " />
+<meta name="keywords" content="" />
 
-<meta name="generator" content="Hugo 0.83.0-DEV" />
 
-  <title>Future Blog Ideas • Andy&#39;s Garden</title>
-  <link rel='canonical' href='https://blog.andylu.dev/blog/future-blog-ideas/'>
-  
-  
-  <link rel='icon' href='/favicon.ico'>
-<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css'><style>
-:root{--color-accent:#0033ff;}
+<meta property="og:title" content="Future Blog Ideas" />
+<meta property="og:description" content="Here&rsquo;s just a running list of things I want to write down thoughts about.
+ babashka CLI design traefik as a reverse proxy for tailscale services  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.andylu.dev/blog/future-blog-ideas/" /><meta property="og:image" content="https://blog.andylu.dev/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-10-14T21:48:09-04:00" />
+<meta property="article:modified_time" content="2023-10-30T00:14:23-04:00" /><meta property="og:site_name" content="Andy&#39;s Garden" />
+
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.andylu.dev/images/share.png"/>
+
+<meta name="twitter:title" content="Future Blog Ideas"/>
+<meta name="twitter:description" content="Here&rsquo;s just a running list of things I want to write down thoughts about.
+ babashka CLI design traefik as a reverse proxy for tailscale services  "/>
+
+
+
+<meta itemprop="name" content="Future Blog Ideas">
+<meta itemprop="description" content="Here&rsquo;s just a running list of things I want to write down thoughts about.
+ babashka CLI design traefik as a reverse proxy for tailscale services  "><meta itemprop="datePublished" content="2023-10-14T21:48:09-04:00" />
+<meta itemprop="dateModified" content="2023-10-30T00:14:23-04:00" />
+<meta itemprop="wordCount" content="25"><meta itemprop="image" content="https://blog.andylu.dev/images/share.png"/>
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
 </style>
 
+
   
-<script async src="https://rum.cronitor.io/script.js"></script>
-<script>
- window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
- cronitor('config', { clientKey: '07d93ceb1f3aa8ab8fbc4825ceb7b841' });
-</script>
-<link rel="webmention" href="https://webmention.io/blog.andylu.dev/webmention" />
-
-
 </head>
-<body class='page type-blog has-sidebar'>
 
-  <div class='site'><div id='sidebar' class='sidebar'>
-  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+<body>
+  <header><a href="/" class="title">
+  <h2>Andy&#39;s Garden</h2>
+</a>
+<nav><a href="/">Home</a>
 
-  <div class='container'><section class='widget widget-about sep-after'>
-    <header>
-        <h2 class='title site-title '>
-            <a href='/'>
-                Andy&#39;s Garden
-            </a>
-        </h2>
-    </header>
-
-</section>
-<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
-    <div class='container'>
-      <ul><li class='item'>
-  <a href='/'>Home</a></li><li class='item'>
-  <a href='/about/'>About</a></li><li class='item'>
-  <a href='/now/'>Now</a></li></ul>
-    </div>
-  </nav>
-
-</section><section class='widget widget-taxonomy_cloud sep-after'>
-  <header>
-    <h4 class='title widget-title'>Tags</h4>
-  </header>
-
-  <div class='container list-container'>
-  <ul class='list taxonomy-cloud'><li>
-          <a href='/tags/babashka/' style='font-size:1.5em'>babashka</a>
-      </li><li>
-          <a href='/tags/bash/' style='font-size:1em'>bash</a>
-      </li><li>
-          <a href='/tags/clojure/' style='font-size:1.5em'>clojure</a>
-      </li><li>
-          <a href='/tags/clojurescript/' style='font-size:1em'>clojurescript</a>
-      </li><li>
-          <a href='/tags/docker/' style='font-size:1em'>docker</a>
-      </li><li>
-          <a href='/tags/emacs/' style='font-size:2em'>emacs</a>
-      </li><li>
-          <a href='/tags/git/' style='font-size:1em'>git</a>
-      </li><li>
-          <a href='/tags/golang/' style='font-size:1.5em'>golang</a>
-      </li><li>
-          <a href='/tags/homelab/' style='font-size:1em'>homelab</a>
-      </li><li>
-          <a href='/tags/hugo/' style='font-size:1.5em'>hugo</a>
-      </li><li>
-          <a href='/tags/magit/' style='font-size:1em'>magit</a>
-      </li><li>
-          <a href='/tags/projects/' style='font-size:1.5em'>projects</a>
-      </li><li>
-          <a href='/tags/python/' style='font-size:1em'>python</a>
-      </li><li>
-          <a href='/tags/story/' style='font-size:1em'>story</a>
-      </li><li>
-          <a href='/tags/written-in-org-mode/' style='font-size:1em'>written-in-org-mode</a>
-      </li></ul>
-</div>
+<a href="/now/">Now</a>
 
 
-</section>
-</div>
+<a href="/blog">Blog</a>
 
-  <div class='sidebar-overlay'></div>
-</div><div class='main'><a class='screen-reader-text' href='#content'>Skip to Content</a>
-
-<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
-  <span class='screen-reader-text'>Toggle Sidebar</span>
-  <span class='open'><svg
-  class="icon"
-  xmlns="http://www.w3.org/2000/svg"
-  viewbox="0 0 24 24"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-  stroke-width="2"
-  aria-hidden="true"
-><line x1="3" y1="12" x2="21" y2="12" />
-<line x1="3" y1="6" x2="21" y2="6" />
-<line x1="3" y1="18" x2="21" y2="18" />
-</svg>
-</span>
-  <span class='close'><svg
-  class="icon"
-  xmlns="http://www.w3.org/2000/svg"
-  viewbox="0 0 24 24"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-  stroke-width="2"
-  aria-hidden="true"
-><line x1="18" y1="6" x2="6" y2="18" />
-<line x1="6" y1="6" x2="18" y2="18" />
-</svg>
-</span>
-</button><div class='header-widgets'>
-        <div class='container'>
-    
-    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
-  <section class='widget widget-breadcrumbs sep-after'>
-    <nav id='breadcrumbs'>
-        <ol><li><a href='/'>Home</a></li><li><a href='/blog/'>Blogs</a></li><li><span>Future Blog Ideas</span></li></ol>
-    </nav>
-  </section></div>
-      </div>
-
-      <header id='header' class='header site-header'>
-        <div class='container sep-after'>
-          <div class='header-info'><p class='site-title title'>Andy&#39;s Garden</p></div>
-        </div>
-      </header>
-
-      <main id='content'>
-
-
-<article lang='en' class='entry h-entry'>
-  <header class='header entry-header'>
-    <div class='container sep-after'>
-        <div class='header-info'>
-            <h1 class='title p-name'>Future Blog Ideas</h1>
-            
-
-        </div>
-        <div class='entry-meta'>
-    
-    <div class='posted-on'>
-        <strong>
-            Posted
-        </strong>
-        <span class='screen-reader-text'>Posted on </span>
-        <time class='entry-date' datetime='2023-10-14T21:48:09-04:00'>2023-10-14T21:48:09-04:00</time>
-    </div>
-    
-    <div class='last-modded'>
-        <strong>
-            Modified
-        </strong>
-        <span class='screen-reader-text'> </span>
-        <time class='entry-date dt-published' datetime='2023-10-30T00:14:23-04:00'>2023-10-30T00:14:23-04:00</time>
-    </div>
-    
-    <div class='reading-time'>
-        One min read
-    </div>
-    <span class="u-url">
-        <a href=https://blog.andylu.dev/blog/future-blog-ideas/>Link to this page</a>
-    </span>
-</div>
-
-    </div>
+</nav>
 </header>
+  <main>
+ 
+<h1>Future Blog Ideas</h1>
 
-  
-  
+<p>
+    <strong>
+        Last updated
 
-  <div class='container entry-content e-content'>
-  <p>Here&rsquo;s just a running list of things I want to write down thoughts about.</p>
+    </strong>
+    :
+    <time datetime='2023-10-14' pubdate>
+        2023-10-14T21:48:09-04:00
+    </time>
+</p>
+
+ 
+<content>
+    <p>Here&rsquo;s just a running list of things I want to write down thoughts about.</p>
 <ul>
 <li><code>babashka</code> CLI design</li>
 <li><code>traefik</code> as a reverse proxy for tailscale services</li>
 </ul>
 
-</div>
+</content>
 
-  
-<footer class='entry-footer'>
-    <div class='container sep-before'>
-        <div class='tags'><svg
-  class="icon"
-  xmlns="http://www.w3.org/2000/svg"
-  viewbox="0 0 24 24"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-  stroke-width="2"
-  aria-hidden="true"
-><path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z" />
-<line x1="7" y1="7" x2="7" y2="7" />
-</svg>
-<span class='screen-reader-text'>Tags: </span><span>None<span></div>
+<p>
+    
+</p>
 
-    </div>
+
+  </main>
+  <footer>
 </footer>
 
-
-</article>
-
-<nav class='entry-nav'>
-  <div class='container'><div class='prev-entry sep-before'>
-      <a href='/blog/terminal-logging-with-color/'>
-        <span aria-hidden='true'><svg
-  class="icon"
-  xmlns="http://www.w3.org/2000/svg"
-  viewbox="0 0 24 24"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-  stroke-width="2"
-  aria-hidden="true"
-><line x1="20" y1="12" x2="4" y2="12" />
-<polyline points="10 18 4 12 10 6" />
-</svg>
- Previous</span>
-        <span class='screen-reader-text'>Previous post: </span>Terminal Logging With Color</a>
-    </div><div class='next-entry sep-before'>
-      <a href='/blog/babashka-datetime/'>
-        <span class='screen-reader-text'>Next post: </span>Babashka Datetime<span aria-hidden='true'>Next <svg
-  class="icon"
-  xmlns="http://www.w3.org/2000/svg"
-  viewbox="0 0 24 24"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-  stroke-width="2"
-  aria-hidden="true"
-><line x1="4" y1="12" x2="20" y2="12" />
-<polyline points="14 6 20 12 14 18" />
-</svg>
-</span>
-      </a>
-    </div></div>
-</nav>
-
-
-
-
-      </main>
-
-      <footer id='footer' class='footer'>
-        <div class='container sep-before'><div class='copyright'>
-    <p>
-
-        &copy;
-
-        2020 - 2023
-
-        <a href="https://github.com/luandy64"
-           class="h-card"
-           rel="me">
-            Andy Lu
-        </a>
-
-        </p>
-</div>
-
-        </div>
-      </footer>
-
-    </div>
-  </div><script>window.__assets_js_src="/assets/js/"</script>
-
-<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
-
+    
 </body>
 
 </html>
-

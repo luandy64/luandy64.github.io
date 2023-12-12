@@ -1,2 +1,2 @@
-User-agent: *
-Disallow:
+User-Agent: *
+Sitemap: https://blog.andylu.dev/sitemap.xml

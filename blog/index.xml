@@ -5,6 +5,8 @@
     <link>https://blog.andylu.dev/blog/</link>
     <description>Recent content in Blogs on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2020, Andy Lu.</copyright>
     <lastBuildDate>Mon, 11 Dec 2023 15:52:40 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>This is an Org Post</title>
@@ -71,19 +73,6 @@ The feature that drew me to both of these projects is JMAP support.</description
       <guid>https://blog.andylu.dev/blog/bash-while-loops/</guid>
       <description>Here&amp;rsquo;s a bash snippet I can see myself using one day
 while :; do ls -lh &amp;#34;$( ls -t1 /tmp/tmp* | head -n 1 )&amp;#34;; sleep 10; done  &amp;quot;$( ls -t1 /tmp/tmp* | head -n 1 )&amp;quot;: Get a file name  ls -t1 /tmp/tmp*: List the files in /tmp/tmp* ordered by most recently updated head -n 1: Get the first one   ls -lh &amp;lt;one-file&amp;gt;: Get the long listing of just one file The rest of it is just to do it over and over so that I can see changes in the file size  </description>
-    </item>
-    
-    <item>
-      <title>Learning About Hugo</title>
-      <link>https://blog.andylu.dev/blog/learning-about-hugo/</link>
-      <pubDate>Fri, 17 Nov 2023 23:23:16 -0500</pubDate>
-      
-      <guid>https://blog.andylu.dev/blog/learning-about-hugo/</guid>
-      <description>I think I&amp;rsquo;ve tried to keep a blog going for so long and on so many different stacks that I never sat down to learn about how hugo works.
-  Like wow, I can write some templating, shove it in a &amp;ldquo;shortcode&amp;rdquo;, and reuse it everywhere?
-  Testing it now: Docs
-  Here&amp;rsquo;s a center block
-   I&amp;rsquo;m not entirely sure when I would be using this center thing.</description>
     </item>
     
     <item>
@@ -168,7 +157,7 @@ I chuckled because I&amp;rsquo;m not entirely sure where to get a bunch of silic
     <item>
       <title>KAllan&#39;s Telephone and Answering Machine Notes</title>
       <link>https://blog.andylu.dev/blog/docker-practice/</link>
-      <pubDate>Sun, 11 Apr 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 11 Apr 2021 00:00:00 -0500</pubDate>
       
       <guid>https://blog.andylu.dev/blog/docker-practice/</guid>
       <description>Setup Installing docker I always like the DigitalOcean tutorials, so that&amp;rsquo;s what I followed here. Installing Docker on Ubuntu 20.04

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>homelab on Andy&#39;s Garden</title>
+    <link>https://blog.andylu.dev/blog/filter/homelab/</link>
+    <description>Recent content in homelab on Andy&#39;s Garden</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2020, Andy Lu.</copyright>
+    <lastBuildDate>Thu, 30 Nov 2023 17:03:01 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/filter/homelab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Self Hosting Email</title>
+      <link>https://blog.andylu.dev/blog/self-hosting-email/</link>
+      <pubDate>Thu, 30 Nov 2023 17:03:01 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/self-hosting-email/</guid>
+      <description>I&amp;rsquo;ve made a couple attempts at this so far.
+The software I&amp;rsquo;ve been looking at is:
+ https://stalw.art/ https://www.cyrusimap.org/  I didn&amp;rsquo;t really give Cyrus a good go because I got Stalwart in a spot where I could receive messages through IMAP.
+I didn&amp;rsquo;t get far at all with sending messages. Oracle is my currently cloud provider and port 25 is blocked on my account.
+The feature that drew me to both of these projects is JMAP support.</description>
+    </item>
+    
+  </channel>
+</rss>

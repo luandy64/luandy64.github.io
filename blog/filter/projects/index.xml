@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>projects on Andy&#39;s Garden</title>
+    <link>https://blog.andylu.dev/blog/filter/projects/</link>
+    <description>Recent content in projects on Andy&#39;s Garden</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2020, Andy Lu.</copyright>
+    <lastBuildDate>Sat, 14 Oct 2023 21:25:56 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/filter/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Terminal Logging With Color</title>
+      <link>https://blog.andylu.dev/blog/terminal-logging-with-color/</link>
+      <pubDate>Sat, 14 Oct 2023 21:25:56 -0400</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/terminal-logging-with-color/</guid>
+      <description>These days I&amp;rsquo;ve been writing a lot of babashka instead of reaching for bash or python to do minor scripting tasks at work.
+I am also a big fan of the work done at charm and the relevant products in this case are gum and lipgloss.
+Using gum style I can log any text in basically any color I want. And while there&amp;rsquo;s not a ton of functional benefits to this, I think there&amp;rsquo;s something to be said about adding color into the logs we write.</description>
+    </item>
+    
+    <item>
+      <title>Clojurescript Project Setup</title>
+      <link>https://blog.andylu.dev/blog/clojurescript-project-setup/</link>
+      <pubDate>Mon, 06 Jul 2020 07:52:15 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/clojurescript-project-setup/</guid>
+      <description>Outcomes By the end of this post, you will be able to setup a new clojurescript project, setup emacs to be your development environment, and deploy your app to Github Pages
+Background I&amp;rsquo;ve written two clojurescript projects now, Sundial and DataBooze, and I want to document the set up process. The first time was a massive undertaking because it was my first time. But frustrating enough, so was the second time, even though I thought I nailed down the process and took notes on it.</description>
+    </item>
+    
+  </channel>
+</rss>

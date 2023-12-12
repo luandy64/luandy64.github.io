@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>babashka on Andy&#39;s Garden</title>
+    <link>https://blog.andylu.dev/blog/filter/babashka/</link>
+    <description>Recent content in babashka on Andy&#39;s Garden</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2020, Andy Lu.</copyright>
+    <lastBuildDate>Sun, 15 Oct 2023 14:39:22 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/filter/babashka/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Babashka Datetime</title>
+      <link>https://blog.andylu.dev/blog/babashka-datetime/</link>
+      <pubDate>Sun, 15 Oct 2023 14:39:22 -0400</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/babashka-datetime/</guid>
+      <description>If I need a datetime in Python, I reach for
+from datetime import datetime datetime.now() So I need something as quick for clojure.
+Apparently, it&amp;rsquo;s just
+(-&amp;gt; (java.time.LocalDate/now) str) ;; =&amp;gt; &amp;#34;2023-10-15&amp;#34; </description>
+    </item>
+    
+    <item>
+      <title>Terminal Logging With Color</title>
+      <link>https://blog.andylu.dev/blog/terminal-logging-with-color/</link>
+      <pubDate>Sat, 14 Oct 2023 21:25:56 -0400</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/terminal-logging-with-color/</guid>
+      <description>These days I&amp;rsquo;ve been writing a lot of babashka instead of reaching for bash or python to do minor scripting tasks at work.
+I am also a big fan of the work done at charm and the relevant products in this case are gum and lipgloss.
+Using gum style I can log any text in basically any color I want. And while there&amp;rsquo;s not a ton of functional benefits to this, I think there&amp;rsquo;s something to be said about adding color into the logs we write.</description>
+    </item>
+    
+  </channel>
+</rss>

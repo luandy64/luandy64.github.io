@@ -1,238 +1,468 @@
 <!DOCTYPE html>
-<html lang='en' dir='auto'><head>
-  <meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='A page in Andy&#39;s blog'>
-<meta name='theme-color' content='#0033ff'>
+<html lang="en-US">
 
-<meta property='og:title' content='handwritten • Andy&#39;s Garden'>
-<meta property='og:description' content='A page in Andy&#39;s blog'>
-<meta property='og:url' content='https://blog.andylu.dev/handwritten/'>
-<meta property='og:site_name' content='Andy&#39;s Garden'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content='2023-12-11T20:27:55-05:00'/><meta name='twitter:card' content='summary'>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://blog.andylu.dev/favicon.ico" />
+<title>Handwrittens | Andy&#39;s Garden</title>
+<meta name="title" content="Handwrittens" />
+<meta name="description" content="Andy&#39;s corner of the internet" />
+<meta name="keywords" content="babashka,bash,clojure,clojurescript,docker,emacs,git,golang,handwritten,homelab,hugo,magit,projects,python,story,written-in-org-mode," />
 
-<meta name="generator" content="Hugo 0.83.0-DEV" />
 
-  <title>handwritten • Andy&#39;s Garden</title>
-  <link rel='canonical' href='https://blog.andylu.dev/handwritten/'>
-  
-    <link href="https://blog.andylu.dev/handwritten/index.xml" rel="alternate" type="application/rss+xml" title="Andy&#39;s Garden" />
-  
-  
-  <link rel='icon' href='/favicon.ico'>
-<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css'><style>
-:root{--color-accent:#0033ff;}
+<meta property="og:title" content="Handwrittens" />
+<meta property="og:description" content="Andy&#39;s corner of the internet" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blog.andylu.dev/handwritten/" /><meta property="og:image" content="https://blog.andylu.dev/images/share.png"/><meta property="og:site_name" content="Andy&#39;s Garden" />
+
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog.andylu.dev/images/share.png"/>
+
+<meta name="twitter:title" content="Handwrittens"/>
+<meta name="twitter:description" content="Andy&#39;s corner of the internet"/>
+
+
+
+<meta itemprop="name" content="Handwrittens">
+<meta itemprop="description" content="Andy&#39;s corner of the internet">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <link rel="alternate" type="application/rss+xml" href="https://blog.andylu.dev/handwritten/index.xml" title="Andy's Garden" />
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+    overflow-x: auto;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
 </style>
 
+
   
-<script async src="https://rum.cronitor.io/script.js"></script>
-<script>
- window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
- cronitor('config', { clientKey: '07d93ceb1f3aa8ab8fbc4825ceb7b841' });
-</script>
-<link rel="webmention" href="https://webmention.io/blog.andylu.dev/webmention" />
-
-
 </head>
-<body class='section type-handwritten has-sidebar'>
 
-  <div class='site'><div id='sidebar' class='sidebar'>
-  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+<body>
+  <header><a href="/" class="title">
+  <h2>Andy&#39;s Garden</h2>
+</a>
+<nav><a href="/">Home</a>
 
-  <div class='container'><section class='widget widget-about sep-after'>
-    <header>
-        <h2 class='title site-title '>
-            <a href='/'>
-                Andy&#39;s Garden
-            </a>
-        </h2>
-    </header>
-
-</section>
-<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
-    <div class='container'>
-      <ul><li class='item'>
-  <a href='/'>Home</a></li><li class='item'>
-  <a href='/about/'>About</a></li><li class='item'>
-  <a href='/now/'>Now</a></li></ul>
-    </div>
-  </nav>
-
-</section><section class='widget widget-taxonomy_cloud sep-after'>
-  <header>
-    <h4 class='title widget-title'>Tags</h4>
-  </header>
-
-  <div class='container list-container'>
-  <ul class='list taxonomy-cloud'><li>
-          <a href='/tags/babashka/' style='font-size:1.5em'>babashka</a>
-      </li><li>
-          <a href='/tags/bash/' style='font-size:1em'>bash</a>
-      </li><li>
-          <a href='/tags/clojure/' style='font-size:1.5em'>clojure</a>
-      </li><li>
-          <a href='/tags/clojurescript/' style='font-size:1em'>clojurescript</a>
-      </li><li>
-          <a href='/tags/docker/' style='font-size:1em'>docker</a>
-      </li><li>
-          <a href='/tags/emacs/' style='font-size:2em'>emacs</a>
-      </li><li>
-          <a href='/tags/git/' style='font-size:1em'>git</a>
-      </li><li>
-          <a href='/tags/golang/' style='font-size:1.5em'>golang</a>
-      </li><li>
-          <a href='/tags/homelab/' style='font-size:1em'>homelab</a>
-      </li><li>
-          <a href='/tags/hugo/' style='font-size:1.5em'>hugo</a>
-      </li><li>
-          <a href='/tags/magit/' style='font-size:1em'>magit</a>
-      </li><li>
-          <a href='/tags/projects/' style='font-size:1.5em'>projects</a>
-      </li><li>
-          <a href='/tags/python/' style='font-size:1em'>python</a>
-      </li><li>
-          <a href='/tags/story/' style='font-size:1em'>story</a>
-      </li><li>
-          <a href='/tags/written-in-org-mode/' style='font-size:1em'>written-in-org-mode</a>
-      </li></ul>
-</div>
+<a href="/now/">Now</a>
 
 
-</section>
-</div>
+<a href="/blog">Blog</a>
 
-  <div class='sidebar-overlay'></div>
-</div><div class='main'><a class='screen-reader-text' href='#content'>Skip to Content</a>
-
-<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
-  <span class='screen-reader-text'>Toggle Sidebar</span>
-  <span class='open'><svg
-  class="icon"
-  xmlns="http://www.w3.org/2000/svg"
-  viewbox="0 0 24 24"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-  stroke-width="2"
-  aria-hidden="true"
-><line x1="3" y1="12" x2="21" y2="12" />
-<line x1="3" y1="6" x2="21" y2="6" />
-<line x1="3" y1="18" x2="21" y2="18" />
-</svg>
-</span>
-  <span class='close'><svg
-  class="icon"
-  xmlns="http://www.w3.org/2000/svg"
-  viewbox="0 0 24 24"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-  stroke-width="2"
-  aria-hidden="true"
-><line x1="18" y1="6" x2="6" y2="18" />
-<line x1="6" y1="6" x2="18" y2="18" />
-</svg>
-</span>
-</button><div class='header-widgets'>
-        <div class='container'>
-    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
-  <section class='widget widget-breadcrumbs sep-after'>
-    <nav id='breadcrumbs'>
-        <ol><li><a href='/'>Home</a></li><li><span>handwritten</span></li></ol>
-    </nav>
-  </section></div>
-      </div>
-
-      <header id='header' class='header site-header'>
-        <div class='container sep-after'>
-          <div class='header-info'><p class='site-title title'>Andy&#39;s Garden</p></div>
-        </div>
-      </header>
-
-      <main id='content'>
-
-
-<header class='header'>
-  <div class='container sep-after'>
-    <div class='header-info'>
-      <h1 class='title'>handwritten</h1>
-
-      
-
-    </div>
-  </div>
+</nav>
 </header>
-
-
-
-
-<div class='container list-container'>
-  <ul class='list'>
+  <main>
+<content>
     
-      <li class='item'>
-  <div class='meta'>
-    <span>
-  <span class='screen-reader-text'>Posted on </span>
-  <time datetime='2023-12-11T20:14:31-05:00'>2023, Dec 11</time>
-</span>
-
-  </div>
-  <header class='item-header'>
-    <h3 class='item-title'>
-      <a href='/handwritten/webmention-test/'>Webmention Test</a>
-    </h3>
-  </header>
-</li>
-
+    <ul class="blog-posts">
+        
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2023-12-11' pubdate>
+                        2023-12-11
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/indieweb/webmention-test/">Webmention Test</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2023-12-11' pubdate>
+                        2023-12-11
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/blog/this-is-an-org-post/">This is an Org Post</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2023-12-04' pubdate>
+                        2023-12-04
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/blog/org-mode-is-better-glue-code-than-bash/">Org Mode Is Better Glue Code Than Bash</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2023-12-01' pubdate>
+                        2023-12-01
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/blog/python-packaging/">Python Packaging</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2023-12-01' pubdate>
+                        2023-12-01
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/blog/magit-multiple-push-remotes/">Magit: Multiple Push Remotes</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2023-11-30' pubdate>
+                        2023-11-30
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/blog/self-hosting-email/">Self Hosting Email</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2023-11-27' pubdate>
+                        2023-11-27
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/blog/bash-while-loops/">Bash `while` loops</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2023-10-29' pubdate>
+                        2023-10-29
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/blog/my-babashka-cookbook/">My Babashka Cookbook</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2023-10-17' pubdate>
+                        2023-10-17
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/blog/biff-tutorial/">Biff Tutorial</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2023-10-15' pubdate>
+                        2023-10-15
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/blog/babashka-datetime/">Babashka Datetime</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2023-10-14' pubdate>
+                        2023-10-14
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/blog/future-blog-ideas/">Future Blog Ideas</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2023-10-14' pubdate>
+                        2023-10-14
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/blog/terminal-logging-with-color/">Terminal Logging With Color</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2022-11-08' pubdate>
+                        2022-11-08
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/blog/git-submodules/">Git Submodules</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2022-11-08' pubdate>
+                        2022-11-08
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/blog/til-silica-gel/">TIL: Silica Gel can make Dried Bouquet</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2022-10-02' pubdate>
+                        2022-10-02
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/handwritten/introducing-handwritten-pages/">introducing Handwritten Pages</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2021-04-11' pubdate>
+                        2021-04-11
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/blog/docker-practice/">KAllan&#39;s Telephone and Answering Machine Notes</a>
+        </li>
+        
+        <li>
+            <span>
+                <i>
+                    <time datetime='2020-07-06' pubdate>
+                        2020-07-06
+                    </time>
+                </i>
+            </span>
+            <a href="https://blog.andylu.dev/blog/clojurescript-project-setup/">Clojurescript Project Setup</a>
+        </li>
+        
+    </ul>
     
-      <li class='item'>
-  <div class='meta'>
-    <span>
-  <span class='screen-reader-text'>Posted on </span>
-  <time datetime='2022-10-02T07:52:15-05:00'>2022, Oct 02</time>
-</span>
-
-  </div>
-  <header class='item-header'>
-    <h3 class='item-title'>
-      <a href='/handwritten/introducing-handwritten-pages/'>Introducing handwritten pages</a>
-    </h3>
-  </header>
-</li>
-
-    
-  </ul>
-
-  
-
-</div>
-
-      </main>
-
-      <footer id='footer' class='footer'>
-        <div class='container sep-before'><div class='copyright'>
-    <p>
-
-        &copy;
-
-        2020 - 2023
-
-        <a href="https://github.com/luandy64"
-           class="h-card"
-           rel="me">
-            Andy Lu
-        </a>
-
-        </p>
-</div>
-
+    <small>
+        <div>
+            
+            <a href="https://blog.andylu.dev/blog/filter/babashka/">#babashka</a>&nbsp;
+            
+            <a href="https://blog.andylu.dev/blog/filter/bash/">#bash</a>&nbsp;
+            
+            <a href="https://blog.andylu.dev/blog/filter/clojure/">#clojure</a>&nbsp;
+            
+            <a href="https://blog.andylu.dev/blog/filter/clojurescript/">#clojurescript</a>&nbsp;
+            
+            <a href="https://blog.andylu.dev/blog/filter/docker/">#docker</a>&nbsp;
+            
+            <a href="https://blog.andylu.dev/blog/filter/emacs/">#emacs</a>&nbsp;
+            
+            <a href="https://blog.andylu.dev/blog/filter/git/">#git</a>&nbsp;
+            
+            <a href="https://blog.andylu.dev/blog/filter/golang/">#golang</a>&nbsp;
+            
+            <a href="https://blog.andylu.dev/blog/filter/handwritten/">#handwritten</a>&nbsp;
+            
+            <a href="https://blog.andylu.dev/blog/filter/homelab/">#homelab</a>&nbsp;
+            
+            <a href="https://blog.andylu.dev/blog/filter/hugo/">#hugo</a>&nbsp;
+            
+            <a href="https://blog.andylu.dev/blog/filter/magit/">#magit</a>&nbsp;
+            
+            <a href="https://blog.andylu.dev/blog/filter/projects/">#projects</a>&nbsp;
+            
+            <a href="https://blog.andylu.dev/blog/filter/python/">#python</a>&nbsp;
+            
+            <a href="https://blog.andylu.dev/blog/filter/story/">#story</a>&nbsp;
+            
+            <a href="https://blog.andylu.dev/blog/filter/written-in-org-mode/">#written-in-org-mode</a>&nbsp;
+            
         </div>
-      </footer>
+    </small>
+    
+</content>
 
-    </div>
-  </div><script>window.__assets_js_src="/assets/js/"</script>
+  </main>
+  <footer>
+</footer>
 
-<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
-
+    
 </body>
 
 </html>
-

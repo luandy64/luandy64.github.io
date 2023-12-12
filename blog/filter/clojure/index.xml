@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>clojure on Andy&#39;s Garden</title>
+    <link>https://blog.andylu.dev/blog/filter/clojure/</link>
+    <description>Recent content in clojure on Andy&#39;s Garden</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2020, Andy Lu.</copyright>
+    <lastBuildDate>Mon, 04 Dec 2023 21:47:32 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/filter/clojure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Org Mode Is Better Glue Code Than Bash</title>
+      <link>https://blog.andylu.dev/blog/org-mode-is-better-glue-code-than-bash/</link>
+      <pubDate>Mon, 04 Dec 2023 21:47:32 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/org-mode-is-better-glue-code-than-bash/</guid>
+      <description>TLDR This post is just to document a scenario I put myself in. But I wanted to write it down in case I need to use it again in the future.
+Problem   You have a CSV file from your bank with some expenses listed.
+  You want to generate an PDF invoice file to send to someone and collect some money.
+  Solution I think the solution is to</description>
+    </item>
+    
+    <item>
+      <title>Terminal Logging With Color</title>
+      <link>https://blog.andylu.dev/blog/terminal-logging-with-color/</link>
+      <pubDate>Sat, 14 Oct 2023 21:25:56 -0400</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/terminal-logging-with-color/</guid>
+      <description>These days I&amp;rsquo;ve been writing a lot of babashka instead of reaching for bash or python to do minor scripting tasks at work.
+I am also a big fan of the work done at charm and the relevant products in this case are gum and lipgloss.
+Using gum style I can log any text in basically any color I want. And while there&amp;rsquo;s not a ton of functional benefits to this, I think there&amp;rsquo;s something to be said about adding color into the logs we write.</description>
+    </item>
+    
+  </channel>
+</rss>
