@@ -5,7 +5,26 @@
     <small>
         <a href="{{ "blog" | relURL }}">Remove filter</a>
     </small>
-    {{ end }}
+
+    <ul class="blog-posts">
+        {{ range .Site.Taxonomies.tags.Get .Title }}
+        <li>
+            <span>
+                <i>
+                    <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+                        {{ .Date.Format "2006-01-02" }}
+                    </time>
+                </i>
+            </span>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </li>
+        {{ else }}
+        <li>
+            No posts yet
+        </li>
+        {{ end }}
+    </ul>
+    {{ else }}
     <ul class="blog-posts">
         {{ $kinds := slice "blog" "handwritten" "indieweb"}}
         {{ range where .Site.RegularPages.ByTitle.ByDate.Reverse "Type" "in" $kinds }}
@@ -25,8 +44,6 @@
         </li>
         {{ end }}
     </ul>
-    {{ if .Data.Singular }}
-    {{else}}
     <small>
         <div>
             {{ range .Site.Taxonomies.tags }}
