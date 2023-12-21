@@ -2,15 +2,26 @@
 <html lang="en-US">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+      charset="utf-8"
+  >
+  <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+  />
 <link rel="shortcut icon" href="https://blog.andylu.dev/favicon.ico" />
-<title>My Babashka Cookbook | Andy&#39;s Garden</title>
+<title>
+      
+      My Babashka Cookbook
+      |
+      
+      Andy&#39;s Garden
+  </title>
 <meta name="title" content="My Babashka Cookbook" />
 <meta name="description" content="This post is the one I want to reference when I do something in babashka and forget syntax or something.
 Capture a process&rsquo;s STDOUT and process the string after (require &#39;[babashka.process :as bp]) (-&gt; (bp/shell {:out :string} &#34;do-the-thing&#34;) :out (clojure.string/split #&#34;\n&#34;)) Import a local library Dynamically You can add deps as one of the first steps in your scripts.
 (require &#39;[babashka.deps :as deps]) (deps/add-deps &#39;{:deps {io.github.lispyclouds/bblgum {:git/sha &#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&#34;} dev.andylu/clj-lipgloss {:local/root &#34;/home/andy/git/clj-lipgloss&#34;}}}) (require &#39;[bblgum." />
-<meta name="keywords" content="" />
+<meta name="keywords" content="babashka," />
 
 
 <meta property="og:title" content="My Babashka Cookbook" />
@@ -40,9 +51,12 @@ Capture a process&rsquo;s STDOUT and process the string after (require &#39;[bab
 Capture a process&rsquo;s STDOUT and process the string after (require &#39;[babashka.process :as bp]) (-&gt; (bp/shell {:out :string} &#34;do-the-thing&#34;) :out (clojure.string/split #&#34;\n&#34;)) Import a local library Dynamically You can add deps as one of the first steps in your scripts.
 (require &#39;[babashka.deps :as deps]) (deps/add-deps &#39;{:deps {io.github.lispyclouds/bblgum {:git/sha &#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&#34;} dev.andylu/clj-lipgloss {:local/root &#34;/home/andy/git/clj-lipgloss&#34;}}}) (require &#39;[bblgum."><meta itemprop="datePublished" content="2023-10-29T23:26:22-04:00" />
 <meta itemprop="dateModified" content="2023-10-30T00:08:59-04:00" />
-<meta itemprop="wordCount" content="113"><meta itemprop="image" content="https://blog.andylu.dev/images/share.png"/>
-<meta itemprop="keywords" content="" />
-<meta name="referrer" content="no-referrer-when-downgrade" />
+<meta itemprop="wordCount" content="505"><meta itemprop="image" content="https://blog.andylu.dev/images/share.png"/>
+<meta itemprop="keywords" content="babashka," />
+<meta
+      name="referrer"
+      content="no-referrer-when-downgrade"
+  />
 
   <style>
   body {
@@ -236,21 +250,16 @@ Capture a process&rsquo;s STDOUT and process the string after (require &#39;[bab
 </nav>
 </header>
   <main>
- 
+
 <h1>My Babashka Cookbook</h1>
 
 <p>
-    <strong>
-        Last updated
-
-    </strong>
-    :
+    <strong> Last updated </strong> :
     <time datetime='2023-10-29' pubdate>
         2023-10-29T23:26:22-04:00
     </time>
 </p>
 
- 
 <content>
     <p>This post is the one I want to reference when I do something in <code>babashka</code> and forget syntax or
 something.</p>
@@ -277,10 +286,100 @@ something.</p>
 </code></pre></div><p>And then in your code</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[bblgum.core <span style="color:#e6db74">:as</span> b])
 (<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[clj-lipgloss.core <span style="color:#e6db74">:as</span> lg <span style="color:#e6db74">:use</span> [log-info log-warn log-debug]])
+</code></pre></div><h2 id="building-a-cli-tool">Building a CLI tool</h2>
+<h3 id="super-basic-call">Super basic call</h3>
+<p>A basic call to <code>babashka.cli/parse-args</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">cli/parse-args</span> *command-line-args*)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">alu-field-selection new-catalog -o new-catalog-selected
+<span style="color:#f92672">{</span>:args <span style="color:#f92672">[</span>new-catalog<span style="color:#f92672">]</span>, :opts <span style="color:#f92672">{</span>:o new-catalog-selected<span style="color:#f92672">}}</span>
+</code></pre></div><h3 id="adding-a-help-command">Adding a help command</h3>
+<p>For parsing the help flag, I like to just do a first pass and look the <code>-h</code> or <code>--help</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">
+(<span style="color:#66d9ef">defn </span>show-help []
+  (println <span style="color:#e6db74">&#34;TODO&#34;</span>))
+
+(<span style="color:#66d9ef">defn </span>passed-help-arg? [args]
+  (<span style="color:#66d9ef">let </span>[options (<span style="color:#a6e22e">cli/parse-args</span> args {<span style="color:#e6db74">:alias</span> {<span style="color:#e6db74">:h</span> <span style="color:#e6db74">:help</span>}
+                                      <span style="color:#e6db74">:coerce</span> {<span style="color:#e6db74">:help</span> <span style="color:#e6db74">:boolean</span>}})]
+    (when (-&gt; options <span style="color:#e6db74">:opts</span> <span style="color:#e6db74">:help</span>)
+      (<span style="color:#a6e22e">show-help</span>)
+      (<span style="color:#a6e22e">System/exit</span> <span style="color:#ae81ff">0</span>))))
+
+(when (= *file* (<span style="color:#a6e22e">System/getProperty</span> <span style="color:#e6db74">&#34;babashka.file&#34;</span>))
+  (<span style="color:#a6e22e">passed-help-arg?</span> *command-line-args*)
+
+  (apply main *command-line-args*))
+</code></pre></div><p>I think it&rsquo;s a nice approach to say my script will never try to handle your other input if there is
+a help arg passed in.</p>
+<h3 id="supporting-short-and-long-option-flags">Supporting short and long option flags</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">cli/parse-args</span> args
+                {<span style="color:#e6db74">:alias</span> {<span style="color:#e6db74">:o</span> <span style="color:#e6db74">:output</span>}})
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">alu-field-selection new-catalog --output new-catalog-selected
+<span style="color:#f92672">{</span>:args <span style="color:#f92672">[</span>new-catalog<span style="color:#f92672">]</span>, :opts <span style="color:#f92672">{</span>:output new-catalog-selected<span style="color:#f92672">}}</span>
+</code></pre></div><h3 id="coerce-args-to-opts">Coerce args to opts</h3>
+<p>Sometimes you want to consider any args passed in to be grouped into some option keys</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">cli/parse-args</span> args
+                {<span style="color:#e6db74">:alias</span>      {<span style="color:#e6db74">:o</span> <span style="color:#e6db74">:output</span>}
+                 <span style="color:#e6db74">:args-&gt;opts</span> [<span style="color:#e6db74">:input</span>]})
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">alu-field-selection new-catalog --output new-catalog-selected
+<span style="color:#f92672">{</span>:opts <span style="color:#f92672">{</span>:input new-catalog, :output new-catalog-selected<span style="color:#f92672">}}</span>
+</code></pre></div><h3 id="requiring-input">Requiring input</h3>
+<p>You can cause the script to exit when certain input isn&rsquo;t given</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>show-help [<span style="color:#f92672">&amp;</span> args]
+  (println <span style="color:#e6db74">&#34;TODO Write show-help&#34;</span>))
+
+(<span style="color:#66d9ef">defn </span>exit-on-error [_]
+  (<span style="color:#a6e22e">show-help</span>)
+  (<span style="color:#a6e22e">System/exit</span> <span style="color:#ae81ff">1</span>))
+
+(<span style="color:#a6e22e">cli/parse-args</span> args
+                               {<span style="color:#e6db74">:alias</span>      {<span style="color:#e6db74">:o</span> <span style="color:#e6db74">:output</span>}
+                                <span style="color:#e6db74">:args-&gt;opts</span> [<span style="color:#e6db74">:input</span>]
+                                <span style="color:#e6db74">:require</span>    [<span style="color:#e6db74">:input</span>]
+                                <span style="color:#e6db74">:exec-args</span>  {<span style="color:#e6db74">:output</span> <span style="color:#e6db74">&#34;NEW-catalog&#34;</span>}
+                                <span style="color:#e6db74">:error-fn</span>   exit-on-error})
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">alu-field-selection
+TODO Write show-help
+</code></pre></div><p>This lets us reuse the help function we already wrote and by adding a custom <code>:error-fn</code>, we can
+avoid dumping a stack trace for the end user.</p>
+<p>Babashka can give a little context to <code>exit-on-error</code> too.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>exit-on-error [{<span style="color:#e6db74">:keys</span> [msg]}]
+  (println msg)
+  (<span style="color:#a6e22e">show-help</span>)
+  (<span style="color:#a6e22e">System/exit</span> <span style="color:#ae81ff">1</span>))
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">alu-field-selection
+Required option: :input
+TODO Write show-help
+</code></pre></div><h3 id="interactive-fuzzy-file-picker">Interactive fuzzy file picker</h3>
+<p>By using <code>gum input</code> with a placeholder, we can show the user some default directory. If that&rsquo;s the
+one they want, then hitting enter will return an empty string to our script. Couple that with the
+<code>(or ... default-dir)</code> and you can actually save the <code>default-dir</code> as the choice.</p>
+<p>To get the fuzzy find, we use <code>gum filter</code>. It expects newline separated input which is what
+<code>babashka.process/shell</code> spits out. Finally, for the <code>filter</code>, I set a <code>:height 10</code> so that <code>gum</code>
+doesn&rsquo;t try to fill the whole screen when it gets a ton of input</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">let </span>[default-dir (<span style="color:#a6e22e">System/getenv</span> <span style="color:#e6db74">&#34;PWD&#34;</span>)
+      chosen-dir  (or (-&gt; (<span style="color:#a6e22e">b/gum</span> <span style="color:#e6db74">:input</span>
+                                 <span style="color:#e6db74">:placeholder</span> default-dir)
+                          <span style="color:#e6db74">:result</span>
+                          first)
+                      default-dir)
+      files       (-&gt; {<span style="color:#e6db74">:out</span> <span style="color:#e6db74">:string</span>}
+                      (<span style="color:#a6e22e">bp/shell</span> <span style="color:#e6db74">&#34;ls&#34;</span> chosen-dir)
+                      <span style="color:#e6db74">:out</span>)]
+  (<span style="color:#a6e22e">-&gt;&gt;</span> (<span style="color:#a6e22e">b/gum</span> <span style="color:#e6db74">:filter</span> <span style="color:#e6db74">:height</span> <span style="color:#ae81ff">10</span> <span style="color:#e6db74">:in</span> files)
+       <span style="color:#e6db74">:result</span>
+       first))
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
 </code></pre></div>
 </content>
 
 <p>
+    
+        <a href="https://blog.andylu.dev/blog/filter/babashka/">
+            #babashka
+        </a>
     
 </p>
 

@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.andylu.dev/indieweb/</loc>
+    <loc>https://blog.andylu.dev/blog/</loc>
     <lastmod>2023-12-11T20:27:55-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/indieweb/webmention-test/</loc>
+    <loc>https://blog.andylu.dev/blog/filter/indieweb/</loc>
+    <lastmod>2023-12-11T20:27:55-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/webmention-test/</loc>
     <lastmod>2023-12-11T20:27:55-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/</loc>
-    <lastmod>2023-12-11T15:59:17-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/blog/</loc>
     <lastmod>2023-12-11T15:59:17-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/this-is-an-org-post/</loc>
@@ -62,14 +62,14 @@
     <loc>https://blog.andylu.dev/old-now/</loc>
     <lastmod>2023-12-11T23:17:32-05:00</lastmod>
   </url><url>
+    <loc>https://blog.andylu.dev/blog/filter/babashka/</loc>
+    <lastmod>2023-10-30T00:08:59-04:00</lastmod>
+  </url><url>
     <loc>https://blog.andylu.dev/blog/my-babashka-cookbook/</loc>
     <lastmod>2023-10-30T00:08:59-04:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/biff-tutorial/</loc>
     <lastmod>2023-10-17T19:48:08-04:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/babashka/</loc>
-    <lastmod>2023-10-15T14:39:22-04:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/babashka-datetime/</loc>
     <lastmod>2023-10-15T14:39:22-04:00</lastmod>
@@ -104,10 +104,7 @@
     <loc>https://blog.andylu.dev/blog/filter/handwritten/</loc>
     <lastmod>2023-12-11T15:59:17-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/handwritten/</loc>
-    <lastmod>2023-12-11T15:59:17-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/handwritten/introducing-handwritten-pages/</loc>
+    <loc>https://blog.andylu.dev/blog/introducing-handwritten-pages/</loc>
     <lastmod>2023-12-11T15:59:17-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/filter/docker/</loc>

@@ -2,10 +2,21 @@
 <html lang="en-US">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+      charset="utf-8"
+  >
+  <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+  />
 <link rel="shortcut icon" href="https://blog.andylu.dev/favicon.ico" />
-<title>Bash `while` loops | Andy&#39;s Garden</title>
+<title>
+      
+      Bash `while` loops
+      |
+      
+      Andy&#39;s Garden
+  </title>
 <meta name="title" content="Bash `while` loops" />
 <meta name="description" content="Here&rsquo;s a bash snippet I can see myself using one day
 while :; do ls -lh &#34;$( ls -t1 /tmp/tmp* | head -n 1 )&#34;; sleep 10; done  &quot;$( ls -t1 /tmp/tmp* | head -n 1 )&quot;: Get a file name  ls -t1 /tmp/tmp*: List the files in /tmp/tmp* ordered by most recently updated head -n 1: Get the first one   ls -lh &lt;one-file&gt;: Get the long listing of just one file The rest of it is just to do it over and over so that I can see changes in the file size  " />
@@ -38,7 +49,10 @@ while :; do ls -lh &#34;$( ls -t1 /tmp/tmp* | head -n 1 )&#34;; sleep 10; done  
 <meta itemprop="dateModified" content="2023-11-27T15:54:59-05:00" />
 <meta itemprop="wordCount" content="94"><meta itemprop="image" content="https://blog.andylu.dev/images/share.png"/>
 <meta itemprop="keywords" content="bash," />
-<meta name="referrer" content="no-referrer-when-downgrade" />
+<meta
+      name="referrer"
+      content="no-referrer-when-downgrade"
+  />
 
   <style>
   body {
@@ -232,21 +246,16 @@ while :; do ls -lh &#34;$( ls -t1 /tmp/tmp* | head -n 1 )&#34;; sleep 10; done  
 </nav>
 </header>
   <main>
- 
+
 <h1>Bash `while` loops</h1>
 
 <p>
-    <strong>
-        Last updated
-
-    </strong>
-    :
+    <strong> Last updated </strong> :
     <time datetime='2023-11-27' pubdate>
         2023-11-27T15:54:59-05:00
     </time>
 </p>
 
- 
 <content>
     <p>Here&rsquo;s a bash snippet I can see myself using one day</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">while</span> :; <span style="color:#66d9ef">do</span> ls -lh <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span> ls -t1 /tmp/tmp* | head -n <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>; sleep 10; <span style="color:#66d9ef">done</span>
@@ -265,7 +274,9 @@ while :; do ls -lh &#34;$( ls -t1 /tmp/tmp* | head -n 1 )&#34;; sleep 10; done  
 
 <p>
     
-    <a href="https://blog.andylu.dev/blog/filter/bash/">#bash</a>
+        <a href="https://blog.andylu.dev/blog/filter/bash/">
+            #bash
+        </a>
     
 </p>
 

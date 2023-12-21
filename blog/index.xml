@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>
-    <lastBuildDate>Mon, 11 Dec 2023 15:52:40 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Dec 2023 20:14:31 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Webmention Test</title>
+      <link>https://blog.andylu.dev/blog/webmention-test/</link>
+      <pubDate>Mon, 11 Dec 2023 20:14:31 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/webmention-test/</guid>
+      <description>  in reply to: @aaronpk  Trying out this guide to sending webmentions  </description>
+    </item>
+    
     <item>
       <title>This is an Org Post</title>
       <link>https://blog.andylu.dev/blog/this-is-an-org-post/</link>
@@ -152,6 +161,15 @@ git submodule add https://github.com/some-other-repo To clone a submodule locall
       <guid>https://blog.andylu.dev/blog/til-silica-gel/</guid>
       <description>Was in a flower shop today and the cashier was trying to describe how a big carton of silica gel can be used to dry out flowers.
 I chuckled because I&amp;rsquo;m not entirely sure where to get a bunch of silica gel, but then thought it&amp;rsquo;s time to start hoarding &amp;ldquo;Do not eat&amp;rdquo; packets.</description>
+    </item>
+    
+    <item>
+      <title>introducing Handwritten Pages</title>
+      <link>https://blog.andylu.dev/blog/introducing-handwritten-pages/</link>
+      <pubDate>Sun, 02 Oct 2022 07:52:15 -0500</pubDate>
+      
+      <guid>https://blog.andylu.dev/blog/introducing-handwritten-pages/</guid>
+      <description>     </description>
     </item>
     
     <item>
