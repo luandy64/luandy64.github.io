@@ -57,12 +57,18 @@ This also relates to things I&#39;ve been reading about permacomputing. By keepi
   />
 
   <style>
+ @import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+
  html {
      cursor: url("/aero_arrow.cur"), default;
+     font-family: 'Merriweather Sans', sans-serif;
+ }
+
+ @supports (font-variation-settings: normal) {
+     code { font-family: 'Fira Code VF', monospace; }
  }
 
  body {
-     font-family: Verdana, sans-serif;
      margin: auto;
      padding: 20px;
      max-width: 720px;
@@ -488,6 +494,9 @@ This also relates to things I&#39;ve been reading about permacomputing. By keepi
 
    }
   </style>
+
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=fira-code:400|merriweather-sans:400" rel="stylesheet" />
 
   
 </head>
