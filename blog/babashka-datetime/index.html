@@ -61,6 +61,10 @@ Apparently, it&rsquo;s just
   />
 
   <style>
+ html {
+     cursor: url("/aero_arrow.cur"), default;
+ }
+
  body {
      font-family: Verdana, sans-serif;
      margin: auto;
@@ -87,6 +91,34 @@ Apparently, it&rsquo;s just
 
  a {
      color: #3273dc;
+ }
+
+ a:hover {
+     animation-duration: 0.5s;
+     animation-iteration-count: infinite;
+     animation-name: flick;
+ }
+
+ nav > a {
+     box-shadow: inset 0 0 0 0 #3273dc;
+     margin: 0 -.25rem;
+     padding: 0 .25rem;
+     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+ }
+
+ nav a:hover {
+     box-shadow: inset 100px 0 0 0 #3273dc;
+     color: white;
+ }
+
+ @keyframes flick {
+     from {
+         cursor: url("/aero_link1.ico"), auto;
+     }
+
+     to {
+         cursor: url("/aero_link2.ico"), auto;
+     }
  }
 
  .title {
