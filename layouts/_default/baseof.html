@@ -35,7 +35,7 @@
              | safeHTML }}
   {{ end -}}
 
-  {{- if eq .Params.kind "handwritten" -}}
+  {{- if eq .Params.type "handwritten" -}}
       {{- partial "handwritten_style.html" . -}}
   {{- else -}}
       {{- partial "style.html" . -}}
