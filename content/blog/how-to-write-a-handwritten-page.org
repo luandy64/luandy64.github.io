@@ -1,0 +1,44 @@
+#+TITLE: How to Write a Handwritten Page
+#+MARKUP: org
+#+DATE: 2023-12-21T19:36:47-05:00
+#+LASTMOD: 2023-12-21T19:36:47-05:00
+#+TAGS[]: written-in-org-mode meta
+
+
+I lean on two shortcodes to create these pages.
+
+The =figure= code
+
+#+begin_src go
+  {{</*
+      figure
+      src="/IMG_0193.jpg"
+  */>}}
+#+end_src
+
+And if I need links, the =hand-link= code
+
+#+begin_src go
+  {{</*
+        hand-link
+        href="https://google.com"
+        style=`
+        left: 13.332134292565947%;
+        top: 55.21739130434783%;
+        width: 17.206235011990408%;
+        height: 17.536231884057973%;
+        `
+  */>}}
+#+end_src
+
+To generate the CSS for the links,
+- upload the image to https://pixspy.com/
+- right click to make a selection for where the link should go
+- open the dev console and paste the following code
+
+#+begin_src js
+  var [_, ix, iy] = $('.FileDetails-details')[0].textContent.match(/(\d+) x (\d+)/);
+  var [_, dx, dy, sx, sy] = $('.Selection-summary')[0].textContent.match(/(\d+) x (\d+) @ \((\d+), (\d+)\)/);
+  [ix, iy, sx, sy, dx, dy] = [ix, iy, sx, sy, dx, dy].map(x => parseInt(x));
+  console.log(`left: ${(100 * sx / ix) + 3.5}%; top: ${100 * sy / iy}%; width: ${100 * dx / ix}%; height: ${100 * dy / iy}%;`)
+#+end_src
