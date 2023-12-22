@@ -8,7 +8,7 @@
                                 clojure.string/trim
                                 (clojure.string/split (re-pattern " ")))
                             (clojure.string/join "-"))
-                 file-name (str file-stub ".md")]
+                 file-name (str file-stub ".org")]
              file-name)
   blog
   (let [file-name (run 'get-file)]
