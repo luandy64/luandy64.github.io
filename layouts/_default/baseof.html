@@ -35,11 +35,16 @@
              | safeHTML }}
   {{ end -}}
 
-  {{- if eq .Params.type "handwritten" -}}
-      {{- partial "handwritten_style.html" . -}}
-  {{- else -}}
-      {{- partial "style.html" . -}}
-  {{ end }}
+  {{- partial "normal_style.html" . -}}
+
+  <style type="text/css" media="screen">
+   @media (prefers-color-scheme: dark) {
+       {{ partial "css/syntax-dark.css" . | safeCSS }}
+   }
+   @media (prefers-color-scheme: light) {
+       {{ partial "css/syntax-light.css" . | safeCSS }}
+   }
+  </style>
 
   <!-- A partial to be overwritten by the user.
   Simply place a custom_head.html into
