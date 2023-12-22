@@ -1,7 +1,7 @@
 ---
 title: "My Babashka Cookbook"
 date: 2023-10-29T23:26:22-04:00
-lastmod: 2023-12-21T18:49:32-05:00
+lastmod: 2023-12-22T13:46:36-05:00
 tags:
 - babashka
 ---
@@ -128,11 +128,11 @@ You can cause the script to exit when certain input isn't given
   (System/exit 1))
 
 (cli/parse-args args
-                               {:alias      {:o :output}
-                                :args->opts [:input]
-                                :require    [:input]
-                                :exec-args  {:output "NEW-catalog"}
-                                :error-fn   exit-on-error})
+                {:alias      {:o :output}
+                 :args->opts [:input]
+                 :require    [:input]
+                 :exec-args  {:output "NEW-catalog"}
+                 :error-fn   exit-on-error})
 ```
 
 ```shell
