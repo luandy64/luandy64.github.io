@@ -7,16 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>
-    <lastBuildDate>Mon, 27 Nov 2023 15:54:59 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/filter/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Nov 2023 15:54:59 -0500</lastBuildDate>
+    <atom:link href="https://blog.andylu.dev/blog/filter/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bash `while` loops</title>
       <link>https://blog.andylu.dev/blog/bash-while-loops/</link>
       <pubDate>Mon, 27 Nov 2023 15:54:59 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/bash-while-loops/</guid>
-      <description>Here&amp;rsquo;s a bash snippet I can see myself using one day
-while :; do ls -lh &amp;#34;$( ls -t1 /tmp/tmp* | head -n 1 )&amp;#34;; sleep 10; done  &amp;quot;$( ls -t1 /tmp/tmp* | head -n 1 )&amp;quot;: Get a file name  ls -t1 /tmp/tmp*: List the files in /tmp/tmp* ordered by most recently updated head -n 1: Get the first one   ls -lh &amp;lt;one-file&amp;gt;: Get the long listing of just one file The rest of it is just to do it over and over so that I can see changes in the file size  </description>
+      <description>Here&amp;rsquo;s a bash snippet I can see myself using one day&#xA;while :; do ls -lh &amp;#34;$( ls -t1 /tmp/tmp* | head -n 1 )&amp;#34;; sleep 10; done &amp;quot;$( ls -t1 /tmp/tmp* | head -n 1 )&amp;quot;: Get a file name ls -t1 /tmp/tmp*: List the files in /tmp/tmp* ordered by most recently updated head -n 1: Get the first one ls -lh &amp;lt;one-file&amp;gt;: Get the long listing of just one file The rest of it is just to do it over and over so that I can see changes in the file size </description>
     </item>
-    
   </channel>
 </rss>

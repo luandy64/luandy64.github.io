@@ -7,15 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>
-    <lastBuildDate>Sun, 02 Oct 2022 07:52:15 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/filter/handwritten/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Oct 2022 07:52:15 -0500</lastBuildDate>
+    <atom:link href="https://blog.andylu.dev/blog/filter/handwritten/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>introducing Handwritten Pages</title>
       <link>https://blog.andylu.dev/blog/introducing-handwritten-pages/</link>
       <pubDate>Sun, 02 Oct 2022 07:52:15 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/introducing-handwritten-pages/</guid>
-      <description>     </description>
+      <description> </description>
     </item>
-    
   </channel>
 </rss>

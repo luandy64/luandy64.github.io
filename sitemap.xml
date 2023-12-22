@@ -3,7 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.andylu.dev/blog/</loc>
-    <lastmod>2023-12-21T18:49:32-05:00</lastmod>
+    <lastmod>2023-12-21T19:36:47-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/how-to-write-a-handwritten-page/</loc>
+    <lastmod>2023-12-21T19:36:47-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/filter/meta/</loc>
+    <lastmod>2023-12-21T19:36:47-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/filter/written-in-org-mode/</loc>
+    <lastmod>2023-12-21T19:36:47-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/filter/indieweb/</loc>
     <lastmod>2023-12-11T20:27:55-05:00</lastmod>
@@ -15,9 +24,6 @@
     <lastmod>2023-12-11T15:59:17-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/this-is-an-org-post/</loc>
-    <lastmod>2023-12-11T15:59:17-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/written-in-org-mode/</loc>
     <lastmod>2023-12-11T15:59:17-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/filter/clojure/</loc>

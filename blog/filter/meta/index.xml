@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>written-in-org-mode on Andy&#39;s Garden</title>
-    <link>https://blog.andylu.dev/blog/filter/written-in-org-mode/</link>
-    <description>Recent content in written-in-org-mode on Andy&#39;s Garden</description>
+    <title>meta on Andy&#39;s Garden</title>
+    <link>https://blog.andylu.dev/blog/filter/meta/</link>
+    <description>Recent content in meta on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>
     <lastBuildDate>Thu, 21 Dec 2023 19:36:47 -0500</lastBuildDate>
-    <atom:link href="https://blog.andylu.dev/blog/filter/written-in-org-mode/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.andylu.dev/blog/filter/meta/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Write a Handwritten Page</title>
       <link>https://blog.andylu.dev/blog/how-to-write-a-handwritten-page/</link>
       <pubDate>Thu, 21 Dec 2023 19:36:47 -0500</pubDate>
       <guid>https://blog.andylu.dev/blog/how-to-write-a-handwritten-page/</guid>
       <description>I lean on two shortcodes to create these pages.&#xA;The figure code&#xA;{{&amp;lt; figure src=&amp;#34;/IMG_0193.jpg&amp;#34; &amp;gt;}} And if I need links, the hand-link code&#xA;{{&amp;lt; hand-link href=&amp;#34;https://google.com&amp;#34; style=` left: 13.332134292565947%; top: 55.21739130434783%; width: 17.206235011990408%; height: 17.536231884057973%; ` &amp;gt;}} To generate the CSS for the links,&#xA;upload the image to https://pixspy.com/ right click to make a selection for where the link should go open the dev console and paste the following code var [_, ix, iy] = $(&amp;#39;.</description>
-    </item>
-    <item>
-      <title>This is an Org Post</title>
-      <link>https://blog.andylu.dev/blog/this-is-an-org-post/</link>
-      <pubDate>Mon, 11 Dec 2023 15:52:40 -0500</pubDate>
-      <guid>https://blog.andylu.dev/blog/this-is-an-org-post/</guid>
-      <description>Today I learned that hugo has support for org-mode files.&#xA;I knew that ox-hugo is a thing, but this is different. And I never thought to dig into the docs to figure out if I can author posts in org-mode and have it work.</description>
     </item>
   </channel>
 </rss>

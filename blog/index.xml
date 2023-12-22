@@ -7,193 +7,133 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>
-    <lastBuildDate>Mon, 11 Dec 2023 20:14:31 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Dec 2023 19:36:47 -0500</lastBuildDate>
+    <atom:link href="https://blog.andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Write a Handwritten Page</title>
+      <link>https://blog.andylu.dev/blog/how-to-write-a-handwritten-page/</link>
+      <pubDate>Thu, 21 Dec 2023 19:36:47 -0500</pubDate>
+      <guid>https://blog.andylu.dev/blog/how-to-write-a-handwritten-page/</guid>
+      <description>I lean on two shortcodes to create these pages.&#xA;The figure code&#xA;{{&amp;lt; figure src=&amp;#34;/IMG_0193.jpg&amp;#34; &amp;gt;}} And if I need links, the hand-link code&#xA;{{&amp;lt; hand-link href=&amp;#34;https://google.com&amp;#34; style=` left: 13.332134292565947%; top: 55.21739130434783%; width: 17.206235011990408%; height: 17.536231884057973%; ` &amp;gt;}} To generate the CSS for the links,&#xA;upload the image to https://pixspy.com/ right click to make a selection for where the link should go open the dev console and paste the following code var [_, ix, iy] = $(&amp;#39;.</description>
+    </item>
     <item>
       <title>Webmention Test</title>
       <link>https://blog.andylu.dev/blog/webmention-test/</link>
       <pubDate>Mon, 11 Dec 2023 20:14:31 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/webmention-test/</guid>
-      <description>  in reply to: @aaronpk  Trying out this guide to sending webmentions  </description>
+      <description> in reply to: @aaronpk Trying out this guide to sending webmentions </description>
     </item>
-    
     <item>
       <title>This is an Org Post</title>
       <link>https://blog.andylu.dev/blog/this-is-an-org-post/</link>
       <pubDate>Mon, 11 Dec 2023 15:52:40 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/this-is-an-org-post/</guid>
-      <description>Today I learned that hugo has support for org-mode files.
- I knew that ox-hugo is a thing, but this is different. And I never thought to dig into the docs to figure out if I can author posts in org-mode and have it work.</description>
+      <description>Today I learned that hugo has support for org-mode files.&#xA;I knew that ox-hugo is a thing, but this is different. And I never thought to dig into the docs to figure out if I can author posts in org-mode and have it work.</description>
     </item>
-    
     <item>
       <title>Org Mode Is Better Glue Code Than Bash</title>
       <link>https://blog.andylu.dev/blog/org-mode-is-better-glue-code-than-bash/</link>
       <pubDate>Mon, 04 Dec 2023 21:47:32 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/org-mode-is-better-glue-code-than-bash/</guid>
-      <description>TLDR This post is just to document a scenario I put myself in. But I wanted to write it down in case I need to use it again in the future.
-Problem   You have a CSV file from your bank with some expenses listed.
-  You want to generate an PDF invoice file to send to someone and collect some money.
-  Solution I think the solution is to</description>
+      <description>TLDR This post is just to document a scenario I put myself in. But I wanted to write it down in case I need to use it again in the future.&#xA;Problem You have a CSV file from your bank with some expenses listed.&#xA;You want to generate an PDF invoice file to send to someone and collect some money.&#xA;Solution I think the solution is to&#xA;import the CSV into an org table use your favorite programming language to format the data use maaslalani/invoice to quickly make a PDF Deep Dive When I&amp;rsquo;m dealing with CSV files, I often reach for org-mode in emacs just to make the file easier to read.</description>
     </item>
-    
     <item>
       <title>Python Packaging</title>
       <link>https://blog.andylu.dev/blog/python-packaging/</link>
       <pubDate>Fri, 01 Dec 2023 12:13:04 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/python-packaging/</guid>
-      <description>I didn&amp;rsquo;t know what to use between poetry and hatch.
-I just followed the guide from the Packaging Guide.
-It ended with me having the following directory structure
-. ├── pyproject.toml ├── README.org ├── src │ └── andy_aoc_2023 │ ├── day1.py │ └── __init__.py └── tests Which isn&amp;rsquo;t too crazy I guess.</description>
+      <description>I didn&amp;rsquo;t know what to use between poetry and hatch.&#xA;I just followed the guide from the Packaging Guide.&#xA;It ended with me having the following directory structure&#xA;. ├── pyproject.toml ├── README.org ├── src │ └── andy_aoc_2023 │ ├── day1.py │ └── __init__.py └── tests Which isn&amp;rsquo;t too crazy I guess.</description>
     </item>
-    
     <item>
       <title>Magit: Multiple Push Remotes</title>
       <link>https://blog.andylu.dev/blog/magit-multiple-push-remotes/</link>
       <pubDate>Fri, 01 Dec 2023 11:06:44 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/magit-multiple-push-remotes/</guid>
-      <description>I wanted to do the equivalent of this, but in magit
-git remote rename origin github git remote add codeberg https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote add origin https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote set-url --add --push origin https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote set-url --add --push origin https://github.com/jeffkreeftmeijer/ox-md-title.el git remote show origin * remote origin Fetch URL: https://codeberg.org/jkreeftmeijer/ox-md-title.el.git Push URL: https://codeberg.org/jkreeftmeijer/ox-md-title.el.git Push URL: https://github.com/jeffkreeftmeijer/ox-md-title.el HEAD branch: main Remote branch: main new (next fetch will store in remotes/origin) Local ref configured for &amp;#39;git push&amp;#39;: main pushes to main (up to date) Source</description>
+      <description>I wanted to do the equivalent of this, but in magit&#xA;git remote rename origin github git remote add codeberg https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote add origin https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote set-url --add --push origin https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote set-url --add --push origin https://github.com/jeffkreeftmeijer/ox-md-title.el git remote show origin * remote origin Fetch URL: https://codeberg.org/jkreeftmeijer/ox-md-title.el.git Push URL: https://codeberg.org/jkreeftmeijer/ox-md-title.el.git Push URL: https://github.com/jeffkreeftmeijer/ox-md-title.el HEAD branch: main Remote branch: main new (next fetch will store in remotes/origin) Local ref configured for &amp;#39;git push&amp;#39;: main pushes to main (up to date) Source</description>
     </item>
-    
     <item>
       <title>Self Hosting Email</title>
       <link>https://blog.andylu.dev/blog/self-hosting-email/</link>
       <pubDate>Thu, 30 Nov 2023 17:03:01 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/self-hosting-email/</guid>
-      <description>I&amp;rsquo;ve made a couple attempts at this so far.
-The software I&amp;rsquo;ve been looking at is:
- https://stalw.art/ https://www.cyrusimap.org/  I didn&amp;rsquo;t really give Cyrus a good go because I got Stalwart in a spot where I could receive messages through IMAP.
-I didn&amp;rsquo;t get far at all with sending messages. Oracle is my currently cloud provider and port 25 is blocked on my account.
-The feature that drew me to both of these projects is JMAP support.</description>
+      <description>I&amp;rsquo;ve made a couple attempts at this so far.&#xA;The software I&amp;rsquo;ve been looking at is:&#xA;https://stalw.art/ https://www.cyrusimap.org/ I didn&amp;rsquo;t really give Cyrus a good go because I got Stalwart in a spot where I could receive messages through IMAP.&#xA;I didn&amp;rsquo;t get far at all with sending messages. Oracle is my currently cloud provider and port 25 is blocked on my account.&#xA;The feature that drew me to both of these projects is JMAP support.</description>
     </item>
-    
     <item>
       <title>Bash `while` loops</title>
       <link>https://blog.andylu.dev/blog/bash-while-loops/</link>
       <pubDate>Mon, 27 Nov 2023 15:54:59 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/bash-while-loops/</guid>
-      <description>Here&amp;rsquo;s a bash snippet I can see myself using one day
-while :; do ls -lh &amp;#34;$( ls -t1 /tmp/tmp* | head -n 1 )&amp;#34;; sleep 10; done  &amp;quot;$( ls -t1 /tmp/tmp* | head -n 1 )&amp;quot;: Get a file name  ls -t1 /tmp/tmp*: List the files in /tmp/tmp* ordered by most recently updated head -n 1: Get the first one   ls -lh &amp;lt;one-file&amp;gt;: Get the long listing of just one file The rest of it is just to do it over and over so that I can see changes in the file size  </description>
+      <description>Here&amp;rsquo;s a bash snippet I can see myself using one day&#xA;while :; do ls -lh &amp;#34;$( ls -t1 /tmp/tmp* | head -n 1 )&amp;#34;; sleep 10; done &amp;quot;$( ls -t1 /tmp/tmp* | head -n 1 )&amp;quot;: Get a file name ls -t1 /tmp/tmp*: List the files in /tmp/tmp* ordered by most recently updated head -n 1: Get the first one ls -lh &amp;lt;one-file&amp;gt;: Get the long listing of just one file The rest of it is just to do it over and over so that I can see changes in the file size </description>
     </item>
-    
     <item>
       <title>My Babashka Cookbook</title>
       <link>https://blog.andylu.dev/blog/my-babashka-cookbook/</link>
       <pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/my-babashka-cookbook/</guid>
-      <description>This post is the one I want to reference when I do something in babashka and forget syntax or something.
-Capture a process&amp;rsquo;s STDOUT and process the string after (require &amp;#39;[babashka.process :as bp]) (-&amp;gt; (bp/shell {:out :string} &amp;#34;do-the-thing&amp;#34;) :out (clojure.string/split #&amp;#34;\n&amp;#34;)) Import a local library Dynamically You can add deps as one of the first steps in your scripts.
-(require &amp;#39;[babashka.deps :as deps]) (deps/add-deps &amp;#39;{:deps {io.github.lispyclouds/bblgum {:git/sha &amp;#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&amp;#34;} dev.andylu/clj-lipgloss {:local/root &amp;#34;/home/andy/git/clj-lipgloss&amp;#34;}}}) (require &amp;#39;[bblgum.</description>
+      <description>This post is the one I want to reference when I do something in babashka and forget syntax or something.&#xA;Capture a process&amp;rsquo;s STDOUT and process the string after (require &amp;#39;[babashka.process :as bp]) (-&amp;gt; (bp/shell {:out :string} &amp;#34;do-the-thing&amp;#34;) :out (clojure.string/split #&amp;#34;\n&amp;#34;)) Import a local library Dynamically You can add deps as one of the first steps in your scripts.&#xA;(require &amp;#39;[babashka.deps :as deps]) (deps/add-deps &amp;#39;{:deps {io.github.lispyclouds/bblgum {:git/sha &amp;#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&amp;#34;} dev.andylu/clj-lipgloss {:local/root &amp;#34;/home/andy/git/clj-lipgloss&amp;#34;}}}) (require &amp;#39;[bblgum.</description>
     </item>
-    
     <item>
       <title>Biff Tutorial</title>
       <link>https://blog.andylu.dev/blog/biff-tutorial/</link>
       <pubDate>Tue, 17 Oct 2023 19:48:08 -0400</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/biff-tutorial/</guid>
-      <description>Here are my notes as I go through the Biff tutorial.
-I&amp;rsquo;ve made a github repo here.
-I spotted something that didn&amp;rsquo;t work quite right. So I opened an issue and PR on the main repo. Here are those links: issue and PR.
-So I got to a point where the tutorial wanted me to hook up an email sending service to get login information sent out to users. I knew I already had a Resend account, so I opted to hook that up instead.</description>
+      <description>Here are my notes as I go through the Biff tutorial.&#xA;I&amp;rsquo;ve made a github repo here.&#xA;I spotted something that didn&amp;rsquo;t work quite right. So I opened an issue and PR on the main repo. Here are those links: issue and PR.&#xA;So I got to a point where the tutorial wanted me to hook up an email sending service to get login information sent out to users. I knew I already had a Resend account, so I opted to hook that up instead.</description>
     </item>
-    
     <item>
       <title>Babashka Datetime</title>
       <link>https://blog.andylu.dev/blog/babashka-datetime/</link>
       <pubDate>Sun, 15 Oct 2023 14:39:22 -0400</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/babashka-datetime/</guid>
-      <description>If I need a datetime in Python, I reach for
-from datetime import datetime datetime.now() So I need something as quick for clojure.
-Apparently, it&amp;rsquo;s just
-(-&amp;gt; (java.time.LocalDate/now) str) ;; =&amp;gt; &amp;#34;2023-10-15&amp;#34; </description>
+      <description>If I need a datetime in Python, I reach for&#xA;from datetime import datetime datetime.now() So I need something as quick for clojure.&#xA;Apparently, it&amp;rsquo;s just&#xA;(-&amp;gt; (java.time.LocalDate/now) str) ;; =&amp;gt; &amp;#34;2023-10-15&amp;#34; </description>
     </item>
-    
     <item>
       <title>Future Blog Ideas</title>
       <link>https://blog.andylu.dev/blog/future-blog-ideas/</link>
       <pubDate>Sat, 14 Oct 2023 21:48:09 -0400</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/future-blog-ideas/</guid>
-      <description>Here&amp;rsquo;s just a running list of things I want to write down thoughts about.
- babashka CLI design traefik as a reverse proxy for tailscale services  </description>
+      <description>Here&amp;rsquo;s just a running list of things I want to write down thoughts about.&#xA;babashka CLI design traefik as a reverse proxy for tailscale services </description>
     </item>
-    
     <item>
       <title>Terminal Logging With Color</title>
       <link>https://blog.andylu.dev/blog/terminal-logging-with-color/</link>
       <pubDate>Sat, 14 Oct 2023 21:25:56 -0400</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/terminal-logging-with-color/</guid>
-      <description>These days I&amp;rsquo;ve been writing a lot of babashka instead of reaching for bash or python to do minor scripting tasks at work.
-I am also a big fan of the work done at charm and the relevant products in this case are gum and lipgloss.
-Using gum style I can log any text in basically any color I want. And while there&amp;rsquo;s not a ton of functional benefits to this, I think there&amp;rsquo;s something to be said about adding color into the logs we write.</description>
+      <description>These days I&amp;rsquo;ve been writing a lot of babashka instead of reaching for bash or python to do minor scripting tasks at work.&#xA;I am also a big fan of the work done at charm and the relevant products in this case are gum and lipgloss.&#xA;Using gum style I can log any text in basically any color I want. And while there&amp;rsquo;s not a ton of functional benefits to this, I think there&amp;rsquo;s something to be said about adding color into the logs we write.</description>
     </item>
-    
     <item>
       <title>Git Submodules</title>
       <link>https://blog.andylu.dev/blog/git-submodules/</link>
       <pubDate>Tue, 08 Nov 2022 23:00:56 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/git-submodules/</guid>
-      <description>The first time I learned about git submodules was actually from working with hugo.
-The documentation used to describe how you can have your main branch live in a directory that points to a diffent origin than your current branch.
-It&amp;rsquo;s a cool feature that I never remember how to use, so here are notes I took after rediscovering it recently.
- To add a submodule
-git submodule add https://github.com/some-other-repo To clone a submodule locally</description>
+      <description>The first time I learned about git submodules was actually from working with hugo.&#xA;The documentation used to describe how you can have your main branch live in a directory that points to a diffent origin than your current branch.&#xA;It&amp;rsquo;s a cool feature that I never remember how to use, so here are notes I took after rediscovering it recently.&#xA;To add a submodule&#xA;git submodule add https://github.com/some-other-repo To clone a submodule locally</description>
     </item>
-    
     <item>
       <title>TIL: Silica Gel can make Dried Bouquet</title>
       <link>https://blog.andylu.dev/blog/til-silica-gel/</link>
       <pubDate>Tue, 08 Nov 2022 16:41:06 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/til-silica-gel/</guid>
-      <description>Was in a flower shop today and the cashier was trying to describe how a big carton of silica gel can be used to dry out flowers.
-I chuckled because I&amp;rsquo;m not entirely sure where to get a bunch of silica gel, but then thought it&amp;rsquo;s time to start hoarding &amp;ldquo;Do not eat&amp;rdquo; packets.</description>
+      <description>Was in a flower shop today and the cashier was trying to describe how a big carton of silica gel can be used to dry out flowers.&#xA;I chuckled because I&amp;rsquo;m not entirely sure where to get a bunch of silica gel, but then thought it&amp;rsquo;s time to start hoarding &amp;ldquo;Do not eat&amp;rdquo; packets.</description>
     </item>
-    
     <item>
       <title>introducing Handwritten Pages</title>
       <link>https://blog.andylu.dev/blog/introducing-handwritten-pages/</link>
       <pubDate>Sun, 02 Oct 2022 07:52:15 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/introducing-handwritten-pages/</guid>
-      <description>     </description>
+      <description> </description>
     </item>
-    
     <item>
       <title>KAllan&#39;s Telephone and Answering Machine Notes</title>
       <link>https://blog.andylu.dev/blog/docker-practice/</link>
       <pubDate>Sun, 11 Apr 2021 00:00:00 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/docker-practice/</guid>
-      <description>Setup Installing docker I always like the DigitalOcean tutorials, so that&amp;rsquo;s what I followed here. Installing Docker on Ubuntu 20.04
-One note: I had to restart my computer instead of just logging out in order to get the docker group update to take effect.
-Clone the repos git clone git@github.com:KAllan357/answering-machine.git git clone git@github.com:KAllan357/telephone.git Nothing special here.
-Install Go I just followed these instructions.
-Do the thing Start the answering machine outside of docker Running go run main.</description>
+      <description>Setup Installing docker I always like the DigitalOcean tutorials, so that&amp;rsquo;s what I followed here. Installing Docker on Ubuntu 20.04&#xA;One note: I had to restart my computer instead of just logging out in order to get the docker group update to take effect.&#xA;Clone the repos git clone git@github.com:KAllan357/answering-machine.git git clone git@github.com:KAllan357/telephone.git Nothing special here.&#xA;Install Go I just followed these instructions.&#xA;Do the thing Start the answering machine outside of docker Running go run main.</description>
     </item>
-    
     <item>
       <title>Clojurescript Project Setup</title>
       <link>https://blog.andylu.dev/blog/clojurescript-project-setup/</link>
       <pubDate>Mon, 06 Jul 2020 07:52:15 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/clojurescript-project-setup/</guid>
-      <description>Outcomes By the end of this post, you will be able to setup a new clojurescript project, setup emacs to be your development environment, and deploy your app to Github Pages
-Background I&amp;rsquo;ve written two clojurescript projects now, Sundial and DataBooze, and I want to document the set up process. The first time was a massive undertaking because it was my first time. But frustrating enough, so was the second time, even though I thought I nailed down the process and took notes on it.</description>
+      <description>Outcomes By the end of this post, you will be able to setup a new clojurescript project, setup emacs to be your development environment, and deploy your app to Github Pages&#xA;Background I&amp;rsquo;ve written two clojurescript projects now, Sundial and DataBooze, and I want to document the set up process. The first time was a massive undertaking because it was my first time. But frustrating enough, so was the second time, even though I thought I nailed down the process and took notes on it.</description>
     </item>
-    
   </channel>
 </rss>

@@ -7,38 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>
-    <lastBuildDate>Mon, 04 Dec 2023 21:47:32 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/filter/emacs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Dec 2023 21:47:32 -0500</lastBuildDate>
+    <atom:link href="https://blog.andylu.dev/blog/filter/emacs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Org Mode Is Better Glue Code Than Bash</title>
       <link>https://blog.andylu.dev/blog/org-mode-is-better-glue-code-than-bash/</link>
       <pubDate>Mon, 04 Dec 2023 21:47:32 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/org-mode-is-better-glue-code-than-bash/</guid>
-      <description>TLDR This post is just to document a scenario I put myself in. But I wanted to write it down in case I need to use it again in the future.
-Problem   You have a CSV file from your bank with some expenses listed.
-  You want to generate an PDF invoice file to send to someone and collect some money.
-  Solution I think the solution is to</description>
+      <description>TLDR This post is just to document a scenario I put myself in. But I wanted to write it down in case I need to use it again in the future.&#xA;Problem You have a CSV file from your bank with some expenses listed.&#xA;You want to generate an PDF invoice file to send to someone and collect some money.&#xA;Solution I think the solution is to&#xA;import the CSV into an org table use your favorite programming language to format the data use maaslalani/invoice to quickly make a PDF Deep Dive When I&amp;rsquo;m dealing with CSV files, I often reach for org-mode in emacs just to make the file easier to read.</description>
     </item>
-    
     <item>
       <title>Magit: Multiple Push Remotes</title>
       <link>https://blog.andylu.dev/blog/magit-multiple-push-remotes/</link>
       <pubDate>Fri, 01 Dec 2023 11:06:44 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/magit-multiple-push-remotes/</guid>
-      <description>I wanted to do the equivalent of this, but in magit
-git remote rename origin github git remote add codeberg https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote add origin https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote set-url --add --push origin https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote set-url --add --push origin https://github.com/jeffkreeftmeijer/ox-md-title.el git remote show origin * remote origin Fetch URL: https://codeberg.org/jkreeftmeijer/ox-md-title.el.git Push URL: https://codeberg.org/jkreeftmeijer/ox-md-title.el.git Push URL: https://github.com/jeffkreeftmeijer/ox-md-title.el HEAD branch: main Remote branch: main new (next fetch will store in remotes/origin) Local ref configured for &amp;#39;git push&amp;#39;: main pushes to main (up to date) Source</description>
+      <description>I wanted to do the equivalent of this, but in magit&#xA;git remote rename origin github git remote add codeberg https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote add origin https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote set-url --add --push origin https://codeberg.org/jkreeftmeijer/ox-md-title.el.git git remote set-url --add --push origin https://github.com/jeffkreeftmeijer/ox-md-title.el git remote show origin * remote origin Fetch URL: https://codeberg.org/jkreeftmeijer/ox-md-title.el.git Push URL: https://codeberg.org/jkreeftmeijer/ox-md-title.el.git Push URL: https://github.com/jeffkreeftmeijer/ox-md-title.el HEAD branch: main Remote branch: main new (next fetch will store in remotes/origin) Local ref configured for &amp;#39;git push&amp;#39;: main pushes to main (up to date) Source</description>
     </item>
-    
     <item>
       <title>Clojurescript Project Setup</title>
       <link>https://blog.andylu.dev/blog/clojurescript-project-setup/</link>
       <pubDate>Mon, 06 Jul 2020 07:52:15 -0500</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/clojurescript-project-setup/</guid>
-      <description>Outcomes By the end of this post, you will be able to setup a new clojurescript project, setup emacs to be your development environment, and deploy your app to Github Pages
-Background I&amp;rsquo;ve written two clojurescript projects now, Sundial and DataBooze, and I want to document the set up process. The first time was a massive undertaking because it was my first time. But frustrating enough, so was the second time, even though I thought I nailed down the process and took notes on it.</description>
+      <description>Outcomes By the end of this post, you will be able to setup a new clojurescript project, setup emacs to be your development environment, and deploy your app to Github Pages&#xA;Background I&amp;rsquo;ve written two clojurescript projects now, Sundial and DataBooze, and I want to document the set up process. The first time was a massive undertaking because it was my first time. But frustrating enough, so was the second time, even though I thought I nailed down the process and took notes on it.</description>
     </item>
-    
   </channel>
 </rss>

@@ -7,40 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>
-    <lastBuildDate>Sun, 29 Oct 2023 23:26:22 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/filter/babashka/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Oct 2023 23:26:22 -0400</lastBuildDate>
+    <atom:link href="https://blog.andylu.dev/blog/filter/babashka/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My Babashka Cookbook</title>
       <link>https://blog.andylu.dev/blog/my-babashka-cookbook/</link>
       <pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/my-babashka-cookbook/</guid>
-      <description>This post is the one I want to reference when I do something in babashka and forget syntax or something.
-Capture a process&amp;rsquo;s STDOUT and process the string after (require &amp;#39;[babashka.process :as bp]) (-&amp;gt; (bp/shell {:out :string} &amp;#34;do-the-thing&amp;#34;) :out (clojure.string/split #&amp;#34;\n&amp;#34;)) Import a local library Dynamically You can add deps as one of the first steps in your scripts.
-(require &amp;#39;[babashka.deps :as deps]) (deps/add-deps &amp;#39;{:deps {io.github.lispyclouds/bblgum {:git/sha &amp;#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&amp;#34;} dev.andylu/clj-lipgloss {:local/root &amp;#34;/home/andy/git/clj-lipgloss&amp;#34;}}}) (require &amp;#39;[bblgum.</description>
+      <description>This post is the one I want to reference when I do something in babashka and forget syntax or something.&#xA;Capture a process&amp;rsquo;s STDOUT and process the string after (require &amp;#39;[babashka.process :as bp]) (-&amp;gt; (bp/shell {:out :string} &amp;#34;do-the-thing&amp;#34;) :out (clojure.string/split #&amp;#34;\n&amp;#34;)) Import a local library Dynamically You can add deps as one of the first steps in your scripts.&#xA;(require &amp;#39;[babashka.deps :as deps]) (deps/add-deps &amp;#39;{:deps {io.github.lispyclouds/bblgum {:git/sha &amp;#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&amp;#34;} dev.andylu/clj-lipgloss {:local/root &amp;#34;/home/andy/git/clj-lipgloss&amp;#34;}}}) (require &amp;#39;[bblgum.</description>
     </item>
-    
     <item>
       <title>Babashka Datetime</title>
       <link>https://blog.andylu.dev/blog/babashka-datetime/</link>
       <pubDate>Sun, 15 Oct 2023 14:39:22 -0400</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/babashka-datetime/</guid>
-      <description>If I need a datetime in Python, I reach for
-from datetime import datetime datetime.now() So I need something as quick for clojure.
-Apparently, it&amp;rsquo;s just
-(-&amp;gt; (java.time.LocalDate/now) str) ;; =&amp;gt; &amp;#34;2023-10-15&amp;#34; </description>
+      <description>If I need a datetime in Python, I reach for&#xA;from datetime import datetime datetime.now() So I need something as quick for clojure.&#xA;Apparently, it&amp;rsquo;s just&#xA;(-&amp;gt; (java.time.LocalDate/now) str) ;; =&amp;gt; &amp;#34;2023-10-15&amp;#34; </description>
     </item>
-    
     <item>
       <title>Terminal Logging With Color</title>
       <link>https://blog.andylu.dev/blog/terminal-logging-with-color/</link>
       <pubDate>Sat, 14 Oct 2023 21:25:56 -0400</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/terminal-logging-with-color/</guid>
-      <description>These days I&amp;rsquo;ve been writing a lot of babashka instead of reaching for bash or python to do minor scripting tasks at work.
-I am also a big fan of the work done at charm and the relevant products in this case are gum and lipgloss.
-Using gum style I can log any text in basically any color I want. And while there&amp;rsquo;s not a ton of functional benefits to this, I think there&amp;rsquo;s something to be said about adding color into the logs we write.</description>
+      <description>These days I&amp;rsquo;ve been writing a lot of babashka instead of reaching for bash or python to do minor scripting tasks at work.&#xA;I am also a big fan of the work done at charm and the relevant products in this case are gum and lipgloss.&#xA;Using gum style I can log any text in basically any color I want. And while there&amp;rsquo;s not a ton of functional benefits to this, I think there&amp;rsquo;s something to be said about adding color into the logs we write.</description>
     </item>
-    
   </channel>
 </rss>

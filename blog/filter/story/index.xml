@@ -7,17 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>
-    <lastBuildDate>Sat, 14 Oct 2023 21:25:56 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/blog/filter/story/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Oct 2023 21:25:56 -0400</lastBuildDate>
+    <atom:link href="https://blog.andylu.dev/blog/filter/story/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Terminal Logging With Color</title>
       <link>https://blog.andylu.dev/blog/terminal-logging-with-color/</link>
       <pubDate>Sat, 14 Oct 2023 21:25:56 -0400</pubDate>
-      
       <guid>https://blog.andylu.dev/blog/terminal-logging-with-color/</guid>
-      <description>These days I&amp;rsquo;ve been writing a lot of babashka instead of reaching for bash or python to do minor scripting tasks at work.
-I am also a big fan of the work done at charm and the relevant products in this case are gum and lipgloss.
-Using gum style I can log any text in basically any color I want. And while there&amp;rsquo;s not a ton of functional benefits to this, I think there&amp;rsquo;s something to be said about adding color into the logs we write.</description>
+      <description>These days I&amp;rsquo;ve been writing a lot of babashka instead of reaching for bash or python to do minor scripting tasks at work.&#xA;I am also a big fan of the work done at charm and the relevant products in this case are gum and lipgloss.&#xA;Using gum style I can log any text in basically any color I want. And while there&amp;rsquo;s not a ton of functional benefits to this, I think there&amp;rsquo;s something to be said about adding color into the logs we write.</description>
     </item>
-    
   </channel>
 </rss>

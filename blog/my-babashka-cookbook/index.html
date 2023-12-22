@@ -29,17 +29,15 @@ Capture a process&rsquo;s STDOUT and process the string after (require &#39;[bab
 Capture a process&rsquo;s STDOUT and process the string after (require &#39;[babashka.process :as bp]) (-&gt; (bp/shell {:out :string} &#34;do-the-thing&#34;) :out (clojure.string/split #&#34;\n&#34;)) Import a local library Dynamically You can add deps as one of the first steps in your scripts.
 (require &#39;[babashka.deps :as deps]) (deps/add-deps &#39;{:deps {io.github.lispyclouds/bblgum {:git/sha &#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&#34;} dev.andylu/clj-lipgloss {:local/root &#34;/home/andy/git/clj-lipgloss&#34;}}}) (require &#39;[bblgum." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.andylu.dev/blog/my-babashka-cookbook/" /><meta property="og:image" content="https://blog.andylu.dev/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="og:url" content="https://blog.andylu.dev/blog/my-babashka-cookbook/" /><meta property="og:image" content="https://blog.andylu.dev/images/share.png" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2023-10-29T23:26:22-04:00" />
 <meta property="article:modified_time" content="2023-12-21T18:49:32-05:00" /><meta property="og:site_name" content="Andy&#39;s Garden" />
 
 
 
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://blog.andylu.dev/images/share.png"/>
-
-<meta name="twitter:title" content="My Babashka Cookbook"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://blog.andylu.dev/images/share.png" /><meta name="twitter:title" content="My Babashka Cookbook"/>
 <meta name="twitter:description" content="This post is the one I want to reference when I do something in babashka and forget syntax or something.
 Capture a process&rsquo;s STDOUT and process the string after (require &#39;[babashka.process :as bp]) (-&gt; (bp/shell {:out :string} &#34;do-the-thing&#34;) :out (clojure.string/split #&#34;\n&#34;)) Import a local library Dynamically You can add deps as one of the first steps in your scripts.
 (require &#39;[babashka.deps :as deps]) (deps/add-deps &#39;{:deps {io.github.lispyclouds/bblgum {:git/sha &#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&#34;} dev.andylu/clj-lipgloss {:local/root &#34;/home/andy/git/clj-lipgloss&#34;}}}) (require &#39;[bblgum."/>
@@ -51,7 +49,7 @@ Capture a process&rsquo;s STDOUT and process the string after (require &#39;[bab
 Capture a process&rsquo;s STDOUT and process the string after (require &#39;[babashka.process :as bp]) (-&gt; (bp/shell {:out :string} &#34;do-the-thing&#34;) :out (clojure.string/split #&#34;\n&#34;)) Import a local library Dynamically You can add deps as one of the first steps in your scripts.
 (require &#39;[babashka.deps :as deps]) (deps/add-deps &#39;{:deps {io.github.lispyclouds/bblgum {:git/sha &#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&#34;} dev.andylu/clj-lipgloss {:local/root &#34;/home/andy/git/clj-lipgloss&#34;}}}) (require &#39;[bblgum."><meta itemprop="datePublished" content="2023-10-29T23:26:22-04:00" />
 <meta itemprop="dateModified" content="2023-12-21T18:49:32-05:00" />
-<meta itemprop="wordCount" content="505"><meta itemprop="image" content="https://blog.andylu.dev/images/share.png"/>
+<meta itemprop="wordCount" content="505"><meta itemprop="image" content="https://blog.andylu.dev/images/share.png" />
 <meta itemprop="keywords" content="babashka," />
 <meta
       name="referrer"
@@ -59,179 +57,405 @@ Capture a process&rsquo;s STDOUT and process the string after (require &#39;[bab
   />
 
   <style>
-  body {
-    font-family: Verdana, sans-serif;
-    margin: auto;
-    padding: 20px;
-    max-width: 720px;
-    text-align: left;
-    background-color: #fff;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.5;
-    color: #444;
-  }
+ body {
+     font-family: Verdana, sans-serif;
+     margin: auto;
+     padding: 20px;
+     max-width: 720px;
+     text-align: left;
+     background-color: #dce0e8;
+     word-wrap: break-word;
+     overflow-wrap: break-word;
+     line-height: 1.5;
+     color: #24273a;
+ }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  strong,
-  b {
-    color: #222;
-  }
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ strong,
+ b {
+     color: #222;
+ }
 
-  a {
-    color: #3273dc;
-     
-  }
+ a {
+     color: #3273dc;
+ }
 
-  .title {
-    text-decoration: none;
-    border: 0;
-  }
+ .title {
+     text-decoration: none;
+     border: 0;
+ }
 
-  .title span {
-    font-weight: 400;
-  }
+ .title span {
+     font-weight: 400;
+ }
 
-  nav a {
-    margin-right: 10px;
-  }
+ nav a {
+     margin-right: 10px;
+ }
 
-  textarea {
-    width: 100%;
-    font-size: 16px;
-  }
+ textarea {
+     width: 100%;
+     font-size: 16px;
+ }
 
-  input {
-    font-size: 16px;
-  }
+ input {
+     font-size: 16px;
+ }
 
-  content {
-    line-height: 1.6;
-  }
+ content {
+     line-height: 1.6;
+ }
 
-  table {
-    width: 100%;
-  }
+ table {
+     width: 100%;
+ }
 
-  img {
-    max-width: 100%;
-  }
+ img {
+     max-width: 100%;
+ }
 
-  code {
-    padding: 2px 5px;
-    background-color: #f2f2f2;
-  }
+ blockquote {
+     border-left: 1px solid #999;
+     color: #222;
+     padding-left: 20px;
+     font-style: italic;
+ }
 
-  pre code {
-    color: #222;
-    display: block;
-    padding: 20px;
-    white-space: pre-wrap;
-    font-size: 14px;
-    overflow-x: auto;
-  }
+ footer {
+     padding: 25px;
+     text-align: center;
+ }
 
-  div.highlight pre {
-    background-color: initial;
-    color: initial;
-  }
+ .helptext {
+     color: #777;
+     font-size: small;
+ }
 
-  div.highlight code {
-    background-color: unset;
-    color: unset;
-  }
+ .errorlist {
+     color: #eba613;
+     font-size: small;
+ }
 
-  blockquote {
-    border-left: 1px solid #999;
-    color: #222;
-    padding-left: 20px;
-    font-style: italic;
-  }
+  
+ ul.blog-posts {
+     list-style-type: none;
+     padding: unset;
+ }
 
-  footer {
-    padding: 25px;
-    text-align: center;
-  }
+ ul.blog-posts li {
+     display: flex;
+ }
 
-  .helptext {
-    color: #777;
-    font-size: small;
-  }
+ ul.blog-posts li span {
+     flex: 0 0 130px;
+ }
 
-  .errorlist {
-    color: #eba613;
-    font-size: small;
-  }
+ ul.blog-posts li a:visited {
+     color: #8b6fcb;
+ }
 
-   
-  ul.blog-posts {
-    list-style-type: none;
-    padding: unset;
-  }
+ .post {
+     position: relative;
+     display: block;
+     max-width: 80vw;
+     margin: 0 auto;
+ }
 
-  ul.blog-posts li {
-    display: flex;
-  }
+ @media only screen and (max-width: 960px) {
+     .post {max-width: 95vw;}
+ }
 
-  ul.blog-posts li span {
-    flex: 0 0 130px;
-  }
+ .post img {
+     display: block;
+     width: 100%;
+ }
 
-  ul.blog-posts li a:visited {
-    color: #8b6fcb;
-  }
+ .title {
+     margin-bottom: 50px;
+     max-width: 100vw;
+ }
 
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #333;
-      color: #ddd;
-    }
+ a:hover {
+     filter: opacity(0.5) !important;
+ }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    strong,
-    b {
-      color: #eee;
-    }
+ .title img {
+     display: block;
+     margin: 0 auto;
+     max-width: 100vw;
+ }
 
-    a {
-      color: #8cc2dd;
-    }
+ .post a {
+     background-color: #1e66f5;
+     mix-blend-mode: screen;
+     position: absolute;
+     display: block;
+ }
 
-    code {
-      background-color: #777;
-    }
+ .post a:visted {
+     background-color: #8aadf4;
+ }
 
-    pre code {
-      color: #ddd;
-    }
+ .verbatim {
+     color: #c25;
+     background-color: #f7f7f9;
+     border: 1px solid #e1e1e8;
+     border-radius: 3px;
+     padding: 3px;
+ }
 
-    blockquote {
-      color: #ccc;
-    }
+ pre code {
+     margin: 20px;
+     display: inline-block;
+ }
 
-    textarea,
-    input {
-      background-color: #252525;
-      color: #ddd;
-    }
+ .chroma {
+     overflow-x: scroll;
+ }
 
-    .helptext {
-      color: #aaa;
-    }
-  }
+ .ctas a {
+     display: block;
+ }
+ .ctas img, .comments img {
+     max-width: 80vw;
+ }
+
+ @media (prefers-color-scheme: dark) {
+     body {
+         background-color: #181926;
+         color: #ddd;
+     }
+
+     h1,
+     h2,
+     h3,
+     h4,
+     h5,
+     h6,
+     strong,
+     b {
+         color: #eee;
+     }
+
+     a {
+         color: #8cc2dd;
+     }
+
+     .post a {
+         background-color: #8aadf4;
+     }
+
+     .post a:visted {
+         background-color: #c6a0f6;
+     }
+
+     blockquote {
+         color: #ccc;
+     }
+
+     textarea,
+     input {
+         background-color: #252525;
+         color: #ddd;
+     }
+
+     .helptext {
+         color: #aaa;
+     }
+
+     .verbatim {
+         color: #cc6225;
+         background-color: #242424;
+         border: 1px solid #343434;
+     }
+ }
 
 </style>
+<style type="text/css" media="screen">
+   @media (prefers-color-scheme: dark) {
+       /* Background */ .bg { color: #cad3f5; background-color: #24273a; }
+/* PreWrapper */ .chroma { color: #cad3f5; background-color: #24273a; }
+/* Other */ .chroma .x {  }
+/* Error */ .chroma .err { color: #ed8796 }
+/* CodeLine */ .chroma .cl {  }
+/* LineLink */ .chroma .lnlinks { outline: none; text-decoration: none; color: inherit }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { color: #494d64 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #8087a2 }
+/* LineNumbers */ .chroma .ln { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #8087a2 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #c6a0f6 }
+/* KeywordConstant */ .chroma .kc { color: #f5a97f }
+/* KeywordDeclaration */ .chroma .kd { color: #ed8796 }
+/* KeywordNamespace */ .chroma .kn { color: #8bd5ca }
+/* KeywordPseudo */ .chroma .kp { color: #c6a0f6 }
+/* KeywordReserved */ .chroma .kr { color: #c6a0f6 }
+/* KeywordType */ .chroma .kt { color: #ed8796 }
+/* Name */ .chroma .n {  }
+/* NameAttribute */ .chroma .na { color: #8aadf4 }
+/* NameBuiltin */ .chroma .nb { color: #91d7e3 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #91d7e3 }
+/* NameClass */ .chroma .nc { color: #eed49f }
+/* NameConstant */ .chroma .no { color: #eed49f }
+/* NameDecorator */ .chroma .nd { color: #8aadf4; font-weight: bold }
+/* NameEntity */ .chroma .ni { color: #8bd5ca }
+/* NameException */ .chroma .ne { color: #f5a97f }
+/* NameFunction */ .chroma .nf { color: #8aadf4 }
+/* NameFunctionMagic */ .chroma .fm { color: #8aadf4 }
+/* NameLabel */ .chroma .nl { color: #91d7e3 }
+/* NameNamespace */ .chroma .nn { color: #f5a97f }
+/* NameOther */ .chroma .nx {  }
+/* NameProperty */ .chroma .py { color: #f5a97f }
+/* NameTag */ .chroma .nt { color: #c6a0f6 }
+/* NameVariable */ .chroma .nv { color: #f4dbd6 }
+/* NameVariableClass */ .chroma .vc { color: #f4dbd6 }
+/* NameVariableGlobal */ .chroma .vg { color: #f4dbd6 }
+/* NameVariableInstance */ .chroma .vi { color: #f4dbd6 }
+/* NameVariableMagic */ .chroma .vm { color: #f4dbd6 }
+/* Literal */ .chroma .l {  }
+/* LiteralDate */ .chroma .ld {  }
+/* LiteralString */ .chroma .s { color: #a6da95 }
+/* LiteralStringAffix */ .chroma .sa { color: #ed8796 }
+/* LiteralStringBacktick */ .chroma .sb { color: #a6da95 }
+/* LiteralStringChar */ .chroma .sc { color: #a6da95 }
+/* LiteralStringDelimiter */ .chroma .dl { color: #8aadf4 }
+/* LiteralStringDoc */ .chroma .sd { color: #6e738d }
+/* LiteralStringDouble */ .chroma .s2 { color: #a6da95 }
+/* LiteralStringEscape */ .chroma .se { color: #8aadf4 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #6e738d }
+/* LiteralStringInterpol */ .chroma .si { color: #a6da95 }
+/* LiteralStringOther */ .chroma .sx { color: #a6da95 }
+/* LiteralStringRegex */ .chroma .sr { color: #8bd5ca }
+/* LiteralStringSingle */ .chroma .s1 { color: #a6da95 }
+/* LiteralStringSymbol */ .chroma .ss { color: #a6da95 }
+/* LiteralNumber */ .chroma .m { color: #f5a97f }
+/* LiteralNumberBin */ .chroma .mb { color: #f5a97f }
+/* LiteralNumberFloat */ .chroma .mf { color: #f5a97f }
+/* LiteralNumberHex */ .chroma .mh { color: #f5a97f }
+/* LiteralNumberInteger */ .chroma .mi { color: #f5a97f }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #f5a97f }
+/* LiteralNumberOct */ .chroma .mo { color: #f5a97f }
+/* Operator */ .chroma .o { color: #91d7e3; font-weight: bold }
+/* OperatorWord */ .chroma .ow { color: #91d7e3; font-weight: bold }
+/* Punctuation */ .chroma .p {  }
+/* Comment */ .chroma .c { color: #6e738d; font-style: italic }
+/* CommentHashbang */ .chroma .ch { color: #6e738d; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #6e738d; font-style: italic }
+/* CommentSingle */ .chroma .c1 { color: #6e738d; font-style: italic }
+/* CommentSpecial */ .chroma .cs { color: #6e738d; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #6e738d; font-style: italic }
+/* CommentPreprocFile */ .chroma .cpf { color: #6e738d; font-weight: bold; font-style: italic }
+/* Generic */ .chroma .g {  }
+/* GenericDeleted */ .chroma .gd { color: #ed8796; background-color: #363a4f }
+/* GenericEmph */ .chroma .ge { font-style: italic }
+/* GenericError */ .chroma .gr { color: #ed8796 }
+/* GenericHeading */ .chroma .gh { color: #f5a97f; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #a6da95; background-color: #363a4f }
+/* GenericOutput */ .chroma .go {  }
+/* GenericPrompt */ .chroma .gp {  }
+/* GenericStrong */ .chroma .gs { font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #f5a97f; font-weight: bold }
+/* GenericTraceback */ .chroma .gt { color: #ed8796 }
+/* GenericUnderline */ .chroma .gl { text-decoration: underline }
+/* TextWhitespace */ .chroma .w {  }
 
+   }
+   @media (prefers-color-scheme: light) {
+       /* Background */ .bg { color: #4c4f69; background-color: #eff1f5; }
+/* PreWrapper */ .chroma { color: #4c4f69; background-color: #eff1f5; }
+/* Other */ .chroma .x {  }
+/* Error */ .chroma .err { color: #d20f39 }
+/* CodeLine */ .chroma .cl {  }
+/* LineLink */ .chroma .lnlinks { outline: none; text-decoration: none; color: inherit }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { color: #bcc0cc }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #8c8fa1 }
+/* LineNumbers */ .chroma .ln { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #8c8fa1 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #8839ef }
+/* KeywordConstant */ .chroma .kc { color: #fe640b }
+/* KeywordDeclaration */ .chroma .kd { color: #d20f39 }
+/* KeywordNamespace */ .chroma .kn { color: #179299 }
+/* KeywordPseudo */ .chroma .kp { color: #8839ef }
+/* KeywordReserved */ .chroma .kr { color: #8839ef }
+/* KeywordType */ .chroma .kt { color: #d20f39 }
+/* Name */ .chroma .n {  }
+/* NameAttribute */ .chroma .na { color: #1e66f5 }
+/* NameBuiltin */ .chroma .nb { color: #04a5e5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #04a5e5 }
+/* NameClass */ .chroma .nc { color: #df8e1d }
+/* NameConstant */ .chroma .no { color: #df8e1d }
+/* NameDecorator */ .chroma .nd { color: #1e66f5; font-weight: bold }
+/* NameEntity */ .chroma .ni { color: #179299 }
+/* NameException */ .chroma .ne { color: #fe640b }
+/* NameFunction */ .chroma .nf { color: #1e66f5 }
+/* NameFunctionMagic */ .chroma .fm { color: #1e66f5 }
+/* NameLabel */ .chroma .nl { color: #04a5e5 }
+/* NameNamespace */ .chroma .nn { color: #fe640b }
+/* NameOther */ .chroma .nx {  }
+/* NameProperty */ .chroma .py { color: #fe640b }
+/* NameTag */ .chroma .nt { color: #8839ef }
+/* NameVariable */ .chroma .nv { color: #dc8a78 }
+/* NameVariableClass */ .chroma .vc { color: #dc8a78 }
+/* NameVariableGlobal */ .chroma .vg { color: #dc8a78 }
+/* NameVariableInstance */ .chroma .vi { color: #dc8a78 }
+/* NameVariableMagic */ .chroma .vm { color: #dc8a78 }
+/* Literal */ .chroma .l {  }
+/* LiteralDate */ .chroma .ld {  }
+/* LiteralString */ .chroma .s { color: #40a02b }
+/* LiteralStringAffix */ .chroma .sa { color: #d20f39 }
+/* LiteralStringBacktick */ .chroma .sb { color: #40a02b }
+/* LiteralStringChar */ .chroma .sc { color: #40a02b }
+/* LiteralStringDelimiter */ .chroma .dl { color: #1e66f5 }
+/* LiteralStringDoc */ .chroma .sd { color: #9ca0b0 }
+/* LiteralStringDouble */ .chroma .s2 { color: #40a02b }
+/* LiteralStringEscape */ .chroma .se { color: #1e66f5 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #9ca0b0 }
+/* LiteralStringInterpol */ .chroma .si { color: #40a02b }
+/* LiteralStringOther */ .chroma .sx { color: #40a02b }
+/* LiteralStringRegex */ .chroma .sr { color: #179299 }
+/* LiteralStringSingle */ .chroma .s1 { color: #40a02b }
+/* LiteralStringSymbol */ .chroma .ss { color: #40a02b }
+/* LiteralNumber */ .chroma .m { color: #fe640b }
+/* LiteralNumberBin */ .chroma .mb { color: #fe640b }
+/* LiteralNumberFloat */ .chroma .mf { color: #fe640b }
+/* LiteralNumberHex */ .chroma .mh { color: #fe640b }
+/* LiteralNumberInteger */ .chroma .mi { color: #fe640b }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #fe640b }
+/* LiteralNumberOct */ .chroma .mo { color: #fe640b }
+/* Operator */ .chroma .o { color: #04a5e5; font-weight: bold }
+/* OperatorWord */ .chroma .ow { color: #04a5e5; font-weight: bold }
+/* Punctuation */ .chroma .p {  }
+/* Comment */ .chroma .c { color: #9ca0b0; font-style: italic }
+/* CommentHashbang */ .chroma .ch { color: #9ca0b0; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #9ca0b0; font-style: italic }
+/* CommentSingle */ .chroma .c1 { color: #9ca0b0; font-style: italic }
+/* CommentSpecial */ .chroma .cs { color: #9ca0b0; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #9ca0b0; font-style: italic }
+/* CommentPreprocFile */ .chroma .cpf { color: #9ca0b0; font-weight: bold; font-style: italic }
+/* Generic */ .chroma .g {  }
+/* GenericDeleted */ .chroma .gd { color: #d20f39; background-color: #ccd0da }
+/* GenericEmph */ .chroma .ge { font-style: italic }
+/* GenericError */ .chroma .gr { color: #d20f39 }
+/* GenericHeading */ .chroma .gh { color: #fe640b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #40a02b; background-color: #ccd0da }
+/* GenericOutput */ .chroma .go {  }
+/* GenericPrompt */ .chroma .gp {  }
+/* GenericStrong */ .chroma .gs { font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #fe640b; font-weight: bold }
+/* GenericTraceback */ .chroma .gt { color: #d20f39 }
+/* GenericUnderline */ .chroma .gl { text-decoration: underline }
+/* TextWhitespace */ .chroma .w {  }
+
+   }
+  </style>
 
   
 </head>
@@ -264,115 +488,112 @@ Capture a process&rsquo;s STDOUT and process the string after (require &#39;[bab
     <p>This post is the one I want to reference when I do something in <code>babashka</code> and forget syntax or
 something.</p>
 <h1 id="capture-a-processs-stdout-and-process-the-string-after">Capture a process&rsquo;s <code>STDOUT</code> and process the string after</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[babashka.process <span style="color:#e6db74">:as</span> bp])
-
-(-&gt; (<span style="color:#a6e22e">bp/shell</span> {<span style="color:#e6db74">:out</span> <span style="color:#e6db74">:string</span>} <span style="color:#e6db74">&#34;do-the-thing&#34;</span>)
-    <span style="color:#e6db74">:out</span>
-    (<span style="color:#a6e22e">clojure.string/split</span> <span style="color:#f92672">#</span><span style="color:#e6db74">&#34;\n&#34;</span>))
-</code></pre></div><h1 id="import-a-local-library">Import a local library</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">require</span> <span class="o">&#39;</span><span class="p">[</span><span class="nv">babashka.process</span> <span class="ss">:as</span> <span class="nv">bp</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">-&gt; </span><span class="p">(</span><span class="nf">bp/shell</span> <span class="p">{</span><span class="ss">:out</span> <span class="ss">:string</span><span class="p">}</span> <span class="s">&#34;do-the-thing&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="ss">:out</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nf">clojure.string/split</span> <span class="o">#</span><span class="s">&#34;\n&#34;</span><span class="p">))</span>
+</span></span></code></pre></div><h1 id="import-a-local-library">Import a local library</h1>
 <h2 id="dynamically">Dynamically</h2>
 <p>You can add deps as one of the first steps in your scripts.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[babashka.deps <span style="color:#e6db74">:as</span> deps])
-(<span style="color:#a6e22e">deps/add-deps</span>
- <span style="color:#f92672">&#39;</span>{<span style="color:#e6db74">:deps</span> {io.github.lispyclouds/bblgum {<span style="color:#e6db74">:git/sha</span> <span style="color:#e6db74">&#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&#34;</span>}
-          dev.andylu/clj-lipgloss      {<span style="color:#e6db74">:local/root</span> <span style="color:#e6db74">&#34;/home/andy/git/clj-lipgloss&#34;</span>}}})
-
-(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[bblgum.core <span style="color:#e6db74">:as</span> b])
-(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[clj-lipgloss.core <span style="color:#e6db74">:as</span> lg <span style="color:#e6db74">:use</span> [log-info log-warn log-debug]])
-</code></pre></div><h2 id="statically">Statically</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">require</span> <span class="o">&#39;</span><span class="p">[</span><span class="nv">babashka.deps</span> <span class="ss">:as</span> <span class="nv">deps</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">deps/add-deps</span>
+</span></span><span class="line"><span class="cl"> <span class="o">&#39;</span><span class="p">{</span><span class="ss">:deps</span> <span class="p">{</span><span class="nv">io.github.lispyclouds/bblgum</span> <span class="p">{</span><span class="ss">:git/sha</span> <span class="s">&#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="nv">dev.andylu/clj-lipgloss</span>      <span class="p">{</span><span class="ss">:local/root</span> <span class="s">&#34;/home/andy/git/clj-lipgloss&#34;</span><span class="p">}}})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">require</span> <span class="o">&#39;</span><span class="p">[</span><span class="nv">bblgum.core</span> <span class="ss">:as</span> <span class="nv">b</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">require</span> <span class="o">&#39;</span><span class="p">[</span><span class="nv">clj-lipgloss.core</span> <span class="ss">:as</span> <span class="nv">lg</span> <span class="ss">:use</span> <span class="p">[</span><span class="nv">log-info</span> <span class="nv">log-warn</span> <span class="nv">log-debug</span><span class="p">]])</span>
+</span></span></code></pre></div><h2 id="statically">Statically</h2>
 <p>Put this in a <code>bb.edn</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">{<span style="color:#e6db74">:deps</span> {io.github.lispyclouds/bblgum {<span style="color:#e6db74">:git/sha</span> <span style="color:#e6db74">&#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&#34;</span>}
-          dev.andylu/clj-lipgloss      {<span style="color:#e6db74">:local/root</span> <span style="color:#e6db74">&#34;/home/andy/git/clj-lipgloss&#34;</span>}}}
-</code></pre></div><p>And then in your code</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[bblgum.core <span style="color:#e6db74">:as</span> b])
-(<span style="color:#a6e22e">require</span> <span style="color:#f92672">&#39;</span>[clj-lipgloss.core <span style="color:#e6db74">:as</span> lg <span style="color:#e6db74">:use</span> [log-info log-warn log-debug]])
-</code></pre></div><h2 id="building-a-cli-tool">Building a CLI tool</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">{</span><span class="ss">:deps</span> <span class="p">{</span><span class="nv">io.github.lispyclouds/bblgum</span> <span class="p">{</span><span class="ss">:git/sha</span> <span class="s">&#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="nv">dev.andylu/clj-lipgloss</span>      <span class="p">{</span><span class="ss">:local/root</span> <span class="s">&#34;/home/andy/git/clj-lipgloss&#34;</span><span class="p">}}}</span>
+</span></span></code></pre></div><p>And then in your code</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">require</span> <span class="o">&#39;</span><span class="p">[</span><span class="nv">bblgum.core</span> <span class="ss">:as</span> <span class="nv">b</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">require</span> <span class="o">&#39;</span><span class="p">[</span><span class="nv">clj-lipgloss.core</span> <span class="ss">:as</span> <span class="nv">lg</span> <span class="ss">:use</span> <span class="p">[</span><span class="nv">log-info</span> <span class="nv">log-warn</span> <span class="nv">log-debug</span><span class="p">]])</span>
+</span></span></code></pre></div><h2 id="building-a-cli-tool">Building a CLI tool</h2>
 <h3 id="super-basic-call">Super basic call</h3>
 <p>A basic call to <code>babashka.cli/parse-args</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">cli/parse-args</span> *command-line-args*)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">alu-field-selection new-catalog -o new-catalog-selected
-<span style="color:#f92672">{</span>:args <span style="color:#f92672">[</span>new-catalog<span style="color:#f92672">]</span>, :opts <span style="color:#f92672">{</span>:o new-catalog-selected<span style="color:#f92672">}}</span>
-</code></pre></div><h3 id="adding-a-help-command">Adding a help command</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">cli/parse-args</span> <span class="nv">*command-line-args*</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">alu-field-selection new-catalog -o new-catalog-selected
+</span></span><span class="line"><span class="cl"><span class="o">{</span>:args <span class="o">[</span>new-catalog<span class="o">]</span>, :opts <span class="o">{</span>:o new-catalog-selected<span class="o">}}</span>
+</span></span></code></pre></div><h3 id="adding-a-help-command">Adding a help command</h3>
 <p>For parsing the help flag, I like to just do a first pass and look the <code>-h</code> or <code>--help</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">
-(<span style="color:#66d9ef">defn </span>show-help []
-  (println <span style="color:#e6db74">&#34;TODO&#34;</span>))
-
-(<span style="color:#66d9ef">defn </span>passed-help-arg? [args]
-  (<span style="color:#66d9ef">let </span>[options (<span style="color:#a6e22e">cli/parse-args</span> args {<span style="color:#e6db74">:alias</span> {<span style="color:#e6db74">:h</span> <span style="color:#e6db74">:help</span>}
-                                      <span style="color:#e6db74">:coerce</span> {<span style="color:#e6db74">:help</span> <span style="color:#e6db74">:boolean</span>}})]
-    (when (-&gt; options <span style="color:#e6db74">:opts</span> <span style="color:#e6db74">:help</span>)
-      (<span style="color:#a6e22e">show-help</span>)
-      (<span style="color:#a6e22e">System/exit</span> <span style="color:#ae81ff">0</span>))))
-
-(when (= *file* (<span style="color:#a6e22e">System/getProperty</span> <span style="color:#e6db74">&#34;babashka.file&#34;</span>))
-  (<span style="color:#a6e22e">passed-help-arg?</span> *command-line-args*)
-
-  (apply main *command-line-args*))
-</code></pre></div><p>I think it&rsquo;s a nice approach to say my script will never try to handle your other input if there is
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defn </span><span class="nv">show-help</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">println </span><span class="s">&#34;TODO&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defn </span><span class="nv">passed-help-arg?</span> <span class="p">[</span><span class="nv">args</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">options</span> <span class="p">(</span><span class="nf">cli/parse-args</span> <span class="nv">args</span> <span class="p">{</span><span class="ss">:alias</span> <span class="p">{</span><span class="ss">:h</span> <span class="ss">:help</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">                                      <span class="ss">:coerce</span> <span class="p">{</span><span class="ss">:help</span> <span class="ss">:boolean</span><span class="p">}})]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nb">-&gt; </span><span class="nv">options</span> <span class="ss">:opts</span> <span class="ss">:help</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nf">show-help</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">(</span><span class="nf">System/exit</span> <span class="mi">0</span><span class="p">))))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nb">= </span><span class="nv">*file*</span> <span class="p">(</span><span class="nf">System/getProperty</span> <span class="s">&#34;babashka.file&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">passed-help-arg?</span> <span class="nv">*command-line-args*</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">apply </span><span class="nv">main</span> <span class="nv">*command-line-args*</span><span class="p">))</span>
+</span></span></code></pre></div><p>I think it&rsquo;s a nice approach to say my script will never try to handle your other input if there is
 a help arg passed in.</p>
 <h3 id="supporting-short-and-long-option-flags">Supporting short and long option flags</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">cli/parse-args</span> args
-                {<span style="color:#e6db74">:alias</span> {<span style="color:#e6db74">:o</span> <span style="color:#e6db74">:output</span>}})
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">alu-field-selection new-catalog --output new-catalog-selected
-<span style="color:#f92672">{</span>:args <span style="color:#f92672">[</span>new-catalog<span style="color:#f92672">]</span>, :opts <span style="color:#f92672">{</span>:output new-catalog-selected<span style="color:#f92672">}}</span>
-</code></pre></div><h3 id="coerce-args-to-opts">Coerce args to opts</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">cli/parse-args</span> <span class="nv">args</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span><span class="ss">:alias</span> <span class="p">{</span><span class="ss">:o</span> <span class="ss">:output</span><span class="p">}})</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">alu-field-selection new-catalog --output new-catalog-selected
+</span></span><span class="line"><span class="cl"><span class="o">{</span>:args <span class="o">[</span>new-catalog<span class="o">]</span>, :opts <span class="o">{</span>:output new-catalog-selected<span class="o">}}</span>
+</span></span></code></pre></div><h3 id="coerce-args-to-opts">Coerce args to opts</h3>
 <p>Sometimes you want to consider any args passed in to be grouped into some option keys</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#a6e22e">cli/parse-args</span> args
-                {<span style="color:#e6db74">:alias</span>      {<span style="color:#e6db74">:o</span> <span style="color:#e6db74">:output</span>}
-                 <span style="color:#e6db74">:args-&gt;opts</span> [<span style="color:#e6db74">:input</span>]})
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">alu-field-selection new-catalog --output new-catalog-selected
-<span style="color:#f92672">{</span>:opts <span style="color:#f92672">{</span>:input new-catalog, :output new-catalog-selected<span style="color:#f92672">}}</span>
-</code></pre></div><h3 id="requiring-input">Requiring input</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="nf">cli/parse-args</span> <span class="nv">args</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span><span class="ss">:alias</span>      <span class="p">{</span><span class="ss">:o</span> <span class="ss">:output</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">                 <span class="ss">:args-&gt;opts</span> <span class="p">[</span><span class="ss">:input</span><span class="p">]})</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">alu-field-selection new-catalog --output new-catalog-selected
+</span></span><span class="line"><span class="cl"><span class="o">{</span>:opts <span class="o">{</span>:input new-catalog, :output new-catalog-selected<span class="o">}}</span>
+</span></span></code></pre></div><h3 id="requiring-input">Requiring input</h3>
 <p>You can cause the script to exit when certain input isn&rsquo;t given</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>show-help [<span style="color:#f92672">&amp;</span> args]
-  (println <span style="color:#e6db74">&#34;TODO Write show-help&#34;</span>))
-
-(<span style="color:#66d9ef">defn </span>exit-on-error [_]
-  (<span style="color:#a6e22e">show-help</span>)
-  (<span style="color:#a6e22e">System/exit</span> <span style="color:#ae81ff">1</span>))
-
-(<span style="color:#a6e22e">cli/parse-args</span> args
-                               {<span style="color:#e6db74">:alias</span>      {<span style="color:#e6db74">:o</span> <span style="color:#e6db74">:output</span>}
-                                <span style="color:#e6db74">:args-&gt;opts</span> [<span style="color:#e6db74">:input</span>]
-                                <span style="color:#e6db74">:require</span>    [<span style="color:#e6db74">:input</span>]
-                                <span style="color:#e6db74">:exec-args</span>  {<span style="color:#e6db74">:output</span> <span style="color:#e6db74">&#34;NEW-catalog&#34;</span>}
-                                <span style="color:#e6db74">:error-fn</span>   exit-on-error})
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">alu-field-selection
-TODO Write show-help
-</code></pre></div><p>This lets us reuse the help function we already wrote and by adding a custom <code>:error-fn</code>, we can
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defn </span><span class="nv">show-help</span> <span class="p">[</span><span class="o">&amp;</span> <span class="nv">args</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">println </span><span class="s">&#34;TODO Write show-help&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defn </span><span class="nv">exit-on-error</span> <span class="p">[</span><span class="nv">_</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">show-help</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">System/exit</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nf">cli/parse-args</span> <span class="nv">args</span>
+</span></span><span class="line"><span class="cl">                               <span class="p">{</span><span class="ss">:alias</span>      <span class="p">{</span><span class="ss">:o</span> <span class="ss">:output</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">                                <span class="ss">:args-&gt;opts</span> <span class="p">[</span><span class="ss">:input</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                                <span class="ss">:require</span>    <span class="p">[</span><span class="ss">:input</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                                <span class="ss">:exec-args</span>  <span class="p">{</span><span class="ss">:output</span> <span class="s">&#34;NEW-catalog&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">                                <span class="ss">:error-fn</span>   <span class="nv">exit-on-error</span><span class="p">})</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">alu-field-selection
+</span></span><span class="line"><span class="cl">TODO Write show-help
+</span></span></code></pre></div><p>This lets us reuse the help function we already wrote and by adding a custom <code>:error-fn</code>, we can
 avoid dumping a stack trace for the end user.</p>
 <p>Babashka can give a little context to <code>exit-on-error</code> too.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">defn </span>exit-on-error [{<span style="color:#e6db74">:keys</span> [msg]}]
-  (println msg)
-  (<span style="color:#a6e22e">show-help</span>)
-  (<span style="color:#a6e22e">System/exit</span> <span style="color:#ae81ff">1</span>))
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">alu-field-selection
-Required option: :input
-TODO Write show-help
-</code></pre></div><h3 id="interactive-fuzzy-file-picker">Interactive fuzzy file picker</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="kd">defn </span><span class="nv">exit-on-error</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">msg</span><span class="p">]}]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nb">println </span><span class="nv">msg</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">show-help</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">System/exit</span> <span class="mi">1</span><span class="p">))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">alu-field-selection
+</span></span><span class="line"><span class="cl">Required option: :input
+</span></span><span class="line"><span class="cl">TODO Write show-help
+</span></span></code></pre></div><h3 id="interactive-fuzzy-file-picker">Interactive fuzzy file picker</h3>
 <p>By using <code>gum input</code> with a placeholder, we can show the user some default directory. If that&rsquo;s the
 one they want, then hitting enter will return an empty string to our script. Couple that with the
 <code>(or ... default-dir)</code> and you can actually save the <code>default-dir</code> as the choice.</p>
 <p>To get the fuzzy find, we use <code>gum filter</code>. It expects newline separated input which is what
 <code>babashka.process/shell</code> spits out. Finally, for the <code>filter</code>, I set a <code>:height 10</code> so that <code>gum</code>
 doesn&rsquo;t try to fill the whole screen when it gets a ton of input</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">(<span style="color:#66d9ef">let </span>[default-dir (<span style="color:#a6e22e">System/getenv</span> <span style="color:#e6db74">&#34;PWD&#34;</span>)
-      chosen-dir  (or (-&gt; (<span style="color:#a6e22e">b/gum</span> <span style="color:#e6db74">:input</span>
-                                 <span style="color:#e6db74">:placeholder</span> default-dir)
-                          <span style="color:#e6db74">:result</span>
-                          first)
-                      default-dir)
-      files       (-&gt; {<span style="color:#e6db74">:out</span> <span style="color:#e6db74">:string</span>}
-                      (<span style="color:#a6e22e">bp/shell</span> <span style="color:#e6db74">&#34;ls&#34;</span> chosen-dir)
-                      <span style="color:#e6db74">:out</span>)]
-  (<span style="color:#a6e22e">-&gt;&gt;</span> (<span style="color:#a6e22e">b/gum</span> <span style="color:#e6db74">:filter</span> <span style="color:#e6db74">:height</span> <span style="color:#ae81ff">10</span> <span style="color:#e6db74">:in</span> files)
-       <span style="color:#e6db74">:result</span>
-       first))
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure">
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"><span class="line"><span class="cl"><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">default-dir</span> <span class="p">(</span><span class="nf">System/getenv</span> <span class="s">&#34;PWD&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">chosen-dir</span>  <span class="p">(</span><span class="nb">or </span><span class="p">(</span><span class="nb">-&gt; </span><span class="p">(</span><span class="nf">b/gum</span> <span class="ss">:input</span>
+</span></span><span class="line"><span class="cl">                                 <span class="ss">:placeholder</span> <span class="nv">default-dir</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                          <span class="ss">:result</span>
+</span></span><span class="line"><span class="cl">                          <span class="nv">first</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                      <span class="nv">default-dir</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">files</span>       <span class="p">(</span><span class="nb">-&gt; </span><span class="p">{</span><span class="ss">:out</span> <span class="ss">:string</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">                      <span class="p">(</span><span class="nf">bp/shell</span> <span class="s">&#34;ls&#34;</span> <span class="nv">chosen-dir</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                      <span class="ss">:out</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="nf">-&gt;&gt;</span> <span class="p">(</span><span class="nf">b/gum</span> <span class="ss">:filter</span> <span class="ss">:height</span> <span class="mi">10</span> <span class="ss">:in</span> <span class="nv">files</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">       <span class="ss">:result</span>
+</span></span><span class="line"><span class="cl">       <span class="nv">first</span><span class="p">))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-clojure" data-lang="clojure"></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"></code></pre></div>
 </content>
 
 <p>
@@ -380,6 +601,7 @@ doesn&rsquo;t try to fill the whole screen when it gets a ton of input</p>
         <a href="https://blog.andylu.dev/blog/filter/babashka/">
             #babashka
         </a>
+        &nbsp;
     
 </p>
 
