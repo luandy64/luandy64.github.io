@@ -1,0 +1,15 @@
+#+TITLE: Bash HISTTIMEFORMAT
+#+MARKUP: org
+#+DATE: 2024-01-08T16:00:31-05:00
+#+LASTMOD: 2024-01-08T16:00:31-05:00
+
+I have this line in my =bashrc=
+
+#+begin_src bash
+  # Prepend history entries with timestamps
+  export HISTTIMEFORMAT='%FT%T%z '
+#+end_src
+
+I just learned that =~/.bash_history= does not have these timestamps, and neither does the menu presented to you in =fzf=.
+
+But you do see it if you look in the output of the =history= command.

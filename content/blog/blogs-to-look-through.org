@@ -1,0 +1,10 @@
+#+TITLE: Blogs to Look Through
+#+MARKUP: org
+#+DATE: 2023-12-29T11:49:06-05:00
+#+LASTMOD: 2023-12-29T11:49:06-05:00
+
+Here are some blogs I like to look through for inspiration:
+- https://notes.andymatuschak.org/About_these_notes
+- https://maggieappleton.com/garden
+- https://www.reddit.com/user/Nicolas-Rougier/submitted/?sort=new
+  

@@ -1,0 +1,21 @@
+#+TITLE: Projects I'm Watching
+#+MARKUP: org
+#+DATE: 2023-12-31T13:32:21-05:00
+#+LASTMOD: 2023-12-31T13:32:21-05:00
+
+* Monica
+
+I like the thought of building this little database of info. But it does sound like a lot of work to
+actually enter this information. I'm waiting for the next version of the app to release because
+right now the self-hosted app hosts one account.
+
+- https://github.com/monicahq/monica
+
+* Stalwart
+
+I tried setting this up already, but hit some snags getting outbound SMTP working on Oracle Cloud.
+It's weird because I was able to manually use =telnet= to get to an external relay service, but
+=stalwart= could not do the same thing. I will pick this up again another day.
+
+- https://github.com/stalwartlabs/mail-server
+

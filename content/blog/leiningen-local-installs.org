@@ -1,0 +1,15 @@
+#+TITLE: Leiningen Local Installs
+#+MARKUP: org
+#+DATE: 2024-01-18T20:27:06-05:00
+#+LASTMOD: 2024-01-18T20:27:06-05:00
+
+You can quickly create a new library with =lein new default my-library-name=.
+
+But if you add a =group-id= to that, =lein= is smart enought to just use the =artifact-id= for the
+directory name, but the full maven id when installing to your local repository.
+
+I thought I was having issues with using =my-library-name= vs. =dev.andylu/my-library-name=, but I
+can't reproduce the weird behavior now.
+
+So I'm going to chalk it up to the usual "I don't own the =~/.m2= folder" and just run =sudo chown
+-R "$USER":"$USER" ~/.m2= and forget about it.
