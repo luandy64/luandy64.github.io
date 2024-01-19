@@ -10,6 +10,34 @@
     <lastBuildDate>Mon, 11 Dec 2023 15:52:40 -0500</lastBuildDate>
     <atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Leiningen Local Installs</title>
+      <link>https://blog.andylu.dev/blog/leiningen-local-installs/</link>
+      <pubDate>Thu, 18 Jan 2024 20:27:06 -0500</pubDate>
+      <guid>https://blog.andylu.dev/blog/leiningen-local-installs/</guid>
+      <description>You can quickly create a new library with lein new default my-library-name.&#xA;But if you add a group-id to that, lein is smart enought to just use the artifact-id for the directory name, but the full maven id when installing to your local repository.&#xA;I thought I was having issues with using my-library-name vs. dev.andylu/my-library-name, but I can&amp;#39;t reproduce the weird behavior now.&#xA;So I&amp;#39;m going to chalk it up to the usual &amp;#34;I don&amp;#39;t own the ~/.</description>
+    </item>
+    <item>
+      <title>Bash HISTTIMEFORMAT</title>
+      <link>https://blog.andylu.dev/blog/bash-histtimeformat/</link>
+      <pubDate>Mon, 08 Jan 2024 16:00:31 -0500</pubDate>
+      <guid>https://blog.andylu.dev/blog/bash-histtimeformat/</guid>
+      <description>I have this line in my bashrc&#xA;# Prepend history entries with timestamps export HISTTIMEFORMAT=&amp;#39;%FT%T%z &amp;#39; I just learned that ~/.bash_history does not have these timestamps, and neither does the menu presented to you in fzf.&#xA;But you do see it if you look in the output of the history command.</description>
+    </item>
+    <item>
+      <title>Projects I&#39;m Watching</title>
+      <link>https://blog.andylu.dev/blog/projects-i-m-watching/</link>
+      <pubDate>Sun, 31 Dec 2023 13:32:21 -0500</pubDate>
+      <guid>https://blog.andylu.dev/blog/projects-i-m-watching/</guid>
+      <description>Monica I like the thought of building this little database of info. But it does sound like a lot of work to actually enter this information. I&amp;#39;m waiting for the next version of the app to release because right now the self-hosted app hosts one account.&#xA;https://github.com/monicahq/monica Stalwart I tried setting this up already, but hit some snags getting outbound SMTP working on Oracle Cloud. It&amp;#39;s weird because I was able to manually use telnet to get to an external relay service, but stalwart could not do the same thing.</description>
+    </item>
+    <item>
+      <title>Blogs to Look Through</title>
+      <link>https://blog.andylu.dev/blog/blogs-to-look-through/</link>
+      <pubDate>Fri, 29 Dec 2023 11:49:06 -0500</pubDate>
+      <guid>https://blog.andylu.dev/blog/blogs-to-look-through/</guid>
+      <description> Here are some blogs I like to look through for inspiration:&#xA;https://notes.andymatuschak.org/About_these_notes https://maggieappleton.com/garden https://www.reddit.com/user/Nicolas-Rougier/submitted/?sort=new </description>
+    </item>
+    <item>
       <title>How to Write a Handwritten Page</title>
       <link>https://blog.andylu.dev/blog/how-to-write-a-handwritten-page/</link>
       <pubDate>Thu, 21 Dec 2023 19:36:47 -0500</pubDate>
@@ -84,7 +112,7 @@
       <link>https://blog.andylu.dev/blog/my-babashka-cookbook/</link>
       <pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate>
       <guid>https://blog.andylu.dev/blog/my-babashka-cookbook/</guid>
-      <description>This post is the one I want to reference when I do something in babashka and forget syntax or something.&#xA;Capture a process&amp;rsquo;s STDOUT and process the string after (require &amp;#39;[babashka.process :as bp]) (-&amp;gt; (bp/shell {:out :string} &amp;#34;do-the-thing&amp;#34;) :out (clojure.string/split #&amp;#34;\n&amp;#34;)) Import a local library Dynamically You can add deps as one of the first steps in your scripts.&#xA;(require &amp;#39;[babashka.deps :as deps]) (deps/add-deps &amp;#39;{:deps {io.github.lispyclouds/bblgum {:git/sha &amp;#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&amp;#34;} dev.andylu/clj-lipgloss {:local/root &amp;#34;/home/andy/git/clj-lipgloss&amp;#34;}}}) (require &amp;#39;[bblgum.</description>
+      <description>This post is the one I want to reference when I do something in `babashka` and forget syntax or something.&#xA;Capture a process&amp;#39;s `STDOUT` and process the string after (require &amp;#39;[babashka.process :as bp]) (-&amp;gt; (bp/shell {:out :string} &amp;#34;do-the-thing&amp;#34;) :out (clojure.string/split #&amp;#34;\n&amp;#34;)) Import a local library Dynamically You can add deps as one of the first steps in your scripts.&#xA;(require &amp;#39;[babashka.deps :as deps]) (deps/add-deps &amp;#39;{:deps {io.github.lispyclouds/bblgum {:git/sha &amp;#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&amp;#34;} dev.andylu/clj-lipgloss {:local/root &amp;#34;/home/andy/git/clj-lipgloss&amp;#34;}}}) (require &amp;#39;[bblgum.</description>
     </item>
     <item>
       <title>Biff Tutorial</title>
@@ -105,7 +133,7 @@
       <link>https://blog.andylu.dev/blog/future-blog-ideas/</link>
       <pubDate>Sat, 14 Oct 2023 21:48:09 -0400</pubDate>
       <guid>https://blog.andylu.dev/blog/future-blog-ideas/</guid>
-      <description>Here&amp;rsquo;s just a running list of things I want to write down thoughts about.&#xA;babashka CLI design traefik as a reverse proxy for tailscale services </description>
+      <description>Here&amp;rsquo;s just a running list of things I want to write down thoughts about.&#xA;babashka CLI design traefik as a reverse proxy for tailscale services apps and tools I use </description>
     </item>
     <item>
       <title>Terminal Logging With Color</title>

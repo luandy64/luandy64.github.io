@@ -105,14 +105,12 @@ So I got to a point where the tutorial wanted me to hook up an email sending ser
      animation-name: flick;
  }
 
- nav > a {
+ header > nav > a {
      box-shadow: inset 0 0 0 0 #3273dc;
-     margin: 0 -.25rem;
-     padding: 0 .25rem;
      transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
  }
 
- nav a:hover {
+ header > nav a:hover {
      box-shadow: inset 100px 0 0 0 #3273dc;
      color: white;
  }
@@ -252,8 +250,9 @@ So I got to a point where the tutorial wanted me to hook up an email sending ser
  }
 
  pre code {
-     margin: 20px;
+     margin: 20px 0px;
      display: inline-block;
+     line-height: 1.2;
  }
 
  .chroma {
@@ -520,7 +519,11 @@ So I got to a point where the tutorial wanted me to hook up an email sending ser
 </header>
   <main>
 
-<h1>Biff Tutorial</h1>
+<h1>
+    <a href="/blog/biff-tutorial/">
+        Biff Tutorial
+    </a>
+</h1>
 
 <p>
     <strong> Last updated </strong> :
@@ -528,6 +531,8 @@ So I got to a point where the tutorial wanted me to hook up an email sending ser
         2023-10-17T19:48:08-04:00
     </time>
 </p>
+
+<nav id="TableOfContents"></nav>
 
 <content>
     <p>Here are my notes as I go through <a href="https://biffweb.com/docs/tutorial/build-a-chat-app/">the Biff tutorial</a>.</p>

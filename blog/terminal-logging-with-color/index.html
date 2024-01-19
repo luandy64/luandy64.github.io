@@ -101,14 +101,12 @@ Using gum style I can log any text in basically any color I want. And while ther
      animation-name: flick;
  }
 
- nav > a {
+ header > nav > a {
      box-shadow: inset 0 0 0 0 #3273dc;
-     margin: 0 -.25rem;
-     padding: 0 .25rem;
      transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
  }
 
- nav a:hover {
+ header > nav a:hover {
      box-shadow: inset 100px 0 0 0 #3273dc;
      color: white;
  }
@@ -248,8 +246,9 @@ Using gum style I can log any text in basically any color I want. And while ther
  }
 
  pre code {
-     margin: 20px;
+     margin: 20px 0px;
      display: inline-block;
+     line-height: 1.2;
  }
 
  .chroma {
@@ -516,7 +515,11 @@ Using gum style I can log any text in basically any color I want. And while ther
 </header>
   <main>
 
-<h1>Terminal Logging With Color</h1>
+<h1>
+    <a href="/blog/terminal-logging-with-color/">
+        Terminal Logging With Color
+    </a>
+</h1>
 
 <p>
     <strong> Last updated </strong> :
@@ -524,6 +527,13 @@ Using gum style I can log any text in basically any color I want. And while ther
         2023-10-14T21:25:56-04:00
     </time>
 </p>
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#colored-logging">Colored Logging</a></li>
+    <li><a href="#local-dependencies">Local Dependencies</a></li>
+  </ul>
+</nav>
 
 <content>
     <p>These days I&rsquo;ve been writing a lot of babashka instead of reaching for bash or python to do minor

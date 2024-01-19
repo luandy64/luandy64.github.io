@@ -3,7 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.andylu.dev/blog/</loc>
-    <lastmod>2023-12-22T13:46:36-05:00</lastmod>
+    <lastmod>2024-01-18T20:27:06-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/leiningen-local-installs/</loc>
+    <lastmod>2024-01-18T20:27:06-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/bash-histtimeformat/</loc>
+    <lastmod>2024-01-08T16:00:31-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/projects-i-m-watching/</loc>
+    <lastmod>2023-12-31T13:32:21-05:00</lastmod>
+  </url><url>
+    <loc>https://blog.andylu.dev/blog/blogs-to-look-through/</loc>
+    <lastmod>2023-12-29T11:49:06-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/how-to-write-a-handwritten-page/</loc>
     <lastmod>2023-12-21T19:36:47-05:00</lastmod>
@@ -12,7 +24,7 @@
     <lastmod>2023-12-21T19:36:47-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/filter/written-in-org-mode/</loc>
-    <lastmod>2023-12-21T19:36:47-05:00</lastmod>
+    <lastmod>2023-12-22T14:05:20-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/filter/indieweb/</loc>
     <lastmod>2023-12-11T20:27:55-05:00</lastmod>
@@ -69,10 +81,10 @@
     <lastmod>2023-12-11T23:17:32-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/filter/babashka/</loc>
-    <lastmod>2023-12-22T13:46:36-05:00</lastmod>
+    <lastmod>2023-12-22T14:05:20-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/my-babashka-cookbook/</loc>
-    <lastmod>2023-12-22T13:46:36-05:00</lastmod>
+    <lastmod>2023-12-22T14:05:20-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/biff-tutorial/</loc>
     <lastmod>2023-10-17T19:48:08-04:00</lastmod>
@@ -81,7 +93,7 @@
     <lastmod>2023-10-15T14:39:22-04:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/future-blog-ideas/</loc>
-    <lastmod>2023-10-30T00:14:23-04:00</lastmod>
+    <lastmod>2024-01-01T14:01:22-05:00</lastmod>
   </url><url>
     <loc>https://blog.andylu.dev/blog/filter/projects/</loc>
     <lastmod>2023-10-14T21:25:56-04:00</lastmod>

@@ -105,14 +105,12 @@ It ended with me having the following directory structure
      animation-name: flick;
  }
 
- nav > a {
+ header > nav > a {
      box-shadow: inset 0 0 0 0 #3273dc;
-     margin: 0 -.25rem;
-     padding: 0 .25rem;
      transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
  }
 
- nav a:hover {
+ header > nav a:hover {
      box-shadow: inset 100px 0 0 0 #3273dc;
      color: white;
  }
@@ -252,8 +250,9 @@ It ended with me having the following directory structure
  }
 
  pre code {
-     margin: 20px;
+     margin: 20px 0px;
      display: inline-block;
+     line-height: 1.2;
  }
 
  .chroma {
@@ -520,7 +519,11 @@ It ended with me having the following directory structure
 </header>
   <main>
 
-<h1>Python Packaging</h1>
+<h1>
+    <a href="/blog/python-packaging/">
+        Python Packaging
+    </a>
+</h1>
 
 <p>
     <strong> Last updated </strong> :
@@ -528,6 +531,8 @@ It ended with me having the following directory structure
         2023-12-01T12:13:04-05:00
     </time>
 </p>
+
+<nav id="TableOfContents"></nav>
 
 <content>
     <p>I didn&rsquo;t know what to use between <code>poetry</code> and <code>hatch</code>.</p>

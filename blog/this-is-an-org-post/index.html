@@ -97,14 +97,12 @@ I knew that ox-hugo is a thing, but this is different. And I never thought to di
      animation-name: flick;
  }
 
- nav > a {
+ header > nav > a {
      box-shadow: inset 0 0 0 0 #3273dc;
-     margin: 0 -.25rem;
-     padding: 0 .25rem;
      transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
  }
 
- nav a:hover {
+ header > nav a:hover {
      box-shadow: inset 100px 0 0 0 #3273dc;
      color: white;
  }
@@ -244,8 +242,9 @@ I knew that ox-hugo is a thing, but this is different. And I never thought to di
  }
 
  pre code {
-     margin: 20px;
+     margin: 20px 0px;
      display: inline-block;
+     line-height: 1.2;
  }
 
  .chroma {
@@ -512,7 +511,11 @@ I knew that ox-hugo is a thing, but this is different. And I never thought to di
 </header>
   <main>
 
-<h1>This is an Org Post</h1>
+<h1>
+    <a href="/blog/this-is-an-org-post/">
+        This is an Org Post
+    </a>
+</h1>
 
 <p>
     <strong> Last updated </strong> :
@@ -520,6 +523,8 @@ I knew that ox-hugo is a thing, but this is different. And I never thought to di
         2023-12-11T15:52:40-05:00
     </time>
 </p>
+
+
 
 <content>
     <p>
