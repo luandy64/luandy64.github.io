@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta
+            charset="UTF-8"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1"
+        />
+
+        <link rel="shortcut icon" href="/favicon.ico" />
+
+        <title>
+            My Title | Andy's Garden
+        </title>
+
+        <meta
+            name="referrer"
+            content="no-referrer-when-downgrade"
+        />
+
+        <meta name="description" content="" />
+
+        <link rel="stylesheet" type="text/css" href="style.css" />
+
+        <style type="text/css" media="screen">
+         @media (prefers-color-scheme: dark) {
+             {{ partial "css/syntax-dark.css" . | safeCSS }}
+         }
+         @media (prefers-color-scheme: light) {
+             {{ partial "css/syntax-light.css" . | safeCSS }}
+         }
+        </style>
+
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=fira-code:400|merriweather-sans:400" rel="stylesheet" />
+
+    </head>
+
+    <body>
+        <header>
+
+        </header>
+
+        <main>
+
+            <h1>Hello, world!</h1>
+
+            <button onclick="f()">Click me</button>
+
+            <script src="app.js"></script>
+
+        </main>
+
+        <footer>
+
+        </footer>
+
+    </body>
+
+</html>
