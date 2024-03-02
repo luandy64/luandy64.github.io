@@ -59,3 +59,26 @@ ignoreErrors = ["error-disable-taxonomy"]
   # dateFormat = "2006-01-02"
   dateFormat = "2006-01-02T15:04:05Z07:00"
 
+
+[menus]
+
+[[menus.main]]
+    name = 'Home'
+    pageRef = ''
+    weight = 10
+
+
+[[menus.main]]
+    name = 'Now'
+    pageRef = '/now'
+    weight = 20
+
+[[menus.main]]
+    name = 'Blog'
+    pageRef = '/blog'
+    weight = 30
+
+[[menus.main]]
+    name = 'Handcoded'
+    pageRef = '/handcoded'
+    weight = 40
