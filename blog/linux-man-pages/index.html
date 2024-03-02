@@ -12,49 +12,45 @@
 <link rel="shortcut icon" href="https://blog.andylu.dev/favicon.ico" />
 <title>
       
-      Python Packaging
+      Linux Man Pages
       |
       
       Andy&#39;s Garden
   </title>
-<meta name="title" content="Python Packaging" />
-<meta name="description" content="I didn&rsquo;t know what to use between poetry and hatch.
-I just followed the guide from the Packaging Guide.
-It ended with me having the following directory structure
-. ├── pyproject.toml ├── README.org ├── src │ └── andy_aoc_2023 │ ├── day1.py │ └── __init__.py └── tests Which isn&rsquo;t too crazy I guess." />
-<meta name="keywords" content="python," />
+<meta name="title" content="Linux Man Pages" />
+<meta name="description" content="I just learned I have a ton of pages in /usr/local/share/man/man1.
+And if you download a man page like this one for eza, you can install it at /usr/local/share/man/man1/eza.1.
+Then man eza just works" />
+<meta name="keywords" content="" />
 
 
-<meta property="og:title" content="Python Packaging" />
-<meta property="og:description" content="I didn&rsquo;t know what to use between poetry and hatch.
-I just followed the guide from the Packaging Guide.
-It ended with me having the following directory structure
-. ├── pyproject.toml ├── README.org ├── src │ └── andy_aoc_2023 │ ├── day1.py │ └── __init__.py └── tests Which isn&rsquo;t too crazy I guess." />
+<meta property="og:title" content="Linux Man Pages" />
+<meta property="og:description" content="I just learned I have a ton of pages in /usr/local/share/man/man1.
+And if you download a man page like this one for eza, you can install it at /usr/local/share/man/man1/eza.1.
+Then man eza just works" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.andylu.dev/blog/python-packaging/" /><meta property="og:image" content="https://blog.andylu.dev/images/share.png" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2023-12-01T12:13:04-05:00" />
-<meta property="article:modified_time" content="2023-12-01T12:13:04-05:00" /><meta property="og:site_name" content="Andy&#39;s Garden" />
+<meta property="og:url" content="https://blog.andylu.dev/blog/linux-man-pages/" /><meta property="og:image" content="https://blog.andylu.dev/images/share.png" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-01-22T20:04:24-05:00" />
+<meta property="article:modified_time" content="2024-01-22T20:04:24-05:00" /><meta property="og:site_name" content="Andy&#39;s Garden" />
 
 
 
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://blog.andylu.dev/images/share.png" /><meta name="twitter:title" content="Python Packaging"/>
-<meta name="twitter:description" content="I didn&rsquo;t know what to use between poetry and hatch.
-I just followed the guide from the Packaging Guide.
-It ended with me having the following directory structure
-. ├── pyproject.toml ├── README.org ├── src │ └── andy_aoc_2023 │ ├── day1.py │ └── __init__.py └── tests Which isn&rsquo;t too crazy I guess."/>
+<meta name="twitter:image" content="https://blog.andylu.dev/images/share.png" /><meta name="twitter:title" content="Linux Man Pages"/>
+<meta name="twitter:description" content="I just learned I have a ton of pages in /usr/local/share/man/man1.
+And if you download a man page like this one for eza, you can install it at /usr/local/share/man/man1/eza.1.
+Then man eza just works"/>
 
 
 
-<meta itemprop="name" content="Python Packaging">
-<meta itemprop="description" content="I didn&rsquo;t know what to use between poetry and hatch.
-I just followed the guide from the Packaging Guide.
-It ended with me having the following directory structure
-. ├── pyproject.toml ├── README.org ├── src │ └── andy_aoc_2023 │ ├── day1.py │ └── __init__.py └── tests Which isn&rsquo;t too crazy I guess."><meta itemprop="datePublished" content="2023-12-01T12:13:04-05:00" />
-<meta itemprop="dateModified" content="2023-12-01T12:13:04-05:00" />
-<meta itemprop="wordCount" content="52"><meta itemprop="image" content="https://blog.andylu.dev/images/share.png" />
-<meta itemprop="keywords" content="python," />
+<meta itemprop="name" content="Linux Man Pages">
+<meta itemprop="description" content="I just learned I have a ton of pages in /usr/local/share/man/man1.
+And if you download a man page like this one for eza, you can install it at /usr/local/share/man/man1/eza.1.
+Then man eza just works"><meta itemprop="datePublished" content="2024-01-22T20:04:24-05:00" />
+<meta itemprop="dateModified" content="2024-01-22T20:04:24-05:00" />
+<meta itemprop="wordCount" content="34"><meta itemprop="image" content="https://blog.andylu.dev/images/share.png" />
+<meta itemprop="keywords" content="" />
 <meta
       name="referrer"
       content="no-referrer-when-downgrade"
@@ -530,42 +526,32 @@ It ended with me having the following directory structure
   <main>
 
 <h1>
-    <a href="/blog/python-packaging/">
-        Python Packaging
+    <a href="/blog/linux-man-pages/">
+        Linux Man Pages
     </a>
 </h1>
 
 <p>
     <strong> Last updated </strong> :
-    <time datetime='2023-12-01' pubdate>
-        2023-12-01T12:13:04-05:00
+    <time datetime='2024-01-22' pubdate>
+        2024-01-22T20:04:24-05:00
     </time>
 </p>
 
-<nav id="TableOfContents"></nav>
+
 
 <content>
-    <p>I didn&rsquo;t know what to use between <code>poetry</code> and <code>hatch</code>.</p>
-<p>I just followed the guide <a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#">from the Packaging Guide</a>.</p>
-<p>It ended with me having the following directory structure</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">.
-</span></span><span class="line"><span class="cl">├── pyproject.toml
-</span></span><span class="line"><span class="cl">├── README.org
-</span></span><span class="line"><span class="cl">├── src
-</span></span><span class="line"><span class="cl">│   └── andy_aoc_2023
-</span></span><span class="line"><span class="cl">│       ├── day1.py
-</span></span><span class="line"><span class="cl">│       └── __init__.py
-</span></span><span class="line"><span class="cl">└── tests
-</span></span></code></pre></div><p>Which isn&rsquo;t too crazy I guess.</p>
+    <p>
+I just learned I have a ton of pages in <code class="verbatim">/usr/local/share/man/man1</code>.</p>
+<p>
+And if you download a man page like <a href="https://manpages.opensuse.org/Tumbleweed/eza/eza.1.en.gz">this one for eza</a>, you can install it at
+<code class="verbatim">/usr/local/share/man/man1/eza.1</code>.</p>
+<p>
+Then <code class="verbatim">man eza</code> just works</p>
 
 </content>
 
 <p>
-    
-        <a href="https://blog.andylu.dev/blog/filter/python/">
-            #Python
-        </a>
-        &nbsp;
     
 </p>
 

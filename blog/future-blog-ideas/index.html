@@ -122,6 +122,10 @@ babashka CLI design traefik as a reverse proxy for tailscale services apps and t
      border: 0;
  }
 
+ .title h2 {
+     width: fit-content;
+ }
+
  .title span {
      font-weight: 400;
  }
@@ -239,6 +243,7 @@ babashka CLI design traefik as a reverse proxy for tailscale services apps and t
      border: 1px solid #e1e1e8;
      border-radius: 3px;
      padding: 3px;
+     display: inline-block;
  }
 
  pre code {
@@ -497,15 +502,20 @@ babashka CLI design traefik as a reverse proxy for tailscale services apps and t
 </head>
 
 <body>
-  <header><a href="/" class="title">
-  <h2>Andy&#39;s Garden</h2>
+  <header><a href="/"
+   class="title">
+    <h2>
+        Andy&#39;s Garden
+    </h2>
 </a>
-<nav><a href="/">Home</a>
+<nav>
+<a href="/">Home</a>
 
 <a href="/now/">Now</a>
 
+<a href="/blog/">Blog</a>
 
-<a href="/blog">Blog</a>
+<a href="/handcoded/">Handcoded</a>
 
 </nav>
 </header>

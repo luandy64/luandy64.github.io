@@ -7,8 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>
-    <lastBuildDate>Thu, 18 Jan 2024 20:27:06 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jan 2024 21:54:56 -0500</lastBuildDate>
     <atom:link href="https://blog.andylu.dev/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setting Up Mbsync</title>
+      <link>https://blog.andylu.dev/blog/setting-up-mbsync/</link>
+      <pubDate>Mon, 22 Jan 2024 21:54:56 -0500</pubDate>
+      <guid>https://blog.andylu.dev/blog/setting-up-mbsync/</guid>
+      <description> Install&#xA;sudo apt install isync Set up the config file&#xA;touch ~/.mbsyncrc </description>
+    </item>
+    <item>
+      <title>Linux Man Pages</title>
+      <link>https://blog.andylu.dev/blog/linux-man-pages/</link>
+      <pubDate>Mon, 22 Jan 2024 20:04:24 -0500</pubDate>
+      <guid>https://blog.andylu.dev/blog/linux-man-pages/</guid>
+      <description>I just learned I have a ton of pages in /usr/local/share/man/man1.&#xA;And if you download a man page like this one for eza, you can install it at /usr/local/share/man/man1/eza.1.&#xA;Then man eza just works</description>
+    </item>
     <item>
       <title>Leiningen Local Installs</title>
       <link>https://blog.andylu.dev/blog/leiningen-local-installs/</link>
@@ -162,6 +176,13 @@
       <pubDate>Mon, 06 Jul 2020 07:52:15 -0500</pubDate>
       <guid>https://blog.andylu.dev/blog/clojurescript-project-setup/</guid>
       <description>Outcomes By the end of this post, you will be able to setup a new clojurescript project, setup emacs to be your development environment, and deploy your app to Github Pages&#xA;Background I&amp;rsquo;ve written two clojurescript projects now, Sundial and DataBooze, and I want to document the set up process. The first time was a massive undertaking because it was my first time. But frustrating enough, so was the second time, even though I thought I nailed down the process and took notes on it.</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://blog.andylu.dev/blog/handcoded-page-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://blog.andylu.dev/blog/handcoded-page-1/</guid>
+      <description>&lt;!DOCTYPE html&gt; My Title | Andy&#39;s Garden Hello, world! Click me </description>
     </item>
   </channel>
 </rss>

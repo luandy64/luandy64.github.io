@@ -134,6 +134,10 @@ import the CSV into an org table use your favorite programming language to forma
      border: 0;
  }
 
+ .title h2 {
+     width: fit-content;
+ }
+
  .title span {
      font-weight: 400;
  }
@@ -251,6 +255,7 @@ import the CSV into an org table use your favorite programming language to forma
      border: 1px solid #e1e1e8;
      border-radius: 3px;
      padding: 3px;
+     display: inline-block;
  }
 
  pre code {
@@ -509,15 +514,20 @@ import the CSV into an org table use your favorite programming language to forma
 </head>
 
 <body>
-  <header><a href="/" class="title">
-  <h2>Andy&#39;s Garden</h2>
+  <header><a href="/"
+   class="title">
+    <h2>
+        Andy&#39;s Garden
+    </h2>
 </a>
-<nav><a href="/">Home</a>
+<nav>
+<a href="/">Home</a>
 
 <a href="/now/">Now</a>
 
+<a href="/blog/">Blog</a>
 
-<a href="/blog">Blog</a>
+<a href="/handcoded/">Handcoded</a>
 
 </nav>
 </header>
@@ -684,12 +694,12 @@ combine two source blocks instead of my three.</p>
 <p>
     
         <a href="https://blog.andylu.dev/blog/filter/emacs/">
-            #emacs
+            #Emacs
         </a>
         &nbsp;
     
         <a href="https://blog.andylu.dev/blog/filter/clojure/">
-            #clojure
+            #Clojure
         </a>
         &nbsp;
     

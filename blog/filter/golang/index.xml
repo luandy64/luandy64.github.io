@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>golang on Andy&#39;s Garden</title>
+    <title>Golang on Andy&#39;s Garden</title>
     <link>https://blog.andylu.dev/blog/filter/golang/</link>
-    <description>Recent content in golang on Andy&#39;s Garden</description>
+    <description>Recent content in Golang on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>homelab on Andy&#39;s Garden</title>
+    <title>Homelab on Andy&#39;s Garden</title>
     <link>https://blog.andylu.dev/blog/filter/homelab/</link>
-    <description>Recent content in homelab on Andy&#39;s Garden</description>
+    <description>Recent content in Homelab on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>
-    <lastBuildDate>Thu, 30 Nov 2023 17:03:01 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 30 Nov 2023 17:14:11 -0500</lastBuildDate>
     <atom:link href="https://blog.andylu.dev/blog/filter/homelab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Self Hosting Email</title>

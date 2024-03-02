@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>handwritten on Andy&#39;s Garden</title>
+    <title>Handwritten on Andy&#39;s Garden</title>
     <link>https://blog.andylu.dev/blog/filter/handwritten/</link>
-    <description>Recent content in handwritten on Andy&#39;s Garden</description>
+    <description>Recent content in Handwritten on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>
-    <lastBuildDate>Sun, 02 Oct 2022 07:52:15 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 11 Dec 2023 15:59:17 -0500</lastBuildDate>
     <atom:link href="https://blog.andylu.dev/blog/filter/handwritten/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>introducing Handwritten Pages</title>
