@@ -2,7 +2,6 @@
 #+MARKUP: org
 #+DATE: 2023-11-16T00:00:00-05:00
 #+LASTMOD: 2023-12-11T23:17:32-05:00
-#+MENU: main
 
 This is [[https://nownownow.com/about][a now page]]. For stuff that used to be here, check out the [[/old-now/archive][archive]].
 
