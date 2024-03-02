@@ -1,0 +1,14 @@
+#+TITLE: Setting Up Mbsync
+#+MARKUP: org
+#+DATE: 2024-01-22T21:54:56-05:00
+#+LASTMOD: 2024-01-22T21:54:56-05:00
+
+Install
+#+begin_src shell
+  sudo apt install isync
+#+end_src
+
+Set up the config file
+#+begin_src shell
+  touch ~/.mbsyncrc
+#+end_src

@@ -1,0 +1,11 @@
+#+TITLE: Linux Man Pages
+#+MARKUP: org
+#+DATE: 2024-01-22T20:04:24-05:00
+#+LASTMOD: 2024-01-22T20:04:24-05:00
+
+I just learned I have a ton of pages in =/usr/local/share/man/man1=.
+
+And if you download a man page like [[https://manpages.opensuse.org/Tumbleweed/eza/eza.1.en.gz][this one for eza]], you can install it at
+=/usr/local/share/man/man1/eza.1=.
+
+Then =man eza= just works
