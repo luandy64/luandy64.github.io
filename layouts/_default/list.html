@@ -14,7 +14,7 @@
             </a>
         </small>
 
-        {{ $pages = .Site.Taxonomies.tags.Get .Title }}
+        {{ $pages = .Site.Taxonomies.tags.Get (lower .Title) }}
     {{ end }}
 
     <ul class="blog-posts">
@@ -41,7 +41,7 @@
     <small>
         <div>
             {{ range .Site.Taxonomies.tags }}
-            <a href="{{ .Page.Permalink }}">
+            <a href="{{ .Page.RelPermalink }}">
                 #{{ .Page.Title }}
             </a>&nbsp;
             {{ end }}
