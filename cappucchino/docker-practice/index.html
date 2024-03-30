@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta
+      charset="utf-8"
+  >
+  <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+  />
+<link rel="shortcut icon" href="https://biscuits.panda-gopher.ts.net/favicon.ico" />
+
+<title>
+      
+      KAllan&#39;s Telephone and Answering Machine Notes
+      |
+      
+      Andy&#39;s Cafe
+  </title>
+<meta
+    name="title"
+    content="KAllan&#39;s Telephone and Answering Machine Notes"
+/>
+<meta
+    name="description"
+    content="Practicing working with Docker"
+/>
+<meta
+    name="keywords"
+    content="docker,golang,"
+/>
+<meta
+      name="referrer"
+      content="no-referrer-when-downgrade"
+  />
+
+  
+
+<link rel="stylesheet"
+      href="/css/style.c5a860393b4bf0be9687472ece6e193abf31191f34003e98ec2e8fd919ca403a.css"
+      integrity="sha256-xahgOTtL8L6Wh0cuzm4ZOr8xGR80AD6Y7C6P2RnKQDo="
+      crossorigin="anonymous">
+
+
+
+<style>
+ @import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+
+ html {
+     cursor: url("/aero_arrow.cur"), default;
+      
+     font-family: 'work-sans', sans-serif;
+ }
+
+ header, h1, h2, h3 {
+     font-family: 'gluten', sans-serif;
+ }
+
+ nav, time {
+     font-family: 'Fira Code VF', sans-serif;
+ }
+
+ nav {
+     border-radius: var(--pico-border-radius);
+     background-color: var(--pico-mid);
+ }
+
+ nav > a {
+     --pico-primary: #110F58;
+ }
+
+ nav > ul > li > a:hover {
+     background-color: var(--pico-dark);
+     color: var(--pico-light);
+ }
+
+ article > header > a > button:hover {
+     background-color: var(--pico-mid);
+ }
+
+ @supports (font-variation-settings: normal) {
+     code { font-family: 'Fira Code VF', monospace; }
+ }
+
+ a:hover {
+
+     animation-duration: 0.5s;
+     animation-iteration-count: infinite;
+     animation-name: flick;
+ }
+
+ @keyframes flick {
+     from {
+         cursor: url("/aero_link1.ico"), auto;
+     }
+
+     to {
+         cursor: url("/aero_link2.ico"), auto;
+     }
+ }
+
+ ::selection {
+     background-color: var(--pico-text-selection-background-color);
+     color: var(--pico-text-selection-color);
+ }
+
+  
+
+</style>
+<style type="text/css" media="screen">
+   @media (prefers-color-scheme: dark) {
+       /* Background */ .bg { color: #cad3f5; background-color: #24273a; }
+/* PreWrapper */ .chroma { color: #cad3f5; background-color: #24273a; }
+/* Other */ .chroma .x {  }
+/* Error */ .chroma .err { color: #ed8796 }
+/* CodeLine */ .chroma .cl {  }
+/* LineLink */ .chroma .lnlinks { outline: none; text-decoration: none; color: inherit }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { color: #494d64 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #8087a2 }
+/* LineNumbers */ .chroma .ln { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #8087a2 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #c6a0f6 }
+/* KeywordConstant */ .chroma .kc { color: #f5a97f }
+/* KeywordDeclaration */ .chroma .kd { color: #ed8796 }
+/* KeywordNamespace */ .chroma .kn { color: #8bd5ca }
+/* KeywordPseudo */ .chroma .kp { color: #c6a0f6 }
+/* KeywordReserved */ .chroma .kr { color: #c6a0f6 }
+/* KeywordType */ .chroma .kt { color: #ed8796 }
+/* Name */ .chroma .n {  }
+/* NameAttribute */ .chroma .na { color: #8aadf4 }
+/* NameBuiltin */ .chroma .nb { color: #91d7e3 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #91d7e3 }
+/* NameClass */ .chroma .nc { color: #eed49f }
+/* NameConstant */ .chroma .no { color: #eed49f }
+/* NameDecorator */ .chroma .nd { color: #8aadf4; font-weight: bold }
+/* NameEntity */ .chroma .ni { color: #8bd5ca }
+/* NameException */ .chroma .ne { color: #f5a97f }
+/* NameFunction */ .chroma .nf { color: #8aadf4 }
+/* NameFunctionMagic */ .chroma .fm { color: #8aadf4 }
+/* NameLabel */ .chroma .nl { color: #91d7e3 }
+/* NameNamespace */ .chroma .nn { color: #f5a97f }
+/* NameOther */ .chroma .nx {  }
+/* NameProperty */ .chroma .py { color: #f5a97f }
+/* NameTag */ .chroma .nt { color: #c6a0f6 }
+/* NameVariable */ .chroma .nv { color: #f4dbd6 }
+/* NameVariableClass */ .chroma .vc { color: #f4dbd6 }
+/* NameVariableGlobal */ .chroma .vg { color: #f4dbd6 }
+/* NameVariableInstance */ .chroma .vi { color: #f4dbd6 }
+/* NameVariableMagic */ .chroma .vm { color: #f4dbd6 }
+/* Literal */ .chroma .l {  }
+/* LiteralDate */ .chroma .ld {  }
+/* LiteralString */ .chroma .s { color: #a6da95 }
+/* LiteralStringAffix */ .chroma .sa { color: #ed8796 }
+/* LiteralStringBacktick */ .chroma .sb { color: #a6da95 }
+/* LiteralStringChar */ .chroma .sc { color: #a6da95 }
+/* LiteralStringDelimiter */ .chroma .dl { color: #8aadf4 }
+/* LiteralStringDoc */ .chroma .sd { color: #6e738d }
+/* LiteralStringDouble */ .chroma .s2 { color: #a6da95 }
+/* LiteralStringEscape */ .chroma .se { color: #8aadf4 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #6e738d }
+/* LiteralStringInterpol */ .chroma .si { color: #a6da95 }
+/* LiteralStringOther */ .chroma .sx { color: #a6da95 }
+/* LiteralStringRegex */ .chroma .sr { color: #8bd5ca }
+/* LiteralStringSingle */ .chroma .s1 { color: #a6da95 }
+/* LiteralStringSymbol */ .chroma .ss { color: #a6da95 }
+/* LiteralNumber */ .chroma .m { color: #f5a97f }
+/* LiteralNumberBin */ .chroma .mb { color: #f5a97f }
+/* LiteralNumberFloat */ .chroma .mf { color: #f5a97f }
+/* LiteralNumberHex */ .chroma .mh { color: #f5a97f }
+/* LiteralNumberInteger */ .chroma .mi { color: #f5a97f }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #f5a97f }
+/* LiteralNumberOct */ .chroma .mo { color: #f5a97f }
+/* Operator */ .chroma .o { color: #91d7e3; font-weight: bold }
+/* OperatorWord */ .chroma .ow { color: #91d7e3; font-weight: bold }
+/* Punctuation */ .chroma .p {  }
+/* Comment */ .chroma .c { color: #6e738d; font-style: italic }
+/* CommentHashbang */ .chroma .ch { color: #6e738d; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #6e738d; font-style: italic }
+/* CommentSingle */ .chroma .c1 { color: #6e738d; font-style: italic }
+/* CommentSpecial */ .chroma .cs { color: #6e738d; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #6e738d; font-style: italic }
+/* CommentPreprocFile */ .chroma .cpf { color: #6e738d; font-weight: bold; font-style: italic }
+/* Generic */ .chroma .g {  }
+/* GenericDeleted */ .chroma .gd { color: #ed8796; background-color: #363a4f }
+/* GenericEmph */ .chroma .ge { font-style: italic }
+/* GenericError */ .chroma .gr { color: #ed8796 }
+/* GenericHeading */ .chroma .gh { color: #f5a97f; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #a6da95; background-color: #363a4f }
+/* GenericOutput */ .chroma .go {  }
+/* GenericPrompt */ .chroma .gp {  }
+/* GenericStrong */ .chroma .gs { font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #f5a97f; font-weight: bold }
+/* GenericTraceback */ .chroma .gt { color: #ed8796 }
+/* GenericUnderline */ .chroma .gl { text-decoration: underline }
+/* TextWhitespace */ .chroma .w {  }
+
+   }
+   @media (prefers-color-scheme: light) {
+       /* Background */ .bg { color: #4c4f69; background-color: #eff1f5; }
+/* PreWrapper */ .chroma { color: #4c4f69; background-color: #eff1f5; }
+/* Other */ .chroma .x {  }
+/* Error */ .chroma .err { color: #d20f39 }
+/* CodeLine */ .chroma .cl {  }
+/* LineLink */ .chroma .lnlinks { outline: none; text-decoration: none; color: inherit }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { color: #bcc0cc }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #8c8fa1 }
+/* LineNumbers */ .chroma .ln { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #8c8fa1 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #8839ef }
+/* KeywordConstant */ .chroma .kc { color: #fe640b }
+/* KeywordDeclaration */ .chroma .kd { color: #d20f39 }
+/* KeywordNamespace */ .chroma .kn { color: #179299 }
+/* KeywordPseudo */ .chroma .kp { color: #8839ef }
+/* KeywordReserved */ .chroma .kr { color: #8839ef }
+/* KeywordType */ .chroma .kt { color: #d20f39 }
+/* Name */ .chroma .n {  }
+/* NameAttribute */ .chroma .na { color: #1e66f5 }
+/* NameBuiltin */ .chroma .nb { color: #04a5e5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #04a5e5 }
+/* NameClass */ .chroma .nc { color: #df8e1d }
+/* NameConstant */ .chroma .no { color: #df8e1d }
+/* NameDecorator */ .chroma .nd { color: #1e66f5; font-weight: bold }
+/* NameEntity */ .chroma .ni { color: #179299 }
+/* NameException */ .chroma .ne { color: #fe640b }
+/* NameFunction */ .chroma .nf { color: #1e66f5 }
+/* NameFunctionMagic */ .chroma .fm { color: #1e66f5 }
+/* NameLabel */ .chroma .nl { color: #04a5e5 }
+/* NameNamespace */ .chroma .nn { color: #fe640b }
+/* NameOther */ .chroma .nx {  }
+/* NameProperty */ .chroma .py { color: #fe640b }
+/* NameTag */ .chroma .nt { color: #8839ef }
+/* NameVariable */ .chroma .nv { color: #dc8a78 }
+/* NameVariableClass */ .chroma .vc { color: #dc8a78 }
+/* NameVariableGlobal */ .chroma .vg { color: #dc8a78 }
+/* NameVariableInstance */ .chroma .vi { color: #dc8a78 }
+/* NameVariableMagic */ .chroma .vm { color: #dc8a78 }
+/* Literal */ .chroma .l {  }
+/* LiteralDate */ .chroma .ld {  }
+/* LiteralString */ .chroma .s { color: #40a02b }
+/* LiteralStringAffix */ .chroma .sa { color: #d20f39 }
+/* LiteralStringBacktick */ .chroma .sb { color: #40a02b }
+/* LiteralStringChar */ .chroma .sc { color: #40a02b }
+/* LiteralStringDelimiter */ .chroma .dl { color: #1e66f5 }
+/* LiteralStringDoc */ .chroma .sd { color: #9ca0b0 }
+/* LiteralStringDouble */ .chroma .s2 { color: #40a02b }
+/* LiteralStringEscape */ .chroma .se { color: #1e66f5 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #9ca0b0 }
+/* LiteralStringInterpol */ .chroma .si { color: #40a02b }
+/* LiteralStringOther */ .chroma .sx { color: #40a02b }
+/* LiteralStringRegex */ .chroma .sr { color: #179299 }
+/* LiteralStringSingle */ .chroma .s1 { color: #40a02b }
+/* LiteralStringSymbol */ .chroma .ss { color: #40a02b }
+/* LiteralNumber */ .chroma .m { color: #fe640b }
+/* LiteralNumberBin */ .chroma .mb { color: #fe640b }
+/* LiteralNumberFloat */ .chroma .mf { color: #fe640b }
+/* LiteralNumberHex */ .chroma .mh { color: #fe640b }
+/* LiteralNumberInteger */ .chroma .mi { color: #fe640b }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #fe640b }
+/* LiteralNumberOct */ .chroma .mo { color: #fe640b }
+/* Operator */ .chroma .o { color: #04a5e5; font-weight: bold }
+/* OperatorWord */ .chroma .ow { color: #04a5e5; font-weight: bold }
+/* Punctuation */ .chroma .p {  }
+/* Comment */ .chroma .c { color: #9ca0b0; font-style: italic }
+/* CommentHashbang */ .chroma .ch { color: #9ca0b0; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #9ca0b0; font-style: italic }
+/* CommentSingle */ .chroma .c1 { color: #9ca0b0; font-style: italic }
+/* CommentSpecial */ .chroma .cs { color: #9ca0b0; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #9ca0b0; font-style: italic }
+/* CommentPreprocFile */ .chroma .cpf { color: #9ca0b0; font-weight: bold; font-style: italic }
+/* Generic */ .chroma .g {  }
+/* GenericDeleted */ .chroma .gd { color: #d20f39; background-color: #ccd0da }
+/* GenericEmph */ .chroma .ge { font-style: italic }
+/* GenericError */ .chroma .gr { color: #d20f39 }
+/* GenericHeading */ .chroma .gh { color: #fe640b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #40a02b; background-color: #ccd0da }
+/* GenericOutput */ .chroma .go {  }
+/* GenericPrompt */ .chroma .gp {  }
+/* GenericStrong */ .chroma .gs { font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #fe640b; font-weight: bold }
+/* GenericTraceback */ .chroma .gt { color: #d20f39 }
+/* GenericUnderline */ .chroma .gl { text-decoration: underline }
+/* TextWhitespace */ .chroma .w {  }
+
+   }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=fira-code:400|merriweather-sans:400" rel="stylesheet" />
+  <link href="https://fonts.bunny.net/css?family=gluten:700|work-sans:400" rel="stylesheet" />
+
+</head>
+
+<body>
+  <header><h1>
+    <a href="/"
+       class="title">
+        Andy&#39;s Cafe
+    </a>
+</h1><nav>
+    <ul style="width: 100%; justify-content: space-around;">
+        
+        <li>
+            <a href="/">
+                Home
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about/">
+                About
+            </a>
+        </li>
+        
+        <li>
+            <a href="/now/">
+                Now
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a href="/cortado/">
+                Cortado
+            </a>
+        </li>
+        
+        <li>
+            <a href="/cappucchino/">
+                Cappuccino
+            </a>
+        </li>
+        
+        <li>
+            <a href="/latte/">
+                Latte
+            </a>
+        </li>
+        
+    </ul>
+</nav>
+</header>
+  <main>
+
+<h1>
+    <a href="/cappucchino/docker-practice/">
+        KAllan&#39;s Telephone and Answering Machine Notes
+    </a>
+</h1>
+
+<p>
+    <strong> Last updated </strong> :
+    <time datetime='2021-04-11' pubdate>
+        2021-04-11T00:00:00-05:00
+    </time>
+</p>
+
+<article class="post">
+    <h2 id="setup"><a href="#setup">Setup</a></h2>
+<h3 id="installing-docker">Installing <code>docker</code><a href="#installing-docker"></a></h3>
+<p>I always like the DigitalOcean tutorials, so that&rsquo;s what I followed here. <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04">Installing Docker on
+Ubuntu 20.04</a></p>
+<p>One note: I had to restart my computer instead of just logging out in order to get the docker group
+update to take effect.</p>
+<h3 id="clone-the-repos"><a href="#clone-the-repos">Clone the repos</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git clone git@github.com:KAllan357/answering-machine.git
+</span></span><span style="display:flex;"><span>git clone git@github.com:KAllan357/telephone.git
+</span></span></code></pre></div><p>Nothing special here.</p>
+<h3 id="install-go"><a href="#install-go">Install Go</a></h3>
+<p>I just <a href="https://golang.org/doc/install">followed these instructions</a>.</p>
+<h2 id="do-the-thing"><a href="#do-the-thing">Do the thing</a></h2>
+<h3 id="start-the-answering-machine-outside-of-docker">Start the answering machine outside of <code>docker</code><a href="#start-the-answering-machine-outside-of-docker"></a></h3>
+<p>Running <code>go run main.go</code> seems to do a thing. And we get the <code>200</code> like the instructions say if you
+<code>curl</code> it. Great, so it seems like we can expect the app to hang and just wait for requests. And to
+log them when it handles them.</p>
+<h3 id="start-the-answering-machine-container"><a href="#start-the-answering-machine-container">Start the answering machine container</a></h3>
+<p>I need to build the thing first.</p>
+<p>My <code>docker build .</code> hit this error</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker build .
+</span></span><span style="display:flex;"><span>Sending build context to Docker daemon  74.24kB
+</span></span><span style="display:flex;"><span>Step 1/10 : FROM debian:wheezy
+</span></span><span style="display:flex;"><span>wheezy: Pulling from library/debian
+</span></span><span style="display:flex;"><span>2b15b7abe8b3: Pull complete
+</span></span><span style="display:flex;"><span>Digest: sha256:2259b099d947443e44bbd1c94967c785361af8fd22df48a08a3942e2d5630849
+</span></span><span style="display:flex;"><span>Status: Downloaded newer image <span style="color:#66d9ef">for</span> debian:wheezy
+</span></span><span style="display:flex;"><span> ---&gt; 10fcec6d95c4
+</span></span><span style="display:flex;"><span>Step 2/10 : RUN apt-get update -y <span style="color:#f92672">&amp;&amp;</span> apt-get install --no-install-recommends -y -q curl build-essential ca-certificates
+</span></span><span style="display:flex;"><span> ---&gt; Running in 900695c2fa97
+</span></span><span style="display:flex;"><span>Ign http://deb.debian.org wheezy Release.gpg
+</span></span><span style="display:flex;"><span>Ign http://deb.debian.org wheezy-updates Release.gpg
+</span></span><span style="display:flex;"><span>Ign http://deb.debian.org wheezy Release
+</span></span><span style="display:flex;"><span>Ign http://security.debian.org wheezy/updates Release.gpg
+</span></span><span style="display:flex;"><span>Ign http://deb.debian.org wheezy-updates Release
+</span></span><span style="display:flex;"><span>Ign http://security.debian.org wheezy/updates Release
+</span></span><span style="display:flex;"><span>Err http://security.debian.org wheezy/updates/main amd64 Packages
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Err http://security.debian.org wheezy/updates/main amd64 Packages
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Err http://security.debian.org wheezy/updates/main amd64 Packages
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Err http://security.debian.org wheezy/updates/main amd64 Packages
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Err http://security.debian.org wheezy/updates/main amd64 Packages
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">404</span>  Not Found <span style="color:#f92672">[</span>IP: 151.101.66.132 80<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Err http://deb.debian.org wheezy/main amd64 Packages
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">404</span>  Not Found
+</span></span><span style="display:flex;"><span>Err http://deb.debian.org wheezy-updates/main amd64 Packages
+</span></span><span style="display:flex;"><span>  <span style="color:#ae81ff">404</span>  Not Found
+</span></span><span style="display:flex;"><span>W: Failed to fetch http://deb.debian.org/debian/dists/wheezy/main/binary-amd64/Packages  <span style="color:#ae81ff">404</span>  Not Found
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>W: Failed to fetch http://deb.debian.org/debian/dists/wheezy-updates/main/binary-amd64/Packages  <span style="color:#ae81ff">404</span>  Not Found
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>W: Failed to fetch http://security.debian.org/debian-security/dists/wheezy/updates/main/binary-amd64/Packages  <span style="color:#ae81ff">404</span>  Not Found <span style="color:#f92672">[</span>IP: 151.101.66.132 80<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>E: Some index files failed to download. They have been ignored, or old ones used instead.
+</span></span><span style="display:flex;"><span>The command <span style="color:#e6db74">&#39;/bin/sh -c apt-get update -y &amp;&amp; apt-get install --no-install-recommends -y -q curl build-essential ca-certificates&#39;</span> returned a non-zero code: <span style="color:#ae81ff">100</span>
+</span></span></code></pre></div><p>My first thought is maybe it has to do with <code>wheezy</code>? So I dropped that tag and it seems to run
+fine. <code>docker images</code> showed me the successful build. Oh, I also bumped the <code>go</code> version because I
+noticed my install grabbed <code>v1.6</code> instead of <code>v1.3</code>. I sure that won&rsquo;t affect this exercise very
+much.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span>modified   Dockerfile
+</span></span><span style="display:flex;"><span><span style="color:#75715e">@@ -1,11 +1,12 @@
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">-FROM debian:wheezy
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+FROM debian
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
+</span></span><span style="display:flex;"><span> RUN apt-get update -y &amp;&amp; apt-get install --no-install-recommends -y -q curl build-essential ca-certificates
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-RUN mkdir /usr/local/go &amp;&amp; curl https://storage.googleapis.com/golang/go1.3.linux-amd64.tar.gz | tar xvzf - -C /usr/local/go --strip-components=1
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN mkdir /usr/local/go &amp;&amp; curl https://storage.googleapis.com/golang/go1.6.linux-amd64.tar.gz | tar xvzf - -C /usr/local/go --strip-components=1
+</span></span></span></code></pre></div><p>Ah a simple <code>docker run -it &lt;image id&gt;</code> said it panicked because it&rsquo;s missing a config. So I&rsquo;ll add
+it like the other files.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span> ADD messages.html /app/
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">+ADD config.json /app/
+</span></span></span></code></pre></div><p>A rebuild and a run looks just like the it did when I ran the <code>main.go</code>, so
+let&rsquo;s try a curl.</p>
+<p>It failed. I need to expose a port.</p>
+<p>Adding a <code>-p 8080:8080</code> seemed to do the trick and I got &ldquo;Jimbo&rsquo;s answering machine&rdquo;. A quick <code>ag</code>
+says that&rsquo;s from the config. Seems like the instructions are out of date, it references a line 54
+and an environment variable, but 54 is a blank line. And a config file controls the name now.</p>
+<p>I don&rsquo;t want to think too hard about this, so I&rsquo;m moving on to the telephone. But first, I was able
+to get the container running in the background and tailing the logs.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run -dit -p 8080:8080 --name andy_am 94f348ecb597
+</span></span><span style="display:flex;"><span>docker logs -f andy_am
+</span></span></code></pre></div><h3 id="start-the-telephone-container"><a href="#start-the-telephone-container">Start the telephone container</a></h3>
+<p>Nice, telephone&rsquo;s Dockerfile is super bare - literally empty. Since I pulled the <code>debian</code> image
+earlier, I thought I would use that as a base.</p>
+<p>So I started with an interactive debian container to figure out how to install ruby and gems and
+whatnot.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run -it debian bash
+</span></span><span style="display:flex;"><span>root@7c91165552bb:/#
+</span></span></code></pre></div><p>Installing ruby was easy, and I got rubygems for free. Then installing a gem was easy. So I
+threw all of that into the Dockerfile.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span>modified   Dockerfile
+</span></span><span style="display:flex;"><span><span style="color:#75715e">@@ -1,12 +1,15 @@
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">-# See the reference doc - http://docs.docker.com/reference/builder/
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+FROM debian
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+MAINTAINER luandy64
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-# FROM - what is the base image for this Dockerfile? http://docs.docker.com/reference/builder/#from
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-# MAINTAINER - who owns this Dockerfile? http://docs.docker.com/reference/builder/#maintainer
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN apt update
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-# Install Ruby - perhaps from a package manager? http://docs.docker.com/reference/builder/#run
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN apt install -y ruby
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+RUN gem install httparty
+</span></span></span></code></pre></div><p>Now I just need to figure out how to run the ruby file in the container. So first we need to get the
+ruby file into the container. Taking inspiration from the <code>answering-machine/Dockerfile</code>, I made
+these changes to <code>telephone/Dockerfile</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span>modified   Dockerfile
+</span></span><span style="display:flex;"><span><span style="color:#75715e">@@ -1,12 +1,15 @@
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">-# See the reference doc - http://docs.docker.com/reference/builder/
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+FROM debian
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+MAINTAINER luandy64
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-# FROM - what is the base image for this Dockerfile? http://docs.docker.com/reference/builder/#from
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-# MAINTAINER - who owns this Dockerfile? http://docs.docker.com/reference/builder/#maintainer
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN apt update
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-# Install Ruby - perhaps from a package manager? http://docs.docker.com/reference/builder/#run
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN apt install -y ruby
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+RUN gem install httparty
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-# Install the &#39;httparty&#39; gem - how do you install gems? http://docs.docker.com/reference/builder/#run
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+RUN mkdir /app
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+ADD telephone.rb /app/
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-# ADD the telephone(.rb) application - http://docs.docker.com/reference/builder/#add
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-# Write a CMD - http://docs.docker.com/reference/builder/#cmd
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+WORKDIR /app
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">+RUN ruby telephone.rb
+</span></span></span></code></pre></div><p>Attempting the build now results in a failure because the <code>telephone.rb</code> script is unhappy. So I
+comment it out and try to iterate on it. Here&rsquo;s the error I see</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>root@c59f07ad8b04:/app# ruby telephone.rb
+</span></span><span style="display:flex;"><span>Traceback <span style="color:#f92672">(</span>most recent call last<span style="color:#f92672">)</span>:
+</span></span><span style="display:flex;"><span>        12: from telephone.rb:11:in <span style="color:#e6db74">`</span>&lt;main&gt;<span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        11: from /var/lib/gems/2.5.0/gems/httparty-0.18.1/lib/httparty.rb:631:in `post&#39;</span>
+</span></span><span style="display:flex;"><span>        10: from /var/lib/gems/2.5.0/gems/httparty-0.18.1/lib/httparty.rb:524:in <span style="color:#e6db74">`</span>post<span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         9: from /var/lib/gems/2.5.0/gems/httparty-0.18.1/lib/httparty.rb:594:in `perform_request&#39;</span>
+</span></span><span style="display:flex;"><span>         8: from /var/lib/gems/2.5.0/gems/httparty-0.18.1/lib/httparty/request.rb:145:in <span style="color:#e6db74">`</span>perform<span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         7: from /usr/lib/ruby/2.5.0/net/http.rb:1458:in `request&#39;</span>
+</span></span><span style="display:flex;"><span>         6: from /usr/lib/ruby/2.5.0/net/http.rb:909:in <span style="color:#e6db74">`</span>start<span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         5: from /usr/lib/ruby/2.5.0/net/http.rb:920:in `do_start&#39;</span>
+</span></span><span style="display:flex;"><span>         4: from /usr/lib/ruby/2.5.0/net/http.rb:935:in <span style="color:#e6db74">`</span>connect<span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         3: from /usr/lib/ruby/2.5.0/timeout.rb:103:in `timeout&#39;</span>
+</span></span><span style="display:flex;"><span>         2: from /usr/lib/ruby/2.5.0/timeout.rb:93:in <span style="color:#e6db74">`</span>block in timeout<span style="color:#e6db74">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">         1: from /usr/lib/ruby/2.5.0/net/http.rb:936:in `block in connect&#39;</span>
+</span></span><span style="display:flex;"><span>/usr/lib/ruby/2.5.0/net/http.rb:939:in <span style="color:#e6db74">`</span>rescue in block in connect<span style="color:#960050;background-color:#1e0010">&#39;</span>: Failed to open TCP connection to localhost:8080 <span style="color:#f92672">(</span>Cannot assign requested address - connect<span style="color:#f92672">(</span>2<span style="color:#f92672">)</span> <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#34;localhost&#34;</span> port 8080<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>Errno::EADDRNOTAVAIL<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>My first thought is maybe it doesn&rsquo;t want <code>localhost</code> but will take <code>127.0.0.1</code>. But that results in
+a similar error. So I just tried the IP address of the <code>answering-machine</code> container. That worked, but I wanted
+to make it configurable annd based on an environment variable.</p>
+<p>After looking up how to grab env vars in ruby, I modified <code>telephone.rb</code> for real and rebuilt the
+image.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">-# FIXME
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-url = &#34;http://localhost:8080/messages&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+url = &#34;http://#{ENV[ANSWERING_MACHINE_HOST]}:8080/messages&#34;
+</span></span></span></code></pre></div><p>It kept erroring on me, but I realized that I was calling <code>RUN ruby telephone.rb</code> instead of
+<code>CMD ruby telephone.rb</code>. So let&rsquo;s make that change now.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">-RUN ruby telephone.rb
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+CMD ruby telephone.rb
+</span></span></span></code></pre></div><p>It builds successfully now, but if I run the image I get an error about some constant <code>ANSWERING_MACHINE_HOST</code>.</p>
+<p>Ha, you have to quote keys for maps. Duh.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">- url = &#34;http://#{ENV[ANSWERING_MACHINE_HOST]}:8080/messages&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+ url = &#34;http://#{ENV[&#34;ANSWERING_MACHINE_HOST&#34;]}:8080/messages&#34;
+</span></span></span></code></pre></div><p>I learned that ruby has a &ldquo;safe get&rdquo; from a map too. So I used that to set values for the sender and
+message.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="color:#f92672">-# FIXME
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-sender = &#34;Telemarketer Bob&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+sender = ENV.fetch(&#34;SENDER&#34;, &#34;Telemarketer Bob&#34;)
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-# FIXME
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672">-message = &#34;I have a credit card offer you can&#39;t refuse.&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#f92672"></span><span style="color:#a6e22e">+message = ENV.fetch(&#34;MESSAGE&#34;, &#34;I have a credit card offer you can&#39;t refuse.&#34;)
+</span></span></span></code></pre></div><p>Finally, the exercise mentions linking two containers. Since I already named the answering machine
+<code>andy_am</code>, I start the telephone with</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run -it -e ANSWERING_MACHINE_HOST<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;andy_am&#39;</span> --link andy_am 80ad0c4699d8
+</span></span></code></pre></div><p>And we can check the logs of the answering machine with</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker logs -f andy_am
+</span></span></code></pre></div><p>And with that I&rsquo;m calling it done.</p>
+<h2 id="reflection"><a href="#reflection">Reflection</a></h2>
+<p>I think this exercise showed me that I know more about Docker than I give myself credit for. Also,
+while I don&rsquo;t have the specifics of &ldquo;my docker workflow&rdquo; nailed down, my goal to always shrink the
+iteration loop seems like a helpful approach. In this case, it led me to stage the container exactly
+how I want it, but then I can run various commands iteractively to solve the problems I&rsquo;m having.</p>
+<p>I didn&rsquo;t know the difference between <code>RUN</code> and <code>CMD</code> in a Dockerfile. But it has completely
+different outcomes on the build process. But just being me, I commented out the <code>RUN</code> to let the
+image build successfully. Then I ran the container and iterated on the bug until I solved it. It&rsquo;s
+the same process I used to install ruby on the container in the first place.</p>
+<p>This is also a good example of how learning one language makes it easier to learn other languages. I
+don&rsquo;t know ruby. But by knowing python, I quickly troubleshot:</p>
+<ul>
+<li>installing a gem: since gem is to ruby as pip is to python</li>
+<li>accessing environment variables from the script: I knew there would be an object of some king,
+hopefully a map. But it was also a simple google search</li>
+<li>using a &ldquo;safe get&rdquo; on a map: this one felt like a bigger stretch in my mind, but it was also just
+a quick google search</li>
+</ul>
+<p>There was a moment when I debated whether I should even bother with all of this ruby. The goal of
+this exercise is to see what I know about docker, not ruby. And given that the <code>telephone.rb</code> file
+is so simple, I debated just translating it straight to python (or even <code>curl</code>). But actully,
+because it was so small and the idea of the program is so simple, I chose to stick it out.</p>
+
+</article>
+
+<button>
+    <a href="mailto:fuzzy.sand8027@fastmail.com"
+       target="_blank">
+        Reply via email
+    </a>
+</button>
+
+<p>
+    
+    <a href="https://biscuits.panda-gopher.ts.net/tags/docker/">
+        #Docker
+    </a>
+    &nbsp;
+    
+    <a href="https://biscuits.panda-gopher.ts.net/tags/golang/">
+        #Golang
+    </a>
+    &nbsp;
+    
+</p>
+
+
+  </main>
+  <footer></footer>
+</body>
+
+</html>

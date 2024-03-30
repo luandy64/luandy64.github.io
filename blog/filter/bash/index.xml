@@ -2,18 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bash on Andy&#39;s Garden</title>
-    <link>https://blog.andylu.dev/blog/filter/bash/</link>
+    <link>http://localhost:1313/blog/filter/bash/</link>
     <description>Recent content in Bash on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>
-    <lastBuildDate>Mon, 27 Nov 2023 15:54:59 -0500</lastBuildDate>
-    <atom:link href="https://blog.andylu.dev/blog/filter/bash/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Mar 2024 21:03:48 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/filter/bash/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Webmention Myself</title>
+      <link>http://localhost:1313/blog/webmention-myself/</link>
+      <pubDate>Sun, 17 Mar 2024 21:03:48 -0400</pubDate>
+      <guid>http://localhost:1313/blog/webmention-myself/</guid>
+      <description>This is a page about »Webmention Myself«.</description>
+    </item>
     <item>
       <title>Bash `while` loops</title>
-      <link>https://blog.andylu.dev/blog/bash-while-loops/</link>
+      <link>http://localhost:1313/blog/bash-while-loops/</link>
       <pubDate>Mon, 27 Nov 2023 15:54:59 -0500</pubDate>
-      <guid>https://blog.andylu.dev/blog/bash-while-loops/</guid>
+      <guid>http://localhost:1313/blog/bash-while-loops/</guid>
       <description>Here&amp;rsquo;s a bash snippet I can see myself using one day&#xA;while :; do ls -lh &amp;#34;$( ls -t1 /tmp/tmp* | head -n 1 )&amp;#34;; sleep 10; done &amp;quot;$( ls -t1 /tmp/tmp* | head -n 1 )&amp;quot;: Get a file name ls -t1 /tmp/tmp*: List the files in /tmp/tmp* ordered by most recently updated head -n 1: Get the first one ls -lh &amp;lt;one-file&amp;gt;: Get the long listing of just one file The rest of it is just to do it over and over so that I can see changes in the file size </description>
     </item>
   </channel>

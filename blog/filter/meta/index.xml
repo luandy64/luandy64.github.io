@@ -2,18 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Meta on Andy&#39;s Garden</title>
-    <link>https://blog.andylu.dev/blog/filter/meta/</link>
+    <link>http://localhost:1313/blog/filter/meta/</link>
     <description>Recent content in Meta on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>
-    <lastBuildDate>Thu, 21 Dec 2023 19:36:47 -0500</lastBuildDate>
-    <atom:link href="https://blog.andylu.dev/blog/filter/meta/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Mar 2024 21:03:48 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/filter/meta/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Webmention Myself</title>
+      <link>http://localhost:1313/blog/webmention-myself/</link>
+      <pubDate>Sun, 17 Mar 2024 21:03:48 -0400</pubDate>
+      <guid>http://localhost:1313/blog/webmention-myself/</guid>
+      <description>This is a page about »Webmention Myself«.</description>
+    </item>
     <item>
       <title>How to Write a Handwritten Page</title>
-      <link>https://blog.andylu.dev/blog/how-to-write-a-handwritten-page/</link>
+      <link>http://localhost:1313/blog/how-to-write-a-handwritten-page/</link>
       <pubDate>Thu, 21 Dec 2023 19:36:47 -0500</pubDate>
-      <guid>https://blog.andylu.dev/blog/how-to-write-a-handwritten-page/</guid>
+      <guid>http://localhost:1313/blog/how-to-write-a-handwritten-page/</guid>
       <description>I lean on two shortcodes to create these pages.&#xA;The figure code&#xA;{{&amp;lt; figure src=&amp;#34;/IMG_0193.jpg&amp;#34; &amp;gt;}} And if I need links, the hand-link code&#xA;{{&amp;lt; hand-link href=&amp;#34;https://google.com&amp;#34; style=` left: 13.332134292565947%; top: 55.21739130434783%; width: 17.206235011990408%; height: 17.536231884057973%; ` &amp;gt;}} To generate the CSS for the links,&#xA;upload the image to https://pixspy.com/ right click to make a selection for where the link should go open the dev console and paste the following code var [_, ix, iy] = $(&amp;#39;.</description>
     </item>
   </channel>

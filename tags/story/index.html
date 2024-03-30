@@ -1,223 +1,373 @@
 <!DOCTYPE html>
-<html lang='en' dir='auto'><head>
-  <meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='A page in Andy&#39;s blog'>
-<meta name='theme-color' content='#0033ff'>
+<html lang="en-US">
 
-<meta property='og:title' content='Tag: story • Andy&#39;s Garden'>
-<meta property='og:description' content='A page in Andy&#39;s blog'>
-<meta property='og:url' content='https://blog.andylu.dev/tags/story/'>
-<meta property='og:site_name' content='Andy&#39;s Garden'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content='2023-12-11T20:27:55-05:00'/><meta name='twitter:card' content='summary'>
+<head>
+  <meta
+      charset="utf-8"
+  >
+  <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+  />
+<link rel="shortcut icon" href="https://biscuits.panda-gopher.ts.net/favicon.ico" />
 
-<meta name="generator" content="Hugo 0.83.0-DEV" />
+<title>
+      
+      Story
+      |
+      
+      Andy&#39;s Cafe
+  </title>
+<meta
+    name="title"
+    content="Story"
+/>
+<meta
+    name="description"
+    content="Andy&#39;s corner of the internet"
+/>
+<meta
+    name="keywords"
+    content=" cappucchino, cortado, latte, babashka, bash, clojure, clojurescript, docker, emacs, git, golang, homelab, hugo, indieweb, magit, meta, projects, python, story, written-in-org-mode,"
+/>
+<meta
+      name="referrer"
+      content="no-referrer-when-downgrade"
+  />
 
-  <title>Tag: story • Andy&#39;s Garden</title>
-  <link rel='canonical' href='https://blog.andylu.dev/tags/story/'>
   
-    <link href="https://blog.andylu.dev/tags/story/index.xml" rel="alternate" type="application/rss+xml" title="Andy&#39;s Garden" />
+
+<link rel="stylesheet"
+      href="/css/style.c5a860393b4bf0be9687472ece6e193abf31191f34003e98ec2e8fd919ca403a.css"
+      integrity="sha256-xahgOTtL8L6Wh0cuzm4ZOr8xGR80AD6Y7C6P2RnKQDo="
+      crossorigin="anonymous">
+
+
+
+<style>
+ @import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+
+ html {
+     cursor: url("/aero_arrow.cur"), default;
+      
+     font-family: 'work-sans', sans-serif;
+ }
+
+ header, h1, h2, h3 {
+     font-family: 'gluten', sans-serif;
+ }
+
+ nav, time {
+     font-family: 'Fira Code VF', sans-serif;
+ }
+
+ nav {
+     border-radius: var(--pico-border-radius);
+     background-color: var(--pico-mid);
+ }
+
+ nav > a {
+     --pico-primary: #110F58;
+ }
+
+ nav > ul > li > a:hover {
+     background-color: var(--pico-dark);
+     color: var(--pico-light);
+ }
+
+ article > header > a > button:hover {
+     background-color: var(--pico-mid);
+ }
+
+ @supports (font-variation-settings: normal) {
+     code { font-family: 'Fira Code VF', monospace; }
+ }
+
+ a:hover {
+
+     animation-duration: 0.5s;
+     animation-iteration-count: infinite;
+     animation-name: flick;
+ }
+
+ @keyframes flick {
+     from {
+         cursor: url("/aero_link1.ico"), auto;
+     }
+
+     to {
+         cursor: url("/aero_link2.ico"), auto;
+     }
+ }
+
+ ::selection {
+     background-color: var(--pico-text-selection-background-color);
+     color: var(--pico-text-selection-color);
+ }
+
   
-  
-  <link rel='icon' href='/favicon.ico'>
-<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css'><style>
-:root{--color-accent:#0033ff;}
+
 </style>
+<style type="text/css" media="screen">
+   @media (prefers-color-scheme: dark) {
+       /* Background */ .bg { color: #cad3f5; background-color: #24273a; }
+/* PreWrapper */ .chroma { color: #cad3f5; background-color: #24273a; }
+/* Other */ .chroma .x {  }
+/* Error */ .chroma .err { color: #ed8796 }
+/* CodeLine */ .chroma .cl {  }
+/* LineLink */ .chroma .lnlinks { outline: none; text-decoration: none; color: inherit }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { color: #494d64 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #8087a2 }
+/* LineNumbers */ .chroma .ln { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #8087a2 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #c6a0f6 }
+/* KeywordConstant */ .chroma .kc { color: #f5a97f }
+/* KeywordDeclaration */ .chroma .kd { color: #ed8796 }
+/* KeywordNamespace */ .chroma .kn { color: #8bd5ca }
+/* KeywordPseudo */ .chroma .kp { color: #c6a0f6 }
+/* KeywordReserved */ .chroma .kr { color: #c6a0f6 }
+/* KeywordType */ .chroma .kt { color: #ed8796 }
+/* Name */ .chroma .n {  }
+/* NameAttribute */ .chroma .na { color: #8aadf4 }
+/* NameBuiltin */ .chroma .nb { color: #91d7e3 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #91d7e3 }
+/* NameClass */ .chroma .nc { color: #eed49f }
+/* NameConstant */ .chroma .no { color: #eed49f }
+/* NameDecorator */ .chroma .nd { color: #8aadf4; font-weight: bold }
+/* NameEntity */ .chroma .ni { color: #8bd5ca }
+/* NameException */ .chroma .ne { color: #f5a97f }
+/* NameFunction */ .chroma .nf { color: #8aadf4 }
+/* NameFunctionMagic */ .chroma .fm { color: #8aadf4 }
+/* NameLabel */ .chroma .nl { color: #91d7e3 }
+/* NameNamespace */ .chroma .nn { color: #f5a97f }
+/* NameOther */ .chroma .nx {  }
+/* NameProperty */ .chroma .py { color: #f5a97f }
+/* NameTag */ .chroma .nt { color: #c6a0f6 }
+/* NameVariable */ .chroma .nv { color: #f4dbd6 }
+/* NameVariableClass */ .chroma .vc { color: #f4dbd6 }
+/* NameVariableGlobal */ .chroma .vg { color: #f4dbd6 }
+/* NameVariableInstance */ .chroma .vi { color: #f4dbd6 }
+/* NameVariableMagic */ .chroma .vm { color: #f4dbd6 }
+/* Literal */ .chroma .l {  }
+/* LiteralDate */ .chroma .ld {  }
+/* LiteralString */ .chroma .s { color: #a6da95 }
+/* LiteralStringAffix */ .chroma .sa { color: #ed8796 }
+/* LiteralStringBacktick */ .chroma .sb { color: #a6da95 }
+/* LiteralStringChar */ .chroma .sc { color: #a6da95 }
+/* LiteralStringDelimiter */ .chroma .dl { color: #8aadf4 }
+/* LiteralStringDoc */ .chroma .sd { color: #6e738d }
+/* LiteralStringDouble */ .chroma .s2 { color: #a6da95 }
+/* LiteralStringEscape */ .chroma .se { color: #8aadf4 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #6e738d }
+/* LiteralStringInterpol */ .chroma .si { color: #a6da95 }
+/* LiteralStringOther */ .chroma .sx { color: #a6da95 }
+/* LiteralStringRegex */ .chroma .sr { color: #8bd5ca }
+/* LiteralStringSingle */ .chroma .s1 { color: #a6da95 }
+/* LiteralStringSymbol */ .chroma .ss { color: #a6da95 }
+/* LiteralNumber */ .chroma .m { color: #f5a97f }
+/* LiteralNumberBin */ .chroma .mb { color: #f5a97f }
+/* LiteralNumberFloat */ .chroma .mf { color: #f5a97f }
+/* LiteralNumberHex */ .chroma .mh { color: #f5a97f }
+/* LiteralNumberInteger */ .chroma .mi { color: #f5a97f }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #f5a97f }
+/* LiteralNumberOct */ .chroma .mo { color: #f5a97f }
+/* Operator */ .chroma .o { color: #91d7e3; font-weight: bold }
+/* OperatorWord */ .chroma .ow { color: #91d7e3; font-weight: bold }
+/* Punctuation */ .chroma .p {  }
+/* Comment */ .chroma .c { color: #6e738d; font-style: italic }
+/* CommentHashbang */ .chroma .ch { color: #6e738d; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #6e738d; font-style: italic }
+/* CommentSingle */ .chroma .c1 { color: #6e738d; font-style: italic }
+/* CommentSpecial */ .chroma .cs { color: #6e738d; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #6e738d; font-style: italic }
+/* CommentPreprocFile */ .chroma .cpf { color: #6e738d; font-weight: bold; font-style: italic }
+/* Generic */ .chroma .g {  }
+/* GenericDeleted */ .chroma .gd { color: #ed8796; background-color: #363a4f }
+/* GenericEmph */ .chroma .ge { font-style: italic }
+/* GenericError */ .chroma .gr { color: #ed8796 }
+/* GenericHeading */ .chroma .gh { color: #f5a97f; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #a6da95; background-color: #363a4f }
+/* GenericOutput */ .chroma .go {  }
+/* GenericPrompt */ .chroma .gp {  }
+/* GenericStrong */ .chroma .gs { font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #f5a97f; font-weight: bold }
+/* GenericTraceback */ .chroma .gt { color: #ed8796 }
+/* GenericUnderline */ .chroma .gl { text-decoration: underline }
+/* TextWhitespace */ .chroma .w {  }
 
-  
-<script async src="https://rum.cronitor.io/script.js"></script>
-<script>
- window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
- cronitor('config', { clientKey: '07d93ceb1f3aa8ab8fbc4825ceb7b841' });
-</script>
-<link rel="webmention" href="https://webmention.io/blog.andylu.dev/webmention" />
+   }
+   @media (prefers-color-scheme: light) {
+       /* Background */ .bg { color: #4c4f69; background-color: #eff1f5; }
+/* PreWrapper */ .chroma { color: #4c4f69; background-color: #eff1f5; }
+/* Other */ .chroma .x {  }
+/* Error */ .chroma .err { color: #d20f39 }
+/* CodeLine */ .chroma .cl {  }
+/* LineLink */ .chroma .lnlinks { outline: none; text-decoration: none; color: inherit }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { color: #bcc0cc }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #8c8fa1 }
+/* LineNumbers */ .chroma .ln { white-space: pre; -webkit-user-select: none; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #8c8fa1 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #8839ef }
+/* KeywordConstant */ .chroma .kc { color: #fe640b }
+/* KeywordDeclaration */ .chroma .kd { color: #d20f39 }
+/* KeywordNamespace */ .chroma .kn { color: #179299 }
+/* KeywordPseudo */ .chroma .kp { color: #8839ef }
+/* KeywordReserved */ .chroma .kr { color: #8839ef }
+/* KeywordType */ .chroma .kt { color: #d20f39 }
+/* Name */ .chroma .n {  }
+/* NameAttribute */ .chroma .na { color: #1e66f5 }
+/* NameBuiltin */ .chroma .nb { color: #04a5e5 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #04a5e5 }
+/* NameClass */ .chroma .nc { color: #df8e1d }
+/* NameConstant */ .chroma .no { color: #df8e1d }
+/* NameDecorator */ .chroma .nd { color: #1e66f5; font-weight: bold }
+/* NameEntity */ .chroma .ni { color: #179299 }
+/* NameException */ .chroma .ne { color: #fe640b }
+/* NameFunction */ .chroma .nf { color: #1e66f5 }
+/* NameFunctionMagic */ .chroma .fm { color: #1e66f5 }
+/* NameLabel */ .chroma .nl { color: #04a5e5 }
+/* NameNamespace */ .chroma .nn { color: #fe640b }
+/* NameOther */ .chroma .nx {  }
+/* NameProperty */ .chroma .py { color: #fe640b }
+/* NameTag */ .chroma .nt { color: #8839ef }
+/* NameVariable */ .chroma .nv { color: #dc8a78 }
+/* NameVariableClass */ .chroma .vc { color: #dc8a78 }
+/* NameVariableGlobal */ .chroma .vg { color: #dc8a78 }
+/* NameVariableInstance */ .chroma .vi { color: #dc8a78 }
+/* NameVariableMagic */ .chroma .vm { color: #dc8a78 }
+/* Literal */ .chroma .l {  }
+/* LiteralDate */ .chroma .ld {  }
+/* LiteralString */ .chroma .s { color: #40a02b }
+/* LiteralStringAffix */ .chroma .sa { color: #d20f39 }
+/* LiteralStringBacktick */ .chroma .sb { color: #40a02b }
+/* LiteralStringChar */ .chroma .sc { color: #40a02b }
+/* LiteralStringDelimiter */ .chroma .dl { color: #1e66f5 }
+/* LiteralStringDoc */ .chroma .sd { color: #9ca0b0 }
+/* LiteralStringDouble */ .chroma .s2 { color: #40a02b }
+/* LiteralStringEscape */ .chroma .se { color: #1e66f5 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #9ca0b0 }
+/* LiteralStringInterpol */ .chroma .si { color: #40a02b }
+/* LiteralStringOther */ .chroma .sx { color: #40a02b }
+/* LiteralStringRegex */ .chroma .sr { color: #179299 }
+/* LiteralStringSingle */ .chroma .s1 { color: #40a02b }
+/* LiteralStringSymbol */ .chroma .ss { color: #40a02b }
+/* LiteralNumber */ .chroma .m { color: #fe640b }
+/* LiteralNumberBin */ .chroma .mb { color: #fe640b }
+/* LiteralNumberFloat */ .chroma .mf { color: #fe640b }
+/* LiteralNumberHex */ .chroma .mh { color: #fe640b }
+/* LiteralNumberInteger */ .chroma .mi { color: #fe640b }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #fe640b }
+/* LiteralNumberOct */ .chroma .mo { color: #fe640b }
+/* Operator */ .chroma .o { color: #04a5e5; font-weight: bold }
+/* OperatorWord */ .chroma .ow { color: #04a5e5; font-weight: bold }
+/* Punctuation */ .chroma .p {  }
+/* Comment */ .chroma .c { color: #9ca0b0; font-style: italic }
+/* CommentHashbang */ .chroma .ch { color: #9ca0b0; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #9ca0b0; font-style: italic }
+/* CommentSingle */ .chroma .c1 { color: #9ca0b0; font-style: italic }
+/* CommentSpecial */ .chroma .cs { color: #9ca0b0; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #9ca0b0; font-style: italic }
+/* CommentPreprocFile */ .chroma .cpf { color: #9ca0b0; font-weight: bold; font-style: italic }
+/* Generic */ .chroma .g {  }
+/* GenericDeleted */ .chroma .gd { color: #d20f39; background-color: #ccd0da }
+/* GenericEmph */ .chroma .ge { font-style: italic }
+/* GenericError */ .chroma .gr { color: #d20f39 }
+/* GenericHeading */ .chroma .gh { color: #fe640b; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #40a02b; background-color: #ccd0da }
+/* GenericOutput */ .chroma .go {  }
+/* GenericPrompt */ .chroma .gp {  }
+/* GenericStrong */ .chroma .gs { font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #fe640b; font-weight: bold }
+/* GenericTraceback */ .chroma .gt { color: #d20f39 }
+/* GenericUnderline */ .chroma .gl { text-decoration: underline }
+/* TextWhitespace */ .chroma .w {  }
 
+   }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=fira-code:400|merriweather-sans:400" rel="stylesheet" />
+  <link href="https://fonts.bunny.net/css?family=gluten:700|work-sans:400" rel="stylesheet" />
 
 </head>
-<body class='term type-tags taxonomy-tag has-sidebar'>
 
-  <div class='site'><div id='sidebar' class='sidebar'>
-  <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
-
-  <div class='container'><section class='widget widget-about sep-after'>
-    <header>
-        <h2 class='title site-title '>
-            <a href='/'>
-                Andy&#39;s Garden
+<body>
+  <header><h1>
+    <a href="/"
+       class="title">
+        Andy&#39;s Cafe
+    </a>
+</h1><nav>
+    <ul style="width: 100%; justify-content: space-around;">
+        
+        <li>
+            <a href="/">
+                Home
             </a>
-        </h2>
-    </header>
+        </li>
+        
+        <li>
+            <a href="/about/">
+                About
+            </a>
+        </li>
+        
+        <li>
+            <a href="/now/">
+                Now
+            </a>
+        </li>
+        
 
-</section>
-<section class='widget widget-sidebar_menu sep-after'><nav id='sidebar-menu' class='menu sidebar-menu' aria-label='Sidebar Menu'>
-    <div class='container'>
-      <ul><li class='item'>
-  <a href='/'>Home</a></li><li class='item'>
-  <a href='/about/'>About</a></li><li class='item'>
-  <a href='/now/'>Now</a></li></ul>
-    </div>
-  </nav>
-
-</section><section class='widget widget-taxonomy_cloud sep-after'>
-  <header>
-    <h4 class='title widget-title'>Tags</h4>
-  </header>
-
-  <div class='container list-container'>
-  <ul class='list taxonomy-cloud'><li>
-          <a href='/tags/babashka/' style='font-size:1.5em'>babashka</a>
-      </li><li>
-          <a href='/tags/bash/' style='font-size:1em'>bash</a>
-      </li><li>
-          <a href='/tags/clojure/' style='font-size:1.5em'>clojure</a>
-      </li><li>
-          <a href='/tags/clojurescript/' style='font-size:1em'>clojurescript</a>
-      </li><li>
-          <a href='/tags/docker/' style='font-size:1em'>docker</a>
-      </li><li>
-          <a href='/tags/emacs/' style='font-size:2em'>emacs</a>
-      </li><li>
-          <a href='/tags/git/' style='font-size:1em'>git</a>
-      </li><li>
-          <a href='/tags/golang/' style='font-size:1.5em'>golang</a>
-      </li><li>
-          <a href='/tags/homelab/' style='font-size:1em'>homelab</a>
-      </li><li>
-          <a href='/tags/hugo/' style='font-size:1.5em'>hugo</a>
-      </li><li>
-          <a href='/tags/magit/' style='font-size:1em'>magit</a>
-      </li><li>
-          <a href='/tags/projects/' style='font-size:1.5em'>projects</a>
-      </li><li>
-          <a href='/tags/python/' style='font-size:1em'>python</a>
-      </li><li>
-          <a href='/tags/story/' style='font-size:1em'>story</a>
-      </li><li>
-          <a href='/tags/written-in-org-mode/' style='font-size:1em'>written-in-org-mode</a>
-      </li></ul>
-</div>
-
-
-</section>
-</div>
-
-  <div class='sidebar-overlay'></div>
-</div><div class='main'><a class='screen-reader-text' href='#content'>Skip to Content</a>
-
-<button id='sidebar-toggler' class='sidebar-toggler' aria-controls='sidebar'>
-  <span class='screen-reader-text'>Toggle Sidebar</span>
-  <span class='open'><svg
-  class="icon"
-  xmlns="http://www.w3.org/2000/svg"
-  viewbox="0 0 24 24"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-  stroke-width="2"
-  aria-hidden="true"
-><line x1="3" y1="12" x2="21" y2="12" />
-<line x1="3" y1="6" x2="21" y2="6" />
-<line x1="3" y1="18" x2="21" y2="18" />
-</svg>
-</span>
-  <span class='close'><svg
-  class="icon"
-  xmlns="http://www.w3.org/2000/svg"
-  viewbox="0 0 24 24"
-  stroke-linecap="round"
-  stroke-linejoin="round"
-  stroke-width="2"
-  aria-hidden="true"
-><line x1="18" y1="6" x2="6" y2="18" />
-<line x1="6" y1="6" x2="18" y2="18" />
-</svg>
-</span>
-</button><div class='header-widgets'>
-        <div class='container'>
-    
-    <style>.widget-breadcrumbs li:after{content:'\2f '}</style>
-  <section class='widget widget-breadcrumbs sep-after'>
-    <nav id='breadcrumbs'>
-        <ol><li><a href='/'>Home</a></li><li><a href='/tags/'>Tags</a></li><li><span>story</span></li></ol>
-    </nav>
-  </section></div>
-      </div>
-
-      <header id='header' class='header site-header'>
-        <div class='container sep-after'>
-          <div class='header-info'><p class='site-title title'>Andy&#39;s Garden</p></div>
-        </div>
-      </header>
-
-      <main id='content'>
-
-
-<header class='header'>
-  <div class='container sep-after'>
-    <div class='header-info'>
-      <h1 class='title'><span class='taxonomy-name'>Tag: </span>story</h1>
-
-      
-
-    </div>
-  </div>
+        
+        <li>
+            <a href="/cortado/">
+                Cortado
+            </a>
+        </li>
+        
+        <li>
+            <a href="/cappucchino/">
+                Cappuccino
+            </a>
+        </li>
+        
+        <li>
+            <a href="/latte/">
+                Latte
+            </a>
+        </li>
+        
+    </ul>
+</nav>
 </header>
+  <main>
 
 
-
-
-<div class='container list-container'>
-  <ul class='list'>
+<article>
+    <header>
+        <h1>Story</h1>
+    </header>
     
-      <li class='item'>
-  <div class='meta'>
-    <span>
-  <span class='screen-reader-text'>Posted on </span>
-  <time datetime='2023-10-14T21:25:56-04:00'>2023, Oct 14</time>
-</span>
+</article>
 
-  </div>
-  <header class='item-header'>
-    <h3 class='item-title'>
-      <a href='/blog/terminal-logging-with-color/'>Terminal Logging With Color</a>
-    </h3>
-  </header>
-</li>
 
-    
-  </ul>
 
-  
+<ul>
+    <li>
+        <a href="/cappucchino/terminal-logging-with-color/">2023-10-14 | Terminal Logging With Color</a>
+    </li>
+</ul>
 
-</div>
 
-      </main>
 
-      <footer id='footer' class='footer'>
-        <div class='container sep-before'><div class='copyright'>
-    <p>
 
-        &copy;
-
-        2020 - 2023
-
-        <a href="https://github.com/luandy64"
-           class="h-card"
-           rel="me">
-            Andy Lu
-        </a>
-
-        </p>
-</div>
-
-        </div>
-      </footer>
-
-    </div>
-  </div><script>window.__assets_js_src="/assets/js/"</script>
-
-<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
-
+  </main>
+  <footer></footer>
 </body>
 
 </html>
-

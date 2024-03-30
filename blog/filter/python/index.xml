@@ -2,18 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Andy&#39;s Garden</title>
-    <link>https://blog.andylu.dev/blog/filter/python/</link>
+    <link>http://localhost:1313/blog/filter/python/</link>
     <description>Recent content in Python on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>
-    <lastBuildDate>Fri, 01 Dec 2023 12:13:04 -0500</lastBuildDate>
-    <atom:link href="https://blog.andylu.dev/blog/filter/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Mar 2024 21:03:48 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/filter/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Webmention Myself</title>
+      <link>http://localhost:1313/blog/webmention-myself/</link>
+      <pubDate>Sun, 17 Mar 2024 21:03:48 -0400</pubDate>
+      <guid>http://localhost:1313/blog/webmention-myself/</guid>
+      <description>This is a page about »Webmention Myself«.</description>
+    </item>
     <item>
       <title>Python Packaging</title>
-      <link>https://blog.andylu.dev/blog/python-packaging/</link>
+      <link>http://localhost:1313/blog/python-packaging/</link>
       <pubDate>Fri, 01 Dec 2023 12:13:04 -0500</pubDate>
-      <guid>https://blog.andylu.dev/blog/python-packaging/</guid>
+      <guid>http://localhost:1313/blog/python-packaging/</guid>
       <description>I didn&amp;rsquo;t know what to use between poetry and hatch.&#xA;I just followed the guide from the Packaging Guide.&#xA;It ended with me having the following directory structure&#xA;. ├── pyproject.toml ├── README.org ├── src │ └── andy_aoc_2023 │ ├── day1.py │ └── __init__.py └── tests Which isn&amp;rsquo;t too crazy I guess.</description>
     </item>
   </channel>

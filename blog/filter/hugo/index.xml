@@ -2,18 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Andy&#39;s Garden</title>
-    <link>https://blog.andylu.dev/blog/filter/hugo/</link>
+    <link>http://localhost:1313/blog/filter/hugo/</link>
     <description>Recent content in Hugo on Andy&#39;s Garden</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2020, Andy Lu.</copyright>
-    <lastBuildDate>Tue, 08 Nov 2022 23:00:56 -0500</lastBuildDate>
-    <atom:link href="https://blog.andylu.dev/blog/filter/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Mar 2024 21:03:48 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/filter/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Webmention Myself</title>
+      <link>http://localhost:1313/blog/webmention-myself/</link>
+      <pubDate>Sun, 17 Mar 2024 21:03:48 -0400</pubDate>
+      <guid>http://localhost:1313/blog/webmention-myself/</guid>
+      <description>This is a page about »Webmention Myself«.</description>
+    </item>
     <item>
       <title>Git Submodules</title>
-      <link>https://blog.andylu.dev/blog/git-submodules/</link>
+      <link>http://localhost:1313/blog/git-submodules/</link>
       <pubDate>Tue, 08 Nov 2022 23:00:56 -0500</pubDate>
-      <guid>https://blog.andylu.dev/blog/git-submodules/</guid>
+      <guid>http://localhost:1313/blog/git-submodules/</guid>
       <description>The first time I learned about git submodules was actually from working with hugo.&#xA;The documentation used to describe how you can have your main branch live in a directory that points to a diffent origin than your current branch.&#xA;It&amp;rsquo;s a cool feature that I never remember how to use, so here are notes I took after rediscovering it recently.&#xA;To add a submodule&#xA;git submodule add https://github.com/some-other-repo To clone a submodule locally</description>
     </item>
   </channel>

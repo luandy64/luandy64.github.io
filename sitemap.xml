@@ -2,150 +2,172 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.andylu.dev/blog/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/categories/</loc>
+    <lastmod>2024-03-18T22:02:47-04:00</lastmod>
+  </url><url>
+    <loc>https://biscuits.panda-gopher.ts.net/categories/cortado/</loc>
+    <lastmod>2024-03-18T22:02:47-04:00</lastmod>
+  </url><url>
+    <loc>https://biscuits.panda-gopher.ts.net/cortado/setup-elfeed/</loc>
+    <lastmod>2024-03-18T22:02:47-04:00</lastmod>
+  </url><url>
+    <loc>https://biscuits.panda-gopher.ts.net/cortado/rust-my-keyboard/</loc>
+    <lastmod>2024-03-18T21:51:33-04:00</lastmod>
+  </url><url>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/webmention-myself/</loc>
+    <lastmod>2024-03-17T21:03:48-04:00</lastmod>
+  </url><url>
+    <loc>https://biscuits.panda-gopher.ts.net/categories/latte/</loc>
+    <lastmod>2024-03-15T23:39:17-04:00</lastmod>
+  </url><url>
+    <loc>https://biscuits.panda-gopher.ts.net/latte/</loc>
+    <lastmod>2024-03-15T23:39:17-04:00</lastmod>
+  </url><url>
+    <loc>https://biscuits.panda-gopher.ts.net/categories/cappucchino/</loc>
+    <lastmod>2024-03-15T23:39:10-04:00</lastmod>
+  </url><url>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/</loc>
+    <lastmod>2024-03-15T23:39:10-04:00</lastmod>
+  </url><url>
+    <loc>https://biscuits.panda-gopher.ts.net/cortado/</loc>
+    <lastmod>2024-03-15T23:39:02-04:00</lastmod>
+  </url><url>
+    <loc>https://biscuits.panda-gopher.ts.net/about/</loc>
+    <lastmod>2024-03-15T23:10:57-04:00</lastmod>
+  </url><url>
+    <loc>https://biscuits.panda-gopher.ts.net/</loc>
+    <lastmod>2024-03-14T07:07:07+01:00</lastmod>
+  </url><url>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/setting-up-mbsync/</loc>
     <lastmod>2024-01-22T21:54:56-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/setting-up-mbsync/</loc>
-    <lastmod>2024-01-22T21:54:56-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/blog/linux-man-pages/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/linux-man-pages/</loc>
     <lastmod>2024-01-22T20:04:24-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/handcoded/</loc>
-    <lastmod>2024-01-18T20:55:08-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/blog/leiningen-local-installs/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/leiningen-local-installs/</loc>
     <lastmod>2024-01-18T20:27:06-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/bash-histtimeformat/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/bash-histtimeformat/</loc>
     <lastmod>2024-01-08T16:00:31-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/projects-i-m-watching/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/projects-i-m-watching/</loc>
     <lastmod>2023-12-31T13:32:21-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/blogs-to-look-through/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/blogs-to-look-through/</loc>
     <lastmod>2023-12-29T11:49:06-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/how-to-write-a-handwritten-page/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/how-to-write-a-handwritten-page/</loc>
     <lastmod>2023-12-21T19:36:47-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/meta/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/meta/</loc>
     <lastmod>2023-12-21T19:36:47-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/written-in-org-mode/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/</loc>
     <lastmod>2023-12-22T14:05:20-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/indieweb/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/written-in-org-mode/</loc>
+    <lastmod>2023-12-22T14:05:20-05:00</lastmod>
+  </url><url>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/indieweb/</loc>
     <lastmod>2023-12-11T20:27:55-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/webmention-test/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/webmention-test/</loc>
     <lastmod>2023-12-11T20:27:55-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/this-is-an-org-post/</loc>
     <lastmod>2023-12-11T15:59:17-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/this-is-an-org-post/</loc>
-    <lastmod>2023-12-11T15:59:17-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/clojure/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/clojure/</loc>
     <lastmod>2023-12-04T22:44:17-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/emacs/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/emacs/</loc>
     <lastmod>2023-12-04T22:44:17-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/org-mode-is-better-glue-code-than-bash/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/org-mode-is-better-glue-code-than-bash/</loc>
     <lastmod>2023-12-04T22:44:17-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/python/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/python/</loc>
     <lastmod>2023-12-01T12:13:04-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/python-packaging/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/python-packaging/</loc>
     <lastmod>2023-12-01T12:13:04-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/magit/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/magit/</loc>
     <lastmod>2023-12-01T11:36:54-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/magit-multiple-push-remotes/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/magit-multiple-push-remotes/</loc>
     <lastmod>2023-12-01T11:36:54-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/homelab/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/homelab/</loc>
     <lastmod>2023-11-30T17:14:11-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/self-hosting-email/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/self-hosting-email/</loc>
     <lastmod>2023-11-30T17:14:11-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/bash/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/bash/</loc>
     <lastmod>2023-11-27T15:54:59-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/bash-while-loops/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/bash-while-loops/</loc>
     <lastmod>2023-11-27T15:54:59-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/old-now/archive/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/old-now/archive/</loc>
     <lastmod>2023-12-11T23:17:32-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/now/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/now/</loc>
     <lastmod>2023-12-11T23:17:32-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/old-now/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/old-now/</loc>
     <lastmod>2023-12-11T23:17:32-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/babashka/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/babashka/</loc>
     <lastmod>2023-12-22T14:05:20-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/my-babashka-cookbook/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/my-babashka-cookbook/</loc>
     <lastmod>2023-12-22T14:05:20-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/biff-tutorial/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/biff-tutorial/</loc>
     <lastmod>2023-10-17T19:48:08-04:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/babashka-datetime/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/babashka-datetime/</loc>
     <lastmod>2023-10-15T14:39:22-04:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/future-blog-ideas/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/future-blog-ideas/</loc>
     <lastmod>2024-01-01T14:01:22-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/projects/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/projects/</loc>
     <lastmod>2023-10-14T21:25:56-04:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/story/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/story/</loc>
     <lastmod>2023-10-14T21:25:56-04:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/terminal-logging-with-color/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/terminal-logging-with-color/</loc>
     <lastmod>2023-10-14T21:25:56-04:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/git/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/git/</loc>
     <lastmod>2022-11-08T23:00:56-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/git-submodules/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/git-submodules/</loc>
     <lastmod>2022-11-08T23:00:56-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/golang/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/golang/</loc>
     <lastmod>2022-11-08T23:00:56-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/hugo/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/hugo/</loc>
     <lastmod>2022-11-08T23:00:56-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/til-silica-gel/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/til-silica-gel/</loc>
     <lastmod>2022-11-08T16:41:06-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/handwritten/</loc>
-    <lastmod>2023-12-11T15:59:17-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/blog/introducing-handwritten-pages/</loc>
-    <lastmod>2023-12-11T15:59:17-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/docker/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/docker/</loc>
     <lastmod>2021-04-11T00:00:00-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/docker-practice/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/docker-practice/</loc>
     <lastmod>2021-04-11T00:00:00-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/filter/clojurescript/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/tags/clojurescript/</loc>
     <lastmod>2020-07-06T07:52:15-05:00</lastmod>
   </url><url>
-    <loc>https://blog.andylu.dev/blog/clojurescript-project-setup/</loc>
+    <loc>https://biscuits.panda-gopher.ts.net/cappucchino/clojurescript-project-setup/</loc>
     <lastmod>2020-07-06T07:52:15-05:00</lastmod>
-  </url><url>
-    <loc>https://blog.andylu.dev/blog/handcoded-page-1/</loc>
   </url>
 </urlset>
