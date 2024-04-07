@@ -1,39 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<?xml-stylesheet href="/feed.xsl" type="text/xsl"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>
-        Andy&#39;s Cafe
-    </title>
-    <link>
-      https://biscuits.panda-gopher.ts.net/old-now/
-    </link>
-    <description>
-        Recent content in Andy&#39;s Cafe
-    </description>
-    <generator>
-        Built with Hugo -- gohugo.io
-    </generator>
-    <language>
-        en-us
-    </language>
-    
-    
-    
-    <copyright>Copyright © 2024, Andy Lu.</copyright>
-    
-    
-    <lastBuildDate>
-        Mon, 11 Dec 2023 23:17:32 -0500
-    </lastBuildDate>
-    
-    <atom:link href="https://biscuits.panda-gopher.ts.net/old-now/index.xml" rel="self" type="application/xml" />
-    <item>
-      <title>Archive</title>
-      <link>https://biscuits.panda-gopher.ts.net/old-now/archive/</link>
-      <pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate>
-      <guid>https://biscuits.panda-gopher.ts.net/old-now/archive/</guid>
-      <description>See my now page for my latest updates.&#xA;There’s nothing on this page yet.</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Andy's Cafe</title><link>
+https://biscuits.panda-gopher.ts.net/old-now/</link><description>
+Recent content in Andy's Cafe</description><generator>
+Built with Hugo -- gohugo.io</generator><language>
+en-us</language><copyright>Copyright © 2024, Andy Lu.</copyright><lastBuildDate>
+Mon, 11 Dec 2023 23:17:32 -0500</lastBuildDate><atom:link href="https://biscuits.panda-gopher.ts.net/old-now/index.xml" rel="self" type="application/xml"/><item><title>Archive</title><link>https://biscuits.panda-gopher.ts.net/old-now/archive/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://biscuits.panda-gopher.ts.net/old-now/archive/</guid><description>See my now page for my latest updates.
+There’s nothing on this page yet.</description></item></channel></rss>
