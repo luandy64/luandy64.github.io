@@ -1,4 +1,4 @@
-<!doctype html><html lang=en-US><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=https://biscuits.panda-gopher.ts.net/favicon.ico><title>Magit: Multiple Push Remotes
+<!doctype html><html lang=en-US><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" href=https://blog.andylu.dev/favicon.ico><title>Magit: Multiple Push Remotes
 |
 Andy's Cafe
 </title><meta name=title content="Magit: Multiple Push Remotes"><meta name=description content="I wanted to do the equivalent of this, but in magit
@@ -23,7 +23,7 @@ git remote rename origin github git remote add codeberg https://codeberg.org/jkr
 </span></span><span style=display:flex><span>  Local ref configured <span style=color:#66d9ef>for</span> <span style=color:#e6db74>&#39;git push&#39;</span>:
 </span></span><span style=display:flex><span>    main pushes to main <span style=color:#f92672>(</span>up to date<span style=color:#f92672>)</span>
 </span></span></code></pre></div><p><a href=https://jeffkreeftmeijer.com/git-multiple-remotes/>Source</a></p><p>Renaming was easy:</p><ul><li><code>M r</code>, <code>origin</code>, <code>andylu</code></li></ul><p>Adding another remote was also simple:</p><ul><li><code>M a</code>, <code>github</code>, <code>git@github.com:blah.git</code></li></ul><p>Adding origin back in was just:</p><ul><li><code>M a</code>, <code>origin</code>, <code>ssh://git@gitea.andylu.dev:1702/blah.git</code></li></ul><p>Setting multiple push remotes took bit of work to figure out. Ultimately, you just give it a
-comma-space separated list of push URLs:</p><ul><li><code>M C</code>, <code>origin</code>, <code>s</code>, <code>ssh://git@gitea.andylu.dev:1702/blah.git, git@github.com:blah.git</code></li></ul><p>Last thing was setting the push remote default back to <code>origin</code>:</p><ul><li><code>P C</code>, hit <code>p</code> until <code>origin</code> is highlighted</li></ul></article><div class=button><a href=mailto:fuzzy.sand8027@fastmail.com target=_blank class=button-content><p class=button-text>Reply via email</p></a></div><p><a href=https://biscuits.panda-gopher.ts.net/tags/emacs/>#Emacs
+comma-space separated list of push URLs:</p><ul><li><code>M C</code>, <code>origin</code>, <code>s</code>, <code>ssh://git@gitea.andylu.dev:1702/blah.git, git@github.com:blah.git</code></li></ul><p>Last thing was setting the push remote default back to <code>origin</code>:</p><ul><li><code>P C</code>, hit <code>p</code> until <code>origin</code> is highlighted</li></ul></article><div class=button><a href=mailto:fuzzy.sand8027@fastmail.com target=_blank class=button-content><p class=button-text>Reply via email</p></a></div><p><a href=https://blog.andylu.dev/tags/emacs/>#Emacs
 </a>&nbsp;
-<a href=https://biscuits.panda-gopher.ts.net/tags/magit/>#Magit
+<a href=https://blog.andylu.dev/tags/magit/>#Magit
 </a>&nbsp;</p></main><footer></footer></body></html>
