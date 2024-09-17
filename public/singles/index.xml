@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Andy's Cafe</title><link>
+https://blog.andylu.dev/singles/</link><description>
+Recent content in Andy's Cafe</description><generator>
+Built with Hugo -- gohugo.io</generator><language>
+en-us</language><copyright>Copyright © 2024, Andy Lu.</copyright><lastBuildDate>
+Mon, 16 Sep 2024 20:07:07 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/singles/index.xml" rel="self" type="application/xml"/><item><title>Coffee</title><link>https://blog.andylu.dev/coffee/</link><pubDate>Mon, 10 Jun 2024 09:30:17 -0500</pubDate><guid>https://blog.andylu.dev/coffee/</guid><description>&lt;h1 id="elixr">Elixr&lt;/h1>
+&lt;h2 id="juan-peña">Juan Peña&lt;/h2>
+&lt;p>Notes:&lt;/p>
+&lt;ul>
+&lt;li>Tart&lt;/li>
+&lt;/ul></description></item><item><title>About</title><link>https://blog.andylu.dev/about/</link><pubDate>Fri, 15 Mar 2024 23:10:57 -0400</pubDate><guid>https://blog.andylu.dev/about/</guid><description>&lt;p>This is my about page&lt;/p>
+&lt;p>You can subscribe to updates.&lt;/p>
+&lt;p>&lt;a href="https://blog.andylu.dev/index.xml">Subscribe via RSS&lt;/a>&lt;/p></description></item><item><title>Now</title><link>https://blog.andylu.dev/now/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/now/</guid><description>&lt;p>This is &lt;a href="https://nownownow.com/about">a now page&lt;/a>. For stuff that used to be here, check out the
+&lt;a href="https://blog.andylu.dev/old-now/archive">archive&lt;/a>.&lt;/p>
+&lt;h1 id="reading">Reading&lt;/h1>
+&lt;p>I picked up &lt;a href="https://mitpress.mit.edu/9780262543231/structure-and-interpretation-of-computer-programs/">SICP JS&lt;/a> again.&lt;/p>
+&lt;p>I even wrote up &lt;a href="https://blog.andylu.dev/cappucchino/sicp-js-chapter-2-exercise-2.2-and-2.3">my solutions to a few exercises&lt;/a>&lt;/p>
+&lt;h1 id="apps">Apps&lt;/h1>
+&lt;p>I discovered that &lt;a href="https://anytype.io/">anytype&lt;/a> recently released their multiplayer feature, so I&amp;rsquo;m
+going to try and switch off of Notion for some things and move to Anytype.&lt;/p></description></item></channel></rss>

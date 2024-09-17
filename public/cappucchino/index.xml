@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><?xml-stylesheet href="/feed.xsl" type="text/xsl"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Andy's Cafe</title><link>
+https://blog.andylu.dev/cappucchino/</link><description>
+Recent content in Andy's Cafe</description><generator>
+Built with Hugo -- gohugo.io</generator><language>
+en-us</language><copyright>Copyright © 2024, Andy Lu.</copyright><lastBuildDate>
+Sat, 13 Jul 2024 16:00:11 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/cappucchino/index.xml" rel="self" type="application/xml"/><item><title>SICP JS Chapter 2 Exercise 2.2 and 2.3</title><link>https://blog.andylu.dev/cappucchino/sicp-js-chapter-2-exercise-2.2-and-2.3/</link><pubDate>Sat, 13 Jul 2024 15:25:32 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/sicp-js-chapter-2-exercise-2.2-and-2.3/</guid><description>&lt;p>Here&amp;rsquo;s my solution to exercise 2.2 and 2.3.&lt;/p>
+&lt;p>I wrote them in this online editor, &lt;a href="https://sourceacademy.org/playground">source academy&lt;/a>, because
+they provide the functions that the book considers primatives.&lt;/p>
+&lt;p>Exercise 2.2&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param {Point} start
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param {Point} end
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">make_segment&lt;/span> (&lt;span style="color:#a6e22e">start&lt;/span>, &lt;span style="color:#a6e22e">end&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">pair&lt;/span>(&lt;span style="color:#a6e22e">start&lt;/span>, &lt;span style="color:#a6e22e">end&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @returns {Point}
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">start_segment&lt;/span> (&lt;span style="color:#a6e22e">s&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">head&lt;/span>(&lt;span style="color:#a6e22e">s&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @returns {Point}
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">end_segment&lt;/span> (&lt;span style="color:#a6e22e">s&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">tail&lt;/span>(&lt;span style="color:#a6e22e">s&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param {int} x
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param {int} y
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">make_point&lt;/span> (&lt;span style="color:#a6e22e">x&lt;/span>, &lt;span style="color:#a6e22e">y&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">pair&lt;/span>(&lt;span style="color:#a6e22e">x&lt;/span>, &lt;span style="color:#a6e22e">y&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param {Point} s
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @returns {int}
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">x_point&lt;/span> (&lt;span style="color:#a6e22e">s&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">head&lt;/span>(&lt;span style="color:#a6e22e">s&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param {Point} s
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @returns {int}
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">y_point&lt;/span> (&lt;span style="color:#a6e22e">s&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">tail&lt;/span>(&lt;span style="color:#a6e22e">s&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @param {Point} s
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * @returns {int}
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">midpoint_segment&lt;/span> (&lt;span style="color:#a6e22e">s&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">start&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">start_segment&lt;/span>(&lt;span style="color:#a6e22e">s&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">end&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">end_segment&lt;/span>(&lt;span style="color:#a6e22e">s&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">x1&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">x_point&lt;/span>(&lt;span style="color:#a6e22e">start&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">y1&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">y_point&lt;/span>(&lt;span style="color:#a6e22e">start&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">x2&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">x_point&lt;/span>(&lt;span style="color:#a6e22e">end&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">y2&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">y_point&lt;/span>(&lt;span style="color:#a6e22e">end&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">make_point&lt;/span>( (&lt;span style="color:#a6e22e">x2&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">x1&lt;/span>)&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span> , 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#a6e22e">y2&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">y1&lt;/span>)&lt;span style="color:#f92672">/&lt;/span>&lt;span style="color:#ae81ff">2&lt;/span> );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">print_point&lt;/span>(&lt;span style="color:#a6e22e">p&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#a6e22e">display&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;(&amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#a6e22e">stringify&lt;/span>(&lt;span style="color:#a6e22e">x_point&lt;/span>(&lt;span style="color:#a6e22e">p&lt;/span>)) &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;, &amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#a6e22e">stringify&lt;/span>(&lt;span style="color:#a6e22e">y_point&lt;/span>(&lt;span style="color:#a6e22e">p&lt;/span>)) &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#e6db74">&amp;#34;)&amp;#34;&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">origin&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">make_point&lt;/span>(&lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">unit_x&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">make_point&lt;/span>(&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">unit_y&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">make_point&lt;/span>(&lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">two_x&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">make_point&lt;/span>(&lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#ae81ff">0&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">two_y&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">make_point&lt;/span>(&lt;span style="color:#ae81ff">0&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">print_point&lt;/span>( &lt;span style="color:#a6e22e">midpoint_segment&lt;/span>( &lt;span style="color:#a6e22e">make_segment&lt;/span>( &lt;span style="color:#a6e22e">origin&lt;/span>, &lt;span style="color:#a6e22e">two_x&lt;/span> ) ) );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// &amp;#34;(1, 0)&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#a6e22e">print_point&lt;/span>( &lt;span style="color:#a6e22e">midpoint_segment&lt;/span>( &lt;span style="color:#a6e22e">make_segment&lt;/span>( &lt;span style="color:#a6e22e">origin&lt;/span>, &lt;span style="color:#a6e22e">two_y&lt;/span> ) ) );
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// &amp;#34;(0, 1)&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Adding to this code, here&amp;rsquo;s what I wrote for Exercise 2.3&lt;/p></description></item><item><title>Emacs Allows elisp in Find Replaces</title><link>https://blog.andylu.dev/cappucchino/emacs-allows-elisp-in-find-replaces/</link><pubDate>Fri, 24 May 2024 16:17:18 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/emacs-allows-elisp-in-find-replaces/</guid><description>&lt;h2 id="problem">Problem&lt;/h2>
+&lt;p>You have a massive list of tuples (like 800 tuples) and you need to increment the number of one slot in the tuple.&lt;/p>
+&lt;p>Start with this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-elisp" data-lang="elisp">&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#ae81ff">1&lt;/span>&lt;span style="color:#f92672">,&lt;/span> a)&lt;span style="color:#f92672">,&lt;/span> (&lt;span style="color:#ae81ff">2&lt;/span>&lt;span style="color:#f92672">,&lt;/span> b)&lt;span style="color:#f92672">,&lt;/span> (&lt;span style="color:#ae81ff">3&lt;/span>&lt;span style="color:#f92672">,&lt;/span> c)&lt;span style="color:#f92672">,&lt;/span> (&lt;span style="color:#ae81ff">4&lt;/span>&lt;span style="color:#f92672">,&lt;/span> d)&lt;span style="color:#f92672">,&lt;/span> (&lt;span style="color:#ae81ff">5&lt;/span>&lt;span style="color:#f92672">,&lt;/span> e) &lt;span style="color:#960050;background-color:#1e0010">…&lt;/span> (&lt;span style="color:#ae81ff">400&lt;/span>&lt;span style="color:#f92672">,&lt;/span> aaabbbccc)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>But you want:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-elisp" data-lang="elisp">&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#ae81ff">2&lt;/span>&lt;span style="color:#f92672">,&lt;/span> a)&lt;span style="color:#f92672">,&lt;/span> (&lt;span style="color:#ae81ff">3&lt;/span>&lt;span style="color:#f92672">,&lt;/span> b)&lt;span style="color:#f92672">,&lt;/span> (&lt;span style="color:#ae81ff">4&lt;/span>&lt;span style="color:#f92672">,&lt;/span> c)&lt;span style="color:#f92672">,&lt;/span> (&lt;span style="color:#ae81ff">5&lt;/span>&lt;span style="color:#f92672">,&lt;/span> d)&lt;span style="color:#f92672">,&lt;/span> (&lt;span style="color:#ae81ff">6&lt;/span>&lt;span style="color:#f92672">,&lt;/span> e) &lt;span style="color:#960050;background-color:#1e0010">…&lt;/span> (&lt;span style="color:#ae81ff">401&lt;/span>&lt;span style="color:#f92672">,&lt;/span> aaabbbccc)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="solution">Solution&lt;/h2>
+&lt;p>&lt;code>query-replace-regexp&lt;/code> in emacs allows you to run any elisp you want on the match.&lt;/p>
+&lt;p>&lt;code>M-x query-replace-regex&lt;/code> from &lt;code>(\([0-9]+\)&lt;/code> to &lt;code>(\,(+ 1 (string-to-number \1))&lt;/code>
+emacs is backwards from every other regex engine. &lt;code>(&lt;/code> is match a literal paren. &lt;code>\( … \)&lt;/code> is a capture group.&lt;/p></description></item><item><title>Use `rg` for Find and Replace</title><link>https://blog.andylu.dev/cappucchino/use-rg-for-find-and-replace/</link><pubDate>Fri, 03 May 2024 10:00:40 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/use-rg-for-find-and-replace/</guid><description>&lt;h2 id="how-to-do-the-thing">How to do the thing&lt;/h2>
+&lt;ol>
+&lt;li>Include a &lt;code>-o&lt;/code> to limit the output to things that match&lt;/li>
+&lt;li>Use any number of capture groups in your search string&lt;/li>
+&lt;li>Include a &lt;code>-r 'my-replacement-string'&lt;/code> and use &lt;code>$x&lt;/code> in &lt;code>my-replacement-string&lt;/code> to reference your capture groups
+&lt;ul>
+&lt;li>&lt;code>$x&lt;/code> starts at 1&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="example">Example&lt;/h2>
+&lt;p>Say you have a log file and want to just match the date at the start of the line.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cat my-file-to-search &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> | rg -o &lt;span style="color:#e6db74">&amp;#39;^(\d+-\d+-\d+).*&amp;#39;&lt;/span> &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span> -r &lt;span style="color:#e6db74">&amp;#39;$1&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I didn&amp;rsquo;t actually test this, but it should work.&lt;/p></description></item><item><title>Adding Newlines to One Line Files</title><link>https://blog.andylu.dev/cappucchino/adding-newlines-to-one-line-files/</link><pubDate>Wed, 24 Apr 2024 12:27:47 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/adding-newlines-to-one-line-files/</guid><description>&lt;h2 id="problem">Problem&lt;/h2>
+&lt;p>I have a directory of files and need to find all of the one liners and add newlines to them&lt;/p>
+&lt;h2 id="solution">Solution&lt;/h2>
+&lt;ul>
+&lt;li>mark every file in dired (not sure if there is a fast way to do this) by holding &lt;code>m&lt;/code> from the top&lt;/li>
+&lt;li>&lt;code>!&lt;/code> (&lt;code>dired-do-shell-command&lt;/code>)&lt;/li>
+&lt;li>&lt;code>wc -l&lt;/code>&lt;/li>
+&lt;li>&lt;code>M-x sort-lines&lt;/code> ine the shell output buffer&lt;/li>
+&lt;/ul>
+&lt;p>The sorting was just useful because it grouped the one liners at the top of the
+buffer. But then I could cross reference names and open files from dired and
+make the change I wanted to make.&lt;/p></description></item><item><title>Customizing Forgejo</title><link>https://blog.andylu.dev/cappucchino/customizing-forgejo/</link><pubDate>Sun, 07 Apr 2024 16:37:11 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/customizing-forgejo/</guid><description>&lt;p>I spent a good chunk of time today iterating on customizing Forgejo to have a
+different logo, favicon, and start page. The docs say that the repo is not going
+try to be backwards compatible in this area, so I want to write this down
+because I&amp;rsquo;ll probably have to do it again.&lt;/p>
+&lt;p>Here are the doc links:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://forgejo.org/docs/next/admin/customization/">Forgejo - Interface customization&lt;/a> &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>Setting a custom logo for your instance, serving custom public files or
+modifying pages shown by Forgejo (such as the homepage) is possible. However,
+they impose an additional maintenance burden on administrators and, most
+importantly, are unsupported.&lt;/p></description></item><item><title>Webmention Myself</title><link>https://blog.andylu.dev/cappucchino/webmention-myself/</link><pubDate>Sun, 17 Mar 2024 21:03:48 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/webmention-myself/</guid><description>&lt;div class="h-entry">
+ &lt;p>
+ in reply to:
+ &lt;a class="u-in-reply-to"
+ href="https://blog.andylu.dev/cappucchino/webmention-test/">
+ @andylu
+ &lt;/a>
+ &lt;/p>
+ &lt;p class="e-content">
+ Trying to render some webmentions on this site
+ &lt;/p>
+&lt;/div></description></item><item><title>Setting Up Mbsync</title><link>https://blog.andylu.dev/cappucchino/setting-up-mbsync/</link><pubDate>Mon, 22 Jan 2024 21:54:56 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/setting-up-mbsync/</guid><description>&lt;p>
+Install&lt;/p>
+&lt;div class="src src-shell">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span> sudo apt install isync&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+Set up the config file&lt;/p>
+&lt;div class="src src-shell">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span> touch ~/.mbsyncrc&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div></description></item><item><title>Linux Man Pages</title><link>https://blog.andylu.dev/cappucchino/linux-man-pages/</link><pubDate>Mon, 22 Jan 2024 20:04:24 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/linux-man-pages/</guid><description>&lt;p>
+I just learned I have a ton of pages in &lt;code class="verbatim">/usr/local/share/man/man1&lt;/code>.&lt;/p>
+&lt;p>
+And if you download a man page like &lt;a href="https://manpages.opensuse.org/Tumbleweed/eza/eza.1.en.gz">this one for eza&lt;/a>, you can install it at
+&lt;code class="verbatim">/usr/local/share/man/man1/eza.1&lt;/code>.&lt;/p>
+&lt;p>
+Then &lt;code class="verbatim">man eza&lt;/code> just works&lt;/p></description></item><item><title>Leiningen Local Installs</title><link>https://blog.andylu.dev/cappucchino/leiningen-local-installs/</link><pubDate>Thu, 18 Jan 2024 20:27:06 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/leiningen-local-installs/</guid><description>&lt;p>
+You can quickly create a new library with &lt;code class="verbatim">lein new default my-library-name&lt;/code>.&lt;/p>
+&lt;p>
+But if you add a &lt;code class="verbatim">group-id&lt;/code> to that, &lt;code class="verbatim">lein&lt;/code> is smart enought to just use the &lt;code class="verbatim">artifact-id&lt;/code> for the
+directory name, but the full maven id when installing to your local repository.&lt;/p>
+&lt;p>
+I thought I was having issues with using &lt;code class="verbatim">my-library-name&lt;/code> vs. &lt;code class="verbatim">dev.andylu/my-library-name&lt;/code>, but I
+can&amp;#39;t reproduce the weird behavior now.&lt;/p>
+&lt;p>
+So I&amp;#39;m going to chalk it up to the usual &amp;#34;I don&amp;#39;t own the &lt;code class="verbatim">~/.m2&lt;/code> folder&amp;#34; and just run &lt;code class="verbatim">sudo chown
+-R &amp;#34;$USER&amp;#34;:&amp;#34;$USER&amp;#34; ~/.m2&lt;/code> and forget about it.&lt;/p></description></item><item><title>Bash HISTTIMEFORMAT</title><link>https://blog.andylu.dev/cappucchino/bash-histtimeformat/</link><pubDate>Mon, 08 Jan 2024 16:00:31 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/bash-histtimeformat/</guid><description>&lt;p>
+I have this line in my &lt;code class="verbatim">bashrc&lt;/code>&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># Prepend history entries with timestamps&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> export HISTTIMEFORMAT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;%FT%T%z &amp;#39;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+I just learned that &lt;code class="verbatim">~/.bash_history&lt;/code> does not have these timestamps, and neither does the menu presented to you in &lt;code class="verbatim">fzf&lt;/code>.&lt;/p>
+&lt;p>
+But you do see it if you look in the output of the &lt;code class="verbatim">history&lt;/code> command.&lt;/p></description></item><item><title>Projects I'm Watching</title><link>https://blog.andylu.dev/cappucchino/projects-i-m-watching/</link><pubDate>Sun, 31 Dec 2023 13:32:21 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/projects-i-m-watching/</guid><description>&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+Monica
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>
+I like the thought of building this little database of info. But it does sound like a lot of work to
+actually enter this information. I&amp;#39;m waiting for the next version of the app to release because
+right now the self-hosted app hosts one account.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/monicahq/monica">https://github.com/monicahq/monica&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+Stalwart
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;p>
+I tried setting this up already, but hit some snags getting outbound SMTP working on Oracle Cloud.
+It&amp;#39;s weird because I was able to manually use &lt;code class="verbatim">telnet&lt;/code> to get to an external relay service, but
+&lt;code class="verbatim">stalwart&lt;/code> could not do the same thing. I will pick this up again another day.&lt;/p></description></item><item><title>Blogs to Look Through</title><link>https://blog.andylu.dev/cappucchino/blogs-to-look-through/</link><pubDate>Fri, 29 Dec 2023 11:49:06 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/blogs-to-look-through/</guid><description>&lt;p>
+Here are some blogs I like to look through for inspiration:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://notes.andymatuschak.org/About_these_notes">https://notes.andymatuschak.org/About_these_notes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://maggieappleton.com/garden">https://maggieappleton.com/garden&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.reddit.com/user/Nicolas-Rougier/submitted/?sort=new">https://www.reddit.com/user/Nicolas-Rougier/submitted/?sort=new&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>How to Write a Handwritten Page</title><link>https://blog.andylu.dev/cappucchino/how-to-write-a-handwritten-page/</link><pubDate>Thu, 21 Dec 2023 19:36:47 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/how-to-write-a-handwritten-page/</guid><description>&lt;p>
+I lean on two shortcodes to create these pages.&lt;/p>
+&lt;p>
+The &lt;code class="verbatim">figure&lt;/code> code&lt;/p>
+&lt;div class="src src-go">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span> {{&amp;lt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">figure&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">src&lt;/span>=&lt;span style="color:#e6db74">&amp;#34;/IMG_0193.jpg&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;gt;}}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+And if I need links, the &lt;code class="verbatim">hand-link&lt;/code> code&lt;/p>
+&lt;div class="src src-go">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span> {{&amp;lt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">hand&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">link&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">href&lt;/span>=&lt;span style="color:#e6db74">&amp;#34;https://google.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">style&lt;/span>=&lt;span style="color:#e6db74">`
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> left: 13.332134292565947%;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> top: 55.21739130434783%;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> width: 17.206235011990408%;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> height: 17.536231884057973%;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> `&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &amp;gt;}}&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+To generate the CSS for the links,&lt;/p>
+&lt;ul>
+&lt;li>upload the image to &lt;a href="https://pixspy.com/">https://pixspy.com/&lt;/a>&lt;/li>
+&lt;li>right click to make a selection for where the link should go&lt;/li>
+&lt;li>open the dev console and paste the following code&lt;/li>
+&lt;/ul>
+&lt;div class="src src-js">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> [&lt;span style="color:#a6e22e">_&lt;/span>, &lt;span style="color:#a6e22e">ix&lt;/span>, &lt;span style="color:#a6e22e">iy&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">$&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;.FileDetails-details&amp;#39;&lt;/span>)[&lt;span style="color:#ae81ff">0&lt;/span>].&lt;span style="color:#a6e22e">textContent&lt;/span>.&lt;span style="color:#a6e22e">match&lt;/span>(&lt;span style="color:#e6db74">/(\d+) x (\d+)/&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">var&lt;/span> [&lt;span style="color:#a6e22e">_&lt;/span>, &lt;span style="color:#a6e22e">dx&lt;/span>, &lt;span style="color:#a6e22e">dy&lt;/span>, &lt;span style="color:#a6e22e">sx&lt;/span>, &lt;span style="color:#a6e22e">sy&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">$&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;.Selection-summary&amp;#39;&lt;/span>)[&lt;span style="color:#ae81ff">0&lt;/span>].&lt;span style="color:#a6e22e">textContent&lt;/span>.&lt;span style="color:#a6e22e">match&lt;/span>(&lt;span style="color:#e6db74">/(\d+) x (\d+) @ \((\d+), (\d+)\)/&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [&lt;span style="color:#a6e22e">ix&lt;/span>, &lt;span style="color:#a6e22e">iy&lt;/span>, &lt;span style="color:#a6e22e">sx&lt;/span>, &lt;span style="color:#a6e22e">sy&lt;/span>, &lt;span style="color:#a6e22e">dx&lt;/span>, &lt;span style="color:#a6e22e">dy&lt;/span>] &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#a6e22e">ix&lt;/span>, &lt;span style="color:#a6e22e">iy&lt;/span>, &lt;span style="color:#a6e22e">sx&lt;/span>, &lt;span style="color:#a6e22e">sy&lt;/span>, &lt;span style="color:#a6e22e">dx&lt;/span>, &lt;span style="color:#a6e22e">dy&lt;/span>].&lt;span style="color:#a6e22e">map&lt;/span>(&lt;span style="color:#a6e22e">x&lt;/span> =&amp;gt; parseInt(&lt;span style="color:#a6e22e">x&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">console&lt;/span>.&lt;span style="color:#a6e22e">log&lt;/span>(&lt;span style="color:#e6db74">`left: &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>(&lt;span style="color:#ae81ff">100&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">sx&lt;/span> &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#a6e22e">ix&lt;/span>) &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">3.5&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">%; top: &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#ae81ff">100&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">sy&lt;/span> &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#a6e22e">iy&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">%; width: &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#ae81ff">100&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">dx&lt;/span> &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#a6e22e">ix&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">%; height: &lt;/span>&lt;span style="color:#e6db74">${&lt;/span>&lt;span style="color:#ae81ff">100&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#a6e22e">dy&lt;/span> &lt;span style="color:#f92672">/&lt;/span> &lt;span style="color:#a6e22e">iy&lt;/span>&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">%;`&lt;/span>)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div></description></item><item><title>Webmention Test</title><link>https://blog.andylu.dev/cappucchino/webmention-test/</link><pubDate>Mon, 11 Dec 2023 20:14:31 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/webmention-test/</guid><description>&lt;div class="h-entry">
+ &lt;p>
+ in reply to:
+ &lt;a class="u-in-reply-to"
+ href="https://aaronparecki.com/2018/06/30/11/your-first-webmention">
+ @aaronpk
+ &lt;/a>
+ &lt;/p>
+ &lt;p class="e-content">
+ Trying out this guide to sending webmentions
+ &lt;/p>
+&lt;/div></description></item><item><title>This is an Org Post</title><link>https://blog.andylu.dev/cappucchino/this-is-an-org-post/</link><pubDate>Mon, 11 Dec 2023 15:52:40 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/this-is-an-org-post/</guid><description>&lt;p>
+Today I learned that &lt;code class="verbatim">hugo&lt;/code> has support for org-mode files.&lt;/p>
+&lt;p>
+I knew that &lt;a href="https://ox-hugo.scripter.co/">ox-hugo&lt;/a> is a thing, but this is different. And I never thought to dig into the docs to
+figure out if I can author posts in org-mode and have it work.&lt;/p></description></item><item><title>Org Mode Is Better Glue Code Than Bash</title><link>https://blog.andylu.dev/cappucchino/org-mode-is-better-glue-code-than-bash/</link><pubDate>Mon, 04 Dec 2023 21:47:32 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/org-mode-is-better-glue-code-than-bash/</guid><description>&lt;h1 id="tldr">TLDR&lt;/h1>
+&lt;p>This post is just to document a scenario I put myself in. But I wanted to write it down in case I
+need to use it again in the future.&lt;/p>
+&lt;h1 id="problem">Problem&lt;/h1>
+&lt;ul>
+&lt;li>
+&lt;p>You have a CSV file from your bank with some expenses listed.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>You want to generate an PDF invoice file to send to someone and collect some money.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="solution">Solution&lt;/h1>
+&lt;p>I think the solution is to&lt;/p>
+&lt;ol>
+&lt;li>import the CSV into an org table&lt;/li>
+&lt;li>use your favorite programming language to format the data&lt;/li>
+&lt;li>use &lt;a href="https://github.com/maaslalani/invoice/tree/0fb2e9d84385c6393ca6925bc6d25a89555b0b2d">maaslalani/invoice&lt;/a> to quickly make a PDF&lt;/li>
+&lt;/ol>
+&lt;h2 id="deep-dive">Deep Dive&lt;/h2>
+&lt;p>When I&amp;rsquo;m dealing with CSV files, I often reach for &lt;code>org-mode&lt;/code> in &lt;code>emacs&lt;/code> just to make the file
+easier to read.&lt;/p></description></item><item><title>Python Packaging</title><link>https://blog.andylu.dev/cappucchino/python-packaging/</link><pubDate>Fri, 01 Dec 2023 12:13:04 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/python-packaging/</guid><description>&lt;p>I didn&amp;rsquo;t know what to use between &lt;code>poetry&lt;/code> and &lt;code>hatch&lt;/code>.&lt;/p>
+&lt;p>I just followed the guide &lt;a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#">from the Packaging Guide&lt;/a>.&lt;/p>
+&lt;p>It ended with me having the following directory structure&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-text" data-lang="text">&lt;span style="display:flex;">&lt;span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── pyproject.toml
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── README.org
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>├── src
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   └── andy_aoc_2023
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   ├── day1.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>│   └── __init__.py
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>└── tests
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Which isn&amp;rsquo;t too crazy I guess.&lt;/p></description></item><item><title>Magit: Multiple Push Remotes</title><link>https://blog.andylu.dev/cappucchino/magit-multiple-push-remotes/</link><pubDate>Fri, 01 Dec 2023 11:06:44 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/magit-multiple-push-remotes/</guid><description>&lt;p>I wanted to do the equivalent of this, but in magit&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>git remote rename origin github
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git remote add codeberg https://codeberg.org/jkreeftmeijer/ox-md-title.el.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git remote add origin https://codeberg.org/jkreeftmeijer/ox-md-title.el.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git remote set-url --add --push origin https://codeberg.org/jkreeftmeijer/ox-md-title.el.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git remote set-url --add --push origin https://github.com/jeffkreeftmeijer/ox-md-title.el
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git remote show origin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>* remote origin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Fetch URL: https://codeberg.org/jkreeftmeijer/ox-md-title.el.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Push URL: https://codeberg.org/jkreeftmeijer/ox-md-title.el.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Push URL: https://github.com/jeffkreeftmeijer/ox-md-title.el
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> HEAD branch: main
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Remote branch:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> main new &lt;span style="color:#f92672">(&lt;/span>next fetch will store in remotes/origin&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Local ref configured &lt;span style="color:#66d9ef">for&lt;/span> &lt;span style="color:#e6db74">&amp;#39;git push&amp;#39;&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> main pushes to main &lt;span style="color:#f92672">(&lt;/span>up to date&lt;span style="color:#f92672">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://jeffkreeftmeijer.com/git-multiple-remotes/">Source&lt;/a>&lt;/p></description></item><item><title>Self Hosting Email</title><link>https://blog.andylu.dev/cappucchino/self-hosting-email/</link><pubDate>Thu, 30 Nov 2023 17:03:01 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/self-hosting-email/</guid><description>&lt;p>I&amp;rsquo;ve made a couple attempts at this so far.&lt;/p>
+&lt;p>The software I&amp;rsquo;ve been looking at is:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://stalw.art/">https://stalw.art/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.cyrusimap.org/">https://www.cyrusimap.org/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>I didn&amp;rsquo;t really give Cyrus a good go because I got Stalwart in a spot where I could receive messages
+through IMAP.&lt;/p>
+&lt;p>I didn&amp;rsquo;t get far at all with sending messages. Oracle is my currently cloud provider and port 25 is
+blocked on my account.&lt;/p>
+&lt;p>The feature that drew me to both of these projects is JMAP support. I heard about it while talking
+to a few people at a recent Philly JS meetup.&lt;/p></description></item><item><title>Bash `while` loops</title><link>https://blog.andylu.dev/cappucchino/bash-while-loops/</link><pubDate>Mon, 27 Nov 2023 15:54:59 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/bash-while-loops/</guid><description>&lt;p>Here&amp;rsquo;s a bash snippet I can see myself using one day&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">while&lt;/span> :; &lt;span style="color:#66d9ef">do&lt;/span> ls -lh &lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span> ls -t1 /tmp/tmp* | head -n &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#66d9ef">)&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>; sleep 10; &lt;span style="color:#66d9ef">done&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>&amp;quot;$( ls -t1 /tmp/tmp* | head -n 1 )&amp;quot;&lt;/code>: Get a file name
+&lt;ul>
+&lt;li>&lt;code>ls -t1 /tmp/tmp*&lt;/code>: List the files in &lt;code>/tmp/tmp*&lt;/code> ordered by most recently updated&lt;/li>
+&lt;li>&lt;code>head -n 1&lt;/code>: Get the first one&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>ls -lh &amp;lt;one-file&amp;gt;&lt;/code>: Get the long listing of just one file&lt;/li>
+&lt;li>The rest of it is just to do it over and over so that I can see changes in the file size&lt;/li>
+&lt;/ul></description></item><item><title>My Babashka Cookbook</title><link>https://blog.andylu.dev/cappucchino/my-babashka-cookbook/</link><pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/my-babashka-cookbook/</guid><description>&lt;p>
+This post is the one I want to reference when I do something in `babashka` and forget syntax or
+something.&lt;/p>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+Capture a process&amp;#39;s `STDOUT` and process the string after
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;div class="src src-clojure">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-clojure" data-lang="clojure">&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#a6e22e">require&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>[babashka.process &lt;span style="color:#e6db74">:as&lt;/span> bp])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (-&amp;gt; (&lt;span style="color:#a6e22e">bp/shell&lt;/span> {&lt;span style="color:#e6db74">:out&lt;/span> &lt;span style="color:#e6db74">:string&lt;/span>} &lt;span style="color:#e6db74">&amp;#34;do-the-thing&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#e6db74">:out&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#a6e22e">clojure.string/split&lt;/span> &lt;span style="color:#f92672">#&lt;/span>&lt;span style="color:#e6db74">&amp;#34;\n&amp;#34;&lt;/span>))&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+Import a local library
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-container-headline-3" class="outline-3">
+&lt;h3 id="headline-3">
+Dynamically
+&lt;/h3>
+&lt;div id="outline-text-headline-3" class="outline-text-3">
+&lt;p>
+You can add deps as one of the first steps in your scripts.&lt;/p>
+&lt;div class="src src-clojure">
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-clojure" data-lang="clojure">&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#a6e22e">require&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>[babashka.deps &lt;span style="color:#e6db74">:as&lt;/span> deps])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#a6e22e">deps/add-deps&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>{&lt;span style="color:#e6db74">:deps&lt;/span> {io.github.lispyclouds/bblgum {&lt;span style="color:#e6db74">:git/sha&lt;/span> &lt;span style="color:#e6db74">&amp;#34;1d4de3d49b84f64d1b71930fa1161f8d2622a4d9&amp;#34;&lt;/span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> dev.andylu/clj-lipgloss {&lt;span style="color:#e6db74">:local/root&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/home/andy/git/clj-lipgloss&amp;#34;&lt;/span>}}})
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#a6e22e">require&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>[bblgum.core &lt;span style="color:#e6db74">:as&lt;/span> b])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#a6e22e">require&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>[clj-lipgloss.core &lt;span style="color:#e6db74">:as&lt;/span> lg &lt;span style="color:#e6db74">:use&lt;/span> [log-info log-warn log-debug]])&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-4" class="outline-3">
+&lt;h3 id="headline-4">
+Statically
+&lt;/h3>
+&lt;div id="outline-text-headline-4" class="outline-text-3">
+&lt;p>
+Put this in a `bb.edn`&lt;/p></description></item><item><title>Biff Tutorial</title><link>https://blog.andylu.dev/cappucchino/biff-tutorial/</link><pubDate>Tue, 17 Oct 2023 19:48:08 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/biff-tutorial/</guid><description>&lt;p>Here are my notes as I go through &lt;a href="https://biffweb.com/docs/tutorial/build-a-chat-app/">the Biff tutorial&lt;/a>.&lt;/p>
+&lt;p>I&amp;rsquo;ve made a &lt;a href="https://github.com/luandy64/biff-tutorial">github repo here&lt;/a>.&lt;/p>
+&lt;p>I spotted something that didn&amp;rsquo;t work quite right. So I opened an issue and PR on the main repo. Here
+are those links: &lt;a href="https://github.com/jacobobryant/eelchat/issues/2">issue&lt;/a> and &lt;a href="https://github.com/jacobobryant/eelchat/pull/3">PR&lt;/a>.&lt;/p>
+&lt;p>So I got to a point where the tutorial wanted me to hook up an email sending service to get login
+information sent out to users. I knew I already had a Resend account, so I opted to hook that up
+instead.&lt;/p></description></item><item><title>Babashka Datetime</title><link>https://blog.andylu.dev/cappucchino/babashka-datetime/</link><pubDate>Sun, 15 Oct 2023 14:39:22 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/babashka-datetime/</guid><description>&lt;p>If I need a datetime in Python, I reach for&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> datetime &lt;span style="color:#f92672">import&lt;/span> datetime
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>datetime&lt;span style="color:#f92672">.&lt;/span>now()
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>So I need something as quick for clojure.&lt;/p>
+&lt;p>Apparently, it&amp;rsquo;s just&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-clojure" data-lang="clojure">&lt;span style="display:flex;">&lt;span>(-&amp;gt; (&lt;span style="color:#a6e22e">java.time.LocalDate/now&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> str)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">;; =&amp;gt; &amp;#34;2023-10-15&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Future Blog Ideas</title><link>https://blog.andylu.dev/cappucchino/future-blog-ideas/</link><pubDate>Sat, 14 Oct 2023 21:48:09 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/future-blog-ideas/</guid><description>&lt;p>Here&amp;rsquo;s just a running list of things I want to write down thoughts about.&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>babashka&lt;/code> CLI design&lt;/li>
+&lt;li>&lt;code>traefik&lt;/code> as a reverse proxy for tailscale services&lt;/li>
+&lt;li>apps and tools I use&lt;/li>
+&lt;/ul></description></item><item><title>Terminal Logging With Color</title><link>https://blog.andylu.dev/cappucchino/terminal-logging-with-color/</link><pubDate>Sat, 14 Oct 2023 21:25:56 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/terminal-logging-with-color/</guid><description>&lt;p>These days I&amp;rsquo;ve been writing a lot of babashka instead of reaching for bash or python to do minor
+scripting tasks at work.&lt;/p>
+&lt;p>I am also a big fan of the work done at &lt;a href="https://charm.sh">charm&lt;/a> and the relevant products in this case are
+&lt;a href="https://github.com/charmbracelet/gum">gum&lt;/a> and &lt;a href="https://github.com/charmbracelet/lipgloss">lipgloss&lt;/a>.&lt;/p>
+&lt;p>Using &lt;code>gum style&lt;/code> I can log any text in basically any color I want. And while there&amp;rsquo;s not a ton of
+functional benefits to this, I think there&amp;rsquo;s something to be said about adding color into the logs
+we write.&lt;/p></description></item><item><title>Git Submodules</title><link>https://blog.andylu.dev/cappucchino/git-submodules/</link><pubDate>Tue, 08 Nov 2022 23:00:56 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/git-submodules/</guid><description>&lt;p>The first time I learned about &lt;code>git submodules&lt;/code> was actually from working with
+&lt;a href="https://gohugo.io/">hugo&lt;/a>.&lt;/p>
+&lt;p>&lt;a href="https://github.com/gohugoio/hugo/blob/e48ffb763572814a3788780bb9653dfa2daeae22/content/en/hosting-and-deployment/hosting-on-github.md#step-by-step-instructions">The documentation used to&lt;/a> describe how you can have your main branch live
+in a directory that points to a diffent origin than your current branch.&lt;/p>
+&lt;p>It&amp;rsquo;s a cool feature that I never remember how to use, so here are notes I took
+after rediscovering it recently.&lt;/p>
+&lt;hr>
+&lt;p>To add a submodule&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>git submodule add https://github.com/some-other-repo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To clone a submodule locally&lt;/p></description></item><item><title>TIL: Silica Gel can make Dried Bouquet</title><link>https://blog.andylu.dev/cappucchino/til-silica-gel/</link><pubDate>Tue, 08 Nov 2022 16:41:06 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/til-silica-gel/</guid><description>&lt;p>Was in a flower shop today and the cashier was trying to describe how a big carton of silica gel can
+be used to dry out flowers.&lt;/p>
+&lt;p>I chuckled because I&amp;rsquo;m not entirely sure where to get a bunch of silica gel, but then thought it&amp;rsquo;s
+time to start hoarding &amp;ldquo;Do not eat&amp;rdquo; packets.&lt;/p></description></item><item><title>KAllan's Telephone and Answering Machine Notes</title><link>https://blog.andylu.dev/cappucchino/docker-practice/</link><pubDate>Sun, 11 Apr 2021 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/docker-practice/</guid><description>&lt;h2 id="setup">Setup&lt;/h2>
+&lt;h3 id="installing-docker">Installing &lt;code>docker&lt;/code>&lt;/h3>
+&lt;p>I always like the DigitalOcean tutorials, so that&amp;rsquo;s what I followed here. &lt;a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04">Installing Docker on
+Ubuntu 20.04&lt;/a>&lt;/p>
+&lt;p>One note: I had to restart my computer instead of just logging out in order to get the docker group
+update to take effect.&lt;/p>
+&lt;h3 id="clone-the-repos">Clone the repos&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>git clone git@github.com:KAllan357/answering-machine.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone git@github.com:KAllan357/telephone.git
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Nothing special here.&lt;/p>
+&lt;h3 id="install-go">Install Go&lt;/h3>
+&lt;p>I just &lt;a href="https://golang.org/doc/install">followed these instructions&lt;/a>.&lt;/p>
+&lt;h2 id="do-the-thing">Do the thing&lt;/h2>
+&lt;h3 id="start-the-answering-machine-outside-of-docker">Start the answering machine outside of &lt;code>docker&lt;/code>&lt;/h3>
+&lt;p>Running &lt;code>go run main.go&lt;/code> seems to do a thing. And we get the &lt;code>200&lt;/code> like the instructions say if you
+&lt;code>curl&lt;/code> it. Great, so it seems like we can expect the app to hang and just wait for requests. And to
+log them when it handles them.&lt;/p></description></item><item><title>Clojurescript Project Setup</title><link>https://blog.andylu.dev/cappucchino/clojurescript-project-setup/</link><pubDate>Mon, 06 Jul 2020 07:52:15 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/clojurescript-project-setup/</guid><description>&lt;h4 id="outcomes">Outcomes&lt;/h4>
+&lt;p>By the end of this post, you will be able to setup a new &lt;code>clojurescript&lt;/code>
+project, setup &lt;code>emacs&lt;/code> to be your development environment, and deploy your
+app to Github Pages&lt;/p>
+&lt;h4 id="background">Background&lt;/h4>
+&lt;p>I&amp;rsquo;ve written two clojurescript projects now, &lt;a href="https://blog.andylu.dev/sundial">Sundial&lt;/a> and
+&lt;a href="https://blog.andylu.dev/databooze">DataBooze&lt;/a>, and I want to document the set up process. The first time
+was a massive undertaking because it was my first time. But frustrating
+enough, so was the second time, even though I thought I nailed down the
+process and took notes on it. The process didn&amp;rsquo;t work and the notes don&amp;rsquo;t
+exist, so here we are today.&lt;/p></description></item></channel></rss>
