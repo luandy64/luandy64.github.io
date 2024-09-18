@@ -3,7 +3,16 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2024, Andy Lu.</copyright><lastBuildDate>
-Tue, 17 Sep 2024 21:48:59 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Reviving a 2013 Macbook Pro</title><link>https://blog.andylu.dev/cappucchino/reviving-a-2013-macbook-pro/</link><pubDate>Mon, 16 Sep 2024 21:20:06 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/reviving-a-2013-macbook-pro/</guid><description>&lt;p>I have a Late 2013 Macbook Pro Retina, but it&amp;rsquo;s been gathering dust in the closet for years because
+Tue, 17 Sep 2024 21:59:52 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Tailscale and VLC</title><link>https://blog.andylu.dev/cappucchino/tailscale-and-vlc/</link><pubDate>Tue, 17 Sep 2024 21:53:34 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/tailscale-and-vlc/</guid><description>&lt;p>I have videos sitting on one computer and I want to stream it from another computer.&lt;/p>
+&lt;p>Thankfully they are both connected by Tailscale.&lt;/p>
+&lt;p>So on the server, I can run&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>tailscale serve --bg /path/to/my/directory/of/videos
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And then from a client using something like VLC, I can connect to&lt;/p>
+&lt;pre tabindex="0">&lt;code>https://red.panda-gopher.ts.net/Video1.mp4
+&lt;/code>&lt;/pre>&lt;p>But wait, there&amp;rsquo;s more!&lt;/p>
+&lt;p>It turns out that &lt;code>https://red.panda-gopher.ts.net/&lt;/code> is an index of all of the
+files you&amp;rsquo;re serving. So you could just copy the links right from that page to
+paste into VLC.&lt;/p></description></item><item><title>Reviving a 2013 Macbook Pro</title><link>https://blog.andylu.dev/cappucchino/reviving-a-2013-macbook-pro/</link><pubDate>Mon, 16 Sep 2024 21:20:06 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/reviving-a-2013-macbook-pro/</guid><description>&lt;p>I have a Late 2013 Macbook Pro Retina, but it&amp;rsquo;s been gathering dust in the closet for years because
 the charging cable is losing more and more of its rubber sheath. And every time I plug it in, I get
 more and more concerned that I&amp;rsquo;m going to shock myself.&lt;/p>
 &lt;p>So I&amp;rsquo;ve avoided using this laptop until very recently. I discovered that people make adapters to
