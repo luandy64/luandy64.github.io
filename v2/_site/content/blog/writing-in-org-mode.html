@@ -1,0 +1,99 @@
+<h2 id="changing-spacemacs">Changing <code class="language-plaintext highlighter-rouge">.spacemacs</code></h2>
+
+<p>Let me walk you through getting a fresh install of spacemacs to writing your first
+blog post.</p>
+
+<ol>
+  <li>Follow the these instructions to download spacemacs
+    <ul>
+      <li>For me, I went to the <a href="https://github.com/syl20bnr/spacemacs">Spacemacs</a>
+GitHub page and followed the instructions for homebrew.</li>
+    </ul>
+  </li>
+</ol>
+
+<!--more-->
+
+<ol>
+  <li>Open spacemacs or your text editor of choice
+    <ul>
+      <li>This step is pretty simple right? We have to edit some text, so we open our
+favorite text editor</li>
+    </ul>
+  </li>
+  <li>Open your <code class="language-plaintext highlighter-rouge">~/.spacemacs</code> file
+    <ul>
+      <li>This is where your settings live</li>
+    </ul>
+  </li>
+  <li>
+    <p>Find the bit of code that looks like this:
+If it doesn’t exist already, go ahead and just add this yourself.</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  dotspacemacs-configuration-layers
+  '(
+    ;; Lots of stuff in this set of parentheses
+  )
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add the following snippet of code anywhere inside of the parentheses</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(org :variables
+     org-enable-github-support t
+     org-export-with-toc nil)
+</code></pre></div>    </div>
+
+    <p>After you add that in, assuming you did it at the end of whatever is already
+there, it should look like this:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  dotspacemacs-configuration-layers
+  '(
+    ;; Lots of stuff in this set of parentheses
+    (org :variables
+         org-enable-github-support t
+         org-export-with-toc nil)
+  )
+</code></pre></div>    </div>
+
+    <p>So three things that I know of are happening here. The line that starts with
+<code class="language-plaintext highlighter-rouge">(org</code> says, “Add org-mode as a mode I can use in Emacs”. The 
+<code class="language-plaintext highlighter-rouge">github-support</code> line says, “Let me export the file in the way Github likes
+it”. Finally, the <code class="language-plaintext highlighter-rouge">export-with-toc</code> says, “Don’t include a table of contents
+in any file I export”.</p>
+
+    <p>There’s one more line we need to add before this works though.</p>
+  </li>
+  <li>
+    <p>Find this line of code or add it yourself:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  dotspacemacs-additional-packages '()
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>In the parentheses, add this bit of text</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  ox-gfm
+</code></pre></div>    </div>
+
+    <p>This is a package that lets Org-mode export to GitHub Flavored Markdown, on
+top of all of the other formats it can already handle.</p>
+  </li>
+  <li>Save your file
+    <ul>
+      <li>In evil mode, that would be <code class="language-plaintext highlighter-rouge">SPC f s</code>.</li>
+    </ul>
+  </li>
+  <li>Reload the init file
+    <ul>
+      <li>In evil mode, that would be <code class="language-plaintext highlighter-rouge">SPC f e R</code></li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="thats-all-folks">That’s all folks!</h3>
+
+<hr />
+
+<p>Thanks for reading this post! Comments, questions, and feedback are always
+welcome.</p>

@@ -1,0 +1,208 @@
+<p>Today I started reading through this book to learn some Clojure. It’s called
+<a href="https://www.braveclojure.com/">Clojure for the Brave and True</a>.</p>
+
+<p>I thought I would make myself a little cheatsheet that grows as I progress
+through the book.</p>
+
+<h2 id="forms">Forms</h2>
+
+<p>These are like the building blocks of the files.</p>
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span><span class="w">
+</span><span class="s">"This string"</span><span class="w">
+</span><span class="p">[</span><span class="s">"Vectors"</span><span class="w"> </span><span class="s">"of"</span><span class="w"> </span><span class="s">"strings"</span><span class="w"> </span><span class="s">"are"</span><span class="w"> </span><span class="s">"a"</span><span class="w"> </span><span class="s">"thing"</span><span class="p">]</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="operators">Operators</h2>
+<p>All operations use the same structure. Given an operator <code class="language-plaintext highlighter-rouge">operator</code> and operands
+<code class="language-plaintext highlighter-rouge">op1, op2, ... opN</code>, you use the following structure:</p>
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">operator</span><span class="w"> </span><span class="n">op1</span><span class="w"> </span><span class="n">op2</span><span class="w"> </span><span class="n">...</span><span class="w"> </span><span class="n">opN</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="comments">Comments</h2>
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">; This is a single line comment</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="control-flow">Control Flow</h2>
+
+<h3 id="if"><code class="language-plaintext highlighter-rouge">if</code></h3>
+
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="n">some-boolean-form</span><span class="w">
+    </span><span class="n">then-form</span><span class="w">
+    </span><span class="n">an-optional-else</span><span class="w"> </span><span class="n">form</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>
+    <p>If the <code class="language-plaintext highlighter-rouge">else-form</code> is omitted and triggered, then <code class="language-plaintext highlighter-rouge">nil</code> is returned.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">then-form</code> and <code class="language-plaintext highlighter-rouge">else-form</code> can only be a one-liner, see <code class="language-plaintext highlighter-rouge">do</code> if you need
+more functionality than that</p>
+  </li>
+</ul>
+
+<h3 id="do"><code class="language-plaintext highlighter-rouge">do</code></h3>
+
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="n">some-boolean-form</span><span class="w">
+    </span><span class="p">(</span><span class="nf">do</span><span class="w"> </span><span class="s">"Some truthy thing 1"</span><span class="w">
+        </span><span class="s">"Some truthy thing 2"</span><span class="p">)</span><span class="w">
+    </span><span class="p">(</span><span class="nf">do</span><span class="w"> </span><span class="s">"Some falsey thing 1"</span><span class="w">
+        </span><span class="s">"Some falsey thing 2"</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="when"><code class="language-plaintext highlighter-rouge">when</code></h3>
+
+<ul>
+  <li>Think of this as an <code class="language-plaintext highlighter-rouge">if-do</code> without an <code class="language-plaintext highlighter-rouge">else-form</code></li>
+</ul>
+
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">when</span><span class="w"> </span><span class="n">some-true-form</span><span class="w">
+    </span><span class="p">(</span><span class="nb">println</span><span class="w"> </span><span class="s">"True thing found"</span><span class="p">))</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="booleans">Booleans</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code></li>
+  <li><code class="language-plaintext highlighter-rouge">nil</code> is no value</li>
+</ul>
+
+<h3 id="some-operators">Some operators:</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">(or op1 op2 ... opN)</code> : return first truthy value or last value</li>
+  <li><code class="language-plaintext highlighter-rouge">(and op1 op2 ... opN)</code> : return the first falsey value or the last truthy
+value</li>
+  <li><code class="language-plaintext highlighter-rouge">(= op1 op2)</code> : test for equality</li>
+  <li><code class="language-plaintext highlighter-rouge">(nil? op1)</code> : check for <code class="language-plaintext highlighter-rouge">nil</code></li>
+</ul>
+
+<h2 id="save-state">Save state</h2>
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="k">def</span><span class="w"> </span><span class="n">varName</span><span class="w"> </span><span class="n">value</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="data-structures">Data Structures</h2>
+
+<ul>
+  <li>All data structures are immutable</li>
+</ul>
+
+<h3 id="numerical-things">Numerical Things</h3>
+
+<ul>
+  <li>Numbers: <code class="language-plaintext highlighter-rouge">17</code></li>
+  <li>Floats: <code class="language-plaintext highlighter-rouge">3.4</code></li>
+  <li>Ratios: <code class="language-plaintext highlighter-rouge">51/100</code></li>
+</ul>
+
+<h3 id="strings">Strings</h3>
+
+<ul>
+  <li>Denoted by double quotes</li>
+  <li>Escape any double quotes inside as needed</li>
+</ul>
+
+<h3 id="maps">Maps</h3>
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">; An empty map</span><span class="w">
+</span><span class="p">{}</span><span class="w">
+
+</span><span class="c1">; A map with keywords for keys</span><span class="w">
+</span><span class="p">{</span><span class="no">:firstname</span><span class="w"> </span><span class="s">"Andy"</span><span class="w">
+ </span><span class="no">:lastname</span><span class="w"> </span><span class="s">"Lu"</span><span class="p">}</span><span class="w">
+ 
+</span><span class="c1">; Mapping a string to a function</span><span class="w">
+</span><span class="p">{</span><span class="s">"Totally-legal"</span><span class="w"> </span><span class="nb">+</span><span class="p">}</span><span class="w">
+
+</span><span class="c1">; Nested Maps</span><span class="w">
+</span><span class="p">{</span><span class="no">:name</span><span class="w"> </span><span class="p">{</span><span class="no">:first</span><span class="w"> </span><span class="s">"Andy"</span><span class="w"> </span><span class="no">:last</span><span class="w"> </span><span class="s">"Lu"</span><span class="p">}}</span><span class="w">
+
+</span><span class="c1">; Hash Map</span><span class="w">
+</span><span class="p">(</span><span class="nb">hash-map</span><span class="w"> </span><span class="no">:firstname</span><span class="w"> </span><span class="s">"Andy"</span><span class="w"> </span><span class="no">:lastname</span><span class="w"> </span><span class="s">"Lu"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+<h4 id="reading-from-maps">Reading from maps</h4>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">get</code>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">(get {:a 1 :b 2} :b)</code>, returns <code class="language-plaintext highlighter-rouge">2</code></li>
+      <li>’<code class="language-plaintext highlighter-rouge">(get {:a 1 :b 2} :c)</code>, returns `nil’</li>
+    </ul>
+  </li>
+  <li>‘get-in’: Used for nested maps
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">(get-in {:a 0 :b {:c 100}} [:b :c])</code>, returns <code class="language-plaintext highlighter-rouge">100</code></li>
+    </ul>
+  </li>
+  <li>Using a map like an operator
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">({:name "Andy"} :name)</code>, returns <code class="language-plaintext highlighter-rouge">"Andy"</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="keywords">Keywords</h2>
+<ul>
+  <li>Primarily used as keys in maps</li>
+  <li>Denoted <code class="language-plaintext highlighter-rouge">:a</code></li>
+</ul>
+
+<h2 id="vectors">Vectors</h2>
+<ul>
+  <li>Zero Indexed</li>
+  <li>Declaring one:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">[3 2 1]</code></li>
+      <li><code class="language-plaintext highlighter-rouge">(vector "some" "list" "of" "things")</code>, returns <code class="language-plaintext highlighter-rouge">["some" "list" "of"
+"things"]</code></li>
+    </ul>
+  </li>
+  <li>Adding to the end of a vector:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">(conj [1 2 3] 4)</code>, returns <code class="language-plaintext highlighter-rouge">[1 2 3 4]</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="lists">Lists</h2>
+<ul>
+  <li>Zero Indexed</li>
+  <li>Declaring:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">'(1 2 3 4)</code>, returns <code class="language-plaintext highlighter-rouge">(1 2 3 4)</code></li>
+      <li><code class="language-plaintext highlighter-rouge">'(list 1 "two" {3 4})</code>, returns <code class="language-plaintext highlighter-rouge">(1 "two" {3 4})</code></li>
+    </ul>
+  </li>
+  <li>Retriving the <code class="language-plaintext highlighter-rouge">nth</code> value:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">(nth '(4 3 2 1 0) 1)</code>, returns <code class="language-plaintext highlighter-rouge">3</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="sets">Sets</h2>
+<ul>
+  <li>Contain only unique values</li>
+  <li>Declaring:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">#{"word" 20 :name}</code>, returns <code class="language-plaintext highlighter-rouge">#{"word" 20 :name}</code></li>
+      <li><code class="language-plaintext highlighter-rouge">(set [1 1 2 3 3 3 4])</code>, returns <code class="language-plaintext highlighter-rouge">#{1 2 3 4}</code></li>
+    </ul>
+  </li>
+  <li>Checking for a value in a set:
+    <ul>
+      <li>If you want a boolean back:
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">(contains? #{:a :b} :a)</code>, returns <code class="language-plaintext highlighter-rouge">true</code></li>
+          <li><code class="language-plaintext highlighter-rouge">(contains? #{1 2} 3)</code>, returns <code class="language-plaintext highlighter-rouge">false</code></li>
+        </ul>
+      </li>
+      <li>If you want a value back:
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">(:a #{:a :b :c})</code>, returns <code class="language-plaintext highlighter-rouge">:a</code></li>
+          <li><code class="language-plaintext highlighter-rouge">(get #{1 2} 1)</code>, returns <code class="language-plaintext highlighter-rouge">1</code></li>
+          <li><code class="language-plaintext highlighter-rouge">(get #{:a nil} nil)</code>, returns <code class="language-plaintext highlighter-rouge">nil</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>

@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<!--
+Prologue by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Jekyll integration by Chris Bobbe | chrisbobbe.github.io
+-->
+<html><head><!-- Robots -->
+  <meta name="robots" content="index, follow" /><link rel="canonical" href="/v1/2018/09/06/hugo-brainstorming.html" /><!-- Title, description, author --><title>Hugo Brainstorming | Andy Lu</title>
+  <meta name="description" content="Hugo Brainstorming | Andy Lu" />
+  <meta name="author" content="Andy Lu" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hugo Brainstorming | Andy Lu" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://0.0.0.0:4000/assets/img/profile.jpg" />
+  <meta property="og:url" content="http://0.0.0.0:4000/2018/09/06/hugo-brainstorming.html" />
+  <meta property="og:site_name" content="Andy Lu" />
+  <meta property="og:description" content="Hugo Brainstorming | Andy Lu" />
+  
+  <!-- Styles -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/html5shiv.js" defer></script><![endif]-->
+  <link rel="stylesheet" href="/v1/assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="/v1/assets/css/ie8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="/v1/assets/css/ie9.css" /><![endif]-->
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrolly.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrollzer.min.js" defer></script>
+  <script src="/v1/assets/js/skel.min.js" defer></script>
+  <script src="/v1/assets/js/util.js" defer></script>
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/respond.min.js" defer></script><![endif]-->
+  <script src="/v1/assets/js/main.js" defer></script>
+
+</head><body><!-- Header -->
+<div id="header">
+  <div class="top"><!-- Logo -->
+<div id="logo">
+  <a href="/v1/" id="home-link">
+    <span class="image avatar48"><img src="/v1/assets/img/profile.jpg" alt="Avatar of Andy Lu" /></span>
+    <h1 id="title">Andy Lu</h1>
+    <p></p>
+  </a>
+</div><!-- Nav -->
+<nav id="nav">
+  <ul><!--<li><a href="/v1/themes/hyde/" id="hyde-link">-->
+            <li><a href="/v1/themes/hyde/" id="hyde-link">
+            <span class="icon fa-link">Hyde</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">-->
+            <li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">
+            <span class="icon fa-link">Changelog</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">-->
+            <li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">
+            <span class="icon fa-link">page</span>
+          </a></li><!--<li><a href="/v1/" id="home-link">-->
+            <li><a href="/v1/" id="home-link">
+            <span class="icon fa-home">Home</span>
+          </a></li><!--<li><a href="/v1/blog/" id="blog-link">-->
+            <li><a href="/v1/blog/" id="blog-link">
+            <span class="icon fa-pencil">Blog</span>
+          </a></li><!--<li><a href="/v1/reading-list.html" id="reading-list-link">-->
+            <li><a href="/v1/reading-list.html" id="reading-list-link">
+            <span class="icon fa-book">Reading List</span>
+          </a></li><!--<li><a href="/v1/certificates.html" id="certificates-link">-->
+            <li><a href="/v1/certificates.html" id="certificates-link">
+            <span class="icon fa-trophy">Certificates</span>
+          </a></li></ul>
+</nav></div>
+  <div class="bottom"><!-- Social Icons -->
+<ul class="icons"><li><a href="https://twitter.com/_andy_lu_" class="icon fa-twitter"><span class="label">Twitter</span></a></li><li><a href="https://www.linkedin.com/in/andyrlu/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li><li><a href="https://github.com/luandy64/" class="icon fa-github"><span class="label">GitHub</span></a></li><li><a href="/#contact-me" class="icon fa-envelope"><span class="label">Email</span></a></li></ul>
+</div>
+</div>
+<!-- Main -->
+<div id="main">
+  <!-- Post -->
+  <article class="shade-two">
+    <div class="container">
+      <header>
+        <h2>Hugo Brainstorming</h2>
+	  <p>06 September 2018</p>
+      </header>
+
+      <p>Today was a lot of interview prep. That’s great because I like the
+self-reflection time, but it doesn’t leave too much time to work on these side
+projects.</p>
+
+<p>In the spirit of documenting my process of thinking and working, I want to talk
+about how I’m going to tackle the next step of this Hugo migration.</p>
+
+<p>The problems I’m facing, in no particular order, are:</p>
+<ul>
+  <li>I need to change the front matter from how it is to something more consistent
+for Hugo. Not all of my posts are consistent, but I can easily make it so</li>
+  <li>One pet peeve of of mine is the way images are handled in Markdown.
+    <ul>
+      <li>For one, it jacks up my file format/layout because sometimes the image is
+inserted at the end of a line and I haven’t explored how to wrap the line to
+my desired 80 characters. Perhaps it really isn’t a problem and I just need
+to read some documentation. But it’s on my mind</li>
+      <li>The way I would like to handle it is to reference some variable name in my
+Markdown, which is then processed later to be replaced by the properly
+formated <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> tag and whatnot. Each blog post already stores some
+metadata about itself; moreover, it’s in a <code class="language-plaintext highlighter-rouge">key:value</code> sort of thing with
+<code class="language-plaintext highlighter-rouge">YAML</code>, so how hard can it be to say “If you see this <code class="language-plaintext highlighter-rouge">key</code> in the Markdown,
+then swap it with the <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> where the source is the <code class="language-plaintext highlighter-rouge">value</code>”. I did a tiny
+bit of research and it sounds like this feature is possible with something
+called <code class="language-plaintext highlighter-rouge">shortcodes</code>. I’ll look into and you’ll find me writing about it in a
+few days, I’m sure</li>
+    </ul>
+  </li>
+  <li>I need to figure out how to restructure my posts to match the “Hugo way”. I
+know that Jekyll was very very very flexible with whatever I threw at it. And
+I’ve read that Hugo is pickier. So I need to make this transition work and
+work properly so that I’m not fiddling with this down the road
+    <ul>
+      <li>Disclaimer: It’s not that I don’t like fiddling with this site. It’s
+literally one of the main reasons it exists. Heck, my love of tinkering is
+what drives this migration in the first place. I have enough experience
+with these static site generators that I’d like to make sure I do things
+right from now on. I’m done with the “I’m learning and let’s just get this
+functional”.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>So to fix that front matter issue, I’m definitely writing a script to do it. I
+have just enough blog posts to say, no way I’m not doing this by hand. I’ve
+thought about 7 steps that the script should take:</p>
+<ul>
+  <li>Read in the current front matter</li>
+  <li>Compare it to my “ideal list” of key-value pairs and keep the good ones</li>
+  <li>Add the missing ones with default values I need to go in and change</li>
+  <li>Add the filename to some list that tells me to look at some thing</li>
+  <li>Also note which files have an image in them</li>
+  <li>Make a new file containing the new front matter and the old content</li>
+  <li>Put this new file in some target directory</li>
+</ul>
+
+<p>The code will definitely look like: for every file in my <code class="language-plaintext highlighter-rouge">/posts</code> folder, do the
+thing.</p>
+
+</div>
+  </article>
+</div>
+
+<!--Adding MathJax Support-->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- Footer -->
+<div id="footer">
+  
+  <!-- Copyright -->
+  <ul class="copyright">
+    
+      <li>&copy;Andy Lu. All rights reserved.</li>
+    
+    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    <li>Jekyll integration: <a href="https://chrisbobbe.github.io/">Chris Bobbe</a></li>
+    <li>Typed with pleasure on an <a href="https://olkb.com/">olkb</a> Preonic</li>
+  </ul>
+  
+</div>
+</body>
+</html>

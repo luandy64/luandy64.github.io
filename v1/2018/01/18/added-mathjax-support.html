@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<!--
+Prologue by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Jekyll integration by Chris Bobbe | chrisbobbe.github.io
+-->
+<html><head><!-- Robots -->
+  <meta name="robots" content="index, follow" /><link rel="canonical" href="/v1/2018/01/18/added-mathjax-support.html" /><!-- Title, description, author --><title>Added Mathjax Support | Andy Lu</title>
+  <meta name="description" content="Added Mathjax Support | Andy Lu" />
+  <meta name="author" content="Andy Lu" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Added Mathjax Support | Andy Lu" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://0.0.0.0:4000/assets/img/profile.jpg" />
+  <meta property="og:url" content="http://0.0.0.0:4000/2018/01/18/added-mathjax-support.html" />
+  <meta property="og:site_name" content="Andy Lu" />
+  <meta property="og:description" content="Added Mathjax Support | Andy Lu" />
+  
+  <!-- Styles -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/html5shiv.js" defer></script><![endif]-->
+  <link rel="stylesheet" href="/v1/assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="/v1/assets/css/ie8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="/v1/assets/css/ie9.css" /><![endif]-->
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrolly.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrollzer.min.js" defer></script>
+  <script src="/v1/assets/js/skel.min.js" defer></script>
+  <script src="/v1/assets/js/util.js" defer></script>
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/respond.min.js" defer></script><![endif]-->
+  <script src="/v1/assets/js/main.js" defer></script>
+
+</head><body><!-- Header -->
+<div id="header">
+  <div class="top"><!-- Logo -->
+<div id="logo">
+  <a href="/v1/" id="home-link">
+    <span class="image avatar48"><img src="/v1/assets/img/profile.jpg" alt="Avatar of Andy Lu" /></span>
+    <h1 id="title">Andy Lu</h1>
+    <p></p>
+  </a>
+</div><!-- Nav -->
+<nav id="nav">
+  <ul><!--<li><a href="/v1/themes/hyde/" id="hyde-link">-->
+            <li><a href="/v1/themes/hyde/" id="hyde-link">
+            <span class="icon fa-link">Hyde</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">-->
+            <li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">
+            <span class="icon fa-link">Changelog</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">-->
+            <li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">
+            <span class="icon fa-link">page</span>
+          </a></li><!--<li><a href="/v1/" id="home-link">-->
+            <li><a href="/v1/" id="home-link">
+            <span class="icon fa-home">Home</span>
+          </a></li><!--<li><a href="/v1/blog/" id="blog-link">-->
+            <li><a href="/v1/blog/" id="blog-link">
+            <span class="icon fa-pencil">Blog</span>
+          </a></li><!--<li><a href="/v1/reading-list.html" id="reading-list-link">-->
+            <li><a href="/v1/reading-list.html" id="reading-list-link">
+            <span class="icon fa-book">Reading List</span>
+          </a></li><!--<li><a href="/v1/certificates.html" id="certificates-link">-->
+            <li><a href="/v1/certificates.html" id="certificates-link">
+            <span class="icon fa-trophy">Certificates</span>
+          </a></li></ul>
+</nav></div>
+  <div class="bottom"><!-- Social Icons -->
+<ul class="icons"><li><a href="https://twitter.com/_andy_lu_" class="icon fa-twitter"><span class="label">Twitter</span></a></li><li><a href="https://www.linkedin.com/in/andyrlu/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li><li><a href="https://github.com/luandy64/" class="icon fa-github"><span class="label">GitHub</span></a></li><li><a href="/#contact-me" class="icon fa-envelope"><span class="label">Email</span></a></li></ul>
+</div>
+</div>
+<!-- Main -->
+<div id="main">
+  <!-- Post -->
+  <article class="shade-two">
+    <div class="container">
+      <header>
+        <h2>Added Mathjax Support</h2>
+	  <p>18 January 2018</p>
+      </header>
+
+      <h2 id="commands-needed">Commands Needed</h2>
+<p>The easiest step was from the <a href="https://jekyllrb.com/docs/extras/">Jekyll Docs</a>, which pointed me to this page on <a href="http://www.gastonsanchez.com/visually-enforced/opinion/2014/02/16/Mathjax-with-jekyll/">Visually Enforced</a>. So the following piece of code went into my <code class="language-plaintext highlighter-rouge">/_layouts/default.html</code> ‘s header:
+<!--more--></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>Testing the site was too slow with GitHub Pages, so I served the site locally to see changes on every refresh:
+<code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code></p>
+
+<h2 id="links-on-this-page">Links on this page</h2>
+<ul>
+  <li><a href="https://jekyllrb.com/docs/extras/">Jekyll Docs</a></li>
+  <li><a href="http://www.gastonsanchez.com/visually-enforced/opinion/2014/02/16/Mathjax-with-jekyll/">Visually Enforced</a></li>
+  <li><a href="https://kramdown.gettalong.org/syntax.html#math-blocks">kramdown</a></li>
+  <li><a href="https://docs.mathjax.org/en/latest/tex.html#supported-latex-commands">Supported LaTeX Commands</a></li>
+  <li><a href="https://math.meta.stackexchange.com/questions/3582/qed-for-mathjax-here-on-stackexchange/13338#13338">StackExchange Proof QED</a></li>
+</ul>
+
+<hr />
+
+<h2 id="the-details">The Details</h2>
+<p>To make sure everything worked after adding the MathJax line, I found a nice chunk of code from <a href="https://kramdown.gettalong.org/syntax.html#math-blocks">kramdown</a> in their syntax guide. The \(\LaTeX\) rendered beautifully and had no issues whatsoever. I had done some more digging and saw that kramdown already supports “Math Blocks”, so to test it, I removed the MathJax script from my template. It broke the nice piece of \(\LaTeX\) code from earlier, so I quickly put the script back.</p>
+
+<p>The next test I wanted to try was to see what commands were available to me because I couldn’t find a list anywhere. So I grabbed a proof I wrote from my Real Analysis class and threw it into a Markdown file. It kept rendering it as text in a box; basically like I used some CSS to give that chunk of text an outline. From there, I kept playing with it, in hopes that something would work. kramdown said that everything should be in <code class="language-plaintext highlighter-rouge">$$...$$</code>, which I tried and only got a group of -box-outlined text. Then I thought maybe I need to import the AMS Math package somewhere. It was after that thought, I think, that I stumbled upon a list of <a href="https://docs.mathjax.org/en/latest/tex.html#supported-latex-commands">Supported LaTeX Commands</a>…</p>
+
+<p>So after all of that work, it turns out the <em>proof</em> environment I was using is unsupported. That’s alright though, since that was mainly for the TeX engine to put a fancy italic <em>Proof</em> at the start of my work and a box at the end. I can format the <em>Proof</em> first, and probably put the black box at the end.</p>
+
+<p><em>Proof.</em> Look it worked. <a href="https://math.meta.stackexchange.com/questions/3582/qed-for-mathjax-here-on-stackexchange/13338#13338">Credit</a> \(\tag*{$\blacksquare$}\)</p>
+
+<p>Anyway, I’ll have to spend some time looking through what commands I can and cannot use, but I am happy to have them at all. I doubt anyone who wrote the pages that helped me in this process will ever see this page, but thank you!</p>
+
+<h2 id="in-summary">In Summary</h2>
+<p>It was a little confusing at first, but so was setting up Jekyll in the first place. The confusion was mainly due to the fact that I had to dig through Jekyll support pages, kramdown support pages, and MathJax support pages. In the end though, it just took some trial and error on a local version of my site to figure out what works and what doesn’t.</p>
+</div>
+  </article>
+</div>
+
+<!--Adding MathJax Support-->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- Footer -->
+<div id="footer">
+  
+  <!-- Copyright -->
+  <ul class="copyright">
+    
+      <li>&copy;Andy Lu. All rights reserved.</li>
+    
+    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    <li>Jekyll integration: <a href="https://chrisbobbe.github.io/">Chris Bobbe</a></li>
+    <li>Typed with pleasure on an <a href="https://olkb.com/">olkb</a> Preonic</li>
+  </ul>
+  
+</div>
+</body>
+</html>

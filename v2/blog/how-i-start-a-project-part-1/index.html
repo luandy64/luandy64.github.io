@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="/v2//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.53" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>How I start a project Part 1 &middot; Andy Lu</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="/v2/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="/v2/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/v2/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/v2/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Andy Lu" />
+
+  
+</head>
+
+  <body class="theme-base-0d ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href=""><h1>Andy Lu</h1></a>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="">Home</a> </li>
+        <li><a href="/v2/about/"> About Me </a></li><li><a href="/v2/blog/"> Blog </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>How I start a project Part 1</h1>
+  <time datetime=2018-07-17T13:14:15-0500 class="post-date">Tue, Jul 17, 2018</time>
+  <p>Scratching my head thinking about what I want to write about today, I started
+skimming other blogs to get a sense of content and blogging frequency. Daily
+blogging might be too much to be sustainable over time, but my rationale is I
+learn something almost every day, so that&rsquo;s what I&rsquo;ll write about.</p>
+
+<p>Today, I&rsquo;m documenting my process of planning a project.</p>
+
+<p>So I&rsquo;ve been working through freeCodeCamp&rsquo;s certificates. As of today, I only
+have the <code>JavaScript Data Structures and Algorithms</code> one done. I&rsquo;m about half
+way through the <code>Responsive Web Design</code> certificate.</p>
+
+<p>While working on the RWD cert, I&rsquo;ve realized that I spend too much time trying
+to make things perfect and that hinders my progress. Switching to the thought
+that things just need to be &ldquo;good enough&rdquo;, I was able to finish the previous
+site, the Product Landing Page. It still needs some tweaks, which I got from
+feedback from the forums, but at least it&rsquo;s out there.</p>
+
+<p>So here&rsquo;s my first stab at the Technical Documentation Page.</p>
+
+<blockquote>
+<p>My background noise of choice lately has been &ldquo;Mellow Beats&rdquo; or &ldquo;Chill Lofi
+Study Beats&rdquo; on Spotify. Find those in &ldquo;Genres &amp; Moods&rdquo; &gt; &ldquo;Focus&rdquo;.</p>
+</blockquote>
+
+<p>Now taking a look at the user stories, which comes from Agile if you are new to
+that term. A quick and dirty definition is something an end user can notice
+about the app/product. Here&rsquo;s the list for the
+<a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page">Technical Documentation Page</a>.</p>
+
+<p>Reading this document, I like to do a quick skim through first. In this pass
+through, I&rsquo;m just getting a sense of how things should be laid out. There&rsquo;s no
+need to get bogged down by what <code>id</code>&rsquo;s are required, or what the styling needs
+to look like.</p>
+
+<p>Here&rsquo;s what caught my eye reading through this:</p>
+
+<ul>
+<li>There&rsquo;s a <code>main</code> element</li>
+<li>There are several <code>section</code> elements</li>
+<li>Something something <code>header</code></li>
+<li>I was told how to name some <code>id</code>&rsquo;s</li>
+<li>Something something content&hellip;</li>
+<li>Need a navbar</li>
+<li>Navbar needs links (I&rsquo;m not sure what else would go there&hellip;)</li>
+<li>Navbar goes on the left and is always visible to a desktop user</li>
+<li>Use a media query</li>
+</ul>
+
+<p>There&rsquo;s not really a reason for me to write any of this down right now. I can
+always just refer back to the document if I need it.</p>
+
+<p>Now I need some visuals though. Luckily, freeCodeCamp always gives you a link
+to an app that is more or less what you are looking to rebuild. So I follow the
+link and poke around the app. <a href="https://codepen.io/freeCodeCamp/full/NdrKKL">Here it is if you want it</a>.</p>
+
+<p>First thing I notice is it is plain! No worries though because I will style it
+myself. My first idea as far as styling goes is to make the navbar darker than
+the content. Hopefully that makes it pop and draws your eyes there. I also like
+the giant headings there are using here, so I&rsquo;ll keep that in mind.</p>
+
+<p>So after clicking around for a little bit, it&rsquo;s clear that this one is pretty
+straight forward: make a site with a fixed navbar and links that go to certain
+sections of the overall page.</p>
+
+<p>This is great, I&rsquo;m off to a good start. I have a sense of the structural
+requirements. I also have an idea or two for the visual component.</p>
+
+<h2 id="putting-pen-to-paper">Putting pen to paper</h2>
+
+<p>Depending on my mood, this next step varies. I could be really inspired by a
+site already and want to plan out my layout and styling for 3 viewports
+(Desktop, tablet, and tiny phone). Or I want to think about the structure by
+digging into the User Stories again.</p>
+
+<p>Today is a structure kind of day, but who knows, I might get to the layout and
+design too.</p>
+
+<h3 id="my-approach-structure">My Approach: Structure</h3>
+
+<p>I&rsquo;ve found that mind maps are a pretty good way to think about the structure.
+Somewhere on a piece of paper- I use paper because in the last 4 years of
+coding, I have learned the hard way that I need to slow down with some paper
+first or risk hours wasted on reworking my code repeatedly. So somewhere on
+some paper, I&rsquo;ll start with an <code>HTML</code> &ldquo;node&rdquo; at the root of the graph. From
+there I link to it exactly like I would write my HTML file: there&rsquo;s a <code>Head</code>
+node and a <code>Body</code> node. The <code>Body</code> gets two children as well: <code>Main</code> and
+<code>Footer</code>. You get the idea. Branch out until the User Stories are all covered.
+My system is nodes are circles, representing actually blocks of HTML. Lines
+coming off a node without a circle are properties or attributes about that node.</p>
+
+<p>For example, the <code>Main</code> node can have three <code>Section</code> nodes coming off of it.
+Each of these <code>Section</code>s get a line coming off of it for an <code>id</code>, or <code>class</code>es
+if I&rsquo;m ready for that, etc. Again, the point of this part is to get a visual
+representation of the HTML I will write that covers the User Stories that it
+can.</p>
+
+<p>Time to fill in the details!</p>
+
+  <hr>
+  <p>
+      Thanks for reading this post! Comments, questions, and feedback are always
+      welcome.
+  </p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+       tex2jax: {
+           inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+           processEscapes: true
+       }
+   });
+  </script>
+  <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  </script>
+</html>

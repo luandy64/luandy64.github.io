@@ -1,0 +1,43 @@
+<p>I’ve been absorbing quite a bit of content from Gary Vaynerchuk lately. I really
+like his idea of not making excuses and getting to work and eating dirt and
+loving the process. I mean, it’s hard to argue against those things and risk
+being associated with negative things; despite that, I personally don’t deny
+they are good ideas. How much weight you give them is up to you.</p>
+
+<!--more-->
+
+<p>To relate eating dirt and loving the process to my title for this post: learning
+Clojure has been an annoying process, but a very interesting one.</p>
+
+<p>In the last two weeks, I’ve got through 4 or 5 chapters of <code class="language-plaintext highlighter-rouge">Clojure for the
+Brave and True</code> by Daniel Higginbotham, <a href="https://www.braveclojure.com/clojure-for-the-brave-and-true/">the full book
+here.</a> The book
+really started to click for me once I hit the fifth chapter on functional
+programming.</p>
+
+<p>I know that’s when it clicked because while I was reading, I was also trying to
+practice coding problems on <a href="https://www.codewars.com/">CodeWars</a>. I was very
+lost for the first week and a half- I just couldn’t figure out how to get around
+the immutability of the data structures in Clojure. Also, the whole “operating
+on lists/sequences” to make other sequences was a simple enough idea to wrap my
+head around. However, using that to solve a problem was a real head scratcher.</p>
+
+<p>Anyway, the moral of the story is that the Clojure standard library is vast and
+extensive. And while I have the right idea of how to approach some of these more
+basic problems I am encountering, I should go look for the function that does it
+already, instead of implementing it myself.</p>
+
+<p>Here’s the piece of code in question:</p>
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="c1">;; Given `num` = 10x+y, </span><span class="w">
+</span><span class="c1">;; return some `val` = x - 2y</span><span class="w">
+
+</span><span class="c1">;; My version </span><span class="w">
+</span><span class="c1">;; - Complained if num was too big</span><span class="w">
+</span><span class="p">(</span><span class="k">defn</span><span class="w"> </span><span class="n">decomp</span><span class="w"> </span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="w">
+    </span><span class="p">(</span><span class="nb">-</span><span class="w"> </span><span class="p">(</span><span class="nb">/</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="nf">mod</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="mi">10</span><span class="p">)))</span><span class="w">
+    
+</span><span class="c1">;; The Good Version</span><span class="w">
+</span><span class="p">(</span><span class="k">defn</span><span class="w"> </span><span class="n">decomp</span><span class="w"> </span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="w">
+    </span><span class="p">(</span><span class="nb">-</span><span class="w"> </span><span class="p">(</span><span class="nb">quot</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">*</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="nf">mod</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="mi">10</span><span class="p">))))</span><span class="w">
+</span></code></pre></div></div>

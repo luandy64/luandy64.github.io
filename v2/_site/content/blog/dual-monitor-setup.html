@@ -1,0 +1,71 @@
+<p>Today was a lot of fiddling with <code class="language-plaintext highlighter-rouge">xrandr</code> in order to get my laptop screen and
+external monitor to play nice together.</p>
+
+<p>While it was a bit confusing at first, the <a href="https://wiki.archlinux.org/index.php/HiDPI#Side_display">article on ArchWiki about
+HiDPI</a> was very useful.
+There wasn’t a command on the page that was exactly what I needed, but between
+the wiki and the man pages, I was able to piece together what I needed.</p>
+
+<!--more-->
+
+<p>Here’s how I figured out the numbers I needed to create a HiDPI display and a
+not HiDPI display that sit next to each other. My exact setup is as follows:</p>
+<ul>
+  <li>My <code class="language-plaintext highlighter-rouge">primary</code> display is named <code class="language-plaintext highlighter-rouge">eDP-1</code>, has a resolution of <code class="language-plaintext highlighter-rouge">2560x1600</code>, and a
+DPI of <code class="language-plaintext highlighter-rouge">227</code> pixels per inch</li>
+  <li>My other display is named <code class="language-plaintext highlighter-rouge">DP-1</code>, has a resolution of <code class="language-plaintext highlighter-rouge">1920x1080</code>, and a DPI
+of <code class="language-plaintext highlighter-rouge">166</code> pixels per inch</li>
+  <li>I want my other display to the <code class="language-plaintext highlighter-rouge">right-of</code> my primary one</li>
+</ul>
+
+<p>To get the DPI of my displays, I used <a href="http://dpi.lv/">this site</a>, and just
+opened it in Chrome on each monitor.</p>
+
+<p>To get the resolution of my displays, <code class="language-plaintext highlighter-rouge">xrandr</code> will tell you that if you just
+type <code class="language-plaintext highlighter-rouge">xrandr</code> into the terminal. It displays a little <code class="language-plaintext highlighter-rouge">*</code> next to the
+resolution. This is also how I got the name of each display too.</p>
+
+<p>From the ArchWiki, I grabbed the following formula:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xrandr --output eDP-1 --auto --output HDMI-1 --auto --panning [C*E]x[D*F]+[A]+0
+--scale [E]x[F] --right-of eDP-1
+</code></pre></div></div>
+
+<p>I had to make the following modifications though:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xrandr --dpi 227 --output eDP-1 --auto --output DP-1 --auto --panning
+3840x2160+2560+0 --scale 2x2 --right-of eDP-1
+</code></pre></div></div>
+
+<p>Here’s what those changes mean:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">--dpi 227</code> is the higher DPI value between the two monitors I am using</li>
+  <li><code class="language-plaintext highlighter-rouge">--output DP-1</code> was changed from <code class="language-plaintext highlighter-rouge">--output HDMI-1</code> because that’s what my
+display is named</li>
+  <li><code class="language-plaintext highlighter-rouge">--panning 3840x2160+2560+0</code> uses the following values for <code class="language-plaintext highlighter-rouge">A,C,D,E,F</code>:
+    <ul>
+      <li>A: 2560 (width of the primary display)</li>
+      <li>C: 1920 (width of the other display)</li>
+      <li>D: 1080 (height of the other display)</li>
+      <li>E: 2 (width scale factor)</li>
+      <li>F: 2 (height scale factor)</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">--right-of</code> means <code class="language-plaintext highlighter-rouge">DP-1</code> should go on the right of <code class="language-plaintext highlighter-rouge">eDP-1</code></li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">--panning</code> was super helpful because otherwise, there’s a bug in <code class="language-plaintext highlighter-rouge">xorg</code>
+that makes it so you can’t reach half of the other display. It’s going to be
+fixed in <code class="language-plaintext highlighter-rouge">xorg 1.20</code>, which is coming with Ubuntu 18.10 I think.</p>
+
+<p>In the mean time, <code class="language-plaintext highlighter-rouge">--panning</code> works great. Also, the scaling was a bit arbitrary
+I think, but <code class="language-plaintext highlighter-rouge">--scale 2x2</code> was a result of trial and error and it looks great.
+To my understanding you can do decimal values, which I didn’t experiment with.</p>
+
+<p>The last thing to do with all of htis is to throw my modified command into a
+shell script and thell <code class="language-plaintext highlighter-rouge">i3</code> to run it on startup.</p>
+
+<p>Oh and this whole <code class="language-plaintext highlighter-rouge">xrandr</code> thing has messed up the wallpaper of my other
+display. I think it’s definitely the <code class="language-plaintext highlighter-rouge">scale</code> option, but I’ll either fix it
+another day by tweaking the i3 settings or I’ll find a tiliing wallpaper.</p>
+
+<p>With that, I am almost done tweaking this Ubuntu install! Things are coming
+along pretty nice.</p>

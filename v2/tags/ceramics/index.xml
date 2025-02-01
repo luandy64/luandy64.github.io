@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ceramics on Andy Lu</title>
+    <link>/tags/ceramics/</link>
+    <description>Recent content in Ceramics on Andy Lu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Mar 2018 17:34:00 -0500</lastBuildDate>
+    
+	<atom:link href="/v2/tags/ceramics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New Cups</title>
+      <link>/blog/new-cups/</link>
+      <pubDate>Thu, 15 Mar 2018 17:34:00 -0500</pubDate>
+      
+      <guid>/blog/new-cups/</guid>
+      <description>Opening a kiln never gets old. Especially a wood kiln when you never know what will happen to your pieces. Exhibit A is the figure on the far right of the picture. It was standing just fine going into the kiln, but for what is likely a combination of a lot of different reasons, a leg fell off. It&amp;rsquo;s nothing a little super glue can&amp;rsquo;t fix, so there are no negative feelings there.</description>
+    </item>
+    
+  </channel>
+</rss>

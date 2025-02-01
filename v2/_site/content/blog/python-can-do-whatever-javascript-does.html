@@ -1,0 +1,37 @@
+<p>I have no idea if the title of this post is true. I don’t actually want to make
+that claim.</p>
+
+<p>I did discover one way of defining higher order functions in Python though,
+exactly like how I did with JavaScript yesterday.</p>
+
+<!--more-->
+
+<p>I’ll use the same example functions as yesterday, so if you get lost, go read
+that post first. I’ll wait right here.</p>
+
+<p>Here’s the example in Python, I figure it’s easiest to look over the whole
+piece of code first:</p>
+<pre><code class="language-python3">#!/usr/bin/env python3
+
+def plusNum(num):
+  return lambda x: x + num
+  
+plusOne = plusNum(1)
+plusTwo = plusNum(2)
+
+print(plusOne(2) == 3)
+print(plusTwo(2) == 4)
+</code></pre>
+
+<p>I’m not very familiar with Lambda functions, this was just the first thing I
+tried. If this had failed, I read in the Python Documentation that there is 
+a Standard library module called <code class="language-plaintext highlighter-rouge">functools</code>. Read about it 
+<a href="https://docs.python.org/3/library/functools.html">here</a>.</p>
+
+<p>I will look into all of this more and figure out how Python does it. I wonder
+what the most Pythonic way of doing it is too.</p>
+
+<hr />
+
+<p>Thanks for reading this post! Comments, questions, and feedback are always
+welcome.</p>

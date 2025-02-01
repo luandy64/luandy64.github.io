@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Finance on Andy Lu</title>
+    <link>/tags/finance/</link>
+    <description>Recent content in Finance on Andy Lu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 19 Sep 2018 00:35:01 -0400</lastBuildDate>
+    
+	<atom:link href="/v2/tags/finance/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Personal Finance</title>
+      <link>/blog/personal-finance/</link>
+      <pubDate>Wed, 19 Sep 2018 00:35:01 -0400</pubDate>
+      
+      <guid>/blog/personal-finance/</guid>
+      <description>I was determined to put something out tonight, so I just wanted to make a quick note of today.
+I delved into the world of personal finance and played around with a few versions of a budget. To assist myself in making the budget, I wrote a little Python script to juggle all of the variables I could think of. These all interacted in a way that I think resembles how the world actually works- as far as taxes and savings and whatnot goes.</description>
+    </item>
+    
+  </channel>
+</rss>

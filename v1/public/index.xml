@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Welcome! on Andy Lu</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content in Welcome! on Andy Lu</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Oct 2018 23:09:03 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clojure Loops</title>
+      <link>http://localhost:1313/blog/clojure-loops/</link>
+      <pubDate>Tue, 02 Oct 2018 23:09:03 -0400</pubDate>
+      <guid>http://localhost:1313/blog/clojure-loops/</guid>
+      <description>&lt;p&gt;While working on a practice problem today, I realized I have to loop over a set&#xA;of things. Acutally, to get super specific I wanted to use two loops, one nested&#xA;in the other to do some comparisons between elements in the set.&lt;/p&gt;&#xA;&lt;p&gt;I don&amp;rsquo;t understand using a loop over a function call though.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Loving Annoying Things</title>
+      <link>http://localhost:1313/blog/loving-annoying-things/</link>
+      <pubDate>Mon, 01 Oct 2018 23:05:42 -0400</pubDate>
+      <guid>http://localhost:1313/blog/loving-annoying-things/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been absorbing quite a bit of content from Gary Vaynerchuk lately. I really&#xA;like his idea of not making excuses and getting to work and eating dirt and&#xA;loving the process. I mean, it&amp;rsquo;s hard to argue against those things and risk&#xA;being associated with negative things; despite that, I personally don&amp;rsquo;t deny&#xA;they are good ideas. How much weight you give them is up to you.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Personal Finance</title>
+      <link>http://localhost:1313/blog/personal-finance/</link>
+      <pubDate>Wed, 19 Sep 2018 00:35:01 -0400</pubDate>
+      <guid>http://localhost:1313/blog/personal-finance/</guid>
+      <description>&lt;p&gt;I was determined to put something out tonight, so I just wanted to make a quick&#xA;note of today.&lt;/p&gt;&#xA;&lt;p&gt;I delved into the world of personal finance and played around with a few&#xA;versions of a budget. To assist myself in making the budget, I wrote a little&#xA;Python script to juggle all of the variables I could think of. These all&#xA;interacted in a way that I think resembles how the world actually works- as far&#xA;as taxes and savings and whatnot goes.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Clojure Day 1</title>
+      <link>http://localhost:1313/blog/clojure-day-1/</link>
+      <pubDate>Mon, 17 Sep 2018 21:13:57 -0400</pubDate>
+      <guid>http://localhost:1313/blog/clojure-day-1/</guid>
+      <description>&lt;p&gt;Today I started reading through this book to learn some Clojure. It&amp;rsquo;s called&#xA;&lt;a href=&#34;https://www.braveclojure.com/&#34;&gt;Clojure for the Brave and True&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I thought I would make myself a little cheatsheet that grows as I progress&#xA;through the book.&lt;/p&gt;&#xA;&lt;h2 id=&#34;forms&#34;&gt;Forms&lt;/h2&gt;&#xA;&lt;p&gt;These are like the building blocks of the files.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-clojure&#34; data-lang=&#34;clojure&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;This string&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Vectors&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;of&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;strings&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;are&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;thing&amp;#34;&lt;/span&gt;]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;operators&#34;&gt;Operators&lt;/h2&gt;&#xA;&lt;p&gt;All operations use the same structure. Given an operator &lt;code&gt;operator&lt;/code&gt; and operands&#xA;&lt;code&gt;op1, op2, ... opN&lt;/code&gt;, you use the following structure:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Minor Improvements</title>
+      <link>http://localhost:1313/blog/minor-improvements/</link>
+      <pubDate>Sun, 16 Sep 2018 22:50:34 -0400</pubDate>
+      <guid>http://localhost:1313/blog/minor-improvements/</guid>
+      <description>&lt;p&gt;Inspired by some posts I read on Medium, I found new reasons to build the habit&#xA;of keeping a journal. This whole idea deserves it&amp;rsquo;s own post one day, but for&#xA;now I was just bringing it up because my journal is oriented by months.&lt;/p&gt;&#xA;&lt;p&gt;For the month of September, I set out to blog more. More specifically, I devised&#xA;a schedule for myself and tried to stick to it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>It&#39;s Live</title>
+      <link>http://localhost:1313/blog/its-live/</link>
+      <pubDate>Sat, 15 Sep 2018 19:04:06 -0400</pubDate>
+      <guid>http://localhost:1313/blog/its-live/</guid>
+      <description>&lt;p&gt;After a few hours of work, I was able to get the bare minimum of this site&#xA;rewritten for &lt;code&gt;hugo&lt;/code&gt;. I&amp;rsquo;ll work on finalizing the &lt;code&gt;/home&lt;/code&gt; and &lt;code&gt;/about&lt;/code&gt; pages&#xA;slowly but surely; for now though, I am more than satisfied with just having the&#xA;blog up and running.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Thinking About Binary Numbers</title>
+      <link>http://localhost:1313/blog/thinking-about-binary-numbers/</link>
+      <pubDate>Tue, 11 Sep 2018 20:00:00 -0500</pubDate>
+      <guid>http://localhost:1313/blog/thinking-about-binary-numbers/</guid>
+      <description>&lt;p&gt;I was working with Lauren to teach her how to convert between binary and decimal&#xA;numbers. I think it&amp;rsquo;s super interesting to get to visit these ideas with her and&#xA;see how &amp;ldquo;fresh eyes&amp;rdquo; see them for the first time.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dual Monitor Setup</title>
+      <link>http://localhost:1313/blog/dual-monitor-setup/</link>
+      <pubDate>Mon, 10 Sep 2018 15:04:22 -0500</pubDate>
+      <guid>http://localhost:1313/blog/dual-monitor-setup/</guid>
+      <description>&lt;p&gt;Today was a lot of fiddling with &lt;code&gt;xrandr&lt;/code&gt; in order to get my laptop screen and&#xA;external monitor to play nice together.&lt;/p&gt;&#xA;&lt;p&gt;While it was a bit confusing at first, the &lt;a href=&#34;https://wiki.archlinux.org/index.php/HiDPI#Side_display&#34;&gt;article on ArchWiki about&#xA;HiDPI&lt;/a&gt; was very useful.&#xA;There wasn&amp;rsquo;t a command on the page that was exactly what I needed, but between&#xA;the wiki and the man pages, I was able to piece together what I needed.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hugo Brainstorming</title>
+      <link>http://localhost:1313/blog/hugo-brainstorming/</link>
+      <pubDate>Thu, 06 Sep 2018 18:00:00 -0500</pubDate>
+      <guid>http://localhost:1313/blog/hugo-brainstorming/</guid>
+      <description>&lt;p&gt;Today was a lot of interview prep. That&amp;rsquo;s great because I like the&#xA;self-reflection time, but it doesn&amp;rsquo;t leave too much time to work on these side&#xA;projects.&lt;/p&gt;&#xA;&lt;p&gt;In the spirit of documenting my process of thinking and working, I want to talk&#xA;about how I&amp;rsquo;m going to tackle the next step of this Hugo migration.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>i3 and Hugo Updates</title>
+      <link>http://localhost:1313/blog/i3-and-hugo-updates/</link>
+      <pubDate>Wed, 05 Sep 2018 18:00:00 -0500</pubDate>
+      <guid>http://localhost:1313/blog/i3-and-hugo-updates/</guid>
+      <description>&lt;h2 id=&#34;hugo-updates&#34;&gt;Hugo Updates&lt;/h2&gt;&#xA;&lt;p&gt;I spent a nice chunk of today figuring out what I wanted to do as far as styling goes. The theme I picked, &lt;code&gt;Hyde&lt;/code&gt;, was did a&#xA;majority of the work already.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Installing Ubuntu</title>
+      <link>http://localhost:1313/blog/installing-ubuntu/</link>
+      <pubDate>Tue, 04 Sep 2018 18:00:00 -0500</pubDate>
+      <guid>http://localhost:1313/blog/installing-ubuntu/</guid>
+      <description>&lt;p&gt;I probably should&amp;rsquo;ve written this while I was doing the install. Oh well, maybe&#xA;next time.&lt;/p&gt;&#xA;&lt;p&gt;I managed to get Ubuntu installed on an external hard drive today. The problem&#xA;started with me trying to figure out if I could resize the dual boot set up I&#xA;have on my Macbook. Reading through my options, I decided it was too hard and I&#xA;had other things to do- like work on my Hugo migration from yesterday.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>From Jekyll to Hugo</title>
+      <link>http://localhost:1313/blog/from-jekyll-to-hugo/</link>
+      <pubDate>Mon, 03 Sep 2018 17:18:19 -0500</pubDate>
+      <guid>http://localhost:1313/blog/from-jekyll-to-hugo/</guid>
+      <description>&lt;h2 id=&#34;some-background&#34;&gt;Some Background&lt;/h2&gt;&#xA;&lt;p&gt;It&amp;rsquo;s a new month, and so I have some new goals. One of them is to try and use my&#xA;website more- and by that I mean blog more. I like the idea of documenting bits&#xA;of every day so that in the future I can come back, look at these posts and&#xA;piece together how much I&amp;rsquo;ve changed and whatnot.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>My Studio Commandments</title>
+      <link>http://localhost:1313/blog/my-studio-commandments/</link>
+      <pubDate>Mon, 30 Jul 2018 21:22:23 -0500</pubDate>
+      <guid>http://localhost:1313/blog/my-studio-commandments/</guid>
+      <description>&lt;p&gt;Inspired by &lt;a href=&#34;https://superyesmore.com/studio-commandments-a5300cdf50b8a30ec909955b119f9174&#34;&gt;this&#xA;post&lt;/a&gt;&#xA;I read by Sarah Drasner, I thought it would be a really good idea to list my&#xA;&amp;ldquo;studio commandments&amp;rdquo;. Just like Sarah, I can see how these would change over&#xA;time. So while this is not what I would&amp;rsquo;ve asked of myself in college, I think&#xA;these rules fit my work style these days.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python for bash</title>
+      <link>http://localhost:1313/blog/python-for-bash/</link>
+      <pubDate>Sat, 28 Jul 2018 20:21:22 -0500</pubDate>
+      <guid>http://localhost:1313/blog/python-for-bash/</guid>
+      <description>&lt;p&gt;Do you like &lt;code&gt;bash&lt;/code&gt; scripts? Personally, I don&amp;rsquo;t.&lt;/p&gt;&#xA;&lt;p&gt;So when I need to write bash scripts, I figure out the commands I need, then&#xA;glue them together with Python.&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s been a while since I&amp;rsquo;ve needed to do this and while I neglected it before,&#xA;the &lt;code&gt;subprocess&lt;/code&gt; module is the best way to run these commands.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>New Strategy</title>
+      <link>http://localhost:1313/blog/new-strategy/</link>
+      <pubDate>Fri, 27 Jul 2018 19:20:21 -0500</pubDate>
+      <guid>http://localhost:1313/blog/new-strategy/</guid>
+      <description>&lt;p&gt;After analyzing my process for writing blog posts, I&amp;rsquo;ve realized some things.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lessons About Github Pages</title>
+      <link>http://localhost:1313/blog/lessons-about-github-pages/</link>
+      <pubDate>Sat, 21 Jul 2018 16:17:18 -0500</pubDate>
+      <guid>http://localhost:1313/blog/lessons-about-github-pages/</guid>
+      <description>&lt;p&gt;I woke up today and thought, &amp;ldquo;I should put some work into the Technical&#xA;Documentation Project&amp;rdquo;. It&amp;rsquo;s a lazy, easy-going Saturday: the perfect time to&#xA;put in about an hour of work or so and go from there.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Little bits about a lot of things</title>
+      <link>http://localhost:1313/blog/little-bits-about-a-lot-of-things/</link>
+      <pubDate>Fri, 20 Jul 2018 16:17:18 -0500</pubDate>
+      <guid>http://localhost:1313/blog/little-bits-about-a-lot-of-things/</guid>
+      <description>&lt;h2 id=&#34;little-bit-one-not-knowing-what-to-write-about&#34;&gt;Little Bit One: Not knowing what to write about&lt;/h2&gt;&#xA;&lt;p&gt;I woke up this morning not knowing what I want to talk about today. The other&#xA;days this week, I had a plan of attack for things I wanted to address.&lt;/p&gt;&#xA;&lt;p&gt;Reading some articles about blogging though, it seems that some people advoate&#xA;for not posting something every day. I hear the appeals to health and&#xA;well-being; I get that it can be stressful to try and come up with something to&#xA;say every day.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Python can do whatever JavaScript does</title>
+      <link>http://localhost:1313/blog/python-can-do-whatever-javascript-does/</link>
+      <pubDate>Thu, 19 Jul 2018 15:16:17 -0500</pubDate>
+      <guid>http://localhost:1313/blog/python-can-do-whatever-javascript-does/</guid>
+      <description>&lt;p&gt;I have no idea if the title of this post is true. I don&amp;rsquo;t actually want to make&#xA;that claim.&lt;/p&gt;&#xA;&lt;p&gt;I did discover one way of defining higher order functions in Python though,&#xA;exactly like how I did with JavaScript yesterday.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Higher Order Functions</title>
+      <link>http://localhost:1313/blog/higher-order-functions/</link>
+      <pubDate>Wed, 18 Jul 2018 14:15:16 -0500</pubDate>
+      <guid>http://localhost:1313/blog/higher-order-functions/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been reading &amp;ldquo;Eloquent JavaScript&amp;rdquo; by Marijn Haverbeke lately and today I&#xA;rediscovered the idea of a higher-order function. I first encountered these in&#xA;the freeCodeCamp curriculum, most likely, but I only glanced over them at the&#xA;time.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>How I start a project Part 1</title>
+      <link>http://localhost:1313/blog/how-i-start-a-project-part-1/</link>
+      <pubDate>Tue, 17 Jul 2018 13:14:15 -0500</pubDate>
+      <guid>http://localhost:1313/blog/how-i-start-a-project-part-1/</guid>
+      <description>&lt;p&gt;Scratching my head thinking about what I want to write about today, I started&#xA;skimming other blogs to get a sense of content and blogging frequency. Daily&#xA;blogging might be too much to be sustainable over time, but my rationale is I&#xA;learn something almost every day, so that&amp;rsquo;s what I&amp;rsquo;ll write about.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Daily Blog 1 Midsummer Check In</title>
+      <link>http://localhost:1313/blog/daily-blog-1-midsummer-check-in/</link>
+      <pubDate>Mon, 16 Jul 2018 12:13:14 -0500</pubDate>
+      <guid>http://localhost:1313/blog/daily-blog-1-midsummer-check-in/</guid>
+      <description>&lt;p&gt;Midsummer might not be the right word here. It&amp;rsquo;s close enough, but I&amp;rsquo;m more&#xA;like two thirds of the way in.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Some React Notes</title>
+      <link>http://localhost:1313/blog/some-react-notes/</link>
+      <pubDate>Sun, 24 Jun 2018 11:12:13 -0500</pubDate>
+      <guid>http://localhost:1313/blog/some-react-notes/</guid>
+      <description>&lt;p&gt;I just wanted to summerize and reflect on some notes from Day 5, 10, and 11 of&#xA;my &lt;code&gt;#100DaysOfCode&lt;/code&gt; challenge on Twitter.&lt;/p&gt;&#xA;&lt;p&gt;So far, React has been fairly easy to pick up. It started with introducing this&#xA;idea of a &lt;code&gt;JSX Element&lt;/code&gt;, which is a mix of HTML and JavaScript that wouldn&amp;rsquo;t&#xA;work as pure HTML or pure JavaScript. There are these ideas of nesting the JSX&#xA;elements and &lt;code&gt;state&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Writing In Org Mode</title>
+      <link>http://localhost:1313/blog/writing-in-org-mode/</link>
+      <pubDate>Mon, 18 Jun 2018 09:10:11 -0500</pubDate>
+      <guid>http://localhost:1313/blog/writing-in-org-mode/</guid>
+      <description>&lt;h2 id=&#34;changing-spacemacs&#34;&gt;Changing &lt;code&gt;.spacemacs&lt;/code&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Let me walk you through getting a fresh install of spacemacs to writing your first&#xA;blog post.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Follow the these instructions to download spacemacs&#xA;&lt;ul&gt;&#xA;&lt;li&gt;For me, I went to the &lt;a href=&#34;https://github.com/syl20bnr/spacemacs&#34;&gt;Spacemacs&lt;/a&gt;&#xA;GitHub page and followed the instructions for homebrew.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Notes on Vim</title>
+      <link>http://localhost:1313/blog/vim-notes/</link>
+      <pubDate>Sat, 16 Jun 2018 08:09:10 -0500</pubDate>
+      <guid>http://localhost:1313/blog/vim-notes/</guid>
+      <description>&lt;h2 id=&#34;honing-your-tools&#34;&gt;Honing your tools&lt;/h2&gt;&#xA;&lt;p&gt;It&amp;rsquo;s pretty common to see craftpeople creating tools for themselves for a&#xA;variety of reasons. Maybe it&amp;rsquo;s because the exact tool they need doesn&amp;rsquo;t exist;&#xA;perhaps a slight modification to a tool would help fit their style more.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Three Glass Problem</title>
+      <link>http://localhost:1313/blog/three-glass/</link>
+      <pubDate>Sun, 27 May 2018 18:19:20 -0500</pubDate>
+      <guid>http://localhost:1313/blog/three-glass/</guid>
+      <description>&lt;p&gt;I just came across the so called &amp;ldquo;Three Glass Problem&amp;rdquo; and thought I would try&#xA;and solve it. It turns out to be fairly trivial with a bit of abstract algebra!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>New Cups</title>
+      <link>http://localhost:1313/blog/new-cups/</link>
+      <pubDate>Thu, 15 Mar 2018 17:34:00 -0500</pubDate>
+      <guid>http://localhost:1313/blog/new-cups/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python Web Scraping</title>
+      <link>http://localhost:1313/blog/python-web-scraping/</link>
+      <pubDate>Thu, 01 Mar 2018 10:11:12 -0500</pubDate>
+      <guid>http://localhost:1313/blog/python-web-scraping/</guid>
+      <description>&lt;p&gt;Today was my first time in a long time trying to extract a bunch of information&#xA;from a website. I was trying to get a file from a set of webpages, so my first&#xA;thought was,&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Adding Mathjax</title>
+      <link>http://localhost:1313/blog/added-mathjax-support/</link>
+      <pubDate>Thu, 18 Jan 2018 14:15:16 -0500</pubDate>
+      <guid>http://localhost:1313/blog/added-mathjax-support/</guid>
+      <description>&lt;h2 id=&#34;commands-needed&#34;&gt;Commands Needed&lt;/h2&gt;&#xA;&lt;p&gt;The easiest step was from the &lt;a href=&#34;https://jekyllrb.com/docs/extras/&#34;&gt;Jekyll Docs&lt;/a&gt;,&#xA;which pointed me to this page on &lt;a href=&#34;http://www.gastonsanchez.com/visually-enforced/opinion/2014/02/16/Mathjax-with-jekyll/&#34;&gt;Visually&#xA;Enforced&lt;/a&gt;.&#xA;So the following piece of code went into my &lt;code&gt;/_layouts/default.html&lt;/code&gt; &amp;rsquo;s header:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>First Blog Post!</title>
+      <link>http://localhost:1313/blog/first-blog-post/</link>
+      <pubDate>Thu, 14 Dec 2017 14:59:39 -0600</pubDate>
+      <guid>http://localhost:1313/blog/first-blog-post/</guid>
+      <description>&lt;p&gt;The title says it all!&lt;/p&gt;&#xA;&lt;p&gt;I finally got this site up and running. I could not have done it without a lot&#xA;of googling and stumbling upon Jekyll.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

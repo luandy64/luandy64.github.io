@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://0.0.0.0:4000/" rel="alternate" type="text/html" /><updated>2025-01-31T19:50:29-06:00</updated><id>http://0.0.0.0:4000/feed.xml</id><title type="html">Andy Lu</title><subtitle></subtitle><author><name>Andy Lu</name></author><entry><title type="html">High Order Functions Kata</title><link href="http://0.0.0.0:4000/2018/09/13/high-order-functions-kata.html" rel="alternate" type="text/html" title="High Order Functions Kata" /><published>2018-09-13T21:00:00-05:00</published><updated>2018-09-13T21:00:00-05:00</updated><id>http://0.0.0.0:4000/2018/09/13/high-order-functions-kata</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/13/high-order-functions-kata.html"><![CDATA[<p>Every now and then I like to get on <a href="https://www.codewars.com/">CodeWars</a> to
+practice some coding challenges. Some problems can get pretty interesting and
+today was one of those days.</p>
+
+<p>A little while back, I wrote about <a href="https://andyrlu.com/2018/07/19/python-can-do-whatever-javascript-does.html">Higher Order
+Functions</a>
+in Python. Today, I got to use that idea “in the wild”.</p>
+
+<p>Here was the premise of the problem:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>seven(times(five)) # must return 35
+four(plus(nine)) # must return 13
+eight(minus(three)) # must return 5
+six(divided_by(two)) # must return 3
+</code></pre></div></div>
+
+<p>In my first crack at this problem, I went wrong in assuming the order of how
+functions are evaluated. I wrote something that evaluated the outside and worked
+its way in. The following test in <code class="language-plaintext highlighter-rouge">IDLE</code> proved me wrong though:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def a(b):
+  print("A")
+  
+def b(c):
+  print("B")
+  
+def c(d):
+  print("C")
+  
+a(b(c("gibberish")))
+</code></pre></div></div>
+
+<p>The above code has the following output:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C
+B
+A
+</code></pre></div></div>
+
+<p>I wish I made a note of what first attempt looked like. I can’t reproduce the
+mistake as I write this up. Anyway, here was my final solution:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def zero(op=None):
+    if op != None:
+        return op(0)
+    else:
+        return 0
+        
+def one(op=None):
+    if op != None:
+        return op(1)
+    else:
+        return 1
+        
+def two(op=None):
+    if op != None:
+        return op(2)
+    else:
+        return 2
+        
+def three(op=None):
+    if op != None:
+        return op(3)
+    else:
+        return 3
+        
+def four(op=None):
+    if op != None:
+        return op(4)
+    else:
+        return 4
+        
+def five(op=None):
+    if op != None:
+        return op(5)
+    else:
+        return 5
+
+def six(op=None):
+    if op != None:
+        return op(6)
+    else:
+        return 6
+
+def seven(op=None):
+    if op != None:
+        return op(7)
+    else:
+        return 7
+
+def eight(op=None):
+    if op != None:
+        return op(8)
+    else:
+        return 8
+
+def nine(op=None):
+    if op != None:
+        return op(9)
+    else:
+        return 9
+
+def plus(right=0): return lambda x: x + right
+
+def minus(right=0): return lambda x: x - right
+
+def times(right=0): return lambda x: x * right
+
+def divided_by(right=1): return lambda x: x // right
+</code></pre></div></div>
+
+<p>I just thought it was so cool that the operator functions are customized and
+created on the fly. I came into this challenge thinking, “Oh this will be
+straightforward, it didn’t say I couldn’t lean on the normal operator
+functions”. But I didn’t think I would have to use higher order functions. Had I
+not read about them before this, I would’ve had a lot of googling on my hands.</p>
+
+<p>I’m curious how the actual operator functions are implemented. Thank goodness I
+never have to reinvent that wheel.</p>]]></content><author><name>Andy Lu</name></author><summary type="html"><![CDATA[Every now and then I like to get on CodeWars to practice some coding challenges. Some problems can get pretty interesting and today was one of those days. A little while back, I wrote about Higher Order Functions in Python. Today, I got to use that idea “in the wild”. Here was the premise of the problem: seven(times(five)) # must return 35 four(plus(nine)) # must return 13 eight(minus(three)) # must return 5 six(divided_by(two)) # must return 3 In my first crack at this problem, I went wrong in assuming the order of how functions are evaluated. I wrote something that evaluated the outside and worked its way in. The following test in IDLE proved me wrong though: def a(b): print("A") def b(c): print("B") def c(d): print("C") a(b(c("gibberish"))) The above code has the following output: C B A I wish I made a note of what first attempt looked like. I can’t reproduce the mistake as I write this up. Anyway, here was my final solution: def zero(op=None): if op != None: return op(0) else: return 0 def one(op=None): if op != None: return op(1) else: return 1 def two(op=None): if op != None: return op(2) else: return 2 def three(op=None): if op != None: return op(3) else: return 3 def four(op=None): if op != None: return op(4) else: return 4 def five(op=None): if op != None: return op(5) else: return 5 def six(op=None): if op != None: return op(6) else: return 6 def seven(op=None): if op != None: return op(7) else: return 7 def eight(op=None): if op != None: return op(8) else: return 8 def nine(op=None): if op != None: return op(9) else: return 9 def plus(right=0): return lambda x: x + right def minus(right=0): return lambda x: x - right def times(right=0): return lambda x: x * right def divided_by(right=1): return lambda x: x // right I just thought it was so cool that the operator functions are customized and created on the fly. I came into this challenge thinking, “Oh this will be straightforward, it didn’t say I couldn’t lean on the normal operator functions”. But I didn’t think I would have to use higher order functions. Had I not read about them before this, I would’ve had a lot of googling on my hands. I’m curious how the actual operator functions are implemented. Thank goodness I never have to reinvent that wheel.]]></summary></entry><entry><title type="html">Thinking About Binary Numbers</title><link href="http://0.0.0.0:4000/2018/09/11/thinking-about-binary-numbers.html" rel="alternate" type="text/html" title="Thinking About Binary Numbers" /><published>2018-09-11T20:00:00-05:00</published><updated>2018-09-11T20:00:00-05:00</updated><id>http://0.0.0.0:4000/2018/09/11/thinking-about-binary-numbers</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/11/thinking-about-binary-numbers.html"><![CDATA[<p>I was working with Lauren to teach her how to convert between binary and decimal
+numbers. I think it’s super interesting to get to visit these ideas with her and
+see how “fresh eyes” see them for the first time.</p>
+
+<p>Another super interesting thing that I don’t think I’ve thought about before is
+multiplying binary numbers. She and I touched very briefly on what addition
+looks like.</p>
+
+<p>In the moment though, I could not wrap my head around what subtraction looks
+like. Multiplication I tried to think about since it’s “close” to what addition
+is, I figured I could reason through it.</p>
+
+<p>Keeping a simple example in mind, I tried to multiply <code class="language-plaintext highlighter-rouge">11</code> by <code class="language-plaintext highlighter-rouge">11</code>- these being
+<code class="language-plaintext highlighter-rouge">3</code> in decimal. Knowing the answer had to look like <code class="language-plaintext highlighter-rouge">1001</code>, I stumbled trying
+come up with a reason that “normal multiplication” works.</p>
+
+<p>This may or may not look confusing:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(11) * (11) = (11) * (10) + (11) * (1) = (110) + (11) = 1001  
+</code></pre></div></div>
+
+<p>There was a little voice in the back of my head that said I have seen this
+before, but where?</p>
+
+<p>It hit me. Abstract Algebra, of course.</p>
+
+<p>Binary numbers are just strings of zeros and ones, which is exactly what the
+group  of integers mod 2 is. Of course I’m using addition mod 2 as the group
+operation here, but I took a second to think about if I could easily throw
+multiplication into this.</p>
+
+<p>Now, Abstract Algebra was like 3 months ago, so I don’t remember all of the
+details of what needs to be satisfied to form a ring. I am pretty convinced this
+can be one of those “The proof is left to the readers as an exercise” moments.</p>
+<ul>
+  <li>For completions sake, I think the easiest way to convince yourself of this is
+that since we have a mapping from binary numbers to the natural numbers, and
+multiplication is closed with regards to the naturals, then that mapping is an
+isomorphism and we have closure of multiplication for binary numbers. But
+again, it’s been a while since I touched this material and I am purely going
+off of my gut here.</li>
+</ul>
+
+<p>So that’s how I convinced myself that I can multiply binary numbers. I carry out
+the “normal multiplication algorithm”, multiply mod 2, and remember to carry the
+1 when necessary.</p>
+
+<p>I need to start a series of posts or just a really long post where I note a
+handful of times where you can lift the hood on things and find some math. It’s
+a pretty neat moment when it happens, if you appreciate that sort of thing.</p>]]></content><author><name>Andy Lu</name></author><summary type="html"><![CDATA[I was working with Lauren to teach her how to convert between binary and decimal numbers. I think it’s super interesting to get to visit these ideas with her and see how “fresh eyes” see them for the first time. Another super interesting thing that I don’t think I’ve thought about before is multiplying binary numbers. She and I touched very briefly on what addition looks like. In the moment though, I could not wrap my head around what subtraction looks like. Multiplication I tried to think about since it’s “close” to what addition is, I figured I could reason through it. Keeping a simple example in mind, I tried to multiply 11 by 11- these being 3 in decimal. Knowing the answer had to look like 1001, I stumbled trying come up with a reason that “normal multiplication” works. This may or may not look confusing: (11) * (11) = (11) * (10) + (11) * (1) = (110) + (11) = 1001 There was a little voice in the back of my head that said I have seen this before, but where? It hit me. Abstract Algebra, of course. Binary numbers are just strings of zeros and ones, which is exactly what the group of integers mod 2 is. Of course I’m using addition mod 2 as the group operation here, but I took a second to think about if I could easily throw multiplication into this. Now, Abstract Algebra was like 3 months ago, so I don’t remember all of the details of what needs to be satisfied to form a ring. I am pretty convinced this can be one of those “The proof is left to the readers as an exercise” moments. For completions sake, I think the easiest way to convince yourself of this is that since we have a mapping from binary numbers to the natural numbers, and multiplication is closed with regards to the naturals, then that mapping is an isomorphism and we have closure of multiplication for binary numbers. But again, it’s been a while since I touched this material and I am purely going off of my gut here. So that’s how I convinced myself that I can multiply binary numbers. I carry out the “normal multiplication algorithm”, multiply mod 2, and remember to carry the 1 when necessary. I need to start a series of posts or just a really long post where I note a handful of times where you can lift the hood on things and find some math. It’s a pretty neat moment when it happens, if you appreciate that sort of thing.]]></summary></entry><entry><title type="html">Dual Monitor Setup</title><link href="http://0.0.0.0:4000/2018/09/10/dual-monitor-setup.html" rel="alternate" type="text/html" title="Dual Monitor Setup" /><published>2018-09-10T15:04:22-05:00</published><updated>2018-09-10T15:04:22-05:00</updated><id>http://0.0.0.0:4000/2018/09/10/dual-monitor-setup</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/10/dual-monitor-setup.html"><![CDATA[<p>Today was a lot of fiddling with <code class="language-plaintext highlighter-rouge">xrandr</code> in order to get my laptop screen and
+external monitor to play nice together.</p>
+
+<p>While it was a bit confusing at first, the <a href="https://wiki.archlinux.org/index.php/HiDPI#Side_display">article on ArchWiki about
+HiDPI</a> was very useful.
+There wasn’t a command on the page that was exactly what I needed, but between
+the wiki and the man pages, I was able to piece together what I needed.</p>
+
+<p>Here’s how I figured out the numbers I needed to create a HiDPI display and a
+not HiDPI display that sit next to each other. My exact setup is as follows:</p>
+<ul>
+  <li>My <code class="language-plaintext highlighter-rouge">primary</code> display is named <code class="language-plaintext highlighter-rouge">eDP-1</code>, has a resolution of <code class="language-plaintext highlighter-rouge">2560x1600</code>, and a
+DPI of <code class="language-plaintext highlighter-rouge">227</code> pixels per inch</li>
+  <li>My other display is named <code class="language-plaintext highlighter-rouge">DP-1</code>, has a resolution of <code class="language-plaintext highlighter-rouge">1920x1080</code>, and a DPI
+of <code class="language-plaintext highlighter-rouge">166</code> pixels per inch</li>
+  <li>I want my other display to the <code class="language-plaintext highlighter-rouge">right-of</code> my primary one</li>
+</ul>
+
+<p>To get the DPI of my displays, I used <a href="http://dpi.lv/">this site</a>, and just
+opened it in Chrome on each monitor.</p>
+
+<p>To get the resolution of my displays, <code class="language-plaintext highlighter-rouge">xrandr</code> will tell you that if you just
+type <code class="language-plaintext highlighter-rouge">xrandr</code> into the terminal. It displays a little <code class="language-plaintext highlighter-rouge">*</code> next to the
+resolution. This is also how I got the name of each display too.</p>
+
+<p>From the ArchWiki, I grabbed the following formula:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xrandr --output eDP-1 --auto --output HDMI-1 --auto --panning [C*E]x[D*F]+[A]+0
+--scale [E]x[F] --right-of eDP-1
+</code></pre></div></div>
+
+<p>I had to make the following modifications though:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xrandr --dpi 227 --output eDP-1 --auto --output DP-1 --auto --panning
+3840x2160+2560+0 --scale 2x2 --right-of eDP-1
+</code></pre></div></div>
+
+<p>Here’s what those changes mean:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">--dpi 227</code> is the higher DPI value between the two monitors I am using</li>
+  <li><code class="language-plaintext highlighter-rouge">--output DP-1</code> was changed from <code class="language-plaintext highlighter-rouge">--output HDMI-1</code> because that’s what my
+display is named</li>
+  <li><code class="language-plaintext highlighter-rouge">--panning 3840x2160+2560+0</code> uses the following values for <code class="language-plaintext highlighter-rouge">A,C,D,E,F</code>:
+    <ul>
+      <li>A: 2560 (width of the primary display)</li>
+      <li>C: 1920 (width of the other display)</li>
+      <li>D: 1080 (height of the other display)</li>
+      <li>E: 2 (width scale factor)</li>
+      <li>F: 2 (height scale factor)</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">--right-of</code> means <code class="language-plaintext highlighter-rouge">DP-1</code> should go on the right of <code class="language-plaintext highlighter-rouge">eDP-1</code></li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">--panning</code> was super helpful because otherwise, there’s a bug in <code class="language-plaintext highlighter-rouge">xorg</code>
+that makes it so you can’t reach half of the other display. It’s going to be
+fixed in <code class="language-plaintext highlighter-rouge">xorg 1.20</code>, which is coming with Ubuntu 18.10 I think.</p>
+
+<p>In the mean time, <code class="language-plaintext highlighter-rouge">--panning</code> works great. Also, the scaling was a bit arbitrary
+I think, but <code class="language-plaintext highlighter-rouge">--scale 2x2</code> was a result of trial and error and it looks great.
+To my understanding you can do decimal values, which I didn’t experiment with.</p>
+
+<p>The last thing to do with all of htis is to throw my modified command into a
+shell script and thell <code class="language-plaintext highlighter-rouge">i3</code> to run it on startup.</p>
+
+<p>Oh and this whole <code class="language-plaintext highlighter-rouge">xrandr</code> thing has messed up the wallpaper of my other
+display. I think it’s definitely the <code class="language-plaintext highlighter-rouge">scale</code> option, but I’ll either fix it
+another day by tweaking the i3 settings or I’ll find a tiliing wallpaper.</p>
+
+<p>With that, I am almost done tweaking this Ubuntu install! Things are coming
+along pretty nice.</p>]]></content><author><name>Andy Lu</name></author><summary type="html"><![CDATA[Today was a lot of fiddling with xrandr in order to get my laptop screen and external monitor to play nice together. While it was a bit confusing at first, the article on ArchWiki about HiDPI was very useful. There wasn’t a command on the page that was exactly what I needed, but between the wiki and the man pages, I was able to piece together what I needed. Here’s how I figured out the numbers I needed to create a HiDPI display and a not HiDPI display that sit next to each other. My exact setup is as follows: My primary display is named eDP-1, has a resolution of 2560x1600, and a DPI of 227 pixels per inch My other display is named DP-1, has a resolution of 1920x1080, and a DPI of 166 pixels per inch I want my other display to the right-of my primary one To get the DPI of my displays, I used this site, and just opened it in Chrome on each monitor. To get the resolution of my displays, xrandr will tell you that if you just type xrandr into the terminal. It displays a little * next to the resolution. This is also how I got the name of each display too. From the ArchWiki, I grabbed the following formula: xrandr --output eDP-1 --auto --output HDMI-1 --auto --panning [C*E]x[D*F]+[A]+0 --scale [E]x[F] --right-of eDP-1 I had to make the following modifications though: xrandr --dpi 227 --output eDP-1 --auto --output DP-1 --auto --panning 3840x2160+2560+0 --scale 2x2 --right-of eDP-1 Here’s what those changes mean: --dpi 227 is the higher DPI value between the two monitors I am using --output DP-1 was changed from --output HDMI-1 because that’s what my display is named --panning 3840x2160+2560+0 uses the following values for A,C,D,E,F: A: 2560 (width of the primary display) C: 1920 (width of the other display) D: 1080 (height of the other display) E: 2 (width scale factor) F: 2 (height scale factor) --right-of means DP-1 should go on the right of eDP-1 The --panning was super helpful because otherwise, there’s a bug in xorg that makes it so you can’t reach half of the other display. It’s going to be fixed in xorg 1.20, which is coming with Ubuntu 18.10 I think. In the mean time, --panning works great. Also, the scaling was a bit arbitrary I think, but --scale 2x2 was a result of trial and error and it looks great. To my understanding you can do decimal values, which I didn’t experiment with. The last thing to do with all of htis is to throw my modified command into a shell script and thell i3 to run it on startup. Oh and this whole xrandr thing has messed up the wallpaper of my other display. I think it’s definitely the scale option, but I’ll either fix it another day by tweaking the i3 settings or I’ll find a tiliing wallpaper. With that, I am almost done tweaking this Ubuntu install! Things are coming along pretty nice.]]></summary></entry><entry><title type="html">Hugo Brainstorming</title><link href="http://0.0.0.0:4000/2018/09/06/hugo-brainstorming.html" rel="alternate" type="text/html" title="Hugo Brainstorming" /><published>2018-09-06T18:00:00-05:00</published><updated>2018-09-06T18:00:00-05:00</updated><id>http://0.0.0.0:4000/2018/09/06/hugo-brainstorming</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/06/hugo-brainstorming.html"><![CDATA[<p>Today was a lot of interview prep. That’s great because I like the
+self-reflection time, but it doesn’t leave too much time to work on these side
+projects.</p>
+
+<p>In the spirit of documenting my process of thinking and working, I want to talk
+about how I’m going to tackle the next step of this Hugo migration.</p>
+
+<p>The problems I’m facing, in no particular order, are:</p>
+<ul>
+  <li>I need to change the front matter from how it is to something more consistent
+for Hugo. Not all of my posts are consistent, but I can easily make it so</li>
+  <li>One pet peeve of of mine is the way images are handled in Markdown.
+    <ul>
+      <li>For one, it jacks up my file format/layout because sometimes the image is
+inserted at the end of a line and I haven’t explored how to wrap the line to
+my desired 80 characters. Perhaps it really isn’t a problem and I just need
+to read some documentation. But it’s on my mind</li>
+      <li>The way I would like to handle it is to reference some variable name in my
+Markdown, which is then processed later to be replaced by the properly
+formated <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> tag and whatnot. Each blog post already stores some
+metadata about itself; moreover, it’s in a <code class="language-plaintext highlighter-rouge">key:value</code> sort of thing with
+<code class="language-plaintext highlighter-rouge">YAML</code>, so how hard can it be to say “If you see this <code class="language-plaintext highlighter-rouge">key</code> in the Markdown,
+then swap it with the <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> where the source is the <code class="language-plaintext highlighter-rouge">value</code>”. I did a tiny
+bit of research and it sounds like this feature is possible with something
+called <code class="language-plaintext highlighter-rouge">shortcodes</code>. I’ll look into and you’ll find me writing about it in a
+few days, I’m sure</li>
+    </ul>
+  </li>
+  <li>I need to figure out how to restructure my posts to match the “Hugo way”. I
+know that Jekyll was very very very flexible with whatever I threw at it. And
+I’ve read that Hugo is pickier. So I need to make this transition work and
+work properly so that I’m not fiddling with this down the road
+    <ul>
+      <li>Disclaimer: It’s not that I don’t like fiddling with this site. It’s
+literally one of the main reasons it exists. Heck, my love of tinkering is
+what drives this migration in the first place. I have enough experience
+with these static site generators that I’d like to make sure I do things
+right from now on. I’m done with the “I’m learning and let’s just get this
+functional”.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>So to fix that front matter issue, I’m definitely writing a script to do it. I
+have just enough blog posts to say, no way I’m not doing this by hand. I’ve
+thought about 7 steps that the script should take:</p>
+<ul>
+  <li>Read in the current front matter</li>
+  <li>Compare it to my “ideal list” of key-value pairs and keep the good ones</li>
+  <li>Add the missing ones with default values I need to go in and change</li>
+  <li>Add the filename to some list that tells me to look at some thing</li>
+  <li>Also note which files have an image in them</li>
+  <li>Make a new file containing the new front matter and the old content</li>
+  <li>Put this new file in some target directory</li>
+</ul>
+
+<p>The code will definitely look like: for every file in my <code class="language-plaintext highlighter-rouge">/posts</code> folder, do the
+thing.</p>]]></content><author><name>Andy Lu</name></author><summary type="html"><![CDATA[Today was a lot of interview prep. That’s great because I like the self-reflection time, but it doesn’t leave too much time to work on these side projects. In the spirit of documenting my process of thinking and working, I want to talk about how I’m going to tackle the next step of this Hugo migration. The problems I’m facing, in no particular order, are: I need to change the front matter from how it is to something more consistent for Hugo. Not all of my posts are consistent, but I can easily make it so One pet peeve of of mine is the way images are handled in Markdown. For one, it jacks up my file format/layout because sometimes the image is inserted at the end of a line and I haven’t explored how to wrap the line to my desired 80 characters. Perhaps it really isn’t a problem and I just need to read some documentation. But it’s on my mind The way I would like to handle it is to reference some variable name in my Markdown, which is then processed later to be replaced by the properly formated &lt;img&gt; tag and whatnot. Each blog post already stores some metadata about itself; moreover, it’s in a key:value sort of thing with YAML, so how hard can it be to say “If you see this key in the Markdown, then swap it with the &lt;img&gt; where the source is the value”. I did a tiny bit of research and it sounds like this feature is possible with something called shortcodes. I’ll look into and you’ll find me writing about it in a few days, I’m sure I need to figure out how to restructure my posts to match the “Hugo way”. I know that Jekyll was very very very flexible with whatever I threw at it. And I’ve read that Hugo is pickier. So I need to make this transition work and work properly so that I’m not fiddling with this down the road Disclaimer: It’s not that I don’t like fiddling with this site. It’s literally one of the main reasons it exists. Heck, my love of tinkering is what drives this migration in the first place. I have enough experience with these static site generators that I’d like to make sure I do things right from now on. I’m done with the “I’m learning and let’s just get this functional”. So to fix that front matter issue, I’m definitely writing a script to do it. I have just enough blog posts to say, no way I’m not doing this by hand. I’ve thought about 7 steps that the script should take: Read in the current front matter Compare it to my “ideal list” of key-value pairs and keep the good ones Add the missing ones with default values I need to go in and change Add the filename to some list that tells me to look at some thing Also note which files have an image in them Make a new file containing the new front matter and the old content Put this new file in some target directory The code will definitely look like: for every file in my /posts folder, do the thing.]]></summary></entry><entry><title type="html">i3 and Hugo Updates</title><link href="http://0.0.0.0:4000/2018/09/05/i3-and-hugo-updates.html" rel="alternate" type="text/html" title="i3 and Hugo Updates" /><published>2018-09-05T18:00:00-05:00</published><updated>2018-09-05T18:00:00-05:00</updated><id>http://0.0.0.0:4000/2018/09/05/i3-and-hugo-updates</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/05/i3-and-hugo-updates.html"><![CDATA[<h2 id="hugo-updates">Hugo Updates</h2>
+<p>I spent a nice chunk of today figuring out what I wanted to do as far as styling goes. The theme I picked, <code class="language-plaintext highlighter-rouge">Hyde</code>, was did a 
+majority of the work already.</p>
+
+<p>I just had to hook into the snippet of HTML that defines the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> and add my own stylesheet. From there, the only change I 
+wanted to make was making everything a card. But then that led to some padding issues, so I patched that really quickly.</p>
+
+<p>Overall, I’m really satisfied with the design. Now I just have to move over all of the pages and blog posts. I learned that I 
+was pretty inconsistent with the front matter I included in the blog posts. I’ll just have to go back and clean things up. I 
+will probably automate the adding and removing of the keys, but will have to add the values afterwards.</p>
+
+<h2 id="i3-updates">i3 Updates</h2>
+<p>I’ve been gluing together bits and pieces of various configurations to get i3 to work. Some parts were quick:</p>
+<ul>
+  <li>The background was straight forward</li>
+  <li>Setting up my workspaces was easy
+    <ul>
+      <li>Though, I haven’t bound certain applications to my named workspaces yet</li>
+    </ul>
+  </li>
+  <li>Installing Font Awesome was much easier than Source Code Pro. I might have to find an alternative here. It’s mainly for <br />
+Spacemacs, but it seems to function fine without it.</li>
+  <li>I’ve themed i3 to match the Nord Theme for Spacemacs</li>
+</ul>
+
+<p>The only- what I would call- dire issue is I can’t get the brightness control to work. So as I sit here and type this, there’s this blindingly bright screen that I’m forced to look at and can do nothing about.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+<p>I put some config stuff from my Mac onto Github, but I later learned, I didn’t put some of the files I needed. I’m hoping to 
+finish up with all of this i3 stuff soon and I can throw all of those files up too. I think a really nice guide is due too 
+because I wouldn’t want someone else to try and do the same thing here and be as lost as I was.</p>]]></content><author><name>Andy Lu</name></author><summary type="html"><![CDATA[Hugo Updates I spent a nice chunk of today figuring out what I wanted to do as far as styling goes. The theme I picked, Hyde, was did a majority of the work already.]]></summary></entry><entry><title type="html">Installing Ubuntu</title><link href="http://0.0.0.0:4000/2018/09/04/installing-ubuntu.html" rel="alternate" type="text/html" title="Installing Ubuntu" /><published>2018-09-04T00:00:00-05:00</published><updated>2018-09-04T00:00:00-05:00</updated><id>http://0.0.0.0:4000/2018/09/04/installing-ubuntu</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/04/installing-ubuntu.html"><![CDATA[<p>I probably should’ve written this while I was doing the install. Oh well, maybe
+next time.</p>
+
+<p>I managed to get Ubuntu installed on an external hard drive today. The problem
+started with me trying to figure out if I could resize the dual boot set up I
+have on my Macbook. Reading through my options, I decided it was too hard and I
+had other things to do- like work on my Hugo migration from yesterday.</p>
+
+<p>Then I thought, “Oh, well I have a spare external drive, I wonder how easy it
+is to install an OS on there”. A quick search led me to
+<a href="https://www.youtube.com/watch?v=8lP57J3hKOU">this video</a>, and with a few
+modifications, I was up and running.</p>
+
+<p>Here’s how I did it (More detailed instructions are in the video, I’m writing
+this from memory):</p>
+<ul>
+  <li>Download an <code class="language-plaintext highlighter-rouge">.iso</code> file. I got mine from the Ubuntu site.</li>
+  <li>Flash it to a USB drive using <a href="https://etcher.io/">Etcher</a></li>
+  <li>Insert the USB,restart the Mac, holding <code class="language-plaintext highlighter-rouge">Alt</code> when it boots up, and boot to
+the live USB you just made</li>
+  <li>Open a Terminal and type <code class="language-plaintext highlighter-rouge">sudo gparted</code></li>
+  <li>Insert the external drive</li>
+  <li>Change the drive you are looking at to the external drive</li>
+  <li>Partition the drive into whatever sized chunks you want, as long as the
+following are satisfied:
+    <ul>
+      <li>The “Main” partition should be formatted to <code class="language-plaintext highlighter-rouge">Ext4 Linux Journaled</code></li>
+      <li>Mount this “Main” partition on <code class="language-plaintext highlighter-rouge">/</code></li>
+      <li>Make a smaller partition formatted to <code class="language-plaintext highlighter-rouge">Linux swap</code>, it should be about
+4GB (That’s what the guy in the video did, I’ve heard there’s a lot of
+debate about how much swap space you should have. I went with 4GB to
+keep things simple)</li>
+    </ul>
+  </li>
+  <li>At the bottom of the GUI, there’s a drop down menu for where the boot loader
+should sit. Give it the option of wherever your external drive is mounted,
+but the option with no numbers at the end. It will look something like <code class="language-plaintext highlighter-rouge">/sdd</code></li>
+  <li>Run the partition</li>
+  <li>Close the windows and open up the <code class="language-plaintext highlighter-rouge">Install Ubuntu</code> wizard that’s sitting on
+the Desktop</li>
+  <li>Run through the wizard until it asks how you want to install Ubuntu, pick
+the <code class="language-plaintext highlighter-rouge">Something else</code> option</li>
+  <li>Pick your external drive as where you want Ubuntu to be installed. Double
+check you picked the right one, or else you risk losing data</li>
+  <li>… Finish the wizard and reboot your computer, loading up your new Ubuntu
+installation</li>
+</ul>
+
+<p>I think that’s all of the steps. From there, do what you normally would do and
+run updates, install new software, pick out a theme and some icons.</p>
+
+<p>I’ve been in this rabbithole of picking a new Desktop Environment. After going
+through a ton of posts on the very SFW
+<a href="https://www.reddit.com/r/unixporn/">r/UnixPorn</a>, I decided to go with <code class="language-plaintext highlighter-rouge">i3</code>.
+I’m still not sure about how to use a lot of things. Maybe 30 minutes before
+writing this post, I figured out how to switch workspaces.</p>
+
+<p>So tomorrow will probably be real work, but later this week, I’ll detail all
+of the stuff I’ve been downloading and configuring. And at some point I’ll have
+to delete the Ubuntu that I’m dual booting too. Fingers crossed that I get it
+right and don’t delete my Mac partition- I sadly can’t say I haven’t done that
+before. But hey, that’s what backups are for!</p>]]></content><author><name>Andy Lu</name></author><summary type="html"><![CDATA[I probably should’ve written this while I was doing the install. Oh well, maybe next time.]]></summary></entry><entry><title type="html">From Jekyll to Hugo</title><link href="http://0.0.0.0:4000/2018/09/03/from-jekyll-to-hugo.html" rel="alternate" type="text/html" title="From Jekyll to Hugo" /><published>2018-09-03T00:00:00-05:00</published><updated>2018-09-03T00:00:00-05:00</updated><id>http://0.0.0.0:4000/2018/09/03/from-jekyll-to-hugo</id><content type="html" xml:base="http://0.0.0.0:4000/2018/09/03/from-jekyll-to-hugo.html"><![CDATA[<h1 id="some-background">Some Background</h1>
+<p>It’s a new month, and so I have some new goals. One of them is to try and use my
+website more- and by that I mean blog more. I like the idea of documenting bits
+of every day so that in the future I can come back, look at these posts and
+piece together how much I’ve changed and whatnot.</p>
+
+<p>So to kick off trying to blog more, I decided to try and fix some of the pain
+points I was having with my site now. I’ve been doing a bit of research into
+static site generators, and decided that maybe using Hugo would be fun. A
+long-ish term goal of mine is to dive into Golang a bit, so maybe this can be a
+good way to dip my toes in the water.</p>
+
+<p>I’m planning on doing a more thorough write up of my thoughts on this in the
+future, so let’s move on to what I did today.</p>
+
+<h2 id="setting-up-hugo">Setting up Hugo</h2>
+<p>So on my Mac, it’s quick and easy to install Hugo. I just ran <code class="language-plaintext highlighter-rouge">brew install hugo</code>.</p>
+
+<p>For my theme, I looked through all of my options on <a href="https://themes.gohugo.io">Hugo
+Themes</a> and decided to go with the <code class="language-plaintext highlighter-rouge">Hyde</code> theme. I’m a
+big fan of the two colomn design, where one column serves as a header. I’d like
+to write my own theme one day because I am also a huge fan of card-based
+elements and I haven’t seen a theme that does it yet.</p>
+
+<p>After setting up the theme, there was nothing left to do but to layout how I
+wanted the sitemap to work. I quickly figured out how to add links to the
+sidebar using the method the theme writer(s) intended. The hardest part of what
+I did today was to get the individual pages to be structured the way I wanted
+them to be. Using Jekyll, it was easy because you put it in the front matter or
+just straight up work an <code class="language-plaintext highlighter-rouge">index.html</code> file. I dug through the Hugo Docs and
+found that Hugo really leans on the structure of the directory your site is
+sitting in. So I made all of the appropriate directories in the <code class="language-plaintext highlighter-rouge">/layouts</code>
+folder, peeked at the <code class="language-plaintext highlighter-rouge">Hyde</code> theme folder to get the correct file names, and
+made the appropriate <code class="language-plaintext highlighter-rouge">list.html</code> and <code class="language-plaintext highlighter-rouge">single.html</code> files.</p>
+
+<h2 id="moving-forward">Moving forward</h2>
+<p>Next steps are probably to get the CSS set up how I want it. Then I’ll work on
+porting over old blog posts and fleshing out the <code class="language-plaintext highlighter-rouge">About Me</code> section. I haven’t
+tried to set this up on Github yet, but I’ve seen instructions for it, and it’s
+not too scary looking.</p>
+
+<hr />
+<p>Thanks for reading this post! Comments, questions, and feedback are always welcome.</p>]]></content><author><name>Andy Lu</name></author><summary type="html"><![CDATA[Some Background It’s a new month, and so I have some new goals. One of them is to try and use my website more- and by that I mean blog more. I like the idea of documenting bits of every day so that in the future I can come back, look at these posts and piece together how much I’ve changed and whatnot.]]></summary></entry><entry><title type="html">My Studio Commandments</title><link href="http://0.0.0.0:4000/2018/07/30/my-studio-commandments.html" rel="alternate" type="text/html" title="My Studio Commandments" /><published>2018-07-30T00:00:00-05:00</published><updated>2018-07-30T00:00:00-05:00</updated><id>http://0.0.0.0:4000/2018/07/30/my-studio-commandments</id><content type="html" xml:base="http://0.0.0.0:4000/2018/07/30/my-studio-commandments.html"><![CDATA[<p>Inspired by <a href="https://superyesmore.com/studio-commandments-a5300cdf50b8a30ec909955b119f9174">this
+post</a>
+I read by Sarah Drasner, I thought it would be a really good idea to list my
+“studio commandments”. Just like Sarah, I can see how these would change over
+time. So while this is not what I would’ve asked of myself in college, I think
+these rules fit my work style these days.</p>
+
+<p>I also like that this serves as a great snapshot of how my work style changes
+with time. I am curious to see which rules persist or which rules get heavily
+modified.</p>
+
+<p>Without further ado,</p>
+
+<h3 id="my-rules">My Rules</h3>
+<ol>
+  <li>Start each day with a cup of coffee
+    <ul>
+      <li>Okay, I lied, this one speaks to younger me too. I’m sure this one is also
+not going anywhere any time soon</li>
+    </ul>
+  </li>
+  <li>Keep water in arms reach, refill when empty
+    <ul>
+      <li>This is a dual purpose rule. One is to counter any diuretic effects of
+caffeine</li>
+      <li>Two is to make sure I get up every now and tehn to walk. I typically go
+through 24 oz. (~710 mL for you metric folks) per 3 hours</li>
+    </ul>
+  </li>
+  <li>Race yourself: Set a crazy sounding time to finish a chunck of work/task and
+try to achieve it
+    <ul>
+      <li>I think this helps in trying to push me to work smarter. Best case
+scenario I do what I set out to do; worst case scenario I spend a little more
+time on the task and get it done anyway</li>
+    </ul>
+  </li>
+  <li>Getting distracted is okay, just don’t get too distracted
+    <ul>
+      <li>I know it’s inevitable, but once I notice that I am distracted (obviously
+easier said than done), I can start making decisions to get back to work</li>
+    </ul>
+  </li>
+  <li>Make notes of the process/steps of whatever task you do. For yourself and for
+others in the same boat as you
+    <ul>
+      <li>I know how it feels to reach some complicated documentation and feel
+discouraged that it is a pain to read and try an comprehend. So this one
+stems a bit from the boyscout rule: I want to leave the internet a little
+better than when I found it</li>
+    </ul>
+  </li>
+</ol>
+
+<p>I will take some time to read over these before I work, just to make sure it
+really sticks. I am curious to see what is wishful thinking or what is a rule I
+choose to live by.</p>
+
+<p>This all seems like I need to follow up with a post about work life balance
+means to me. Maybe tomorrow’s post can be about that!</p>]]></content><author><name>Andy Lu</name></author><summary type="html"><![CDATA[Inspired by this post I read by Sarah Drasner, I thought it would be a really good idea to list my “studio commandments”. Just like Sarah, I can see how these would change over time. So while this is not what I would’ve asked of myself in college, I think these rules fit my work style these days.]]></summary></entry><entry><title type="html">Python for bash</title><link href="http://0.0.0.0:4000/2018/07/28/python-for-bash.html" rel="alternate" type="text/html" title="Python for bash" /><published>2018-07-28T00:00:00-05:00</published><updated>2018-07-28T00:00:00-05:00</updated><id>http://0.0.0.0:4000/2018/07/28/python-for-bash</id><content type="html" xml:base="http://0.0.0.0:4000/2018/07/28/python-for-bash.html"><![CDATA[<p>Do you like <code class="language-plaintext highlighter-rouge">bash</code> scripts? Personally, I don’t.</p>
+
+<p>So when I need to write bash scripts, I figure out the commands I need, then 
+glue them together with Python.</p>
+
+<p>It’s been a while since I’ve needed to do this and while I neglected it before,
+the <code class="language-plaintext highlighter-rouge">subprocess</code> module is the best way to run these commands.</p>
+
+<h2 id="a-quick-intro-to-pythons-subprocesspy">A Quick Intro to Python’s <code class="language-plaintext highlighter-rouge">subprocess.py</code></h2>
+
+<h3 id="development-environment">Development Environment</h3>
+<p>If you are following along with me here, you’ll want to be using at least <code class="language-plaintext highlighter-rouge">python
+3.5</code>. Any version before that and you’ll have to use a different API in this
+module to do the things I’ll show you.</p>
+
+<h3 id="the-command">The Command</h3>
+<p>The workhorse of this module is the <code class="language-plaintext highlighter-rouge">subprocess.Popen</code> class. There are a ton of
+arguments you can pass this class, but it can be overwhelming- and not to
+mention overkill- if you’re new to this.</p>
+
+<p>Thankfully, there’s a function in the <code class="language-plaintext highlighter-rouge">subprocess</code> module that we can interface
+with instead: <code class="language-plaintext highlighter-rouge">subprocess.run()</code>.</p>
+
+<p>Here’s the function signature with some typical arguments passed in. (I pulled
+this from the <a href="https://docs.python.org/3/library/subprocess.html">Docs</a>)</p>
+<pre><code class="language-python3">subprocess.run(args, *, stdin=None, input=None, stdout=None, stderr=None,
+shell=False, cwd=None, timeout=None, check=False, encoding=None, errors=None,
+text=None, env=None)*)
+</code></pre>
+
+<p>That looks pretty complicated, but we can actually ignore most of it and still
+do pretty neat things. Let’s look at some examples.</p>
+
+<h4 id="a-basic-example">A Basic Example</h4>
+<pre><code class="language-python3">import subprocess as sp
+
+result = sp.run("pwd")
+print(result)
+</code></pre>
+
+<p>The output:</p>
+<pre><code class="language-python3">/this/is/the/path/to/where/my/terminal/was/
+CompletedProcess(args="pwd", returncode=0)
+</code></pre>
+
+<p>The output of this is the path to the directory you ran this script from;
+exactly what you would expect. Then there’s some <code class="language-plaintext highlighter-rouge">CompletedProcess</code> object. This
+is just an object that stores some information about the command that was run.
+For this guide, I’m ignoring it, but I’ll have links at the end where you can
+read all about it.</p>
+
+<p>But that’s it! That’s all you need to run some basic <code class="language-plaintext highlighter-rouge">bash</code> commands. The only
+caveat is you’ll be lacking some features of a shell.</p>
+
+<p>To overcome this, let’s look at the next example.</p>
+
+<h4 id="a-better-example">A Better Example</h4>
+<pre><code class="language-python3">import subprocess as sp
+
+result = sp.run("ls -lah &gt; someFile.txt", shell=True)
+output = sp.run('ls -lah | grep ".txt"', shell=True)
+</code></pre>
+
+<p>You may have noticed earlier in the function signature that <code class="language-plaintext highlighter-rouge">shell=False</code>, but
+here I set it to <code class="language-plaintext highlighter-rouge">True</code>. By doing so, the command I want actually gets run in a
+shell. That means I have access to redirection and pipes like I’ve shown.</p>
+
+<p>A note on running things like this: the command you want to execute must be
+typed exactly the way you would if you were doing it on a shell. If you read
+through the Documentation, you’ll notice there is a way to run commands as by
+passing in a list of strings, where each string is either the command or a flag
+or input to the main command.</p>
+
+<p>I found this confusing because if you follow my “Better Example” way, you are
+never left wondering if you passed in the arguments correctly. On top of that,
+you are free to use Python to build up a command based on various conditions.</p>
+
+<p>Here’s an example of me doing just that.</p>
+
+<h4 id="a-real-world-example">A “Real World” Example</h4>
+<pre><code class="language-python3">#!/usr/bin/env python3
+
+###############################################################################
+#                                   Imports                                   #
+###############################################################################
+import subprocess as sp
+from datetime import date
+
+###############################################################################
+#                                  Functions                                  #
+###############################################################################
+
+def getTodaysDate():
+  currDate = date.today()
+  return f"{currDate.year}-{currDate.month}-{currDate.day}"
+
+def moveToPosts():
+  lsprocess = sp.run("ls ./_drafts", shell=True, stdout=sp.PIPE)
+  fileList = lsprocess.stdout.decode('utf-8').strip().split("\n")
+  hasNewPost = len(fileList)
+
+  if (hasNewPost == 1):
+      print("New post detected")
+      
+      srcName = "./_drafts/" + fileList[0]
+      destName = " ./_posts/" + getTodaysDate() + "-" + fileList[0]
+      
+      command = "mv "+ srcName + destName
+      sp.run(command, shell=True)
+      
+      return [destName, files[0]]
+      
+  elif hasNewPost == 0:
+      print("Write more!")
+  else:
+      print("Too many things, not sure what to do")
+
+def runGit(fullPath, fileName):
+  
+  commitMsg = "'Add new blog post'"
+  
+  c1 = "git add " + fullPath
+  c2 = "git commit -m " + commitMsg
+
+  cmds = [c1,c2]
+  
+  for cmd in cmds:
+    cp = sp.run(cmd, shell=True)
+    
+if __name__ == "__main__":
+  pathToPost, fileName = moveToPosts()
+  runGit(pathToPost, fileName)
+  print("Done") 
+</code></pre>
+<p>Since this blog is running thanks to Jekyll, I took advantage of the <code class="language-plaintext highlighter-rouge">_drafts</code>
+folder available to me.</p>
+
+<p>For those of you unfamiliar with Jekyll, <code class="language-plaintext highlighter-rouge">_drafts</code> is a folder where you can
+store blog posts that aren’t ready to be published yet. Published posts go in
+<code class="language-plaintext highlighter-rouge">_posts</code>.</p>
+
+<p>The filenames in this folder look like: <code class="language-plaintext highlighter-rouge">the-title-of-my-post.md</code>. The filenames
+for published post that sit in the <code class="language-plaintext highlighter-rouge">_posts</code> folder have the same name, but with
+the <code class="language-plaintext highlighter-rouge">year-month-day-</code> attached to the front of the draft name.</p>
+
+<p>With this script, I just have to write a post and drop it into <code class="language-plaintext highlighter-rouge">_drafts</code>. Then I
+open a terminal and run this script. First it looks in <code class="language-plaintext highlighter-rouge">_drafts</code> and makes an
+array of the filenames it found. Anything other than just finding one file will
+stop the script- I’ll improve this one day. With that file name and the help of
+<code class="language-plaintext highlighter-rouge">subprocess.run()</code>, the script moves the draft into <code class="language-plaintext highlighter-rouge">_posts</code>, gives it the
+appropriate name, then commits it to <code class="language-plaintext highlighter-rouge">git</code> for me.</p>
+
+<h2 id="wrap-up">Wrap Up</h2>
+<p>I introduced the <code class="language-plaintext highlighter-rouge">subprocess.run()</code> function, gave 3 examples of running <code class="language-plaintext highlighter-rouge">bash</code>
+commands with it, and ended with the script that inspired this post in the first
+place.</p>
+
+<p>I personally don’t have too many uses for <code class="language-plaintext highlighter-rouge">bash</code> scripts. When I need one
+though, I’ll definitely be writing it in Python and if it suits your needs, you
+should too.</p>
+
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+  <li><a href="https://docs.python.org/3/library/subprocess.html">Python Documentation</a></li>
+</ul>]]></content><author><name>Andy Lu</name></author><summary type="html"><![CDATA[Do you like bash scripts? Personally, I don’t.]]></summary></entry><entry><title type="html">New Strategy</title><link href="http://0.0.0.0:4000/2018/07/27/new-strategy.html" rel="alternate" type="text/html" title="New Strategy" /><published>2018-07-27T00:00:00-05:00</published><updated>2018-07-27T00:00:00-05:00</updated><id>http://0.0.0.0:4000/2018/07/27/new-strategy</id><content type="html" xml:base="http://0.0.0.0:4000/2018/07/27/new-strategy.html"><![CDATA[<p>After analyzing my process for writing blog posts, I’ve realized some things.</p>
+
+<p>First, I can’t write and publish on the same day. I like to write about problems
+I’ve faced or solutions I’ve come up with. Yet solving those problems take up a 
+lot of the day. If I let it, it can consume the entire day, easily. That’s bad 
+for this idea of blogging everyday because it adds another thing I have to do 
+to the day; which increases the odds that it’s not happening.</p>
+
+<p>Second, I’m lacking in the more long form blog post that I want to put out on
+like Medium or dev.to. Sure I could just port my daily stuff, but it wouldn’t
+feel right because these are so casual.</p>
+
+<p>To address these issues, I’ve been trying to come up with a system - a blog 
+post lifecycle, if you will. It’s what more professional people do, and while I 
+don’t know their exact system, I can tweak whatever I come up with until I am 
+satisfied with it.</p>
+
+<p>I’ve been planning out how to steal more time for myself throughout the day to
+actually write more. This means I should have more time to dedicate to this
+“lifecycle”.</p>
+
+<p>Ideally, I have a 3 day cycle for daily posts:</p>
+<ul>
+  <li>Day 1 is for the rough, paper draft</li>
+  <li>Day 2 is for an electronic, edited version</li>
+  <li>Day 3 is publishing</li>
+</ul>
+
+<p>I’ve been planning out a way to automate most of this too, because it would
+lower the “activation energy” needed to keep all of this running.</p>
+
+<p>On top of that, throughout the week, I would also be working on a longer post. 
+Ideally, these posts get a 6 day cycle:</p>
+<ul>
+  <li>5 days to write the post</li>
+  <li>The last day is publishing</li>
+</ul>
+
+<p>This means that I can have daily posts Monday through Friday, a long form post
+come out on Saturday, and Sunday be free to plan and do other things.</p>
+
+<hr />
+
+<p>I want to mention that all of this was really triggered by <a href="https://dev.to/vickylai/how-to-set-up-a-short-feedback-loop-as-a-solo-coder-4gbc">this
+post</a>
+that I read on dev.to.</p>
+
+<p>The idea of shorter feedback loops is not new to me. It’s
+the same as taking a big goal and breaking it down into a bunch of smaller
+goals. The small goals give you the feedback that you are doing something right
+much sooner than waiting to see if you accomplish the big goal.</p>
+
+<p>Just to beat the dead horse one more time: small feedback loops are essentially
+what all of the different belt colors in martial arts is for. Instead of asking
+yourself, “Am I a black belt yet?”, you can check how far along this
+pre-established path you are and trust that you will get there eventually.</p>
+
+<p>Anyway, I was so focused on figuring out what to write about next, I didn’t stop
+to realize I need to change the process of how I’m writing in the first place.</p>
+
+<p>So with a bit of research, a few days of planning, and remembering that I need
+to focus on doing this “good enough for now” instead of “perfect”, a plan was
+born.</p>
+
+<p>Here’s to more consistent writing!</p>]]></content><author><name>Andy Lu</name></author><summary type="html"><![CDATA[After analyzing my process for writing blog posts, I’ve realized some things.]]></summary></entry></feed>

@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<!--
+Prologue by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Jekyll integration by Chris Bobbe | chrisbobbe.github.io
+-->
+<html><head><!-- Robots -->
+  <meta name="robots" content="index, follow" /><link rel="canonical" href="/v1/2018/09/05/i3-and-hugo-updates.html" /><!-- Title, description, author --><title>i3 and Hugo Updates | Andy Lu</title>
+  <meta name="description" content="i3 and Hugo Updates | Andy Lu" />
+  <meta name="author" content="Andy Lu" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="i3 and Hugo Updates | Andy Lu" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://0.0.0.0:4000/assets/img/profile.jpg" />
+  <meta property="og:url" content="http://0.0.0.0:4000/2018/09/05/i3-and-hugo-updates.html" />
+  <meta property="og:site_name" content="Andy Lu" />
+  <meta property="og:description" content="i3 and Hugo Updates | Andy Lu" />
+  
+  <!-- Styles -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/html5shiv.js" defer></script><![endif]-->
+  <link rel="stylesheet" href="/v1/assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="/v1/assets/css/ie8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="/v1/assets/css/ie9.css" /><![endif]-->
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrolly.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrollzer.min.js" defer></script>
+  <script src="/v1/assets/js/skel.min.js" defer></script>
+  <script src="/v1/assets/js/util.js" defer></script>
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/respond.min.js" defer></script><![endif]-->
+  <script src="/v1/assets/js/main.js" defer></script>
+
+</head><body><!-- Header -->
+<div id="header">
+  <div class="top"><!-- Logo -->
+<div id="logo">
+  <a href="/v1/" id="home-link">
+    <span class="image avatar48"><img src="/v1/assets/img/profile.jpg" alt="Avatar of Andy Lu" /></span>
+    <h1 id="title">Andy Lu</h1>
+    <p></p>
+  </a>
+</div><!-- Nav -->
+<nav id="nav">
+  <ul><!--<li><a href="/v1/themes/hyde/" id="hyde-link">-->
+            <li><a href="/v1/themes/hyde/" id="hyde-link">
+            <span class="icon fa-link">Hyde</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">-->
+            <li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">
+            <span class="icon fa-link">Changelog</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">-->
+            <li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">
+            <span class="icon fa-link">page</span>
+          </a></li><!--<li><a href="/v1/" id="home-link">-->
+            <li><a href="/v1/" id="home-link">
+            <span class="icon fa-home">Home</span>
+          </a></li><!--<li><a href="/v1/blog/" id="blog-link">-->
+            <li><a href="/v1/blog/" id="blog-link">
+            <span class="icon fa-pencil">Blog</span>
+          </a></li><!--<li><a href="/v1/reading-list.html" id="reading-list-link">-->
+            <li><a href="/v1/reading-list.html" id="reading-list-link">
+            <span class="icon fa-book">Reading List</span>
+          </a></li><!--<li><a href="/v1/certificates.html" id="certificates-link">-->
+            <li><a href="/v1/certificates.html" id="certificates-link">
+            <span class="icon fa-trophy">Certificates</span>
+          </a></li></ul>
+</nav></div>
+  <div class="bottom"><!-- Social Icons -->
+<ul class="icons"><li><a href="https://twitter.com/_andy_lu_" class="icon fa-twitter"><span class="label">Twitter</span></a></li><li><a href="https://www.linkedin.com/in/andyrlu/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li><li><a href="https://github.com/luandy64/" class="icon fa-github"><span class="label">GitHub</span></a></li><li><a href="/#contact-me" class="icon fa-envelope"><span class="label">Email</span></a></li></ul>
+</div>
+</div>
+<!-- Main -->
+<div id="main">
+  <!-- Post -->
+  <article class="shade-two">
+    <div class="container">
+      <header>
+        <h2>i3 and Hugo Updates</h2>
+	  <p>05 September 2018</p>
+      </header>
+
+      <h2 id="hugo-updates">Hugo Updates</h2>
+<p>I spent a nice chunk of today figuring out what I wanted to do as far as styling goes. The theme I picked, <code class="language-plaintext highlighter-rouge">Hyde</code>, was did a 
+majority of the work already.</p>
+
+<p>I just had to hook into the snippet of HTML that defines the <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> and add my own stylesheet. From there, the only change I 
+wanted to make was making everything a card. But then that led to some padding issues, so I patched that really quickly.</p>
+
+<p>Overall, I’m really satisfied with the design. Now I just have to move over all of the pages and blog posts. I learned that I 
+was pretty inconsistent with the front matter I included in the blog posts. I’ll just have to go back and clean things up. I 
+will probably automate the adding and removing of the keys, but will have to add the values afterwards.</p>
+
+<h2 id="i3-updates">i3 Updates</h2>
+<p>I’ve been gluing together bits and pieces of various configurations to get i3 to work. Some parts were quick:</p>
+<ul>
+  <li>The background was straight forward</li>
+  <li>Setting up my workspaces was easy
+    <ul>
+      <li>Though, I haven’t bound certain applications to my named workspaces yet</li>
+    </ul>
+  </li>
+  <li>Installing Font Awesome was much easier than Source Code Pro. I might have to find an alternative here. It’s mainly for <br />
+Spacemacs, but it seems to function fine without it.</li>
+  <li>I’ve themed i3 to match the Nord Theme for Spacemacs</li>
+</ul>
+
+<p>The only- what I would call- dire issue is I can’t get the brightness control to work. So as I sit here and type this, there’s this blindingly bright screen that I’m forced to look at and can do nothing about.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+<p>I put some config stuff from my Mac onto Github, but I later learned, I didn’t put some of the files I needed. I’m hoping to 
+finish up with all of this i3 stuff soon and I can throw all of those files up too. I think a really nice guide is due too 
+because I wouldn’t want someone else to try and do the same thing here and be as lost as I was.</p>
+</div>
+  </article>
+</div>
+
+<!--Adding MathJax Support-->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- Footer -->
+<div id="footer">
+  
+  <!-- Copyright -->
+  <ul class="copyright">
+    
+      <li>&copy;Andy Lu. All rights reserved.</li>
+    
+    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    <li>Jekyll integration: <a href="https://chrisbobbe.github.io/">Chris Bobbe</a></li>
+    <li>Typed with pleasure on an <a href="https://olkb.com/">olkb</a> Preonic</li>
+  </ul>
+  
+</div>
+</body>
+</html>

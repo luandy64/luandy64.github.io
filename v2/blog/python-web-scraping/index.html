@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="/v2//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.53" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Python Web Scraping &middot; Andy Lu</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="/v2/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="/v2/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/v2/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/v2/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Andy Lu" />
+
+  
+</head>
+
+  <body class="theme-base-0d ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href=""><h1>Andy Lu</h1></a>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="">Home</a> </li>
+        <li><a href="/v2/about/"> About Me </a></li><li><a href="/v2/blog/"> Blog </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Python Web Scraping</h1>
+  <time datetime=2018-03-01T10:11:12-0500 class="post-date">Thu, Mar 1, 2018</time>
+  <p>Today was my first time in a long time trying to extract a bunch of information
+from a website. I was trying to get a file from a set of webpages, so my first
+thought was,</p>
+
+<p>&ldquo;Why don&rsquo;t I just figure out the pattern to the URL of the files?&rdquo;. I think it
+was a relatively small set of pages to scour, there were only 50 web pages to
+look at. So I just started with a sample of them to try and tease out a URL
+pattern.</p>
+
+<p>Thinking back to my experience with Revature, I wondered if there was a way to
+make Python send HTTP requests for me because that would make things easier on
+my part. This thought came after my attempt to find a pattern to the download
+links though.</p>
+
+<p>So looking at the URLs, there was a clear template to identifying the files.
+Except it is a template that makes my job harder. For each file I wanted to
+grab, there were 3 strings attached to it that uniquely identifies it. The
+download URLs were simply a mix of these unique strings with some common
+strings. This is when I had the thought about making Python make HTTP requests
+for me because now I had to build a list of all of the unique strings to build a
+URL to run wget with.</p>
+
+<p>Running short on time (I was only trying to do some light pseudocoding today), I
+thought let&rsquo;s just brute force this and clean it up later. So I did what I hope
+to automate in the coming days: I went to the homepage to use the search bar; I
+typed in the unique identifier for the page I want to get to; I searched and let
+the page take me to the page containing the download link I want; I copied the
+download link and extracted the three unique identifiers; and that was it! I
+have a tiny little script to build the URLs for me, request the links I want,
+and write them to a target destination on my computer.</p>
+
+<p>It&rsquo;s not the most automated version, but at least I have started and can improve
+from here.</p>
+
+  <hr>
+  <p>
+      Thanks for reading this post! Comments, questions, and feedback are always
+      welcome.
+  </p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+       tex2jax: {
+           inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+           processEscapes: true
+       }
+   });
+  </script>
+  <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  </script>
+</html>

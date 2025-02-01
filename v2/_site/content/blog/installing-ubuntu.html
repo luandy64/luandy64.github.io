@@ -1,0 +1,64 @@
+<p>I probably should’ve written this while I was doing the install. Oh well, maybe
+next time.</p>
+
+<p>I managed to get Ubuntu installed on an external hard drive today. The problem
+started with me trying to figure out if I could resize the dual boot set up I
+have on my Macbook. Reading through my options, I decided it was too hard and I
+had other things to do- like work on my Hugo migration from yesterday.</p>
+
+<!--more-->
+
+<p>Then I thought, “Oh, well I have a spare external drive, I wonder how easy it
+is to install an OS on there”. A quick search led me to
+<a href="https://www.youtube.com/watch?v=8lP57J3hKOU">this video</a>, and with a few
+modifications, I was up and running.</p>
+
+<p>Here’s how I did it (More detailed instructions are in the video, I’m writing
+this from memory):</p>
+<ul>
+  <li>Download an <code class="language-plaintext highlighter-rouge">.iso</code> file. I got mine from the Ubuntu site.</li>
+  <li>Flash it to a USB drive using <a href="https://etcher.io/">Etcher</a></li>
+  <li>Insert the USB,restart the Mac, holding <code class="language-plaintext highlighter-rouge">Alt</code> when it boots up, and boot to
+the live USB you just made</li>
+  <li>Open a Terminal and type <code class="language-plaintext highlighter-rouge">sudo gparted</code></li>
+  <li>Insert the external drive</li>
+  <li>Change the drive you are looking at to the external drive</li>
+  <li>Partition the drive into whatever sized chunks you want, as long as the
+following are satisfied:
+    <ul>
+      <li>The “Main” partition should be formatted to <code class="language-plaintext highlighter-rouge">Ext4 Linux Journaled</code></li>
+      <li>Mount this “Main” partition on <code class="language-plaintext highlighter-rouge">/</code></li>
+      <li>Make a smaller partition formatted to <code class="language-plaintext highlighter-rouge">Linux swap</code>, it should be about
+4GB (That’s what the guy in the video did, I’ve heard there’s a lot of
+debate about how much swap space you should have. I went with 4GB to
+keep things simple)</li>
+    </ul>
+  </li>
+  <li>At the bottom of the GUI, there’s a drop down menu for where the boot loader
+should sit. Give it the option of wherever your external drive is mounted,
+but the option with no numbers at the end. It will look something like <code class="language-plaintext highlighter-rouge">/sdd</code></li>
+  <li>Run the partition</li>
+  <li>Close the windows and open up the <code class="language-plaintext highlighter-rouge">Install Ubuntu</code> wizard that’s sitting on
+the Desktop</li>
+  <li>Run through the wizard until it asks how you want to install Ubuntu, pick
+the <code class="language-plaintext highlighter-rouge">Something else</code> option</li>
+  <li>Pick your external drive as where you want Ubuntu to be installed. Double
+check you picked the right one, or else you risk losing data</li>
+  <li>… Finish the wizard and reboot your computer, loading up your new Ubuntu
+installation</li>
+</ul>
+
+<p>I think that’s all of the steps. From there, do what you normally would do and
+run updates, install new software, pick out a theme and some icons.</p>
+
+<p>I’ve been in this rabbithole of picking a new Desktop Environment. After going
+through a ton of posts on the very SFW
+<a href="https://www.reddit.com/r/unixporn/">r/UnixPorn</a>, I decided to go with <code class="language-plaintext highlighter-rouge">i3</code>.
+I’m still not sure about how to use a lot of things. Maybe 30 minutes before
+writing this post, I figured out how to switch workspaces.</p>
+
+<p>So tomorrow will probably be real work, but later this week, I’ll detail all
+of the stuff I’ve been downloading and configuring. And at some point I’ll have
+to delete the Ubuntu that I’m dual booting too. Fingers crossed that I get it
+right and don’t delete my Mac partition- I sadly can’t say I haven’t done that
+before. But hey, that’s what backups are for!</p>

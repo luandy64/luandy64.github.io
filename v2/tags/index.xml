@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Andy Lu</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Andy Lu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Mar 2018 17:34:00 -0500</lastBuildDate>
+    
+	<atom:link href="/v2/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ceramics</title>
+      <link>/tags/ceramics/</link>
+      <pubDate>Thu, 15 Mar 2018 17:34:00 -0500</pubDate>
+      
+      <guid>/tags/ceramics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Clojure</title>
+      <link>/tags/clojure/</link>
+      <pubDate>Tue, 02 Oct 2018 23:09:03 -0400</pubDate>
+      
+      <guid>/tags/clojure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Finance</title>
+      <link>/tags/finance/</link>
+      <pubDate>Wed, 19 Sep 2018 00:35:01 -0400</pubDate>
+      
+      <guid>/tags/finance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning</title>
+      <link>/tags/learning/</link>
+      <pubDate>Tue, 02 Oct 2018 23:09:03 -0400</pubDate>
+      
+      <guid>/tags/learning/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

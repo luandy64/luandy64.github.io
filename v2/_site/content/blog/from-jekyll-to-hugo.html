@@ -1,0 +1,47 @@
+<h2 id="some-background">Some Background</h2>
+<p>It’s a new month, and so I have some new goals. One of them is to try and use my
+website more- and by that I mean blog more. I like the idea of documenting bits
+of every day so that in the future I can come back, look at these posts and
+piece together how much I’ve changed and whatnot.</p>
+
+<!--more-->
+
+<p>So to kick off trying to blog more, I decided to try and fix some of the pain
+points I was having with my site now. I’ve been doing a bit of research into
+static site generators, and decided that maybe using Hugo would be fun. A
+long-ish term goal of mine is to dive into Golang a bit, so maybe this can be a
+good way to dip my toes in the water.</p>
+
+<p>I’m planning on doing a more thorough write up of my thoughts on this in the
+future, so let’s move on to what I did today.</p>
+
+<h2 id="setting-up-hugo">Setting up Hugo</h2>
+<p>So on my Mac, it’s quick and easy to install Hugo. I just ran <code class="language-plaintext highlighter-rouge">brew install hugo</code>.</p>
+
+<p>For my theme, I looked through all of my options on <a href="https://themes.gohugo.io">Hugo
+Themes</a> and decided to go with the <code class="language-plaintext highlighter-rouge">Hyde</code> theme. I’m a
+big fan of the two colomn design, where one column serves as a header. I’d like
+to write my own theme one day because I am also a huge fan of card-based
+elements and I haven’t seen a theme that does it yet.</p>
+
+<p>After setting up the theme, there was nothing left to do but to layout how I
+wanted the sitemap to work. I quickly figured out how to add links to the
+sidebar using the method the theme writer(s) intended. The hardest part of what
+I did today was to get the individual pages to be structured the way I wanted
+them to be. Using Jekyll, it was easy because you put it in the front matter or
+just straight up work an <code class="language-plaintext highlighter-rouge">index.html</code> file. I dug through the Hugo Docs and
+found that Hugo really leans on the structure of the directory your site is
+sitting in. So I made all of the appropriate directories in the <code class="language-plaintext highlighter-rouge">/layouts</code>
+folder, peeked at the <code class="language-plaintext highlighter-rouge">Hyde</code> theme folder to get the correct file names, and
+made the appropriate <code class="language-plaintext highlighter-rouge">list.html</code> and <code class="language-plaintext highlighter-rouge">single.html</code> files.</p>
+
+<h2 id="moving-forward">Moving forward</h2>
+<p>Next steps are probably to get the CSS set up how I want it. Then I’ll work on
+porting over old blog posts and fleshing out the <code class="language-plaintext highlighter-rouge">About Me</code> section. I haven’t
+tried to set this up on Github yet, but I’ve seen instructions for it, and it’s
+not too scary looking.</p>
+
+<hr />
+
+<p>Thanks for reading this post! Comments, questions, and feedback are always
+welcome.</p>

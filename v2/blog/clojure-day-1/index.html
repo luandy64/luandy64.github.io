@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="/v2//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.53" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Clojure Day 1 &middot; Andy Lu</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="/v2/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="/v2/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/v2/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/v2/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Andy Lu" />
+
+  
+</head>
+
+  <body class="theme-base-0d ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href=""><h1>Andy Lu</h1></a>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="">Home</a> </li>
+        <li><a href="/v2/about/"> About Me </a></li><li><a href="/v2/blog/"> Blog </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Clojure Day 1</h1>
+  <time datetime=2018-09-17T21:13:57-0400 class="post-date">Mon, Sep 17, 2018</time>
+  
+
+<p>Today I started reading through this book to learn some Clojure. It&rsquo;s called
+<a href="https://www.braveclojure.com/">Clojure for the Brave and True</a>.</p>
+
+<p>I thought I would make myself a little cheatsheet that grows as I progress
+through the book.</p>
+
+<h2 id="forms">Forms</h2>
+
+<p>These are like the building blocks of the files.</p>
+
+<pre><code class="language-clojure">1
+&quot;This string&quot;
+[&quot;Vectors&quot; &quot;of&quot; &quot;strings&quot; &quot;are&quot; &quot;a&quot; &quot;thing&quot;]
+</code></pre>
+
+<h2 id="operators">Operators</h2>
+
+<p>All operations use the same structure. Given an operator <code>operator</code> and operands
+<code>op1, op2, ... opN</code>, you use the following structure:</p>
+
+<pre><code class="language-clojure">(operator op1 op2 ... opN)
+</code></pre>
+
+<h2 id="comments">Comments</h2>
+
+<pre><code class="language-clojure">; This is a single line comment
+</code></pre>
+
+<h2 id="control-flow">Control Flow</h2>
+
+<h3 id="if"><code>if</code></h3>
+
+<pre><code class="language-clojure">(if some-boolean-form
+    then-form
+    an-optional-else form)
+</code></pre>
+
+<ul>
+<li><p>If the <code>else-form</code> is omitted and triggered, then <code>nil</code> is returned.</p></li>
+
+<li><p>The <code>then-form</code> and <code>else-form</code> can only be a one-liner, see <code>do</code> if you need
+more functionality than that</p></li>
+</ul>
+
+<h3 id="do"><code>do</code></h3>
+
+<pre><code class="language-clojure">(if some-boolean-form
+    (do &quot;Some truthy thing 1&quot;
+        &quot;Some truthy thing 2&quot;)
+    (do &quot;Some falsey thing 1&quot;
+        &quot;Some falsey thing 2&quot;))
+</code></pre>
+
+<h3 id="when"><code>when</code></h3>
+
+<ul>
+<li>Think of this as an <code>if-do</code> without an <code>else-form</code></li>
+</ul>
+
+<pre><code class="language-clojure">(when some-true-form
+    (println &quot;True thing found&quot;))
+</code></pre>
+
+<h2 id="booleans">Booleans</h2>
+
+<ul>
+<li><code>true</code> or <code>false</code></li>
+<li><code>nil</code> is no value</li>
+</ul>
+
+<h3 id="some-operators">Some operators:</h3>
+
+<ul>
+<li><code>(or op1 op2 ... opN)</code> : return first truthy value or last value</li>
+<li><code>(and op1 op2 ... opN)</code> : return the first falsey value or the last truthy
+value</li>
+<li><code>(= op1 op2)</code> : test for equality</li>
+<li><code>(nil? op1)</code> : check for <code>nil</code></li>
+</ul>
+
+<h2 id="save-state">Save state</h2>
+
+<pre><code class="language-clojure">(def varName value)
+</code></pre>
+
+<h2 id="data-structures">Data Structures</h2>
+
+<ul>
+<li>All data structures are immutable</li>
+</ul>
+
+<h3 id="numerical-things">Numerical Things</h3>
+
+<ul>
+<li>Numbers: <code>17</code></li>
+<li>Floats: <code>3.4</code></li>
+<li>Ratios: <code>51/100</code></li>
+</ul>
+
+<h3 id="strings">Strings</h3>
+
+<ul>
+<li>Denoted by double quotes</li>
+<li>Escape any double quotes inside as needed</li>
+</ul>
+
+<h3 id="maps">Maps</h3>
+
+<pre><code class="language-clojure">; An empty map
+{}
+
+; A map with keywords for keys
+{:firstname &quot;Andy&quot;
+ :lastname &quot;Lu&quot;}
+ 
+; Mapping a string to a function
+{&quot;Totally-legal&quot; +}
+
+; Nested Maps
+{:name {:first &quot;Andy&quot; :last &quot;Lu&quot;}}
+
+; Hash Map
+(hash-map :firstname &quot;Andy&quot; :lastname &quot;Lu&quot;)
+</code></pre>
+
+<h4 id="reading-from-maps">Reading from maps</h4>
+
+<ul>
+<li><code>get</code>:
+
+<ul>
+<li><code>(get {:a 1 :b 2} :b)</code>, returns <code>2</code></li>
+<li>&lsquo;<code>(get {:a 1 :b 2} :c)</code>, returns `nil&rsquo;</li>
+</ul></li>
+<li>&lsquo;get-in&rsquo;: Used for nested maps
+
+<ul>
+<li><code>(get-in {:a 0 :b {:c 100}} [:b :c])</code>, returns <code>100</code></li>
+</ul></li>
+<li>Using a map like an operator
+
+<ul>
+<li><code>({:name &quot;Andy&quot;} :name)</code>, returns <code>&quot;Andy&quot;</code>
+<br /></li>
+</ul></li>
+</ul>
+
+<h2 id="keywords">Keywords</h2>
+
+<ul>
+<li>Primarily used as keys in maps</li>
+<li>Denoted <code>:a</code></li>
+</ul>
+
+<h2 id="vectors">Vectors</h2>
+
+<ul>
+<li>Zero Indexed</li>
+<li>Declaring one:
+
+<ul>
+<li><code>[3 2 1]</code></li>
+<li><code>(vector &quot;some&quot; &quot;list&quot; &quot;of&quot; &quot;things&quot;)</code>, returns <code>[&quot;some&quot; &quot;list&quot; &quot;of&quot;
+&quot;things&quot;]</code></li>
+</ul></li>
+<li>Adding to the end of a vector:
+
+<ul>
+<li><code>(conj [1 2 3] 4)</code>, returns <code>[1 2 3 4]</code>
+<br /></li>
+</ul></li>
+</ul>
+
+<h2 id="lists">Lists</h2>
+
+<ul>
+<li>Zero Indexed</li>
+<li>Declaring:
+
+<ul>
+<li><code>'(1 2 3 4)</code>, returns <code>(1 2 3 4)</code></li>
+<li><code>'(list 1 &quot;two&quot; {3 4})</code>, returns <code>(1 &quot;two&quot; {3 4})</code></li>
+</ul></li>
+<li>Retriving the <code>nth</code> value:
+
+<ul>
+<li><code>(nth '(4 3 2 1 0) 1)</code>, returns <code>3</code></li>
+</ul></li>
+</ul>
+
+<h2 id="sets">Sets</h2>
+
+<ul>
+<li>Contain only unique values</li>
+<li>Declaring:
+
+<ul>
+<li><code>#{&quot;word&quot; 20 :name}</code>, returns <code>#{&quot;word&quot; 20 :name}</code></li>
+<li><code>(set [1 1 2 3 3 3 4])</code>, returns <code>#{1 2 3 4}</code></li>
+</ul></li>
+<li>Checking for a value in a set:
+
+<ul>
+<li>If you want a boolean back:
+
+<ul>
+<li><code>(contains? #{:a :b} :a)</code>, returns <code>true</code></li>
+<li><code>(contains? #{1 2} 3)</code>, returns <code>false</code></li>
+</ul></li>
+<li>If you want a value back:
+
+<ul>
+<li><code>(:a #{:a :b :c})</code>, returns <code>:a</code></li>
+<li><code>(get #{1 2} 1)</code>, returns <code>1</code></li>
+<li><code>(get #{:a nil} nil)</code>, returns <code>nil</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+
+  <hr>
+  <p>
+      Thanks for reading this post! Comments, questions, and feedback are always
+      welcome.
+  </p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+       tex2jax: {
+           inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+           processEscapes: true
+       }
+   });
+  </script>
+  <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  </script>
+</html>

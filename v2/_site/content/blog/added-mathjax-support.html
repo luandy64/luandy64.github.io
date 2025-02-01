@@ -1,0 +1,71 @@
+<h2 id="commands-needed">Commands Needed</h2>
+<p>The easiest step was from the <a href="https://jekyllrb.com/docs/extras/">Jekyll Docs</a>,
+which pointed me to this page on <a href="http://www.gastonsanchez.com/visually-enforced/opinion/2014/02/16/Mathjax-with-jekyll/">Visually
+Enforced</a>.
+So the following piece of code went into my <code class="language-plaintext highlighter-rouge">/_layouts/default.html</code> ‘s header:</p>
+
+<!--more-->
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p>Testing the site was too slow with GitHub Pages, so I served the site locally to
+see changes on every refresh: <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code></p>
+
+<h2 id="links-on-this-page">Links on this page</h2>
+<ul>
+  <li><a href="https://jekyllrb.com/docs/extras/">Jekyll Docs</a></li>
+  <li><a href="http://www.gastonsanchez.com/visually-enforced/opinion/2014/02/16/Mathjax-with-jekyll/">Visually Enforced</a></li>
+  <li><a href="https://kramdown.gettalong.org/syntax.html#math-blocks">kramdown</a></li>
+  <li><a href="https://docs.mathjax.org/en/latest/tex.html#supported-latex-commands">Supported LaTeX Commands</a></li>
+  <li><a href="https://math.meta.stackexchange.com/questions/3582/qed-for-mathjax-here-on-stackexchange/13338#13338">StackExchange Proof QED</a></li>
+</ul>
+
+<hr />
+
+<h2 id="the-details">The Details</h2>
+<p>To make sure everything worked after adding the MathJax line, I found a nice
+chunk of code from
+<a href="https://kramdown.gettalong.org/syntax.html#math-blocks">kramdown</a> in their
+syntax guide. The \(\LaTeX\) rendered beautifully and had no issues whatsoever.
+I had done some more digging and saw that kramdown already supports “Math
+Blocks”, so to test it, I removed the MathJax script from my template. It broke
+the nice piece of \(\LaTeX\) code from earlier, so I quickly put the script
+back.</p>
+
+<p>The next test I wanted to try was to see what commands were available to me
+because I couldn’t find a list anywhere. So I grabbed a proof I wrote from my
+Real Analysis class and threw it into a Markdown file. It kept rendering it as
+text in a box; basically like I used some CSS to give that chunk of text an
+outline. From there, I kept playing with it, in hopes that something would work.
+kramdown said that everything should be in <code class="language-plaintext highlighter-rouge">$$...$$</code>, which I tried and only got
+a group of -box-outlined text. Then I thought maybe I need to import the AMS
+Math package somewhere. It was after that thought, I think, that I stumbled upon
+a list of <a href="https://docs.mathjax.org/en/latest/tex.html#supported-latex-commands">Supported LaTeX
+Commands</a>…</p>
+
+<p>So after all of that work, it turns out the <em>proof</em> environment I was using is
+unsupported. That’s alright though, since that was mainly for the TeX engine to
+put a fancy italic <em>Proof</em> at the start of my work and a box at the end. I can
+format the <em>Proof</em> first, and probably put the black box at the end.</p>
+
+<p><em>Proof.</em> Look it worked.
+<a href="https://math.meta.stackexchange.com/questions/3582/qed-for-mathjax-here-on-stackexchange/13338#13338">Credit</a>
+\(\tag*{$\blacksquare$}\)</p>
+
+<p>Anyway, I’ll have to spend some time looking through what commands I can and
+cannot use, but I am happy to have them at all. I doubt anyone who wrote the
+pages that helped me in this process will ever see this page, but thank you!</p>
+
+<h2 id="in-summary">In Summary</h2>
+<p>It was a little confusing at first, but so was setting up Jekyll in the first
+place. The confusion was mainly due to the fact that I had to dig through Jekyll
+support pages, kramdown support pages, and MathJax support pages. In the end
+though, it just took some trial and error on a local version of my site to
+figure out what works and what doesn’t.</p>
+
+<hr />
+
+<p>Thanks for reading this post! Comments, questions, and feedback are always
+welcome.</p>

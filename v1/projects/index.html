@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<!--
+Prologue by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Jekyll integration by Chris Bobbe | chrisbobbe.github.io
+-->
+<html><head><!-- Robots -->
+  <meta name="robots" content="index, follow" /><link rel="canonical" href="/v1/projects/" /><!-- Title, description, author --><title>Projects | Andy Lu</title>
+  <meta name="description" content="Projects | Andy Lu" />
+  <meta name="author" content="Andy Lu" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Projects | Andy Lu" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://0.0.0.0:4000/assets/img/profile.jpg" />
+  <meta property="og:url" content="http://0.0.0.0:4000/projects/" />
+  <meta property="og:site_name" content="Andy Lu" />
+  <meta property="og:description" content="Projects | Andy Lu" />
+  
+  <!-- Styles -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/html5shiv.js" defer></script><![endif]-->
+  <link rel="stylesheet" href="/v1/assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="/v1/assets/css/ie8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="/v1/assets/css/ie9.css" /><![endif]-->
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrolly.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrollzer.min.js" defer></script>
+  <script src="/v1/assets/js/skel.min.js" defer></script>
+  <script src="/v1/assets/js/util.js" defer></script>
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/respond.min.js" defer></script><![endif]-->
+  <script src="/v1/assets/js/main.js" defer></script>
+
+</head><body><!-- Header -->
+<div id="header">
+  <div class="top"><!-- Logo -->
+<div id="logo">
+  <a href="/v1/" id="home-link">
+    <span class="image avatar48"><img src="/v1/assets/img/profile.jpg" alt="Avatar of Andy Lu" /></span>
+    <h1 id="title">Andy Lu</h1>
+    <p></p>
+  </a>
+</div><!-- Nav -->
+<nav id="nav">
+  <ul><!--<li><a href="/v1/themes/hyde/" id="hyde-link">-->
+            <li><a href="/v1/themes/hyde/" id="hyde-link">
+            <span class="icon fa-link">Hyde</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">-->
+            <li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">
+            <span class="icon fa-link">Changelog</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">-->
+            <li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">
+            <span class="icon fa-link">page</span>
+          </a></li><!--<li><a href="/v1/" id="home-link">-->
+            <li><a href="/v1/" id="home-link">
+            <span class="icon fa-home">Home</span>
+          </a></li><!--<li><a href="/v1/blog/" id="blog-link">-->
+            <li><a href="/v1/blog/" id="blog-link">
+            <span class="icon fa-pencil">Blog</span>
+          </a></li><!--<li><a href="/v1/reading-list.html" id="reading-list-link">-->
+            <li><a href="/v1/reading-list.html" id="reading-list-link">
+            <span class="icon fa-book">Reading List</span>
+          </a></li><!--<li><a href="/v1/certificates.html" id="certificates-link">-->
+            <li><a href="/v1/certificates.html" id="certificates-link">
+            <span class="icon fa-trophy">Certificates</span>
+          </a></li></ul>
+</nav></div>
+  <div class="bottom"><!-- Social Icons -->
+<ul class="icons"><li><a href="https://twitter.com/_andy_lu_" class="icon fa-twitter"><span class="label">Twitter</span></a></li><li><a href="https://www.linkedin.com/in/andyrlu/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li><li><a href="https://github.com/luandy64/" class="icon fa-github"><span class="label">GitHub</span></a></li><li><a href="/#contact-me" class="icon fa-envelope"><span class="label">Email</span></a></li></ul>
+</div>
+</div>
+<!-- Main -->
+<div id="main">
+	<!-- Page -->
+	<article class="shade-two">
+	  <div class="container">
+			<header>
+				<h2>Projects</h2></header><hr> 
+
+<div id="staticCode">
+<h2> Static Code Analyzer </h2>
+<p>
+    <em>Language: C++</em>
+</p>
+<p>
+    Quantifying good code is not an easy task. There are too many things to
+    measure and in the end you ask yourself, "Does this capture it? Does this
+    tell someone their code is good?". Source code is meant to be read by
+    humans, thus I narrowed my question of "good code" down to a question of
+    human readability.
+    <blockquote cite="Martin Fowler">
+        Any fool can write code that a computer can understand. Good programmers
+        write code that humans can understand.
+      <footer>
+        Martin Fowler, <cite>Refactoring: Improving the Design of Existing Code</cite>
+      </footer>
+    </blockquote>
+</p>
+<p>
+    This program parses all source code files in a directory and all of its
+    sub-directories. In the process of parsing, it looks at:
+</p>
+<ul>
+    <li>The ratio of total lines of whitespace to total lines of code</li>
+    <li>The ratio of total whitespace characters to total number of characters</li>
+    <li>The ratio of comments to total lines of code</li>
+    <li>The average length of variable and function names</li>
+    <li>The number of temp variables with names of length 1 or 2</li>
+</ul>
+<p>
+    The raw data is then passed into some metric functions to return a score,
+    ranging from 1 to 3 to represent "Good", "Needs Work", and "Bad". The scores
+    are then summed to give the final score, with a lower final score being
+    better than a higher one. A feature of this program is to also print some
+    more verbose test results when the program is called with the appropriate
+    flag.
+
+    Any future work put into this would likely be towards adding a "cyclomatic
+    complexity" metric, expanding readability into comprehensibility.
+</div>
+
+<hr>
+
+<div id="massText">
+<h2>Text Blast</h2>
+<p><em>Language: Python, Applescript</em></p>
+<p>
+    This project was born out of necessity. In my work with CollegeBound, it was
+    mentioned in an officer meeting that we needed to message the kids every
+    week with announcements and reminders. There were 200 something kids to text
+    and only like 5 or 6 officers to do the texting. Naturally, I said we are
+    not doing this for 16 weeks; so keeping in mind xkcd's 
+    <a href="https://xkcd.com/1205/">comic</a>
+    , I set out to mimic a service like Remind. 
+</p>
+<p>
+    The basics of the program is to take a file containing the numbers I needed
+    to text, type in the message I want to send, and let it send it to each
+    phone number on the list. The program works because of macOS's ability to
+    send and receive messages if there is an associated iPhone. Once the program
+    runs, it is indistinguishable from me physically sending each message
+    myself.
+</div>
+<hr>
+<div id="monteCarlo">
+<h2>Monte Carlo Integration</h2>
+<p><em> Language: C++</em></p>
+<p>
+    Unlike the integration problems found in a typical calculus book, integrals
+    encountered in research or applications can get ugly. The Monte Carlo
+    integration is special, in that, it can handle problems where we are
+    working in high dimensions (like past 3 for example) or where the domain
+    of integration is irregular.
+</p>
+<p> 
+    To understand the process, imagine a circle with a radius of 1. If you
+    compute the area of this circle, you get &pi;.
+</p>
+<p> 
+    There's roughly three parts to the MC Integration: draw a box around the
+    domain of integration, "throw darts" at the box, and count the number of
+    darts in the domain versus the total number of darts.
+</p>
+<p> 
+    So in the circle with an area of &pi; example: draw a box around the circle,
+    "throw darts at the box", and keep count. The ratio of darts that land in
+    the circle, over the total number of darts you throw will approach the area
+    of the circle if you use more and more darts.
+</p>
+<p> 
+    I left out a whole lot of details here, but I hope the analogy was clear.
+    The darts would be implemented by a random number generator; the circle is
+    the domain of integration we care about; the ratio of darts-in over
+    total-darts is the answer we care about.
+</p>
+<p> 
+    Confused or curious to know more? Contact me and let's talk about it!
+</p>
+</div>
+<hr>
+<div id="parallel">
+<h2>Parallelized Monte Carlo Integration</h2>
+<p><em>Language: C++</em></p>
+<p>
+    One of the coolest topics I got to learn about in school was how to use
+    various libraries to parallelize some code. When writing programs in
+    serial, it's hard enough to capture the logic, make the code readable,
+    and follow good development principles; however, in writing parallel code,
+    there is the extra problem of breaking up the work, or find race conditions,
+    or deciding if things should run asychronously, and much more. I think the
+    added complexity makes things so much more interesting though and in the end
+    it can have massive benefits.
+</p>
+<p>
+    I used OpenMP and MPI to learn two different ways to parallelize this
+    little tool of mine. The MPI version was much more impressive because I
+    could run it on many more machines- if you're counting machines versus
+    threads in OpenMP.
+</p>
+</div>
+<hr>
+<div id="neuron">
+<h2>Neuron Modeling</h2>
+<p><em>Language: MATLAB</em></p>
+<p>
+    Neurons are a very interesting type of cell because they use electricity to
+    operate. One challenge that comes with studying these cells is collecting
+    data to study. Thus, if we can accurately model these cells and how they
+    interact with one another, we can run large scale simulations on super
+    computers. It turns out that the retina is a well understood part of the
+    brain, so much so that we can accurately recreate models of single cells
+    accurately. So modeling it should give insight complex systems of neurons.
+</p>
+<p>
+    The issue I worked at while conducting this research with a professor was
+    answering how do these cells operate in a noisy environment? A single cell
+    can receive many signals from neighboring cells; it has to then account for
+    all of these and decide whether or not to propagate the signal. For the set
+    of data we were working with, it seemed to fit an exponential model pretty
+    well. We were able to clarify for what values we were likely to see a voltage
+    spike to occur- which corresponds to a signal being propagated.
+</p>
+</div>
+<hr>
+<div id="ebook">
+<h2>Digital Publishing</h2>
+<p><em>Languages: Java, HTML, CSS, PostgreSQL</em></p>
+<p>
+    This internship was my first exposure to writing an application and hosting
+    it on a server. It's also where I learned about databases for the first
+    time; which I was intrigued to see how they related to set theory. 
+</p>
+<p>
+    It was also refreshing to tackle a problem like this because I could imagine
+    setting up a site like this for a company. The goal of this project was to
+    create a site where authors can upload documents like ebooks and set a price
+    for customers to buy them at. Since the types of problems I have mostly
+    worked on revolved around software as a means to an answer, not really
+    software as a service, I really felt like I learned a lot. Of course, diving
+    into a new way of programming like this doesn't come without a fair share of
+    googling questions along the way. However, if I didn't have prior experience
+    with coding, I could see how it could be daunting for someone to attempt a
+    project like this. 
+</div>
+</div>
+	</article>
+</div><!-- Footer -->
+<div id="footer">
+  
+  <!-- Copyright -->
+  <ul class="copyright">
+    
+      <li>&copy;Andy Lu. All rights reserved.</li>
+    
+    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    <li>Jekyll integration: <a href="https://chrisbobbe.github.io/">Chris Bobbe</a></li>
+    <li>Typed with pleasure on an <a href="https://olkb.com/">olkb</a> Preonic</li>
+  </ul>
+  
+</div>
+</body>
+</html>

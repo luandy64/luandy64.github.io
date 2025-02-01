@@ -1,0 +1,29 @@
+{{ define "main" -}}
+<div class="post">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+</div>
+    <div class="post" id="social">
+        <h2>Find me here</h2>
+            <div class="post">
+                <a href="https://github.com/luandy64/"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="post">
+                <a href="https://twitter.com/_andy_lu_"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="post">
+                <a href="https://www.linkedin.com/in/andyrlu/"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+    </div>
+    <div class="post">
+        <h2>Contact Me</h2>
+        <form method="post" action="https://formspree.io/luandy64+website@gmail.com">
+            <div>
+                <div><input class="theme-color" type="text" name="name" placeholder="Your Name" /></div>
+                <div><input type="text" name="email" placeholder="Your Email" /></div>
+                <div><textarea name="message" placeholder="Message to me"></textarea></div>
+                <div><input type="submit" value="Send Message" /></div>
+            </div>
+        </form>
+    </div>
+{{- end }}

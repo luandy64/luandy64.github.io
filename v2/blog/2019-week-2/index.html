@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="/v2//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.53" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>2019 Week 2 &middot; Andy Lu</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="/v2/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="/v2/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/v2/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/v2/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Andy Lu" />
+
+  
+</head>
+
+  <body class="theme-base-0d ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href=""><h1>Andy Lu</h1></a>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="">Home</a> </li>
+        <li><a href="/v2/about/"> About Me </a></li><li><a href="/v2/blog/"> Blog </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>2019 Week 2</h1>
+  <time datetime=2019-01-13T18:22:57-0500 class="post-date">Sun, Jan 13, 2019</time>
+  <p>Here are some of the things I learned this week:</p>
+
+<h3 id="python">Python</h3>
+
+<p>You should not set a parameter&rsquo;s default to some mutable object.</p>
+
+<ul>
+<li>Since parameters are &ldquo;passed by reference&rdquo; in Python, when you modify the
+parameter set to an empty type, you actually change the default. This results
+in the next call to that function to use whatever &ldquo;new&rdquo; object you&rsquo;ve created
+as the default for that parameter.</li>
+<li>It&rsquo;s not obvious to me why the language behaves this way. This makes me think
+of James Powell&rsquo;s <a href="https://www.youtube.com/watch?v=R2ipPgrWypI">Advanced Metaphors in Coding with Python</a>; I wonder
+if there is a metaphor I&rsquo;m missing here.</li>
+<li>This came from Chapter 8 in <em>Fluent Python</em> by Luciano Ramalho</li>
+</ul>
+
+<h3 id="emacs">Emacs</h3>
+
+<p>You can scroll the &ldquo;other&rdquo; window without putting point there.</p>
+
+<ul>
+<li>I like to split my Emacs screen a lot. When I&rsquo;m working in window and
+referencing the other, sometimes I want to scroll the other window.</li>
+<li>I tried to use a keybinding I found, <code>C-M-v</code> and <code>C-M-V</code>, to do the scrolling,
+but that didn&rsquo;t work. I even tried defining these myself in my <code>init.el</code> file.</li>
+<li>Ultimately, I settled on using <code>M=PageUp</code> and <code>M-PageDown</code>, and I set these as
+macros on my keyboard.</li>
+</ul>
+
+<h3 id="qmk">QMK</h3>
+
+<p>You should not define &ldquo;aliases&rdquo; in an <code>enum</code>.</p>
+
+<ul>
+<li>While trying to define macros in QMK, I was told that aliases for keycodes
+should not be included in any custom keycode <code>enum</code>s. The proper way to define
+an alias is to use the <code>#define</code> preprocessor directives.</li>
+<li>I would like to dig into why this is the case, but it&rsquo;s supposedly using some
+<code>C</code> macro to do so and I have a feeling this is a rabbit hole that I have no
+time for.</li>
+</ul>
+
+  <hr>
+  <p>
+      Thanks for reading this post! Comments, questions, and feedback are always
+      welcome.
+  </p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+       tex2jax: {
+           inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+           processEscapes: true
+       }
+   });
+  </script>
+  <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  </script>
+</html>

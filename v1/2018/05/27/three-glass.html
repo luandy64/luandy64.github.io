@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<!--
+Prologue by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Jekyll integration by Chris Bobbe | chrisbobbe.github.io
+-->
+<html><head><!-- Robots -->
+  <meta name="robots" content="index, follow" /><link rel="canonical" href="/v1/2018/05/27/three-glass.html" /><!-- Title, description, author --><title>The Three Glass Problem | Andy Lu</title>
+  <meta name="description" content="The Three Glass Problem | Andy Lu" />
+  <meta name="author" content="Andy Lu" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Three Glass Problem | Andy Lu" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://0.0.0.0:4000/assets/img/profile.jpg" />
+  <meta property="og:url" content="http://0.0.0.0:4000/2018/05/27/three-glass.html" />
+  <meta property="og:site_name" content="Andy Lu" />
+  <meta property="og:description" content="The Three Glass Problem | Andy Lu" />
+  
+  <!-- Styles -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/html5shiv.js" defer></script><![endif]-->
+  <link rel="stylesheet" href="/v1/assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="/v1/assets/css/ie8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="/v1/assets/css/ie9.css" /><![endif]-->
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrolly.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrollzer.min.js" defer></script>
+  <script src="/v1/assets/js/skel.min.js" defer></script>
+  <script src="/v1/assets/js/util.js" defer></script>
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/respond.min.js" defer></script><![endif]-->
+  <script src="/v1/assets/js/main.js" defer></script>
+
+</head><body><!-- Header -->
+<div id="header">
+  <div class="top"><!-- Logo -->
+<div id="logo">
+  <a href="/v1/" id="home-link">
+    <span class="image avatar48"><img src="/v1/assets/img/profile.jpg" alt="Avatar of Andy Lu" /></span>
+    <h1 id="title">Andy Lu</h1>
+    <p></p>
+  </a>
+</div><!-- Nav -->
+<nav id="nav">
+  <ul><!--<li><a href="/v1/themes/hyde/" id="hyde-link">-->
+            <li><a href="/v1/themes/hyde/" id="hyde-link">
+            <span class="icon fa-link">Hyde</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">-->
+            <li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">
+            <span class="icon fa-link">Changelog</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">-->
+            <li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">
+            <span class="icon fa-link">page</span>
+          </a></li><!--<li><a href="/v1/" id="home-link">-->
+            <li><a href="/v1/" id="home-link">
+            <span class="icon fa-home">Home</span>
+          </a></li><!--<li><a href="/v1/blog/" id="blog-link">-->
+            <li><a href="/v1/blog/" id="blog-link">
+            <span class="icon fa-pencil">Blog</span>
+          </a></li><!--<li><a href="/v1/reading-list.html" id="reading-list-link">-->
+            <li><a href="/v1/reading-list.html" id="reading-list-link">
+            <span class="icon fa-book">Reading List</span>
+          </a></li><!--<li><a href="/v1/certificates.html" id="certificates-link">-->
+            <li><a href="/v1/certificates.html" id="certificates-link">
+            <span class="icon fa-trophy">Certificates</span>
+          </a></li></ul>
+</nav></div>
+  <div class="bottom"><!-- Social Icons -->
+<ul class="icons"><li><a href="https://twitter.com/_andy_lu_" class="icon fa-twitter"><span class="label">Twitter</span></a></li><li><a href="https://www.linkedin.com/in/andyrlu/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li><li><a href="https://github.com/luandy64/" class="icon fa-github"><span class="label">GitHub</span></a></li><li><a href="/#contact-me" class="icon fa-envelope"><span class="label">Email</span></a></li></ul>
+</div>
+</div>
+<!-- Main -->
+<div id="main">
+  <!-- Post -->
+  <article class="shade-two">
+    <div class="container">
+      <header>
+        <h2>The Three Glass Problem</h2>
+	  <p>27 May 2018</p>
+      </header>
+
+      <p>I just came across the so called “Three Glass Problem” and thought I would try 
+and solve it. It turns out to be fairly trivial with a bit of abstract algebra!
+<!--more--></p>
+
+<p>Obviously there are spoilers ahead if you have never heard of this problem. So
+turn away now if you care for the challenge!</p>
+
+<p>The problem goes as follows: Given 3 cups, one that holds 8 units of liquid,
+one that holds 5 units of liquid, and one that holds 3 units of liquid, create
+two servings 4 units in volume.</p>
+
+<p>Here is your final warning if you want to work this out for yourself. Below is 
+my solution.</p>
+
+<p>For the sake of clarity, I’m going to say the goal is to measure out 2 drinks
+of 4 fluid ounces each. Knowing that we have to create two drinks, I assumed
+each drink had to be created with the 3 ounce cup and one of the other cups.
+Since we can fill cups and combine them and dump them when full, I thought of
+cyclic groups with addition mod \(n\) as a perfect model for this problem.
+Specifically, \(\mathbb{Z}_8\) and \(\mathbb{Z}_5\) will be used here.</p>
+
+<p>As a reminder the cyclic group \(\mathbb{Z}_n\) is the group under addition mod
+\(n\), where the group elements are \(0,1,2, \ldots, n\). Another term we need is
+the group “generated” by \(a\), where \(a\) is in  \(\mathbb{Z}_n\). So the group
+generated by \(a\) looks like: \(\{a, 2a, 3a, \ldots, 0\}\).</p>
+
+<p>The group generated by \(3\) in \(\mathbb{Z}_8\) is 
+\(\{3, 6, 1, 4, 7, 2, 5, 0\}\).</p>
+
+<p>Similarly, the group generated by \(3\) in \(\mathbb{Z}_5\) is 
+\(\{3, 1, 4, 2, 0\}\).</p>
+
+<p>So following these “instructions” gives you this:</p>
+
+<p>First, fill the 3 and pour it into the 8 twice, giving you 6 in the 8. Fill 
+the 3 again, top off the 8, giving you 1 in the 3. Dump the 8 and move the 1
+from the 3 to the 8. Fill the 3 one last time, and transfer to the 8. Boom, 
+first drink done.</p>
+
+<p>Now take fill the 3 and pour it into the 5. Fill the 3 and top off the 5, 
+giving you 1 in the 3 and dump the 5. Transfer the 1 to the 5, and add one 
+last 3. This gives you the second 4 ounce drink. QED.</p>
+</div>
+  </article>
+</div>
+
+<!--Adding MathJax Support-->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- Footer -->
+<div id="footer">
+  
+  <!-- Copyright -->
+  <ul class="copyright">
+    
+      <li>&copy;Andy Lu. All rights reserved.</li>
+    
+    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    <li>Jekyll integration: <a href="https://chrisbobbe.github.io/">Chris Bobbe</a></li>
+    <li>Typed with pleasure on an <a href="https://olkb.com/">olkb</a> Preonic</li>
+  </ul>
+  
+</div>
+</body>
+</html>

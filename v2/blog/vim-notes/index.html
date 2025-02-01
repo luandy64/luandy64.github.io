@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="/v2//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.53" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Notes on Vim &middot; Andy Lu</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="/v2/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="/v2/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/v2/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/v2/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Andy Lu" />
+
+  
+</head>
+
+  <body class="theme-base-0d ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href=""><h1>Andy Lu</h1></a>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="">Home</a> </li>
+        <li><a href="/v2/about/"> About Me </a></li><li><a href="/v2/blog/"> Blog </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Notes on Vim</h1>
+  <time datetime=2018-06-16T08:09:10-0500 class="post-date">Sat, Jun 16, 2018</time>
+  <h2 id="honing-your-tools">Honing your tools</h2>
+
+<p>It&rsquo;s pretty common to see craftpeople creating tools for themselves for a
+variety of reasons. Maybe it&rsquo;s because the exact tool they need doesn&rsquo;t exist;
+perhaps a slight modification to a tool would help fit their style more.</p>
+
+<p>Whatever the case, I want to assert that this happens often. This is why I like
+to take time to learn about text editors from the &lsquo;70s. I take no stance on the
+whole Emacs v. Vim thing; it&rsquo;s a pretty silly thing to argue about. Plus, my
+setup is running <a href="http://spacemacs.org/">Spacemacs</a>, a version of Emacs focused
+on Vim keybindings, so I am not even sure how to categorize that one.</p>
+
+<p>I&rsquo;m not particularly new to the app actually. I&rsquo;ve been slowly configuring it to
+my liking as I learn about new features. As someone who spends a lot of time
+editing text files, I don&rsquo;t mind honing my knowledge of this tool.</p>
+
+<h2 id="the-vim-way">The Vim way?</h2>
+
+<p>So on that note, I watched <a href="https://www.youtube.com/watch?v=wlR5gYd6um0">Mastering the Vim
+Language</a> by ThoughtBot on YouTube
+and took some notes.</p>
+
+<p>If you think of Vim as a language, then the commands can be thought of as a
+&ldquo;verb&rdquo; + &ldquo;noun&rdquo; couple. It also helps that the keybindings are more or less
+abbrieviations of the action or phrase they represent.</p>
+
+<h2 id="some-keybindings">Some Keybindings</h2>
+
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>c</td>
+<td>Delete and enter Insert mode</td>
+</tr>
+
+<tr>
+<td>&gt;</td>
+<td>Indent</td>
+</tr>
+
+<tr>
+<td>&lt;</td>
+<td>Outdent</td>
+</tr>
+
+<tr>
+<td>y</td>
+<td>Yank (copy)</td>
+</tr>
+
+<tr>
+<td>w</td>
+<td>Move forward a word</td>
+</tr>
+
+<tr>
+<td>b</td>
+<td>Move backward a word</td>
+</tr>
+
+<tr>
+<td>iw</td>
+<td>&ldquo;Inner Word&rdquo;: Targets the word you are in</td>
+</tr>
+
+<tr>
+<td>it</td>
+<td>&ldquo;Inner Tag&rdquo;: Targets the HTML tag you are in</td>
+</tr>
+
+<tr>
+<td>ip</td>
+<td>&ldquo;Inner Paragraph&rdquo;</td>
+</tr>
+
+<tr>
+<td>as</td>
+<td>&ldquo;A Sentence&rdquo;</td>
+</tr>
+
+<tr>
+<td>f</td>
+<td>Find the character you type, puts cursor on the character</td>
+</tr>
+
+<tr>
+<td>t</td>
+<td>Find the character you type, puts cursor before the character</td>
+</tr>
+
+<tr>
+<td>F</td>
+<td>f, but going backwards</td>
+</tr>
+
+<tr>
+<td>T</td>
+<td>t, but going backwards</td>
+</tr>
+
+<tr>
+<td>/</td>
+<td>Search forwards</td>
+</tr>
+
+<tr>
+<td>?</td>
+<td>Search backwards</td>
+</tr>
+</tbody>
+</table>
+
+  <hr>
+  <p>
+      Thanks for reading this post! Comments, questions, and feedback are always
+      welcome.
+  </p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+       tex2jax: {
+           inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+           processEscapes: true
+       }
+   });
+  </script>
+  <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  </script>
+</html>

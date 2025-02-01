@@ -1,0 +1,51 @@
+<p>After a few hours of work, I was able to get the bare minimum of this site
+rewritten for <code class="language-plaintext highlighter-rouge">hugo</code>. I’ll work on finalizing the <code class="language-plaintext highlighter-rouge">/home</code> and <code class="language-plaintext highlighter-rouge">/about</code> pages
+slowly but surely; for now though, I am more than satisfied with just having the
+blog up and running.</p>
+
+<!--more-->
+
+<p>While I was working on the migration, I read up on some things I would like to
+incorporate some day:</p>
+
+<ul>
+  <li>
+    <p>Hugo has support for Emacs users to write the pages in Org mode. That’s
+exciting to even just try out for an article or two; especially considering
+that at some point I was trying to write a Python script to change an org file
+to markdown for Jekyll.</p>
+  </li>
+  <li>
+    <p>A goal I’ve had in the start is to write the site from scractch, and that goal
+has been reinvigorated with this migration.</p>
+  </li>
+</ul>
+
+<p>Some hiccups I encountered along the way:</p>
+
+<ul>
+  <li>I glossed over the one line in the Hugo Documentation that was like “User
+pages have to have the files for the site on the <code class="language-plaintext highlighter-rouge">master</code> branch”. I read that
+after I learned about setting up multiple working trees and put all of my
+files in a <code class="language-plaintext highlighter-rouge">gh-pages</code> branch.
+    <ul>
+      <li>No worries, I just swapped the two branches essentially. So <code class="language-plaintext highlighter-rouge">master</code> holds
+the Hugo generated website files, and my <code class="language-plaintext highlighter-rouge">dev</code> branch holds the files that
+generate the files that need to sit in <code class="language-plaintext highlighter-rouge">master</code>.</li>
+    </ul>
+  </li>
+  <li>There was a path issue in linking the CSS files. In the config you can set the
+<code class="language-plaintext highlighter-rouge">baseURL</code> of the site, and in the theme I am using, the author references that
+variable directly, like so: <code class="language-plaintext highlighter-rouge">{Site.baseURL}css/nameOfStylesheet.css</code>. You get
+the point. Naturally, you would think to set the <code class="language-plaintext highlighter-rouge">baseURL=
+/</code>. That way when it is referenced later, I get a
+properly formed url to the CSS file.
+    <ul>
+      <li>Right now, the ‘baseURL’ lacks a trailing <code class="language-plaintext highlighter-rouge">/</code>, and I edited the theme to
+include the <code class="language-plaintext highlighter-rouge">/</code> between <code class="language-plaintext highlighter-rouge">{Site.baseURL}</code> and the rest of the path to the
+stylesheet. I plan to look into what is considered the better practice,
+but for now, it works as is.</li>
+    </ul>
+  </li>
+</ul>
+

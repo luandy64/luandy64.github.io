@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<!--
+Prologue by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Jekyll integration by Chris Bobbe | chrisbobbe.github.io
+-->
+<html><head><!-- Robots -->
+  <meta name="robots" content="index, follow" /><link rel="canonical" href="/v1/2018/07/28/python-for-bash.html" /><!-- Title, description, author --><title>Python for bash | Andy Lu</title>
+  <meta name="description" content="Python for bash | Andy Lu" />
+  <meta name="author" content="Andy Lu" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Python for bash | Andy Lu" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://0.0.0.0:4000/assets/img/profile.jpg" />
+  <meta property="og:url" content="http://0.0.0.0:4000/2018/07/28/python-for-bash.html" />
+  <meta property="og:site_name" content="Andy Lu" />
+  <meta property="og:description" content="Python for bash | Andy Lu" />
+  
+  <!-- Styles -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/html5shiv.js" defer></script><![endif]-->
+  <link rel="stylesheet" href="/v1/assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="/v1/assets/css/ie8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="/v1/assets/css/ie9.css" /><![endif]-->
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrolly.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrollzer.min.js" defer></script>
+  <script src="/v1/assets/js/skel.min.js" defer></script>
+  <script src="/v1/assets/js/util.js" defer></script>
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/respond.min.js" defer></script><![endif]-->
+  <script src="/v1/assets/js/main.js" defer></script>
+
+</head><body><!-- Header -->
+<div id="header">
+  <div class="top"><!-- Logo -->
+<div id="logo">
+  <a href="/v1/" id="home-link">
+    <span class="image avatar48"><img src="/v1/assets/img/profile.jpg" alt="Avatar of Andy Lu" /></span>
+    <h1 id="title">Andy Lu</h1>
+    <p></p>
+  </a>
+</div><!-- Nav -->
+<nav id="nav">
+  <ul><!--<li><a href="/v1/themes/hyde/" id="hyde-link">-->
+            <li><a href="/v1/themes/hyde/" id="hyde-link">
+            <span class="icon fa-link">Hyde</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">-->
+            <li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">
+            <span class="icon fa-link">Changelog</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">-->
+            <li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">
+            <span class="icon fa-link">page</span>
+          </a></li><!--<li><a href="/v1/" id="home-link">-->
+            <li><a href="/v1/" id="home-link">
+            <span class="icon fa-home">Home</span>
+          </a></li><!--<li><a href="/v1/blog/" id="blog-link">-->
+            <li><a href="/v1/blog/" id="blog-link">
+            <span class="icon fa-pencil">Blog</span>
+          </a></li><!--<li><a href="/v1/reading-list.html" id="reading-list-link">-->
+            <li><a href="/v1/reading-list.html" id="reading-list-link">
+            <span class="icon fa-book">Reading List</span>
+          </a></li><!--<li><a href="/v1/certificates.html" id="certificates-link">-->
+            <li><a href="/v1/certificates.html" id="certificates-link">
+            <span class="icon fa-trophy">Certificates</span>
+          </a></li></ul>
+</nav></div>
+  <div class="bottom"><!-- Social Icons -->
+<ul class="icons"><li><a href="https://twitter.com/_andy_lu_" class="icon fa-twitter"><span class="label">Twitter</span></a></li><li><a href="https://www.linkedin.com/in/andyrlu/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li><li><a href="https://github.com/luandy64/" class="icon fa-github"><span class="label">GitHub</span></a></li><li><a href="/#contact-me" class="icon fa-envelope"><span class="label">Email</span></a></li></ul>
+</div>
+</div>
+<!-- Main -->
+<div id="main">
+  <!-- Post -->
+  <article class="shade-two">
+    <div class="container">
+      <header>
+        <h2>Python for bash</h2>
+	  <p>28 July 2018</p>
+      </header>
+
+      <p>Do you like <code class="language-plaintext highlighter-rouge">bash</code> scripts? Personally, I don’t.</p>
+
+<p>So when I need to write bash scripts, I figure out the commands I need, then 
+glue them together with Python.</p>
+
+<p>It’s been a while since I’ve needed to do this and while I neglected it before,
+the <code class="language-plaintext highlighter-rouge">subprocess</code> module is the best way to run these commands.</p>
+
+<h2 id="a-quick-intro-to-pythons-subprocesspy">A Quick Intro to Python’s <code class="language-plaintext highlighter-rouge">subprocess.py</code></h2>
+
+<h3 id="development-environment">Development Environment</h3>
+<p>If you are following along with me here, you’ll want to be using at least <code class="language-plaintext highlighter-rouge">python
+3.5</code>. Any version before that and you’ll have to use a different API in this
+module to do the things I’ll show you.</p>
+
+<h3 id="the-command">The Command</h3>
+<p>The workhorse of this module is the <code class="language-plaintext highlighter-rouge">subprocess.Popen</code> class. There are a ton of
+arguments you can pass this class, but it can be overwhelming- and not to
+mention overkill- if you’re new to this.</p>
+
+<p>Thankfully, there’s a function in the <code class="language-plaintext highlighter-rouge">subprocess</code> module that we can interface
+with instead: <code class="language-plaintext highlighter-rouge">subprocess.run()</code>.</p>
+
+<p>Here’s the function signature with some typical arguments passed in. (I pulled
+this from the <a href="https://docs.python.org/3/library/subprocess.html">Docs</a>)</p>
+<pre><code class="language-python3">subprocess.run(args, *, stdin=None, input=None, stdout=None, stderr=None,
+shell=False, cwd=None, timeout=None, check=False, encoding=None, errors=None,
+text=None, env=None)*)
+</code></pre>
+
+<p>That looks pretty complicated, but we can actually ignore most of it and still
+do pretty neat things. Let’s look at some examples.</p>
+
+<h4 id="a-basic-example">A Basic Example</h4>
+<pre><code class="language-python3">import subprocess as sp
+
+result = sp.run("pwd")
+print(result)
+</code></pre>
+
+<p>The output:</p>
+<pre><code class="language-python3">/this/is/the/path/to/where/my/terminal/was/
+CompletedProcess(args="pwd", returncode=0)
+</code></pre>
+
+<p>The output of this is the path to the directory you ran this script from;
+exactly what you would expect. Then there’s some <code class="language-plaintext highlighter-rouge">CompletedProcess</code> object. This
+is just an object that stores some information about the command that was run.
+For this guide, I’m ignoring it, but I’ll have links at the end where you can
+read all about it.</p>
+
+<p>But that’s it! That’s all you need to run some basic <code class="language-plaintext highlighter-rouge">bash</code> commands. The only
+caveat is you’ll be lacking some features of a shell.</p>
+
+<p>To overcome this, let’s look at the next example.</p>
+
+<h4 id="a-better-example">A Better Example</h4>
+<pre><code class="language-python3">import subprocess as sp
+
+result = sp.run("ls -lah &gt; someFile.txt", shell=True)
+output = sp.run('ls -lah | grep ".txt"', shell=True)
+</code></pre>
+
+<p>You may have noticed earlier in the function signature that <code class="language-plaintext highlighter-rouge">shell=False</code>, but
+here I set it to <code class="language-plaintext highlighter-rouge">True</code>. By doing so, the command I want actually gets run in a
+shell. That means I have access to redirection and pipes like I’ve shown.</p>
+
+<p>A note on running things like this: the command you want to execute must be
+typed exactly the way you would if you were doing it on a shell. If you read
+through the Documentation, you’ll notice there is a way to run commands as by
+passing in a list of strings, where each string is either the command or a flag
+or input to the main command.</p>
+
+<p>I found this confusing because if you follow my “Better Example” way, you are
+never left wondering if you passed in the arguments correctly. On top of that,
+you are free to use Python to build up a command based on various conditions.</p>
+
+<p>Here’s an example of me doing just that.</p>
+
+<h4 id="a-real-world-example">A “Real World” Example</h4>
+<pre><code class="language-python3">#!/usr/bin/env python3
+
+###############################################################################
+#                                   Imports                                   #
+###############################################################################
+import subprocess as sp
+from datetime import date
+
+###############################################################################
+#                                  Functions                                  #
+###############################################################################
+
+def getTodaysDate():
+  currDate = date.today()
+  return f"{currDate.year}-{currDate.month}-{currDate.day}"
+
+def moveToPosts():
+  lsprocess = sp.run("ls ./_drafts", shell=True, stdout=sp.PIPE)
+  fileList = lsprocess.stdout.decode('utf-8').strip().split("\n")
+  hasNewPost = len(fileList)
+
+  if (hasNewPost == 1):
+      print("New post detected")
+      
+      srcName = "./_drafts/" + fileList[0]
+      destName = " ./_posts/" + getTodaysDate() + "-" + fileList[0]
+      
+      command = "mv "+ srcName + destName
+      sp.run(command, shell=True)
+      
+      return [destName, files[0]]
+      
+  elif hasNewPost == 0:
+      print("Write more!")
+  else:
+      print("Too many things, not sure what to do")
+
+def runGit(fullPath, fileName):
+  
+  commitMsg = "'Add new blog post'"
+  
+  c1 = "git add " + fullPath
+  c2 = "git commit -m " + commitMsg
+
+  cmds = [c1,c2]
+  
+  for cmd in cmds:
+    cp = sp.run(cmd, shell=True)
+    
+if __name__ == "__main__":
+  pathToPost, fileName = moveToPosts()
+  runGit(pathToPost, fileName)
+  print("Done") 
+</code></pre>
+<p>Since this blog is running thanks to Jekyll, I took advantage of the <code class="language-plaintext highlighter-rouge">_drafts</code>
+folder available to me.</p>
+
+<p>For those of you unfamiliar with Jekyll, <code class="language-plaintext highlighter-rouge">_drafts</code> is a folder where you can
+store blog posts that aren’t ready to be published yet. Published posts go in
+<code class="language-plaintext highlighter-rouge">_posts</code>.</p>
+
+<p>The filenames in this folder look like: <code class="language-plaintext highlighter-rouge">the-title-of-my-post.md</code>. The filenames
+for published post that sit in the <code class="language-plaintext highlighter-rouge">_posts</code> folder have the same name, but with
+the <code class="language-plaintext highlighter-rouge">year-month-day-</code> attached to the front of the draft name.</p>
+
+<p>With this script, I just have to write a post and drop it into <code class="language-plaintext highlighter-rouge">_drafts</code>. Then I
+open a terminal and run this script. First it looks in <code class="language-plaintext highlighter-rouge">_drafts</code> and makes an
+array of the filenames it found. Anything other than just finding one file will
+stop the script- I’ll improve this one day. With that file name and the help of
+<code class="language-plaintext highlighter-rouge">subprocess.run()</code>, the script moves the draft into <code class="language-plaintext highlighter-rouge">_posts</code>, gives it the
+appropriate name, then commits it to <code class="language-plaintext highlighter-rouge">git</code> for me.</p>
+
+<h2 id="wrap-up">Wrap Up</h2>
+<p>I introduced the <code class="language-plaintext highlighter-rouge">subprocess.run()</code> function, gave 3 examples of running <code class="language-plaintext highlighter-rouge">bash</code>
+commands with it, and ended with the script that inspired this post in the first
+place.</p>
+
+<p>I personally don’t have too many uses for <code class="language-plaintext highlighter-rouge">bash</code> scripts. When I need one
+though, I’ll definitely be writing it in Python and if it suits your needs, you
+should too.</p>
+
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+  <li><a href="https://docs.python.org/3/library/subprocess.html">Python Documentation</a></li>
+</ul>
+</div>
+  </article>
+</div>
+
+<!--Adding MathJax Support-->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- Footer -->
+<div id="footer">
+  
+  <!-- Copyright -->
+  <ul class="copyright">
+    
+      <li>&copy;Andy Lu. All rights reserved.</li>
+    
+    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    <li>Jekyll integration: <a href="https://chrisbobbe.github.io/">Chris Bobbe</a></li>
+    <li>Typed with pleasure on an <a href="https://olkb.com/">olkb</a> Preonic</li>
+  </ul>
+  
+</div>
+</body>
+</html>

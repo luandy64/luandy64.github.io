@@ -1,0 +1,61 @@
+<p>Today was a lot of interview prep. That’s great because I like the
+self-reflection time, but it doesn’t leave too much time to work on these side
+projects.</p>
+
+<p>In the spirit of documenting my process of thinking and working, I want to talk
+about how I’m going to tackle the next step of this Hugo migration.</p>
+
+<!--more-->
+
+<p>The problems I’m facing, in no particular order, are:</p>
+<ul>
+  <li>I need to change the front matter from how it is to something more consistent
+for Hugo. Not all of my posts are consistent, but I can easily make it so</li>
+  <li>One pet peeve of of mine is the way images are handled in Markdown.
+    <ul>
+      <li>For one, it jacks up my file format/layout because sometimes the image is
+inserted at the end of a line and I haven’t explored how to wrap the line to
+my desired 80 characters. Perhaps it really isn’t a problem and I just need
+to read some documentation. But it’s on my mind</li>
+      <li>The way I would like to handle it is to reference some variable name in my
+Markdown, which is then processed later to be replaced by the properly
+formated <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> tag and whatnot. Each blog post already stores some
+metadata about itself; moreover, it’s in a <code class="language-plaintext highlighter-rouge">key:value</code> sort of thing with
+<code class="language-plaintext highlighter-rouge">YAML</code>, so how hard can it be to say “If you see this <code class="language-plaintext highlighter-rouge">key</code> in the Markdown,
+then swap it with the <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> where the source is the <code class="language-plaintext highlighter-rouge">value</code>”. I did a tiny
+bit of research and it sounds like this feature is possible with something
+called <code class="language-plaintext highlighter-rouge">shortcodes</code>. I’ll look into and you’ll find me writing about it in a
+few days, I’m sure</li>
+    </ul>
+  </li>
+  <li>I need to figure out how to restructure my posts to match the “Hugo way”. I
+know that Jekyll was very very very flexible with whatever I threw at it. And
+I’ve read that Hugo is pickier. So I need to make this transition work and
+work properly so that I’m not fiddling with this down the road
+    <ul>
+      <li>Disclaimer: It’s not that I don’t like fiddling with this site. It’s
+literally one of the main reasons it exists. Heck, my love of tinkering is
+what drives this migration in the first place. I have enough experience
+with these static site generators that I’d like to make sure I do things
+right from now on. I’m done with the “I’m learning and let’s just get this
+functional”.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>So to fix that front matter issue, I’m definitely writing a script to do it. I
+have just enough blog posts to say, no way I’m not doing this by hand. I’ve
+thought about 7 steps that the script should take:</p>
+<ul>
+  <li>Read in the current front matter</li>
+  <li>Compare it to my “ideal list” of key-value pairs and keep the good ones</li>
+  <li>Add the missing ones with default values I need to go in and change</li>
+  <li>Add the filename to some list that tells me to look at some thing</li>
+  <li>Also note which files have an image in them</li>
+  <li>Make a new file containing the new front matter and the old content</li>
+  <li>Put this new file in some target directory</li>
+</ul>
+
+<p>The code will definitely look like: for every file in my <code class="language-plaintext highlighter-rouge">/posts</code> folder, do the
+thing.</p>
+

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="/v2//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.53" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Python for bash &middot; Andy Lu</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="/v2/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="/v2/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/v2/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/v2/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Andy Lu" />
+
+  
+</head>
+
+  <body class="theme-base-0d ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href=""><h1>Andy Lu</h1></a>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="">Home</a> </li>
+        <li><a href="/v2/about/"> About Me </a></li><li><a href="/v2/blog/"> Blog </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Python for bash</h1>
+  <time datetime=2018-07-28T20:21:22-0500 class="post-date">Sat, Jul 28, 2018</time>
+  <p>Do you like <code>bash</code> scripts? Personally, I don&rsquo;t.</p>
+
+<p>So when I need to write bash scripts, I figure out the commands I need, then
+glue them together with Python.</p>
+
+<p>It&rsquo;s been a while since I&rsquo;ve needed to do this and while I neglected it before,
+the <code>subprocess</code> module is the best way to run these commands.</p>
+
+<h2 id="a-quick-intro-to-python-s-subprocess-py">A Quick Intro to Python&rsquo;s <code>subprocess.py</code></h2>
+
+<h3 id="development-environment">Development Environment</h3>
+
+<p>If you are following along with me here, you&rsquo;ll want to be using at least <code>python
+3.5</code>. Any version before that and you&rsquo;ll have to use a different API in this
+module to do the things I&rsquo;ll show you.</p>
+
+<h3 id="the-command">The Command</h3>
+
+<p>The workhorse of this module is the <code>subprocess.Popen</code> class. There are a ton of
+arguments you can pass this class, but it can be overwhelming- and not to
+mention overkill- if you&rsquo;re new to this.</p>
+
+<p>Thankfully, there&rsquo;s a function in the <code>subprocess</code> module that we can interface
+with instead: <code>subprocess.run()</code>.</p>
+
+<p>Here&rsquo;s the function signature with some typical arguments passed in. (I pulled
+this from the <a href="https://docs.python.org/3/library/subprocess.html">Docs</a>)</p>
+
+<pre><code class="language-python3">subprocess.run(args, *, stdin=None, input=None, stdout=None, stderr=None,
+shell=False, cwd=None, timeout=None, check=False, encoding=None, errors=None,
+text=None, env=None)*)
+</code></pre>
+
+<p>That looks pretty complicated, but we can actually ignore most of it and still
+do pretty neat things. Let&rsquo;s look at some examples.</p>
+
+<h4 id="a-basic-example">A Basic Example</h4>
+
+<pre><code class="language-python3">import subprocess as sp
+
+result = sp.run(&quot;pwd&quot;)
+print(result)
+</code></pre>
+
+<p>The output:</p>
+
+<pre><code class="language-python3">/this/is/the/path/to/where/my/terminal/was/
+CompletedProcess(args=&quot;pwd&quot;, returncode=0)
+</code></pre>
+
+<p>The output of this is the path to the directory you ran this script from;
+exactly what you would expect. Then there&rsquo;s some <code>CompletedProcess</code> object. This
+is just an object that stores some information about the command that was run.
+For this guide, I&rsquo;m ignoring it, but I&rsquo;ll have links at the end where you can
+read all about it.</p>
+
+<p>But that&rsquo;s it! That&rsquo;s all you need to run some basic <code>bash</code> commands. The only
+caveat is you&rsquo;ll be lacking some features of a shell.</p>
+
+<p>To overcome this, let&rsquo;s look at the next example.</p>
+
+<h4 id="a-better-example">A Better Example</h4>
+
+<pre><code class="language-python3">import subprocess as sp
+
+result = sp.run(&quot;ls -lah &gt; someFile.txt&quot;, shell=True)
+output = sp.run('ls -lah | grep &quot;.txt&quot;', shell=True)
+</code></pre>
+
+<p>You may have noticed earlier in the function signature that <code>shell=False</code>, but
+here I set it to <code>True</code>. By doing so, the command I want actually gets run in a
+shell. That means I have access to redirection and pipes like I&rsquo;ve shown.</p>
+
+<p>A note on running things like this: the command you want to execute must be
+typed exactly the way you would if you were doing it on a shell. If you read
+through the Documentation, you&rsquo;ll notice there is a way to run commands as by
+passing in a list of strings, where each string is either the command or a flag
+or input to the main command.</p>
+
+<p>I found this confusing because if you follow my &ldquo;Better Example&rdquo; way, you are
+never left wondering if you passed in the arguments correctly. On top of that,
+you are free to use Python to build up a command based on various conditions.</p>
+
+<p>Here&rsquo;s an example of me doing just that.</p>
+
+<h4 id="a-real-world-example">A &ldquo;Real World&rdquo; Example</h4>
+
+<pre><code class="language-python3">#!/usr/bin/env python3
+
+###############################################################################
+#                                   Imports                                   #
+###############################################################################
+import subprocess as sp
+from datetime import date
+
+###############################################################################
+#                                  Functions                                  #
+###############################################################################
+
+def getTodaysDate():
+  currDate = date.today()
+  return f&quot;{currDate.year}-{currDate.month}-{currDate.day}&quot;
+
+def moveToPosts():
+  lsprocess = sp.run(&quot;ls ./_drafts&quot;, shell=True, stdout=sp.PIPE)
+  fileList = lsprocess.stdout.decode('utf-8').strip().split(&quot;\n&quot;)
+  hasNewPost = len(fileList)
+
+  if (hasNewPost == 1):
+      print(&quot;New post detected&quot;)
+      
+      srcName = &quot;./_drafts/&quot; + fileList[0]
+      destName = &quot; ./_posts/&quot; + getTodaysDate() + &quot;-&quot; + fileList[0]
+      
+      command = &quot;mv &quot;+ srcName + destName
+      sp.run(command, shell=True)
+      
+      return [destName, files[0]]
+      
+  elif hasNewPost == 0:
+      print(&quot;Write more!&quot;)
+  else:
+      print(&quot;Too many things, not sure what to do&quot;)
+
+def runGit(fullPath, fileName):
+  
+  commitMsg = &quot;'Add new blog post'&quot;
+  
+  c1 = &quot;git add &quot; + fullPath
+  c2 = &quot;git commit -m &quot; + commitMsg
+
+  cmds = [c1,c2]
+  
+  for cmd in cmds:
+    cp = sp.run(cmd, shell=True)
+    
+if __name__ == &quot;__main__&quot;:
+  pathToPost, fileName = moveToPosts()
+  runGit(pathToPost, fileName)
+  print(&quot;Done&quot;) 
+</code></pre>
+
+<p>Since this blog is running thanks to Jekyll, I took advantage of the <code>_drafts</code>
+folder available to me.</p>
+
+<p>For those of you unfamiliar with Jekyll, <code>_drafts</code> is a folder where you can
+store blog posts that aren&rsquo;t ready to be published yet. Published posts go in
+<code>_posts</code>.</p>
+
+<p>The filenames in this folder look like: <code>the-title-of-my-post.md</code>. The filenames
+for published post that sit in the <code>_posts</code> folder have the same name, but with
+the <code>year-month-day-</code> attached to the front of the draft name.</p>
+
+<p>With this script, I just have to write a post and drop it into <code>_drafts</code>. Then I
+open a terminal and run this script. First it looks in <code>_drafts</code> and makes an
+array of the filenames it found. Anything other than just finding one file will
+stop the script- I&rsquo;ll improve this one day. With that file name and the help of
+<code>subprocess.run()</code>, the script moves the draft into <code>_posts</code>, gives it the
+appropriate name, then commits it to <code>git</code> for me.</p>
+
+<h2 id="wrap-up">Wrap Up</h2>
+
+<p>I introduced the <code>subprocess.run()</code> function, gave 3 examples of running <code>bash</code>
+commands with it, and ended with the script that inspired this post in the first
+place.</p>
+
+<p>I personally don&rsquo;t have too many uses for <code>bash</code> scripts. When I need one
+though, I&rsquo;ll definitely be writing it in Python and if it suits your needs, you
+should too.</p>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<ul>
+<li><a href="https://docs.python.org/3/library/subprocess.html">Python Documentation</a></li>
+</ul>
+
+  <hr>
+  <p>
+      Thanks for reading this post! Comments, questions, and feedback are always
+      welcome.
+  </p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+       tex2jax: {
+           inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+           processEscapes: true
+       }
+   });
+  </script>
+  <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  </script>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<!--
+Prologue by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Jekyll integration by Chris Bobbe | chrisbobbe.github.io
+-->
+<html><head><!-- Robots -->
+  <meta name="robots" content="index, follow" /><link rel="canonical" href="/v1/2018/09/13/high-order-functions-kata.html" /><!-- Title, description, author --><title>High Order Functions Kata | Andy Lu</title>
+  <meta name="description" content="High Order Functions Kata | Andy Lu" />
+  <meta name="author" content="Andy Lu" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="High Order Functions Kata | Andy Lu" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://0.0.0.0:4000/assets/img/profile.jpg" />
+  <meta property="og:url" content="http://0.0.0.0:4000/2018/09/13/high-order-functions-kata.html" />
+  <meta property="og:site_name" content="Andy Lu" />
+  <meta property="og:description" content="High Order Functions Kata | Andy Lu" />
+  
+  <!-- Styles -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/html5shiv.js" defer></script><![endif]-->
+  <link rel="stylesheet" href="/v1/assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="/v1/assets/css/ie8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="/v1/assets/css/ie9.css" /><![endif]-->
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrolly.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrollzer.min.js" defer></script>
+  <script src="/v1/assets/js/skel.min.js" defer></script>
+  <script src="/v1/assets/js/util.js" defer></script>
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/respond.min.js" defer></script><![endif]-->
+  <script src="/v1/assets/js/main.js" defer></script>
+
+</head><body><!-- Header -->
+<div id="header">
+  <div class="top"><!-- Logo -->
+<div id="logo">
+  <a href="/v1/" id="home-link">
+    <span class="image avatar48"><img src="/v1/assets/img/profile.jpg" alt="Avatar of Andy Lu" /></span>
+    <h1 id="title">Andy Lu</h1>
+    <p></p>
+  </a>
+</div><!-- Nav -->
+<nav id="nav">
+  <ul><!--<li><a href="/v1/themes/hyde/" id="hyde-link">-->
+            <li><a href="/v1/themes/hyde/" id="hyde-link">
+            <span class="icon fa-link">Hyde</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">-->
+            <li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">
+            <span class="icon fa-link">Changelog</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">-->
+            <li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">
+            <span class="icon fa-link">page</span>
+          </a></li><!--<li><a href="/v1/" id="home-link">-->
+            <li><a href="/v1/" id="home-link">
+            <span class="icon fa-home">Home</span>
+          </a></li><!--<li><a href="/v1/blog/" id="blog-link">-->
+            <li><a href="/v1/blog/" id="blog-link">
+            <span class="icon fa-pencil">Blog</span>
+          </a></li><!--<li><a href="/v1/reading-list.html" id="reading-list-link">-->
+            <li><a href="/v1/reading-list.html" id="reading-list-link">
+            <span class="icon fa-book">Reading List</span>
+          </a></li><!--<li><a href="/v1/certificates.html" id="certificates-link">-->
+            <li><a href="/v1/certificates.html" id="certificates-link">
+            <span class="icon fa-trophy">Certificates</span>
+          </a></li></ul>
+</nav></div>
+  <div class="bottom"><!-- Social Icons -->
+<ul class="icons"><li><a href="https://twitter.com/_andy_lu_" class="icon fa-twitter"><span class="label">Twitter</span></a></li><li><a href="https://www.linkedin.com/in/andyrlu/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li><li><a href="https://github.com/luandy64/" class="icon fa-github"><span class="label">GitHub</span></a></li><li><a href="/#contact-me" class="icon fa-envelope"><span class="label">Email</span></a></li></ul>
+</div>
+</div>
+<!-- Main -->
+<div id="main">
+  <!-- Post -->
+  <article class="shade-two">
+    <div class="container">
+      <header>
+        <h2>High Order Functions Kata</h2>
+	  <p>13 September 2018</p>
+      </header>
+
+      <p>Every now and then I like to get on <a href="https://www.codewars.com/">CodeWars</a> to
+practice some coding challenges. Some problems can get pretty interesting and
+today was one of those days.</p>
+
+<p>A little while back, I wrote about <a href="https://andyrlu.com/2018/07/19/python-can-do-whatever-javascript-does.html">Higher Order
+Functions</a>
+in Python. Today, I got to use that idea “in the wild”.</p>
+
+<p>Here was the premise of the problem:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>seven(times(five)) # must return 35
+four(plus(nine)) # must return 13
+eight(minus(three)) # must return 5
+six(divided_by(two)) # must return 3
+</code></pre></div></div>
+
+<p>In my first crack at this problem, I went wrong in assuming the order of how
+functions are evaluated. I wrote something that evaluated the outside and worked
+its way in. The following test in <code class="language-plaintext highlighter-rouge">IDLE</code> proved me wrong though:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def a(b):
+  print("A")
+  
+def b(c):
+  print("B")
+  
+def c(d):
+  print("C")
+  
+a(b(c("gibberish")))
+</code></pre></div></div>
+
+<p>The above code has the following output:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C
+B
+A
+</code></pre></div></div>
+
+<p>I wish I made a note of what first attempt looked like. I can’t reproduce the
+mistake as I write this up. Anyway, here was my final solution:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def zero(op=None):
+    if op != None:
+        return op(0)
+    else:
+        return 0
+        
+def one(op=None):
+    if op != None:
+        return op(1)
+    else:
+        return 1
+        
+def two(op=None):
+    if op != None:
+        return op(2)
+    else:
+        return 2
+        
+def three(op=None):
+    if op != None:
+        return op(3)
+    else:
+        return 3
+        
+def four(op=None):
+    if op != None:
+        return op(4)
+    else:
+        return 4
+        
+def five(op=None):
+    if op != None:
+        return op(5)
+    else:
+        return 5
+
+def six(op=None):
+    if op != None:
+        return op(6)
+    else:
+        return 6
+
+def seven(op=None):
+    if op != None:
+        return op(7)
+    else:
+        return 7
+
+def eight(op=None):
+    if op != None:
+        return op(8)
+    else:
+        return 8
+
+def nine(op=None):
+    if op != None:
+        return op(9)
+    else:
+        return 9
+
+def plus(right=0): return lambda x: x + right
+
+def minus(right=0): return lambda x: x - right
+
+def times(right=0): return lambda x: x * right
+
+def divided_by(right=1): return lambda x: x // right
+</code></pre></div></div>
+
+<p>I just thought it was so cool that the operator functions are customized and
+created on the fly. I came into this challenge thinking, “Oh this will be
+straightforward, it didn’t say I couldn’t lean on the normal operator
+functions”. But I didn’t think I would have to use higher order functions. Had I
+not read about them before this, I would’ve had a lot of googling on my hands.</p>
+
+<p>I’m curious how the actual operator functions are implemented. Thank goodness I
+never have to reinvent that wheel.</p>
+</div>
+  </article>
+</div>
+
+<!--Adding MathJax Support-->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- Footer -->
+<div id="footer">
+  
+  <!-- Copyright -->
+  <ul class="copyright">
+    
+      <li>&copy;Andy Lu. All rights reserved.</li>
+    
+    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    <li>Jekyll integration: <a href="https://chrisbobbe.github.io/">Chris Bobbe</a></li>
+    <li>Typed with pleasure on an <a href="https://olkb.com/">olkb</a> Preonic</li>
+  </ul>
+  
+</div>
+</body>
+</html>

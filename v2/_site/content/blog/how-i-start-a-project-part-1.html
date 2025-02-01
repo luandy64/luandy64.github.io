@@ -1,0 +1,101 @@
+<p>Scratching my head thinking about what I want to write about today, I started 
+skimming other blogs to get a sense of content and blogging frequency. Daily 
+blogging might be too much to be sustainable over time, but my rationale is I 
+learn something almost every day, so that’s what I’ll write about.</p>
+
+<!--more-->
+
+<p>Today, I’m documenting my process of planning a project.</p>
+
+<p>So I’ve been working through freeCodeCamp’s certificates. As of today, I only 
+have the <code class="language-plaintext highlighter-rouge">JavaScript Data Structures and Algorithms</code> one done. I’m about half 
+way through the <code class="language-plaintext highlighter-rouge">Responsive Web Design</code> certificate.</p>
+
+<p>While working on the RWD cert, I’ve realized that I spend too much time trying 
+to make things perfect and that hinders my progress. Switching to the thought 
+that things just need to be “good enough”, I was able to finish the previous 
+site, the Product Landing Page. It still needs some tweaks, which I got from 
+feedback from the forums, but at least it’s out there.</p>
+
+<p>So here’s my first stab at the Technical Documentation Page.</p>
+
+<blockquote>
+  <p>My background noise of choice lately has been “Mellow Beats” or “Chill Lofi 
+Study Beats” on Spotify. Find those in “Genres &amp; Moods” &gt; “Focus”.</p>
+</blockquote>
+
+<p>Now taking a look at the user stories, which comes from Agile if you are new to 
+that term. A quick and dirty definition is something an end user can notice 
+about the app/product. Here’s the list for the 
+<a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page">Technical Documentation Page</a>.</p>
+
+<p>Reading this document, I like to do a quick skim through first. In this pass 
+through, I’m just getting a sense of how things should be laid out. There’s no 
+need to get bogged down by what <code class="language-plaintext highlighter-rouge">id</code>’s are required, or what the styling needs 
+to look like.</p>
+
+<p>Here’s what caught my eye reading through this:</p>
+<ul>
+  <li>There’s a <code class="language-plaintext highlighter-rouge">main</code> element</li>
+  <li>There are several <code class="language-plaintext highlighter-rouge">section</code> elements</li>
+  <li>Something something <code class="language-plaintext highlighter-rouge">header</code></li>
+  <li>I was told how to name some <code class="language-plaintext highlighter-rouge">id</code>’s</li>
+  <li>Something something content…</li>
+  <li>Need a navbar</li>
+  <li>Navbar needs links (I’m not sure what else would go there…)</li>
+  <li>Navbar goes on the left and is always visible to a desktop user</li>
+  <li>Use a media query</li>
+</ul>
+
+<p>There’s not really a reason for me to write any of this down right now. I can 
+always just refer back to the document if I need it.</p>
+
+<p>Now I need some visuals though. Luckily, freeCodeCamp always gives you a link 
+to an app that is more or less what you are looking to rebuild. So I follow the 
+link and poke around the app. <a href="https://codepen.io/freeCodeCamp/full/NdrKKL">Here it is if you want it</a>.</p>
+
+<p>First thing I notice is it is plain! No worries though because I will style it 
+myself. My first idea as far as styling goes is to make the navbar darker than 
+the content. Hopefully that makes it pop and draws your eyes there. I also like 
+the giant headings there are using here, so I’ll keep that in mind.</p>
+
+<p>So after clicking around for a little bit, it’s clear that this one is pretty 
+straight forward: make a site with a fixed navbar and links that go to certain 
+sections of the overall page.</p>
+
+<p>This is great, I’m off to a good start. I have a sense of the structural 
+requirements. I also have an idea or two for the visual component.</p>
+
+<h2 id="putting-pen-to-paper">Putting pen to paper</h2>
+<p>Depending on my mood, this next step varies. I could be really inspired by a 
+site already and want to plan out my layout and styling for 3 viewports 
+(Desktop, tablet, and tiny phone). Or I want to think about the structure by 
+digging into the User Stories again.</p>
+
+<p>Today is a structure kind of day, but who knows, I might get to the layout and 
+design too.</p>
+
+<h3 id="my-approach-structure">My Approach: Structure</h3>
+<p>I’ve found that mind maps are a pretty good way to think about the structure. 
+Somewhere on a piece of paper- I use paper because in the last 4 years of 
+coding, I have learned the hard way that I need to slow down with some paper 
+first or risk hours wasted on reworking my code repeatedly. So somewhere on 
+some paper, I’ll start with an <code class="language-plaintext highlighter-rouge">HTML</code> “node” at the root of the graph. From 
+there I link to it exactly like I would write my HTML file: there’s a <code class="language-plaintext highlighter-rouge">Head</code> 
+node and a <code class="language-plaintext highlighter-rouge">Body</code> node. The <code class="language-plaintext highlighter-rouge">Body</code> gets two children as well: <code class="language-plaintext highlighter-rouge">Main</code> and 
+<code class="language-plaintext highlighter-rouge">Footer</code>. You get the idea. Branch out until the User Stories are all covered. 
+My system is nodes are circles, representing actually blocks of HTML. Lines 
+coming off a node without a circle are properties or attributes about that node.</p>
+
+<p>For example, the <code class="language-plaintext highlighter-rouge">Main</code> node can have three <code class="language-plaintext highlighter-rouge">Section</code> nodes coming off of it. 
+Each of these <code class="language-plaintext highlighter-rouge">Section</code>s get a line coming off of it for an <code class="language-plaintext highlighter-rouge">id</code>, or <code class="language-plaintext highlighter-rouge">class</code>es 
+if I’m ready for that, etc. Again, the point of this part is to get a visual 
+representation of the HTML I will write that covers the User Stories that it 
+can.</p>
+
+<p>Time to fill in the details!</p>
+
+<hr />
+
+<p>Thanks for reading this post! Comments, questions, and feedback are always
+welcome.</p>

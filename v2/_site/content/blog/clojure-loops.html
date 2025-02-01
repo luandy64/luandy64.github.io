@@ -1,0 +1,26 @@
+<p>While working on a practice problem today, I realized I have to loop over a set
+of things. Acutally, to get super specific I wanted to use two loops, one nested
+in the other to do some comparisons between elements in the set.</p>
+
+<p>I don’t understand using a loop over a function call though.</p>
+
+<!--more-->
+
+<p>I also didn’t get a ton of time to play with the problem, but I hope to work on
+it some more tomorrow night. Aside from the actual solution of the practice
+problem, the main distraction I had today was figuring out how to make loops in
+Clojure work.</p>
+
+<p>I think it looks like this:</p>
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nb">loop</span><span class="w"> </span><span class="p">[</span><span class="n">some-var-name</span><span class="w"> </span><span class="n">initial-val</span><span class="p">]</span><span class="w">
+    </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="n">some-break-cond</span><span class="w">
+        </span><span class="p">(</span><span class="nf">doThing</span><span class="p">)</span><span class="w">
+     </span><span class="p">(</span><span class="nf">recur</span><span class="w"> </span><span class="n">modified-some-var-name</span><span class="p">)))</span><span class="w">
+</span></code></pre></div></div>
+
+<p>To my understanding, <code class="language-plaintext highlighter-rouge">recur</code> just “calls” the loop again, as if it were some
+anonymous function. Modifying the thing in the square brackets differentiates the
+current iteration from the previous one.</p>
+
+<p>So this is where I am in my Clojure journey. I’m excited for the “ah-ha!” moment
+to occur tomorrow!</p>

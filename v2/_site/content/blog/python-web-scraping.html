@@ -1,0 +1,40 @@
+<p>Today was my first time in a long time trying to extract a bunch of information
+from a website. I was trying to get a file from a set of webpages, so my first
+thought was,</p>
+
+<!--more-->
+
+<p>“Why don’t I just figure out the pattern to the URL of the files?”. I think it
+was a relatively small set of pages to scour, there were only 50 web pages to
+look at. So I just started with a sample of them to try and tease out a URL
+pattern.</p>
+
+<p>Thinking back to my experience with Revature, I wondered if there was a way to
+make Python send HTTP requests for me because that would make things easier on
+my part. This thought came after my attempt to find a pattern to the download
+links though.</p>
+
+<p>So looking at the URLs, there was a clear template to identifying the files.
+Except it is a template that makes my job harder. For each file I wanted to
+grab, there were 3 strings attached to it that uniquely identifies it. The
+download URLs were simply a mix of these unique strings with some common
+strings. This is when I had the thought about making Python make HTTP requests
+for me because now I had to build a list of all of the unique strings to build a
+URL to run wget with.</p>
+
+<p>Running short on time (I was only trying to do some light pseudocoding today), I
+thought let’s just brute force this and clean it up later. So I did what I hope
+to automate in the coming days: I went to the homepage to use the search bar; I
+typed in the unique identifier for the page I want to get to; I searched and let
+the page take me to the page containing the download link I want; I copied the
+download link and extracted the three unique identifiers; and that was it! I
+have a tiny little script to build the URLs for me, request the links I want,
+and write them to a target destination on my computer.</p>
+
+<p>It’s not the most automated version, but at least I have started and can improve
+from here.</p>
+
+<hr />
+
+<p>Thanks for reading this post! Comments, questions, and feedback are always
+welcome.</p>

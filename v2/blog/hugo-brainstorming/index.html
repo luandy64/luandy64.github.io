@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="/v2//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.53" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hugo Brainstorming &middot; Andy Lu</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="/v2/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="/v2/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/v2/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/v2/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Andy Lu" />
+
+  
+</head>
+
+  <body class="theme-base-0d ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href=""><h1>Andy Lu</h1></a>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="">Home</a> </li>
+        <li><a href="/v2/about/"> About Me </a></li><li><a href="/v2/blog/"> Blog </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Hugo Brainstorming</h1>
+  <time datetime=2018-09-06T18:00:00-0500 class="post-date">Thu, Sep 6, 2018</time>
+  <p>Today was a lot of interview prep. That&rsquo;s great because I like the
+self-reflection time, but it doesn&rsquo;t leave too much time to work on these side
+projects.</p>
+
+<p>In the spirit of documenting my process of thinking and working, I want to talk
+about how I&rsquo;m going to tackle the next step of this Hugo migration.</p>
+
+<p>The problems I&rsquo;m facing, in no particular order, are:</p>
+
+<ul>
+<li>I need to change the front matter from how it is to something more consistent
+for Hugo. Not all of my posts are consistent, but I can easily make it so</li>
+<li>One pet peeve of of mine is the way images are handled in Markdown.
+
+<ul>
+<li>For one, it jacks up my file format/layout because sometimes the image is
+inserted at the end of a line and I haven&rsquo;t explored how to wrap the line to
+my desired 80 characters. Perhaps it really isn&rsquo;t a problem and I just need
+to read some documentation. But it&rsquo;s on my mind</li>
+<li>The way I would like to handle it is to reference some variable name in my
+Markdown, which is then processed later to be replaced by the properly
+formated <code>&lt;img&gt;</code> tag and whatnot. Each blog post already stores some
+metadata about itself; moreover, it&rsquo;s in a <code>key:value</code> sort of thing with
+<code>YAML</code>, so how hard can it be to say &ldquo;If you see this <code>key</code> in the Markdown,
+then swap it with the <code>&lt;img&gt;</code> where the source is the <code>value</code>&rdquo;. I did a tiny
+bit of research and it sounds like this feature is possible with something
+called <code>shortcodes</code>. I&rsquo;ll look into and you&rsquo;ll find me writing about it in a
+few days, I&rsquo;m sure</li>
+</ul></li>
+<li>I need to figure out how to restructure my posts to match the &ldquo;Hugo way&rdquo;. I
+know that Jekyll was very very very flexible with whatever I threw at it. And
+I&rsquo;ve read that Hugo is pickier. So I need to make this transition work and
+work properly so that I&rsquo;m not fiddling with this down the road
+
+<ul>
+<li>Disclaimer: It&rsquo;s not that I don&rsquo;t like fiddling with this site. It&rsquo;s
+literally one of the main reasons it exists. Heck, my love of tinkering is
+what drives this migration in the first place. I have enough experience
+with these static site generators that I&rsquo;d like to make sure I do things
+right from now on. I&rsquo;m done with the &ldquo;I&rsquo;m learning and let&rsquo;s just get this
+functional&rdquo;.
+<br /></li>
+</ul></li>
+</ul>
+
+<p>So to fix that front matter issue, I&rsquo;m definitely writing a script to do it. I
+have just enough blog posts to say, no way I&rsquo;m not doing this by hand. I&rsquo;ve
+thought about 7 steps that the script should take:
+* Read in the current front matter
+* Compare it to my &ldquo;ideal list&rdquo; of key-value pairs and keep the good ones
+* Add the missing ones with default values I need to go in and change
+* Add the filename to some list that tells me to look at some thing
+* Also note which files have an image in them
+* Make a new file containing the new front matter and the old content
+* Put this new file in some target directory</p>
+
+<p>The code will definitely look like: for every file in my <code>/posts</code> folder, do the
+thing.</p>
+
+  <hr>
+  <p>
+      Thanks for reading this post! Comments, questions, and feedback are always
+      welcome.
+  </p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+       tex2jax: {
+           inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+           processEscapes: true
+       }
+   });
+  </script>
+  <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  </script>
+</html>

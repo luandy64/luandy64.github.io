@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+Prologue by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Jekyll integration by Chris Bobbe | chrisbobbe.github.io
+-->
+<html><head><!-- Robots -->
+  <meta name="robots" content="index, follow" /><link rel="canonical" href="/v1/2018/07/18/higher-order-functions.html" /><!-- Title, description, author --><title>Higher Order Functions | Andy Lu</title>
+  <meta name="description" content="Higher Order Functions | Andy Lu" />
+  <meta name="author" content="Andy Lu" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Higher Order Functions | Andy Lu" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://0.0.0.0:4000/assets/img/profile.jpg" />
+  <meta property="og:url" content="http://0.0.0.0:4000/2018/07/18/higher-order-functions.html" />
+  <meta property="og:site_name" content="Andy Lu" />
+  <meta property="og:description" content="Higher Order Functions | Andy Lu" />
+  
+  <!-- Styles -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/html5shiv.js" defer></script><![endif]-->
+  <link rel="stylesheet" href="/v1/assets/css/main.css" />
+  <!--[if lte IE 8]><link rel="stylesheet" href="/v1/assets/css/ie8.css" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="/v1/assets/css/ie9.css" /><![endif]-->
+
+  <!-- Scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrolly.min.js" defer></script>
+  <script src="/v1/assets/js/jquery.scrollzer.min.js" defer></script>
+  <script src="/v1/assets/js/skel.min.js" defer></script>
+  <script src="/v1/assets/js/util.js" defer></script>
+  <!--[if lte IE 8]><script src="/v1/assets/js/ie/respond.min.js" defer></script><![endif]-->
+  <script src="/v1/assets/js/main.js" defer></script>
+
+</head><body><!-- Header -->
+<div id="header">
+  <div class="top"><!-- Logo -->
+<div id="logo">
+  <a href="/v1/" id="home-link">
+    <span class="image avatar48"><img src="/v1/assets/img/profile.jpg" alt="Avatar of Andy Lu" /></span>
+    <h1 id="title">Andy Lu</h1>
+    <p></p>
+  </a>
+</div><!-- Nav -->
+<nav id="nav">
+  <ul><!--<li><a href="/v1/themes/hyde/" id="hyde-link">-->
+            <li><a href="/v1/themes/hyde/" id="hyde-link">
+            <span class="icon fa-link">Hyde</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">-->
+            <li><a href="/v1/themes/hyde/CHANGELOG.html" id="changelog-link">
+            <span class="icon fa-link">Changelog</span>
+          </a></li><!--<li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">-->
+            <li><a href="/v1/themes/hyde/archetypes/default.html" id="page-link">
+            <span class="icon fa-link">page</span>
+          </a></li><!--<li><a href="/v1/" id="home-link">-->
+            <li><a href="/v1/" id="home-link">
+            <span class="icon fa-home">Home</span>
+          </a></li><!--<li><a href="/v1/blog/" id="blog-link">-->
+            <li><a href="/v1/blog/" id="blog-link">
+            <span class="icon fa-pencil">Blog</span>
+          </a></li><!--<li><a href="/v1/reading-list.html" id="reading-list-link">-->
+            <li><a href="/v1/reading-list.html" id="reading-list-link">
+            <span class="icon fa-book">Reading List</span>
+          </a></li><!--<li><a href="/v1/certificates.html" id="certificates-link">-->
+            <li><a href="/v1/certificates.html" id="certificates-link">
+            <span class="icon fa-trophy">Certificates</span>
+          </a></li></ul>
+</nav></div>
+  <div class="bottom"><!-- Social Icons -->
+<ul class="icons"><li><a href="https://twitter.com/_andy_lu_" class="icon fa-twitter"><span class="label">Twitter</span></a></li><li><a href="https://www.linkedin.com/in/andyrlu/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li><li><a href="https://github.com/luandy64/" class="icon fa-github"><span class="label">GitHub</span></a></li><li><a href="/#contact-me" class="icon fa-envelope"><span class="label">Email</span></a></li></ul>
+</div>
+</div>
+<!-- Main -->
+<div id="main">
+  <!-- Post -->
+  <article class="shade-two">
+    <div class="container">
+      <header>
+        <h2>Higher Order Functions</h2>
+	  <p>18 July 2018</p>
+      </header>
+
+      <p>I’ve been reading “Eloquent JavaScript” by Marijn Haverbeke lately and today I
+rediscovered the idea of a higher-order function. I first encountered these in
+the freeCodeCamp curriculum, most likely, but I only glanced over them at the
+time.</p>
+
+<p>Reading about it today though, everything clicked.</p>
+
+<p>In JavaScript, you can declare a function in three ways.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">let</span> <span class="nx">func1</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">arg1</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">func1 called with</span><span class="dl">"</span><span class="p">,</span> <span class="nx">arg1</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">func2</span><span class="p">(</span><span class="nx">arg1</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">func2 called with</span><span class="dl">"</span><span class="p">,</span> <span class="nx">arg1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">func3</span> <span class="o">=</span> <span class="nx">arg1</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">func3 called with</span><span class="dl">"</span><span class="p">,</span> <span class="nx">arg1</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>The cool thing though is that through a mash up of these methods, you can define
+a function that creates other functions. An example makes this easier to 
+understand:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">plusNum</span><span class="p">(</span><span class="nx">num</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">ans</span> <span class="o">=&gt;</span> <span class="nx">ans</span> <span class="o">+</span> <span class="nx">num</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">plusOne</span> <span class="o">=</span> <span class="nx">plusNum</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">plusTwo</span> <span class="o">=</span> <span class="nx">plusNum</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h4 id="the-mashup">The Mashup</h4>
+<p>Using the <code class="language-plaintext highlighter-rouge">func2</code> way of defining a function, we define a function <code class="language-plaintext highlighter-rouge">plusNum</code>.
+It’s super straight forward, it just returns a function definition in the 
+<code class="language-plaintext highlighter-rouge">func3</code> style, which you probably recogize as an arrow function.</p>
+
+<p>Time for the crazy part: we want to define a new function, <code class="language-plaintext highlighter-rouge">plusOne</code>. The
+<code class="language-plaintext highlighter-rouge">func1</code> style showed us we can let a variable take on a function definition as
+its value. Since <code class="language-plaintext highlighter-rouge">plusNum()</code> returns a function definition, after we give it a
+parameter of course, that means <code class="language-plaintext highlighter-rouge">plusOne</code> is a function in the <code class="language-plaintext highlighter-rouge">func1</code> style of
+doing things!</p>
+
+<h4 id="a-less-wordy-more-concrete-explaination">A less wordy, more concrete explaination?</h4>
+<p>Looking at <code class="language-plaintext highlighter-rouge">let plusTwo = plusNum(2)</code>. Let’s start with the right side. We call
+<code class="language-plaintext highlighter-rouge">plusNum</code> and give it a parameter <code class="language-plaintext highlighter-rouge">2</code>. That returns a function, 
+<code class="language-plaintext highlighter-rouge">ans =&gt; ans + 2</code>. We store this nameless little function in <code class="language-plaintext highlighter-rouge">plusTwo</code>, 
+completely legally because function definitions are allowed to be the “value”
+for a variable. Done.</p>
+
+<p>Too. Cool.</p>
+
+<p>I don’t know what you would really do with this though. I’ve never had to
+customize functions like this before. At least I understand it now.</p>
+</div>
+  </article>
+</div>
+
+<!--Adding MathJax Support-->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<!-- Footer -->
+<div id="footer">
+  
+  <!-- Copyright -->
+  <ul class="copyright">
+    
+      <li>&copy;Andy Lu. All rights reserved.</li>
+    
+    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+    <li>Jekyll integration: <a href="https://chrisbobbe.github.io/">Chris Bobbe</a></li>
+    <li>Typed with pleasure on an <a href="https://olkb.com/">olkb</a> Preonic</li>
+  </ul>
+  
+</div>
+</body>
+</html>

@@ -2,19 +2,60 @@
 https://blog.andylu.dev/singles/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
-en-us</language><copyright>Copyright © 2024, Andy Lu.</copyright><lastBuildDate>
-Mon, 16 Sep 2024 20:07:07 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/singles/index.xml" rel="self" type="application/xml"/><item><title>Coffee</title><link>https://blog.andylu.dev/coffee/</link><pubDate>Mon, 10 Jun 2024 09:30:17 -0500</pubDate><guid>https://blog.andylu.dev/coffee/</guid><description>&lt;h1 id="elixr">Elixr&lt;/h1>
+en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
+Sat, 01 Feb 2025 12:54:03 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/singles/index.xml" rel="self" type="application/xml"/><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-02-01">2025-02-01&lt;/h2>
+&lt;ul>
+&lt;li>Enshired my old versions of this site in their own sub-paths
+&lt;ul>
+&lt;li>&lt;a href="https://blog.andylu.dev/v1">V1 of the site&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.andylu.dev/v2">V2 of the site&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Fixed the &amp;ldquo;last modified&amp;rdquo; time of all of the pages&lt;/li>
+&lt;/ul></description></item><item><title>Posts I Like</title><link>https://blog.andylu.dev/posts-i-like/</link><pubDate>Tue, 21 Jan 2025 13:11:18 -0500</pubDate><guid>https://blog.andylu.dev/posts-i-like/</guid><description>&lt;ul>
+&lt;li>&lt;a href="https://analog.melanie-richards.com/journals/daily-journal">https://analog.melanie-richards.com/journals/daily-journal&lt;/a>&lt;/li>
+&lt;li>nhttps://justsomeantifas.tumblr.com/zines&lt;/li>
+&lt;li>&lt;a href="https://manuelmoreale.com/discovering-new-blogs-is-stupid-hard">https://manuelmoreale.com/discovering-new-blogs-is-stupid-hard&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://miniflux.app/">https://miniflux.app/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kevquirk.com/blog/i-ve-been-thinking-about-a-switch-to-the-fairphone-5">https://kevquirk.com/blog/i-ve-been-thinking-about-a-switch-to-the-fairphone-5&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://sylvia.bearblog.dev/weeknotes-2025-03/">https://sylvia.bearblog.dev/weeknotes-2025-03/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.benkuhn.net/writing/">https://www.benkuhn.net/writing/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://guzey.com/personal/why-have-a-blog/#but-i-dont-have-anything-original-to-say-and-i-would-be-just-repeating-things-said-elsewhere-on-the-internet">https://guzey.com/personal/why-have-a-blog/#but-i-dont-have-anything-original-to-say-and-i-would-be-just-repeating-things-said-elsewhere-on-the-internet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.divaltor.dev/one-way-meetings/">https://blog.divaltor.dev/one-way-meetings/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Uses</title><link>https://blog.andylu.dev/uses/</link><pubDate>Tue, 21 Jan 2025 13:05:33 -0500</pubDate><guid>https://blog.andylu.dev/uses/</guid><description>&lt;ul>
+&lt;li>Laptop: 2013 Macbook Pro&lt;/li>
+&lt;li>Phone: Fairphone 5&lt;/li>
+&lt;li>Keyboard: Dactyl Manuform 5x6 with Drop Holy Panda Switches&lt;/li>
+&lt;/ul></description></item><item><title>Coffee</title><link>https://blog.andylu.dev/coffee/</link><pubDate>Mon, 10 Jun 2024 09:30:17 -0500</pubDate><guid>https://blog.andylu.dev/coffee/</guid><description>&lt;h1 id="elixr">Elixr&lt;/h1>
 &lt;h2 id="juan-peña">Juan Peña&lt;/h2>
 &lt;p>Notes:&lt;/p>
 &lt;ul>
 &lt;li>Tart&lt;/li>
 &lt;/ul></description></item><item><title>About</title><link>https://blog.andylu.dev/about/</link><pubDate>Fri, 15 Mar 2024 23:10:57 -0400</pubDate><guid>https://blog.andylu.dev/about/</guid><description>&lt;p>This is my about page&lt;/p>
 &lt;p>You can subscribe to updates.&lt;/p>
-&lt;p>&lt;a href="https://blog.andylu.dev/index.xml">Subscribe via RSS&lt;/a>&lt;/p></description></item><item><title>Now</title><link>https://blog.andylu.dev/now/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/now/</guid><description>&lt;p>This is &lt;a href="https://nownownow.com/about">a now page&lt;/a>. For stuff that used to be here, check out the
+&lt;p>&lt;a href="https://blog.andylu.dev/index.xml">Subscribe via RSS&lt;/a>&lt;/p>
+&lt;p>I try to document the technical changes around this site in my &lt;a href="https://blog.andylu.dev/changelog">Changelog&lt;/a>&lt;/p></description></item><item><title>Now</title><link>https://blog.andylu.dev/now/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/now/</guid><description>&lt;p>This is &lt;a href="https://nownownow.com/about">a now page&lt;/a>. For stuff that used to be here, check out the
 &lt;a href="https://blog.andylu.dev/old-now/archive">archive&lt;/a>.&lt;/p>
-&lt;h1 id="reading">Reading&lt;/h1>
-&lt;p>I picked up &lt;a href="https://mitpress.mit.edu/9780262543231/structure-and-interpretation-of-computer-programs/">SICP JS&lt;/a> again.&lt;/p>
-&lt;p>I even wrote up &lt;a href="https://blog.andylu.dev/cappucchino/sicp-js-chapter-2-exercise-2.2-and-2.3">my solutions to a few exercises&lt;/a>&lt;/p>
-&lt;h1 id="apps">Apps&lt;/h1>
-&lt;p>I discovered that &lt;a href="https://anytype.io/">anytype&lt;/a> recently released their multiplayer feature, so I&amp;rsquo;m
-going to try and switch off of Notion for some things and move to Anytype.&lt;/p></description></item></channel></rss>
+&lt;hr>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Currently&lt;/th>
+ &lt;th style="text-align: left">&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">Watching&lt;/td>
+ &lt;td style="text-align: left">Abbot Elementary&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Gaming&lt;/td>
+ &lt;td style="text-align: left">Fortnite with godzilla&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Reading&lt;/td>
+ &lt;td style="text-align: left">Mastodon and blogs, no books in progress really&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item></channel></rss>

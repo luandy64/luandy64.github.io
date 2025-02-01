@@ -2,8 +2,40 @@
 https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
-en-us</language><copyright>Copyright © 2024, Andy Lu.</copyright><lastBuildDate>
-Tue, 17 Sep 2024 21:59:52 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Tailscale and VLC</title><link>https://blog.andylu.dev/cappucchino/tailscale-and-vlc/</link><pubDate>Tue, 17 Sep 2024 21:53:34 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/tailscale-and-vlc/</guid><description>&lt;p>I have videos sitting on one computer and I want to stream it from another computer.&lt;/p>
+en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
+Sat, 01 Feb 2025 13:07:00 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-02-01">2025-02-01&lt;/h2>
+&lt;ul>
+&lt;li>Enshired my old versions of this site in their own sub-paths
+&lt;ul>
+&lt;li>&lt;a href="https://blog.andylu.dev/v1">V1 of the site&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.andylu.dev/v2">V2 of the site&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Fixed the &amp;ldquo;last modified&amp;rdquo; time of all of the pages&lt;/li>
+&lt;/ul></description></item><item><title>Cloudflare Proxying Self Hosted Apps</title><link>https://blog.andylu.dev/cortado/cloudflare-proxying-self-hosted-apps/</link><pubDate>Fri, 24 Jan 2025 14:26:22 -0500</pubDate><guid>https://blog.andylu.dev/cortado/cloudflare-proxying-self-hosted-apps/</guid><description>&lt;p>I forget that when I allow cloudflare to proxy a URL for me, then I get SSL for free.&lt;/p>
+&lt;p>And previously, I turned off the proxying for my git server so that I can connect over SSH. So I ran &lt;code>certbot&lt;/code> to get a certificate I can use with that subdomain.&lt;/p>
+&lt;p>And this morning I noticed that I needed a cert for my photos server too. So converted to a wildcard cert for all top level subdomains&lt;/p></description></item><item><title>The Enlightening One</title><link>https://blog.andylu.dev/cappucchino/the-enlightening-one/</link><pubDate>Fri, 24 Jan 2025 14:03:07 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/the-enlightening-one/</guid><description>&lt;h1 id="purpose">Purpose&lt;/h1>
+&lt;p>This page documents every time my girlfriend teaches me something she &amp;ldquo;thought you should already know&amp;rdquo;&lt;/p>
+&lt;h2 id="autumnal-is-a-word">Autumnal is a word&lt;/h2>
+&lt;p>When I heard my girlfriend say this for the first time, I thought it sounded too funny to be a real word. She got mad at me for asking Siri to define it, but we laugh about it now.&lt;/p>
+&lt;h2 id="bathtubs-and-showers-have-floors-under-them">Bathtubs and showers have floors under them&lt;/h2>
+&lt;p>I&amp;rsquo;m don&amp;rsquo;t know if this is a thought I had about rented places only, or living spaces in general. In my head, there was a hole for the tub or shower area.&lt;/p></description></item><item><title>Posts I Like</title><link>https://blog.andylu.dev/posts-i-like/</link><pubDate>Tue, 21 Jan 2025 13:11:18 -0500</pubDate><guid>https://blog.andylu.dev/posts-i-like/</guid><description>&lt;ul>
+&lt;li>&lt;a href="https://analog.melanie-richards.com/journals/daily-journal">https://analog.melanie-richards.com/journals/daily-journal&lt;/a>&lt;/li>
+&lt;li>nhttps://justsomeantifas.tumblr.com/zines&lt;/li>
+&lt;li>&lt;a href="https://manuelmoreale.com/discovering-new-blogs-is-stupid-hard">https://manuelmoreale.com/discovering-new-blogs-is-stupid-hard&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://miniflux.app/">https://miniflux.app/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kevquirk.com/blog/i-ve-been-thinking-about-a-switch-to-the-fairphone-5">https://kevquirk.com/blog/i-ve-been-thinking-about-a-switch-to-the-fairphone-5&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://sylvia.bearblog.dev/weeknotes-2025-03/">https://sylvia.bearblog.dev/weeknotes-2025-03/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.benkuhn.net/writing/">https://www.benkuhn.net/writing/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://guzey.com/personal/why-have-a-blog/#but-i-dont-have-anything-original-to-say-and-i-would-be-just-repeating-things-said-elsewhere-on-the-internet">https://guzey.com/personal/why-have-a-blog/#but-i-dont-have-anything-original-to-say-and-i-would-be-just-repeating-things-said-elsewhere-on-the-internet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.divaltor.dev/one-way-meetings/">https://blog.divaltor.dev/one-way-meetings/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Uses</title><link>https://blog.andylu.dev/uses/</link><pubDate>Tue, 21 Jan 2025 13:05:33 -0500</pubDate><guid>https://blog.andylu.dev/uses/</guid><description>&lt;ul>
+&lt;li>Laptop: 2013 Macbook Pro&lt;/li>
+&lt;li>Phone: Fairphone 5&lt;/li>
+&lt;li>Keyboard: Dactyl Manuform 5x6 with Drop Holy Panda Switches&lt;/li>
+&lt;/ul></description></item><item><title>Tailscale Subnet Routers</title><link>https://blog.andylu.dev/cappucchino/tailscale-subnet-routers/</link><pubDate>Thu, 31 Oct 2024 17:25:14 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/tailscale-subnet-routers/</guid><description>&lt;p>Let&amp;rsquo;s say you have an existing tailnet you want to connect a new device to. However, you can&amp;rsquo;t install tailscale on the device for some reason.&lt;/p>
+&lt;p>But you happen to have a fancy travel router, like the &lt;a href="https://store-us.gl-inet.com/collections/travel-routers/products/beryl-ax-gl-mt3000-pocket-sized-wi-fi-6-wireless-travel-gigabit-router">beryl-ax&lt;/a>, running OpenWrt and tailscale, you can turn it into a subnet router.&lt;/p>
+&lt;p>A subnet router just connects two subnets on two different networks. As far as I can tell, this is intended to be a one way connection. The devices in my tailnet with a real tailnet address could ping a device in the non-tailnet subnet.&lt;/p></description></item><item><title>Tailscale and VLC</title><link>https://blog.andylu.dev/cappucchino/tailscale-and-vlc/</link><pubDate>Tue, 17 Sep 2024 21:53:34 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/tailscale-and-vlc/</guid><description>&lt;p>I have videos sitting on one computer and I want to stream it from another computer.&lt;/p>
 &lt;p>Thankfully they are both connected by Tailscale.&lt;/p>
 &lt;p>So on the server, I can run&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>tailscale serve --bg /path/to/my/directory/of/videos
@@ -190,7 +222,8 @@ already have a playground or two, I just need to tweak emacs to get to work.&lt;
  &lt;/p>
 &lt;/div></description></item><item><title>About</title><link>https://blog.andylu.dev/about/</link><pubDate>Fri, 15 Mar 2024 23:10:57 -0400</pubDate><guid>https://blog.andylu.dev/about/</guid><description>&lt;p>This is my about page&lt;/p>
 &lt;p>You can subscribe to updates.&lt;/p>
-&lt;p>&lt;a href="https://blog.andylu.dev/index.xml">Subscribe via RSS&lt;/a>&lt;/p></description></item><item><title>Setting Up Mbsync</title><link>https://blog.andylu.dev/cappucchino/setting-up-mbsync/</link><pubDate>Mon, 22 Jan 2024 21:54:56 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/setting-up-mbsync/</guid><description>&lt;p>
+&lt;p>&lt;a href="https://blog.andylu.dev/index.xml">Subscribe via RSS&lt;/a>&lt;/p>
+&lt;p>I try to document the technical changes around this site in my &lt;a href="https://blog.andylu.dev/changelog">Changelog&lt;/a>&lt;/p></description></item><item><title>Setting Up Mbsync</title><link>https://blog.andylu.dev/cappucchino/setting-up-mbsync/</link><pubDate>Mon, 22 Jan 2024 21:54:56 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/setting-up-mbsync/</guid><description>&lt;p>
 Install&lt;/p>
 &lt;div class="src src-shell">
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span> sudo apt install isync&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
@@ -378,25 +411,46 @@ to a few people at a recent Philly JS meetup.&lt;/p></description></item><item><
 &lt;li>&lt;code>ls -lh &amp;lt;one-file&amp;gt;&lt;/code>: Get the long listing of just one file&lt;/li>
 &lt;li>The rest of it is just to do it over and over so that I can see changes in the file size&lt;/li>
 &lt;/ul></description></item><item><title>Archive</title><link>https://blog.andylu.dev/old-now/archive/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/old-now/archive/</guid><description>&lt;p>See my &lt;a href="https://blog.andylu.dev/now">now&lt;/a> page for my latest updates.&lt;/p>
-&lt;h1 id="archived-on-2024-07-13">Archived on 2024-07-13&lt;/h1>
+&lt;h1 id="archived-on-2025-01-21">Archived on 2025-01-21&lt;/h1>
 &lt;h1 id="reading">Reading&lt;/h1>
+&lt;p>I picked up &lt;a href="https://mitpress.mit.edu/9780262543231/structure-and-interpretation-of-computer-programs/">SICP JS&lt;/a> again.&lt;/p>
+&lt;p>I even wrote up &lt;a href="https://blog.andylu.dev/cappucchino/sicp-js-chapter-2-exercise-2.2-and-2.3">my solutions to a few exercises&lt;/a>&lt;/p>
+&lt;h1 id="apps">Apps&lt;/h1>
+&lt;p>I discovered that &lt;a href="https://anytype.io/">anytype&lt;/a> recently released their multiplayer feature, so I&amp;rsquo;m
+going to try and switch off of Notion for some things and move to Anytype.&lt;/p>
+&lt;h1 id="archived-on-2024-07-13">Archived on 2024-07-13&lt;/h1>
+&lt;h1 id="reading-1">Reading&lt;/h1>
 &lt;p>I picked up and started some books&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://bookshop.org/p/books/the-mythical-man-month-essays-on-software-engineering-anniversary-edition-frederick-brooks/9437212?ean=9780201835953">The Mythical Man-Month&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://bookshop.org/p/books/the-mythical-man-month-essays-on-software-engineering-anniversary-edition-frederick-brooks/9437212?ean=9780201835953">A Short Treatise Inviting the Reader to Discover the Subtle Art of Go&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h1 id="go">Go&lt;/h1>
-&lt;p>I downloaded this app to play more games. And I&amp;rsquo;ve been kicking the weak AI&amp;rsquo;s butt. But the less weak bots give me trouble still&lt;/p>
-&lt;h1 id="archived-on-2024-05-02">Archived on 2024-05-02&lt;/h1>
-&lt;h2 id="self-hosting-stuff">Self Hosting stuff&lt;/h2>
-&lt;p>I&amp;rsquo;m working on my tech independence and putting my tech skills to the test.&lt;/p></description></item><item><title>Now</title><link>https://blog.andylu.dev/now/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/now/</guid><description>&lt;p>This is &lt;a href="https://nownownow.com/about">a now page&lt;/a>. For stuff that used to be here, check out the
+&lt;p>I downloaded this app to play more games. And I&amp;rsquo;ve been kicking the weak AI&amp;rsquo;s butt. But the less weak bots give me trouble still&lt;/p></description></item><item><title>Now</title><link>https://blog.andylu.dev/now/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/now/</guid><description>&lt;p>This is &lt;a href="https://nownownow.com/about">a now page&lt;/a>. For stuff that used to be here, check out the
 &lt;a href="https://blog.andylu.dev/old-now/archive">archive&lt;/a>.&lt;/p>
-&lt;h1 id="reading">Reading&lt;/h1>
-&lt;p>I picked up &lt;a href="https://mitpress.mit.edu/9780262543231/structure-and-interpretation-of-computer-programs/">SICP JS&lt;/a> again.&lt;/p>
-&lt;p>I even wrote up &lt;a href="https://blog.andylu.dev/cappucchino/sicp-js-chapter-2-exercise-2.2-and-2.3">my solutions to a few exercises&lt;/a>&lt;/p>
-&lt;h1 id="apps">Apps&lt;/h1>
-&lt;p>I discovered that &lt;a href="https://anytype.io/">anytype&lt;/a> recently released their multiplayer feature, so I&amp;rsquo;m
-going to try and switch off of Notion for some things and move to Anytype.&lt;/p></description></item><item><title>My Babashka Cookbook</title><link>https://blog.andylu.dev/cappucchino/my-babashka-cookbook/</link><pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/my-babashka-cookbook/</guid><description>&lt;p>
+&lt;hr>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Currently&lt;/th>
+ &lt;th style="text-align: left">&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">Watching&lt;/td>
+ &lt;td style="text-align: left">Abbot Elementary&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Gaming&lt;/td>
+ &lt;td style="text-align: left">Fortnite with godzilla&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">Reading&lt;/td>
+ &lt;td style="text-align: left">Mastodon and blogs, no books in progress really&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table></description></item><item><title>My Babashka Cookbook</title><link>https://blog.andylu.dev/cappucchino/my-babashka-cookbook/</link><pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/my-babashka-cookbook/</guid><description>&lt;p>
 This post is the one I want to reference when I do something in `babashka` and forget syntax or
 something.&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -506,4 +560,117 @@ app to Github Pages&lt;/p>
 was a massive undertaking because it was my first time. But frustrating
 enough, so was the second time, even though I thought I nailed down the
 process and took notes on it. The process didn&amp;rsquo;t work and the notes don&amp;rsquo;t
-exist, so here we are today.&lt;/p></description></item></channel></rss>
+exist, so here we are today.&lt;/p></description></item><item><title>2019 Week 3</title><link>https://blog.andylu.dev/cappucchino/2019-week-3/</link><pubDate>Thu, 17 Jan 2019 20:00:20 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/2019-week-3/</guid><description>&lt;h3 id="python">Python&lt;/h3>
+&lt;p>I have to thank &lt;em>Fluent Python&lt;/em> for all of these tips and trick with Python.&lt;/p>
+&lt;p>You can implement dunder methods to make an object feel more Pythonic.&lt;/p></description></item><item><title>2019 Week 2</title><link>https://blog.andylu.dev/cappucchino/2019-week-2/</link><pubDate>Sun, 13 Jan 2019 18:22:57 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/2019-week-2/</guid><description>&lt;p>Here are some of the things I learned this week:&lt;/p>
+&lt;h3 id="python">Python&lt;/h3>
+&lt;p>You should not set a parameter&amp;rsquo;s default to some mutable object.&lt;/p></description></item><item><title>Hello 2019</title><link>https://blog.andylu.dev/cappucchino/hello-2019/</link><pubDate>Sun, 13 Jan 2019 16:27:01 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/hello-2019/</guid><description>&lt;p>This post is really just a bookend for this blog.&lt;/p>
+&lt;p>2018 marked the end of my academic career and the start of my journey as a
+software engineer.&lt;/p></description></item><item><title>Clojure Loops</title><link>https://blog.andylu.dev/cappucchino/clojure-loops/</link><pubDate>Tue, 02 Oct 2018 23:09:03 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/clojure-loops/</guid><description>&lt;p>While working on a practice problem today, I realized I have to loop over a set
+of things. Acutally, to get super specific I wanted to use two loops, one nested
+in the other to do some comparisons between elements in the set.&lt;/p>
+&lt;p>I don&amp;rsquo;t understand using a loop over a function call though.&lt;/p></description></item><item><title>Loving Annoying Things</title><link>https://blog.andylu.dev/cappucchino/loving-annoying-things/</link><pubDate>Mon, 01 Oct 2018 23:05:42 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/loving-annoying-things/</guid><description>&lt;p>I&amp;rsquo;ve been absorbing quite a bit of content from Gary Vaynerchuk lately. I really
+like his idea of not making excuses and getting to work and eating dirt and
+loving the process. I mean, it&amp;rsquo;s hard to argue against those things and risk
+being associated with negative things; despite that, I personally don&amp;rsquo;t deny
+they are good ideas. How much weight you give them is up to you.&lt;/p></description></item><item><title>Personal Finance</title><link>https://blog.andylu.dev/cappucchino/personal-finance/</link><pubDate>Wed, 19 Sep 2018 00:35:01 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/personal-finance/</guid><description>&lt;p>I was determined to put something out tonight, so I just wanted to make a quick
+note of today.&lt;/p>
+&lt;p>I delved into the world of personal finance and played around with a few
+versions of a budget. To assist myself in making the budget, I wrote a little
+Python script to juggle all of the variables I could think of. These all
+interacted in a way that I think resembles how the world actually works- as far
+as taxes and savings and whatnot goes.&lt;/p></description></item><item><title>Clojure Day 1</title><link>https://blog.andylu.dev/cappucchino/clojure-day-1/</link><pubDate>Mon, 17 Sep 2018 21:13:57 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/clojure-day-1/</guid><description>&lt;p>Today I started reading through this book to learn some Clojure. It&amp;rsquo;s called
+&lt;a href="https://www.braveclojure.com/">Clojure for the Brave and True&lt;/a>.&lt;/p>
+&lt;p>I thought I would make myself a little cheatsheet that grows as I progress
+through the book.&lt;/p>
+&lt;h2 id="forms">Forms&lt;/h2>
+&lt;p>These are like the building blocks of the files.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-clojure" data-lang="clojure">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">&amp;#34;This string&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[&lt;span style="color:#e6db74">&amp;#34;Vectors&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;of&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;strings&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;are&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;a&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;thing&amp;#34;&lt;/span>]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="operators">Operators&lt;/h2>
+&lt;p>All operations use the same structure. Given an operator &lt;code>operator&lt;/code> and operands
+&lt;code>op1, op2, ... opN&lt;/code>, you use the following structure:&lt;/p></description></item><item><title>Minor Improvements</title><link>https://blog.andylu.dev/cappucchino/minor-improvements/</link><pubDate>Sun, 16 Sep 2018 22:50:34 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/minor-improvements/</guid><description>&lt;p>Inspired by some posts I read on Medium, I found new reasons to build the habit
+of keeping a journal. This whole idea deserves it&amp;rsquo;s own post one day, but for
+now I was just bringing it up because my journal is oriented by months.&lt;/p>
+&lt;p>For the month of September, I set out to blog more. More specifically, I devised
+a schedule for myself and tried to stick to it.&lt;/p></description></item><item><title>It's Live</title><link>https://blog.andylu.dev/cappucchino/its-live/</link><pubDate>Sat, 15 Sep 2018 19:04:06 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/its-live/</guid><description>&lt;p>After a few hours of work, I was able to get the bare minimum of this site
+rewritten for &lt;code>hugo&lt;/code>. I&amp;rsquo;ll work on finalizing the &lt;code>/home&lt;/code> and &lt;code>/about&lt;/code> pages
+slowly but surely; for now though, I am more than satisfied with just having the
+blog up and running.&lt;/p></description></item><item><title>Thinking About Binary Numbers</title><link>https://blog.andylu.dev/cappucchino/thinking-about-binary-numbers/</link><pubDate>Tue, 11 Sep 2018 20:00:00 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/thinking-about-binary-numbers/</guid><description>&lt;p>I was working with Lauren to teach her how to convert between binary and decimal
+numbers. I think it&amp;rsquo;s super interesting to get to visit these ideas with her and
+see how &amp;ldquo;fresh eyes&amp;rdquo; see them for the first time.&lt;/p></description></item><item><title>Dual Monitor Setup</title><link>https://blog.andylu.dev/cappucchino/dual-monitor-setup/</link><pubDate>Mon, 10 Sep 2018 15:04:22 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/dual-monitor-setup/</guid><description>&lt;p>Today was a lot of fiddling with &lt;code>xrandr&lt;/code> in order to get my laptop screen and
+external monitor to play nice together.&lt;/p>
+&lt;p>While it was a bit confusing at first, the &lt;a href="https://wiki.archlinux.org/index.php/HiDPI#Side_display">article on ArchWiki about
+HiDPI&lt;/a> was very useful.
+There wasn&amp;rsquo;t a command on the page that was exactly what I needed, but between
+the wiki and the man pages, I was able to piece together what I needed.&lt;/p></description></item><item><title>Hugo Brainstorming</title><link>https://blog.andylu.dev/cappucchino/hugo-brainstorming/</link><pubDate>Thu, 06 Sep 2018 18:00:00 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/hugo-brainstorming/</guid><description>&lt;p>Today was a lot of interview prep. That&amp;rsquo;s great because I like the
+self-reflection time, but it doesn&amp;rsquo;t leave too much time to work on these side
+projects.&lt;/p>
+&lt;p>In the spirit of documenting my process of thinking and working, I want to talk
+about how I&amp;rsquo;m going to tackle the next step of this Hugo migration.&lt;/p></description></item><item><title>i3 and Hugo Updates</title><link>https://blog.andylu.dev/cappucchino/i3-and-hugo-updates/</link><pubDate>Wed, 05 Sep 2018 18:00:00 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/i3-and-hugo-updates/</guid><description>&lt;h2 id="hugo-updates">Hugo Updates&lt;/h2>
+&lt;p>I spent a nice chunk of today figuring out what I wanted to do as far as styling goes. The theme I picked, &lt;code>Hyde&lt;/code>, was did a
+majority of the work already.&lt;/p></description></item><item><title>Installing Ubuntu</title><link>https://blog.andylu.dev/cappucchino/installing-ubuntu/</link><pubDate>Tue, 04 Sep 2018 18:00:00 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/installing-ubuntu/</guid><description>&lt;p>I probably should&amp;rsquo;ve written this while I was doing the install. Oh well, maybe
+next time.&lt;/p>
+&lt;p>I managed to get Ubuntu installed on an external hard drive today. The problem
+started with me trying to figure out if I could resize the dual boot set up I
+have on my Macbook. Reading through my options, I decided it was too hard and I
+had other things to do- like work on my Hugo migration from yesterday.&lt;/p></description></item><item><title>From Jekyll to Hugo</title><link>https://blog.andylu.dev/cappucchino/from-jekyll-to-hugo/</link><pubDate>Mon, 03 Sep 2018 17:18:19 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/from-jekyll-to-hugo/</guid><description>&lt;h2 id="some-background">Some Background&lt;/h2>
+&lt;p>It&amp;rsquo;s a new month, and so I have some new goals. One of them is to try and use my
+website more- and by that I mean blog more. I like the idea of documenting bits
+of every day so that in the future I can come back, look at these posts and
+piece together how much I&amp;rsquo;ve changed and whatnot.&lt;/p></description></item><item><title>My Studio Commandments</title><link>https://blog.andylu.dev/cappucchino/my-studio-commandments/</link><pubDate>Mon, 30 Jul 2018 21:22:23 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/my-studio-commandments/</guid><description>&lt;p>Inspired by &lt;a href="https://superyesmore.com/studio-commandments-a5300cdf50b8a30ec909955b119f9174">this
+post&lt;/a>
+I read by Sarah Drasner, I thought it would be a really good idea to list my
+&amp;ldquo;studio commandments&amp;rdquo;. Just like Sarah, I can see how these would change over
+time. So while this is not what I would&amp;rsquo;ve asked of myself in college, I think
+these rules fit my work style these days.&lt;/p></description></item><item><title>Python for bash</title><link>https://blog.andylu.dev/cappucchino/python-for-bash/</link><pubDate>Sat, 28 Jul 2018 20:21:22 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/python-for-bash/</guid><description>&lt;p>Do you like &lt;code>bash&lt;/code> scripts? Personally, I don&amp;rsquo;t.&lt;/p>
+&lt;p>So when I need to write bash scripts, I figure out the commands I need, then
+glue them together with Python.&lt;/p>
+&lt;p>It&amp;rsquo;s been a while since I&amp;rsquo;ve needed to do this and while I neglected it before,
+the &lt;code>subprocess&lt;/code> module is the best way to run these commands.&lt;/p></description></item><item><title>New Strategy</title><link>https://blog.andylu.dev/cappucchino/new-strategy/</link><pubDate>Fri, 27 Jul 2018 19:20:21 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/new-strategy/</guid><description>&lt;p>After analyzing my process for writing blog posts, I&amp;rsquo;ve realized some things.&lt;/p></description></item><item><title>Lessons About Github Pages</title><link>https://blog.andylu.dev/cappucchino/lessons-about-github-pages/</link><pubDate>Sat, 21 Jul 2018 16:17:18 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/lessons-about-github-pages/</guid><description>&lt;p>I woke up today and thought, &amp;ldquo;I should put some work into the Technical
+Documentation Project&amp;rdquo;. It&amp;rsquo;s a lazy, easy-going Saturday: the perfect time to
+put in about an hour of work or so and go from there.&lt;/p></description></item><item><title>Little bits about a lot of things</title><link>https://blog.andylu.dev/cappucchino/little-bits-about-a-lot-of-things/</link><pubDate>Fri, 20 Jul 2018 16:17:18 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/little-bits-about-a-lot-of-things/</guid><description>&lt;h2 id="little-bit-one-not-knowing-what-to-write-about">Little Bit One: Not knowing what to write about&lt;/h2>
+&lt;p>I woke up this morning not knowing what I want to talk about today. The other
+days this week, I had a plan of attack for things I wanted to address.&lt;/p>
+&lt;p>Reading some articles about blogging though, it seems that some people advoate
+for not posting something every day. I hear the appeals to health and
+well-being; I get that it can be stressful to try and come up with something to
+say every day.&lt;/p></description></item><item><title>Python can do whatever JavaScript does</title><link>https://blog.andylu.dev/cappucchino/python-can-do-whatever-javascript-does/</link><pubDate>Thu, 19 Jul 2018 15:16:17 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/python-can-do-whatever-javascript-does/</guid><description>&lt;p>I have no idea if the title of this post is true. I don&amp;rsquo;t actually want to make
+that claim.&lt;/p>
+&lt;p>I did discover one way of defining higher order functions in Python though,
+exactly like how I did with JavaScript yesterday.&lt;/p></description></item><item><title>Higher Order Functions</title><link>https://blog.andylu.dev/cappucchino/higher-order-functions/</link><pubDate>Wed, 18 Jul 2018 14:15:16 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/higher-order-functions/</guid><description>&lt;p>I&amp;rsquo;ve been reading &amp;ldquo;Eloquent JavaScript&amp;rdquo; by Marijn Haverbeke lately and today I
+rediscovered the idea of a higher-order function. I first encountered these in
+the freeCodeCamp curriculum, most likely, but I only glanced over them at the
+time.&lt;/p></description></item><item><title>How I start a project Part 1</title><link>https://blog.andylu.dev/cappucchino/how-i-start-a-project-part-1/</link><pubDate>Tue, 17 Jul 2018 13:14:15 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/how-i-start-a-project-part-1/</guid><description>&lt;p>Scratching my head thinking about what I want to write about today, I started
+skimming other blogs to get a sense of content and blogging frequency. Daily
+blogging might be too much to be sustainable over time, but my rationale is I
+learn something almost every day, so that&amp;rsquo;s what I&amp;rsquo;ll write about.&lt;/p></description></item><item><title>Daily Blog 1 Midsummer Check In</title><link>https://blog.andylu.dev/cappucchino/daily-blog-1-midsummer-check-in/</link><pubDate>Mon, 16 Jul 2018 12:13:14 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/daily-blog-1-midsummer-check-in/</guid><description>&lt;p>Midsummer might not be the right word here. It&amp;rsquo;s close enough, but I&amp;rsquo;m more
+like two thirds of the way in.&lt;/p></description></item><item><title>Some React Notes</title><link>https://blog.andylu.dev/cappucchino/some-react-notes/</link><pubDate>Sun, 24 Jun 2018 11:12:13 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/some-react-notes/</guid><description>&lt;p>I just wanted to summerize and reflect on some notes from Day 5, 10, and 11 of
+my &lt;code>#100DaysOfCode&lt;/code> challenge on Twitter.&lt;/p>
+&lt;p>So far, React has been fairly easy to pick up. It started with introducing this
+idea of a &lt;code>JSX Element&lt;/code>, which is a mix of HTML and JavaScript that wouldn&amp;rsquo;t
+work as pure HTML or pure JavaScript. There are these ideas of nesting the JSX
+elements and &lt;code>state&lt;/code>.&lt;/p></description></item><item><title>Writing In Org Mode</title><link>https://blog.andylu.dev/cappucchino/writing-in-org-mode/</link><pubDate>Mon, 18 Jun 2018 09:10:11 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/writing-in-org-mode/</guid><description>&lt;h2 id="changing-spacemacs">Changing &lt;code>.spacemacs&lt;/code>&lt;/h2>
+&lt;p>Let me walk you through getting a fresh install of spacemacs to writing your first
+blog post.&lt;/p>
+&lt;ol>
+&lt;li>Follow the these instructions to download spacemacs
+&lt;ul>
+&lt;li>For me, I went to the &lt;a href="https://github.com/syl20bnr/spacemacs">Spacemacs&lt;/a>
+GitHub page and followed the instructions for homebrew.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol></description></item><item><title>Notes on Vim</title><link>https://blog.andylu.dev/cappucchino/vim-notes/</link><pubDate>Sat, 16 Jun 2018 08:09:10 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/vim-notes/</guid><description>&lt;h2 id="honing-your-tools">Honing your tools&lt;/h2>
+&lt;p>It&amp;rsquo;s pretty common to see craftpeople creating tools for themselves for a
+variety of reasons. Maybe it&amp;rsquo;s because the exact tool they need doesn&amp;rsquo;t exist;
+perhaps a slight modification to a tool would help fit their style more.&lt;/p></description></item><item><title>The Three Glass Problem</title><link>https://blog.andylu.dev/cappucchino/three-glass/</link><pubDate>Sun, 27 May 2018 18:19:20 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/three-glass/</guid><description>&lt;p>I just came across the so called &amp;ldquo;Three Glass Problem&amp;rdquo; and thought I would try
+and solve it. It turns out to be fairly trivial with a bit of abstract algebra!&lt;/p></description></item><item><title>New Cups</title><link>https://blog.andylu.dev/cappucchino/new-cups/</link><pubDate>Thu, 15 Mar 2018 17:34:00 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/new-cups/</guid><description/></item><item><title>Python Web Scraping</title><link>https://blog.andylu.dev/cappucchino/python-web-scraping/</link><pubDate>Thu, 01 Mar 2018 10:11:12 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/python-web-scraping/</guid><description>&lt;p>Today was my first time in a long time trying to extract a bunch of information
+from a website. I was trying to get a file from a set of webpages, so my first
+thought was,&lt;/p></description></item><item><title>Adding Mathjax</title><link>https://blog.andylu.dev/cappucchino/added-mathjax-support/</link><pubDate>Thu, 18 Jan 2018 14:15:16 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/added-mathjax-support/</guid><description>&lt;h2 id="commands-needed">Commands Needed&lt;/h2>
+&lt;p>The easiest step was from the &lt;a href="https://jekyllrb.com/docs/extras/">Jekyll Docs&lt;/a>,
+which pointed me to this page on &lt;a href="http://www.gastonsanchez.com/visually-enforced/opinion/2014/02/16/Mathjax-with-jekyll/">Visually
+Enforced&lt;/a>.
+So the following piece of code went into my &lt;code>/_layouts/default.html&lt;/code> &amp;rsquo;s header:&lt;/p></description></item><item><title>First Blog Post!</title><link>https://blog.andylu.dev/cappucchino/first-blog-post/</link><pubDate>Thu, 14 Dec 2017 14:59:39 -0600</pubDate><guid>https://blog.andylu.dev/cappucchino/first-blog-post/</guid><description>&lt;p>The title says it all!&lt;/p>
+&lt;p>I finally got this site up and running. I could not have done it without a lot
+of googling and stumbling upon Jekyll.&lt;/p></description></item></channel></rss>

@@ -1,0 +1,61 @@
+<p>I’ve been reading “Eloquent JavaScript” by Marijn Haverbeke lately and today I
+rediscovered the idea of a higher-order function. I first encountered these in
+the freeCodeCamp curriculum, most likely, but I only glanced over them at the
+time.</p>
+
+<!--more-->
+
+<p>Reading about it today though, everything clicked.</p>
+
+<p>In JavaScript, you can declare a function in three ways.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kd">let</span> <span class="nx">func1</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">arg1</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">func1 called with</span><span class="dl">"</span><span class="p">,</span> <span class="nx">arg1</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">func2</span><span class="p">(</span><span class="nx">arg1</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">func2 called with</span><span class="dl">"</span><span class="p">,</span> <span class="nx">arg1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">func3</span> <span class="o">=</span> <span class="nx">arg1</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">func3 called with</span><span class="dl">"</span><span class="p">,</span> <span class="nx">arg1</span><span class="p">);</span>
+
+</code></pre></div></div>
+
+<p>The cool thing though is that through a mash up of these methods, you can define
+a function that creates other functions. An example makes this easier to 
+understand:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">plusNum</span><span class="p">(</span><span class="nx">num</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">ans</span> <span class="o">=&gt;</span> <span class="nx">ans</span> <span class="o">+</span> <span class="nx">num</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">plusOne</span> <span class="o">=</span> <span class="nx">plusNum</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">plusTwo</span> <span class="o">=</span> <span class="nx">plusNum</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h4 id="the-mashup">The Mashup</h4>
+<p>Using the <code class="language-plaintext highlighter-rouge">func2</code> way of defining a function, we define a function <code class="language-plaintext highlighter-rouge">plusNum</code>.
+It’s super straight forward, it just returns a function definition in the 
+<code class="language-plaintext highlighter-rouge">func3</code> style, which you probably recogize as an arrow function.</p>
+
+<p>Time for the crazy part: we want to define a new function, <code class="language-plaintext highlighter-rouge">plusOne</code>. The
+<code class="language-plaintext highlighter-rouge">func1</code> style showed us we can let a variable take on a function definition as
+its value. Since <code class="language-plaintext highlighter-rouge">plusNum()</code> returns a function definition, after we give it a
+parameter of course, that means <code class="language-plaintext highlighter-rouge">plusOne</code> is a function in the <code class="language-plaintext highlighter-rouge">func1</code> style of
+doing things!</p>
+
+<h4 id="a-less-wordy-more-concrete-explaination">A less wordy, more concrete explaination?</h4>
+<p>Looking at <code class="language-plaintext highlighter-rouge">let plusTwo = plusNum(2)</code>. Let’s start with the right side. We call
+<code class="language-plaintext highlighter-rouge">plusNum</code> and give it a parameter <code class="language-plaintext highlighter-rouge">2</code>. That returns a function, 
+<code class="language-plaintext highlighter-rouge">ans =&gt; ans + 2</code>. We store this nameless little function in <code class="language-plaintext highlighter-rouge">plusTwo</code>, 
+completely legally because function definitions are allowed to be the “value”
+for a variable. Done.</p>
+
+<p>Too. Cool.</p>
+
+<p>I don’t know what you would really do with this though. I’ve never had to
+customize functions like this before. At least I understand it now.</p>
+
+<hr />
+
+<p>Thanks for reading this post! Comments, questions, and feedback are always
+welcome.</p>

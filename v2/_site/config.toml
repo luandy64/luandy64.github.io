@@ -1,0 +1,8 @@
+baseURL = ""
+languageCode = "en-us"
+title = "Andy Lu"
+theme = "hyde"
+[params]
+  themeColor = "theme-base-0d"
+
+description = "Programmer, Math Alum ..."

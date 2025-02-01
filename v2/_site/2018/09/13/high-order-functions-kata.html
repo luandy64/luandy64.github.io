@@ -1,0 +1,116 @@
+<p>Every now and then I like to get on <a href="https://www.codewars.com/">CodeWars</a> to
+practice some coding challenges. Some problems can get pretty interesting and
+today was one of those days.</p>
+
+<p>A little while back, I wrote about <a href="https://andyrlu.com/2018/07/19/python-can-do-whatever-javascript-does.html">Higher Order
+Functions</a>
+in Python. Today, I got to use that idea “in the wild”.</p>
+
+<p>Here was the premise of the problem:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>seven(times(five)) # must return 35
+four(plus(nine)) # must return 13
+eight(minus(three)) # must return 5
+six(divided_by(two)) # must return 3
+</code></pre></div></div>
+
+<p>In my first crack at this problem, I went wrong in assuming the order of how
+functions are evaluated. I wrote something that evaluated the outside and worked
+its way in. The following test in <code class="language-plaintext highlighter-rouge">IDLE</code> proved me wrong though:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def a(b):
+  print("A")
+  
+def b(c):
+  print("B")
+  
+def c(d):
+  print("C")
+  
+a(b(c("gibberish")))
+</code></pre></div></div>
+
+<p>The above code has the following output:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C
+B
+A
+</code></pre></div></div>
+
+<p>I wish I made a note of what first attempt looked like. I can’t reproduce the
+mistake as I write this up. Anyway, here was my final solution:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def zero(op=None):
+    if op != None:
+        return op(0)
+    else:
+        return 0
+        
+def one(op=None):
+    if op != None:
+        return op(1)
+    else:
+        return 1
+        
+def two(op=None):
+    if op != None:
+        return op(2)
+    else:
+        return 2
+        
+def three(op=None):
+    if op != None:
+        return op(3)
+    else:
+        return 3
+        
+def four(op=None):
+    if op != None:
+        return op(4)
+    else:
+        return 4
+        
+def five(op=None):
+    if op != None:
+        return op(5)
+    else:
+        return 5
+
+def six(op=None):
+    if op != None:
+        return op(6)
+    else:
+        return 6
+
+def seven(op=None):
+    if op != None:
+        return op(7)
+    else:
+        return 7
+
+def eight(op=None):
+    if op != None:
+        return op(8)
+    else:
+        return 8
+
+def nine(op=None):
+    if op != None:
+        return op(9)
+    else:
+        return 9
+
+def plus(right=0): return lambda x: x + right
+
+def minus(right=0): return lambda x: x - right
+
+def times(right=0): return lambda x: x * right
+
+def divided_by(right=1): return lambda x: x // right
+</code></pre></div></div>
+
+<p>I just thought it was so cool that the operator functions are customized and
+created on the fly. I came into this challenge thinking, “Oh this will be
+straightforward, it didn’t say I couldn’t lean on the normal operator
+functions”. But I didn’t think I would have to use higher order functions. Had I
+not read about them before this, I would’ve had a lot of googling on my hands.</p>
+
+<p>I’m curious how the actual operator functions are implemented. Thank goodness I
+never have to reinvent that wheel.</p>

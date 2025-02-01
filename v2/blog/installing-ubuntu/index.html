@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="/v2//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.53" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Installing Ubuntu &middot; Andy Lu</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="/v2/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="/v2/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/hyde.css">
+  <link type="text/css" rel="stylesheet" href="/v2/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/v2/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/v2/favicon.ico">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="Andy Lu" />
+
+  
+</head>
+
+  <body class="theme-base-0d ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href=""><h1>Andy Lu</h1></a>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="">Home</a> </li>
+        <li><a href="/v2/about/"> About Me </a></li><li><a href="/v2/blog/"> Blog </a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Installing Ubuntu</h1>
+  <time datetime=2018-09-04T18:00:00-0500 class="post-date">Tue, Sep 4, 2018</time>
+  <p>I probably should&rsquo;ve written this while I was doing the install. Oh well, maybe
+next time.</p>
+
+<p>I managed to get Ubuntu installed on an external hard drive today. The problem
+started with me trying to figure out if I could resize the dual boot set up I
+have on my Macbook. Reading through my options, I decided it was too hard and I
+had other things to do- like work on my Hugo migration from yesterday.</p>
+
+<p>Then I thought, &ldquo;Oh, well I have a spare external drive, I wonder how easy it
+is to install an OS on there&rdquo;. A quick search led me to
+<a href="https://www.youtube.com/watch?v=8lP57J3hKOU">this video</a>, and with a few
+modifications, I was up and running.</p>
+
+<p>Here&rsquo;s how I did it (More detailed instructions are in the video, I&rsquo;m writing
+this from memory):</p>
+
+<ul>
+<li>Download an <code>.iso</code> file. I got mine from the Ubuntu site.</li>
+<li>Flash it to a USB drive using <a href="https://etcher.io/">Etcher</a></li>
+<li>Insert the USB,restart the Mac, holding <code>Alt</code> when it boots up, and boot to
+the live USB you just made</li>
+<li>Open a Terminal and type <code>sudo gparted</code></li>
+<li>Insert the external drive</li>
+<li>Change the drive you are looking at to the external drive</li>
+
+<li><p>Partition the drive into whatever sized chunks you want, as long as the
+following are satisfied:</p>
+
+<ul>
+<li>The &ldquo;Main&rdquo; partition should be formatted to <code>Ext4 Linux Journaled</code></li>
+<li>Mount this &ldquo;Main&rdquo; partition on <code>/</code></li>
+<li>Make a smaller partition formatted to <code>Linux swap</code>, it should be about
+4GB (That&rsquo;s what the guy in the video did, I&rsquo;ve heard there&rsquo;s a lot of
+debate about how much swap space you should have. I went with 4GB to
+keep things simple)</li>
+</ul></li>
+
+<li><p>At the bottom of the GUI, there&rsquo;s a drop down menu for where the boot loader
+should sit. Give it the option of wherever your external drive is mounted,
+but the option with no numbers at the end. It will look something like <code>/sdd</code></p></li>
+
+<li><p>Run the partition</p></li>
+
+<li><p>Close the windows and open up the <code>Install Ubuntu</code> wizard that&rsquo;s sitting on
+the Desktop</p></li>
+
+<li><p>Run through the wizard until it asks how you want to install Ubuntu, pick
+the <code>Something else</code> option</p></li>
+
+<li><p>Pick your external drive as where you want Ubuntu to be installed. Double
+check you picked the right one, or else you risk losing data</p></li>
+
+<li><p>&hellip; Finish the wizard and reboot your computer, loading up your new Ubuntu
+installation</p></li>
+</ul>
+
+<p>I think that&rsquo;s all of the steps. From there, do what you normally would do and
+run updates, install new software, pick out a theme and some icons.</p>
+
+<p>I&rsquo;ve been in this rabbithole of picking a new Desktop Environment. After going
+through a ton of posts on the very SFW
+<a href="https://www.reddit.com/r/unixporn/">r/UnixPorn</a>, I decided to go with <code>i3</code>.
+I&rsquo;m still not sure about how to use a lot of things. Maybe 30 minutes before
+writing this post, I figured out how to switch workspaces.</p>
+
+<p>So tomorrow will probably be real work, but later this week, I&rsquo;ll detail all
+of the stuff I&rsquo;ve been downloading and configuring. And at some point I&rsquo;ll have
+to delete the Ubuntu that I&rsquo;m dual booting too. Fingers crossed that I get it
+right and don&rsquo;t delete my Mac partition- I sadly can&rsquo;t say I haven&rsquo;t done that
+before. But hey, that&rsquo;s what backups are for!</p>
+
+  <hr>
+  <p>
+      Thanks for reading this post! Comments, questions, and feedback are always
+      welcome.
+  </p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+       tex2jax: {
+           inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+           processEscapes: true
+       }
+   });
+  </script>
+  <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  </script>
+</html>
