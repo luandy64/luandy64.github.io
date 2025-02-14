@@ -3,7 +3,13 @@ https://blog.andylu.dev/singles/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Sat, 01 Feb 2025 12:54:03 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/singles/index.xml" rel="self" type="application/xml"/><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-02-01">2025-02-01&lt;/h2>
+Thu, 13 Feb 2025 23:13:08 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/singles/index.xml" rel="self" type="application/xml"/><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-02-13">2025-02-13&lt;/h2>
+&lt;ul>
+&lt;li>Added search via &lt;a href="https://lunrjs.com/">lunr.js&lt;/a>&lt;/li>
+&lt;li>Updated all of my content front matter to be TOML so I can index the pages
+with &lt;a href="https://www.npmjs.com/package/hugo-lunr">hugo-lunr&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="2025-02-01">2025-02-01&lt;/h2>
 &lt;ul>
 &lt;li>Enshired my old versions of this site in their own sub-paths
 &lt;ul>
