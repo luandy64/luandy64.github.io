@@ -3,7 +3,37 @@ https://blog.andylu.dev/cappucchino/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Thu, 13 Feb 2025 21:57:05 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/cappucchino/index.xml" rel="self" type="application/xml"/><item><title>The Enlightening One</title><link>https://blog.andylu.dev/cappucchino/the-enlightening-one/</link><pubDate>Fri, 24 Jan 2025 14:03:07 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/the-enlightening-one/</guid><description>&lt;h1 id="purpose">Purpose&lt;/h1>
+Fri, 14 Mar 2025 19:32:10 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/cappucchino/index.xml" rel="self" type="application/xml"/><item><title>Roll Your Own AES</title><link>https://blog.andylu.dev/cappucchino/roll-your-own-aes/</link><pubDate>Thu, 06 Mar 2025 23:04:36 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/roll-your-own-aes/</guid><description>&lt;p>I&amp;rsquo;m working through &lt;a href="https://www.davidwong.fr/blockbreakers/aes.html">blockbreakers&lt;/a>.&lt;/p>
+&lt;p>I&amp;rsquo;m currently stuck trying to figure out how to get a polynomial modulo working.&lt;/p>
+&lt;p>The big challenge of today was figuring out how to manipulate java bytes. I
+opted for sequences of 8 bits for now. It&amp;rsquo;s easy enough to reason about this
+way. But I would love to update my data model to be integers at some point.&lt;/p>
+&lt;p>I&amp;rsquo;m currently stuck on how to do polynomial division. There&amp;rsquo;s definitely a trick
+to it that I&amp;rsquo;m not seeing because in the look up table that the site provides
+for this section, there&amp;rsquo;s a modulo ring pattern. Which makes sense since the
+division is to calculate the modulo by the &amp;ldquo;zero&amp;rdquo; polynomial, but the actual
+mechanics are not clear right now.&lt;/p></description></item><item><title>Finding Things to Read on the Indieweb</title><link>https://blog.andylu.dev/cappucchino/finding-things-to-read-on-the-indieweb/</link><pubDate>Tue, 25 Feb 2025 22:31:12 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/finding-things-to-read-on-the-indieweb/</guid><description>&lt;p>Here&amp;rsquo;s a fun site I found to just serve up a random blog post&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://indieblog.page/">https://indieblog.page/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>It&amp;rsquo;s been helping me to find blogs to follow or at the very least good posts on
+blogs I wouldn&amp;rsquo;t otherwise know how to find.&lt;/p>
+&lt;p>In that same way, I&amp;rsquo;ve been enjoying searching things on&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://feedle.world/">https://feedle.world/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Compiling Emacs on Ubuntu</title><link>https://blog.andylu.dev/cappucchino/compiling-emacs-on-ubuntu/</link><pubDate>Mon, 24 Feb 2025 14:42:34 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/compiling-emacs-on-ubuntu/</guid><description>&lt;p>Today I heard that Emacs 30.1 is released. So here&amp;rsquo;s how I build emacs&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>wget https://ftpmirror.gnu.org/emacs/emacs-30.1.tar.xz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar xf emacs-30.1.tar.xz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd emacs-29.4/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>../configure --with-pgtk --with-mailutils
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo make -j4 install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If this is your first time building emacs, run these&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo apt build-dep emacs
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Maybe you&amp;rsquo;ll want to clean up older versions you&amp;rsquo;ve compiled&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ls -l /usr/local/bin/emacs*
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>The Enlightening One</title><link>https://blog.andylu.dev/cappucchino/the-enlightening-one/</link><pubDate>Fri, 24 Jan 2025 14:03:07 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/the-enlightening-one/</guid><description>&lt;h1 id="purpose">Purpose&lt;/h1>
 &lt;p>This page documents every time my girlfriend teaches me something she &amp;ldquo;thought you should already know&amp;rdquo;&lt;/p>
 &lt;h2 id="autumnal-is-a-word">Autumnal is a word&lt;/h2>
 &lt;p>When I heard my girlfriend say this for the first time, I thought it sounded too funny to be a real word. She got mad at me for asking Siri to define it, but we laugh about it now.&lt;/p>

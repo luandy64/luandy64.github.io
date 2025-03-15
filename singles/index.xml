@@ -3,7 +3,12 @@ https://blog.andylu.dev/singles/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Thu, 13 Feb 2025 23:13:08 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/singles/index.xml" rel="self" type="application/xml"/><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-02-13">2025-02-13&lt;/h2>
+Fri, 14 Mar 2025 20:08:21 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/singles/index.xml" rel="self" type="application/xml"/><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-03-14">2025-03-14&lt;/h2>
+&lt;ul>
+&lt;li>Updated all pages to show a &lt;code>created_at&lt;/code> time and &lt;code>updated_at&lt;/code> time&lt;/li>
+&lt;li>Updated all pages to have tags render if they exist&lt;/li>
+&lt;/ul>
+&lt;h2 id="2025-02-13">2025-02-13&lt;/h2>
 &lt;ul>
 &lt;li>Added search via &lt;a href="https://lunrjs.com/">lunr.js&lt;/a>&lt;/li>
 &lt;li>Updated all of my content front matter to be TOML so I can index the pages
@@ -43,25 +48,14 @@ with &lt;a href="https://www.npmjs.com/package/hugo-lunr">hugo-lunr&lt;/a>&lt;/l
 &lt;p>I try to document the technical changes around this site in my &lt;a href="https://blog.andylu.dev/changelog">Changelog&lt;/a>&lt;/p></description></item><item><title>Now</title><link>https://blog.andylu.dev/now/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/now/</guid><description>&lt;p>This is &lt;a href="https://nownownow.com/about">a now page&lt;/a>. For stuff that used to be here, check out the
 &lt;a href="https://blog.andylu.dev/old-now/archive">archive&lt;/a>.&lt;/p>
 &lt;hr>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th style="text-align: left">Currently&lt;/th>
- &lt;th style="text-align: left">&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td style="text-align: left">Watching&lt;/td>
- &lt;td style="text-align: left">Abbot Elementary&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: left">Gaming&lt;/td>
- &lt;td style="text-align: left">Fortnite with godzilla&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: left">Reading&lt;/td>
- &lt;td style="text-align: left">Mastodon and blogs, no books in progress really&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table></description></item></channel></rss>
+&lt;h1 id="tv">TV&lt;/h1>
+&lt;p>Just finished watching Pantheon on Netflix. Highly recommend if you&amp;rsquo;re into
+sci-fi and tech. It&amp;rsquo;s a 2 season, 16 episodes total, 40-ish minutes per episode kind of show.&lt;/p>
+&lt;h1 id="gaming">Gaming&lt;/h1>
+&lt;p>Still playing Fortnite. Enjoying the new season with the Kneecapper and dashing
+around to club people with a bat.&lt;/p>
+&lt;p>In Go, my rank is slowly climbing because I&amp;rsquo;ve been watching some strategy
+videos from &lt;a href="https://www.youtube.com/playlist?list=PL5mVjO5OFYSymMy2Mixl7E5vpwFDO_0B4">Shawn Ray&lt;/a>. I can beat bots like 60% of the
+time around my level and even like 60% of the time against stronger bots with
+the appropriate handicap set. If I can play enough this month, I&amp;rsquo;d like to move
+off of the 9x9 board and go up to 13x13 and see the game changes there.&lt;/p></description></item></channel></rss>

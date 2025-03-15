@@ -3,7 +3,52 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Thu, 13 Feb 2025 23:13:08 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-02-13">2025-02-13&lt;/h2>
+Fri, 14 Mar 2025 20:08:21 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Roll Your Own AES</title><link>https://blog.andylu.dev/cappucchino/roll-your-own-aes/</link><pubDate>Thu, 06 Mar 2025 23:04:36 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/roll-your-own-aes/</guid><description>&lt;p>I&amp;rsquo;m working through &lt;a href="https://www.davidwong.fr/blockbreakers/aes.html">blockbreakers&lt;/a>.&lt;/p>
+&lt;p>I&amp;rsquo;m currently stuck trying to figure out how to get a polynomial modulo working.&lt;/p>
+&lt;p>The big challenge of today was figuring out how to manipulate java bytes. I
+opted for sequences of 8 bits for now. It&amp;rsquo;s easy enough to reason about this
+way. But I would love to update my data model to be integers at some point.&lt;/p>
+&lt;p>I&amp;rsquo;m currently stuck on how to do polynomial division. There&amp;rsquo;s definitely a trick
+to it that I&amp;rsquo;m not seeing because in the look up table that the site provides
+for this section, there&amp;rsquo;s a modulo ring pattern. Which makes sense since the
+division is to calculate the modulo by the &amp;ldquo;zero&amp;rdquo; polynomial, but the actual
+mechanics are not clear right now.&lt;/p></description></item><item><title>Modeling Clay in Vr</title><link>https://blog.andylu.dev/cortado/modeling-clay-in-vr/</link><pubDate>Tue, 25 Feb 2025 22:36:43 -0500</pubDate><guid>https://blog.andylu.dev/cortado/modeling-clay-in-vr/</guid><description>&lt;p>I don&amp;rsquo;t plan my ceramics work ahead of time enough. In college, I would always
+sketch in clay to get proportions and stuff right. But I don&amp;rsquo;t these days and
+this last weekend I thought I could use my VR headset to be virtual clay so that
+I can play with shapes in 3D space&lt;/p></description></item><item><title>Finding Things to Read on the Indieweb</title><link>https://blog.andylu.dev/cappucchino/finding-things-to-read-on-the-indieweb/</link><pubDate>Tue, 25 Feb 2025 22:31:12 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/finding-things-to-read-on-the-indieweb/</guid><description>&lt;p>Here&amp;rsquo;s a fun site I found to just serve up a random blog post&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://indieblog.page/">https://indieblog.page/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>It&amp;rsquo;s been helping me to find blogs to follow or at the very least good posts on
+blogs I wouldn&amp;rsquo;t otherwise know how to find.&lt;/p>
+&lt;p>In that same way, I&amp;rsquo;ve been enjoying searching things on&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://feedle.world/">https://feedle.world/&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Fixing Tmux Ssh</title><link>https://blog.andylu.dev/cortado/fixing-tmux-ssh/</link><pubDate>Mon, 24 Feb 2025 14:45:50 -0500</pubDate><guid>https://blog.andylu.dev/cortado/fixing-tmux-ssh/</guid><description>&lt;p>The tmux server machine needs an &lt;code>~/.ssh/rc&lt;/code> with this line in it&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The tmux server machine also needs a tmux config with the following line&lt;/p>
+&lt;pre tabindex="0">&lt;code># Use a symlink to look up SSH authentication
+setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
+&lt;/code>&lt;/pre>&lt;p>Then when you change the ssh auth socket, you can run this to update your current shell&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>eval &lt;span style="color:#66d9ef">$(&lt;/span>tmux show-env -s |grep &lt;span style="color:#e6db74">&amp;#39;^SSH_&amp;#39;&lt;/span>&lt;span style="color:#66d9ef">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://stackoverflow.com/questions/21378569/how-to-auto-update-ssh-agent-environment-variables-when-attaching-to-existing-tm">Thanks StackOverflow&lt;/a>&lt;/p></description></item><item><title>Compiling Emacs on Ubuntu</title><link>https://blog.andylu.dev/cappucchino/compiling-emacs-on-ubuntu/</link><pubDate>Mon, 24 Feb 2025 14:42:34 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/compiling-emacs-on-ubuntu/</guid><description>&lt;p>Today I heard that Emacs 30.1 is released. So here&amp;rsquo;s how I build emacs&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>wget https://ftpmirror.gnu.org/emacs/emacs-30.1.tar.xz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar xf emacs-30.1.tar.xz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd emacs-29.4/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd build
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>../configure --with-pgtk --with-mailutils
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo make -j4 install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If this is your first time building emacs, run these&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo apt build-dep emacs
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Maybe you&amp;rsquo;ll want to clean up older versions you&amp;rsquo;ve compiled&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ls -l /usr/local/bin/emacs*
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-03-14">2025-03-14&lt;/h2>
+&lt;ul>
+&lt;li>Updated all pages to show a &lt;code>created_at&lt;/code> time and &lt;code>updated_at&lt;/code> time&lt;/li>
+&lt;li>Updated all pages to have tags render if they exist&lt;/li>
+&lt;/ul>
+&lt;h2 id="2025-02-13">2025-02-13&lt;/h2>
 &lt;ul>
 &lt;li>Added search via &lt;a href="https://lunrjs.com/">lunr.js&lt;/a>&lt;/li>
 &lt;li>Updated all of my content front matter to be TOML so I can index the pages
@@ -158,8 +203,7 @@ it&amp;rsquo;s cool to have the usual output in the message line and in an overl
 emacs is backwards from every other regex engine. &lt;code>(&lt;/code> is match a literal paren. &lt;code>\( … \)&lt;/code> is a capture group.&lt;/p></description></item><item><title>Clojure Named Anonymous Functions</title><link>https://blog.andylu.dev/cortado/clojure-named-anonymous-functions/</link><pubDate>Mon, 13 May 2024 22:50:21 -0400</pubDate><guid>https://blog.andylu.dev/cortado/clojure-named-anonymous-functions/</guid><description>&lt;p>&lt;a href="https://github.com/ptaoussanis">Peter Taoussanis&lt;/a> said something like:&lt;/p>
 &lt;blockquote>
 &lt;p>when using annonymous functions, add a name to it so that where it errors, you
-leave a breadcrumb back to the annonymous function in the stacktrace&lt;/p>
-&lt;/blockquote>
+leave a breadcrumb back to the annonymous function in the stacktrace&lt;/p>&lt;/blockquote>
 &lt;p>Credit: &lt;a href="https://www.youtube.com/watch?v=q65T6P4xVVQ">https://www.youtube.com/watch?v=q65T6P4xVVQ&lt;/a>&lt;/p></description></item><item><title>Mandatory Visual Emacs Settings on macOS</title><link>https://blog.andylu.dev/cortado/mandatory-visual-emacs-settings-on-macos/</link><pubDate>Mon, 13 May 2024 22:50:21 -0400</pubDate><guid>https://blog.andylu.dev/cortado/mandatory-visual-emacs-settings-on-macos/</guid><description>&lt;p>MacOS emacs needs to set the following:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-elisp" data-lang="elisp">&lt;span style="display:flex;">&lt;span>(add-to-list &lt;span style="color:#e6db74">&amp;#39;default-frame-alist&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>(ns-transparent-titlebar &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#66d9ef">t&lt;/span>))
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(add-to-list &lt;span style="color:#e6db74">&amp;#39;default-frame-alist&lt;/span> &lt;span style="color:#f92672">&amp;#39;&lt;/span>(ns-appearance &lt;span style="color:#f92672">.&lt;/span> dark))
@@ -417,46 +461,49 @@ to a few people at a recent Philly JS meetup.&lt;/p></description></item><item><
 &lt;li>&lt;code>ls -lh &amp;lt;one-file&amp;gt;&lt;/code>: Get the long listing of just one file&lt;/li>
 &lt;li>The rest of it is just to do it over and over so that I can see changes in the file size&lt;/li>
 &lt;/ul></description></item><item><title>Archive</title><link>https://blog.andylu.dev/old-now/archive/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/old-now/archive/</guid><description>&lt;p>See my &lt;a href="https://blog.andylu.dev/now">now&lt;/a> page for my latest updates.&lt;/p>
+&lt;h1 id="archived-on-2025-03-14">Archived on 2025-03-14&lt;/h1>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th>Currently&lt;/th>
+ &lt;th>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td>Watching&lt;/td>
+ &lt;td>Abbot Elementary&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Gaming&lt;/td>
+ &lt;td>Fortnite with godzilla&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td>Reading&lt;/td>
+ &lt;td>Mastodon and blogs, no books in progress really&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
 &lt;h1 id="archived-on-2025-01-21">Archived on 2025-01-21&lt;/h1>
 &lt;h1 id="reading">Reading&lt;/h1>
 &lt;p>I picked up &lt;a href="https://mitpress.mit.edu/9780262543231/structure-and-interpretation-of-computer-programs/">SICP JS&lt;/a> again.&lt;/p>
 &lt;p>I even wrote up &lt;a href="https://blog.andylu.dev/cappucchino/sicp-js-chapter-2-exercise-2.2-and-2.3">my solutions to a few exercises&lt;/a>&lt;/p>
 &lt;h1 id="apps">Apps&lt;/h1>
 &lt;p>I discovered that &lt;a href="https://anytype.io/">anytype&lt;/a> recently released their multiplayer feature, so I&amp;rsquo;m
-going to try and switch off of Notion for some things and move to Anytype.&lt;/p>
-&lt;h1 id="archived-on-2024-07-13">Archived on 2024-07-13&lt;/h1>
-&lt;h1 id="reading-1">Reading&lt;/h1>
-&lt;p>I picked up and started some books&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://bookshop.org/p/books/the-mythical-man-month-essays-on-software-engineering-anniversary-edition-frederick-brooks/9437212?ean=9780201835953">The Mythical Man-Month&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://bookshop.org/p/books/the-mythical-man-month-essays-on-software-engineering-anniversary-edition-frederick-brooks/9437212?ean=9780201835953">A Short Treatise Inviting the Reader to Discover the Subtle Art of Go&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h1 id="go">Go&lt;/h1>
-&lt;p>I downloaded this app to play more games. And I&amp;rsquo;ve been kicking the weak AI&amp;rsquo;s butt. But the less weak bots give me trouble still&lt;/p></description></item><item><title>Now</title><link>https://blog.andylu.dev/now/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/now/</guid><description>&lt;p>This is &lt;a href="https://nownownow.com/about">a now page&lt;/a>. For stuff that used to be here, check out the
+going to try and switch off of Notion for some things and move to Anytype.&lt;/p></description></item><item><title>Now</title><link>https://blog.andylu.dev/now/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/now/</guid><description>&lt;p>This is &lt;a href="https://nownownow.com/about">a now page&lt;/a>. For stuff that used to be here, check out the
 &lt;a href="https://blog.andylu.dev/old-now/archive">archive&lt;/a>.&lt;/p>
 &lt;hr>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th style="text-align: left">Currently&lt;/th>
- &lt;th style="text-align: left">&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td style="text-align: left">Watching&lt;/td>
- &lt;td style="text-align: left">Abbot Elementary&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: left">Gaming&lt;/td>
- &lt;td style="text-align: left">Fortnite with godzilla&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: left">Reading&lt;/td>
- &lt;td style="text-align: left">Mastodon and blogs, no books in progress really&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table></description></item><item><title>My Babashka Cookbook</title><link>https://blog.andylu.dev/cappucchino/my-babashka-cookbook/</link><pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/my-babashka-cookbook/</guid><description>&lt;p>
+&lt;h1 id="tv">TV&lt;/h1>
+&lt;p>Just finished watching Pantheon on Netflix. Highly recommend if you&amp;rsquo;re into
+sci-fi and tech. It&amp;rsquo;s a 2 season, 16 episodes total, 40-ish minutes per episode kind of show.&lt;/p>
+&lt;h1 id="gaming">Gaming&lt;/h1>
+&lt;p>Still playing Fortnite. Enjoying the new season with the Kneecapper and dashing
+around to club people with a bat.&lt;/p>
+&lt;p>In Go, my rank is slowly climbing because I&amp;rsquo;ve been watching some strategy
+videos from &lt;a href="https://www.youtube.com/playlist?list=PL5mVjO5OFYSymMy2Mixl7E5vpwFDO_0B4">Shawn Ray&lt;/a>. I can beat bots like 60% of the
+time around my level and even like 60% of the time against stronger bots with
+the appropriate handicap set. If I can play enough this month, I&amp;rsquo;d like to move
+off of the 9x9 board and go up to 13x13 and see the game changes there.&lt;/p></description></item><item><title>My Babashka Cookbook</title><link>https://blog.andylu.dev/cappucchino/my-babashka-cookbook/</link><pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/my-babashka-cookbook/</guid><description>&lt;p>
 This post is the one I want to reference when I do something in `babashka` and forget syntax or
 something.&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
