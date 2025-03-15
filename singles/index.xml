@@ -3,10 +3,11 @@ https://blog.andylu.dev/singles/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Fri, 14 Mar 2025 20:08:21 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/singles/index.xml" rel="self" type="application/xml"/><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-03-14">2025-03-14&lt;/h2>
+Fri, 14 Mar 2025 22:59:50 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/singles/index.xml" rel="self" type="application/xml"/><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-03-14">2025-03-14&lt;/h2>
 &lt;ul>
 &lt;li>Updated all pages to show a &lt;code>created_at&lt;/code> time and &lt;code>updated_at&lt;/code> time&lt;/li>
 &lt;li>Updated all pages to have tags render if they exist&lt;/li>
+&lt;li>Added a &amp;ldquo;Recently Updated&amp;rdquo; section on the front page&lt;/li>
 &lt;/ul>
 &lt;h2 id="2025-02-13">2025-02-13&lt;/h2>
 &lt;ul>

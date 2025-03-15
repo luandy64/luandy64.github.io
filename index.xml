@@ -3,7 +3,7 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Fri, 14 Mar 2025 20:08:21 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Roll Your Own AES</title><link>https://blog.andylu.dev/cappucchino/roll-your-own-aes/</link><pubDate>Thu, 06 Mar 2025 23:04:36 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/roll-your-own-aes/</guid><description>&lt;p>I&amp;rsquo;m working through &lt;a href="https://www.davidwong.fr/blockbreakers/aes.html">blockbreakers&lt;/a>.&lt;/p>
+Fri, 14 Mar 2025 22:59:50 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Roll Your Own AES</title><link>https://blog.andylu.dev/cappucchino/roll-your-own-aes/</link><pubDate>Thu, 06 Mar 2025 23:04:36 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/roll-your-own-aes/</guid><description>&lt;p>I&amp;rsquo;m working through &lt;a href="https://www.davidwong.fr/blockbreakers/aes.html">blockbreakers&lt;/a>.&lt;/p>
 &lt;p>I&amp;rsquo;m currently stuck trying to figure out how to get a polynomial modulo working.&lt;/p>
 &lt;p>The big challenge of today was figuring out how to manipulate java bytes. I
 opted for sequences of 8 bits for now. It&amp;rsquo;s easy enough to reason about this
@@ -47,6 +47,7 @@ setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
 &lt;ul>
 &lt;li>Updated all pages to show a &lt;code>created_at&lt;/code> time and &lt;code>updated_at&lt;/code> time&lt;/li>
 &lt;li>Updated all pages to have tags render if they exist&lt;/li>
+&lt;li>Added a &amp;ldquo;Recently Updated&amp;rdquo; section on the front page&lt;/li>
 &lt;/ul>
 &lt;h2 id="2025-02-13">2025-02-13&lt;/h2>
 &lt;ul>
