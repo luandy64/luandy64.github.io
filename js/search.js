@@ -8,7 +8,6 @@ function initLunr() {
     $.getJSON("/js/lunr/index.json")
         .done(function(index) {
             pagesIndex = index;
-            console.log("index:", pagesIndex);
 
             // Set up lunrjs by declaring the fields we use
             // Also provide their boost level for the ranking
@@ -37,7 +36,6 @@ function initLunr() {
 // Nothing crazy here, just hook up a listener on the input field
 function initUI() {
     results = $("#results");
-    console.log("initUI:", results);
     $("#search").keyup(function() {
         results.empty();
 
@@ -66,22 +64,15 @@ function search(query) {
     // Our result:
     //  {title:"Page1", href:"/section/page1", ...}
 
-    console.log("search: query", query);
-    console.log("search: lunrIndex", lunrIndex);
     var search_results = lunrIndex.search(query);
-
-    console.log("search: search_results", search_results);
 
     return search_results.map(
         function(result) {
-            console.log("search: map result", result);
-
             var filtered = pagesIndex.filter(
                 function(page) {
                     return page.uri === result.ref;
                 }
             );
-            console.log("search: filtered", filtered);
             return filtered[0];
         });
 }

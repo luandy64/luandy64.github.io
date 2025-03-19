@@ -3,7 +3,7 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Wed, 19 Mar 2025 12:38:48 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Roll Your Own AES</title><link>https://blog.andylu.dev/cappucchino/roll-your-own-aes/</link><pubDate>Thu, 06 Mar 2025 23:04:36 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/roll-your-own-aes/</guid><description>&lt;p>I&amp;rsquo;m working through &lt;a href="https://www.davidwong.fr/blockbreakers/aes.html">blockbreakers&lt;/a>.&lt;/p>
+Wed, 19 Mar 2025 12:51:09 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Roll Your Own AES</title><link>https://blog.andylu.dev/cappucchino/roll-your-own-aes/</link><pubDate>Thu, 06 Mar 2025 23:04:36 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/roll-your-own-aes/</guid><description>&lt;p>I&amp;rsquo;m working through &lt;a href="https://www.davidwong.fr/blockbreakers/aes.html">blockbreakers&lt;/a>.&lt;/p>
 &lt;p>I&amp;rsquo;m currently stuck trying to figure out how to get a polynomial modulo working.&lt;/p>
 &lt;p>The big challenge of today was figuring out how to manipulate java bytes. I
 opted for sequences of 8 bits for now. It&amp;rsquo;s easy enough to reason about this
@@ -46,6 +46,11 @@ setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-03-19">2025-03-19&lt;/h2>
 &lt;ul>
 &lt;li>Added a 404 page&lt;/li>
+&lt;li>Fixed search
+&lt;ul>
+&lt;li>Something about the debug logging was prepending &lt;code>/content&lt;/code> to the result URIs&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;h2 id="2025-03-14">2025-03-14&lt;/h2>
 &lt;ul>
