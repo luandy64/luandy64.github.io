@@ -3,7 +3,14 @@ https://blog.andylu.dev/cortado/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Fri, 14 Mar 2025 18:56:46 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/cortado/index.xml" rel="self" type="application/xml"/><item><title>Modeling Clay in Vr</title><link>https://blog.andylu.dev/cortado/modeling-clay-in-vr/</link><pubDate>Tue, 25 Feb 2025 22:36:43 -0500</pubDate><guid>https://blog.andylu.dev/cortado/modeling-clay-in-vr/</guid><description>&lt;p>I don&amp;rsquo;t plan my ceramics work ahead of time enough. In college, I would always
+Fri, 11 Apr 2025 21:12:23 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/cortado/index.xml" rel="self" type="application/xml"/><item><title>Termux Is for Remote Editing</title><link>https://blog.andylu.dev/cortado/termux-is-for-remote-editing/</link><pubDate>Fri, 11 Apr 2025 21:08:30 -0400</pubDate><guid>https://blog.andylu.dev/cortado/termux-is-for-remote-editing/</guid><description>&lt;p>I can totally write from wherever I want. Shout out Tailscale and congrats on a new round of funding!&lt;/p>
+&lt;p>But also this would not be possible without Termux and Emacs. Sure I&amp;rsquo;m slower
+than if I was at my desk with my keyboard. But I love that I can navigate a tmux
+session quickly amd easily.&lt;/p>
+&lt;p>Like it should not be this easy&lt;/p></description></item><item><title>Coheed the Father of Make Believe</title><link>https://blog.andylu.dev/cortado/coheed-the-father-of-make-believe/</link><pubDate>Fri, 11 Apr 2025 21:01:42 -0400</pubDate><guid>https://blog.andylu.dev/cortado/coheed-the-father-of-make-believe/</guid><description>&lt;p>I&amp;rsquo;m sitting on the train listening to this album and it&amp;rsquo;s sounding so good in my
+Status headphones.&lt;/p>
+&lt;p>My favorite part of this album has to be The Continuum I - IV. The album&amp;rsquo;s
+namesake comes in at number 5 I think.&lt;/p></description></item><item><title>Modeling Clay in Vr</title><link>https://blog.andylu.dev/cortado/modeling-clay-in-vr/</link><pubDate>Tue, 25 Feb 2025 22:36:43 -0500</pubDate><guid>https://blog.andylu.dev/cortado/modeling-clay-in-vr/</guid><description>&lt;p>I don&amp;rsquo;t plan my ceramics work ahead of time enough. In college, I would always
 sketch in clay to get proportions and stuff right. But I don&amp;rsquo;t these days and
 this last weekend I thought I could use my VR headset to be virtual clay so that
 I can play with shapes in 3D space&lt;/p></description></item><item><title>Fixing Tmux Ssh</title><link>https://blog.andylu.dev/cortado/fixing-tmux-ssh/</link><pubDate>Mon, 24 Feb 2025 14:45:50 -0500</pubDate><guid>https://blog.andylu.dev/cortado/fixing-tmux-ssh/</guid><description>&lt;p>The tmux server machine needs an &lt;code>~/.ssh/rc&lt;/code> with this line in it&lt;/p>
