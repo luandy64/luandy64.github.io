@@ -563,6 +563,12 @@
         ]
     },
     {
+        "uri": "/cortado/orange-wine-from-nice",
+        "title": "Orange Wine From Nice",
+        "content": "\nNote to self: buy this wine again when possible\n\nOrange\n\nOr anything from the winery to try:\n\nDomaine de Médeilhan\n\nOr anything from that region of France:\n\nLanguedoc-Roussillon\n\nOr any wine using that grape:\n\nMuscaris\n",
+        "tags": []
+    },
+    {
         "uri": "/cortado/prettier-docker-ps",
         "title": "Prettier Docker Ps",
         "content": "\nToday I learned you can select the columns you want displayed by docker ps\n\ndocker ps --format \"table {{ .Names }}\\t{{ .Status }}\\t{{ .Ports }}\"\n\nThis is way less noisy\n",
