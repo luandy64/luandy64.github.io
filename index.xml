@@ -3,7 +3,7 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Sat, 12 Apr 2025 22:42:41 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Orange Wine From Nice</title><link>https://blog.andylu.dev/cortado/orange-wine-from-nice/</link><pubDate>Sat, 12 Apr 2025 21:24:47 -0400</pubDate><guid>https://blog.andylu.dev/cortado/orange-wine-from-nice/</guid><description>&lt;p>Note to self: buy this wine again when possible&lt;/p>
+Sun, 27 Apr 2025 10:27:59 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Orange Wine From Nice</title><link>https://blog.andylu.dev/cortado/orange-wine-from-nice/</link><pubDate>Sat, 12 Apr 2025 21:24:47 -0400</pubDate><guid>https://blog.andylu.dev/cortado/orange-wine-from-nice/</guid><description>&lt;p>Note to self: buy this wine again when possible&lt;/p>
 &lt;p>&lt;a href="https://medeilhan.fr/caveau/gammes-de-vin/les-authentiques/orange/">Orange&lt;/a>&lt;/p>
 &lt;p>Or anything from the winery to try:&lt;/p>
 &lt;p>&lt;a href="https://www.vivino.com/wineries/medeilhan?source=pdp">Domaine de Médeilhan&lt;/a>&lt;/p>
@@ -54,7 +54,7 @@ setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a href="https://stackoverflow.com/questions/21378569/how-to-auto-update-ssh-agent-environment-variables-when-attaching-to-existing-tm">Thanks StackOverflow&lt;/a>&lt;/p></description></item><item><title>Compiling Emacs on Ubuntu</title><link>https://blog.andylu.dev/cappucchino/compiling-emacs-on-ubuntu/</link><pubDate>Mon, 24 Feb 2025 14:42:34 -0500</pubDate><guid>https://blog.andylu.dev/cappucchino/compiling-emacs-on-ubuntu/</guid><description>&lt;p>Today I heard that Emacs 30.1 is released. So here&amp;rsquo;s how I build emacs&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>wget https://ftpmirror.gnu.org/emacs/emacs-30.1.tar.xz
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar xf emacs-30.1.tar.xz
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd emacs-29.4/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd emacs-30.1/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir build
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd build
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>../configure --with-pgtk --with-mailutils
@@ -63,7 +63,11 @@ setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>sudo apt build-dep emacs
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Maybe you&amp;rsquo;ll want to clean up older versions you&amp;rsquo;ve compiled&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ls -l /usr/local/bin/emacs*
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-03-19">2025-03-19&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="possible-errors">Possible Errors&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>$ sudo apt build-dep emacs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Reading package lists... Done
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>E: Unable to find a source package &lt;span style="color:#66d9ef">for&lt;/span> emacs
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Your apt sources list is missing the deb-src types&lt;/p></description></item><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-03-19">2025-03-19&lt;/h2>
 &lt;ul>
 &lt;li>Added a 404 page&lt;/li>
 &lt;li>Fixed search
