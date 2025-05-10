@@ -3,7 +3,13 @@ https://blog.andylu.dev/cappucchino/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Sun, 27 Apr 2025 10:27:59 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/cappucchino/index.xml" rel="self" type="application/xml"/><item><title>RE: Picky Eaters | Reflective Essay</title><link>https://blog.andylu.dev/cappucchino/re-picky-eaters-reflective-essay/</link><pubDate>Sat, 05 Apr 2025 11:08:27 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/re-picky-eaters-reflective-essay/</guid><description>&lt;p>I really liked reading this essay and wanted to pull some quotes out of it.&lt;/p>
+Sat, 10 May 2025 15:39:24 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/cappucchino/index.xml" rel="self" type="application/xml"/><item><title>something something separate your work and personal computers</title><link>https://blog.andylu.dev/cappucchino/something-something-separate-your-work-and-personal-computers/</link><pubDate>Sat, 10 May 2025 15:37:08 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/something-something-separate-your-work-and-personal-computers/</guid><description>&lt;p>I can&amp;rsquo;t open the tailscale website on my work mac. The IT team has put in content filters or
+something to rewrite my DNS queries for tailscale.com to some fail and the browser throws some SSL
+bad cert error.&lt;/p>
+&lt;p>But I still can access my tailnet in certain circumstances and I want to document those for you.&lt;/p>
+&lt;p>It&amp;rsquo;s nothing fancy or subversive really, but it does highlight the fact that it&amp;rsquo;s hard to really
+lock down a laptop. Without resorting to a &amp;ldquo;deny all outgoing traffic by default&amp;rdquo; approach, I&amp;rsquo;m
+really not sure how you would successfully pull this off.&lt;/p></description></item><item><title>RE: Picky Eaters | Reflective Essay</title><link>https://blog.andylu.dev/cappucchino/re-picky-eaters-reflective-essay/</link><pubDate>Sat, 05 Apr 2025 11:08:27 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/re-picky-eaters-reflective-essay/</guid><description>&lt;p>I really liked reading this essay and wanted to pull some quotes out of it.&lt;/p>
 &lt;p>&lt;a href="https://writtenbywinter.bearblog.dev/picky-eaters-reflective-essay">Here&amp;rsquo;s the original so that you can read it yourself&lt;/a>&lt;/p>
 &lt;blockquote>
 &lt;p>&lt;em>If I don&amp;rsquo;t enjoy something, I won&amp;rsquo;t lie about it. But I also won&amp;rsquo;t call it

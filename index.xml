@@ -3,7 +3,13 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Sun, 27 Apr 2025 10:27:59 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Orange Wine From Nice</title><link>https://blog.andylu.dev/cortado/orange-wine-from-nice/</link><pubDate>Sat, 12 Apr 2025 21:24:47 -0400</pubDate><guid>https://blog.andylu.dev/cortado/orange-wine-from-nice/</guid><description>&lt;p>Note to self: buy this wine again when possible&lt;/p>
+Sat, 10 May 2025 15:39:24 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>something something separate your work and personal computers</title><link>https://blog.andylu.dev/cappucchino/something-something-separate-your-work-and-personal-computers/</link><pubDate>Sat, 10 May 2025 15:37:08 -0400</pubDate><guid>https://blog.andylu.dev/cappucchino/something-something-separate-your-work-and-personal-computers/</guid><description>&lt;p>I can&amp;rsquo;t open the tailscale website on my work mac. The IT team has put in content filters or
+something to rewrite my DNS queries for tailscale.com to some fail and the browser throws some SSL
+bad cert error.&lt;/p>
+&lt;p>But I still can access my tailnet in certain circumstances and I want to document those for you.&lt;/p>
+&lt;p>It&amp;rsquo;s nothing fancy or subversive really, but it does highlight the fact that it&amp;rsquo;s hard to really
+lock down a laptop. Without resorting to a &amp;ldquo;deny all outgoing traffic by default&amp;rdquo; approach, I&amp;rsquo;m
+really not sure how you would successfully pull this off.&lt;/p></description></item><item><title>Orange Wine From Nice</title><link>https://blog.andylu.dev/cortado/orange-wine-from-nice/</link><pubDate>Sat, 12 Apr 2025 21:24:47 -0400</pubDate><guid>https://blog.andylu.dev/cortado/orange-wine-from-nice/</guid><description>&lt;p>Note to self: buy this wine again when possible&lt;/p>
 &lt;p>&lt;a href="https://medeilhan.fr/caveau/gammes-de-vin/les-authentiques/orange/">Orange&lt;/a>&lt;/p>
 &lt;p>Or anything from the winery to try:&lt;/p>
 &lt;p>&lt;a href="https://www.vivino.com/wineries/medeilhan?source=pdp">Domaine de Médeilhan&lt;/a>&lt;/p>
