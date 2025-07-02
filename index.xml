@@ -3,7 +3,7 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Tue, 01 Jul 2025 21:44:12 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Emacs Org Mode Inactive Timestamps</title><link>https://blog.andylu.dev/emacs-org-mode-inactive-timestamps/</link><pubDate>Mon, 30 Jun 2025 10:01:00 -0400</pubDate><guid>https://blog.andylu.dev/emacs-org-mode-inactive-timestamps/</guid><description>&lt;p>I just learned that there&amp;rsquo;s a binding for inactive timestamps: &lt;code>C-c !&lt;/code>.&lt;/p>
+Tue, 01 Jul 2025 22:31:57 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Emacs Org Mode Inactive Timestamps</title><link>https://blog.andylu.dev/emacs-org-mode-inactive-timestamps/</link><pubDate>Mon, 30 Jun 2025 10:01:00 -0400</pubDate><guid>https://blog.andylu.dev/emacs-org-mode-inactive-timestamps/</guid><description>&lt;p>I just learned that there&amp;rsquo;s a binding for inactive timestamps: &lt;code>C-c !&lt;/code>.&lt;/p>
 &lt;p>Which is so much easier than spacemac&amp;rsquo;s &lt;code>M-m m d T&lt;/code>. There&amp;rsquo;s definitely a skill issue going on too
 because sometimes I miss the shift on the last key and I get an active timestamp.&lt;/p></description></item><item><title>Python Packaging Troubles</title><link>https://blog.andylu.dev/python-packaging-troubles/</link><pubDate>Mon, 23 Jun 2025 18:08:40 -0400</pubDate><guid>https://blog.andylu.dev/python-packaging-troubles/</guid><description>&lt;p>Today I was reminded of the fact that building a python package requires you to list what non-source-code files need to
 appear in the final build artifact.&lt;/p>
@@ -509,27 +509,27 @@ to a few people at a recent Philly JS meetup.&lt;/p></description></item><item><
 &lt;li>&lt;code>ls -lh &amp;lt;one-file&amp;gt;&lt;/code>: Get the long listing of just one file&lt;/li>
 &lt;li>The rest of it is just to do it over and over so that I can see changes in the file size&lt;/li>
 &lt;/ul></description></item><item><title>Archive</title><link>https://blog.andylu.dev/old-now/archive/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/old-now/archive/</guid><description>&lt;p>See my &lt;a href="https://blog.andylu.dev/now">now&lt;/a> page for my latest updates.&lt;/p>
-&lt;h1 id="archived-on-2025-04-04">Archived on 2025-04-04&lt;/h1>
+&lt;h1 id="archived-on-2025-07-01">Archived on 2025-07-01&lt;/h1>
 &lt;h2 id="tv">TV&lt;/h2>
-&lt;p>Just finished watching Pantheon on Netflix. Highly recommend if you&amp;rsquo;re into
-sci-fi and tech. It&amp;rsquo;s a 2 season, 16 episodes total, 40-ish minutes per episode kind of show.&lt;/p>
-&lt;h2 id="gaming">Gaming&lt;/h2>
-&lt;p>Still playing Fortnite. Enjoying the new season with the Kneecapper and dashing
-around to club people with a bat.&lt;/p>
-&lt;p>In Go, my rank is slowly climbing because I&amp;rsquo;ve been watching some strategy
-videos from &lt;a href="https://www.youtube.com/playlist?list=PL5mVjO5OFYSymMy2Mixl7E5vpwFDO_0B4">Shawn Ray&lt;/a>. I can beat bots like 60% of the
-time around my level and even like 60% of the time against stronger bots with
-the appropriate handicap set. If I can play enough this month, I&amp;rsquo;d like to move
-off of the 9x9 board and go up to 13x13 and see the game changes there.&lt;/p></description></item><item><title>Now</title><link>https://blog.andylu.dev/now/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/now/</guid><description>&lt;p>This is &lt;a href="https://nownownow.com/about">a now page&lt;/a>. For stuff that used to be here, check out the
-&lt;a href="https://blog.andylu.dev/old-now/archive">archive&lt;/a>.&lt;/p>
-&lt;hr>
-&lt;h1 id="tv">TV&lt;/h1>
 &lt;p>Currently working through &amp;ldquo;The Apothecary Diaries&amp;rdquo;. Season 1 wrapped up earlier this week.&lt;/p>
 &lt;p>This is to supplement the weekly releases of &amp;ldquo;Solo Leveling&amp;rdquo;.&lt;/p>
-&lt;h1 id="gaming">Gaming&lt;/h1>
+&lt;h2 id="gaming">Gaming&lt;/h2>
 &lt;p>Still playing Fortnite.&lt;/p>
 &lt;p>I&amp;rsquo;ve been getting back into &amp;ldquo;Dave the Diver&amp;rdquo; too. My story is advancing slowly, but I&amp;rsquo;ve seen so
-much time farming resources that I think I&amp;rsquo;m too strong for the current level.&lt;/p></description></item><item><title>My Babashka Cookbook</title><link>https://blog.andylu.dev/my-babashka-cookbook/</link><pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate><guid>https://blog.andylu.dev/my-babashka-cookbook/</guid><description>&lt;p>
+much time farming resources that I think I&amp;rsquo;m too strong for the current level.&lt;/p></description></item><item><title>Now</title><link>https://blog.andylu.dev/now/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/now/</guid><description>&lt;p>This is &lt;a href="https://nownownow.com/about">a now page&lt;/a>. For stuff that used to be here, check out the
+&lt;a href="https://blog.andylu.dev/old-now/archive">archive&lt;/a>.&lt;/p>
+&lt;hr>
+&lt;h2 id="reading">Reading&lt;/h2>
+&lt;h3 id="non-fiction">Non-fiction&lt;/h3>
+&lt;p>I just finished &lt;a href="https://press.stripe.com/working-in-public">Working in Public: The Making and Maintenance of Open Source
+Software&lt;/a> by Nadia Eghbal.&lt;/p>
+&lt;p>It was interesting to read about a world I&amp;rsquo;ve been a part of and to have some concepts defined and
+discussed. My big takeaways are that software has this historical burden to it because people didn&amp;rsquo;t
+know how to make money off of it. It looks like writing, but is only words on a dead tree with no
+value until you try to use it. And once you try to use it, it&amp;rsquo;s alive and needs to maintained like
+an aging dog. Software is also not like a commodity that loses value once more people use it.
+Software can be ideas, and ideas want to spread and be free (as in beer) and should be free (as in
+freedom).&lt;/p></description></item><item><title>My Babashka Cookbook</title><link>https://blog.andylu.dev/my-babashka-cookbook/</link><pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate><guid>https://blog.andylu.dev/my-babashka-cookbook/</guid><description>&lt;p>
 This post is the one I want to reference when I do something in `babashka` and forget syntax or
 something.&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
