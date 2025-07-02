@@ -45,6 +45,7 @@ function initUI() {
             return;
         }
 
+        results[0].classList.remove('hide-results');
         var resp = search(query);
 
         renderResults(resp);
@@ -84,7 +85,7 @@ function search(query) {
  */
 function renderResults(resp) {
     if (!resp.length) {
-        results.append("No results");
+        results[0].classList.add('hide-results');
     }
 
     const max_result = 17;
