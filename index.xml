@@ -3,7 +3,9 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Tue, 01 Jul 2025 22:31:57 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Emacs Org Mode Inactive Timestamps</title><link>https://blog.andylu.dev/emacs-org-mode-inactive-timestamps/</link><pubDate>Mon, 30 Jun 2025 10:01:00 -0400</pubDate><guid>https://blog.andylu.dev/emacs-org-mode-inactive-timestamps/</guid><description>&lt;p>I just learned that there&amp;rsquo;s a binding for inactive timestamps: &lt;code>C-c !&lt;/code>.&lt;/p>
+Thu, 10 Jul 2025 21:03:47 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Coffee No No</title><link>https://blog.andylu.dev/coffee-no-no/</link><pubDate>Thu, 10 Jul 2025 21:00:39 -0400</pubDate><guid>https://blog.andylu.dev/coffee-no-no/</guid><description>&lt;p>I did a coffee no no today and poured ground coffee into my coffee grinder.&lt;/p>
+&lt;p>I don&amp;rsquo;t really see why it&amp;rsquo;s a problem and after today&amp;rsquo;s brew, I&amp;rsquo;m really not
+sure it is a problem.&lt;/p></description></item><item><title>Emacs Org Mode Inactive Timestamps</title><link>https://blog.andylu.dev/emacs-org-mode-inactive-timestamps/</link><pubDate>Mon, 30 Jun 2025 10:01:00 -0400</pubDate><guid>https://blog.andylu.dev/emacs-org-mode-inactive-timestamps/</guid><description>&lt;p>I just learned that there&amp;rsquo;s a binding for inactive timestamps: &lt;code>C-c !&lt;/code>.&lt;/p>
 &lt;p>Which is so much easier than spacemac&amp;rsquo;s &lt;code>M-m m d T&lt;/code>. There&amp;rsquo;s definitely a skill issue going on too
 because sometimes I miss the shift on the last key and I get an active timestamp.&lt;/p></description></item><item><title>Python Packaging Troubles</title><link>https://blog.andylu.dev/python-packaging-troubles/</link><pubDate>Mon, 23 Jun 2025 18:08:40 -0400</pubDate><guid>https://blog.andylu.dev/python-packaging-troubles/</guid><description>&lt;p>Today I was reminded of the fact that building a python package requires you to list what non-source-code files need to
 appear in the final build artifact.&lt;/p>
@@ -590,6 +592,9 @@ instead.&lt;/p></description></item><item><title>Babashka Datetime</title><link>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-clojure" data-lang="clojure">&lt;span style="display:flex;">&lt;span>(-&amp;gt; (&lt;span style="color:#a6e22e">java.time.LocalDate/now&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> str)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">;; =&amp;gt; &amp;#34;2023-10-15&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-clojure" data-lang="clojure">&lt;span style="display:flex;">&lt;span>(-&amp;gt; (&lt;span style="color:#a6e22e">java.time.LocalDateTime/now&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> str)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">;; =&amp;gt; &amp;#34;2025-07-02T17:14:39.136407&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Future Blog Ideas</title><link>https://blog.andylu.dev/future-blog-ideas/</link><pubDate>Sat, 14 Oct 2023 21:48:09 -0400</pubDate><guid>https://blog.andylu.dev/future-blog-ideas/</guid><description>&lt;p>Here&amp;rsquo;s just a running list of things I want to write down thoughts about.&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>babashka&lt;/code> CLI design&lt;/li>

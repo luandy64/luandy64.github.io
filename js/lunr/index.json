@@ -46,7 +46,7 @@
     {
         "uri": "/babashka-datetime",
         "title": "Babashka Datetime",
-        "content": "\nIf I need a datetime in Python, I reach for\n\nfrom datetime import datetime\n\ndatetime.now()\n\nSo I need something as quick for clojure.\n\nApparently, it's just\n\n(- (java.time.LocalDate/now)\n     str)\n;; = \"2023-10-15\"\n",
+        "content": "\nIf I need a datetime in Python, I reach for\n\nfrom datetime import datetime\n\ndatetime.now()\n\nSo I need something as quick for clojure.\n\nApparently, it's just\n\n(- (java.time.LocalDate/now)\n     str)\n;; = \"2023-10-15\"\n\n(- (java.time.LocalDateTime/now)\n     str)\n;; = \"2025-07-02T17:14:39.136407\"\n",
         "tags": [
             "babashka"
         ]
@@ -151,6 +151,12 @@
             "self-hosting",
             "cloudflare"
         ]
+    },
+    {
+        "uri": "/coffee-no-no",
+        "title": "Coffee No No",
+        "content": "\nI did a coffee no no today and poured ground coffee into my coffee grinder.\n\nI don't really see why it's a problem and after today's brew, I'm really not\nsure it is a problem.\n",
+        "tags": []
     },
     {
         "uri": "/coffee",
