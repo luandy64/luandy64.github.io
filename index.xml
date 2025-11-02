@@ -3,7 +3,34 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Thu, 10 Jul 2025 21:03:47 -0400</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Coffee No No</title><link>https://blog.andylu.dev/coffee-no-no/</link><pubDate>Thu, 10 Jul 2025 21:00:39 -0400</pubDate><guid>https://blog.andylu.dev/coffee-no-no/</guid><description>&lt;p>I did a coffee no no today and poured ground coffee into my coffee grinder.&lt;/p>
+Sun, 02 Nov 2025 17:29:58 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Test With Hugo Images</title><link>https://blog.andylu.dev/test-with-hugo-images/</link><pubDate>Mon, 13 Oct 2025 09:17:38 -0400</pubDate><guid>https://blog.andylu.dev/test-with-hugo-images/</guid><description>&lt;p>Here is an image:&lt;/p>
+&lt;figure>&lt;img src="https://blog.andylu.dev/test-with-hugo-images/small-300.jpg">
+&lt;/figure>
+
+&lt;p>Here&amp;rsquo;s what I did to get it all working&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Install the tools I need&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt install imagemagick
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt install jpegoptim
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Copy the file for stats later&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cp IMG_20250604_091538.jpg IMG_20250604_091538.jpg.orig
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Compress the image and strip EXIF metadata&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jpegoptim --strip-all --totals --max&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">70&lt;/span> IMG_20250604_091538.jpg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Copy for stats again&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cp IMG_20250604_091538.jpg small-bad-rotate.jpg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Compression rotated the image, so I don&amp;#39;t know if this is always needed&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>convert small-bad-rotate.jpg -rotate &lt;span style="color:#ae81ff">90&lt;/span> small.jpg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Copy for stats again&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cp small.jpg small-300.jpg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Resize the image&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mogrify -resize &lt;span style="color:#ae81ff">300&lt;/span> small-300.jpg
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I got most of these commands from a quick google search pointing me to &lt;a href="https://curtismchale.ca/2023/12/13/manipulating-images-from-the-terminal/">this
+blog post&lt;/a>&lt;/p></description></item><item><title>Coffee No No</title><link>https://blog.andylu.dev/coffee-no-no/</link><pubDate>Thu, 10 Jul 2025 21:00:39 -0400</pubDate><guid>https://blog.andylu.dev/coffee-no-no/</guid><description>&lt;p>I did a coffee no no today and poured ground coffee into my coffee grinder.&lt;/p>
 &lt;p>I don&amp;rsquo;t really see why it&amp;rsquo;s a problem and after today&amp;rsquo;s brew, I&amp;rsquo;m really not
 sure it is a problem.&lt;/p></description></item><item><title>Emacs Org Mode Inactive Timestamps</title><link>https://blog.andylu.dev/emacs-org-mode-inactive-timestamps/</link><pubDate>Mon, 30 Jun 2025 10:01:00 -0400</pubDate><guid>https://blog.andylu.dev/emacs-org-mode-inactive-timestamps/</guid><description>&lt;p>I just learned that there&amp;rsquo;s a binding for inactive timestamps: &lt;code>C-c !&lt;/code>.&lt;/p>
 &lt;p>Which is so much easier than spacemac&amp;rsquo;s &lt;code>M-m m d T&lt;/code>. There&amp;rsquo;s definitely a skill issue going on too
