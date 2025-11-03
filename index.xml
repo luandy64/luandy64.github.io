@@ -3,7 +3,13 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Sun, 02 Nov 2025 17:29:58 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Test With Hugo Images</title><link>https://blog.andylu.dev/test-with-hugo-images/</link><pubDate>Mon, 13 Oct 2025 09:17:38 -0400</pubDate><guid>https://blog.andylu.dev/test-with-hugo-images/</guid><description>&lt;p>Here is an image:&lt;/p>
+Sun, 02 Nov 2025 19:33:12 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Google Review People Suck</title><link>https://blog.andylu.dev/google-review-people-suck/</link><pubDate>Sun, 02 Nov 2025 19:28:50 -0500</pubDate><guid>https://blog.andylu.dev/google-review-people-suck/</guid><description>&lt;p>We tried this restaurant tonight, &lt;a href="https://maps.app.goo.gl/REv78w5Dm7rytdeE6">Ming Kong Chinese&lt;/a>, because there&amp;rsquo;s a
+lot of chinese take out places near where we live and I want to try them all.
+But to pick the first one, we skimmed some reviews and people are just so
+dramatic.&lt;/p>
+&lt;p>The food was flavorful. Quantity was good. I definitely see myself coming back
+here again. The place was even nice enough to throw in a free pack of mini
+Swedish fish.&lt;/p></description></item><item><title>Test With Hugo Images</title><link>https://blog.andylu.dev/test-with-hugo-images/</link><pubDate>Mon, 13 Oct 2025 09:17:38 -0400</pubDate><guid>https://blog.andylu.dev/test-with-hugo-images/</guid><description>&lt;p>Here is an image:&lt;/p>
 &lt;figure>&lt;img src="https://blog.andylu.dev/test-with-hugo-images/small-300.jpg">
 &lt;/figure>
 
@@ -538,16 +544,7 @@ to a few people at a recent Philly JS meetup.&lt;/p></description></item><item><
 &lt;li>&lt;code>ls -lh &amp;lt;one-file&amp;gt;&lt;/code>: Get the long listing of just one file&lt;/li>
 &lt;li>The rest of it is just to do it over and over so that I can see changes in the file size&lt;/li>
 &lt;/ul></description></item><item><title>Archive</title><link>https://blog.andylu.dev/old-now/archive/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/old-now/archive/</guid><description>&lt;p>See my &lt;a href="https://blog.andylu.dev/now">now&lt;/a> page for my latest updates.&lt;/p>
-&lt;h1 id="archived-on-2025-07-01">Archived on 2025-07-01&lt;/h1>
-&lt;h2 id="tv">TV&lt;/h2>
-&lt;p>Currently working through &amp;ldquo;The Apothecary Diaries&amp;rdquo;. Season 1 wrapped up earlier this week.&lt;/p>
-&lt;p>This is to supplement the weekly releases of &amp;ldquo;Solo Leveling&amp;rdquo;.&lt;/p>
-&lt;h2 id="gaming">Gaming&lt;/h2>
-&lt;p>Still playing Fortnite.&lt;/p>
-&lt;p>I&amp;rsquo;ve been getting back into &amp;ldquo;Dave the Diver&amp;rdquo; too. My story is advancing slowly, but I&amp;rsquo;ve seen so
-much time farming resources that I think I&amp;rsquo;m too strong for the current level.&lt;/p></description></item><item><title>Now</title><link>https://blog.andylu.dev/now/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/now/</guid><description>&lt;p>This is &lt;a href="https://nownownow.com/about">a now page&lt;/a>. For stuff that used to be here, check out the
-&lt;a href="https://blog.andylu.dev/old-now/archive">archive&lt;/a>.&lt;/p>
-&lt;hr>
+&lt;h1 id="archived-on-2025-11-02">Archived on 2025-11-02&lt;/h1>
 &lt;h2 id="reading">Reading&lt;/h2>
 &lt;h3 id="non-fiction">Non-fiction&lt;/h3>
 &lt;p>I just finished &lt;a href="https://press.stripe.com/working-in-public">Working in Public: The Making and Maintenance of Open Source
@@ -558,7 +555,19 @@ know how to make money off of it. It looks like writing, but is only words on a 
 value until you try to use it. And once you try to use it, it&amp;rsquo;s alive and needs to maintained like
 an aging dog. Software is also not like a commodity that loses value once more people use it.
 Software can be ideas, and ideas want to spread and be free (as in beer) and should be free (as in
-freedom).&lt;/p></description></item><item><title>My Babashka Cookbook</title><link>https://blog.andylu.dev/my-babashka-cookbook/</link><pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate><guid>https://blog.andylu.dev/my-babashka-cookbook/</guid><description>&lt;p>
+freedom).&lt;/p></description></item><item><title>Now</title><link>https://blog.andylu.dev/now/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/now/</guid><description>&lt;p>This is &lt;a href="https://nownownow.com/about">a now page&lt;/a>. For stuff that used to be here, check out the
+&lt;a href="https://blog.andylu.dev/old-now/archive">archive&lt;/a>.&lt;/p>
+&lt;hr>
+&lt;h2 id="tv">TV&lt;/h2>
+&lt;p>Just finished up watching Season 1 and 2 of Severance. It was a pretty good show
+with some interesting concepts.&lt;/p>
+&lt;p>My least favorite time to be in is in between TV shows. Spy x Family Season 3 is
+slowly being dubbed, so maybe this is just something I need to wait for.&lt;/p>
+&lt;h2 id="games">Games&lt;/h2>
+&lt;p>Fortnite.&lt;/p>
+&lt;p>We recently started &amp;ldquo;Sea of Stars&amp;rdquo; as a cute co-op RPG thing. The first boss was
+really hard and we literally spent like 3 or 4 hours on it one night before
+looking up the beta on reddit.&lt;/p></description></item><item><title>My Babashka Cookbook</title><link>https://blog.andylu.dev/my-babashka-cookbook/</link><pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate><guid>https://blog.andylu.dev/my-babashka-cookbook/</guid><description>&lt;p>
 This post is the one I want to reference when I do something in `babashka` and forget syntax or
 something.&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
