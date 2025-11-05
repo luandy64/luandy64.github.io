@@ -153,6 +153,12 @@
         ]
     },
     {
+        "uri": "/code-excavation-some-of-the-earliest-clojure-ive-ever-written",
+        "title": "Code Excavation: Some of the Earliest Clojure I've Ever Written",
+        "content": "\nI was flipping through old notebooks and found this page I wrote down at work at\nsome point. There's no date, but the next page is dated \"9/30\". And this is the\nsecond page of the notebook. I started my first day of work in my professional\ncareer on 2018-09-24. So this really is some of the earliest clojure I've ever\nwritten.\n\n Clojure Practice\n\n Given a list of lists, where the first element in sublists is people getting\n on the bus, second is getting off, return the number left on the bus at the\n end of the list.\n\n [[a,b] [c,d] [e,f] ...]\n\n Base Case: If bus stop list is empty, return numOnBus\n\n Otherwise:\n - Call function with numOnBus + first - second, rest of bus stops\n\n  (defn number\n   ([bus-stops] (number bus-stops 0))\n   ([bus-stops total]\n    (if (empty? bus-stops)\n      total\n      (number (rest bus-stops) (doThing)))))\n \nAnd I didn't even finish writing the doThing function!\n\nIt's funny to look back on this now and realize that (doThing) would have\nnever done anything helpful for me back then. It takes no arguments and is too\npure. But it's _even funnier_ to know now that this _would have worked_\nbecause doThing could be a very specific macro in this case.\n\nHere's the piece of missing code\n\n(defmacro doThing []\n  '(let [stop# (first bus-stops)\n         on#   (first stop#)\n         off#  (second stop#)]\n     (- (+ total on#) off#)))\n\nSet aside the fact that this is not how anyone would do this when reading over\nthis problem for the first time. If you did do it this way, please reach out, I\nwould love to pick your brain. But just take this as the academic exercise I\ntook it for back then and just now.\n\nStare it and convince yourself that this is exactly what I envisioned when I\nwrote this code back in September 2018. I think the next important piece to\nunderstand is that regardless of the code that is produced by the macro, there\nis only one value that \"moves on\" into the recursive call.\n\nThis entire code snippet illustrates the difference between a clojure function\nand a clojure macro. I would argue that if you can confidently answer these\nquestions, you can stop reading here:\n\nHow did I look at the (doThing) and realize that I needed a macro?\nWhy are total and bus-stops in the macro not total# and bus-stops#?\nI don't know a third question? So keep reading\n\nI think the most important piece of understanding why this macro fixes things is\nto understand that a macro is code that generates other code. Sometimes macros\ntake some code and add bits to it to make it do something seemingly magical.\nSometimes macros take nothing at all and make things just work.\n\nYou could argue that a function does the same thing, but you'd be missing the\npiece about the timing of it all. Macro expansion happens at compile time, while\nfunction execution happens at run time.\n\nTo reason about clojure functions, you really just need [the substitution\nmodel][sicp-1-1-5]. And when you encounter a macro, grab the body of the\nmacro and swap your current form with it and then start the evaluation of the\nform.\n\n[sicp-1-1-5]: https://www.sicpdistilled.com/section/1.1.5/\n\n: I don't really care if you go with the Applicative order or the Normal\n    order. My head just always goes right most form to left most.\n",
+        "tags": []
+    },
+    {
         "uri": "/coffee-no-no",
         "title": "Coffee No No",
         "content": "\nI did a coffee no no today and poured ground coffee into my coffee grinder.\n\nI don't really see why it's a problem and after today's brew, I'm really not\nsure it is a problem.\n",
@@ -539,6 +545,12 @@
         ]
     },
     {
+        "uri": "/rust-my-keyboard",
+        "title": "Rust My Keyboard",
+        "content": "\n2024 is the year that I explore rust. I think the most engaging way to do that\nis to use it to compile QMK into some rust-ified executible and run my daily\ndriver keyboard off of it.\n\nObviously, I shouldn't brick my main keyboard to start. But thankfully, the\nprevious keyboard I used daily is also using the same microprocessor. So I\nalready have a playground or two, I just need to tweak emacs to get to work.\n\nAlso I don't want to do a ton of it from scratch. So I need to see if other\npeople have had this thought already\n",
+        "tags": []
+    },
+    {
         "uri": "/self-hosting-email",
         "title": "Self Hosting Email",
         "content": "\nI've made a couple attempts at this so far.\n\nThe software I've been looking at is:\nhttps://stalw.art/\nhttps://www.cyrusimap.org/\n\nI didn't really give Cyrus a good go because I got Stalwart in a spot where I could receive messages\nthrough IMAP.\n\nI didn't get far at all with sending messages. Oracle is my currently cloud provider and port 25 is\nblocked on my account.\n\nThe feature that drew me to both of these projects is JMAP support. I heard about it while talking\nto a few people at a recent Philly JS meetup.\n\nI think right now, the novelty of a new protocol is what makes me want to set up an email server.\nThe other reason I want to host it myself is to be able to host email for friends and family -\nthough no one has approached me about wanting a service like this.\n\nThe only scary part for me right now is that I don't know what it would take to provide a stable\nservice. But maybe that's not something I really need to think about. If my email goes down, I\nprobably have other things I need to be worried about.\n\nAnyway, I'll see how much more time I want to throw at this. I think the most reasonable next step\nis pay for Fastmail and watch Stalwart develop over the next year and maybe self host in the future.\n",
@@ -550,6 +562,12 @@
         "uri": "/setting-up-mbsync",
         "title": "Setting Up Mbsync",
         "content": "\nInstall\n#+begin_src shell\n  sudo apt install isync\n#+end_src\n\nSet up the config file\n#+begin_src shell\n  touch ~/.mbsyncrc\n#+end_src\n",
+        "tags": []
+    },
+    {
+        "uri": "/setup-elfeed",
+        "title": "Setup Elfeed",
+        "content": "\nI started doing this a while ago, but didn't really make it that far. It doesn't\ncover my mobile reading experience, but maybe I don't care for now. I would also\nlove to sync this with bookmarks.andylu.dev and pull stuff from there so that\nthings actually get read.\n",
         "tags": []
     },
     {
