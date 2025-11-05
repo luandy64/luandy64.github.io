@@ -104,7 +104,7 @@
     {
         "uri": "/changelog",
         "title": "Changelog",
-        "content": "\n2025-03-19\nAdded a 404 page\nFixed search\n  Something about the debug logging was prepending /content to the result URIs\n\n 2025-03-14\nUpdated all pages to show a createdat time and updatedat time\nUpdated all pages to have tags render if they exist\nAdded a \"Recently Updated\" section on the front page\n\n2025-02-13\nAdded search via lunr.js\nUpdated all of my content front matter to be TOML so I can index the pages\n  with hugo-lunr\n\n 2025-02-01\nEnshired my old versions of this site in their own sub-paths\n  V1 of the site\n  V2 of the site\nFixed the \"last modified\" time of all of the pages\n",
+        "content": "\n2025-11-04\nUpdated my build script to skip drafts\nFipped two published drafts to not be marked drafts\n 2025-03-19\nAdded a 404 page\nFixed search\n  Something about the debug logging was prepending /content to the result URIs\n\n2025-03-14\nUpdated all pages to show a createdat time and updatedat time\nUpdated all pages to have tags render if they exist\nAdded a \"Recently Updated\" section on the front page\n\n 2025-02-13\nAdded search via lunr.js\nUpdated all of my content front matter to be TOML so I can index the pages\n  with hugo-lunr\n\n2025-02-01\nEnshired my old versions of this site in their own sub-paths\n  V1 of the site\n  V2 of the site\nFixed the \"last modified\" time of all of the pages\n",
         "tags": []
     },
     {
