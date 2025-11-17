@@ -20,7 +20,7 @@
     {
         "uri": "/about",
         "title": "About",
-        "content": "\nThis is my about page\n\nYou can subscribe to updates.\n\nSubscribe via RSS\n\nI try to document the technical changes around this site in my Changelog\n",
+        "content": "\nThis is my about page\n\nYou can subscribe to updates.\n\nSubscribe via RSS\n\nI try to document the technical changes around this site in my Changelog\n\nYou can view how active I am on this blog by visiting my Posting Stats page.\n",
         "tags": []
     },
     {
@@ -104,7 +104,7 @@
     {
         "uri": "/changelog",
         "title": "Changelog",
-        "content": "\n2025-11-04\nUpdated my build script to skip drafts\nFipped two published drafts to not be marked drafts\n 2025-03-19\nAdded a 404 page\nFixed search\n  Something about the debug logging was prepending /content to the result URIs\n\n2025-03-14\nUpdated all pages to show a createdat time and updatedat time\nUpdated all pages to have tags render if they exist\nAdded a \"Recently Updated\" section on the front page\n\n 2025-02-13\nAdded search via lunr.js\nUpdated all of my content front matter to be TOML so I can index the pages\n  with hugo-lunr\n\n2025-02-01\nEnshired my old versions of this site in their own sub-paths\n  V1 of the site\n  V2 of the site\nFixed the \"last modified\" time of all of the pages\n",
+        "content": "\n2025-11-16\nAdded some heat maps\n\n 2025-11-04\nUpdated my build script to skip drafts\nFipped two published drafts to not be marked drafts\n\n2025-03-19\nAdded a 404 page\nFixed search\n  Something about the debug logging was prepending /content to the result URIs\n\n 2025-03-14\nUpdated all pages to show a createdat time and updatedat time\nUpdated all pages to have tags render if they exist\nAdded a \"Recently Updated\" section on the front page\n\n2025-02-13\nAdded search via lunr.js\nUpdated all of my content front matter to be TOML so I can index the pages\n  with hugo-lunr\n\n 2025-02-01\nEnshired my old versions of this site in their own sub-paths\n  V1 of the site\n  V2 of the site\nFixed the \"last modified\" time of all of the pages\n",
         "tags": []
     },
     {
@@ -472,6 +472,12 @@
         ]
     },
     {
+        "uri": "/posting-stats/index",
+        "title": "Posting Stats",
+        "content": "\nHere is my blog activity through the years.\n\nI did not come up with this visualization myself. It is heavily inspired by\ncommit heatmaps from popular code forges, and I think Github did it first. I\nread about doing something like this client side in Hugo from\nburgeonlab.\n\nThis should be written in a way that is future proof and will just work as time\nmoves on. Though I don't know what the boundary is for \"too many posts\" to\nprocess. When that day comes though, it shouldn't be too hard to generate the\ndata in an external program and then use the Hugo templates to pass it into the\njavascript that currently exists.\n\n[burgeonlab]: https://burgeonlab.com/blog/github-style-heatmap-calendar-widget-visualizing-hugo\n",
+        "tags": []
+    },
+    {
         "uri": "/posts-i-like",
         "title": "Posts I Like",
         "content": "\nhttps://analog.melanie-richards.com/journals/daily-journal\nnhttps://justsomeantifas.tumblr.com/zines\nhttps://manuelmoreale.com/discovering-new-blogs-is-stupid-hard\nhttps://miniflux.app/\nhttps://kevquirk.com/blog/i-ve-been-thinking-about-a-switch-to-the-fairphone-5\nhttps://sylvia.bearblog.dev/weeknotes-2025-03/\nhttps://www.benkuhn.net/writing/\nhttps://guzey.com/personal/why-have-a-blog/#but-i-dont-have-anything-original-to-say-and-i-would-be-just-repeating-things-said-elsewhere-on-the-internet\nhttps://blog.divaltor.dev/one-way-meetings/\n",
@@ -629,11 +635,6 @@
         "uri": "/test-with-hugo-images/index",
         "title": "Test With Hugo Images",
         "content": "\nHere is an image:\n\n{{< figure\n  src=\"small-300.jpg\"}}\n\nHere's what I did to get it all working\n\nInstall the tools I need\nsudo apt install imagemagick\nsudo apt install jpegoptim\n\n Copy the file for stats later\ncp IMG20250604091538.jpg IMG20250604091538.jpg.orig\n\nCompress the image and strip EXIF metadata\njpegoptim --strip-all --totals --max=70 IMG20250604091538.jpg\n\n Copy for stats again\ncp IMG20250604091538.jpg small-bad-rotate.jpg\n\nCompression rotated the image, so I don't know if this is always needed\nconvert small-bad-rotate.jpg -rotate 90 small.jpg\n\n Copy for stats again\ncp small.jpg small-300.jpg\n\nResize the image\nmogrify -resize 300 small-300.jpg\n\nI got most of these commands from a quick google search pointing me to [this\nblog post][curtismchale]\n\nThe file size savings are huge\n\n2.3M IMG20250604091538.jpg.orig\n568K IMG20250604091538.jpg\n568K small-bad-rotate.jpg\n565K small.jpg\n 11K small-300.jpg\n\nSo for now, I'm going to shove all of these images into git until it's too hard\nto clone my website repo.\n\n[curtismchale]: https://curtismchale.ca/2023/12/13/manipulating-images-from-the-terminal/\n",
-        "tags": []
-    },
-    {
-        "uri": "/test-with-hugo-images/small-300",
-        "content": "����\u0000\u0010JFIF\u0000\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000��\u0000C\u0000\n\u0007\u0007\b\u0007\u0006\n\b\b\b\u000b\n\n\u000b\u000e\u0018\u0010\u000e\r\r\u000e\u001d\u0015\u0016\u0011\u0018#\u001f%$\"\u001f\"!&+7/&)4)!\"0A149;>>>%.DIC;��\u0000C\u0001\n\u000b\u000b\u000e\r\u000e\u001c\u0010\u0010\u001c;(\"(;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;��\u0000\u0011\b\u0001�\u0001,\u0003\u0001\"\u0000\u0002\u0011\u0001\u0003\u0011\u0001��\u0000\u001b\u0000\u0000\u0002\u0003\u0001\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0002\u0000\u0003\u0004\u0005\u0006\u0007��\u00009\u0010\u0000\u0001\u0003\u0003\u0003\u0003\u0002\u0005\u0001\u0007\u0004\u0002\u0003\u0001\u0000\u0000\u0001\u0000\u0002\u0011\u0003!1\u0004\u0012A\u0005Qaq�\u0006\u0013\"��2\u0014#B����3R��\u0007\u0015r��C��\u0000\u0019\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0002\u0003\u0004\u0005��\u0000#\u0011\u0001\u0001\u0000\u0002\u0002\u0003\u0001\u0000\u0002\u0003\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0002\u0011\u00031\u0012!AQ\u0004q\u0013\"2a��\u0000\f\u0003\u0001\u0000\u0002\u0011\u0003\u0011\u0000?\u0000�\u0013\u0000\u000eJ(��\r\u0000a\u0018��#�#\u0001옐�I�(,���e�!�\\�X\u0005C\u0006Ǻ�[����?7W]���&��\u0019+�u�\u0000�)i>f��\r�`����\u0000�\u0007������֩_T���ܽ�\\����\u001f������\u000e4�v�8�|��\u001f�G�+������\u00015z��\b�4���^\"�U��E;\fn+ uz���\u0011%O\u001c�m�|z��i�{\u001c׶���T3�V�]oL�}\"�� \u000b�\u0014X��yS` @�xE��gO��U��ǹ��MmW\u0000G�]�_\u00141��L���b��#�\u0001�����i8��{\b�\u0000iZ��M}\u000f�\u0000��\u001d��)q}�O�\u0005\u0017�:�(\u0001��N�\u001f�=�Q�eF\u0007��{N\u001c� ��t�\u001e5!���\u0001\u0002�\u0005��z��Ծ]F�\u001a��U�>�K]�\u0000�\u0005_+;b��\u0003\r��/\r\u0002J�:\u000e��CCk�1��n\u001d퐻\u0014\u001e]r��\u001d;\r�x\u0013�",
         "tags": []
     },
     {

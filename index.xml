@@ -3,7 +3,16 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Tue, 04 Nov 2025 22:35:33 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Google Review People Suck</title><link>https://blog.andylu.dev/google-review-people-suck/</link><pubDate>Sun, 02 Nov 2025 19:28:50 -0500</pubDate><guid>https://blog.andylu.dev/google-review-people-suck/</guid><description>&lt;p&gt;We tried this restaurant tonight, &lt;a href="https://maps.app.goo.gl/REv78w5Dm7rytdeE6"&gt;Ming Kong Chinese&lt;/a&gt;, because there&amp;rsquo;s a
+Sun, 16 Nov 2025 20:30:48 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Posting Stats</title><link>https://blog.andylu.dev/posting-stats/</link><pubDate>Sun, 16 Nov 2025 19:53:50 -0500</pubDate><guid>https://blog.andylu.dev/posting-stats/</guid><description>&lt;p&gt;Here is my blog activity through the years.&lt;/p&gt;
+&lt;p&gt;I did not come up with this visualization myself. It is heavily inspired by
+commit heatmaps from popular code forges, and I think Github did it first. I
+read about doing something like this client side in Hugo from
+&lt;a href="https://burgeonlab.com/blog/github-style-heatmap-calendar-widget-visualizing-hugo"&gt;burgeonlab&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This should be written in a way that is future proof and will just work as time
+moves on. Though I don&amp;rsquo;t know what the boundary is for &amp;ldquo;too many posts&amp;rdquo; to
+process. When that day comes though, it shouldn&amp;rsquo;t be too hard to generate the
+data in an external program and then use the Hugo templates to pass it into the
+javascript that currently exists.&lt;/p&gt;</description></item><item><title>Google Review People Suck</title><link>https://blog.andylu.dev/google-review-people-suck/</link><pubDate>Sun, 02 Nov 2025 19:28:50 -0500</pubDate><guid>https://blog.andylu.dev/google-review-people-suck/</guid><description>&lt;p&gt;We tried this restaurant tonight, &lt;a href="https://maps.app.goo.gl/REv78w5Dm7rytdeE6"&gt;Ming Kong Chinese&lt;/a&gt;, because there&amp;rsquo;s a
 lot of chinese take out places near where we live and I want to try them all.
 But to pick the first one, we skimmed some reviews and people are just so
 dramatic.&lt;/p&gt;
@@ -125,7 +134,11 @@ setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sudo apt build-dep emacs
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Reading package lists... Done
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;E: Unable to find a source package &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; emacs
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Your apt sources list is missing the deb-src types&lt;/p&gt;</description></item><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-11-04"&gt;2025-11-04&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Your apt sources list is missing the deb-src types&lt;/p&gt;</description></item><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-11-16"&gt;2025-11-16&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Added some heat maps&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2025-11-04"&gt;2025-11-04&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Updated my build script to skip drafts&lt;/li&gt;
 &lt;li&gt;Fipped two published drafts to not be marked drafts&lt;/li&gt;
@@ -371,7 +384,8 @@ already have a playground or two, I just need to tweak emacs to get to work.&lt;
 &lt;/div&gt;</description></item><item><title>About</title><link>https://blog.andylu.dev/about/</link><pubDate>Fri, 15 Mar 2024 23:10:57 -0400</pubDate><guid>https://blog.andylu.dev/about/</guid><description>&lt;p&gt;This is my about page&lt;/p&gt;
 &lt;p&gt;You can subscribe to updates.&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://blog.andylu.dev/index.xml"&gt;Subscribe via RSS&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;I try to document the technical changes around this site in my &lt;a href="https://blog.andylu.dev/changelog"&gt;Changelog&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Setting Up Mbsync</title><link>https://blog.andylu.dev/setting-up-mbsync/</link><pubDate>Mon, 22 Jan 2024 21:54:56 -0500</pubDate><guid>https://blog.andylu.dev/setting-up-mbsync/</guid><description>&lt;p&gt;
+&lt;p&gt;I try to document the technical changes around this site in my &lt;a href="https://blog.andylu.dev/changelog"&gt;Changelog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can view how active I am on this blog by visiting my &lt;a href="https://blog.andylu.dev/posting-stats"&gt;Posting Stats&lt;/a&gt; page.&lt;/p&gt;</description></item><item><title>Setting Up Mbsync</title><link>https://blog.andylu.dev/setting-up-mbsync/</link><pubDate>Mon, 22 Jan 2024 21:54:56 -0500</pubDate><guid>https://blog.andylu.dev/setting-up-mbsync/</guid><description>&lt;p&gt;
 Install&lt;/p&gt;
 &lt;div class="src src-shell"&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sudo apt install isync&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
