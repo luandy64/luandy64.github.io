@@ -3,7 +3,7 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Sun, 16 Nov 2025 20:30:48 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Posting Stats</title><link>https://blog.andylu.dev/posting-stats/</link><pubDate>Sun, 16 Nov 2025 19:53:50 -0500</pubDate><guid>https://blog.andylu.dev/posting-stats/</guid><description>&lt;p&gt;Here is my blog activity through the years.&lt;/p&gt;
+Tue, 02 Dec 2025 22:04:14 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Posting Stats</title><link>https://blog.andylu.dev/posting-stats/</link><pubDate>Sun, 16 Nov 2025 19:53:50 -0500</pubDate><guid>https://blog.andylu.dev/posting-stats/</guid><description>&lt;p&gt;Here is my blog activity through the years.&lt;/p&gt;
 &lt;p&gt;I did not come up with this visualization myself. It is heavily inspired by
 commit heatmaps from popular code forges, and I think Github did it first. I
 read about doing something like this client side in Hugo from
@@ -118,23 +118,27 @@ blogs I wouldn&amp;rsquo;t otherwise know how to find.&lt;/p&gt;
 setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then when you change the ssh auth socket, you can run this to update your current shell&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;eval &lt;span style="color:#66d9ef"&gt;$(&lt;/span&gt;tmux show-env -s |grep &lt;span style="color:#e6db74"&gt;&amp;#39;^SSH_&amp;#39;&lt;/span&gt;&lt;span style="color:#66d9ef"&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/21378569/how-to-auto-update-ssh-agent-environment-variables-when-attaching-to-existing-tm"&gt;Thanks StackOverflow&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Compiling Emacs on Ubuntu</title><link>https://blog.andylu.dev/compiling-emacs-on-ubuntu/</link><pubDate>Mon, 24 Feb 2025 14:42:34 -0500</pubDate><guid>https://blog.andylu.dev/compiling-emacs-on-ubuntu/</guid><description>&lt;p&gt;Today I heard that Emacs 30.1 is released. So here&amp;rsquo;s how I build emacs&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget https://ftpmirror.gnu.org/emacs/emacs-30.1.tar.xz
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tar xf emacs-30.1.tar.xz
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd emacs-30.1/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/21378569/how-to-auto-update-ssh-agent-environment-variables-when-attaching-to-existing-tm"&gt;Thanks StackOverflow&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Compiling Emacs on Ubuntu</title><link>https://blog.andylu.dev/compiling-emacs-on-ubuntu/</link><pubDate>Mon, 24 Feb 2025 14:42:34 -0500</pubDate><guid>https://blog.andylu.dev/compiling-emacs-on-ubuntu/</guid><description>&lt;p&gt;Today I heard that Emacs 30.2 is released. So here&amp;rsquo;s how I build emacs&lt;/p&gt;
+&lt;p&gt;Download all the files:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.gnu.org/software/emacs/download.html"&gt;Go to any mirror or the official FTP server&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget https://mirrors.ibiblio.org/gnu/emacs/emacs-30.2.tar.xz
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget https://mirrors.ibiblio.org/gnu/emacs/emacs-30.2.tar.xz.sig
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;wget https://ftp.gnu.org/gnu/gnu-keyring.gpg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Verify the signature of the tarball&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;gpgv --keyring ./gnu-keyring.gpg emacs-30.2.tar.xz.sig emacs-30.2.tar.xz
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You should see something like&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;gpgv: Signature made Thu &lt;span style="color:#ae81ff"&gt;14&lt;/span&gt; Aug &lt;span style="color:#ae81ff"&gt;2025&lt;/span&gt; 06:27:30 AM EDT
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;gpgv: using RSA key 17E90D521672C04631B1183EE78DAE0F3115E06B
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;gpgv: Good signature from &lt;span style="color:#e6db74"&gt;&amp;#34;Eli Zaretskii &amp;lt;eliz@gnu.org&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tar xf emacs-30.2.tar.xz
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd emacs-30.2/
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;mkdir build
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cd build
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;../configure --with-pgtk --with-mailutils
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo make -j4 install
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If this is your first time building emacs, run these&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo apt build-dep emacs
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Maybe you&amp;rsquo;ll want to clean up older versions you&amp;rsquo;ve compiled&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;ls -l /usr/local/bin/emacs*
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="possible-errors"&gt;Possible Errors&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ sudo apt build-dep emacs
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;Reading package lists... Done
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;E: Unable to find a source package &lt;span style="color:#66d9ef"&gt;for&lt;/span&gt; emacs
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Your apt sources list is missing the deb-src types&lt;/p&gt;</description></item><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-11-16"&gt;2025-11-16&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If this is your first time building emacs, run these&lt;/p&gt;</description></item><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-11-16"&gt;2025-11-16&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Added some heat maps&lt;/li&gt;
 &lt;/ul&gt;
