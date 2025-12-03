@@ -3,7 +3,14 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Tue, 02 Dec 2025 22:04:14 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Posting Stats</title><link>https://blog.andylu.dev/posting-stats/</link><pubDate>Sun, 16 Nov 2025 19:53:50 -0500</pubDate><guid>https://blog.andylu.dev/posting-stats/</guid><description>&lt;p&gt;Here is my blog activity through the years.&lt;/p&gt;
+Tue, 02 Dec 2025 23:57:02 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>AOC 2025 Day 1</title><link>https://blog.andylu.dev/aoc-2025-day-1/</link><pubDate>Tue, 02 Dec 2025 22:14:15 -0500</pubDate><guid>https://blog.andylu.dev/aoc-2025-day-1/</guid><description>&lt;p&gt;Here&amp;rsquo;s a quick writeup of how I approached the problem.&lt;/p&gt;
+&lt;h2 id="part-1"&gt;Part 1&lt;/h2&gt;
+&lt;p&gt;The first part described how we want to count the number of times the dial lands
+on zero after some set of turn instructions. So as long as we track the state of
+applying the turns to some inital state, we can count the number of times zero
+appears. I&amp;rsquo;m assuming people also take the example input to sketch a solution
+against. So I start by &lt;code&gt;def&lt;/code&gt;ing the example in one long string. This also clears
+up the initial input parsing logic. So here&amp;rsquo;s the input:&lt;/p&gt;</description></item><item><title>Posting Stats</title><link>https://blog.andylu.dev/posting-stats/</link><pubDate>Sun, 16 Nov 2025 19:53:50 -0500</pubDate><guid>https://blog.andylu.dev/posting-stats/</guid><description>&lt;p&gt;Here is my blog activity through the years.&lt;/p&gt;
 &lt;p&gt;I did not come up with this visualization myself. It is heavily inspired by
 commit heatmaps from popular code forges, and I think Github did it first. I
 read about doing something like this client side in Hugo from
