@@ -11,9 +11,9 @@ enough, so was the second time, even though I thought I nailed down the
 process and took notes on it. The process didn&rsquo;t work and the notes don&rsquo;t
 exist, so here we are today.</p><h4 id=pre-requisites><a href=#pre-requisites>Pre-requisites</a></h4><p>There are only three things you need to start: an editor, a terminal, and
 <a href=https://github.com/technomancy/leiningen/wiki/Packaging>leiningen</a>. For me, this means <a href=https://www.gnu.org/software/emacs/>Emacs</a>, <a href=https://www.gnu.org/software/bash/>bash</a>, and <code>leiningen</code>
-installed through my package manager.</p><h4 id=instructions><a href=#instructions>Instructions</a></h4><p>In your terminal, navigate to where you want the project to live and run</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ lein new figwheel-main my-awesome-project -- --reagent
+installed through my package manager.</p><h4 id=instructions><a href=#instructions>Instructions</a></h4><p>In your terminal, navigate to where you want the project to live and run</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ lein new figwheel-main my-awesome-project -- --reagent
 </span></span></code></pre></div><p>You should see a new directory called <code>my-awesome-project</code>. There&rsquo;s a
-basic skeleton that is created for you, so we want to check that it works</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ cd my-awesome-project
+basic skeleton that is created for you, so we want to check that it works</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ <span style=color:#89dceb>cd</span> my-awesome-project
 </span></span><span style=display:flex><span>$ lein fig:build
 </span></span></code></pre></div><p>This will compile the clojurescript into javascript, serve the project on
 (by default) <code>http://localhost:9500</code>, and give you a clojurescript REPL.</p><p>If you don&rsquo;t use emacs, I recommend you leave this REPL open and start
@@ -30,26 +30,26 @@ you save. More importantly, you can evaluate the clojurescript in your
 buffer.</p><h5 id=deploying-to-github-pages><a href=#deploying-to-github-pages>Deploying to Github Pages</a></h5><p>I&rsquo;m assuming this would work for Gitlab Pages or Bitbucket Pages, but I
 use Github and didn&rsquo;t test those options.</p><p>Create a branch called <code>gh-pages</code>. You&rsquo;ll just need 3 files at the root of
 your project: <code>index.html</code>, <code>style.css</code>, and <code>main.js</code>. Obviously, the
-names are up to you, but here&rsquo;s where I got the files.</p><p><code>index.html</code> is just some boilerplate HTML. Here&rsquo;s one you can use:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span><span style=color:#75715e>&lt;!DOCTYPE html&gt;</span>
-</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>html</span>&gt;
-</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>head</span>&gt;
-</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>title</span>&gt;My title&lt;/<span style=color:#f92672>title</span>&gt;
-</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>link</span> <span style=color:#a6e22e>rel</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;stylesheet&#34;</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text/css&#34;</span> <span style=color:#a6e22e>href</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;style.css&#34;</span>/&gt;
-</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>head</span>&gt;
-</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>body</span>&gt;
-</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;app&#34;</span>&gt;&lt;/<span style=color:#f92672>div</span>&gt;
-</span></span><span style=display:flex><span>    &lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;main.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
-</span></span><span style=display:flex><span>  &lt;/<span style=color:#f92672>body</span>&gt;
-</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>html</span>&gt;
+names are up to you, but here&rsquo;s where I got the files.</p><p><code>index.html</code> is just some boilerplate HTML. Here&rsquo;s one you can use:</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span><span style=color:#6c7086;font-style:italic>&lt;!DOCTYPE html&gt;</span>
+</span></span><span style=display:flex><span>&lt;<span style=color:#cba6f7>html</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#cba6f7>head</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#cba6f7>title</span>&gt;My title&lt;/<span style=color:#cba6f7>title</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#cba6f7>link</span> <span style=color:#89b4fa>rel</span><span style=color:#89dceb;font-weight:700>=</span><span style=color:#a6e3a1>&#34;stylesheet&#34;</span> <span style=color:#89b4fa>type</span><span style=color:#89dceb;font-weight:700>=</span><span style=color:#a6e3a1>&#34;text/css&#34;</span> <span style=color:#89b4fa>href</span><span style=color:#89dceb;font-weight:700>=</span><span style=color:#a6e3a1>&#34;style.css&#34;</span>/&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#cba6f7>head</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#cba6f7>body</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#cba6f7>div</span> <span style=color:#89b4fa>id</span><span style=color:#89dceb;font-weight:700>=</span><span style=color:#a6e3a1>&#34;app&#34;</span>&gt;&lt;/<span style=color:#cba6f7>div</span>&gt;
+</span></span><span style=display:flex><span>    &lt;<span style=color:#cba6f7>script</span> <span style=color:#89b4fa>src</span><span style=color:#89dceb;font-weight:700>=</span><span style=color:#a6e3a1>&#34;main.js&#34;</span>&gt;&lt;/<span style=color:#cba6f7>script</span>&gt;
+</span></span><span style=display:flex><span>  &lt;/<span style=color:#cba6f7>body</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#cba6f7>html</span>&gt;
 </span></span></code></pre></div><p>The important part here is that you have some element with <code>id="app"</code>
 because that&rsquo;s how we hook up the javascript to the project. But again,
 even that is configurable.</p><p>To get <code>style.css</code> and <code>main.js</code>, I run these commands at the root of the
-project</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ lein fig:min
+project</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ lein fig:min
 </span></span><span style=display:flex><span>2020-07-06 09:13:50.378:INFO::main: Logging initialized @4805ms to org.eclipse.jetty.util.log.StdErrLog
-</span></span><span style=display:flex><span><span style=color:#f92672>[</span>Figwheel<span style=color:#f92672>]</span> Validating figwheel-main.edn
-</span></span><span style=display:flex><span><span style=color:#f92672>[</span>Figwheel<span style=color:#f92672>]</span> figwheel-main.edn is valid <span style=color:#ae81ff>\(</span>ツ<span style=color:#f92672>)</span>/
-</span></span><span style=display:flex><span><span style=color:#f92672>[</span>Figwheel<span style=color:#f92672>]</span> Compiling build dev to <span style=color:#e6db74>&#34;resources/public/cljs-out/dev-main.js&#34;</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>[</span>Figwheel<span style=color:#f92672>]</span> Successfully compiled build dev to <span style=color:#e6db74>&#34;resources/public/cljs-out/dev-main.js&#34;</span> in 12.307 seconds.
+</span></span><span style=display:flex><span><span style=color:#89dceb;font-weight:700>[</span>Figwheel<span style=color:#89dceb;font-weight:700>]</span> Validating figwheel-main.edn
+</span></span><span style=display:flex><span><span style=color:#89dceb;font-weight:700>[</span>Figwheel<span style=color:#89dceb;font-weight:700>]</span> figwheel-main.edn is valid <span style=color:#89b4fa>\(</span>ツ<span style=color:#89dceb;font-weight:700>)</span>/
+</span></span><span style=display:flex><span><span style=color:#89dceb;font-weight:700>[</span>Figwheel<span style=color:#89dceb;font-weight:700>]</span> Compiling build dev to <span style=color:#a6e3a1>&#34;resources/public/cljs-out/dev-main.js&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#89dceb;font-weight:700>[</span>Figwheel<span style=color:#89dceb;font-weight:700>]</span> Successfully compiled build dev to <span style=color:#a6e3a1>&#34;resources/public/cljs-out/dev-main.js&#34;</span> in 12.307 seconds.
 </span></span><span style=display:flex><span>$ cp resources/public/cljs-out/dev-main.js main.js
 </span></span><span style=display:flex><span>$ cp resources/public/css/style.css .
 </span></span></code></pre></div><p>So now you can commit the HTML, CSS, and JS to the <code>gh-pages</code> branch,

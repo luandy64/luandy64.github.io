@@ -7,131 +7,133 @@ on zero after some set of turn instructions. So as long as we track the state of
 applying the turns to some inital state, we can count the number of times zero
 appears. I&rsquo;m assuming people also take the example input to sketch a solution
 against. So I start by defing the example in one long string. This also clears
-up the initial input parsing logic. So here&rsquo;s the input:"><meta name=keywords content="advent-of-code,advent-of-code-2025,"></head><body><header><div id=top-bar><h1><a href=/ class=title>Andy's Cafe</a></h1><input id=search type=text placeholder=Search></div><nav><ul style=width:100%;justify-content:space-around><li><a href=/>Home</a></li><li><a href=/about>About</a></li><li><a href=/now>Now</a></li><li><a href=/cortado>Cortado</a></li><li><a href=/cappuccino>Cappuccino</a></li><li><a href=#>Latte</a></li><li><a href=/all>All</a></li></ul></nav><ul id=results class=hide-results></ul><script type=text/javascript src=https://code.jquery.com/jquery-2.1.3.min.js></script><script type=text/javascript src=/js/lunr.js></script><script type=text/javascript src=/js/search.js></script></header><main><div class=post-header><div class=post-icon-container><img src=/images/Cappuccino-ALU-Assets_hu_8f97e402dd565973.png></div><div class=post-header-text><h1><a href=/aoc-2025-day-1/>AOC 2025 Day 1</a></h1></div></div><article class=post><p>Here&rsquo;s a quick writeup of how I approached the problem.</p><h2 id=part-1><a href=#part-1>Part 1</a></h2><p>The first part described how we want to count the number of times the dial lands
+up the initial input parsing logic. So here&rsquo;s the input:"><meta name=keywords content="advent-of-code,advent-of-code-2025,"></head><body><header><div id=top-bar><h1><a href=/ class=title>Andy's Cafe</a></h1><input id=search type=text placeholder=Search></div><nav><ul style=width:100%;justify-content:space-around><li><a href=/>Home</a></li><li><a href=/about>About</a></li><li><a href=/now>Now</a></li><li><a href=/cortado>Cortado</a></li><li><a href=/cappuccino>Cappuccino</a></li><li><a href=#>Latte</a></li><li><a href=/all>All</a></li></ul></nav><ul id=results class=hide-results></ul><script type=text/javascript src=https://code.jquery.com/jquery-2.1.3.min.js></script><script type=text/javascript src=/js/lunr.js></script><script type=text/javascript src=/js/search.js></script></header><main><div class=post-header><div class=post-icon-container><img src=/images/Cappuccino-ALU-Assets_hu_8f97e402dd565973.png></div><div class=post-header-text><h1><a href=/aoc-2025-day-1/>AOC 2025 Day 1</a></h1><p><strong>Page created </strong>:
+<time datetime=2025-12-02T22:14:15-05:00>2025-12-02T22:14:15-05:00</time><br><strong>Last updated </strong>:
+<time datetime=2025-12-02T23:57:33-05:00>2025-12-02T23:57:33-05:00</time></p></div></div><article class=post><p>Here&rsquo;s a quick writeup of how I approached the problem.</p><h2 id=part-1><a href=#part-1>Part 1</a></h2><p>The first part described how we want to count the number of times the dial lands
 on zero after some set of turn instructions. So as long as we track the state of
 applying the turns to some inital state, we can count the number of times zero
 appears. I&rsquo;m assuming people also take the example input to sketch a solution
 against. So I start by <code>def</code>ing the example in one long string. This also clears
-up the initial input parsing logic. So here&rsquo;s the input:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#66d9ef>def </span>test-1 <span style=color:#e6db74>&#34;L68
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  L30
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  R48
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  L5
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  R60
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  L55
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  L1
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  L99
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  R14
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>  L82&#34;</span>)
+up the initial input parsing logic. So here&rsquo;s the input:</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#cba6f7>def </span><span style=color:#f5e0dc>test-1</span> <span style=color:#a6e3a1>&#34;L68
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>  L30
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>  R48
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>  L5
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>  R60
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>  L55
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>  L1
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>  L99
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>  R14
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>  L82&#34;</span>)
 </span></span></code></pre></div><p>As far as the input parsing goes, I wanted to take advantage of destructuring to
-split the pieces of each line.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#a6e22e>-&gt;&gt;</span> test-1
-</span></span><span style=display:flex><span>     str/split-lines
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>mapv</span> str/trim))
-</span></span><span style=display:flex><span><span style=color:#75715e>;; =&gt; [&#34;L68&#34; &#34;L30&#34; &#34;R48&#34; &#34;L5&#34; &#34;R60&#34; &#34;L55&#34; &#34;L1&#34; &#34;L99&#34; &#34;R14&#34; &#34;L82&#34;]</span>
+split the pieces of each line.</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>test-1</span>
+</span></span><span style=display:flex><span>     <span style=color:#f5e0dc>str/split-lines</span>
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>mapv</span> <span style=color:#f5e0dc>str/trim</span>))
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>;; =&gt; [&#34;L68&#34; &#34;L30&#34; &#34;R48&#34; &#34;L5&#34; &#34;R60&#34; &#34;L55&#34; &#34;L1&#34; &#34;L99&#34; &#34;R14&#34; &#34;L82&#34;]</span>
 </span></span></code></pre></div><p>Taking just the first few elements of the vector, here&rsquo;s what the destructuring
-gives me.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#a6e22e>-&gt;&gt;</span> test-1
-</span></span><span style=display:flex><span>     str/split-lines
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>mapv</span> str/trim)
-</span></span><span style=display:flex><span>     (take <span style=color:#ae81ff>3</span>)
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>mapv</span> (<span style=color:#66d9ef>fn </span>[[dir <span style=color:#f92672>&amp;</span> num]]
-</span></span><span style=display:flex><span>             {<span style=color:#e6db74>:dir</span> dir
-</span></span><span style=display:flex><span>              <span style=color:#e6db74>:num</span> num})))
-</span></span><span style=display:flex><span><span style=color:#75715e>;; =&gt; [{:dir \L, :num (\6 \8)}</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>;;     {:dir \L, :num (\3 \0)}</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>;;     {:dir \R, :num (\4 \8)}]</span>
+gives me.</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>test-1</span>
+</span></span><span style=display:flex><span>     <span style=color:#f5e0dc>str/split-lines</span>
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>mapv</span> <span style=color:#f5e0dc>str/trim</span>)
+</span></span><span style=display:flex><span>     (<span style=color:#89dceb>take </span><span style=color:#fab387>3</span>)
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>mapv</span> (<span style=color:#cba6f7>fn </span>[[<span style=color:#f5e0dc>dir</span> <span style=color:#89dceb;font-weight:700>&amp;</span> <span style=color:#f5e0dc>num</span>]]
+</span></span><span style=display:flex><span>             {<span style=color:#a6e3a1>:dir</span> <span style=color:#f5e0dc>dir</span>
+</span></span><span style=display:flex><span>              <span style=color:#a6e3a1>:num</span> <span style=color:#f5e0dc>num</span>})))
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>;; =&gt; [{:dir \L, :num (\6 \8)}</span>
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>;;     {:dir \L, :num (\3 \0)}</span>
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>;;     {:dir \R, :num (\4 \8)}]</span>
 </span></span></code></pre></div><p>My intention is to change the <code>num</code> from a list of characters into an integer
 and then to make <code>dir</code> decide if that integer is positive or negative. Using the
-same few inputs from above, this looks like:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#a6e22e>-&gt;&gt;</span> test-1
-</span></span><span style=display:flex><span>     str/split-lines
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>mapv</span> str/trim)
-</span></span><span style=display:flex><span>     (take <span style=color:#ae81ff>3</span>)
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>mapv</span> (<span style=color:#66d9ef>fn </span>[[dir <span style=color:#f92672>&amp;</span> num]]
-</span></span><span style=display:flex><span>             (<span style=color:#66d9ef>let </span>[int-num (<span style=color:#a6e22e>-&gt;&gt;</span> num
-</span></span><span style=display:flex><span>                                (apply str)
-</span></span><span style=display:flex><span>                                Integer/parseInt)]
-</span></span><span style=display:flex><span>               (<span style=color:#66d9ef>if </span>(= <span style=color:#e6db74>&#34;L&#34;</span>
-</span></span><span style=display:flex><span>                      (str dir))
-</span></span><span style=display:flex><span>                 (* <span style=color:#ae81ff>-1</span> int-num)
-</span></span><span style=display:flex><span>                 int-num)))))
-</span></span><span style=display:flex><span><span style=color:#75715e>;; =&gt; [-68 -30 48]</span>
-</span></span></code></pre></div><p>This can be a little denser written with a <code>cond->></code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#a6e22e>-&gt;&gt;</span> test-1
-</span></span><span style=display:flex><span>     str/split-lines
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>mapv</span> str/trim)
-</span></span><span style=display:flex><span>     (take <span style=color:#ae81ff>3</span>)
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>mapv</span> (<span style=color:#66d9ef>fn </span>[[dir <span style=color:#f92672>&amp;</span> num]]
-</span></span><span style=display:flex><span>             (<span style=color:#a6e22e>cond-&gt;&gt;</span> (<span style=color:#a6e22e>-&gt;&gt;</span> num
-</span></span><span style=display:flex><span>                           (apply str)
-</span></span><span style=display:flex><span>                           Integer/parseInt)
-</span></span><span style=display:flex><span>               (= <span style=color:#e6db74>&#34;L&#34;</span> (str dir)) (* <span style=color:#ae81ff>-1</span>)))))
-</span></span><span style=display:flex><span><span style=color:#75715e>;; =&gt; [-68 -30 48]</span>
+same few inputs from above, this looks like:</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>test-1</span>
+</span></span><span style=display:flex><span>     <span style=color:#f5e0dc>str/split-lines</span>
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>mapv</span> <span style=color:#f5e0dc>str/trim</span>)
+</span></span><span style=display:flex><span>     (<span style=color:#89dceb>take </span><span style=color:#fab387>3</span>)
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>mapv</span> (<span style=color:#cba6f7>fn </span>[[<span style=color:#f5e0dc>dir</span> <span style=color:#89dceb;font-weight:700>&amp;</span> <span style=color:#f5e0dc>num</span>]]
+</span></span><span style=display:flex><span>             (<span style=color:#cba6f7>let </span>[<span style=color:#f5e0dc>int-num</span> (<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>num</span>
+</span></span><span style=display:flex><span>                                (<span style=color:#89dceb>apply </span><span style=color:#f5e0dc>str</span>)
+</span></span><span style=display:flex><span>                                <span style=color:#f5e0dc>Integer/parseInt</span>)]
+</span></span><span style=display:flex><span>               (<span style=color:#cba6f7>if </span>(<span style=color:#89dceb>= </span><span style=color:#a6e3a1>&#34;L&#34;</span>
+</span></span><span style=display:flex><span>                      (<span style=color:#89dceb>str </span><span style=color:#f5e0dc>dir</span>))
+</span></span><span style=display:flex><span>                 (<span style=color:#89dceb>* </span><span style=color:#fab387>-1</span> <span style=color:#f5e0dc>int-num</span>)
+</span></span><span style=display:flex><span>                 <span style=color:#f5e0dc>int-num</span>)))))
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>;; =&gt; [-68 -30 48]</span>
+</span></span></code></pre></div><p>This can be a little denser written with a <code>cond->></code></p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>test-1</span>
+</span></span><span style=display:flex><span>     <span style=color:#f5e0dc>str/split-lines</span>
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>mapv</span> <span style=color:#f5e0dc>str/trim</span>)
+</span></span><span style=display:flex><span>     (<span style=color:#89dceb>take </span><span style=color:#fab387>3</span>)
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>mapv</span> (<span style=color:#cba6f7>fn </span>[[<span style=color:#f5e0dc>dir</span> <span style=color:#89dceb;font-weight:700>&amp;</span> <span style=color:#f5e0dc>num</span>]]
+</span></span><span style=display:flex><span>             (<span style=color:#89b4fa>cond-&gt;&gt;</span> (<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>num</span>
+</span></span><span style=display:flex><span>                           (<span style=color:#89dceb>apply </span><span style=color:#f5e0dc>str</span>)
+</span></span><span style=display:flex><span>                           <span style=color:#f5e0dc>Integer/parseInt</span>)
+</span></span><span style=display:flex><span>               (<span style=color:#89dceb>= </span><span style=color:#a6e3a1>&#34;L&#34;</span> (<span style=color:#89dceb>str </span><span style=color:#f5e0dc>dir</span>)) (<span style=color:#89dceb>* </span><span style=color:#fab387>-1</span>)))))
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>;; =&gt; [-68 -30 48]</span>
 </span></span></code></pre></div><p>But it could be argued that the <code>cond->></code> and <code>->></code> are a little redundant. But
 this comes at the price of using something truthy to force the <code>(apply str)</code> to
-run and to have the <code>Integer/parseInt</code> run.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>  (<span style=color:#a6e22e>-&gt;&gt;</span> test-1
-</span></span><span style=display:flex><span>       str/split-lines
-</span></span><span style=display:flex><span>       (<span style=color:#a6e22e>mapv</span> str/trim)
-</span></span><span style=display:flex><span>       (take <span style=color:#ae81ff>3</span>)
-</span></span><span style=display:flex><span>       (<span style=color:#a6e22e>mapv</span> (<span style=color:#66d9ef>fn </span>[[dir <span style=color:#f92672>&amp;</span> num]]
-</span></span><span style=display:flex><span>               (<span style=color:#a6e22e>cond-&gt;&gt;</span> num
-</span></span><span style=display:flex><span>                 <span style=color:#e6db74>:make-str</span>         (apply str)
-</span></span><span style=display:flex><span>                 <span style=color:#e6db74>:make-int</span>         Integer/parseInt
-</span></span><span style=display:flex><span>                 (= <span style=color:#e6db74>&#34;L&#34;</span> (str dir)) (* <span style=color:#ae81ff>-1</span>)))))
-</span></span><span style=display:flex><span>  <span style=color:#75715e>;; =&gt; [-68 -30 48]</span>
-</span></span></code></pre></div><p>Yeah, I did all of this just to avoid the</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#66d9ef>if </span>thingy
-</span></span><span style=display:flex><span>    (<span style=color:#a6e22e>change</span> blah)
-</span></span><span style=display:flex><span>    blah)
+run and to have the <code>Integer/parseInt</code> run.</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>  (<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>test-1</span>
+</span></span><span style=display:flex><span>       <span style=color:#f5e0dc>str/split-lines</span>
+</span></span><span style=display:flex><span>       (<span style=color:#89b4fa>mapv</span> <span style=color:#f5e0dc>str/trim</span>)
+</span></span><span style=display:flex><span>       (<span style=color:#89dceb>take </span><span style=color:#fab387>3</span>)
+</span></span><span style=display:flex><span>       (<span style=color:#89b4fa>mapv</span> (<span style=color:#cba6f7>fn </span>[[<span style=color:#f5e0dc>dir</span> <span style=color:#89dceb;font-weight:700>&amp;</span> <span style=color:#f5e0dc>num</span>]]
+</span></span><span style=display:flex><span>               (<span style=color:#89b4fa>cond-&gt;&gt;</span> <span style=color:#f5e0dc>num</span>
+</span></span><span style=display:flex><span>                 <span style=color:#a6e3a1>:make-str</span>         (<span style=color:#89dceb>apply </span><span style=color:#f5e0dc>str</span>)
+</span></span><span style=display:flex><span>                 <span style=color:#a6e3a1>:make-int</span>         <span style=color:#f5e0dc>Integer/parseInt</span>
+</span></span><span style=display:flex><span>                 (<span style=color:#89dceb>= </span><span style=color:#a6e3a1>&#34;L&#34;</span> (<span style=color:#89dceb>str </span><span style=color:#f5e0dc>dir</span>)) (<span style=color:#89dceb>* </span><span style=color:#fab387>-1</span>)))))
+</span></span><span style=display:flex><span>  <span style=color:#6c7086;font-style:italic>;; =&gt; [-68 -30 48]</span>
+</span></span></code></pre></div><p>Yeah, I did all of this just to avoid the</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#cba6f7>if </span><span style=color:#f5e0dc>thingy</span>
+</span></span><span style=display:flex><span>    (<span style=color:#89b4fa>change</span> <span style=color:#f5e0dc>blah</span>)
+</span></span><span style=display:flex><span>    <span style=color:#f5e0dc>blah</span>)
 </span></span></code></pre></div><p>Now that I have all of the inputs translated to negative and positive integers,
 I can just do <a href=https://en.wikipedia.org/wiki/Modular_arithmetic>clock-math</a> on some starting position. The problem
-statement says the dial starts at 50, so I&rsquo;ll start there.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#a6e22e>-&gt;&gt;</span> test-1
-</span></span><span style=display:flex><span>     str/split-lines
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>mapv</span> str/trim)
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>mapv</span> (<span style=color:#66d9ef>fn </span>[[dir <span style=color:#f92672>&amp;</span> num]]
-</span></span><span style=display:flex><span>             (<span style=color:#a6e22e>cond-&gt;&gt;</span> num
-</span></span><span style=display:flex><span>               <span style=color:#e6db74>:make-str</span>         (apply str)
-</span></span><span style=display:flex><span>               <span style=color:#e6db74>:make-int</span>         Integer/parseInt
-</span></span><span style=display:flex><span>               (= <span style=color:#e6db74>&#34;L&#34;</span> (str dir)) (* <span style=color:#ae81ff>-1</span>))))
-</span></span><span style=display:flex><span>     (reduce (<span style=color:#66d9ef>fn </span>[curr turn]
-</span></span><span style=display:flex><span>               (-&gt; turn
-</span></span><span style=display:flex><span>                   (+ curr)
-</span></span><span style=display:flex><span>                   (<span style=color:#a6e22e>mod</span> <span style=color:#ae81ff>100</span>)))
-</span></span><span style=display:flex><span>             <span style=color:#ae81ff>50</span>))
-</span></span><span style=display:flex><span><span style=color:#75715e>;; =&gt; 32</span>
+statement says the dial starts at 50, so I&rsquo;ll start there.</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>test-1</span>
+</span></span><span style=display:flex><span>     <span style=color:#f5e0dc>str/split-lines</span>
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>mapv</span> <span style=color:#f5e0dc>str/trim</span>)
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>mapv</span> (<span style=color:#cba6f7>fn </span>[[<span style=color:#f5e0dc>dir</span> <span style=color:#89dceb;font-weight:700>&amp;</span> <span style=color:#f5e0dc>num</span>]]
+</span></span><span style=display:flex><span>             (<span style=color:#89b4fa>cond-&gt;&gt;</span> <span style=color:#f5e0dc>num</span>
+</span></span><span style=display:flex><span>               <span style=color:#a6e3a1>:make-str</span>         (<span style=color:#89dceb>apply </span><span style=color:#f5e0dc>str</span>)
+</span></span><span style=display:flex><span>               <span style=color:#a6e3a1>:make-int</span>         <span style=color:#f5e0dc>Integer/parseInt</span>
+</span></span><span style=display:flex><span>               (<span style=color:#89dceb>= </span><span style=color:#a6e3a1>&#34;L&#34;</span> (<span style=color:#89dceb>str </span><span style=color:#f5e0dc>dir</span>)) (<span style=color:#89dceb>* </span><span style=color:#fab387>-1</span>))))
+</span></span><span style=display:flex><span>     (<span style=color:#89dceb>reduce </span>(<span style=color:#cba6f7>fn </span>[<span style=color:#f5e0dc>curr</span> <span style=color:#f5e0dc>turn</span>]
+</span></span><span style=display:flex><span>               (<span style=color:#89dceb>-&gt; </span><span style=color:#f5e0dc>turn</span>
+</span></span><span style=display:flex><span>                   (<span style=color:#89dceb>+ </span><span style=color:#f5e0dc>curr</span>)
+</span></span><span style=display:flex><span>                   (<span style=color:#89b4fa>mod</span> <span style=color:#fab387>100</span>)))
+</span></span><span style=display:flex><span>             <span style=color:#fab387>50</span>))
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>;; =&gt; 32</span>
 </span></span></code></pre></div><p>This magically matches the value that the walkthrough of the example ends on. So
 the logic can&rsquo;t be too far off. But this doesn&rsquo;t give me the answer I want.
 Thankfully, there is a function in the standard library to return a sequence of
 the values that the accumulator takes on while processing some sequence:
-<a href=https://clojuredocs.org/clojure.core/reductions>reductions</a>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#a6e22e>-&gt;&gt;</span> test-1
-</span></span><span style=display:flex><span>     str/split-lines
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>mapv</span> str/trim)
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>mapv</span> (<span style=color:#66d9ef>fn </span>[[dir <span style=color:#f92672>&amp;</span> num]]
-</span></span><span style=display:flex><span>             (<span style=color:#a6e22e>cond-&gt;&gt;</span> num
-</span></span><span style=display:flex><span>               <span style=color:#e6db74>:make-str</span>         (apply str)
-</span></span><span style=display:flex><span>               <span style=color:#e6db74>:make-int</span>         Integer/parseInt
-</span></span><span style=display:flex><span>               (= <span style=color:#e6db74>&#34;L&#34;</span> (str dir)) (* <span style=color:#ae81ff>-1</span>))))
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>reductions</span> (<span style=color:#66d9ef>fn </span>[curr turn]
-</span></span><span style=display:flex><span>                   (-&gt; turn
-</span></span><span style=display:flex><span>                       (+ curr)
-</span></span><span style=display:flex><span>                       (<span style=color:#a6e22e>mod</span> <span style=color:#ae81ff>100</span>)))
-</span></span><span style=display:flex><span>                 <span style=color:#ae81ff>50</span>))
-</span></span><span style=display:flex><span><span style=color:#75715e>;; =&gt; (50 82 52 0 95 55 0 99 0 14 32)</span>
+<a href=https://clojuredocs.org/clojure.core/reductions>reductions</a>.</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>test-1</span>
+</span></span><span style=display:flex><span>     <span style=color:#f5e0dc>str/split-lines</span>
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>mapv</span> <span style=color:#f5e0dc>str/trim</span>)
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>mapv</span> (<span style=color:#cba6f7>fn </span>[[<span style=color:#f5e0dc>dir</span> <span style=color:#89dceb;font-weight:700>&amp;</span> <span style=color:#f5e0dc>num</span>]]
+</span></span><span style=display:flex><span>             (<span style=color:#89b4fa>cond-&gt;&gt;</span> <span style=color:#f5e0dc>num</span>
+</span></span><span style=display:flex><span>               <span style=color:#a6e3a1>:make-str</span>         (<span style=color:#89dceb>apply </span><span style=color:#f5e0dc>str</span>)
+</span></span><span style=display:flex><span>               <span style=color:#a6e3a1>:make-int</span>         <span style=color:#f5e0dc>Integer/parseInt</span>
+</span></span><span style=display:flex><span>               (<span style=color:#89dceb>= </span><span style=color:#a6e3a1>&#34;L&#34;</span> (<span style=color:#89dceb>str </span><span style=color:#f5e0dc>dir</span>)) (<span style=color:#89dceb>* </span><span style=color:#fab387>-1</span>))))
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>reductions</span> (<span style=color:#cba6f7>fn </span>[<span style=color:#f5e0dc>curr</span> <span style=color:#f5e0dc>turn</span>]
+</span></span><span style=display:flex><span>                   (<span style=color:#89dceb>-&gt; </span><span style=color:#f5e0dc>turn</span>
+</span></span><span style=display:flex><span>                       (<span style=color:#89dceb>+ </span><span style=color:#f5e0dc>curr</span>)
+</span></span><span style=display:flex><span>                       (<span style=color:#89b4fa>mod</span> <span style=color:#fab387>100</span>)))
+</span></span><span style=display:flex><span>                 <span style=color:#fab387>50</span>))
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>;; =&gt; (50 82 52 0 95 55 0 99 0 14 32)</span>
 </span></span></code></pre></div><p>Just by switching the function out (and cleaning out the spacing a little bit)
 you can see we are able to get the answer to the example input. This obviously
 won&rsquo;t work to manually count up all the zeros when the input is
 who-knows-how-long. So my final answer to part 1 is to tack on a <code>filter</code> and a
-<code>count</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#a6e22e>-&gt;&gt;</span> test-1
-</span></span><span style=display:flex><span>     str/split-lines
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>mapv</span> str/trim)
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>mapv</span> (<span style=color:#66d9ef>fn </span>[[dir <span style=color:#f92672>&amp;</span> num]]
-</span></span><span style=display:flex><span>             (<span style=color:#a6e22e>cond-&gt;&gt;</span> num
-</span></span><span style=display:flex><span>               <span style=color:#e6db74>:make-str</span>         (apply str)
-</span></span><span style=display:flex><span>               <span style=color:#e6db74>:make-int</span>         Integer/parseInt
-</span></span><span style=display:flex><span>               (= <span style=color:#e6db74>&#34;L&#34;</span> (str dir)) (* <span style=color:#ae81ff>-1</span>))))
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>reductions</span> (<span style=color:#66d9ef>fn </span>[curr turn]
-</span></span><span style=display:flex><span>                   (-&gt; turn
-</span></span><span style=display:flex><span>                       (+ curr)
-</span></span><span style=display:flex><span>                       (<span style=color:#a6e22e>mod</span> <span style=color:#ae81ff>100</span>)))
-</span></span><span style=display:flex><span>                 <span style=color:#ae81ff>50</span>)
-</span></span><span style=display:flex><span>     (filter zero?)
-</span></span><span style=display:flex><span>     count)
-</span></span><span style=display:flex><span><span style=color:#75715e>;; =&gt; 3</span>
+<code>count</code>.</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>test-1</span>
+</span></span><span style=display:flex><span>     <span style=color:#f5e0dc>str/split-lines</span>
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>mapv</span> <span style=color:#f5e0dc>str/trim</span>)
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>mapv</span> (<span style=color:#cba6f7>fn </span>[[<span style=color:#f5e0dc>dir</span> <span style=color:#89dceb;font-weight:700>&amp;</span> <span style=color:#f5e0dc>num</span>]]
+</span></span><span style=display:flex><span>             (<span style=color:#89b4fa>cond-&gt;&gt;</span> <span style=color:#f5e0dc>num</span>
+</span></span><span style=display:flex><span>               <span style=color:#a6e3a1>:make-str</span>         (<span style=color:#89dceb>apply </span><span style=color:#f5e0dc>str</span>)
+</span></span><span style=display:flex><span>               <span style=color:#a6e3a1>:make-int</span>         <span style=color:#f5e0dc>Integer/parseInt</span>
+</span></span><span style=display:flex><span>               (<span style=color:#89dceb>= </span><span style=color:#a6e3a1>&#34;L&#34;</span> (<span style=color:#89dceb>str </span><span style=color:#f5e0dc>dir</span>)) (<span style=color:#89dceb>* </span><span style=color:#fab387>-1</span>))))
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>reductions</span> (<span style=color:#cba6f7>fn </span>[<span style=color:#f5e0dc>curr</span> <span style=color:#f5e0dc>turn</span>]
+</span></span><span style=display:flex><span>                   (<span style=color:#89dceb>-&gt; </span><span style=color:#f5e0dc>turn</span>
+</span></span><span style=display:flex><span>                       (<span style=color:#89dceb>+ </span><span style=color:#f5e0dc>curr</span>)
+</span></span><span style=display:flex><span>                       (<span style=color:#89b4fa>mod</span> <span style=color:#fab387>100</span>)))
+</span></span><span style=display:flex><span>                 <span style=color:#fab387>50</span>)
+</span></span><span style=display:flex><span>     (<span style=color:#89dceb>filter </span><span style=color:#f5e0dc>zero?</span>)
+</span></span><span style=display:flex><span>     <span style=color:#f5e0dc>count</span>)
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>;; =&gt; 3</span>
 </span></span></code></pre></div><h2 id=part-2><a href=#part-2>Part 2</a></h2><p>My original approach to this part was to try and come up with rules to decide if
 I can deduce whether zero had been crossed based on where I started, where I
 ended, the direction of the turn, and the amount I turned. I still think this is
@@ -140,170 +142,170 @@ whether the current position is at zero or not.</p><p>Probably the most interest
 means of combining sequences. Especially vectors when I want to preserve the
 vector and not end up with a list. Other than that, I find it to be hilarious
 that I turned all of the input into some long list of <code>-1</code> and <code>1</code> and processed
-every last one.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#a6e22e>-&gt;&gt;</span> test-1
-</span></span><span style=display:flex><span>     str/split-lines
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>mapv</span> str/trim)
-</span></span><span style=display:flex><span>     (reduce (<span style=color:#66d9ef>fn </span>[moves [dir <span style=color:#f92672>&amp;</span> num]]
-</span></span><span style=display:flex><span>               (<span style=color:#66d9ef>let </span>[int-num (<span style=color:#a6e22e>-&gt;&gt;</span> num
-</span></span><span style=display:flex><span>                                  (apply str)
-</span></span><span style=display:flex><span>                                  Integer/parseInt)
-</span></span><span style=display:flex><span>                     new-moves (<span style=color:#a6e22e>repeatedly</span> int-num
-</span></span><span style=display:flex><span>                                           <span style=color:#f92672>#</span>(<span style=color:#66d9ef>if </span>(= <span style=color:#e6db74>&#34;L&#34;</span>
-</span></span><span style=display:flex><span>                                                   (str dir))
-</span></span><span style=display:flex><span>                                              <span style=color:#ae81ff>-1</span>
-</span></span><span style=display:flex><span>                                              <span style=color:#ae81ff>1</span>))]
-</span></span><span style=display:flex><span>                 (into moves new-moves)))
+every last one.</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>test-1</span>
+</span></span><span style=display:flex><span>     <span style=color:#f5e0dc>str/split-lines</span>
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>mapv</span> <span style=color:#f5e0dc>str/trim</span>)
+</span></span><span style=display:flex><span>     (<span style=color:#89dceb>reduce </span>(<span style=color:#cba6f7>fn </span>[<span style=color:#f5e0dc>moves</span> [<span style=color:#f5e0dc>dir</span> <span style=color:#89dceb;font-weight:700>&amp;</span> <span style=color:#f5e0dc>num</span>]]
+</span></span><span style=display:flex><span>               (<span style=color:#cba6f7>let </span>[<span style=color:#f5e0dc>int-num</span> (<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>num</span>
+</span></span><span style=display:flex><span>                                  (<span style=color:#89dceb>apply </span><span style=color:#f5e0dc>str</span>)
+</span></span><span style=display:flex><span>                                  <span style=color:#f5e0dc>Integer/parseInt</span>)
+</span></span><span style=display:flex><span>                     <span style=color:#f5e0dc>new-moves</span> (<span style=color:#89b4fa>repeatedly</span> <span style=color:#f5e0dc>int-num</span>
+</span></span><span style=display:flex><span>                                           <span style=color:#89dceb;font-weight:700>#</span>(<span style=color:#cba6f7>if </span>(<span style=color:#89dceb>= </span><span style=color:#a6e3a1>&#34;L&#34;</span>
+</span></span><span style=display:flex><span>                                                   (<span style=color:#89dceb>str </span><span style=color:#f5e0dc>dir</span>))
+</span></span><span style=display:flex><span>                                              <span style=color:#fab387>-1</span>
+</span></span><span style=display:flex><span>                                              <span style=color:#fab387>1</span>))]
+</span></span><span style=display:flex><span>                 (<span style=color:#89dceb>into </span><span style=color:#f5e0dc>moves</span> <span style=color:#f5e0dc>new-moves</span>)))
 </span></span><span style=display:flex><span>             [])
-</span></span><span style=display:flex><span>     (reduce (<span style=color:#66d9ef>fn </span>[{<span style=color:#e6db74>:keys</span> [curr] <span style=color:#e6db74>:as</span> state} move]
-</span></span><span style=display:flex><span>               (<span style=color:#66d9ef>let </span>[new-curr (<span style=color:#a6e22e>mod</span> (+ curr move)
-</span></span><span style=display:flex><span>                                   <span style=color:#ae81ff>100</span>)]
-</span></span><span style=display:flex><span>                 (-&gt; state
-</span></span><span style=display:flex><span>                     (assoc <span style=color:#e6db74>:curr</span> new-curr)
-</span></span><span style=display:flex><span>                     (<span style=color:#a6e22e>update</span> <span style=color:#e6db74>:hits</span> <span style=color:#f92672>#</span>(<span style=color:#66d9ef>if </span>(zero? new-curr) (inc %) %)))))
-</span></span><span style=display:flex><span>             {<span style=color:#e6db74>:curr</span> <span style=color:#ae81ff>50</span>
-</span></span><span style=display:flex><span>              <span style=color:#e6db74>:hits</span> <span style=color:#ae81ff>0</span>}))
+</span></span><span style=display:flex><span>     (<span style=color:#89dceb>reduce </span>(<span style=color:#cba6f7>fn </span>[{<span style=color:#a6e3a1>:keys</span> [<span style=color:#f5e0dc>curr</span>] <span style=color:#a6e3a1>:as</span> <span style=color:#f5e0dc>state</span>} <span style=color:#f5e0dc>move</span>]
+</span></span><span style=display:flex><span>               (<span style=color:#cba6f7>let </span>[<span style=color:#f5e0dc>new-curr</span> (<span style=color:#89b4fa>mod</span> (<span style=color:#89dceb>+ </span><span style=color:#f5e0dc>curr</span> <span style=color:#f5e0dc>move</span>)
+</span></span><span style=display:flex><span>                                   <span style=color:#fab387>100</span>)]
+</span></span><span style=display:flex><span>                 (<span style=color:#89dceb>-&gt; </span><span style=color:#f5e0dc>state</span>
+</span></span><span style=display:flex><span>                     (<span style=color:#89dceb>assoc </span><span style=color:#a6e3a1>:curr</span> <span style=color:#f5e0dc>new-curr</span>)
+</span></span><span style=display:flex><span>                     (<span style=color:#89b4fa>update</span> <span style=color:#a6e3a1>:hits</span> <span style=color:#89dceb;font-weight:700>#</span>(<span style=color:#cba6f7>if </span>(<span style=color:#89dceb>zero? </span><span style=color:#f5e0dc>new-curr</span>) (<span style=color:#89dceb>inc </span><span style=color:#f5e0dc>%</span>) <span style=color:#f5e0dc>%</span>)))))
+</span></span><span style=display:flex><span>             {<span style=color:#a6e3a1>:curr</span> <span style=color:#fab387>50</span>
+</span></span><span style=display:flex><span>              <span style=color:#a6e3a1>:hits</span> <span style=color:#fab387>0</span>}))
 </span></span></code></pre></div><p>Here&rsquo;s the full file if you want to read it top to bottom. There&rsquo;s some little
 clean ups that happen that I don&rsquo;t talk about above, but it should be easy
 enough to follow. And at the bottom, I&rsquo;ve kept in the failing first approach.
-Maybe I&rsquo;ll come back to fix this one day.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#66d9ef>ns </span>aoc-2025
-</span></span><span style=display:flex><span>  (<span style=color:#e6db74>:require</span> [clojure.string <span style=color:#e6db74>:as</span> str]))
+Maybe I&rsquo;ll come back to fix this one day.</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#f38ba8>ns </span><span style=color:#f5e0dc>aoc-2025</span>
+</span></span><span style=display:flex><span>  (<span style=color:#a6e3a1>:require</span> [<span style=color:#f5e0dc>clojure.string</span> <span style=color:#a6e3a1>:as</span> <span style=color:#f5e0dc>str</span>]))
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>(<span style=color:#a6e22e>comment</span>
+</span></span><span style=display:flex><span>(<span style=color:#89b4fa>comment</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>  (<span style=color:#66d9ef>def </span>test-1 <span style=color:#e6db74>&#34;L68
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    L30
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    R48
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    L5
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    R60
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    L55
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    L1
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    L99
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    R14
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>    L82&#34;</span>)
+</span></span><span style=display:flex><span>  (<span style=color:#cba6f7>def </span><span style=color:#f5e0dc>test-1</span> <span style=color:#a6e3a1>&#34;L68
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>    L30
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>    R48
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>    L5
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>    R60
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>    L55
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>    L1
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>    L99
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>    R14
+</span></span></span><span style=display:flex><span><span style=color:#a6e3a1>    L82&#34;</span>)
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>  (<span style=color:#66d9ef>def </span>day-1 (slurp <span style=color:#e6db74>&#34;/home/andy/tmp/aoc-2025-day-1-1&#34;</span>))
+</span></span><span style=display:flex><span>  (<span style=color:#cba6f7>def </span><span style=color:#f5e0dc>day-1</span> (<span style=color:#89dceb>slurp </span><span style=color:#a6e3a1>&#34;/home/andy/tmp/aoc-2025-day-1-1&#34;</span>))
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>  <span style=color:#75715e>;; Part 1</span>
-</span></span><span style=display:flex><span>  (<span style=color:#a6e22e>-&gt;&gt;</span> day-1
-</span></span><span style=display:flex><span>       <span style=color:#f92672>#</span>_test-1
-</span></span><span style=display:flex><span>       str/split-lines
-</span></span><span style=display:flex><span>       (<span style=color:#a6e22e>mapv</span> str/trim)
-</span></span><span style=display:flex><span>       (<span style=color:#a6e22e>reductions</span> (<span style=color:#66d9ef>fn </span>[curr [dir <span style=color:#f92672>&amp;</span> num]]
-</span></span><span style=display:flex><span>                     (-&gt; (<span style=color:#a6e22e>cond-&gt;&gt;</span> num
-</span></span><span style=display:flex><span>                           <span style=color:#e6db74>:make-str</span>     (apply str)
-</span></span><span style=display:flex><span>                           <span style=color:#e6db74>:make-int</span>     Integer/parseInt
-</span></span><span style=display:flex><span>                           (= <span style=color:#e6db74>&#34;L&#34;</span>
-</span></span><span style=display:flex><span>                              (str dir)) (* <span style=color:#ae81ff>-1</span>))
-</span></span><span style=display:flex><span>                         (+ curr)
-</span></span><span style=display:flex><span>                         (<span style=color:#a6e22e>mod</span> <span style=color:#ae81ff>100</span>)))
-</span></span><span style=display:flex><span>                   <span style=color:#ae81ff>50</span>)
-</span></span><span style=display:flex><span>       (filter zero?)
-</span></span><span style=display:flex><span>       count)
+</span></span><span style=display:flex><span>  <span style=color:#6c7086;font-style:italic>;; Part 1</span>
+</span></span><span style=display:flex><span>  (<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>day-1</span>
+</span></span><span style=display:flex><span>       <span style=color:#89dceb;font-weight:700>#</span><span style=color:#f5e0dc>_test-1</span>
+</span></span><span style=display:flex><span>       <span style=color:#f5e0dc>str/split-lines</span>
+</span></span><span style=display:flex><span>       (<span style=color:#89b4fa>mapv</span> <span style=color:#f5e0dc>str/trim</span>)
+</span></span><span style=display:flex><span>       (<span style=color:#89b4fa>reductions</span> (<span style=color:#cba6f7>fn </span>[<span style=color:#f5e0dc>curr</span> [<span style=color:#f5e0dc>dir</span> <span style=color:#89dceb;font-weight:700>&amp;</span> <span style=color:#f5e0dc>num</span>]]
+</span></span><span style=display:flex><span>                     (<span style=color:#89dceb>-&gt; </span>(<span style=color:#89b4fa>cond-&gt;&gt;</span> <span style=color:#f5e0dc>num</span>
+</span></span><span style=display:flex><span>                           <span style=color:#a6e3a1>:make-str</span>     (<span style=color:#89dceb>apply </span><span style=color:#f5e0dc>str</span>)
+</span></span><span style=display:flex><span>                           <span style=color:#a6e3a1>:make-int</span>     <span style=color:#f5e0dc>Integer/parseInt</span>
+</span></span><span style=display:flex><span>                           (<span style=color:#89dceb>= </span><span style=color:#a6e3a1>&#34;L&#34;</span>
+</span></span><span style=display:flex><span>                              (<span style=color:#89dceb>str </span><span style=color:#f5e0dc>dir</span>)) (<span style=color:#89dceb>* </span><span style=color:#fab387>-1</span>))
+</span></span><span style=display:flex><span>                         (<span style=color:#89dceb>+ </span><span style=color:#f5e0dc>curr</span>)
+</span></span><span style=display:flex><span>                         (<span style=color:#89b4fa>mod</span> <span style=color:#fab387>100</span>)))
+</span></span><span style=display:flex><span>                   <span style=color:#fab387>50</span>)
+</span></span><span style=display:flex><span>       (<span style=color:#89dceb>filter </span><span style=color:#f5e0dc>zero?</span>)
+</span></span><span style=display:flex><span>       <span style=color:#f5e0dc>count</span>)
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>  <span style=color:#75715e>;; Part 2</span>
-</span></span><span style=display:flex><span>  (<span style=color:#a6e22e>-&gt;&gt;</span> day-1
-</span></span><span style=display:flex><span>       <span style=color:#f92672>#</span>_test-1
-</span></span><span style=display:flex><span>       str/split-lines
-</span></span><span style=display:flex><span>       (<span style=color:#a6e22e>mapv</span> str/trim)
-</span></span><span style=display:flex><span>       (reduce (<span style=color:#66d9ef>fn </span>[moves [dir <span style=color:#f92672>&amp;</span> num]]
-</span></span><span style=display:flex><span>                 (<span style=color:#66d9ef>let </span>[int-num (<span style=color:#a6e22e>-&gt;&gt;</span> num
-</span></span><span style=display:flex><span>                                    (apply str)
-</span></span><span style=display:flex><span>                                    Integer/parseInt)
-</span></span><span style=display:flex><span>                       new-moves (<span style=color:#a6e22e>repeatedly</span> int-num
-</span></span><span style=display:flex><span>                                             <span style=color:#f92672>#</span>(<span style=color:#66d9ef>if </span>(= <span style=color:#e6db74>&#34;L&#34;</span>
-</span></span><span style=display:flex><span>                                                     (str dir))
-</span></span><span style=display:flex><span>                                                <span style=color:#ae81ff>-1</span>
-</span></span><span style=display:flex><span>                                                <span style=color:#ae81ff>1</span>))]
-</span></span><span style=display:flex><span>                   (into moves new-moves)))
+</span></span><span style=display:flex><span>  <span style=color:#6c7086;font-style:italic>;; Part 2</span>
+</span></span><span style=display:flex><span>  (<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>day-1</span>
+</span></span><span style=display:flex><span>       <span style=color:#89dceb;font-weight:700>#</span><span style=color:#f5e0dc>_test-1</span>
+</span></span><span style=display:flex><span>       <span style=color:#f5e0dc>str/split-lines</span>
+</span></span><span style=display:flex><span>       (<span style=color:#89b4fa>mapv</span> <span style=color:#f5e0dc>str/trim</span>)
+</span></span><span style=display:flex><span>       (<span style=color:#89dceb>reduce </span>(<span style=color:#cba6f7>fn </span>[<span style=color:#f5e0dc>moves</span> [<span style=color:#f5e0dc>dir</span> <span style=color:#89dceb;font-weight:700>&amp;</span> <span style=color:#f5e0dc>num</span>]]
+</span></span><span style=display:flex><span>                 (<span style=color:#cba6f7>let </span>[<span style=color:#f5e0dc>int-num</span> (<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>num</span>
+</span></span><span style=display:flex><span>                                    (<span style=color:#89dceb>apply </span><span style=color:#f5e0dc>str</span>)
+</span></span><span style=display:flex><span>                                    <span style=color:#f5e0dc>Integer/parseInt</span>)
+</span></span><span style=display:flex><span>                       <span style=color:#f5e0dc>new-moves</span> (<span style=color:#89b4fa>repeatedly</span> <span style=color:#f5e0dc>int-num</span>
+</span></span><span style=display:flex><span>                                             <span style=color:#89dceb;font-weight:700>#</span>(<span style=color:#cba6f7>if </span>(<span style=color:#89dceb>= </span><span style=color:#a6e3a1>&#34;L&#34;</span>
+</span></span><span style=display:flex><span>                                                     (<span style=color:#89dceb>str </span><span style=color:#f5e0dc>dir</span>))
+</span></span><span style=display:flex><span>                                                <span style=color:#fab387>-1</span>
+</span></span><span style=display:flex><span>                                                <span style=color:#fab387>1</span>))]
+</span></span><span style=display:flex><span>                   (<span style=color:#89dceb>into </span><span style=color:#f5e0dc>moves</span> <span style=color:#f5e0dc>new-moves</span>)))
 </span></span><span style=display:flex><span>               [])
-</span></span><span style=display:flex><span>       (reduce (<span style=color:#66d9ef>fn </span>[{<span style=color:#e6db74>:keys</span> [curr] <span style=color:#e6db74>:as</span> state} move]
-</span></span><span style=display:flex><span>                 (<span style=color:#66d9ef>let </span>[new-curr (<span style=color:#a6e22e>mod</span> (+ curr move)
-</span></span><span style=display:flex><span>                                     <span style=color:#ae81ff>100</span>)]
-</span></span><span style=display:flex><span>                   (-&gt; state
-</span></span><span style=display:flex><span>                       (assoc <span style=color:#e6db74>:curr</span> new-curr)
-</span></span><span style=display:flex><span>                       (<span style=color:#a6e22e>update</span> <span style=color:#e6db74>:hits</span> <span style=color:#f92672>#</span>(<span style=color:#66d9ef>if </span>(zero? new-curr) (inc %) %)))))
-</span></span><span style=display:flex><span>               {<span style=color:#e6db74>:curr</span> <span style=color:#ae81ff>50</span>
-</span></span><span style=display:flex><span>                <span style=color:#e6db74>:hits</span> <span style=color:#ae81ff>0</span>}))
+</span></span><span style=display:flex><span>       (<span style=color:#89dceb>reduce </span>(<span style=color:#cba6f7>fn </span>[{<span style=color:#a6e3a1>:keys</span> [<span style=color:#f5e0dc>curr</span>] <span style=color:#a6e3a1>:as</span> <span style=color:#f5e0dc>state</span>} <span style=color:#f5e0dc>move</span>]
+</span></span><span style=display:flex><span>                 (<span style=color:#cba6f7>let </span>[<span style=color:#f5e0dc>new-curr</span> (<span style=color:#89b4fa>mod</span> (<span style=color:#89dceb>+ </span><span style=color:#f5e0dc>curr</span> <span style=color:#f5e0dc>move</span>)
+</span></span><span style=display:flex><span>                                     <span style=color:#fab387>100</span>)]
+</span></span><span style=display:flex><span>                   (<span style=color:#89dceb>-&gt; </span><span style=color:#f5e0dc>state</span>
+</span></span><span style=display:flex><span>                       (<span style=color:#89dceb>assoc </span><span style=color:#a6e3a1>:curr</span> <span style=color:#f5e0dc>new-curr</span>)
+</span></span><span style=display:flex><span>                       (<span style=color:#89b4fa>update</span> <span style=color:#a6e3a1>:hits</span> <span style=color:#89dceb;font-weight:700>#</span>(<span style=color:#cba6f7>if </span>(<span style=color:#89dceb>zero? </span><span style=color:#f5e0dc>new-curr</span>) (<span style=color:#89dceb>inc </span><span style=color:#f5e0dc>%</span>) <span style=color:#f5e0dc>%</span>)))))
+</span></span><span style=display:flex><span>               {<span style=color:#a6e3a1>:curr</span> <span style=color:#fab387>50</span>
+</span></span><span style=display:flex><span>                <span style=color:#a6e3a1>:hits</span> <span style=color:#fab387>0</span>}))
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>  (<span style=color:#66d9ef>let </span>[moves (<span style=color:#a6e22e>-&gt;&gt;</span> day-1
-</span></span><span style=display:flex><span>                   <span style=color:#f92672>#</span>_test-1
-</span></span><span style=display:flex><span>                   str/split-lines
-</span></span><span style=display:flex><span>                   (<span style=color:#a6e22e>mapv</span> str/trim)
-</span></span><span style=display:flex><span>                   (<span style=color:#a6e22e>mapv</span> (<span style=color:#66d9ef>fn </span>[[dir <span style=color:#f92672>&amp;</span> num]]
-</span></span><span style=display:flex><span>                           (<span style=color:#a6e22e>cond-&gt;&gt;</span> num
-</span></span><span style=display:flex><span>                             <span style=color:#e6db74>:make-str</span>     (apply str)
-</span></span><span style=display:flex><span>                             <span style=color:#e6db74>:make-int</span>     Integer/parseInt
-</span></span><span style=display:flex><span>                             (= <span style=color:#e6db74>&#34;L&#34;</span>
-</span></span><span style=display:flex><span>                                (str dir)) (* <span style=color:#ae81ff>-1</span>)))))
-</span></span><span style=display:flex><span>        poss   (<span style=color:#a6e22e>reductions</span> (<span style=color:#66d9ef>fn </span>[curr turn]
-</span></span><span style=display:flex><span>                             (-&gt; turn
-</span></span><span style=display:flex><span>                                 (+ curr)
-</span></span><span style=display:flex><span>                                 (<span style=color:#a6e22e>mod</span> <span style=color:#ae81ff>100</span>)))
-</span></span><span style=display:flex><span>                           <span style=color:#ae81ff>50</span>
-</span></span><span style=display:flex><span>                           moves)]
-</span></span><span style=display:flex><span>    (<span style=color:#a6e22e>-&gt;&gt;</span> (<span style=color:#a6e22e>mapv</span> vector
-</span></span><span style=display:flex><span>               moves
-</span></span><span style=display:flex><span>               (<span style=color:#a6e22e>partition</span> <span style=color:#ae81ff>2</span> <span style=color:#ae81ff>1</span> poss))
-</span></span><span style=display:flex><span>         (<span style=color:#a6e22e>mapv</span> (<span style=color:#66d9ef>fn </span>[[move [start end]]]
-</span></span><span style=display:flex><span>                 (<span style=color:#66d9ef>let </span>[abs-move (+ start move)
-</span></span><span style=display:flex><span>                       context [<span style=color:#e6db74>:start</span> start
-</span></span><span style=display:flex><span>                                <span style=color:#e6db74>:move</span> move
-</span></span><span style=display:flex><span>                                <span style=color:#e6db74>:end</span> end
-</span></span><span style=display:flex><span>                                <span style=color:#e6db74>:abs</span> abs-move]]
-</span></span><span style=display:flex><span>                   (or (and (zero? end)
-</span></span><span style=display:flex><span>                            <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>                            <span style=color:#f92672>#</span>_<span style=color:#e6db74>:zero</span>)
-</span></span><span style=display:flex><span>                       (and (&lt; start (<span style=color:#a6e22e>abs</span> move))
-</span></span><span style=display:flex><span>                            (not (zero? start))
-</span></span><span style=display:flex><span>                            <span style=color:#f92672>#</span>_[<span style=color:#e6db74>:move-left-over-zero</span> context
-</span></span><span style=display:flex><span>                               (<span style=color:#66d9ef>let </span>[laps (quot abs-move <span style=color:#ae81ff>100</span>)]
-</span></span><span style=display:flex><span>                                 (<span style=color:#66d9ef>if </span>(zero? laps)
-</span></span><span style=display:flex><span>                                   <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>                                   laps))]
-</span></span><span style=display:flex><span>                            (<span style=color:#66d9ef>let </span>[laps (quot abs-move <span style=color:#ae81ff>100</span>)]
-</span></span><span style=display:flex><span>                              (<span style=color:#66d9ef>if </span>(zero? laps)
-</span></span><span style=display:flex><span>                                <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>                                laps))
-</span></span><span style=display:flex><span>                            <span style=color:#f92672>#</span>_(or (quot abs-move <span style=color:#ae81ff>100</span>)
-</span></span><span style=display:flex><span>                                  <span style=color:#ae81ff>1</span>))
-</span></span><span style=display:flex><span>                       (and (&lt; end start)
-</span></span><span style=display:flex><span>                            (pos? move)
-</span></span><span style=display:flex><span>                            <span style=color:#f92672>#</span>_[<span style=color:#e6db74>:move-right-over-zero</span> context
-</span></span><span style=display:flex><span>                               (<span style=color:#66d9ef>let </span>[laps (quot abs-move <span style=color:#ae81ff>100</span>)]
-</span></span><span style=display:flex><span>                                 (<span style=color:#66d9ef>if </span>(zero? laps)
-</span></span><span style=display:flex><span>                                   <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>                                   laps))
-</span></span><span style=display:flex><span>                               <span style=color:#f92672>#</span>_(or (quot abs-move <span style=color:#ae81ff>100</span>)
-</span></span><span style=display:flex><span>                                     <span style=color:#ae81ff>1</span>)]
-</span></span><span style=display:flex><span>                            (<span style=color:#66d9ef>let </span>[laps (quot abs-move <span style=color:#ae81ff>100</span>)]
-</span></span><span style=display:flex><span>                              (<span style=color:#66d9ef>if </span>(zero? laps)
-</span></span><span style=display:flex><span>                                <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>                                laps))
-</span></span><span style=display:flex><span>                            <span style=color:#f92672>#</span>_(or (quot abs-move <span style=color:#ae81ff>100</span>)
-</span></span><span style=display:flex><span>                                  <span style=color:#ae81ff>1</span>))
-</span></span><span style=display:flex><span>                       (and (neg? abs-move)
-</span></span><span style=display:flex><span>                            (not (neg? start))
-</span></span><span style=display:flex><span>                            (not (zero? start))
-</span></span><span style=display:flex><span>                            <span style=color:#f92672>#</span>_[<span style=color:#e6db74>:neg-abs-move</span> context]
-</span></span><span style=display:flex><span>                            (<span style=color:#66d9ef>let </span>[laps (quot abs-move <span style=color:#ae81ff>100</span>)]
-</span></span><span style=display:flex><span>                              (<span style=color:#66d9ef>if </span>(zero? laps)
-</span></span><span style=display:flex><span>                                <span style=color:#ae81ff>1</span>
-</span></span><span style=display:flex><span>                                laps))
-</span></span><span style=display:flex><span>                            <span style=color:#f92672>#</span>_(or (quot abs-move <span style=color:#ae81ff>100</span>)
-</span></span><span style=display:flex><span>                                  <span style=color:#ae81ff>1</span>))
-</span></span><span style=display:flex><span>                       <span style=color:#ae81ff>0</span>))))
-</span></span><span style=display:flex><span>         (reduce (<span style=color:#66d9ef>fn </span>[a b]
-</span></span><span style=display:flex><span>                   (+ (<span style=color:#a6e22e>abs</span> a)
-</span></span><span style=display:flex><span>                      (<span style=color:#a6e22e>abs</span> b))))
-</span></span><span style=display:flex><span>         <span style=color:#f92672>#</span>_(filter some?)
-</span></span><span style=display:flex><span>         <span style=color:#f92672>#</span>_count))
-</span></span><span style=display:flex><span>  <span style=color:#75715e>;; 2606 too low</span>
-</span></span><span style=display:flex><span>  <span style=color:#75715e>;; 4336 too low</span>
+</span></span><span style=display:flex><span>  (<span style=color:#cba6f7>let </span>[<span style=color:#f5e0dc>moves</span> (<span style=color:#89b4fa>-&gt;&gt;</span> <span style=color:#f5e0dc>day-1</span>
+</span></span><span style=display:flex><span>                   <span style=color:#89dceb;font-weight:700>#</span><span style=color:#f5e0dc>_test-1</span>
+</span></span><span style=display:flex><span>                   <span style=color:#f5e0dc>str/split-lines</span>
+</span></span><span style=display:flex><span>                   (<span style=color:#89b4fa>mapv</span> <span style=color:#f5e0dc>str/trim</span>)
+</span></span><span style=display:flex><span>                   (<span style=color:#89b4fa>mapv</span> (<span style=color:#cba6f7>fn </span>[[<span style=color:#f5e0dc>dir</span> <span style=color:#89dceb;font-weight:700>&amp;</span> <span style=color:#f5e0dc>num</span>]]
+</span></span><span style=display:flex><span>                           (<span style=color:#89b4fa>cond-&gt;&gt;</span> <span style=color:#f5e0dc>num</span>
+</span></span><span style=display:flex><span>                             <span style=color:#a6e3a1>:make-str</span>     (<span style=color:#89dceb>apply </span><span style=color:#f5e0dc>str</span>)
+</span></span><span style=display:flex><span>                             <span style=color:#a6e3a1>:make-int</span>     <span style=color:#f5e0dc>Integer/parseInt</span>
+</span></span><span style=display:flex><span>                             (<span style=color:#89dceb>= </span><span style=color:#a6e3a1>&#34;L&#34;</span>
+</span></span><span style=display:flex><span>                                (<span style=color:#89dceb>str </span><span style=color:#f5e0dc>dir</span>)) (<span style=color:#89dceb>* </span><span style=color:#fab387>-1</span>)))))
+</span></span><span style=display:flex><span>        <span style=color:#f5e0dc>poss</span>   (<span style=color:#89b4fa>reductions</span> (<span style=color:#cba6f7>fn </span>[<span style=color:#f5e0dc>curr</span> <span style=color:#f5e0dc>turn</span>]
+</span></span><span style=display:flex><span>                             (<span style=color:#89dceb>-&gt; </span><span style=color:#f5e0dc>turn</span>
+</span></span><span style=display:flex><span>                                 (<span style=color:#89dceb>+ </span><span style=color:#f5e0dc>curr</span>)
+</span></span><span style=display:flex><span>                                 (<span style=color:#89b4fa>mod</span> <span style=color:#fab387>100</span>)))
+</span></span><span style=display:flex><span>                           <span style=color:#fab387>50</span>
+</span></span><span style=display:flex><span>                           <span style=color:#f5e0dc>moves</span>)]
+</span></span><span style=display:flex><span>    (<span style=color:#89b4fa>-&gt;&gt;</span> (<span style=color:#89b4fa>mapv</span> <span style=color:#f5e0dc>vector</span>
+</span></span><span style=display:flex><span>               <span style=color:#f5e0dc>moves</span>
+</span></span><span style=display:flex><span>               (<span style=color:#89b4fa>partition</span> <span style=color:#fab387>2</span> <span style=color:#fab387>1</span> <span style=color:#f5e0dc>poss</span>))
+</span></span><span style=display:flex><span>         (<span style=color:#89b4fa>mapv</span> (<span style=color:#cba6f7>fn </span>[[<span style=color:#f5e0dc>move</span> [<span style=color:#f5e0dc>start</span> <span style=color:#f5e0dc>end</span>]]]
+</span></span><span style=display:flex><span>                 (<span style=color:#cba6f7>let </span>[<span style=color:#f5e0dc>abs-move</span> (<span style=color:#89dceb>+ </span><span style=color:#f5e0dc>start</span> <span style=color:#f5e0dc>move</span>)
+</span></span><span style=display:flex><span>                       <span style=color:#f5e0dc>context</span> [<span style=color:#a6e3a1>:start</span> <span style=color:#f5e0dc>start</span>
+</span></span><span style=display:flex><span>                                <span style=color:#a6e3a1>:move</span> <span style=color:#f5e0dc>move</span>
+</span></span><span style=display:flex><span>                                <span style=color:#a6e3a1>:end</span> <span style=color:#f5e0dc>end</span>
+</span></span><span style=display:flex><span>                                <span style=color:#a6e3a1>:abs</span> <span style=color:#f5e0dc>abs-move</span>]]
+</span></span><span style=display:flex><span>                   (<span style=color:#89dceb>or </span>(<span style=color:#89dceb>and </span>(<span style=color:#89dceb>zero? </span><span style=color:#f5e0dc>end</span>)
+</span></span><span style=display:flex><span>                            <span style=color:#fab387>1</span>
+</span></span><span style=display:flex><span>                            <span style=color:#89dceb;font-weight:700>#</span><span style=color:#f5e0dc>_</span><span style=color:#a6e3a1>:zero</span>)
+</span></span><span style=display:flex><span>                       (<span style=color:#89dceb>and </span>(<span style=color:#89dceb>&lt; </span><span style=color:#f5e0dc>start</span> (<span style=color:#89b4fa>abs</span> <span style=color:#f5e0dc>move</span>))
+</span></span><span style=display:flex><span>                            (<span style=color:#89dceb>not </span>(<span style=color:#89dceb>zero? </span><span style=color:#f5e0dc>start</span>))
+</span></span><span style=display:flex><span>                            <span style=color:#89dceb;font-weight:700>#</span><span style=color:#f5e0dc>_</span>[<span style=color:#a6e3a1>:move-left-over-zero</span> <span style=color:#f5e0dc>context</span>
+</span></span><span style=display:flex><span>                               (<span style=color:#cba6f7>let </span>[<span style=color:#f5e0dc>laps</span> (<span style=color:#89dceb>quot </span><span style=color:#f5e0dc>abs-move</span> <span style=color:#fab387>100</span>)]
+</span></span><span style=display:flex><span>                                 (<span style=color:#cba6f7>if </span>(<span style=color:#89dceb>zero? </span><span style=color:#f5e0dc>laps</span>)
+</span></span><span style=display:flex><span>                                   <span style=color:#fab387>1</span>
+</span></span><span style=display:flex><span>                                   <span style=color:#f5e0dc>laps</span>))]
+</span></span><span style=display:flex><span>                            (<span style=color:#cba6f7>let </span>[<span style=color:#f5e0dc>laps</span> (<span style=color:#89dceb>quot </span><span style=color:#f5e0dc>abs-move</span> <span style=color:#fab387>100</span>)]
+</span></span><span style=display:flex><span>                              (<span style=color:#cba6f7>if </span>(<span style=color:#89dceb>zero? </span><span style=color:#f5e0dc>laps</span>)
+</span></span><span style=display:flex><span>                                <span style=color:#fab387>1</span>
+</span></span><span style=display:flex><span>                                <span style=color:#f5e0dc>laps</span>))
+</span></span><span style=display:flex><span>                            <span style=color:#89dceb;font-weight:700>#</span><span style=color:#f5e0dc>_</span>(<span style=color:#89dceb>or </span>(<span style=color:#89dceb>quot </span><span style=color:#f5e0dc>abs-move</span> <span style=color:#fab387>100</span>)
+</span></span><span style=display:flex><span>                                  <span style=color:#fab387>1</span>))
+</span></span><span style=display:flex><span>                       (<span style=color:#89dceb>and </span>(<span style=color:#89dceb>&lt; </span><span style=color:#f5e0dc>end</span> <span style=color:#f5e0dc>start</span>)
+</span></span><span style=display:flex><span>                            (<span style=color:#89dceb>pos? </span><span style=color:#f5e0dc>move</span>)
+</span></span><span style=display:flex><span>                            <span style=color:#89dceb;font-weight:700>#</span><span style=color:#f5e0dc>_</span>[<span style=color:#a6e3a1>:move-right-over-zero</span> <span style=color:#f5e0dc>context</span>
+</span></span><span style=display:flex><span>                               (<span style=color:#cba6f7>let </span>[<span style=color:#f5e0dc>laps</span> (<span style=color:#89dceb>quot </span><span style=color:#f5e0dc>abs-move</span> <span style=color:#fab387>100</span>)]
+</span></span><span style=display:flex><span>                                 (<span style=color:#cba6f7>if </span>(<span style=color:#89dceb>zero? </span><span style=color:#f5e0dc>laps</span>)
+</span></span><span style=display:flex><span>                                   <span style=color:#fab387>1</span>
+</span></span><span style=display:flex><span>                                   <span style=color:#f5e0dc>laps</span>))
+</span></span><span style=display:flex><span>                               <span style=color:#89dceb;font-weight:700>#</span><span style=color:#f5e0dc>_</span>(<span style=color:#89dceb>or </span>(<span style=color:#89dceb>quot </span><span style=color:#f5e0dc>abs-move</span> <span style=color:#fab387>100</span>)
+</span></span><span style=display:flex><span>                                     <span style=color:#fab387>1</span>)]
+</span></span><span style=display:flex><span>                            (<span style=color:#cba6f7>let </span>[<span style=color:#f5e0dc>laps</span> (<span style=color:#89dceb>quot </span><span style=color:#f5e0dc>abs-move</span> <span style=color:#fab387>100</span>)]
+</span></span><span style=display:flex><span>                              (<span style=color:#cba6f7>if </span>(<span style=color:#89dceb>zero? </span><span style=color:#f5e0dc>laps</span>)
+</span></span><span style=display:flex><span>                                <span style=color:#fab387>1</span>
+</span></span><span style=display:flex><span>                                <span style=color:#f5e0dc>laps</span>))
+</span></span><span style=display:flex><span>                            <span style=color:#89dceb;font-weight:700>#</span><span style=color:#f5e0dc>_</span>(<span style=color:#89dceb>or </span>(<span style=color:#89dceb>quot </span><span style=color:#f5e0dc>abs-move</span> <span style=color:#fab387>100</span>)
+</span></span><span style=display:flex><span>                                  <span style=color:#fab387>1</span>))
+</span></span><span style=display:flex><span>                       (<span style=color:#89dceb>and </span>(<span style=color:#89dceb>neg? </span><span style=color:#f5e0dc>abs-move</span>)
+</span></span><span style=display:flex><span>                            (<span style=color:#89dceb>not </span>(<span style=color:#89dceb>neg? </span><span style=color:#f5e0dc>start</span>))
+</span></span><span style=display:flex><span>                            (<span style=color:#89dceb>not </span>(<span style=color:#89dceb>zero? </span><span style=color:#f5e0dc>start</span>))
+</span></span><span style=display:flex><span>                            <span style=color:#89dceb;font-weight:700>#</span><span style=color:#f5e0dc>_</span>[<span style=color:#a6e3a1>:neg-abs-move</span> <span style=color:#f5e0dc>context</span>]
+</span></span><span style=display:flex><span>                            (<span style=color:#cba6f7>let </span>[<span style=color:#f5e0dc>laps</span> (<span style=color:#89dceb>quot </span><span style=color:#f5e0dc>abs-move</span> <span style=color:#fab387>100</span>)]
+</span></span><span style=display:flex><span>                              (<span style=color:#cba6f7>if </span>(<span style=color:#89dceb>zero? </span><span style=color:#f5e0dc>laps</span>)
+</span></span><span style=display:flex><span>                                <span style=color:#fab387>1</span>
+</span></span><span style=display:flex><span>                                <span style=color:#f5e0dc>laps</span>))
+</span></span><span style=display:flex><span>                            <span style=color:#89dceb;font-weight:700>#</span><span style=color:#f5e0dc>_</span>(<span style=color:#89dceb>or </span>(<span style=color:#89dceb>quot </span><span style=color:#f5e0dc>abs-move</span> <span style=color:#fab387>100</span>)
+</span></span><span style=display:flex><span>                                  <span style=color:#fab387>1</span>))
+</span></span><span style=display:flex><span>                       <span style=color:#fab387>0</span>))))
+</span></span><span style=display:flex><span>         (<span style=color:#89dceb>reduce </span>(<span style=color:#cba6f7>fn </span>[<span style=color:#f5e0dc>a</span> <span style=color:#f5e0dc>b</span>]
+</span></span><span style=display:flex><span>                   (<span style=color:#89dceb>+ </span>(<span style=color:#89b4fa>abs</span> <span style=color:#f5e0dc>a</span>)
+</span></span><span style=display:flex><span>                      (<span style=color:#89b4fa>abs</span> <span style=color:#f5e0dc>b</span>))))
+</span></span><span style=display:flex><span>         <span style=color:#89dceb;font-weight:700>#</span><span style=color:#f5e0dc>_</span>(<span style=color:#89dceb>filter </span><span style=color:#f5e0dc>some?</span>)
+</span></span><span style=display:flex><span>         <span style=color:#89dceb;font-weight:700>#</span><span style=color:#f5e0dc>_count</span>))
+</span></span><span style=display:flex><span>  <span style=color:#6c7086;font-style:italic>;; 2606 too low</span>
+</span></span><span style=display:flex><span>  <span style=color:#6c7086;font-style:italic>;; 4336 too low</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>  <span style=color:#75715e>;;</span>
+</span></span><span style=display:flex><span>  <span style=color:#6c7086;font-style:italic>;;</span>
 </span></span><span style=display:flex><span>  )
 </span></span></code></pre></div></article><div class=button><a href=mailto:fuzzy.sand8027@fastmail.com target=_blank class=button-content><p class=button-text>Reply via email</p></a></div><div><p>Tags</p><p><a href=/tags/advent-of-code/>#advent-of-code
 </a>&nbsp;

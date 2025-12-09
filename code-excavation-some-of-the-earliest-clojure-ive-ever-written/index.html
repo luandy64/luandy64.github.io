@@ -17,20 +17,20 @@ second page of the notebook. I started my first day of work in my professional
 career on 2018-09-24. So this really is some of the earliest clojure I&rsquo;ve ever
 written.</p><blockquote><p>Clojure Practice</p><p>Given a list of lists, where the first element in sublists is people getting
 on the bus, second is getting off, return the number left on the bus at the
-end of the list.</p><p><code>[[a,b] [c,d] [e,f] ...]</code></p><p>Base Case: If bus stop list is empty, return <code>numOnBus</code></p><p>Otherwise:</p><ul><li>Call function with <code>numOnBus + first - second</code>, rest of bus stops</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#66d9ef>defn </span>number
-</span></span><span style=display:flex><span>  ([bus-stops] (<span style=color:#a6e22e>number</span> bus-stops <span style=color:#ae81ff>0</span>))
-</span></span><span style=display:flex><span>  ([bus-stops total]
-</span></span><span style=display:flex><span>   (<span style=color:#66d9ef>if </span>(<span style=color:#a6e22e>empty?</span> bus-stops)
-</span></span><span style=display:flex><span>     total
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>number</span> (rest bus-stops) (<span style=color:#a6e22e>doThing</span>)))))
+end of the list.</p><p><code>[[a,b] [c,d] [e,f] ...]</code></p><p>Base Case: If bus stop list is empty, return <code>numOnBus</code></p><p>Otherwise:</p><ul><li>Call function with <code>numOnBus + first - second</code>, rest of bus stops</li></ul><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#f38ba8>defn </span><span style=color:#f5e0dc>number</span>
+</span></span><span style=display:flex><span>  ([<span style=color:#f5e0dc>bus-stops</span>] (<span style=color:#89b4fa>number</span> <span style=color:#f5e0dc>bus-stops</span> <span style=color:#fab387>0</span>))
+</span></span><span style=display:flex><span>  ([<span style=color:#f5e0dc>bus-stops</span> <span style=color:#f5e0dc>total</span>]
+</span></span><span style=display:flex><span>   (<span style=color:#cba6f7>if </span>(<span style=color:#89b4fa>empty?</span> <span style=color:#f5e0dc>bus-stops</span>)
+</span></span><span style=display:flex><span>     <span style=color:#f5e0dc>total</span>
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>number</span> (<span style=color:#89dceb>rest </span><span style=color:#f5e0dc>bus-stops</span>) (<span style=color:#89b4fa>doThing</span>)))))
 </span></span></code></pre></div></blockquote><p>And I didn&rsquo;t even finish writing the <code>doThing</code> function!</p><p>It&rsquo;s funny to look back on this now and realize that <code>(doThing)</code> would have
 never done anything helpful for me back then. It takes no arguments and is too
 pure. But it&rsquo;s <strong><em>even funnier</em></strong> to know now that this <strong><em>would have worked</em></strong>
-because <code>doThing</code> could be a very specific macro in this case.</p><p>Here&rsquo;s the piece of missing code</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#66d9ef>defmacro </span>doThing []
-</span></span><span style=display:flex><span>  <span style=color:#f92672>&#39;</span>(<span style=color:#66d9ef>let </span>[stop# (first bus-stops)
-</span></span><span style=display:flex><span>         on#   (first stop#)
-</span></span><span style=display:flex><span>         off#  (second stop#)]
-</span></span><span style=display:flex><span>     (- (+ total on#) off#)))
+because <code>doThing</code> could be a very specific macro in this case.</p><p>Here&rsquo;s the piece of missing code</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#f38ba8>defmacro </span><span style=color:#f5e0dc>doThing</span> []
+</span></span><span style=display:flex><span>  <span style=color:#89dceb;font-weight:700>&#39;</span>(<span style=color:#cba6f7>let </span>[<span style=color:#f5e0dc>stop#</span> (<span style=color:#89dceb>first </span><span style=color:#f5e0dc>bus-stops</span>)
+</span></span><span style=display:flex><span>         <span style=color:#f5e0dc>on#</span>   (<span style=color:#89dceb>first </span><span style=color:#f5e0dc>stop#</span>)
+</span></span><span style=display:flex><span>         <span style=color:#f5e0dc>off#</span>  (<span style=color:#89dceb>second </span><span style=color:#f5e0dc>stop#</span>)]
+</span></span><span style=display:flex><span>     (<span style=color:#89dceb>- </span>(<span style=color:#89dceb>+ </span><span style=color:#f5e0dc>total</span> <span style=color:#f5e0dc>on#</span>) <span style=color:#f5e0dc>off#</span>)))
 </span></span></code></pre></div><p>Set aside the fact that this is not how anyone would do this when reading over
 this problem for the first time. If you did do it this way, please reach out, I
 would love to pick your brain. But just take this as the academic exercise I

@@ -8,24 +8,24 @@ time."><meta name=keywords content></head><body><header><div id=top-bar><h1><a h
 <time datetime=2025-07-01T21:41:02-04:00>2025-07-01T21:41:02-04:00</time></p></div></div><article class=post><p>I&rsquo;ve been reading &ldquo;Eloquent JavaScript&rdquo; by Marijn Haverbeke lately and today I
 rediscovered the idea of a higher-order function. I first encountered these in
 the freeCodeCamp curriculum, most likely, but I only glanced over them at the
-time.</p><p>Reading about it today though, everything clicked.</p><p>In JavaScript, you can declare a function in three ways.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>func1</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>arg1</span>){
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;func1 called with&#34;</span>, <span style=color:#a6e22e>arg1</span>);
+time.</p><p>Reading about it today though, everything clicked.</p><p>In JavaScript, you can declare a function in three ways.</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>let</span> func1 <span style=color:#89dceb;font-weight:700>=</span> <span style=color:#f38ba8>function</span>(arg1){
+</span></span><span style=display:flex><span>  console.log(<span style=color:#a6e3a1>&#34;func1 called with&#34;</span>, arg1);
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>func2</span>(<span style=color:#a6e22e>arg1</span>){
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;func2 called with&#34;</span>, <span style=color:#a6e22e>arg1</span>);
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> func2(arg1){
+</span></span><span style=display:flex><span>  console.log(<span style=color:#a6e3a1>&#34;func2 called with&#34;</span>, arg1);
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>func3</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>arg1</span> =&gt; <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;func3 called with&#34;</span>, <span style=color:#a6e22e>arg1</span>);
+</span></span><span style=display:flex><span><span style=color:#cba6f7>const</span> func3 <span style=color:#89dceb;font-weight:700>=</span> arg1 =&gt; console.log(<span style=color:#a6e3a1>&#34;func3 called with&#34;</span>, arg1);
 </span></span></code></pre></div><p>The cool thing though is that through a mash up of these methods, you can define
 a function that creates other functions. An example makes this easier to
-understand:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>plusNum</span>(<span style=color:#a6e22e>num</span>){
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>ans</span> =&gt; <span style=color:#a6e22e>ans</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>num</span>;
+understand:</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#f38ba8>function</span> plusNum(num){
+</span></span><span style=display:flex><span>  <span style=color:#cba6f7>return</span> ans =&gt; ans <span style=color:#89dceb;font-weight:700>+</span> num;
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>plusOne</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>plusNum</span>(<span style=color:#ae81ff>1</span>);
-</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>plusTwo</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>plusNum</span>(<span style=color:#ae81ff>2</span>);
+</span></span><span style=display:flex><span><span style=color:#f38ba8>let</span> plusOne <span style=color:#89dceb;font-weight:700>=</span> plusNum(<span style=color:#fab387>1</span>);
+</span></span><span style=display:flex><span><span style=color:#f38ba8>let</span> plusTwo <span style=color:#89dceb;font-weight:700>=</span> plusNum(<span style=color:#fab387>2</span>);
 </span></span></code></pre></div><h4 id=the-mashup><a href=#the-mashup>The Mashup</a></h4><p>Using the <code>func2</code> way of defining a function, we define a function <code>plusNum</code>.
 It&rsquo;s super straight forward, it just returns a function definition in the
 <code>func3</code> style, which you probably recogize as an arrow function.</p><p>Time for the crazy part: we want to define a new function, <code>plusOne</code>. The

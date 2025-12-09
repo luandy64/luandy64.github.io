@@ -19,7 +19,7 @@ is a non-issue and will just connect directly.</p><p>The problem is when I&rsquo
 its easier to just pack my work computer.</p><h2 id=the-solution><a href=#the-solution>the solution</a></h2><p>Anyway the solution is to use my travel router as my internet access point for the work laptop. This
 router runs OpenWRT and allows me to run tailscale on it. Obviously that satisfies the &ldquo;<code>B</code> can
 directly connect to <code>C</code>&rdquo; piece of the problem, and having the laptop connect to the router satisfies
-the &ldquo;<code>A</code> can directly connect to <code>B</code>&rdquo; piece.</p><p>Then to get home, I just run</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>ssh -J root@travel-router andy@home-machine
+the &ldquo;<code>A</code> can directly connect to <code>B</code>&rdquo; piece.</p><p>Then to get home, I just run</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>ssh -J root@travel-router andy@home-machine
 </span></span></code></pre></div><p>with the right SSH config entries. I&rsquo;ll leave that as an exercise for the reader to figure out, but
 email me if you really get stuck on it. It&rsquo;s not that complicated I promise.</p><p>I admit while this solution doesn&rsquo;t take much to work, it completely depends on having some extra
 hardware lying around. The router makes it easy in this case because it will already establish the

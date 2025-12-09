@@ -10,10 +10,10 @@ of things. Acutally, to get super specific I wanted to use two loops, one nested
 in the other to do some comparisons between elements in the set.</p><p>I don&rsquo;t understand using a loop over a function call though.</p><p>I also didn&rsquo;t get a ton of time to play with the problem, but I hope to work on
 it some more tomorrow night. Aside from the actual solution of the practice
 problem, the main distraction I had today was figuring out how to make loops in
-Clojure work.</p><p>I think it looks like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#66d9ef>loop </span>[some-var-name initial-val]
-</span></span><span style=display:flex><span>    (<span style=color:#66d9ef>if </span>some-break-cond
-</span></span><span style=display:flex><span>        (<span style=color:#a6e22e>doThing</span>)
-</span></span><span style=display:flex><span>     (<span style=color:#a6e22e>recur</span> modified-some-var-name)))
+Clojure work.</p><p>I think it looks like this:</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-clojure data-lang=clojure><span style=display:flex><span>(<span style=color:#cba6f7>loop </span>[<span style=color:#f5e0dc>some-var-name</span> <span style=color:#f5e0dc>initial-val</span>]
+</span></span><span style=display:flex><span>    (<span style=color:#cba6f7>if </span><span style=color:#f5e0dc>some-break-cond</span>
+</span></span><span style=display:flex><span>        (<span style=color:#89b4fa>doThing</span>)
+</span></span><span style=display:flex><span>     (<span style=color:#89b4fa>recur</span> <span style=color:#f5e0dc>modified-some-var-name</span>)))
 </span></span></code></pre></div><p>To my understanding, <code>recur</code> just &ldquo;calls&rdquo; the loop again, as if it were some
 anonymous function. Modifying the thing in the square brackets differentiates the
 current iteration from the previous one.</p><p>So this is where I am in my Clojure journey. I&rsquo;m excited for the &ldquo;ah-ha!&rdquo; moment

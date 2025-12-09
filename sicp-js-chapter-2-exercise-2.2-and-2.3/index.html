@@ -86,263 +86,263 @@ print_point( midpoint_segment( make_segment( origin, two_y ) ) );
 Adding to this code, here&rsquo;s what I wrote for Exercise 2.3'><meta name=keywords content></head><body><header><div id=top-bar><h1><a href=/ class=title>Andy's Cafe</a></h1><input id=search type=text placeholder=Search></div><nav><ul style=width:100%;justify-content:space-around><li><a href=/>Home</a></li><li><a href=/about>About</a></li><li><a href=/now>Now</a></li><li><a href=/cortado>Cortado</a></li><li><a href=/cappuccino>Cappuccino</a></li><li><a href=#>Latte</a></li><li><a href=/all>All</a></li></ul></nav><ul id=results class=hide-results></ul><script type=text/javascript src=https://code.jquery.com/jquery-2.1.3.min.js></script><script type=text/javascript src=/js/lunr.js></script><script type=text/javascript src=/js/search.js></script></header><main><div class=post-header><div class=post-icon-container><img src=/images/Cappuccino-ALU-Assets_hu_8f97e402dd565973.png></div><div class=post-header-text><h1><a href=/sicp-js-chapter-2-exercise-2.2-and-2.3/>SICP JS Chapter 2 Exercise 2.2 and 2.3</a></h1><p><strong>Page created </strong>:
 <time datetime=2024-07-13T15:25:32-04:00>2024-07-13T15:25:32-04:00</time><br><strong>Last updated </strong>:
 <time datetime=2025-07-01T21:41:02-04:00>2025-07-01T21:41:02-04:00</time></p></div></div><article class=post><p>Here&rsquo;s my solution to exercise 2.2 and 2.3.</p><p>I wrote them in this online editor, <a href=https://sourceacademy.org/playground>source academy</a>, because
-they provide the functions that the book considers primatives.</p><p>Exercise 2.2</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Point} start
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Point} end
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>make_segment</span> (<span style=color:#a6e22e>start</span>, <span style=color:#a6e22e>end</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>pair</span>(<span style=color:#a6e22e>start</span>, <span style=color:#a6e22e>end</span>);
+they provide the functions that the book considers primatives.</p><p>Exercise 2.2</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Point} start
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Point} end
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> make_segment (start, end) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> pair(start, end);
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {Point}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>start_segment</span> (<span style=color:#a6e22e>s</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>head</span>(<span style=color:#a6e22e>s</span>);
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {Point}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> start_segment (s) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> head(s);
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {Point}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>end_segment</span> (<span style=color:#a6e22e>s</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>tail</span>(<span style=color:#a6e22e>s</span>);
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {Point}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> end_segment (s) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> tail(s);
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {int} x
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {int} y
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>make_point</span> (<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>pair</span>(<span style=color:#a6e22e>x</span>, <span style=color:#a6e22e>y</span>);
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {int} x
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {int} y
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> make_point (x, y) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> pair(x, y);
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Point} s
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {int}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>x_point</span> (<span style=color:#a6e22e>s</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>head</span>(<span style=color:#a6e22e>s</span>);
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Point} s
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {int}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> x_point (s) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> head(s);
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Point} s
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {int}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>y_point</span> (<span style=color:#a6e22e>s</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>tail</span>(<span style=color:#a6e22e>s</span>);
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Point} s
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {int}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> y_point (s) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> tail(s);
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Point} s
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {int}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>midpoint_segment</span> (<span style=color:#a6e22e>s</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>start</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>start_segment</span>(<span style=color:#a6e22e>s</span>);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>end</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>end_segment</span>(<span style=color:#a6e22e>s</span>);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>x1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x_point</span>(<span style=color:#a6e22e>start</span>);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>y1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y_point</span>(<span style=color:#a6e22e>start</span>);
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Point} s
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {int}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> midpoint_segment (s) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> start <span style=color:#89dceb;font-weight:700>=</span> start_segment(s);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> end <span style=color:#89dceb;font-weight:700>=</span> end_segment(s);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> x1 <span style=color:#89dceb;font-weight:700>=</span> x_point(start);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> y1 <span style=color:#89dceb;font-weight:700>=</span> y_point(start);
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>x2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x_point</span>(<span style=color:#a6e22e>end</span>);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>y2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y_point</span>(<span style=color:#a6e22e>end</span>);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> x2 <span style=color:#89dceb;font-weight:700>=</span> x_point(end);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> y2 <span style=color:#89dceb;font-weight:700>=</span> y_point(end);
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>make_point</span>( (<span style=color:#a6e22e>x2</span><span style=color:#f92672>-</span><span style=color:#a6e22e>x1</span>)<span style=color:#f92672>/</span><span style=color:#ae81ff>2</span> ,
-</span></span><span style=display:flex><span>                       (<span style=color:#a6e22e>y2</span><span style=color:#f92672>-</span><span style=color:#a6e22e>y1</span>)<span style=color:#f92672>/</span><span style=color:#ae81ff>2</span> );
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> make_point( (x2<span style=color:#89dceb;font-weight:700>-</span>x1)<span style=color:#89dceb;font-weight:700>/</span><span style=color:#fab387>2</span> ,
+</span></span><span style=display:flex><span>                       (y2<span style=color:#89dceb;font-weight:700>-</span>y1)<span style=color:#89dceb;font-weight:700>/</span><span style=color:#fab387>2</span> );
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>print_point</span>(<span style=color:#a6e22e>p</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>display</span>(<span style=color:#e6db74>&#34;(&#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>stringify</span>(<span style=color:#a6e22e>x_point</span>(<span style=color:#a6e22e>p</span>)) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;, &#34;</span>
-</span></span><span style=display:flex><span>                       <span style=color:#f92672>+</span> <span style=color:#a6e22e>stringify</span>(<span style=color:#a6e22e>y_point</span>(<span style=color:#a6e22e>p</span>)) <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;)&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> print_point(p) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> display(<span style=color:#a6e3a1>&#34;(&#34;</span> <span style=color:#89dceb;font-weight:700>+</span> stringify(x_point(p)) <span style=color:#89dceb;font-weight:700>+</span> <span style=color:#a6e3a1>&#34;, &#34;</span>
+</span></span><span style=display:flex><span>                       <span style=color:#89dceb;font-weight:700>+</span> stringify(y_point(p)) <span style=color:#89dceb;font-weight:700>+</span> <span style=color:#a6e3a1>&#34;)&#34;</span>);
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>origin</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>make_point</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>);
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>unit_x</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>make_point</span>(<span style=color:#ae81ff>1</span>, <span style=color:#ae81ff>0</span>);
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>unit_y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>make_point</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>);
+</span></span><span style=display:flex><span><span style=color:#cba6f7>const</span> origin <span style=color:#89dceb;font-weight:700>=</span> make_point(<span style=color:#fab387>0</span>, <span style=color:#fab387>0</span>);
+</span></span><span style=display:flex><span><span style=color:#cba6f7>const</span> unit_x <span style=color:#89dceb;font-weight:700>=</span> make_point(<span style=color:#fab387>1</span>, <span style=color:#fab387>0</span>);
+</span></span><span style=display:flex><span><span style=color:#cba6f7>const</span> unit_y <span style=color:#89dceb;font-weight:700>=</span> make_point(<span style=color:#fab387>0</span>, <span style=color:#fab387>1</span>);
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>two_x</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>make_point</span>(<span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>0</span>);
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>two_y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>make_point</span>(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>2</span>);
+</span></span><span style=display:flex><span><span style=color:#cba6f7>const</span> two_x <span style=color:#89dceb;font-weight:700>=</span> make_point(<span style=color:#fab387>2</span>, <span style=color:#fab387>0</span>);
+</span></span><span style=display:flex><span><span style=color:#cba6f7>const</span> two_y <span style=color:#89dceb;font-weight:700>=</span> make_point(<span style=color:#fab387>0</span>, <span style=color:#fab387>2</span>);
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>print_point</span>( <span style=color:#a6e22e>midpoint_segment</span>( <span style=color:#a6e22e>make_segment</span>( <span style=color:#a6e22e>origin</span>, <span style=color:#a6e22e>two_x</span> ) ) );
-</span></span><span style=display:flex><span><span style=color:#75715e>// &#34;(1, 0)&#34;
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>print_point</span>( <span style=color:#a6e22e>midpoint_segment</span>( <span style=color:#a6e22e>make_segment</span>( <span style=color:#a6e22e>origin</span>, <span style=color:#a6e22e>two_y</span> ) ) );
-</span></span><span style=display:flex><span><span style=color:#75715e>// &#34;(0, 1)&#34;
-</span></span></span></code></pre></div><p>Adding to this code, here&rsquo;s what I wrote for Exercise 2.3</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Point} a
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Point} b
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Point} c
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Point} d
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>make_rectangle</span> (<span style=color:#a6e22e>a</span>, <span style=color:#a6e22e>b</span>, <span style=color:#a6e22e>c</span>, <span style=color:#a6e22e>d</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>pair</span>(<span style=color:#a6e22e>pair</span>(<span style=color:#a6e22e>make_segment</span>(<span style=color:#a6e22e>a</span>, <span style=color:#a6e22e>b</span>),
-</span></span><span style=display:flex><span>                     <span style=color:#a6e22e>make_segment</span>(<span style=color:#a6e22e>b</span>, <span style=color:#a6e22e>c</span>)),
-</span></span><span style=display:flex><span>                <span style=color:#a6e22e>pair</span>(<span style=color:#a6e22e>make_segment</span>(<span style=color:#a6e22e>c</span>, <span style=color:#a6e22e>d</span>),
-</span></span><span style=display:flex><span>                     <span style=color:#a6e22e>make_segment</span>(<span style=color:#a6e22e>d</span>, <span style=color:#a6e22e>a</span>))
+</span></span><span style=display:flex><span>print_point( midpoint_segment( make_segment( origin, two_x ) ) );
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>// &#34;(1, 0)&#34;
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic></span>print_point( midpoint_segment( make_segment( origin, two_y ) ) );
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>// &#34;(0, 1)&#34;
+</span></span></span></code></pre></div><p>Adding to this code, here&rsquo;s what I wrote for Exercise 2.3</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Point} a
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Point} b
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Point} c
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Point} d
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> make_rectangle (a, b, c, d) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> pair(pair(make_segment(a, b),
+</span></span><span style=display:flex><span>                     make_segment(b, c)),
+</span></span><span style=display:flex><span>                pair(make_segment(c, d),
+</span></span><span style=display:flex><span>                     make_segment(d, a))
 </span></span><span style=display:flex><span>    );
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Rectangle} r
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {Segment}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>left_rectangle</span> (<span style=color:#a6e22e>r</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>head</span>(<span style=color:#a6e22e>head</span>(<span style=color:#a6e22e>r</span>));
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Rectangle} r
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {Segment}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> left_rectangle (r) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> head(head(r));
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Rectangle} r
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {Segment}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>top_rectangle</span> (<span style=color:#a6e22e>r</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>head</span>(<span style=color:#a6e22e>tail</span>(<span style=color:#a6e22e>r</span>));
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Rectangle} r
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {Segment}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> top_rectangle (r) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> head(tail(r));
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Rectangle} r
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {Segment}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>right_rectangle</span> (<span style=color:#a6e22e>r</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>tail</span>(<span style=color:#a6e22e>head</span>(<span style=color:#a6e22e>r</span>));
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Rectangle} r
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {Segment}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> right_rectangle (r) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> tail(head(r));
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Rectangle} r
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {Segment}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>bottom_rectangle</span> (<span style=color:#a6e22e>r</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>tail</span>(<span style=color:#a6e22e>tail</span>(<span style=color:#a6e22e>r</span>));
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Rectangle} r
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {Segment}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> bottom_rectangle (r) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> tail(tail(r));
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Segment} s
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {int}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>length_segment</span> (<span style=color:#a6e22e>s</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>start</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>start_segment</span>(<span style=color:#a6e22e>s</span>);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>end</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>end_segment</span>(<span style=color:#a6e22e>s</span>);
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Segment} s
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {int}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> length_segment (s) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> start <span style=color:#89dceb;font-weight:700>=</span> start_segment(s);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> end <span style=color:#89dceb;font-weight:700>=</span> end_segment(s);
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>x1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x_point</span>(<span style=color:#a6e22e>start</span>);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>y1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y_point</span>(<span style=color:#a6e22e>start</span>);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> x1 <span style=color:#89dceb;font-weight:700>=</span> x_point(start);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> y1 <span style=color:#89dceb;font-weight:700>=</span> y_point(start);
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>x2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x_point</span>(<span style=color:#a6e22e>end</span>);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>y2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y_point</span>(<span style=color:#a6e22e>end</span>);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> x2 <span style=color:#89dceb;font-weight:700>=</span> x_point(end);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> y2 <span style=color:#89dceb;font-weight:700>=</span> y_point(end);
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>delta_x</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>math_pow</span>(<span style=color:#a6e22e>x2</span><span style=color:#f92672>-</span><span style=color:#a6e22e>x1</span>, <span style=color:#ae81ff>2</span>);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>delta_y</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>math_pow</span>(<span style=color:#a6e22e>y2</span><span style=color:#f92672>-</span><span style=color:#a6e22e>y1</span>, <span style=color:#ae81ff>2</span>);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> delta_x <span style=color:#89dceb;font-weight:700>=</span> math_pow(x2<span style=color:#89dceb;font-weight:700>-</span>x1, <span style=color:#fab387>2</span>);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> delta_y <span style=color:#89dceb;font-weight:700>=</span> math_pow(y2<span style=color:#89dceb;font-weight:700>-</span>y1, <span style=color:#fab387>2</span>);
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>math_sqrt</span>(<span style=color:#a6e22e>delta_x</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>delta_y</span>);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> math_sqrt(delta_x <span style=color:#89dceb;font-weight:700>+</span> delta_y);
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Rectangle} r
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {int}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>perimeter_rectangle</span> (<span style=color:#a6e22e>r</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>left_length</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>length_segment</span>(<span style=color:#a6e22e>left_rectangle</span>(<span style=color:#a6e22e>r</span>));
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>top_length</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>length_segment</span>(<span style=color:#a6e22e>top_rectangle</span>(<span style=color:#a6e22e>r</span>));
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>right_length</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>length_segment</span>(<span style=color:#a6e22e>right_rectangle</span>(<span style=color:#a6e22e>r</span>));
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>bottom_length</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>length_segment</span>(<span style=color:#a6e22e>bottom_rectangle</span>(<span style=color:#a6e22e>r</span>));
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Rectangle} r
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {int}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> perimeter_rectangle (r) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> left_length <span style=color:#89dceb;font-weight:700>=</span> length_segment(left_rectangle(r));
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> top_length <span style=color:#89dceb;font-weight:700>=</span> length_segment(top_rectangle(r));
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> right_length <span style=color:#89dceb;font-weight:700>=</span> length_segment(right_rectangle(r));
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> bottom_length <span style=color:#89dceb;font-weight:700>=</span> length_segment(bottom_rectangle(r));
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>left_length</span>
-</span></span><span style=display:flex><span>         <span style=color:#f92672>+</span> <span style=color:#a6e22e>top_length</span>
-</span></span><span style=display:flex><span>         <span style=color:#f92672>+</span> <span style=color:#a6e22e>right_length</span>
-</span></span><span style=display:flex><span>         <span style=color:#f92672>+</span> <span style=color:#a6e22e>bottom_length</span>;
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> left_length
+</span></span><span style=display:flex><span>         <span style=color:#89dceb;font-weight:700>+</span> top_length
+</span></span><span style=display:flex><span>         <span style=color:#89dceb;font-weight:700>+</span> right_length
+</span></span><span style=display:flex><span>         <span style=color:#89dceb;font-weight:700>+</span> bottom_length;
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Rectangle} r
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {int}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>area_rectangle</span> (<span style=color:#a6e22e>r</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>length_segment</span>( <span style=color:#a6e22e>left_rectangle</span>(<span style=color:#a6e22e>r</span>)   )
-</span></span><span style=display:flex><span>         <span style=color:#f92672>*</span> <span style=color:#a6e22e>length_segment</span>( <span style=color:#a6e22e>bottom_rectangle</span>(<span style=color:#a6e22e>r</span>) );
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Rectangle} r
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {int}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> area_rectangle (r) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> length_segment( left_rectangle(r)   )
+</span></span><span style=display:flex><span>         <span style=color:#89dceb;font-weight:700>*</span> length_segment( bottom_rectangle(r) );
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>two_rect</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>make_rectangle</span>(<span style=color:#a6e22e>make_point</span>(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>),
-</span></span><span style=display:flex><span>                                <span style=color:#a6e22e>make_point</span>(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>2</span>),
-</span></span><span style=display:flex><span>                                <span style=color:#a6e22e>make_point</span>(<span style=color:#ae81ff>2</span>,<span style=color:#ae81ff>2</span>),
-</span></span><span style=display:flex><span>                                <span style=color:#a6e22e>make_point</span>(<span style=color:#ae81ff>2</span>,<span style=color:#ae81ff>0</span>));
-</span></span><span style=display:flex><span><span style=color:#a6e22e>display</span>( <span style=color:#a6e22e>two_rect</span> );
-</span></span><span style=display:flex><span><span style=color:#a6e22e>display</span>( <span style=color:#a6e22e>perimeter_rectangle</span>(<span style=color:#a6e22e>two_rect</span>), <span style=color:#e6db74>&#34;perimeter:&#34;</span>);
-</span></span><span style=display:flex><span><span style=color:#a6e22e>display</span>( <span style=color:#a6e22e>area_rectangle</span>(<span style=color:#a6e22e>two_rect</span>), <span style=color:#e6db74>&#34;area:&#34;</span> );
-</span></span></code></pre></div><p>To finish out the second half of exercise 2.3, I wrote another implementation for the rectangle functions</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Point} a
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Point} b
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Point} c
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>make_angle</span> (<span style=color:#a6e22e>a</span>, <span style=color:#a6e22e>b</span>, <span style=color:#a6e22e>c</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>pair</span>(<span style=color:#a6e22e>a</span>,
-</span></span><span style=display:flex><span>                <span style=color:#a6e22e>pair</span>(<span style=color:#a6e22e>b</span>,
-</span></span><span style=display:flex><span>                     <span style=color:#a6e22e>pair</span>(<span style=color:#a6e22e>c</span>,
-</span></span><span style=display:flex><span>                          <span style=color:#66d9ef>null</span>)));
+</span></span><span style=display:flex><span><span style=color:#cba6f7>const</span> two_rect <span style=color:#89dceb;font-weight:700>=</span> make_rectangle(make_point(<span style=color:#fab387>0</span>,<span style=color:#fab387>0</span>),
+</span></span><span style=display:flex><span>                                make_point(<span style=color:#fab387>0</span>,<span style=color:#fab387>2</span>),
+</span></span><span style=display:flex><span>                                make_point(<span style=color:#fab387>2</span>,<span style=color:#fab387>2</span>),
+</span></span><span style=display:flex><span>                                make_point(<span style=color:#fab387>2</span>,<span style=color:#fab387>0</span>));
+</span></span><span style=display:flex><span>display( two_rect );
+</span></span><span style=display:flex><span>display( perimeter_rectangle(two_rect), <span style=color:#a6e3a1>&#34;perimeter:&#34;</span>);
+</span></span><span style=display:flex><span>display( area_rectangle(two_rect), <span style=color:#a6e3a1>&#34;area:&#34;</span> );
+</span></span></code></pre></div><p>To finish out the second half of exercise 2.3, I wrote another implementation for the rectangle functions</p><div class=highlight><pre tabindex=0 style=color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Point} a
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Point} b
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Point} c
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> make_angle (a, b, c) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> pair(a,
+</span></span><span style=display:flex><span>                pair(b,
+</span></span><span style=display:flex><span>                     pair(c,
+</span></span><span style=display:flex><span>                          <span style=color:#fab387>null</span>)));
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Angle} abc
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {Point}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>a_angle</span>(<span style=color:#a6e22e>abc</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>head</span>(<span style=color:#a6e22e>abc</span>);
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Angle} abc
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {Point}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> a_angle(abc) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> head(abc);
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Angle} abc
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {Point}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>b_angle</span>(<span style=color:#a6e22e>abc</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>head</span>(<span style=color:#a6e22e>tail</span>(<span style=color:#a6e22e>abc</span>));
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Angle} abc
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {Point}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> b_angle(abc) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> head(tail(abc));
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Angle} abc
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {Point}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>c_angle</span>(<span style=color:#a6e22e>abc</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>head</span>(<span style=color:#a6e22e>tail</span>(<span style=color:#a6e22e>tail</span>(<span style=color:#a6e22e>abc</span>)));
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Angle} abc
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {Point}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> c_angle(abc) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> head(tail(tail(abc)));
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Angle} abc
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {Segment}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>left_angle</span>(<span style=color:#a6e22e>abc</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>make_segment</span>(<span style=color:#a6e22e>a_angle</span>(<span style=color:#a6e22e>abc</span>),
-</span></span><span style=display:flex><span>                        <span style=color:#a6e22e>b_angle</span>(<span style=color:#a6e22e>abc</span>));
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Angle} abc
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {Segment}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> left_angle(abc) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> make_segment(a_angle(abc),
+</span></span><span style=display:flex><span>                        b_angle(abc));
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Angle} abc
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @returns {Segment}
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>right_angle</span>(<span style=color:#a6e22e>abc</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>make_segment</span>(<span style=color:#a6e22e>b_angle</span>(<span style=color:#a6e22e>abc</span>),
-</span></span><span style=display:flex><span>                        <span style=color:#a6e22e>c_angle</span>(<span style=color:#a6e22e>abc</span>));
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Angle} abc
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @returns {Segment}
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> right_angle(abc) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> make_segment(b_angle(abc),
+</span></span><span style=display:flex><span>                        c_angle(abc));
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>/**
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Point} p
-</span></span></span><span style=display:flex><span><span style=color:#75715e> * @param {Point} q
-</span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>make_rectangle</span> (<span style=color:#a6e22e>p</span>, <span style=color:#a6e22e>q</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>x1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x_point</span>(<span style=color:#a6e22e>p</span>);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>y1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y_point</span>(<span style=color:#a6e22e>p</span>);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>x2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>x_point</span>(<span style=color:#a6e22e>q</span>);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>y2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>y_point</span>(<span style=color:#a6e22e>q</span>);
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>/**
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Point} p
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> * @param {Point} q
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic> */</span>
+</span></span><span style=display:flex><span><span style=color:#f38ba8>function</span> make_rectangle (p, q) {
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> x1 <span style=color:#89dceb;font-weight:700>=</span> x_point(p);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> y1 <span style=color:#89dceb;font-weight:700>=</span> y_point(p);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> x2 <span style=color:#89dceb;font-weight:700>=</span> x_point(q);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> y2 <span style=color:#89dceb;font-weight:700>=</span> y_point(q);
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>corner_2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>make_point</span>(<span style=color:#a6e22e>x1</span>, <span style=color:#a6e22e>y2</span>);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>corner_4</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>make_point</span>(<span style=color:#a6e22e>x2</span>, <span style=color:#a6e22e>y1</span>);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> corner_2 <span style=color:#89dceb;font-weight:700>=</span> make_point(x1, y2);
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>const</span> corner_4 <span style=color:#89dceb;font-weight:700>=</span> make_point(x2, y1);
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>pair</span>(<span style=color:#a6e22e>make_angle</span>(<span style=color:#a6e22e>p</span>, <span style=color:#a6e22e>corner_2</span>, <span style=color:#a6e22e>q</span>),
-</span></span><span style=display:flex><span>                <span style=color:#a6e22e>make_angle</span>(<span style=color:#a6e22e>q</span>, <span style=color:#a6e22e>corner_4</span>, <span style=color:#a6e22e>p</span>));
+</span></span><span style=display:flex><span>    <span style=color:#cba6f7>return</span> pair(make_angle(p, corner_2, q),
+</span></span><span style=display:flex><span>                make_angle(q, corner_4, p));
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>two_rect_again</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>make_rectangle_2</span>(<span style=color:#a6e22e>make_point</span>(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>),
-</span></span><span style=display:flex><span>                                        <span style=color:#a6e22e>make_point</span>(<span style=color:#ae81ff>2</span>,<span style=color:#ae81ff>2</span>));
-</span></span><span style=display:flex><span><span style=color:#a6e22e>display</span>( <span style=color:#a6e22e>two_rect_again</span> );
-</span></span><span style=display:flex><span><span style=color:#75715e>// [[[0, 0], [[0, 2], [[2, 2], null]]], [[2, 2], [[2, 0], [[0, 0], null]]]]
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>display</span>( <span style=color:#a6e22e>perimeter_rectangle</span>(<span style=color:#a6e22e>two_rect_again</span>), <span style=color:#e6db74>&#34;perimeter 2:&#34;</span>);
-</span></span><span style=display:flex><span><span style=color:#75715e>// perimeter 2: 8
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>display</span>( <span style=color:#a6e22e>area_rectangle</span>(<span style=color:#a6e22e>two_rect_again</span>), <span style=color:#e6db74>&#34;area 2:&#34;</span> );
-</span></span><span style=display:flex><span><span style=color:#75715e>// area 2: 4
+</span></span><span style=display:flex><span><span style=color:#cba6f7>const</span> two_rect_again <span style=color:#89dceb;font-weight:700>=</span> make_rectangle_2(make_point(<span style=color:#fab387>0</span>,<span style=color:#fab387>0</span>),
+</span></span><span style=display:flex><span>                                        make_point(<span style=color:#fab387>2</span>,<span style=color:#fab387>2</span>));
+</span></span><span style=display:flex><span>display( two_rect_again );
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>// [[[0, 0], [[0, 2], [[2, 2], null]]], [[2, 2], [[2, 0], [[0, 0], null]]]]
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic></span>display( perimeter_rectangle(two_rect_again), <span style=color:#a6e3a1>&#34;perimeter 2:&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>// perimeter 2: 8
+</span></span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic></span>display( area_rectangle(two_rect_again), <span style=color:#a6e3a1>&#34;area 2:&#34;</span> );
+</span></span><span style=display:flex><span><span style=color:#6c7086;font-style:italic>// area 2: 4
 </span></span></span></code></pre></div><p>Good luck if you try to run this. The playground was picky that I had already defined some functions
 and couldn&rsquo;t shadow the name.</p><h2 id=thoughts><a href=#thoughts>Thoughts</a></h2><p>It&rsquo;s intersting building in these layers of functions so that higher layers are independent of the
 implementation of the lower layers.</p><p>My first approach (a pair of pairs of segments) is pretty naive and coupled too tightly to the idea
