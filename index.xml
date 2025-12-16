@@ -3,7 +3,41 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Tue, 09 Dec 2025 11:46:42 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>AOC 2025 Day 2</title><link>https://blog.andylu.dev/aoc-2025-day-2/</link><pubDate>Sat, 06 Dec 2025 18:56:01 -0500</pubDate><guid>https://blog.andylu.dev/aoc-2025-day-2/</guid><description>&lt;p&gt;Going to live blog this as I do it. And for an added challenge: I&amp;rsquo;m doing it in elisp / common-lisp
+Tue, 16 Dec 2025 16:57:32 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Github PRs: a Visualization</title><link>https://blog.andylu.dev/github-prs-a-visualization/</link><pubDate>Tue, 16 Dec 2025 11:10:05 -0500</pubDate><guid>https://blog.andylu.dev/github-prs-a-visualization/</guid><description>&lt;p&gt;Pre-requisites:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://cli.github.com/"&gt;gh&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://jqlang.org/"&gt;jq&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://duckdb.org/"&gt;duckdb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&amp;gt; gh search &lt;span style="color:#89b4fa"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#89b4fa"&gt;&lt;/span&gt; prs &lt;span style="color:#89b4fa"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#89b4fa"&gt;&lt;/span&gt; --state&lt;span style="color:#89dceb;font-weight:bold"&gt;=&lt;/span&gt;open &lt;span style="color:#89b4fa"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#89b4fa"&gt;&lt;/span&gt; --author&lt;span style="color:#89dceb;font-weight:bold"&gt;=&lt;/span&gt;&lt;span style="color:#cba6f7"&gt;$(&lt;/span&gt;gh api user | jq -r &lt;span style="color:#a6e3a1"&gt;&amp;#39;.login&amp;#39;&lt;/span&gt;&lt;span style="color:#cba6f7"&gt;)&lt;/span&gt; &lt;span style="color:#89b4fa"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#89b4fa"&gt;&lt;/span&gt; --archived&lt;span style="color:#89dceb;font-weight:bold"&gt;=&lt;/span&gt;&lt;span style="color:#89dceb"&gt;false&lt;/span&gt; &lt;span style="color:#89b4fa"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#89b4fa"&gt;&lt;/span&gt; --limit &lt;span style="color:#fab387"&gt;100&lt;/span&gt; &lt;span style="color:#89b4fa"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#89b4fa"&gt;&lt;/span&gt; --json &lt;span style="color:#a6e3a1"&gt;&amp;#39;repository,title,url,state,updatedAt,createdAt&amp;#39;&lt;/span&gt; &lt;span style="color:#89b4fa"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#89b4fa"&gt;&lt;/span&gt; | jq &lt;span style="color:#a6e3a1"&gt;&amp;#39;.[]
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e3a1"&gt; | .name = .repository.nameWithOwner
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e3a1"&gt; | del( .repository )&amp;#39;&lt;/span&gt; &lt;span style="color:#89b4fa"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#89b4fa"&gt;&lt;/span&gt; | duckdb -table &lt;span style="color:#89b4fa"&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#89b4fa"&gt;&lt;/span&gt; -c &lt;span style="color:#a6e3a1"&gt;&amp;#39;SELECT title, url, updatedAt, createdAt
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e3a1"&gt; FROM read_json_auto(&amp;#34;/dev/stdin&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e3a1"&gt; ORDER BY updatedAt DESC;&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This gives you a nice table open PRs associated with your github account.&lt;/p&gt;
+&lt;figure&gt;&lt;img src="https://blog.andylu.dev/github-prs-a-visualization/gh-cli-extra.jpg"&gt;
+&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;gh search
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; prs
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --state&lt;span style="color:#89dceb;font-weight:bold"&gt;=&lt;/span&gt;open
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --author&lt;span style="color:#89dceb;font-weight:bold"&gt;=&lt;/span&gt;&lt;span style="color:#cba6f7"&gt;$(&lt;/span&gt;gh api user | jq -r &lt;span style="color:#a6e3a1"&gt;&amp;#39;.login&amp;#39;&lt;/span&gt;&lt;span style="color:#cba6f7"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --archived&lt;span style="color:#89dceb;font-weight:bold"&gt;=&lt;/span&gt;&lt;span style="color:#89dceb"&gt;false&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; --limit &lt;span style="color:#fab387"&gt;100&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;I wrote this because the built in subcommand to &lt;code&gt;gh&lt;/code&gt; didn&amp;rsquo;t have the URLs
+available. Which is fine for trimming down visual clutter, but it makes the tool
+pretty useless.&lt;/p&gt;</description></item><item><title>AOC 2025 Day 2</title><link>https://blog.andylu.dev/aoc-2025-day-2/</link><pubDate>Sat, 06 Dec 2025 18:56:01 -0500</pubDate><guid>https://blog.andylu.dev/aoc-2025-day-2/</guid><description>&lt;p&gt;Going to live blog this as I do it. And for an added challenge: I&amp;rsquo;m doing it in elisp / common-lisp
 instead of clojure.&lt;/p&gt;
 &lt;p&gt;So here&amp;rsquo;s the example input again&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-lisp" data-lang="lisp"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;(&lt;span style="color:#cba6f7"&gt;setq&lt;/span&gt; &lt;span style="color:#f5e0dc"&gt;example-input&lt;/span&gt; &lt;span style="color:#a6e3a1"&gt;&amp;#34;11-22,95-115,998-1012,1188511880-1188511890,222220-222224,1698522-1698528,446443-446449,38593856-38593862,565653-565659,824824821-824824827,2121212118-2121212124&amp;#34;&lt;/span&gt;)
@@ -154,7 +188,11 @@ setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#89dceb"&gt;cd&lt;/span&gt; build
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;../configure --with-pgtk --with-mailutils
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;sudo make -j4 install
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If this is your first time building emacs, run these&lt;/p&gt;</description></item><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-12-03"&gt;2025-12-03&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If this is your first time building emacs, run these&lt;/p&gt;</description></item><item><title>Changelog</title><link>https://blog.andylu.dev/changelog/</link><pubDate>Sat, 01 Feb 2025 11:21:47 -0500</pubDate><guid>https://blog.andylu.dev/changelog/</guid><description>&lt;h2 id="2025-12-16"&gt;2025-12-16&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Added styling to links in the blog so they stand out a bit more&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="2025-12-03"&gt;2025-12-03&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Updated the default syntax highlighting theme to match my editor
 &lt;ul&gt;

@@ -119,7 +119,7 @@
     {
         "uri": "/changelog",
         "title": "Changelog",
-        "content": "\n2025-12-03\nUpdated the default syntax highlighting theme to match my editor\n  monokai - catppuccin-mocha\n\n 2025-11-16\nAdded some heat maps\n\n2025-11-04\nUpdated my build script to skip drafts\nFipped two published drafts to not be marked drafts\n\n 2025-03-19\nAdded a 404 page\nFixed search\n  Something about the debug logging was prepending /content to the result URIs\n\n2025-03-14\nUpdated all pages to show a createdat time and updatedat time\nUpdated all pages to have tags render if they exist\nAdded a \"Recently Updated\" section on the front page\n\n 2025-02-13\nAdded search via lunr.js\nUpdated all of my content front matter to be TOML so I can index the pages\n  with hugo-lunr\n\n2025-02-01\nEnshired my old versions of this site in their own sub-paths\n  V1 of the site\n  V2 of the site\nFixed the \"last modified\" time of all of the pages\n",
+        "content": "\n2025-12-16\nAdded styling to links in the blog so they stand out a bit more\n\n 2025-12-03\nUpdated the default syntax highlighting theme to match my editor\n  monokai - catppuccin-mocha\n\n2025-11-16\nAdded some heat maps\n\n 2025-11-04\nUpdated my build script to skip drafts\nFipped two published drafts to not be marked drafts\n\n2025-03-19\nAdded a 404 page\nFixed search\n  Something about the debug logging was prepending /content to the result URIs\n\n 2025-03-14\nUpdated all pages to show a createdat time and updatedat time\nUpdated all pages to have tags render if they exist\nAdded a \"Recently Updated\" section on the front page\n\n2025-02-13\nAdded search via lunr.js\nUpdated all of my content front matter to be TOML so I can index the pages\n  with hugo-lunr\n\n 2025-02-01\nEnshired my old versions of this site in their own sub-paths\n  V1 of the site\n  V2 of the site\nFixed the \"last modified\" time of all of the pages\n",
         "tags": []
     },
     {
@@ -289,6 +289,12 @@
             "git",
             "golang"
         ]
+    },
+    {
+        "uri": "/github-prs-a-visualization/index",
+        "title": "Github PRs: a Visualization",
+        "content": "\n\nPre-requisites:\ngh\njq\nduckdb\n\n gh search                                                  \\\n     prs                                                     \\\n     --state=open                                            \\\n     --author=$(gh api user | jq -r '.login')                \\\n     --archived=false                                        \\\n     --limit 100                                             \\\n     --json 'repository,title,url,state,updatedAt,createdAt' \\\n     | jq '.[]\n           | .name = .repository.nameWithOwner\n           | del( .repository )'                             \\\n     | duckdb -table                                         \\\n              -c 'SELECT title, url, updatedAt, createdAt\n                    FROM readjsonauto(\"/dev/stdin\")\n                ORDER BY updatedAt DESC;'\n\nThis gives you a nice table open PRs associated with your github account.\n\n{{ figure src=\"gh-cli-extra.jpg\"}}\n\n  gh search\n    prs\n    --state=open\n    --author=$(gh api user | jq -r '.login')\n    --archived=false\n    --limit 100\n \nI wrote this because the built in subcommand to gh didn't have the URLs\navailable. Which is fine for trimming down visual clutter, but it makes the tool\npretty useless.\n\nIt's pretty though.\n\n{{ figure src=\"gh-cli-example.jpg\"}}\n\nOh and this is all to replicate the info surfaced at https://github.com/pulls\n",
+        "tags": []
     },
     {
         "uri": "/google-review-people-suck",
