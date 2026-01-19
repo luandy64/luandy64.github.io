@@ -3,7 +3,27 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><copyright>Copyright © 2025, Andy Lu.</copyright><lastBuildDate>
-Tue, 16 Dec 2025 16:57:32 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Github PRs: a Visualization</title><link>https://blog.andylu.dev/github-prs-a-visualization/</link><pubDate>Tue, 16 Dec 2025 11:10:05 -0500</pubDate><guid>https://blog.andylu.dev/github-prs-a-visualization/</guid><description>&lt;p&gt;Pre-requisites:&lt;/p&gt;
+Mon, 19 Jan 2026 10:42:16 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>macOs Hammerspoon Allows Multiple Keybinds</title><link>https://blog.andylu.dev/macos-hammerspoon-allows-multiple-keybinds/</link><pubDate>Mon, 19 Jan 2026 10:35:36 -0500</pubDate><guid>https://blog.andylu.dev/macos-hammerspoon-allows-multiple-keybinds/</guid><description>&lt;p&gt;TIL that the following are not the same thing and I neeed the later to work correctly&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-lua" data-lang="lua"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;hs.loadSpoon(&lt;span style="color:#a6e3a1"&gt;&amp;#34;AppWindowSwitcher&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; :bindHotkeys({
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [&lt;span style="color:#a6e3a1"&gt;&amp;#34;Emacs&amp;#34;&lt;/span&gt;] &lt;span style="color:#89dceb;font-weight:bold"&gt;=&lt;/span&gt; {{&lt;span style="color:#a6e3a1"&gt;&amp;#34;cmd&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e3a1"&gt;&amp;#34;alt&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e3a1"&gt;&amp;#34;ctrl&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e3a1"&gt;&amp;#34;shift&amp;#34;&lt;/span&gt;}, &lt;span style="color:#a6e3a1"&gt;&amp;#34;f3&amp;#34;&lt;/span&gt;},
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [&lt;span style="color:#a6e3a1"&gt;&amp;#34;Emacs&amp;#34;&lt;/span&gt;] &lt;span style="color:#89dceb;font-weight:bold"&gt;=&lt;/span&gt; {{&lt;span style="color:#a6e3a1"&gt;&amp;#34;cmd&amp;#34;&lt;/span&gt;}, &lt;span style="color:#a6e3a1"&gt;&amp;#34;3&amp;#34;&lt;/span&gt;},
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; })
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-lua" data-lang="lua"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;hs.loadSpoon(&lt;span style="color:#a6e3a1"&gt;&amp;#34;AppWindowSwitcher&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; :bindHotkeys({
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [{&lt;span style="color:#a6e3a1"&gt;&amp;#34;Emacs&amp;#34;&lt;/span&gt;}] &lt;span style="color:#89dceb;font-weight:bold"&gt;=&lt;/span&gt; {{&lt;span style="color:#a6e3a1"&gt;&amp;#34;cmd&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e3a1"&gt;&amp;#34;alt&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e3a1"&gt;&amp;#34;ctrl&amp;#34;&lt;/span&gt;, &lt;span style="color:#a6e3a1"&gt;&amp;#34;shift&amp;#34;&lt;/span&gt;}, &lt;span style="color:#a6e3a1"&gt;&amp;#34;f3&amp;#34;&lt;/span&gt;},
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; [{&lt;span style="color:#a6e3a1"&gt;&amp;#34;Emacs&amp;#34;&lt;/span&gt;}] &lt;span style="color:#89dceb;font-weight:bold"&gt;=&lt;/span&gt; {{&lt;span style="color:#a6e3a1"&gt;&amp;#34;cmd&amp;#34;&lt;/span&gt;}, &lt;span style="color:#a6e3a1"&gt;&amp;#34;3&amp;#34;&lt;/span&gt;},
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; })
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Notice the curlies around &lt;code&gt;&amp;quot;Emacs&amp;quot;&lt;/code&gt;. My gut says this is some &lt;code&gt;lua&lt;/code&gt; syntax thing
+because I&amp;rsquo;m pretty sure I&amp;rsquo;m defining a map here and &lt;code&gt;[&amp;quot;Emacs&amp;quot;]&lt;/code&gt; must be a string
+key that gets over written. But &lt;code&gt;[{&amp;quot;Emacs&amp;quot;}]&lt;/code&gt; is an object key that counts as unique&lt;/p&gt;</description></item><item><title>Tmux Configuration</title><link>https://blog.andylu.dev/tmux-configuration/</link><pubDate>Thu, 08 Jan 2026 20:08:26 -0500</pubDate><guid>https://blog.andylu.dev/tmux-configuration/</guid><description>&lt;p&gt;I had to set this up from scratch again recently and I wanted to write down some
+thoughts about how I like my &lt;code&gt;tmux&lt;/code&gt; configured.&lt;/p&gt;
+&lt;p&gt;I saw a post on reddit the other day about how &lt;code&gt;screen&lt;/code&gt; has a prefix key of
+&lt;code&gt;C-a&lt;/code&gt; and so &lt;code&gt;tmux&lt;/code&gt; uses &lt;code&gt;C-b&lt;/code&gt;. And there were people saying, yeah I use the
+default so that I don&amp;rsquo;t clash with my muscle memory from using &lt;code&gt;screen&lt;/code&gt;. Or that
+the default is fine. I don&amp;rsquo;t have a history of using &lt;code&gt;screen&lt;/code&gt; so I don&amp;rsquo;t agree
+with that first point. But I use both &lt;code&gt;C-a&lt;/code&gt; and &lt;code&gt;C-b&lt;/code&gt; (less so than other
+keybindings), so I think both of those are horrible defaults for a CLI tool.&lt;/p&gt;</description></item><item><title>Github PRs: a Visualization</title><link>https://blog.andylu.dev/github-prs-a-visualization/</link><pubDate>Tue, 16 Dec 2025 11:10:05 -0500</pubDate><guid>https://blog.andylu.dev/github-prs-a-visualization/</guid><description>&lt;p&gt;Pre-requisites:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://cli.github.com/"&gt;gh&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://jqlang.org/"&gt;jq&lt;/a&gt;&lt;/li&gt;
@@ -247,19 +267,23 @@ with &lt;a href="https://www.npmjs.com/package/hugo-lunr"&gt;hugo-lunr&lt;/a&gt;
 &lt;p&gt;When I heard my girlfriend say this for the first time, I thought it sounded too funny to be a real word. She got mad at me for asking Siri to define it, but we laugh about it now.&lt;/p&gt;
 &lt;h2 id="bathtubs-and-showers-have-floors-under-them"&gt;Bathtubs and showers have floors under them&lt;/h2&gt;
 &lt;p&gt;I&amp;rsquo;m don&amp;rsquo;t know if this is a thought I had about rented places only, or living spaces in general. In my head, there was a hole for the tub or shower area.&lt;/p&gt;</description></item><item><title>Posts I Like</title><link>https://blog.andylu.dev/posts-i-like/</link><pubDate>Tue, 21 Jan 2025 13:11:18 -0500</pubDate><guid>https://blog.andylu.dev/posts-i-like/</guid><description>&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://analog.melanie-richards.com/journals/daily-journal"&gt;https://analog.melanie-richards.com/journals/daily-journal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;nhttps://justsomeantifas.tumblr.com/zines&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://manuelmoreale.com/discovering-new-blogs-is-stupid-hard"&gt;https://manuelmoreale.com/discovering-new-blogs-is-stupid-hard&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://miniflux.app/"&gt;https://miniflux.app/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://kevquirk.com/blog/i-ve-been-thinking-about-a-switch-to-the-fairphone-5"&gt;https://kevquirk.com/blog/i-ve-been-thinking-about-a-switch-to-the-fairphone-5&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://sylvia.bearblog.dev/weeknotes-2025-03/"&gt;https://sylvia.bearblog.dev/weeknotes-2025-03/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.benkuhn.net/writing/"&gt;https://www.benkuhn.net/writing/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://guzey.com/personal/why-have-a-blog/#but-i-dont-have-anything-original-to-say-and-i-would-be-just-repeating-things-said-elsewhere-on-the-internet"&gt;https://guzey.com/personal/why-have-a-blog/#but-i-dont-have-anything-original-to-say-and-i-would-be-just-repeating-things-said-elsewhere-on-the-internet&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://blog.divaltor.dev/one-way-meetings/"&gt;https://blog.divaltor.dev/one-way-meetings/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://maximiliankiener.com/digitalprojects/time/"&gt;https://maximiliankiener.com/digitalprojects/time/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Uses</title><link>https://blog.andylu.dev/uses/</link><pubDate>Tue, 21 Jan 2025 13:05:33 -0500</pubDate><guid>https://blog.andylu.dev/uses/</guid><description>&lt;ul&gt;
-&lt;li&gt;Laptop: 2013 Macbook Pro&lt;/li&gt;
-&lt;li&gt;Phone: Fairphone 5&lt;/li&gt;
-&lt;li&gt;Keyboard: Dactyl Manuform 5x6 with Drop Holy Panda Switches&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Laptop: 2013 Macbook Pro&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Phone: Fairphone 5&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Keyboard: Dactyl Manuform 5x6 with Drop Holy Panda Switches&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Espresso Machine: Gaggia Classic Evo Pro E24&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Coffee Grinder: Baratza Encore ESP&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Tailscale Subnet Routers</title><link>https://blog.andylu.dev/tailscale-subnet-routers/</link><pubDate>Thu, 31 Oct 2024 17:25:14 -0400</pubDate><guid>https://blog.andylu.dev/tailscale-subnet-routers/</guid><description>&lt;p&gt;Let&amp;rsquo;s say you have an existing tailnet you want to connect a new device to. However, you can&amp;rsquo;t install tailscale on the device for some reason.&lt;/p&gt;
 &lt;p&gt;But you happen to have a fancy travel router, like the &lt;a href="https://store-us.gl-inet.com/collections/travel-routers/products/beryl-ax-gl-mt3000-pocket-sized-wi-fi-6-wireless-travel-gigabit-router"&gt;beryl-ax&lt;/a&gt;, running OpenWrt and tailscale, you can turn it into a subnet router.&lt;/p&gt;
 &lt;p&gt;A subnet router just connects two subnets on two different networks. As far as I can tell, this is intended to be a one way connection. The devices in my tailnet with a real tailnet address could ping a device in the non-tailnet subnet.&lt;/p&gt;</description></item><item><title>Tailscale and VLC</title><link>https://blog.andylu.dev/tailscale-and-vlc/</link><pubDate>Tue, 17 Sep 2024 21:53:34 -0400</pubDate><guid>https://blog.andylu.dev/tailscale-and-vlc/</guid><description>&lt;p&gt;I have videos sitting on one computer and I want to stream it from another computer.&lt;/p&gt;
@@ -367,6 +391,28 @@ it&amp;rsquo;s cool to have the usual output in the message line and in an overl
 &lt;p&gt;Notes:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Tart&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="trader-joes"&gt;Trader Joe&amp;rsquo;s&lt;/h1&gt;
+&lt;h2 id="joe-coffee"&gt;Joe Coffee&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;My go to bean since like 2016&lt;/li&gt;
+&lt;li&gt;Medium roast&lt;/li&gt;
+&lt;li&gt;Sold in 14oz cans (397 grams), $6.99 for the can
+&lt;ul&gt;
+&lt;li&gt;At 18g to 19g per cup, that&amp;rsquo;s 20 to 22 espresso pulls&lt;/li&gt;
+&lt;li&gt;That&amp;rsquo;s $0.32 to $0.35 per pull&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="colombia-supremo"&gt;Colombia Supremo&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Medium roast&lt;/li&gt;
+&lt;li&gt;Sold in 28oz cans (794 grams), $16.99 for the can
+&lt;ul&gt;
+&lt;li&gt;At 18g to 19g per cup, that&amp;rsquo;s 41 to 44 espresso pulls&lt;/li&gt;
+&lt;li&gt;That&amp;rsquo;s $0.38 to $0.41 per pull&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Emacs Allows elisp in Find Replaces</title><link>https://blog.andylu.dev/emacs-allows-elisp-in-find-replaces/</link><pubDate>Fri, 24 May 2024 16:17:18 -0400</pubDate><guid>https://blog.andylu.dev/emacs-allows-elisp-in-find-replaces/</guid><description>&lt;h2 id="problem"&gt;Problem&lt;/h2&gt;
 &lt;p&gt;You have a massive list of tuples (like 800 tuples) and you need to increment the number of one slot in the tuple.&lt;/p&gt;
 &lt;p&gt;Start with this:&lt;/p&gt;
@@ -639,20 +685,7 @@ to a few people at a recent Philly JS meetup.&lt;/p&gt;</description></item><ite
 &lt;li&gt;&lt;code&gt;ls -lh &amp;lt;one-file&amp;gt;&lt;/code&gt;: Get the long listing of just one file&lt;/li&gt;
 &lt;li&gt;The rest of it is just to do it over and over so that I can see changes in the file size&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Archive</title><link>https://blog.andylu.dev/old-now/archive/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/old-now/archive/</guid><description>&lt;p&gt;See my &lt;a href="https://blog.andylu.dev/now"&gt;now&lt;/a&gt; page for my latest updates.&lt;/p&gt;
-&lt;h1 id="archived-on-2025-11-02"&gt;Archived on 2025-11-02&lt;/h1&gt;
-&lt;h2 id="reading"&gt;Reading&lt;/h2&gt;
-&lt;h3 id="non-fiction"&gt;Non-fiction&lt;/h3&gt;
-&lt;p&gt;I just finished &lt;a href="https://press.stripe.com/working-in-public"&gt;Working in Public: The Making and Maintenance of Open Source
-Software&lt;/a&gt; by Nadia Eghbal.&lt;/p&gt;
-&lt;p&gt;It was interesting to read about a world I&amp;rsquo;ve been a part of and to have some concepts defined and
-discussed. My big takeaways are that software has this historical burden to it because people didn&amp;rsquo;t
-know how to make money off of it. It looks like writing, but is only words on a dead tree with no
-value until you try to use it. And once you try to use it, it&amp;rsquo;s alive and needs to maintained like
-an aging dog. Software is also not like a commodity that loses value once more people use it.
-Software can be ideas, and ideas want to spread and be free (as in beer) and should be free (as in
-freedom).&lt;/p&gt;</description></item><item><title>Now</title><link>https://blog.andylu.dev/now/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/now/</guid><description>&lt;p&gt;This is &lt;a href="https://nownownow.com/about"&gt;a now page&lt;/a&gt;. For stuff that used to be here, check out the
-&lt;a href="https://blog.andylu.dev/old-now/archive"&gt;archive&lt;/a&gt;.&lt;/p&gt;
-&lt;hr&gt;
+&lt;h1 id="archived-on-2026-01-17"&gt;Archived on 2026-01-17&lt;/h1&gt;
 &lt;h2 id="tv"&gt;TV&lt;/h2&gt;
 &lt;p&gt;Just finished up watching Season 1 and 2 of Severance. It was a pretty good show
 with some interesting concepts.&lt;/p&gt;
@@ -662,7 +695,17 @@ slowly being dubbed, so maybe this is just something I need to wait for.&lt;/p&g
 &lt;p&gt;Fortnite.&lt;/p&gt;
 &lt;p&gt;We recently started &amp;ldquo;Sea of Stars&amp;rdquo; as a cute co-op RPG thing. The first boss was
 really hard and we literally spent like 3 or 4 hours on it one night before
-looking up the beta on reddit.&lt;/p&gt;</description></item><item><title>My Babashka Cookbook</title><link>https://blog.andylu.dev/my-babashka-cookbook/</link><pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate><guid>https://blog.andylu.dev/my-babashka-cookbook/</guid><description>&lt;p&gt;
+looking up the beta on reddit.&lt;/p&gt;</description></item><item><title>Now</title><link>https://blog.andylu.dev/now/</link><pubDate>Thu, 16 Nov 2023 00:00:00 -0500</pubDate><guid>https://blog.andylu.dev/now/</guid><description>&lt;p&gt;This is &lt;a href="https://nownownow.com/about"&gt;a now page&lt;/a&gt;. For stuff that used to be here, check out the
+&lt;a href="https://blog.andylu.dev/old-now/archive"&gt;archive&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="work"&gt;Work&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;m two weeks into a new job! Now I can say that I was interviewing and get an
+offer during the craziness of the job market of 2025.&lt;/p&gt;
+&lt;h2 id="coffee"&gt;Coffee&lt;/h2&gt;
+&lt;p&gt;I was forced to buy a new coffee bean this week. Trader Joe&amp;rsquo;s has been picked
+through and I can&amp;rsquo;t get my usual medium roast. I want to taste this one next to
+the bean I normally get. I think I like the new one more because it has a more
+rounded out flavor profile. But I&amp;rsquo;m not 100% sure.&lt;/p&gt;</description></item><item><title>My Babashka Cookbook</title><link>https://blog.andylu.dev/my-babashka-cookbook/</link><pubDate>Sun, 29 Oct 2023 23:26:22 -0400</pubDate><guid>https://blog.andylu.dev/my-babashka-cookbook/</guid><description>&lt;p&gt;
 This post is the one I want to reference when I do something in `babashka` and forget syntax or
 something.&lt;/p&gt;
 &lt;div id="outline-container-headline-1" class="outline-2"&gt;
