@@ -391,7 +391,7 @@
     },
     {
         "uri": "/macos-hammerspoon-allows-multiple-keybinds",
-        "title": "macOs Hammerspoon Allows Multiple Keybinds",
+        "title": "macOS Hammerspoon Allows Multiple Keybinds",
         "content": "\nTIL that the following are not the same thing and I neeed the later to work correctly\n\nhs.loadSpoon(\"AppWindowSwitcher\")\n  :bindHotkeys({\n      [\"Emacs\"] = {{\"cmd\", \"alt\", \"ctrl\", \"shift\"}, \"f3\"},\n      [\"Emacs\"] = {{\"cmd\"}, \"3\"},\n    })\n\nhs.loadSpoon(\"AppWindowSwitcher\")\n  :bindHotkeys({\n      [{\"Emacs\"}] = {{\"cmd\", \"alt\", \"ctrl\", \"shift\"}, \"f3\"},\n      [{\"Emacs\"}] = {{\"cmd\"}, \"3\"},\n    })\n\nNotice the curlies around \"Emacs\". My gut says this is some lua syntax thing\nbecause I'm pretty sure I'm defining a map here and [\"Emacs\"] must be a string\nkey that gets over written. But [{\"Emacs\"}] is an object key that counts as unique\n",
         "tags": []
     },
@@ -581,6 +581,12 @@
         "uri": "/rust-my-keyboard",
         "title": "Rust My Keyboard",
         "content": "\n2024 is the year that I explore rust. I think the most engaging way to do that\nis to use it to compile QMK into some rust-ified executible and run my daily\ndriver keyboard off of it.\n\nObviously, I shouldn't brick my main keyboard to start. But thankfully, the\nprevious keyboard I used daily is also using the same microprocessor. So I\nalready have a playground or two, I just need to tweak emacs to get to work.\n\nAlso I don't want to do a ton of it from scratch. So I need to see if other\npeople have had this thought already\n",
+        "tags": []
+    },
+    {
+        "uri": "/scittle-app-num-001/index",
+        "title": "Scittle App Num 001",
+        "content": "",
         "tags": []
     },
     {
