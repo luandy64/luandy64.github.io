@@ -499,6 +499,12 @@
         ]
     },
     {
+        "uri": "/philly-homebrew-website-club-6",
+        "title": "Philly Homebrew Website Club 6",
+        "content": "\nHello from iffybooks and the official Homebrew Website Club meeting!\n\nHere are some of [the notes] from the meeting\n\n[the notes]: https://etherpad.indieweb.org/phillyhwc6\n",
+        "tags": []
+    },
+    {
         "uri": "/posting-stats/index",
         "title": "Posting Stats",
         "content": "\nHere is my blog activity through the years.\n\nI did not come up with this visualization myself. It is heavily inspired by\ncommit heatmaps from popular code forges, and I think Github did it first. I\nread about doing something like this client side in Hugo from\nburgeonlab.\n\nThis should be written in a way that is future proof and will just work as time\nmoves on. Though I don't know what the boundary is for \"too many posts\" to\nprocess. When that day comes though, it shouldn't be too hard to generate the\ndata in an external program and then use the Hugo templates to pass it into the\njavascript that currently exists.\n\n[burgeonlab]: https://burgeonlab.com/blog/github-style-heatmap-calendar-widget-visualizing-hugo\n",
