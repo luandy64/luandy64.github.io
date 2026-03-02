@@ -3,7 +3,25 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><lastBuildDate>
-Sun, 01 Feb 2026 18:55:58 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Philly Homebrew Website Club 6</title><link>https://blog.andylu.dev/philly-homebrew-website-club-6/</link><pubDate>Sun, 01 Feb 2026 18:50:59 -0500</pubDate><guid>https://blog.andylu.dev/philly-homebrew-website-club-6/</guid><description>&lt;p&gt;Hello from iffybooks and the official Homebrew Website Club meeting!&lt;/p&gt;
+Mon, 02 Mar 2026 14:19:05 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Clojure condp</title><link>https://blog.andylu.dev/clojure-condp/</link><pubDate>Fri, 27 Feb 2026 10:19:09 -0500</pubDate><guid>https://blog.andylu.dev/clojure-condp/</guid><description>&lt;p&gt;&lt;code&gt;condp&lt;/code&gt; is not a function I think of often. And so I&amp;rsquo;ve never really looked at the docs for it.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s a cool example I saw in the docs&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-clojure" data-lang="clojure"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;(&lt;span style="color:#89b4fa"&gt;condp&lt;/span&gt; &lt;span style="color:#89dceb"&gt;apply &lt;/span&gt;[&lt;span style="color:#fab387"&gt;2&lt;/span&gt; &lt;span style="color:#fab387"&gt;3&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#89dceb"&gt;= &lt;/span&gt;&lt;span style="color:#a6e3a1"&gt;&amp;#34;eq&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#89dceb"&gt;&amp;lt; &lt;/span&gt;&lt;span style="color:#a6e3a1"&gt;&amp;#34;lt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#89dceb"&gt;&amp;gt; &lt;/span&gt;&lt;span style="color:#a6e3a1"&gt;&amp;#34;gt&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#6c7086;font-style:italic"&gt;;;=&amp;gt; &amp;#34;lt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can really break it down with &lt;code&gt;macroexpand&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-clojure" data-lang="clojure"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;(&lt;span style="color:#89b4fa"&gt;let*&lt;/span&gt; [&lt;span style="color:#f5e0dc"&gt;pred__327&lt;/span&gt; &lt;span style="color:#f5e0dc"&gt;apply&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f5e0dc"&gt;expr__328&lt;/span&gt; [&lt;span style="color:#fab387"&gt;2&lt;/span&gt; &lt;span style="color:#fab387"&gt;3&lt;/span&gt;]]
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; (&lt;span style="color:#cba6f7"&gt;if &lt;/span&gt;(&lt;span style="color:#89b4fa"&gt;pred__327&lt;/span&gt; &lt;span style="color:#89dceb"&gt;= &lt;/span&gt;&lt;span style="color:#f5e0dc"&gt;expr__328&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e3a1"&gt;&amp;#34;eq&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; (&lt;span style="color:#cba6f7"&gt;if &lt;/span&gt;(&lt;span style="color:#89b4fa"&gt;pred__327&lt;/span&gt; &lt;span style="color:#89dceb"&gt;&amp;lt; &lt;/span&gt;&lt;span style="color:#f5e0dc"&gt;expr__328&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e3a1"&gt;&amp;#34;lt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; (&lt;span style="color:#cba6f7"&gt;if &lt;/span&gt;(&lt;span style="color:#89b4fa"&gt;pred__327&lt;/span&gt; &lt;span style="color:#89dceb"&gt;&amp;gt; &lt;/span&gt;&lt;span style="color:#f5e0dc"&gt;expr__328&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e3a1"&gt;&amp;#34;gt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; (&lt;span style="color:#89b4fa"&gt;throw&lt;/span&gt; (&lt;span style="color:#cba6f7"&gt;new &lt;/span&gt;&lt;span style="color:#f5e0dc"&gt;java.lang.IllegalArgumentException&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; (&lt;span style="color:#89b4fa"&gt;clojure.core/str&lt;/span&gt; &lt;span style="color:#a6e3a1"&gt;&amp;#34;No matching clause: &amp;#34;&lt;/span&gt; &lt;span style="color:#f5e0dc"&gt;expr__328&lt;/span&gt;)))))))
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It&amp;rsquo;s so succinct, it&amp;rsquo;s impressive.&lt;/p&gt;</description></item><item><title>Philly Homebrew Website Club 6</title><link>https://blog.andylu.dev/philly-homebrew-website-club-6/</link><pubDate>Sun, 01 Feb 2026 18:50:59 -0500</pubDate><guid>https://blog.andylu.dev/philly-homebrew-website-club-6/</guid><description>&lt;p&gt;Hello from iffybooks and the official Homebrew Website Club meeting!&lt;/p&gt;
 &lt;p&gt;Here are some of &lt;a href="https://etherpad.indieweb.org/phillyhwc6"&gt;the notes&lt;/a&gt; from the meeting&lt;/p&gt;</description></item><item><title>Scittle App Num 001</title><link>https://blog.andylu.dev/scittle-app-num-001/</link><pubDate>Mon, 26 Jan 2026 21:29:29 -0500</pubDate><guid>https://blog.andylu.dev/scittle-app-num-001/</guid><description/></item><item><title>macOS Hammerspoon Allows Multiple Keybinds</title><link>https://blog.andylu.dev/macos-hammerspoon-allows-multiple-keybinds/</link><pubDate>Mon, 19 Jan 2026 10:35:36 -0500</pubDate><guid>https://blog.andylu.dev/macos-hammerspoon-allows-multiple-keybinds/</guid><description>&lt;p&gt;TIL that the following are not the same thing and I neeed the later to work correctly&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-lua" data-lang="lua"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;hs.loadSpoon(&lt;span style="color:#a6e3a1"&gt;&amp;#34;AppWindowSwitcher&amp;#34;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; :bindHotkeys({
@@ -90,7 +108,7 @@ dramatic.&lt;/p&gt;
 &lt;p&gt;The food was flavorful. Quantity was good. I definitely see myself coming back
 here again. The place was even nice enough to throw in a free pack of mini
 Swedish fish.&lt;/p&gt;</description></item><item><title>Test With Hugo Images</title><link>https://blog.andylu.dev/test-with-hugo-images/</link><pubDate>Mon, 13 Oct 2025 09:17:38 -0400</pubDate><guid>https://blog.andylu.dev/test-with-hugo-images/</guid><description>&lt;p&gt;Here is an image:&lt;/p&gt;
-&lt;figure&gt;&lt;img src="https://blog.andylu.dev/test-with-hugo-images/small-300.jpg"&gt;
+&lt;figure&gt;&lt;img src="https://static.andylu.dev/images/small-300.jpg"&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Here&amp;rsquo;s what I did to get it all working&lt;/p&gt;
@@ -269,6 +287,7 @@ with &lt;a href="https://www.npmjs.com/package/hugo-lunr"&gt;hugo-lunr&lt;/a&gt;
 &lt;h2 id="bathtubs-and-showers-have-floors-under-them"&gt;Bathtubs and showers have floors under them&lt;/h2&gt;
 &lt;p&gt;I&amp;rsquo;m don&amp;rsquo;t know if this is a thought I had about rented places only, or living spaces in general. In my head, there was a hole for the tub or shower area.&lt;/p&gt;</description></item><item><title>Posts I Like</title><link>https://blog.andylu.dev/posts-i-like/</link><pubDate>Tue, 21 Jan 2025 13:11:18 -0500</pubDate><guid>https://blog.andylu.dev/posts-i-like/</guid><description>&lt;ul&gt;
 &lt;li&gt;&lt;a href="https://maximiliankiener.com/digitalprojects/time/"&gt;https://maximiliankiener.com/digitalprojects/time/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;I look this page up every time I buy new shoes: &lt;a href="https://www.fieggen.com/shoelace/quicktightlacing.htm"&gt;Quick Tight Lacing&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title>Uses</title><link>https://blog.andylu.dev/uses/</link><pubDate>Tue, 21 Jan 2025 13:05:33 -0500</pubDate><guid>https://blog.andylu.dev/uses/</guid><description>&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Laptop: 2013 Macbook Pro&lt;/p&gt;
