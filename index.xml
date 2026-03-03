@@ -3,7 +3,7 @@ https://blog.andylu.dev/</link><description>
 Recent content in Andy's Cafe</description><generator>
 Built with Hugo -- gohugo.io</generator><language>
 en-us</language><lastBuildDate>
-Mon, 02 Mar 2026 14:19:05 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Clojure condp</title><link>https://blog.andylu.dev/clojure-condp/</link><pubDate>Fri, 27 Feb 2026 10:19:09 -0500</pubDate><guid>https://blog.andylu.dev/clojure-condp/</guid><description>&lt;p&gt;&lt;code&gt;condp&lt;/code&gt; is not a function I think of often. And so I&amp;rsquo;ve never really looked at the docs for it.&lt;/p&gt;
+Mon, 02 Mar 2026 21:13:54 -0500</lastBuildDate><atom:link href="https://blog.andylu.dev/index.xml" rel="self" type="application/xml"/><item><title>Clojure condp</title><link>https://blog.andylu.dev/clojure-condp/</link><pubDate>Fri, 27 Feb 2026 10:19:09 -0500</pubDate><guid>https://blog.andylu.dev/clojure-condp/</guid><description>&lt;p&gt;&lt;code&gt;condp&lt;/code&gt; is not a function I think of often. And so I&amp;rsquo;ve never really looked at the docs for it.&lt;/p&gt;
 &lt;p&gt;Here&amp;rsquo;s a cool example I saw in the docs&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-clojure" data-lang="clojure"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;(&lt;span style="color:#89b4fa"&gt;condp&lt;/span&gt; &lt;span style="color:#89dceb"&gt;apply &lt;/span&gt;[&lt;span style="color:#fab387"&gt;2&lt;/span&gt; &lt;span style="color:#fab387"&gt;3&lt;/span&gt;]
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#89dceb"&gt;= &lt;/span&gt;&lt;span style="color:#a6e3a1"&gt;&amp;#34;eq&amp;#34;&lt;/span&gt;
@@ -63,7 +63,7 @@ keybindings), so I think both of those are horrible defaults for a CLI tool.&lt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e3a1"&gt; FROM read_json_auto(&amp;#34;/dev/stdin&amp;#34;)
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#a6e3a1"&gt; ORDER BY updatedAt DESC;&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This gives you a nice table open PRs associated with your github account.&lt;/p&gt;
-&lt;figure&gt;&lt;img src="https://blog.andylu.dev/github-prs-a-visualization/gh-cli-extra.jpg"&gt;
+&lt;figure&gt;&lt;img src="https://static.andylu.dev/images/github-prs-a-visualization-gh-cli-extra.jpg"&gt;
 &lt;/figure&gt;
 
 &lt;blockquote&gt;
@@ -108,7 +108,7 @@ dramatic.&lt;/p&gt;
 &lt;p&gt;The food was flavorful. Quantity was good. I definitely see myself coming back
 here again. The place was even nice enough to throw in a free pack of mini
 Swedish fish.&lt;/p&gt;</description></item><item><title>Test With Hugo Images</title><link>https://blog.andylu.dev/test-with-hugo-images/</link><pubDate>Mon, 13 Oct 2025 09:17:38 -0400</pubDate><guid>https://blog.andylu.dev/test-with-hugo-images/</guid><description>&lt;p&gt;Here is an image:&lt;/p&gt;
-&lt;figure&gt;&lt;img src="https://static.andylu.dev/images/small-300.jpg"&gt;
+&lt;figure&gt;&lt;img src="https://static.andylu.dev/images/test-with-hugo-images-small-300.jpg"&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Here&amp;rsquo;s what I did to get it all working&lt;/p&gt;
