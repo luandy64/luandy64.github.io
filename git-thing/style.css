@@ -1,0 +1,48 @@
+:root {
+    --color-empty: #202632;
+    --color-l1: #e93e3a;
+    --color-l2: #f3903f;
+    --color-l3: #fff33b;
+    --color-l4: #f7f6e6;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+main {
+    text-align: center;
+}
+
+#app {
+    width: 90%;
+}
+
+#heatmap-cljs { overflow-x: auto; }
+#heatmap-cljs text { font-family: inherit; fill: currentColor; }
+#heatmap-cljs-caption {font-size: 0.8em; text-align: center; margin-top: 0px;}
+#heatmap-cljs-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75em;
+    margin-top: 4px;
+}
+#heatmap-cljs-legend { display: flex; align-items: center; gap: 4px; }
+#tooltip-cljs {
+    position: fixed;
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.hidden { display: none; }
