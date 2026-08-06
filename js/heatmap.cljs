@@ -49,9 +49,9 @@
   [num-input]
   (cond
     (=  num-input 0)  "var(--color-empty)"
-    (<= num-input 3)  "var(--color-l1)"
-    (<= num-input 10) "var(--color-l2)"
-    (<= num-input 20) "var(--color-l3)"
+    (=  num-input 1)  "var(--color-l1)"
+    (<= num-input 5) "var(--color-l2)"
+    (<= num-input 10) "var(--color-l3)"
     :else             "var(--color-l4)"))
 
 (defn render
